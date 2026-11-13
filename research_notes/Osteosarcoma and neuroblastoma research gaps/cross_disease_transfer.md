@@ -146,3 +146,21 @@ The only neuroblastoma-linked evidence gathered is the GD2 transfer into OS (Sec
 
 ### Gaps
 - Neuroblastoma-directed transfers (ALK inhibitors from lung cancer, MYCN targeting, differentiation therapy, ctDNA) were not searched.
+
+## Addendum: findings for section 2 and related topics (from search summaries; verify before quoting)
+
+These were gathered during research but not saved in the first pass. All rest on search-result summaries, not full papers.
+
+- **Denosumab (RANKL):** a COG phase 2 trial in recurrent osteosarcoma was negative. Source link not saved; verify.
+- **Ewing sarcoma IGF-1R:** in phase III trial AEWS1221, adding ganitumab gave no benefit (3-year event-free survival 37.4% vs 39.1%). [NCT02306161](https://clinicaltrials.gov/study/NCT02306161)
+- **Multikinase inhibitors:** regorafenib improved progression-free survival in SARC024 (3.6 vs 1.7 months) and in REGOBONE, but not overall survival. Cabozantinib gave an 11.9% response rate in CABONE. [TargetedOnc](https://targetedonc.com/view/cabozantinib-prolongs-survival-in-patients-with-advanced-osteosarcoma-and-ewing-sarcoma)
+- **Bone-seeking radiopharmaceuticals:** radium-223 has only a phase I osteosarcoma trial (Subbiah, Clin Cancer Res 2019). Samarium-153-EDTMP has older high-dose studies. [Review](https://www.pubmed.gov/24924181/)
+- **ctDNA:** Shulman et al. 2018 (Br J Cancer, COG) found ctDNA in about 57% of newly diagnosed osteosarcoma; higher levels meant more risk. [eScholarship](https://escholarship.org/uc/item/4s89v1k6). Audinot et al. 2024 (Ann Oncol) studied 183 patients from OS2006; ctDNA at diagnosis predicted outcome independently of metastatic status, and they built a prediction tool (PRONOS) whose external validation was still underway. [PMC6162271](https://pmc.ncbi.nlm.nih.gov/articles/PMC6162271)
+- **Comparative oncology (dogs):**
+  - No published COTC021 rapamycin results found. A separate randomized trial of 324 dogs found adjuvant sirolimus did not improve outcome. [PMC7020630](https://pmc.ncbi.nlm.nih.gov/articles/PMC7020630)
+  - ADXS-HER2 Listeria vaccine data in dogs are small and mostly company-reported, with conflicting historical controls. [FiercePharma](https://www.fiercepharma.com/r-d/advaxis-sees-encouraging-results-for-immuno-oncology-treatment-dogs-bone-cancer)
+  - Losartan plus toceranib gave a 50% clinical benefit rate in 28 dogs with lung metastases; it needed about 10 times the usual blood-pressure dose to block monocyte recruitment. [PMC8866227](https://pmc.ncbi.nlm.nih.gov/articles/PMC8866227)
+  - Mifamurtide (L-MTP-PE) extended survival in dogs; its human use rests on INT-0133.
+- **Growth and genetics:** dogs over 40 kg have about 45 times the odds of osteosarcoma compared with dogs under 10 kg. A 2024 study carried a canine GWAS region over to humans and found a GRB10 locus (rs17454681) tied to osteosarcoma risk, height and pubertal timing. [PMC11402579](https://pmc.ncbi.nlm.nih.gov/articles/PMC11402579)
+- **B7-H3 CAR T:** St. Jude trials in osteosarcoma (NCT04897321, NCT07428993, RAD3CAR with radiation); Illinois is testing B7-H3 CAR T in dogs. No B7-H3 bispecific trial in osteosarcoma was found.
+- **Repurposed drugs:** propranolol and metformin have only cell and mouse data in osteosarcoma. [PMC9458647](https://pmc.ncbi.nlm.nih.gov/articles/PMC9458647)
