@@ -32,3 +32,117 @@ The denosumab success in giant-cell tumor of bone did not transfer: single-agent
 
 ### Gaps
 - The findings for this section (denosumab, Ewing IGF-1R, multikinase inhibitors, radiopharmaceuticals) were not saved to this file; the write was interrupted. They are summarised with URLs in the researcher handback message to the coordinator.
+
+## 3. Other species: elephants, TP53 and LIF6 (Peto's paradox)
+
+### Takeaway
+Elephant cancer resistance is a cell-culture finding with no demonstrated OS application; I found no study testing elephant p53 or LIF6 in OS cells in this search.
+
+### Cited Findings
+- Elephants carry about 20 TP53 copies, many of them retrogenes, some encoding truncated p53 [PRECLIN] — [Science News](https://www.sciencenews.org/article/resurrected-gene-may-protect-elephants-cancer)
+- LIF6, a re-activated pseudogene, is up-regulated by TP53 after DNA damage, moves to mitochondria and induces apoptosis; it is required for the enhanced elephant cell-death response. Evidence is from cell experiments, largely one lab [PRECLIN] — [bioRxiv preprint](https://www.biorxiv.org/content/10.1101/187922v2); [PMC6369797](https://pmc.ncbi.nlm.nih.gov/articles/6369797)
+
+### Inferences
+- [SPEC] OS is a TP53-loss disease, so the idea of restoring a p53-like death signal is conceptually relevant, but delivery of any such gene or protein to tumors is unsolved. Treat as hypothesis-generating only.
+
+### Gaps
+- Reports of elephant p53 delivered to human OS cells (work associated with J. Schiffman's group) were not retrieved or verified here.
+
+## 4. Metastasis biology: lung niche and dormancy
+
+### Takeaway
+OS has its own lung-niche mechanism (IL-1 alpha from lung epithelium driving tumor IL-6 and CXCL8) with mouse evidence that blocking it reduces metastasis; approved drugs against these pathways exist in other diseases but no OS trial was found. Dormancy concepts from breast cancer (NR2F1, TGF-beta2) returned nothing in OS.
+
+### Cited Findings
+- IL-6 and CXCL8 are higher in OS lung metastases than matched primaries; combined blockade had little effect on proliferation but inhibited metastasis across several mouse models [PRECLIN] — [JCI Insight 2018](https://content.jci.org/articles/view/99791/pdf); [PMC6141177](https://pmc.ncbi.nlm.nih.gov/articles/PMC6141177)
+- A hypoproliferative OS subpopulation initiates metastasis by sustaining IL-6/CXCL8 output in response to lung epithelial IL-1 alpha; disrupting IL-1 signaling reduced metastatic progression [PRECLIN; preprint, reported as later published in Cancer Research 2025] — [bioRxiv](https://www.biorxiv.org/content/10.1101/2024.06.09.597967.full.pdf)
+
+### Inferences
+- [SPEC] The transfer is from rheumatology: IL-6 and IL-1 blockers are licensed for inflammatory disease, so an adjuvant anti-metastasis trial could use existing agents. The endpoint would have to be metastasis-free survival, not tumor shrinkage, since these agents did not slow proliferation.
+- [SPEC] The "hypoproliferative initiating cell" finding is the closest OS analogue to breast-cancer dormancy work; nobody appears to have asked whether NR2F1-type dormancy programs operate in it.
+
+### Gaps
+- No OS-specific results for NR2F1 or TGF-beta2 dormancy were found. ctDNA and circulating tumor cell findings were not written to this file (see handback).
+
+## 5. Immunotherapy transfers: TIL therapy, mRNA and neoantigen vaccines, GD2 (from neuroblastoma)
+
+### Takeaway
+TIL therapy and personalized vaccines have reached early OS trials but have no controlled efficacy data. The neuroblastoma GD2 antibody dinutuximab was tested in recurrent OS and was negative.
+
+### Cited Findings
+- Adoptive TIL plus anti-PD-1 in chemotherapy-resistant metastatic OS was reported safe with manageable adverse events [CLIN-EARLY, uncontrolled] — [PMC7547340](https://pmc.ncbi.nlm.nih.gov/articles/PMC7547340)
+- An MD Anderson TIL manufacturing protocol for soft tissue sarcoma and OS (CD3/CD28 activator replacing anti-CD137) has FDA clearance for trial use (IND 30562) [PRECLIN/manufacturing] — [Frontiers in Immunology 2025](https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1557006/epub)
+- A phase I trial tests a personalized neoantigen vaccine (SarcVac) with lymphocyte reinfusion and sintilimab in advanced sarcomas including OS; primary aim is safety [CLIN-EARLY, no results] — [Trial listing](https://www.trialx.com/clinical-trials/listings/342586/tumor-neoantigen-vaccine-sarvac/)
+- Houston Methodist announced a personalized mRNA vaccine for OS (May 2026). This is a press release; no peer-reviewed efficacy data or registration was found [unverified] — [EurekAlert](https://www.eurekalert.org/news-releases/1128080)
+- COG phase 2 of dinutuximab plus GM-CSF in recurrent OS: 11 of 39 event-free at 12 months (28.2%), no evidence of efficacy [CLIN-EARLY, negative] — [eScholarship](https://escholarship.org/uc/item/8dx5s3gd)
+- Naxitamab plus GM-CSF is being tested in recurrent OS in second or later remission (NCT02502786); final results not found — [MSK Synapse](https://synapse.mskcc.org/synapse/works/156520)
+
+### Inferences
+- [SPEC] OS has high structural variation but few point-mutation neoantigens; vaccine pipelines built for melanoma may need to prioritise fusion and breakpoint-derived neoantigens. I found no source testing this.
+- [SPEC] The minimal-residual-disease setting (after resection of lung metastases) is where vaccines worked in melanoma and pancreatic cancer and is the logical OS setting; the naxitamab trial already uses that design.
+
+### Gaps
+- No bispecific T-cell engager trial in OS was found; searches for B7-H3 bispecifics returned nothing. Macrophage reprogramming and "cold tumor" lessons from pancreatic cancer and glioblastoma were not researched. B7-H3 CAR T findings are in the handback, not this file.
+
+## 6. Computational and AI approaches; open datasets
+
+### Takeaway
+Deep learning for necrosis scoring is the one AI transfer with published OS validation. I could not document the open datasets or which cross-dataset analyses are missing; that part remains a gap.
+
+### Cited Findings
+- A deep learning model trained on 103 OS cases (3,134 H&E slides) estimated necrosis ratio in close agreement with pathologists and stratified overall and progression-free survival; model and code were released [retrospective validation] — [arXiv 2208.04910](https://arxiv.org/abs/2208.04910v1)
+- A related study reported network versus pathologist agreement for necrosis quantification of R2 = 0.899 [retrospective] — [BVS listing, PMID 36563747](https://pesquisa.bvsalud.org/infofrontera/resource/en/mdl-36563747)
+
+### Inferences
+- [SPEC] Necrosis is the main prognostic marker but is scored by eye; a prospective multi-centre validation of the released model is a cheap, concrete next step.
+- [SPEC] Candidate un-done analyses (not confirmed by search): joint human-canine somatic analysis, and linking slide-based necrosis scores to genomics in the same patients.
+
+### Gaps
+- No sources retrieved on connectivity map/LINCS repurposing in OS, digital twins, federated learning, or the contents of TARGET-OS, St. Jude Cloud, CCDI, Kids First, DepMap or canine datasets.
+
+## 7. Repurposed drugs: disulfiram, ivermectin, itraconazole, statins, nelfinavir
+
+### Takeaway
+All evidence found is cell-line or mouse work. None of these drugs has clinical trial results in OS, and none should be presented as a treatment.
+
+### Cited Findings
+- Disulfiram/copper inhibited OS growth via reactive oxygen species in vitro and in vivo; a 2018 mouse study reported reduced metastatic burden [PRECLIN] — [Oncotarget](https://oncotarget.com/article/25733/pdf)
+- Ivermectin was synergistic with doxorubicin in OS cells and inhibited growth in a mouse model [PRECLIN] — [PubMed 36503300](https://pubmed.ncbi.nlm.nih.gov/36503300/)
+- Itraconazole appears only inside a proposed nine-drug regimen (OSR9) in a review, not a trial [SPEC] — [IJMS 2023](https://mdpi.com/1422-0067/24/20/15474)
+- Simvastatin appeared only in a combination screening paper calling for further study [PRECLIN] — [J Res Pharm](https://jrespharm.com/pdf.php?id=1233)
+
+### Inferences
+- In vitro activity of ivermectin and similar drugs is common across cancers and often occurs at concentrations not reachable in patients; the sources found do not address achievable dosing. Online claims go well beyond this evidence.
+- [SPEC] The canine trial network is the fastest route to a fair test of a cheap repurposed drug in spontaneous OS.
+
+### Gaps
+- Nothing found for nelfinavir or for statin epidemiology in OS.
+
+## 8. Paget's disease, fibrous dysplasia, chondrosarcoma (IDH)
+
+### Takeaway
+Paget's-associated OS is a rare, near-uniformly fatal natural experiment linking osteoclast-pathway germline variants to OS, but its mechanism is unknown. Chondrosarcoma IDH and fibrous dysplasia GNAS were not covered.
+
+### Cited Findings
+- OS is the most frequent tumor arising in Paget's disease, with 5-year survival described as almost nil and mechanism unknown — [PMC4746367](https://pmc.ncbi.nlm.nih.gov/articles/PMC4746367)
+- Common Paget's disease is linked to SQSTM1 (p62) mutations; Paget's with giant cell tumor is SQSTM1-negative and caused by a ZNF687 founder mutation (P937R) — [PMC4746367](https://pmc.ncbi.nlm.nih.gov/articles/PMC4746367); [Bone Research 2023](https://www.nature.com/articles/s41413-023-00250-3.pdf)
+
+### Inferences
+- [SPEC] p62 sits in autophagy and NF-kB signaling; whether sporadic OS shares these pathways is a testable question in existing genomic cohorts.
+
+### Gaps
+- Not retrieved: ivosidenib results in IDH1-mutant chondrosarcoma, GNAS and malignant transformation in fibrous dysplasia.
+
+## 9. Neuroblastoma
+
+### Takeaway
+The only neuroblastoma-linked evidence gathered is the GD2 transfer into OS (Section 5). Transfers into neuroblastoma were not researched.
+
+### Cited Findings
+- See Section 5 for dinutuximab and naxitamab in OS — [eScholarship](https://escholarship.org/uc/item/8dx5s3gd)
+
+### Inferences
+- None beyond Section 5.
+
+### Gaps
+- Neuroblastoma-directed transfers (ALK inhibitors from lung cancer, MYCN targeting, differentiation therapy, ctDNA) were not searched.

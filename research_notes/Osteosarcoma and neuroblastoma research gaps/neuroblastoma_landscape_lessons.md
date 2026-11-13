@@ -123,3 +123,21 @@ GD2 antibody in OS failed in AOST1421, which gave it as monotherapy-style mainte
 ### Gaps
 - Whether GD2 expression in OS has been systematically quantified (to guide patient selection) was not verified this session.
 - No head-to-head data were found on why GD2 CAR-T underperforms in OS versus NB beyond the microenvironment/exhaustion hypothesis. 
+## Organizational lessons: advocacy and funding models
+
+### Takeaway
+Neuroblastoma progress was accelerated by parent-founded philanthropy that funded specific translational projects (antibodies, vaccines, CAR-T) and by a dedicated trial consortium (NMTRC/Beat Childhood Cancer) running early-phase precision-medicine trials. This filled the gap left by low federal pediatric-cancer funding. Osteosarcoma has advocacy groups but historically less concentrated, project-directed translational funding at single high-volume centers.
+
+### Cited Findings
+- Band of Parents is a neuroblastoma nonprofit formed in July 2007 and incorporated in October 2007 by roughly 100 parents of children treated at Memorial Sloan Kettering (MSKCC). It is described as a leading independent backer of neuroblastoma research at MSKCC, and reports committing more than $14 million to neuroblastoma research (an older page cites more than $10 million; totals conflict across pages, so verify against annual reports/Form 990) — [Band of Parents history](https://www.bandofparents.org/about/history-of-the-band/); [Band of Parents research overview](https://www.bandofparents.org/?p=113)
+- In March 2013, Band of Parents led a group of nonprofits in giving a $2 million grant to MSKCC to develop a bispecific monoclonal antibody targeting neuroblastoma, an example of parent philanthropy directly funding a specific therapeutic — [Band of Parents](https://bandofparents.org/?p=40)
+- Band of Parents launched 2026 Neuroblastoma Breakthrough Catalyst Grants for innovative research — [Band of Parents](https://www.bandofparents.org/about/history-of-the-band/)
+- A Band of Parents fundraiser page cites that less than 8% of National Cancer Institute funding goes to pediatric cancer (advocacy figure, treat as such) — [Band of Parents](https://www.bandofparents.org/?p=113)
+
+### Inferences
+- The NB funding model has three transferable features: (1) parent-founded funds targeting named translational projects (antibody, vaccine) rather than general gifts; (2) concentration at a few high-volume centers (MSKCC, St. Jude, CHOP) that run their own early-phase trials; and (3) a disease-specific consortium (NMTRC/Beat Childhood Cancer, which runs the Neuroblastoma and Medulloblastoma Translational Research Consortium precision-medicine trials and funded much of the DFMO program via NMTRC003). OS advocacy (e.g., MIB Agents, the Osteosarcoma Institute, QuadW/Sarcoma Alliance) exists but has historically funded less center-concentrated translational pipelines; a direct transfer would be an OS consortium modeled on NMTRC plus a project-directed parent fund tied to one or two high-volume OS centers.
+- The DFMO/Iwilfin story is itself an organizational lesson: a parent-driven consortium (NMTRC) carried an off-patent, cheap drug (eflornithine) through single-arm trials with a cooperative-group external control all the way to FDA approval, something industry would not have pursued. OS has off-patent repurposing candidates (e.g., mifamurtide outside the US, bisphosphonates, metformin/polyamine agents) that could follow the same philanthropy-to-approval route.
+
+### Gaps
+- The search returned little primary material on Beat Childhood Cancer/NMTRC and Solving Kids' Cancer as organizations; their exact funding totals, trial portfolios and measurable impact were not verified this session. The one confirmed Solving Kids' Cancer reference is a staff bio (research-program management since 2010).
+- No quantified comparison of NB versus OS philanthropic funding was found.
