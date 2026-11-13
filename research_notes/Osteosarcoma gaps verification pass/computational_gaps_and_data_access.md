@@ -206,3 +206,34 @@ Rule of thumb, from general knowledge of dbGaP and confirmed for St. Jude by sea
 5. Multi-source repurposing screen (section 6). DepMap + PRISM + LINCS + TARGET expression are all open. The key limit is the small number of OS lines.
 NOT feasible with open data: SV-aware germline analysis (gap 10), allele-specific LOH validation (gap 8), and re-analysis of human WGS for LTA (gap 7 human half; already done anyway). All need dbGaP, EGA, St. Jude or Genomics England controlled access through an institutional PI.
 
+## 9. Summary of verdicts
+
+| Gap | Verdict | By what |
+|---|---|---|
+| 7a. Human WGS (TARGET, Behjati, MDACC, Kids First) re-read for LTA | ALREADY DONE | Espejo Valle-Inclan et al., Cell 2025 used these cohorts; the 2026 236-WGS SV-hotspot paper (PMC13596379; TARGET + ICGC + St. Jude) builds LTA into its SV clustering |
+| 7b. TP53 intron-1 hotspot linked to LTA | ALREADY DONE in substance (the report's claim is wrong); the "why intron 1" question is STILL OPEN | Cell 2025: TP53 altered "primarily by rearrangements in intron 1"; LTA is detected from 17p translocations |
+| 7c. Canine genomes with the LTA framework | STILL OPEN | none found; long-read canine studies (n=4, n=2) report chromothripsis/ecDNA but not LTA |
+| 7d. ecDNA in OS | PARTLY ADDRESSED | Chapman/Chavez medRxiv 2025 (~47% of OS ecDNA+); canine HiFi preprint; OS PDX optical-mapping study |
+| 7e. Mouse model of the mechanism | PARTLY ADDRESSED | Smith, van Belzen ... Jacks, bioRxiv 2026 (35 tumours / 24 Sp7-Cre Trp53/Rb1 mice) |
+| 8. Subtyping | PARTLY ADDRESSED | methylation subtypes (Lietz 2022), multi-omic with CNV (Jiang 2022, 121 independent patients), SV hotspots (2026), LOH prognostic (Cell 2025). STILL OPEN: scheme concordance; independent LOH validation |
+| 9a. Integrated single-cell atlas | ALREADY DONE | JHO 2024 (27 samples), PMC13380119 (247,774 cells, 6 GEO sets), bioRxiv 2026 cross-species (>1M cells) |
+| 9b. Dataset-reuse audit | STILL OPEN | none found; the report's "17 samples" figure is now out of date |
+| 10a. SV-aware germline | PARTLY ADDRESSED | Gillani et al., Science 2025 (germline SVs in 1,765 paediatric solid tumours incl. OS); ongoing long-read LFS study (n=290) |
+| 10b. Non-European germline prevalence | STILL OPEN | only an Indian single-centre series (n=23); dbGaP phs000699 contains Latin American samples but was not analysed for germline |
+| AI / repurposing | PARTLY ADDRESSED | L1000CDS2 (Andrade 2021), DepMap essential genes (2022), ESMO 2025 ML abstract; none integrated or validated |
+| Funding analysis (RePORTER) | STILL OPEN | none found |
+
+URL caveat: every URL above is from search results; NO page could be opened (see section 0).
+
+## 10. Ranked analyses feasible NOW with fully open data
+1. NIH RePORTER osteosarcoma funding tracker: open API, no credentials, fills a confirmed gap, low technical risk.
+2. Single-cell reuse audit plus a replication test of recycled claims in the newer independent GEO cohorts: open matrices, confirmed gap, publishable as meta-research.
+3. Canine LTA / chromothripsis / ecDNA analysis of the ICDC OSA01 WGS (24 dogs, open BAMs): the only open genomic gap with fully open data. Needs real bioinformatics skill and cloud compute, ideally with an adviser from a comparative-oncology lab. Check BAM coverage first.
+4. Subtype-concordance study on TARGET-OS open-tier RNA-seq and methylation (plus open copy-number segments if available): partly done elsewhere, but a head-to-head comparison was not found.
+5. Integrated repurposing screen (DepMap CRISPR + PRISM + LINCS, using TARGET and single-cell signatures), filtered against drugs that already failed in OS trials: feasible, but low power with few OS lines and a crowded, low-validation field.
+
+Not feasible without an institutional partner: human WGS LTA re-analysis (already done), allele-specific LOH validation, germline SV analysis, non-European germline prevalence.
+
+## 11. Items skipped or not verified
+- No write was interrupted, so no items were skipped for that reason.
+- Not verified because the hosts were blocked: GEO per-dataset patient counts; the cBioPortal/PedcBioPortal study list; the DepMap OS line count; the CCDI MCI (phs002790) OS count and access tier; Treehouse OS sample count; OSproject release status and size; the Cell paper's code repository; the exact G100k OS n; TARGET-OS open-tier file list.
