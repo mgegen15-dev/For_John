@@ -92,3 +92,75 @@ Reading: the report's wording ("never been adapted") still appears true, but "ov
 - FOSTER WP3 says a "framework for new phase 2 trials" is in development (see gap 1).
 - Not found: a published FOSTER/COG consensus replacing the benchmark, or a validated ctDNA-based response endpoint.
 
+## Gap 11. Signals in existing trials never followed up (camrelizumab + apatinib; PD-L1 >=5%, lung-only disease)
+
+**Verdict: PARTLY ADDRESSED (the PD-1 + anti-angiogenic pairing has been carried forward into new trials; the specific PD-L1 / lung-only subgroup signal has not been tested prospectively, as far as I could find).**
+
+- The 2020 phase 2 (Xie et al., JITC; 43 patients, response rate 20.9%, missed the 6-month PFS target) remains the only published camrelizumab + apatinib osteosarcoma result found. No 2023-2026 update surfaced. https://pmc.ncbi.nlm.nih.gov/articles/PMC7223462
+- MAPAC, NCT04351308 (China): randomized phase 2 in poor responders: MAPI + camrelizumab vs MAPI + apatinib vs MAPI alone. Separates the two drugs' contributions, which is what the report says was never done, but moves them to first line. Status "unknown", no results found. https://mayo.trials.co/clinical-trials-details/-/NCT04351308
+- SARC038, NCT04803877: regorafenib + nivolumab in relapsed osteosarcoma, single arm, compared against historical regorafenib-alone controls (4-month PFS). Active, not recruiting; no results found. https://api.ai-analytics.org/clinical/NCT04803877
+- PEMBROCABOSARC, NCT05182164 (France): pembrolizumab + cabozantinib, includes osteosarcoma; no osteosarcoma results found.
+- IMMUNOSARC (sunitinib + nivolumab, bone sarcomas, Italian/Spanish): published 2024; osteosarcoma cohort details not read. https://iris.unito.it/retrieve/b9ed9024-8873-4a05-a6e6-ded9cf7b3bf2/2024%20-%20Nivolumab%20and%20sunitinib%20in%20bone%20sarcomas.pdf
+- Not found: any trial that selects patients by PD-L1 >=5% or lung-only disease. Chinese registry not directly searched, so a ChiCTR study is possible.
+
+## Gap 12. Lung-directed delivery is almost unexplored in people
+
+**Verdict: PARTLY ADDRESSED IN THE PAST (several human inhaled trials were run 2003-2012); inhaled IL-15 is STILL OPEN in humans.** The report's wording "almost unexplored in people" overstates the gap.
+
+- Inhaled GM-CSF (sargramostim): COG AOST0221, NCT00066365, completed; 43 patients with first lung recurrence of osteosarcoma. Published (Arndt et al., Pediatr Blood Cancer 2010, PMC2989183); no immune effect or benefit shown in lung. https://pmc.ncbi.nlm.nih.gov/articles/PMC2989183
+- Inhaled lipid cisplatin: phase Ib/IIa in recurrent osteosarcoma with lung-only metastases (Transave, NCT00102531; published Chou et al., Pediatr Blood Cancer 2013), and a phase 2 (NCT01650090, Eleison Pharmaceuticals) of ILC to delay lung relapse after metastasectomy. Status of NCT01650090 not confirmed. https://webarchive.library.unt.edu/eot2008/20090813030239/http://clinicaltrials.gov/ct2/show/NCT00102531
+- Aerosol IL-2 (aldesleukin): MD Anderson phase 1/2 in lung metastases including osteosarcoma (JITC 2013 abstract). https://jitc.bmj.com/content/1/Suppl_1/P251
+- Aerosol gemcitabine: preclinical (mouse) work from MD Anderson; no osteosarcoma human result found.
+- Inhaled IL-15: canine phase 1 only (UC Davis, 2022; 50 ug twice daily for 14 days; 1 complete and 1 partial response in 18 dogs). NIH grants (R. Canter, UC Davis) fund mouse work on inhaled IL-15 plus TIGIT blockade. No human trial or NCT number found. https://escholarship.org/uc/item/7d7091vm
+- Regional CAR-T: none found for osteosarcoma. St. Jude 3CAR4OS (B7-H3 CAR-T after first-line chemotherapy) is intravenous. A canine trial at Penn gives B7-H3 CAR-iNKT cells to dogs with lung metastases. https://www.stjude.org/care-treatment/clinical-trials/3car4os-osteosarcoma.html ; https://www.vet.upenn.edu/clinical-trial/cell-therapy-for-metastatic-osteosarcoma/
+
+Reading: the open question is why the 2000s inhaled programmes stopped and whether modern agents (IL-15, ADCs) would do better. That is a sharper gap than "unexplored".
+
+## Untested transfers table
+
+### T1. Pre-treatment biological risk classifier and shared data commons (from INRG)
+
+**Verdict: PARTLY ADDRESSED.** Commons: Osteosarcoma Explorer (573 patients, JCO CCI 2023, PMID 37956387) and PCDC's HIBiSCus bone-tumour consortium exist. Neither is an INRG-style international pooled risk classification. Classifier: the May 2026 npj Precision Oncology "international framework" ranks pretreatment ctDNA as the most mature classifier, LEOPARD prospectively validated baseline ctDNA, and PRONOS (France) combines ctDNA with clinical factors. Not yet used for pre-treatment risk ASSIGNMENT in a trial. https://pediatricsnationwide.org/2026/07/30/international-framework-establishes-path-toward-risk-adapted-osteosarcoma-treatment/ ; https://childrensoncologygroup.org/publications/osteosarcoma-explorer-a-data-commons-with-clinical-genomic-protein-and-tissue-imaging-data-for-osteosarcoma-research/
+
+### T2. External-control approval route for a cheap drug (DFMO model)
+
+**Verdict: ALREADY UNDER WAY, for DFMO itself and for OST-HER2.**
+- NCT07321912, "Eflornithine (DFMO) for Ewing Sarcoma and Osteosarcoma", Penn State Milton S. Hershey Medical Center (the Beat Childhood Cancer consortium that ran the neuroblastoma DFMO trial). Phase 2 basket, five cohorts, about 406 patients, start Apr 2026, recruitment reported open late May 2026. Cohort 3 is osteosarcoma relapsing in the lung after resection of lung metastases, DFMO twice daily for 730 days. Design (single-arm with external control) not confirmed. https://clinicaltrials.gov/study/NCT07321912 ; https://trial.medpath.com/clinical-trial/c4bc274b9b8de98f/nct07321912-eflornithine-dfmo-ewing-sarcoma-osteosarcoma
+- NCT06892678, Montefiore Medical Center, phase 1/2 DFMO maintenance in relapsed/refractory Ewing or osteosarcoma with no evidence of disease after therapy; feasibility primary, EFS secondary; recruiting (NCI-2025-05478). https://clinicaltrials.gov/study/NCT06892678 ; https://www.cancer.gov/clinicaltrials/NCI-2025-05478
+- OST-HER2 is testing the same regulatory route against a pooled historical control (FDA Type C statistical meeting Sept 2026; see gap 1).
+These DFMO trials also bear on gaps 2 and 3: they are new drug trials in the resected-lung-relapse state, but not randomized as far as found.
+
+### T3. Project-directed parent fund plus dedicated early-trial consortium (Band of Parents model)
+
+**Verdict: ALREADY UNDER WAY.** Break Through Cancer's "Defying Osteosarcoma TeamLab" (launched Sept 2025): $15M from patient-driven foundations (including The Osteosarcoma Institute and MIB Agents), over 20 researchers at 8 institutions, early platform trials of ADCs and DNA-damage-response agents, with a canine trial arm (Tufts joined June 2026). Press-release sourced. https://breakthroughcancer.org/2025/09/largest-ever-investment-in-pediatric-osteosarcoma-research/ ; https://now.tufts.edu/2026/06/03/finding-better-answers-patients-deadly-bone-cancer
+
+### T4. GD2 antibody with chemotherapy in GD2-selected patients; GD2 as ADC/radioligand/bispecific handle
+
+**Verdict: STILL OPEN (web-search level).** Current GD2 osteosarcoma trials are still antibody without chemotherapy and without GD2 selection: naxitamab + GM-CSF, MSK, NCT02502786, active not recruiting, estimated completion Jul 2026, no results found; dinutuximab beta maintenance after relapse therapy, NCT05558280 (sponsor Prof. F. Fagioli, Turin; single arm, 22 patients; listed suspended or not yet recruiting). No GD2 ADC, radioligand, bispecific or GD2 CAR-T osteosarcoma trial surfaced. Note that the GD2 >95% expression figure makes "GD2 selection" less useful than "GD2 level" selection. https://ctv.veeva.com/study/humanized-monoclonal-antibody-3f8-hu3f8-with-granulocyte-macrophage-colony-stimulating-factor-gm ; https://clinicaltrials.gov/study/NCT05558280
+
+### T5. Chromosome-end (telomere) maintenance type as a prognostic axis; ATR / ALT-directed trials
+
+**Verdict: PARTLY ADDRESSED.** ALT is reported in up to 50-60% of osteosarcomas (M6620/VX-970 protocol NCT03718091, which enrolled ALT-type tumours including osteosarcoma). Dana-Farber NCT04417062, olaparib + ceralasertib (ATR) in recurrent osteosarcoma, phase 2, recruiting, not ALT-selected. Preclinical: short telomeres predict ATR-inhibitor sensitivity in 17 osteosarcoma lines (UCL). No study linking ALT status to osteosarcoma survival was found, so the PROGNOSTIC axis is still open. https://cdn.clinicaltrials.gov/large-docs/91/NCT03718091/Prot_SAP_000.pdf ; https://trials.co/clinical-trials-details/-/NCT04417062
+
+### T6. Existing IL-1 / IL-6 blockers to prevent lung spread
+
+**Verdict: STILL OPEN.** Only cell-line and mouse data (tocilizumab with anlotinib, Front Oncol 2023; tocilizumab + ladarixin ASCO 2022 abstract; anakinra in mouse tail-vein models). No human trial found. https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2023.1192472/full
+
+### T7. RB1 status (not a BRCA-like score) to select patients for PARP-inhibitor trials
+
+**Verdict: PARTLY ADDRESSED (trial in design, not registered).** A Bone Cancer Research Trust grant (Prof. S. Mittnacht, UCL, 2023) funds an RB1 test and "the design of a clinical trial utilising PARP inhibitors" in osteosarcoma. No registered RB1-selected trial found. The existing PARP trial (NCT04417062, olaparib + ceralasertib) is unselected. https://bcrt.org.uk/news/2023/4099/research-grant-awarded-aimed-at-developing-new-treatment-for-osteosarcoma
+
+### T8. Biomarker-selected retest of IGF1R inhibitors
+
+**Verdict: STILL OPEN.** Nothing after the 2017 Sanger genome study found. Not searched in the Chinese registry.
+
+### T9. Pet-dog trials as a fast, fair test bed
+
+**Verdict: ALREADY DONE AND CONTINUING (a well-used route, not a gap).** NCI's Comparative Oncology Trials Consortium has run osteosarcoma trials for years: COTC021/022 sirolimus (324 dogs, randomized, negative) and COTC030 inhaled IL-15 added to amputation + carboplatin (phase 2, 2025), STOPPED FOR FUTILITY, with DFS and OS worse than historical controls. Break Through Cancer's TeamLab includes canine trials (T3); Penn runs a B7-H3 CAR-iNKT trial in dogs with lung metastases. https://veterinaryoncology.biomedcentral.com/articles/10.1186/s44356-024-00004-1 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC8172450
+
+Addendum to gap 12: the COTC030 futility result weakens the report's case for inhaled IL-15 as a lung-directed lead. Verify the source before relying on it.
+
+### T10. Automated necrosis scoring, validated prospectively
+
+**Verdict: STILL OPEN.** The MSK model (Ho et al., Am J Pathol 2023; 103 cases, 3,134 slides) remains retrospective, single-centre. No prospective or multicentre validation found for 2024-2026. https://emergentmind.com/papers/2208.04910
+

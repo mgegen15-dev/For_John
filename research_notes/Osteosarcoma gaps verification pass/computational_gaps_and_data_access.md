@@ -116,3 +116,51 @@ Rough count: at least 8-10 independent human single-cell cohorts and 3+ human sp
 - Integrated atlas: ALREADY DONE / in progress (three integrations, incl. a >1M-cell cross-species preprint). An independent team should not build another atlas.
 - Reuse audit ("how many papers, which claims replicate"): STILL OPEN, and now more valuable because independent cohorts exist to test the recycled claims against. The report's "17 samples" figure is out of date and should be updated.
 
+## 5. Gap 10 — germline risk, structural variants and non-European cohorts
+
+### 5a. Report figures checked
+- Mirabello et al., JAMA Oncol 2020 (PMID 32191290): 1,244 patients were sequenced. The 28.0% figure (281/1,004) is for the 1,004 patients of European ancestry, compared with 12.1% of controls; TP53 accounts for 4.4%. So BOTH numbers in the report are right: 1,244 is the whole cohort and 1,004 is the European-ancestry subset used for the burden estimate. https://pubmed.ncbi.nlm.nih.gov/32191290/ and https://jamanetwork.com/journals/jamaoncology/fullarticle/2762589 (SEARCH-ONLY). Data came from exome and targeted sequencing, not WGS.
+- The NCI PDQ quotes 18% for autosomal-dominant genes only (a different denominator). https://www.cancer.gov/types/bone/hp/osteosarcoma-treatment-pdq (SEARCH-ONLY)
+
+### 5b. Germline SV-aware work that already exists
+- Gillani R, ... Van Allen EM et al., "Rare germline structural variants increase risk for pediatric solid tumors", Science 2025;387(6729):eadq0071, doi:10.1126/science.adq0071. Germline WGS of 1,765 affected children (Ewing sarcoma, neuroblastoma, osteosarcoma), 943 unaffected parents and 6,665 adult controls. It found 84 large (>1 Mb) unbalanced chromosomal abnormalities linked to risk, 82% inherited; germline SVs explain 1.1-5.6% of liability. The osteosarcoma-specific n and any TP53 intron-1 result were NOT visible in the digests. https://www.science.org/doi/10.1126/science.adq0071 (SEARCH-ONLY)
+- Ribi et al. 2015 (PMC4480712): a germline 445 kb TP53 intron-1 inversion segregating in a 4-generation LFS family; exome and panel tests miss copy-neutral intronic rearrangements.
+- An ongoing long-read (Oxford Nanopore) WGS study of 290 International Sarcoma Kindred Study individuals with suspected LFS who tested negative on short-read sequencing; no yield reported yet. https://nanoporetech.com/resource-centre/improving-diagnosis-in-li-fraumeni-syndrome-using-long-read-whole-genome-and-integrated-multiomic-sequencing-lc26 (SEARCH-ONLY)
+- Fischer et al., "TP53 variant clusters stratify phenotypic diversity in germline carriers and reveal an osteosarcoma-prone subgroup", Nat Commun 2025;16:8546 (5 clusters; a "monomeric" subgroup enriched for osteosarcoma). This covers coding variants only; intron 1 is not addressed. https://www.nature.com/articles/s41467-025-63528-6 (SEARCH-ONLY)
+
+### 5c. Non-European cohorts
+- India: a single-centre paediatric series found germline TP53 P/LP variants in 13% (3/23), which the authors say is higher than Western series. The cohort is very small. https://ecancer.org/en/journal/article/2214-should-all-paediatric-osteosarcoma-patients-be-tested-for-germline-tp53-variants-insights-from-a-single-centre-sarcoma-unit-from-india/pdf (SEARCH-ONLY)
+- No Chinese, Japanese, Latin American or African osteosarcoma germline-prevalence cohort was found in two searches. A related lead not followed up: the Jiang 2022 Shanghai multi-omics cohort (121 patients) probably has matched normals, which would allow a germline call.
+
+### 5d. Verdict, gap 10
+- SV-aware germline analysis: PARTLY ADDRESSED. Gillani 2025 (Science) did germline SV analysis of WGS including osteosarcoma, and a 290-person long-read LFS study is under way. STILL OPEN: an osteosarcoma-specific estimate of how many germline TP53 intron-1 inversions or other SVs are missed by panels.
+- Non-European prevalence: STILL OPEN (one 23-patient Indian series only).
+- Feasibility for an independent team: low with open data. Germline reads are controlled-access everywhere (dbGaP, St. Jude Cloud, Kids First), and the open tier holds somatic data only.
+
+## 6. AI and drug-repurposing analyses in osteosarcoma
+
+### 6a. Already published (all SEARCH-ONLY)
+- Connectivity map / LINCS signature reversal: Andrade RC et al. 2021, "New drug candidates for osteosarcoma: Drug repurposing based on gene expression signature" (Comput Biol Med). It built a 266-gene GEO signature and ran L1000CDS2; top hits were afatinib, BRD-K95196255, DG 041 and CA-074 Me. Computational only, with no in-house validation. https://www.arca.fiocruz.br/handle/icict/48690
+- Cao et al. 2020: L1000 + DGIdb applied to metastasis genes (TLR7 validated, but not the drugs). PMC7434575 (inferred from the search listing)
+- Multi-objective ChEMBL model, Pharmaceuticals 2020;13(11):409, using HOS, MG63, SAOS2 and U2OS; top hits were temsirolimus, sirolimus, everolimus, paclitaxel and cabazitaxel. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7700154/
+- Human and canine comparative drug screen: Parrales et al., PLoS ONE 2018. 13 drugs selective in both species; auranofin led to in vivo work. https://doaj.org/article/fcfb7274e7014e86bedf45880a5e58f5
+- ML on GDSC + PRISM sensitivity applied to 12 paediatric FFPE samples: ESMO Sarcoma 2025 Abstract 85P; validation still pending. https://oncologypro.esmo.org/meeting-resources/esmo-sarcoma-and-rare-cancers-congress-2025/use-of-artificial-intelligence-ai-to-explore-online-gene-expression-profiles-databases-related-to-drug-sensitivity-in-multiple-tumor-cell-lines
+- Anti Cancer Fund review of osteosarcoma repurposing: https://www.anticancerfund.org/en/news/drug-repurposing-source-innovative-therapies-osteosarcoma
+
+### 6b. DepMap dependency work
+- J Transl Med 2022 (s12967-022-03571-9): 785 common-essential genes in DepMap OS lines (CERES < -1 in >75% of lines); LARS validated. https://link.springer.com/doi/10.1186/s12967-022-03571-9
+- RPS28 identified as essential using Chronos (PMC10776981).
+- Paediatric genome-scale CRISPR screen of 82 paediatric lines including osteosarcoma (Dharia et al., Nat Genet 2021; PMC8049517).
+- SMARCAL1 synthetic lethality in ALT+ osteosarcoma: AACR 2024 abstract and bioRxiv 2024.02.01.578345, using 13 DepMap OS lines.
+
+### 6c. Verdict
+PARTLY ADDRESSED. Signature-reversal and DepMap essential-gene analyses exist but are small, single-signature and mostly unvalidated. STILL OPEN and feasible with open data:
+- a systematic, pre-registered repurposing analysis that combines (a) LINCS signature reversal using several signatures (TARGET bulk, the single-cell malignant-cell states, LTA-positive vs LTA-negative if labels are published), (b) DepMap CRISPR selective dependencies, and (c) PRISM/GDSC sensitivity, cross-checked against canine OS lines in the same screens and against the list of drugs already failed in osteosarcoma trials;
+- a DepMap test of whether dependencies differ by copy-number state, for example CDK4/MDM2-amplified vs MYC-amplified vs CCNE1-amplified lines, mapped onto the 2026 SV-hotspot groups.
+Caveat: DepMap has only about 13-20 osteosarcoma lines (exact count to be checked on depmap.org, which was blocked), so statistical power is low and the lines are mostly adult-derived and long-passaged.
+
+## 7. Osteosarcoma funding analyses (NIH RePORTER)
+- No published aggregate analysis of the NIH osteosarcoma portfolio was found in one search. The hits were individual grant records on third-party aggregators (opengrants.io, ai-analytics.org), for example a P50 on antibody-drug conjugates at MD Anderson and an R01 on metastatic colonization at Nationwide Children's. These figures are unverified against RePORTER.
+- api.reporter.nih.gov was blocked from this session (403 on proxy CONNECT), so I could not run a query.
+- Verdict: STILL OPEN (no published portfolio analysis found). Feasibility is high: the RePORTER API is open, needs no key, and returns project text, fiscal year, institute and award amount. NCI's annual "Funding for Research Areas" pages give a disease-level figure only for larger categories, and osteosarcoma is not separately listed there (unverified; check). A small team could build the tracker in days.
+
