@@ -21,7 +21,27 @@ Whole topics were never searched, so silence in this report is not evidence of a
 
 ## Biology and genomics
 
-*Section not written: the append for this section was stopped during writing. The source material is in `osteosarcoma_biology_genomics.md` in the research notes folder.*
+*This section is a short summary; links for every item are in `osteosarcoma_biology_genomics.md` in the research notes folder. Most figures come from abstracts or press coverage and should be checked against the full papers before quoting.*
+
+**Where the tumor starts.** Mouse studies point to a bone-forming cell somewhere between an uncommitted stem cell and an early osteoblast. Deleting Trp53 in committed osteoblasts gives osteosarcoma in about 100% of mice, and the amount of Rb1 lost shifts which tumor types appear. One study argues that earlier cell-of-origin claims may be artifacts of how the mouse tools switch on, and one relevant paper was retracted in February 2026. The question is not settled.
+
+**Growth and risk.** Risk tracks growth. A height genetic score raised risk by about 10% per standard deviation (864 cases, 1,879 controls; Zhang 2018), and high birth weight raised it by about 35% (Mirabello 2011). The notes found no genetic study testing whether the IGF-1 growth pathway itself is causal.
+
+**A shattered genome with one constant.** Osteosarcoma has few recurring point mutations and a great deal of structural damage.
+- TP53 is the only gene consistently altered, and often by rearrangement, not by a small mutation: 55% of TP53 hits were structural in Chen 2014 (34 genomes).
+- Rearrangements in the first intron of TP53 appeared in 16% of osteosarcomas (46 of 288) and in none of 1,090 other tumors (Ribi 2015).
+- A 2025 Cell paper reports a specific shattering-and-amplification mechanism in about half of high-grade tumors, ongoing shattering in subclones in 74%, and that the amount of the genome reduced to one parental copy predicts outcome.
+- A "BRCA-like" DNA-repair signature was reported in 2015, but it rests on exome data and does not line up with mutations in repair genes.
+
+**When the damage happens.** Studies disagree. A 2023 study of 8 patients places the complex rearrangements before diagnosis; the 2025 paper finds shattering still under way. Another study finds metastases seeded by a single clone, with much of the later diversity caused by cisplatin itself, which confounds every study of post-chemotherapy tissue.
+
+**The tumor's surroundings.** Single-cell maps (Zhou 2020: 100,987 cells from 11 patients; a 2024 spatial atlas) show a macrophage-heavy, T-cell-poor environment that chemotherapy pushes further toward immune suppression. Many later "single-cell" papers re-analyse the same public datasets, so apparent replication is partly dataset reuse.
+
+**Subtypes and inherited risk.** Three competing subtype schemes exist, all built largely on the same 86 to 98 samples, and they do not agree. Inherited risk is higher than once thought: 28.0% of 1,244 patients carried a harmful germline variant, against 12.1% of controls (Mirabello 2020), with TP53 at 4.4%. Gene panels cannot see the TP53 intron rearrangements, so the true rate may be higher (hypothesis).
+
+**Models.** Dogs develop osteosarcoma naturally with similar genome complexity (Gardner 2019, 59 dogs), and over 90% die of metastases within two years. No engineered mouse is known to reproduce the 2025 shattering mechanism.
+
+**Drug targets from the biology.** Laboratory work supports dependence on the ATR, CHK1 and WEE1 DNA-damage checkpoints, but one negative result (an ATR plus WEE1 pair failing in a cell line) is rarely cited. CDK4/6, MDM2, YAP/TAZ, Notch, Wnt, ferroptosis and metabolic targets were not searched, so nothing can be said about them here.
 
 ## One step-change in 1986, then forty years of negative trials
 
@@ -100,3 +120,58 @@ Two further questions from the notes concern harm reduction, not cure. Nobody ha
 
 Gaps 1, 7, 8 and 9 stand out for a specific reason: they need no new patients, only existing data and careful work.
 
+## Cross-disease transfers: what failed, what remains untested
+
+Past transfers into osteosarcoma mostly failed, and the failures are instructive. The notes rate every idea in the second table as speculation.
+
+| Transfer already tried | Source field | Outcome in osteosarcoma |
+|---|---|---|
+| GD2 antibody alone | Neuroblastoma | Negative ([AOST1421](https://escholarship.org/content/qt8dx5s3gd/qt8dx5s3gd.pdf)) |
+| Denosumab | Giant-cell tumour of bone | Negative per search summary; source link not saved (verify) |
+| HER2 and gpNMB conjugates | Breast cancer | Reported negative from snippets; notes conflict ([COG](https://childrensoncologygroup.org/publications/pepn1924-a-phase-ii-study-of-trastuzumab-deruxtecan-in-patients-with-recurrent-human-epidermal-growth-factor-receptor-2-osteosarcoma-a-childrens-oncology-group-pediatric-early-phase-clinical-trial/)) |
+| Zoledronate | Bone metastasis care | Trend toward harm ([ASCO Post](https://www.ascopost.com/News/42704)) |
+| PI3K/mTOR matching | Precision oncology | No activity in 6 patients ([PMC9273376](https://pmc.ncbi.nlm.nih.gov/articles/PMC9273376)) |
+| Checkpoint inhibitors | Melanoma, lung cancer | About 5% response ([SARC028](https://classic.clinicaltrials.gov/ct2/show/results/NCT02301039)) |
+
+The common lesson the notes draw is that the presence of a target is not enough. gpNMB was present in 92.5% of samples and still did not predict response. Setting, combination partners and patient selection decided the neuroblastoma successes.
+
+| Untested transfer (hypothesis) | From | Basis in the notes |
+|---|---|---|
+| Pre-treatment biological risk classifier and shared data commons | Neuroblastoma (INRG) | Osteosarcoma has none; loss-of-heterozygosity burden is a candidate feature ([Cohn 2009](https://doi.org/10.1200/JCO.2008.16.6785)) |
+| External-control approval route for a cheap drug | Neuroblastoma (DFMO) | Flat outcomes make osteosarcoma historical controls unusually stable ([TargetedOnc](https://www.targetedonc.com/view/fda-approves-eflornithine-to-reduce-risk-of-relapse-in-high-risk-neuroblastoma)) |
+| Project-directed parent fund plus a dedicated early-trial consortium | Neuroblastoma | Band of Parents model ([history](https://www.bandofparents.org/about/history-of-the-band/)) |
+| GD2 antibody with chemotherapy in GD2-selected patients | Neuroblastoma relapse care | The osteosarcoma trial used neither the combination nor selection ([Mody 2017](https://doi.org/10.1016/S1470-2045(17)30355-8)) |
+| Chromosome-end maintenance type as a prognostic axis | Neuroblastoma | Defines prognosis there ([Ackermann 2018](https://doi.org/10.1126/science.aat6768)); prevalence in osteosarcoma marked "verify" |
+| Existing IL-1 and IL-6 blockers to prevent lung spread | Rheumatology | Mouse data only; endpoint would be metastasis-free survival ([PMC6141177](https://pmc.ncbi.nlm.nih.gov/articles/PMC6141177)) |
+| RB1 status, not a "BRCA-like" score, to select patients for PARP-inhibitor trials | Ovarian and breast cancer | Scores did not track repair-gene changes; model sensitivity followed RB1 loss ([PMC8642453](https://pmc.ncbi.nlm.nih.gov/articles/PMC8642453)) |
+| Biomarker-selected retest of IGF1R inhibitors | Ewing sarcoma experience | Amplified in 14% of 87 tumours ([UCL](https://www.ucl.ac.uk/cancer/news/existing-drugs-could-benefit-patients-bone-cancer-genetic-study-suggests)); unselected ganitumab failed in Ewing ([NCT02306161](https://clinicaltrials.gov/study/NCT02306161)) |
+| Pet-dog trials as a fast, fair test bed | Veterinary oncology | Over 90% of affected dogs die of metastasis within two years ([Gardner 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6642146)); a 324-dog randomized sirolimus trial was negative ([PMC7020630](https://pmc.ncbi.nlm.nih.gov/articles/PMC7020630)) |
+| Automated necrosis scoring, validated prospectively | Digital pathology | Model trained on 103 cases, code released ([arXiv](https://arxiv.org/abs/2208.04910v1)) |
+
+Some popular ideas have very little behind them. Elephant TP53 and LIF6 biology is cell-culture work from largely one lab with no osteosarcoma application found. Repurposed drugs such as disulfiram and ivermectin have only cell-line or mouse data ([PubMed 36503300](https://pubmed.ncbi.nlm.nih.gov/36503300/)), and the notes are explicit that none should be presented as a treatment.
+
+The dog evidence cuts both ways. Canine work drove the HER2 vaccine into human trials and nominated a growth-linked risk locus, GRB10, shared between species ([PMC11402579](https://pmc.ncbi.nlm.nih.gov/articles/PMC11402579)). The notes also record that the canine vaccine comparison relied on conflicting historical controls.
+
+## Where an independent researcher or small team can add real value
+
+The notes identify contribution paths that need data, finance or organising skill instead of a laboratory. I rank them by how directly they answer a need the field itself has named.
+
+**Build the missing benchmark.** The highest-leverage project is a living, standardized evidence map of relapsed-osteosarcoma trials, with a pooled historical-control dataset. FOSTER's own review says heterogeneous designs and absent historical cohorts stop results from being usable ([UCL](https://discovery.ucl.ac.uk/id/eprint/10178055/)). The neuroblastoma eflornithine approval shows what a credible external control can unlock. Extracting eligibility, endpoints and outcomes from published trials is slow, careful work a small team can do, ideally with a FOSTER or COG clinician as adviser so the result is trusted.
+
+**Track the pipeline and the money.** The notes' researchers did not query ClinicalTrials.gov directly and found no public figure for osteosarcoma funding. Two trackers would fill those holes: one of open and completed osteosarcoma trials with outcomes, and one of funding built from NIH RePORTER plus foundation awards. Both are feasible with public data, and the first would also test every "not yet tried" claim in this report.
+
+**Analyse open data.** The notes list open-tier sources (Treehouse, DepMap, cBioPortal-processed data, Osteosarcoma Project releases) as usable without institutional credentials, though that list is marked "verify". Candidate analyses the notes flag as apparently undone: applying the 2025 structural framework to published human and canine genomes, a joint human–dog comparison, and auditing how many single-cell papers reuse the same datasets. Controlled-access data would need a partnership with an academic lab.
+
+**Grow the tissue and data supply.** Directing families to the Osteosarcoma Project increases the scarcest resource. Its funding award targets 3,000 consented patients, and no current count was found ([NIH RePORTER](https://reporter.nih.gov/search/5h7ZK5hRxEOvelcFgGuMBA/project-details/10048560)). Individual results cannot be returned in New York or Canada.
+
+**Fund with structure.** A family fund can back specific projects through existing peer review. MIB Agents awards $100K and $50K grants, and families join review as stakeholders ([Clinical Research News](https://www.clinicalresearchnewsonline.com/news/2025/06/12/mib-agents'-community-of-families-has-awarded-2-5m-in-grants-to-research-pediatric-bone-cancer)). The neuroblastoma lesson is to tie money to a named project at a high-volume centre. Good candidates from the gap table are prospective validation of the released necrosis-scoring model and a canine trial of a cheap candidate drug.
+
+**Apply finance and policy skills.** The voucher programme now faces a mandated government effectiveness review that advocates can feed into, and RACE Act reporting is an active campaign ([Children's Cancer Cause](https://www.childrenscancercause.org/blog/race-act-effectiveness)). Modelling voucher economics for a disease of 800 US cases a year is a concrete analysis that the notes did not find done.
+
+Three cautions apply. Verify first: many "gaps" here will shrink after a registry search and a conversation with a specialist. Do not relay press-reported results to other families as established. And the questions that need randomized trials (gaps 2 to 5) cannot be run by a small team; the realistic role there is to assemble the case and bring it to cooperative groups and funders.
+
+## Conclusion
+
+The notes change the usual framing of osteosarcoma as a disease waiting for a breakthrough drug. The more accurate picture is a field whose measuring instruments are too weak to recognise a moderately good drug when it appears: a benchmark built on 96 patients, single-arm trials judged against a control interval of 10–34%, and a response marker that arrives after the decision it should inform. Neuroblastoma's advantage was less about biology than about habits of shared data, pre-treatment risk groups and steady randomized questions, and those habits are transferable even though its specific drugs mostly were not.
+
+That shifts where effort pays. The B7-H3 and vaccine results will be confirmed or refuted by trials already running, and no outsider can speed that. What an outsider can do is strengthen the instruments: the pooled control dataset, the trial and funding trackers, the re-analysis of data already public, and the case for randomized trials in the resected-lung setting. The first step is unglamorous and necessary. Resolve the four conflicts listed at the top of this report, run the registry searches the notes skipped, and write the biology section this report is missing, before treating any gap here as real.
