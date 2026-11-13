@@ -164,3 +164,31 @@ Addendum to gap 12: the COTC030 futility result weakens the report's case for in
 
 **Verdict: STILL OPEN.** The MSK model (Ho et al., Am J Pathol 2023; 103 cases, 3,134 slides) remains retrospective, single-centre. No prospective or multicentre validation found for 2024-2026. https://emergentmind.com/papers/2208.04910
 
+## Summary of verdicts
+
+All verdicts rest on web-search summaries; no registry was directly queryable. "Still open" means not found by web search only.
+
+| Item | Verdict | Key evidence |
+|---|---|---|
+| Gap 1 pooled relapse control dataset | PARTLY ADDRESSED | FOSTER WP3 BJC 2025 review + framework in development; COG benchmark refresh; Osteosarcoma Explorer; OST-HER2 pooled control at FDA |
+| Gap 2 randomized trial, resected lung mets | PARTLY ADDRESSED | AOST2031 NCT05235165 (randomized surgery, recruiting); OST-HER2 "confirmatory phase 3" announced, control arm unconfirmed |
+| Gap 3 randomized drug after metastasectomy | STILL OPEN (weak) | Only single-arm (PROACH, AOST1421, OST-HER2, DFMO NCT07321912 cohort 3) |
+| Gap 4 adapt therapy on ctDNA/PET | PARTLY ADDRESSED | LEOPARD NCT06068075 validates ctDNA; AOST2032 ctDNA correlatives; npj 2026 framework; no adaptive trial |
+| Gap 5 front-line immune stimulation RCT | UNDER WAY | Sarcome-13/OS2016 NCT03643133 (UNICANCER, randomized mifamurtide, active not recruiting); ZKAB001 NCT04359550 phase 3 (status unknown) |
+| Gap 6 replace 4-month EFS benchmark | PARTLY ADDRESSED | French randomized-PFS proposal (PMC8038261); COG 12-month resected-cohort endpoint; COG kept 4-month EFS |
+| Gap 11 camrelizumab/apatinib follow-up | PARTLY ADDRESSED | MAPAC NCT04351308; SARC038 NCT04803877; PEMBROCABOSARC NCT05182164; no PD-L1/lung-only selection |
+| Gap 12 lung-directed delivery | PARTLY ADDRESSED (past) | Inhaled GM-CSF AOST0221, inhaled lipid cisplatin, aerosol IL-2 trials; inhaled IL-15 no human trial and canine COTC030 futility |
+| T1 risk classifier + commons | PARTLY ADDRESSED | ctDNA framework 2026; Osteosarcoma Explorer; HIBiSCus |
+| T2 external-control route / DFMO | UNDER WAY | NCT07321912 (Penn State, 2026); NCT06892678 (Montefiore); OST-HER2 |
+| T3 parent fund + consortium | UNDER WAY | Break Through Cancer Defying Osteosarcoma TeamLab, $15M (2025) |
+| T4 GD2 + chemo / new GD2 formats | STILL OPEN | Only naxitamab+GM-CSF NCT02502786, dinutuximab beta NCT05558280 |
+| T5 telomere type / ATR | PARTLY ADDRESSED | NCT04417062 olaparib+ceralasertib (unselected); no ALT-prognosis study |
+| T6 IL-1/IL-6 blockers | STILL OPEN | Preclinical only |
+| T7 RB1-selected PARP | PARTLY ADDRESSED | BCRT/UCL grant designing trial; none registered |
+| T8 IGF1R biomarker retest | STILL OPEN | Nothing since 2017 |
+| T9 dog trials | ALREADY DONE / ONGOING | COTC021/022, COTC030 (futility), TeamLab canine arm |
+| T10 prospective necrosis AI | STILL OPEN | Only retrospective MSK model |
+
+Programmes: AOST2032 NCT05691478 recruiting (feasibility closed Sept 2025). FOSTER-CabOS NCT07871864 enrolling, MAINTENANCE vs best supportive care (report mislabels it "at diagnosis"). ARTEMIS-011 NCT06935409 positive PFS (HR about 0.33), presented ESMO Oct 2026, China only, no peer-reviewed paper, OS immature; no global B7-H3 ADC phase 3 found. B7-H3 ADC + checkpoint: ARTEMIS-103 NCT06699576 (HS-20093 + adebrelimab, phase 1b sarcoma, Hansoh).
+
+Skipped items: none.
