@@ -28,4 +28,7 @@ OS has "BRCAness-like" genomic scars, but HRD scores do not track HR-gene mutati
 The denosumab success in giant-cell tumor of bone did not transfer: single-agent denosumab was inactive in recurrent OS despite on-target RANKL inhibition. Ewing IGF-1R trials show that an unselected phase II signal (about 10% response rate) did not survive phase III. Radium-223, approved in prostate cancer, has only phase I OS data.
 
 ### Cited Findings
-- In the COG phase 2 trial of denosumab (120 mg every 4 weeks) in recurrent or refractory OS, only 1 of 15 cohort-1 patients was event-free at 4 months and there were no objective responses. Pharmacokinetics and pharmacodynamics confirmed RANKL blockade. The authors called activity insufficient for further development, while a commentator suggested testing it with backbone chemotherapy. The rationale was RANKL expression in about 68% of OS by IHC, but RANK expression on tumor cells was low [CLIN-EARLY, negative] — [COG](https://childrensoncologygroup.org/publications/a-phase-2-trial-of-rankl-antibody-denosumab-in-two-cohorts-of-patients-with-recurrent
+- Not written in this pass: see Gaps.
+
+### Gaps
+- The findings for this section (denosumab, Ewing IGF-1R, multikinase inhibitors, radiopharmaceuticals) were not saved to this file; the write was interrupted. They are summarised with URLs in the researcher handback message to the coordinator.

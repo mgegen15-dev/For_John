@@ -116,4 +116,10 @@ GD2 antibody in OS failed in AOST1421, which gave it as monotherapy-style mainte
 - Untested or rational transfers (candidate overlooked gaps):
   - GD2-selected chemoimmunotherapy in OS, e.g., dinutuximab or naxitamab with a relapse chemotherapy backbone, mirroring ANBL1221.
   - An NMTRC-style DFMO maintenance trial in OS. ODC1/polyamines are less clearly MYC-linked in OS, though MYC gain at 8q24 is common in OS (verify ODC1 data in OS). No such trial was found.
-  - ALT-directed therapy shared across 
+  - ALT-directed therapy shared across both diseases (ATR inhibitors, which are synthetic-lethal with ALT, and telomere-targeting agents). This is rational given that both NB (ATRX-altered subset) and OS (frequent ALT) depend on ALT, and NB has generated the clearer ALT biology — [Flynn et al., Science 2015 (ATR inhibition kills ALT cells)](https://doi.org/10.1126/science.1257216)
+  - A single externally controlled approval pathway for OS, following the DFMO/Iwilfin precedent, using AOST/EURAMOS historical cohorts.
+  - An INRG-style pretreatment biological risk classifier and data commons for OS (see risk-stratification section).
+
+### Gaps
+- Whether GD2 expression in OS has been systematically quantified (to guide patient selection) was not verified this session.
+- No head-to-head data were found on why GD2 CAR-T underperforms in OS versus NB beyond the microenvironment/exhaustion hypothesis. 
