@@ -187,3 +187,22 @@ Rule of thumb, from general knowledge of dbGaP and confirmed for St. Jude by sea
 | DepMap | CRISPR (Chronos), RNAi, expression, CN, mutations, PRISM drug response, for cell lines | ~13-20 OS lines (to be checked) | OPEN (CC BY 4.0) | nothing | https://depmap.org/broad (site blocked from the shell) |
 | LINCS / CMap (clue.io, L1000CDS2, SigCom LINCS) | drug perturbation signatures | U2OS is a profiled line in L1000 (inferred) | OPEN (clue.io needs a free academic login) | nothing or a free login | not opened |
 
+## 8. Data-access feasibility (part 2: single-cell, canine, funding)
+
+| Resource | Data | n | Access | Needs | Source (SEARCH-ONLY) |
+|---|---|---|---|---|---|
+| GEO human OS single-cell / spatial (GSE152048, GSE162454, GSE198896, GSE234187, GSE250015, GSE299023, GSE293065, ...) | count matrices; some raw FASTQ in SRA | about 8-10 cohorts, roughly 80-120 patients combined | OPEN. Note: several Chinese-origin datasets deposit raw reads in GSA-Human (controlled) and only processed matrices in GEO | nothing for the matrices | section 4 |
+| ICDC OSA01 (Gardner 2019 canine) | WGS (BAM + VCF), WXS, RNA-seq | 59 dogs: WGS 24, WXS 13, RNA-seq 54 | OPEN. "All data in the ICDC are open-access"; BAMs are listed. Download is via the CRDC cloud resources (Seven Bridges Cancer Genomics Cloud), which may charge compute costs; direct download not confirmed | a free CRDC cloud account (NIH login or ORCID-type login; verify) | https://datacommons.cancer.gov/repository/integrated-canine-data-commons ; https://scholars.uthscsa.edu/en/datasets/a-multi-platform-sequencing-analysis-of-canine-appendicular-osteo/ |
+| Other ICDC canine OS studies (e.g. COTC trial-linked samples) | varies | not checked | OPEN | as above | ICDC listing not opened |
+| SRA canine OS (PLoS ONE 2021 multi-platform canine study; Satellite-DNA HiFi preprint, 4 dogs; canine OS cell-line genomes, PMC9469990) | WGS / long-read | small | usually OPEN in SRA (canine data are not human-subject protected); accessions not confirmed | nothing | sections 1c and 5 |
+| GEO canine spatial: GSE299494 (Visium, 14 dogs), GSE295311 (GeoMx, trial-linked) | spatial | 14+ | OPEN | nothing | section 4 |
+| NIH RePORTER API / ExPORTER bulk files | grants, abstracts, amounts, fiscal year, institute | all NIH | OPEN, no key | nothing | api.reporter.nih.gov (blocked from here) |
+
+### 8a. Which gap analyses can be done TODAY with fully open data
+1. Canine LTA/chromothripsis re-analysis (gap 7, the canine half). ICDC OSA01 offers open BAMs for 24 tumour/normal WGS pairs. Run SV and copy-number callers and look for 17p-centred (TP53) translocations with downstream BFB amplification, then compare with the human published rates (48% LTA). Also look at ecDNA with AmpliconArchitect. This is the one genuinely open genomic gap that open data covers in full. Caveats: likely low coverage (to be checked), short reads, and canine TP53 loss may be mostly point mutation + LOH.
+2. Single-cell reuse audit and replication test (gap 9). Count papers by GEO accession (literature mining via Europe PMC full text), then test whether headline claims from the GSE152048/GSE162454-based papers replicate in the independent newer cohorts (GSE299023, GSE234187, GSE250015, GSE198896, GSE293065 spatial), all open as matrices.
+3. Subtype concordance on TARGET-OS open tier (gap 8). Open RNA-seq, methylation and clinical data allow the 2-, 3- and 4-group schemes to be reproduced and cross-tabulated on the same ~85 tumours. A copy-number LOH proxy is possible ONLY if segment files are open; GDC usually makes masked copy-number segments open (verify for TARGET-OS). If so, a crude genome-wide LOH fraction versus survival check is possible, but allele-specific LOH needs BAMs (controlled).
+4. NIH RePORTER osteosarcoma funding tracker (section 7). Fully open.
+5. Multi-source repurposing screen (section 6). DepMap + PRISM + LINCS + TARGET expression are all open. The key limit is the small number of OS lines.
+NOT feasible with open data: SV-aware germline analysis (gap 10), allele-specific LOH validation (gap 8), and re-analysis of human WGS for LTA (gap 7 human half; already done anyway). All need dbGaP, EGA, St. Jude or Genomics England controlled access through an institutional PI.
+
