@@ -57,7 +57,7 @@ Genes with at least 30 osteosarcoma papers, at least 10 with animal data and 10 
 
 | Target | Osteosarcoma papers (animal / patient / dog) | Clinical-stage drugs elsewhere | Osteosarcoma or sarcoma trials | NIH osteosarcoma grants |
 |---|---|---|---|---|
-| MDM2 | 249 (75 / 109 / 4) | Milademetan, brigimadlin, idasanutlin, navtemadlin | None in osteosarcoma; 9 in other sarcomas | None by title |
+| MDM2 | 249 (75 / 109 / 4) | Milademetan, brigimadlin, idasanutlin, navtemadlin | None in osteosarcoma; 9 in other sarcomas | None by title; see the close reading below, which finds a weak rationale |
 | FAK (PTK2) | 105 (46 / 27 / 0) | Defactinib (FDA-approved 2025, ovarian cancer) | None in osteosarcoma; 1 sarcoma trial not yet recruiting | R37, Colorado State |
 | DKK1 | 36 (16 / 12 / 0) | DKN-01 (sirexatamab) | None | R01 Einstein; R21 Texas A&M |
 | Cyclin E1 (CCNE1) | 34 (11 / 20 / 0) | CDK2 inhibitors (BLU-222, INX-315) | None; the one sarcoma-eligible trial was terminated | None |
@@ -70,6 +70,21 @@ Genes with at least 30 osteosarcoma papers, at least 10 with animal data and 10 
 *Trial searches were run on ClinicalTrials.gov by drug name on November 14, 2026. "NIH grants by title" counts focused or substantial osteosarcoma grants naming the gene in the title.*
 
 IL-6 and IL-8 match a gap the research report already named: the IL-1, IL-6 and IL-8 axis that drives lung metastasis in mouse models, which no trial has tested.
+
+## Close reading: do the four strongest orphan targets hold up?
+
+A second pass read every abstract for MDM2, FAK, DKK1 and cyclin E1 (424 papers) and judged consistency, strength, retractions and whether a patient group could be selected. Full notes with PubMed IDs: `research_notes/Osteosarcoma literature map/orphan_targets_close_read.md`.
+
+| Target | Verdict | Best evidence | Biggest problem | Key missing experiment |
+|---|---|---|---|---|
+| **DKK1** | Moderate; most trial-ready | Three different ways of blocking DKK1 (an antibody close to DKN-01, a morpholino, a small molecule) all reduced metastasis and protected bone in mice, including patient-derived tumours grown in bone | Nearly all from one research lineage, never independently replicated; some papers report the opposite direction; no cut-off for "high DKK1" patients | Independent replication with DKN-01 itself, ideally in dogs |
+| **FAK (PTK2)** | Moderate; most immediately actionable | A clinical-stage FAK inhibitor shrank osteosarcoma xenografts when given by mouth; activated FAK is high in 62% of tumours, and a FAK-based marker panel separated chemotherapy responders | Only about 12 of 105 papers actually block FAK; eight papers contradict its role | Defactinib in osteosarcoma models, selected on activated FAK |
+| **Cyclin E1 (CCNE1)** | Weak | High protein in 61% of tumours, the largest patient genomic base of the four | No CDK2 inhibitor has ever been tested in an osteosarcoma model; no abstract gives the amplification frequency a trial would need | Test a CDK2 inhibitor in cyclin-E1-high osteosarcoma models |
+| **MDM2** | Contradictory | One dose of an MDM2 inhibitor caused complete regression in a xenograft | Almost all of it is one cell line (SJSA-1). MDM2 amplification is common in low-grade osteosarcoma, which surgery usually cures, but rare in the aggressive form (about 7% of 83 tumours), and it excludes the TP53 damage most patients have. The NCI pediatric testing program left osteosarcoma models out for this reason | Find the share of high-grade osteosarcoma with MDM2 amplification and intact TP53 |
+
+**What this changes.** MDM2, which looked like the strongest orphan by paper count, is the weakest case for a trial in the patients who need one most. DKK1 and FAK, the two targets NIH already funds, have the best evidence, and **neither has been tested in dogs**, even though one of the funded groups is at a veterinary school. A pet-dog study of DKN-01 or defactinib is the cheapest high-value experiment this map points to.
+
+**Across all four**, nobody has tested the actual clinical drug in osteosarcoma models (only close analogues, and for cyclin E1 not even that), and studies of whether blocking the target prevents metastasis, the thing that kills patients, are rare.
 
 ## Limits
 
