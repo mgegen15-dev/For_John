@@ -149,7 +149,7 @@ Method: for each BioProject, esearch db=sra `<PRJ>[BioProject]` (with and withou
 |---|---|---|---|---|
 | 3 | "Lead 7 of the ranked leads" | WRONG (stale) | Now **lead 11** in `reports/Ranked leads and research partners.md` (lead 7 is now the IL-8 receptor). | Ranked leads l.30 |
 | 7 | SRA holds "743 whole-genome sequencing runs" from canine osteosarcoma projects | CONFIRMED (wording) | The broad query returns 743 **experiments** (747 runs, 39.4 Tbases). The table rows sum to **740**, so 3 come from projects not listed. | SRA E-utilities |
-| 7 | "Instead of 24 genomes ... 743 runs" | OVERSTATED | Unlike units. 743 counts runs, including matched normals, 289 low-coverage cfDNA/blood runs and 209 low-pass tumour-only runs. High-depth tumour-normal WGS is about **55 dogs (PRJNA1374203) + the Gardner 2019 cohort (90 runs) + 8 jaw tumours + a few others**, i.e. roughly 110-160 dogs, not 743 genomes. Still several times the 24 assumed. | SRA |
+| 7 | "Instead of 24 genomes ... 743 runs" | OVERSTATED | Unlike units. 743 counts runs, including matched normals, 289 low-coverage cfDNA/blood runs and 209 low-pass tumour-only runs. High-depth tumour-normal WGS is about **55 dogs (PRJNA1374203) + the Gardner 2019 cohort (90 runs) + 8 jaw tumours + a few others**, i.e. roughly 110 dogs, not 743 genomes. Still several times the 24 assumed. | SRA |
 | 7 | COTC021/022 dogs "were treated in a randomized trial with recorded outcomes" | CONFIRMED | Randomized 324-dog trial of carboplatin +/- sirolimus; no DFI/OS difference | PMID 33753454 |
 | 9 | Loss of heterozygosity predicts outcome "in children" | CONFIRMED (wording) | Genome-wide LOH is "a strong prognostic indicator for high-grade osteosarcoma" in a paediatric **and adult** cohort. Add the citation. | PMID 39814020 |
 | 15 | PRJNA1374203: 110 runs, 17.5 Tb, COTC021/022 | CONFIRMED | 55 tumour/normal pairs, ~66x per run; registered 4 Dec 2025 | SRA; BioProject |
@@ -167,3 +167,64 @@ Method: for each BioProject, esearch db=sra `<PRJ>[BioProject]` (with and withou
 | 33 | $1,000-5,000 compute | UNVERIFIABLE | Labelled as an estimate; reasonable for ~150 high-depth genomes | - |
 | 34 | Outcome data sit with NCI COP / Integrated Canine Data Commons | CONFIRMED (plausible) | | - |
 
+## 4. README.md
+
+Method: every relative link resolved on disk (14/14 exist). External links tested with curl. Most non-NCBI sites are blocked by this workspace's proxy (403 on CONNECT), so those are marked UNVERIFIABLE (blocked), not wrong. DOIs and PMC IDs were checked through PubMed and the Europe PMC REST API.
+
+| Line | Claim | Verdict | Correct wording / note | Source |
+|---|---|---|---|---|
+| 14-28, 82-83 | 14 relative links (12 reports/briefs, LICENSE, LICENSE-CONTENT) | CONFIRMED | All targets exist | filesystem |
+| 7, 28 | Scripts "rebuild every analysis from public data" | OVERSTATED | No script makes the NIH topic table (funding report l.48-60) or the SRA dog-genome counts. Sources also include NCBI SRA and PubTator, which l.7 omits. | tools/ |
+| 72 | Scripts "need only Python 3 and internet access" | WRONG (minor) | `tools/pool_relapse_benchmarks.py` imports **pandas** | tools/ |
+| 72 | `literature_fetch.py` output (~33,000 records) "is not stored here" | CONFIRMED | `data/literature/osteosarcoma_pubtator.jsonl` is in `.gitignore` (33,242 records locally) | .gitignore |
+| 17 | Funding report: osteosarcoma vs neuroblastoma | CONFIRMED | See section 1 for its errors | - |
+| 24 | Lung report: "eight untested ideas, led by IL-1/IL-6 blockade" | CONFIRMED | 8 hypotheses; #1 is IL-1 blockade (IL-6 is supporting) | lung report l.172-179 |
+| 25 | "743 open canine osteosarcoma genome runs" | OVERSTATED | 743 SRA experiments (747 runs), including 289 low-coverage cfDNA and 209 low-pass tumour-only runs. Say "743 open canine osteosarcoma sequencing runs, including about 55 tumour-normal genomes from NCI trials with known outcomes". | SRA |
+| 27 | "the sourced notes behind the report" | STALE (wording) | There are now 11 reports; say "the reports". | - |
+| 36 | FOSTER trial platform NCT07871864 | CONFIRMED | Gustave Roussy sponsor, 530, randomized, recruiting | CT.gov |
+| 36 | FOSTER "supported by the Bone Cancer Research Trust" | UNVERIFIABLE (blocked) | bcrt.org.uk blocked here; check | - |
+| 37 | SARC runs SARC024 and SARC028 | CONFIRMED | SARC024 regorafenib = NCT02048371, sponsor SARC | CT.gov |
+| 38, 46 | NCI COP, ICDC links | UNVERIFIABLE (blocked) | URLs look correct | - |
+| 41 | Osteosarcoma Project (Count Me In) | CONFIRMED | Matches the NIH U2C "Count Me In" grant in the funding CSV | NIH CSV |
+| 50, 52 | Osteosarcoma Institute (Dallas); Break Through Cancer "Defying Osteosarcoma TeamLab funded by family-led foundations" | UNVERIFIABLE (blocked) | Needs a source link | - |
+| 58 | Lagmay et al., JCO 2016, PMC5012712, COG relapse benchmark | CONFIRMED | PMC5012712 = "Outcome of Patients With Recurrent Osteosarcoma Enrolled in Seven Phase II Trials ..." | Europe PMC |
+| 59 | Frontiers in Immunology 2026, 864 trials from a commercial database | CONFIRMED | 864 interventional trials from Trialtrove (to Sept 2025) | Europe PMC, DOI 10.3389/fimmu.2026.1790067 |
+| 60 | Plymouth evidence gap map | UNVERIFIABLE (blocked) | | - |
+| 61 | Espejo Valle-Inclan et al., Cell 2025, doi 10.1016/j.cell.2024.12.005 | CONFIRMED | PMID 39814020 | PubMed |
+| 67 | PubMed, PubTator3, ClinicalTrials.gov, SRA links | CONFIRMED | HTTP 200 | curl |
+| 78 | Citation URL github.com/mgegen15-dev/For_John | CONFIRMED | HTTP 200 | curl |
+
+## 5. Cross-report and stale text
+
+| Where | Text | Verdict | Note |
+|---|---|---|---|
+| Gaps report l.44, l.202 | Funding tracker ranked as a to-do; "found no public figure for osteosarcoma funding" | STALE | The NIH funding report now exists; point to it. |
+| Gaps report l.44 | "re-analysis of the 24 openly available dog genomes (ICDC OSA01)" | STALE | The dog scope report found far more data in SRA; cross-reference it. |
+| Gaps report l.149 | Gap 3 "No randomized test of drug therapy after complete metastasis surgery" | INTERNALLY INCONSISTENT | Same report's l.31 says "Tried once, abandoned" (NCT00752206). |
+| Lung l.175; Dog l.3, l.24 | Lead numbers 1, 6, 7 | STALE | Current ranking: FAK dog study = 4, ctDNA = 8, dog genomes = 11. |
+| Funding l.66 vs l.71 | Dogs' $28M "mainly through two U01s" vs SPORE "excluded" | WRONG | The COP lab dominates the dog total, and a SPORE project is counted. |
+
+## Verdict counts (sections 1-4)
+
+| File | Rows | CONFIRMED | WRONG | OVERSTATED | INTERNALLY INCONSISTENT | UNVERIFIABLE | STALE |
+|---|---|---|---|---|---|---|---|
+| NIH funding | 26 | 17 | 5 | 3 | 0 | 1 | 0 |
+| Lung metastasis | 84 | 65 | 3 | 11 | 4 | 1 | 0 |
+| Dog genomes | 19 | 11 | 4 | 3 | 0 | 1 | 0 |
+| README | 20 | 12 | 1 | 2 | 0 | 4 | 1 |
+| **Total** | **149** | **105** | **13** | **19** | **4** | **7** | **1** |
+
+Plus 5 cross-report rows (3 stale, 1 inconsistent, 1 wrong). The 10 RePORTER spot-checks (amount, year and title) matched 10/10. All 44 lung PMIDs and 21 NCT IDs exist and are on topic.
+
+## Top 10 must-fix
+
+1. **Funding l.21 and `tools/nih_funding_tracker.py` l.64-71: the de-duplication does not work.** It groups by `appl_id`, but each RePORTER subproject has its own appl_id, so parents and subprojects are both kept (26 OS and 28 NB parent-years). Neuroblastoma focused is overstated by $1.03M (FY2025 $30.4M, not $30.8M; decade $226.8M). Group by (fiscal_year, project_num) and re-run.
+2. **Funding l.66: dogs' $28M is "mainly" NCI's in-house Comparative Oncology Program Lab** ($13.6M, a multi-cancer lab in the substantial tier), not two U01s (FY2025 canine U01s = $1.26M).
+3. **Funding l.65: "Most of [genomics] is one in-house NCI project" is wrong.** That project is $20.4M of $53.2M (38%). Count Me In ($16.6M, multi-cancer) and Functional Genomics of Sarcoma ($12.0M) make up most of the rest.
+4. **Funding l.46: K + F training grants total $4.77M, not "under $4M".**
+5. **Funding substantial tier / "focused + substantial" ($183.2M) is padded by multi-disease programs** (Count Me In, Childhood Cancer Data Initiative, Genetic Modifiers of Cancer Risk, COP Lab). Label it an upper bound, or list those programmes. Also put the topic regexes in the tool (README says every analysis is scripted).
+6. **Lung l.7 summary misstates the surveillance RCT.** X-ray was non-inferior to CT, but 6-monthly was **not** shown non-inferior to 3-monthly (as l.122 says). "Cheap chest X-rays every six months did no worse than CT every three" must go.
+7. **Lung l.7, l.102: the saracatinib "19.4 vs 8.6 month difference that nobody followed up" is presented as a lost signal.** p=0.47 with 37 patients; the authors found no apparent drug effect. Put the p-value in the summary and drop "nobody".
+8. **Lung l.7, l.141: "not one of them has ever been tested in an osteosarcoma trial"** should read "none has a registered osteosarcoma efficacy trial on ClinicalTrials.gov". Tocilizumab appears in NCT04616248 (bone sarcoma eligible), plerixafor in NCT03612466 (withdrawn), aspirin in NCT03244020, and other registries were not searched. Also: the dog IL-15 arm was worse than historical amputation + chemo controls, not "than doing nothing", and the paper does not "give IL-6 as the reason".
+9. **Lung citation overreach (one each):** aerosol gemcitabine "in dogs" (the cited PMID 29610563 abstract is mice only); closed ezrin rescue was in zebrafish (41843652); FGFR/pazopanib reversal was with an MCL1 inhibitor (42856637); "FAK inhibition reduced lung metastasis in vivo" is not in 42520958's abstract; the anti-IL-8 antibody "mitigated", not "blocked" (38302407). Also fix the l.39 "68 osteosarcoma papers" vs table 867.
+10. **Dog report: units and stale numbering.** "743 whole-genome runs ... instead of 24 genomes" compares runs (with normals, 289 cfDNA and 209 ~7x tumour-only runs) to dogs. About 110 dogs have high-depth tumour-normal WGS. PRJNA1154710 is mandibular (jaw), not "spine and skull". PRJNA247491 is 16 runs / 0.74 Tb. Lead numbers are stale: dog genomes are now lead 11, ctDNA lead 8, and FAK dog study lead 4 (lung l.175). The same "743 genome runs" wording is in README l.25 and ranked leads l.180.

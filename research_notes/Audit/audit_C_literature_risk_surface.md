@@ -4,7 +4,7 @@
 
 Verdicts: CONFIRMED, WRONG, OVERSTATED, UNVERIFIABLE, INTERNALLY INCONSISTENT.
 
-*(Work in progress; sections appended below.)*
+*Sections: 1 literature map, 1a method spot-checks, 2 risk flags, 2a stale lead numbers, 3 surface targets, 4 cross-report, 5 method critique, Top 10, tally.*
 
 ## 1. `reports/Osteosarcoma literature map.md`
 
@@ -192,3 +192,24 @@ Recomputed from `data/osteosarcoma_surface_target_candidates.csv` (2,434 rows); 
 6. **Retraction is a lagging, censored outcome**: papers from 2020-2026 have had less time to be retracted, so period and gene comparisons are confounded by publication year. Stratify or restrict to 2010-2019 for rates.
 7. **Surface screen validation is partly circular** (analyst-chosen "controls"), with no pre-specified success criterion and no sensitivity analysis shown; three of five leads are sensitive to the vital-tissue choice.
 8. **Multiple comparisons/selection**: the top-25 list is the extreme tail of 2,434 noisy ratios from n=88; ranks below the top ~5 are not stable.
+
+## Top 10 must-fix
+
+1. **MORAb-004/ontuxizumab "results to retrieve" are already published** (Surface 204-206, 326-327; Ranked leads 172). Paediatric phase 1: Norris et al., Pediatr Blood Cancer 2018, PMID 29292843; randomised STS phase 2 negative: Jones et al., Cancer 2019, PMID 31034598. Rewrite the CD248 lead and drop it from "unreported trials".
+2. **MRC2 "no drug programme anywhere" is false** (Surface 210-212). An Endo180/MRC2 ADC *for sarcoma* is published (Evans et al., Mol Cancer Ther 2023, PMID 36399638), plus uPARAP-ADC work since 2017 (PMID 28574834).
+3. **"PubMed lists 455 retracted ... 418 in this dataset"** (Lit map 28): the file has duplicate PMIDs; PubMed lists 418 and all are in the dataset.
+4. **The "template" does not identify higher-risk papers better than "ncRNA" alone** (Risk 13-20): non-template ncRNA papers are retracted at 8.7% vs 8.6% for template. Recast the flag or state this; fix the definition text (code uses "no mention of patients", not "only cell-line work").
+5. **PubTator mis-normalisations reach headline lists**: PTK2B (high-risk, 7 retractions) is really "protein kinase B"/AKT; H3P16 is "p21"; TRP53-PS, SLTM (MET), TXK, COX2 (PTGS2), PGP (ABCB1) are among the 79 "orphans"; TENM1 is "TNM". Remove or relabel, and strengthen Lit map line 91.
+6. **Weak-evidence gene list double-counts** (Lit map 30): 11 genes meet "60% either cell-only or ncRNA", not 20; BCL2, PTEN, CDK6, etc. do not.
+7. **LRRC15 and PTK7 trial status overstated** (Surface 17-19, 22-23, 160-161, 190, 324; Ranked leads 113-114): only ZL-6201 is recruiting (SOT106 and LNTH-2403 not yet recruiting); three, not four, PTK7 ADCs are active (NCT03243331 completed).
+8. **Period table does not reproduce** (Lit map 19-24): 2005-09, 2010-14 and 2025-26 rows differ from the data (e.g. 2025-26: 2,206 / 158 / 289, not 2,366 / 167 / 308), apparently from a pre-deduplication run. Also "ninefold" should be "8.4-fold".
+9. **DKK1 and cyclin E1 retraction arguments are unsupported** (Risk 44, 48, 54-55): DKK1's two retractions are a convallatoxin paper and a CKAP4 network map; cyclin E1's three are papers on other genes using it as a read-out. Plus stale lead numbers on Risk lines 3, 53, 55. Also add the missing IL-6/IL-8 NIH K08 grant (K08CA201638) to the orphan table (Lit map 65, 67).
+10. **Surface report framing contradicts the rest of the project and the registry** (Surface 10-12, 31-32, 78-84, 136): TKIs and PD-1, not antibodies to eight antigens, dominate trials; no registered OS trial found for IL11RA, ALPL or EPHA2; ITGA4 had an osteosarcoma natalizumab trial (NCT03811886, withdrawn) and SMO a vismodegib trial (NCT01154452), so neither is "not already in osteosarcoma trials". Also fix Lit map 87 (stale vs line 85) and the defactinib approval wording (co-pack with avutometinib, accelerated approval, KRAS-mutated LGSOC).
+
+## Tally of verdicts (rows in the tables above)
+
+Counted over all audit tables (a row with a split verdict such as "CONFIRMED / OVERSTATED" counts under each): **CONFIRMED 72, WRONG 20, OVERSTATED 26, INTERNALLY INCONSISTENT 6, UNVERIFIABLE 4** (plus 2 rows marked CONSISTENT for reconciliations).
+
+Not done: TARGET-OS medians could not be re-downloaded from GDC independently; they were recomputed from the repo's cached GDC STAR files (7 genes, all match). DepMap was not attempted. No report was edited and git was not run.
+
+Scripts used (outside the repo): `/tmp/claude-0/-home-user/f08cabaf-a7e0-5ade-8af3-ad70aa01bfdf/scratchpad/audit/` (s1-s7.py, ct.py).
