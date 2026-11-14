@@ -1,1 +1,10 @@
 setting,nct_id,trial,agent,arm,measure,time_frame,n,events_or_value,percent,ci_low,ci_high,source_note
+measurable relapse,,COG pooled 7 phase 2 (Lagmay 2016),"pooled: docetaxel, topotecan, irinotecan, rebeccamycin, imatinib, oxaliplatin, ixabepilone",all eligible osteosarcoma patients,event-free survival (KM),4 months,96,,12,6,19,"Lagmay JCO 2016 PMID 27400942 doi:10.1200/JCO.2015.65.5381; full text (PMC5012712 Table 2, Results)"
+measurable relapse,,CCG-0962,docetaxel,osteosarcoma stratum,event-free survival (KM),4 months,22,,23,,,Lagmay 2016 PMID 27400942 Table 2 (EFS 0.23); 2/21 radiographic responses (Table 1); full text
+measurable relapse,,COG A09713,topotecan (21-day continuous infusion),osteosarcoma stratum,event-free survival (KM),4 months,11,,0,,,Lagmay 2016 PMID 27400942 Table 2: no patient followed event-free to 4 months (all 11 relapsed); 0/11 responses; full text
+measurable relapse,,POG P9761,irinotecan,osteosarcoma stratum,event-free survival (KM),4 months,10,,0,,,Lagmay 2016 PMID 27400942 Table 2: no patient followed event-free to 4 months; 0/9 responses; full text
+measurable relapse,,COG P9963,rebeccamycin analog,osteosarcoma stratum,event-free survival (KM),4 months,17,,6,,,Lagmay 2016 PMID 27400942 Table 2 (EFS 0.06); 0/16 responses; full text
+measurable relapse,,COG ADVL0122,imatinib,osteosarcoma stratum,event-free survival (KM),4 months,12,,0,,,"Lagmay 2016 PMID 27400942 Table 2: no patient followed event-free to 4 months (8 relapse, 4 deaths); 0/10 responses; full text"
+measurable relapse,,COG ADVL0421,oxaliplatin,osteosarcoma stratum,event-free survival (KM),4 months,13,,31,,,Lagmay 2016 PMID 27400942 Table 2 (EFS 0.31); 2 pts event-free at 8 and 46 months; 0/10 responses; full text
+measurable relapse,,COG ADVL0524,ixabepilone,osteosarcoma stratum,event-free survival (KM),4 months,11,,9,,,Lagmay 2016 PMID 27400942 Table 2 (EFS 0.09); 0/10 responses; full text
+resected relapse,,COG AOST0221,aerosolized GM-CSF,"first isolated pulmonary recurrence, resected",event-free survival (KM),12 months,42,,20,10,34,"Lagmay 2016 PMID 27400942 (Results, Fig 2); historical resected-relapse benchmark; full text"
