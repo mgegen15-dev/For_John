@@ -26,7 +26,7 @@ Each lead is scored 1 to 3 on four things, for a total out of 12:
 | 9 | Publish a paper-mill risk flag for osteosarcoma genes | 3 | 3 | 3 | 1 | **10, but indirect** |
 | 10 | Test a CDK2 inhibitor in cyclin-E1-high models | 1 | 3 | 2 | 2 | **8** |
 
-Leads 1 to 4 tie on score. They are ordered by which most directly tests a new treatment, and lead 9 is placed last among the top scores because it helps patients only indirectly, by protecting other research from bad evidence.
+Leads 1, 2 and 4 tie on score, ordered by which most directly tests a new treatment; lead 3 dropped a point after its first pass found three of the "missing" trials already published. Lead 9 is placed last among the top scores because it helps patients only indirectly, by protecting other research from bad evidence.
 
 **Deliberately dropped: MDM2 inhibitors.** MDM2 looked like the strongest untested target by paper count, but the close reading found the evidence rests on one cell line, and MDM2 amplification is common only in low-grade osteosarcoma that surgery usually cures. That negative result is worth stating plainly so others don't chase it.
 
