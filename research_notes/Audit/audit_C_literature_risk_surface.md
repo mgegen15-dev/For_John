@@ -160,3 +160,35 @@ Recomputed from `data/osteosarcoma_surface_target_candidates.csv` (2,434 rows); 
 | 293-295 | Literature "n/a" means fewer than five | CONFIRMED | | tools/literature_map.py |
 | 310-314 | GTEx pinned to v8 | CONFIRMED | Live `gtex_v8` medians match the CSV exactly for 6 genes. | GTEx API |
 | 320-321 | "This is the step that converts the whole exercise from a hypothesis to evidence" | note | Fine as opinion; note Evans et al. 2023 already reported MRC2 IHC in 625 soft-tissue sarcomas and higher expression in bone sarcomas. | PubMed 36399638 |
+
+### 2a. Stale cross-references in the risk report (checked against `reports/Ranked leads and research partners.md`)
+
+| Line | Claim | Verdict | Correct wording / note | Source |
+|---|---|---|---|---|
+| 3 | "Lead 9 of the ranked leads" | WRONG (stale) | Lead 9 is now "Add metastasis to an existing aspirin-versus-blood-thinner trial". The evidence-risk flag is not a numbered lead in the current ranking. | Ranked leads, lines 20-30 |
+| 53 | "strengthens leads 1 and 8" (FAK and IL-6) | WRONG (stale) | Lead 1 = IL-1/IL-6 blockade (correct); FAK is in **lead 4** (pet-dog FAK/DKK1 study); lead 8 is ctDNA-adapted treatment. | Ranked leads, lines 20-27 |
+| 55 | "which is why lead 10 is a cheap laboratory test" (cyclin E1) | WRONG (stale) | Lead 10 is "Chase the remaining unreported trials"; cyclin E1 is no longer a ranked lead. | Ranked leads, line 29 |
+
+### 4. Numbers that differ between reports, and propagated errors
+
+| Where | Claim | Verdict | Note |
+|---|---|---|---|
+| Lit map 10 vs Risk 17-18 | 8.7% vs 1.0% (ncRNA vs other) vs 8.6% vs 1.8% (template vs other) | INTERNALLY INCONSISTENT (presentation) | Both correct for their definitions; use one comparison across the project, preferably ncRNA vs non-ncRNA, and state the 8.4x ratio. |
+| Lit map 28 vs Risk 18 | 418 retracted vs 96 + 315 = 411 | CONSISTENT | 411 = non-review retractions since 2010; add a one-line reconciliation. |
+| Lit map 28 | "455 retracted" | WRONG | 418 unique; propagated from a duplicated PMID file. |
+| Ranked leads 113-114 | "drug companies have just opened two sarcoma trials"; "four antibody-drug conjugates are already in early trials" | WRONG (propagated) | Same errors as surface report lines 17-19, 22, 190: one LRRC15 trial recruiting, one not yet; three active PTK7 ADCs. |
+| Ranked leads 172 | MORAb-004 paediatric trial listed as unreported/"completed" | WRONG (propagated) | Published 2018 (PMID 29292843). |
+| Surface 10-12 vs Lit map 9 | "almost every new drug is an antibody/ADC/CAR-T at eight antigens" vs "most-trialled targets are blood-vessel receptors hit by multi-kinase pills" | INTERNALLY INCONSISTENT | See surface line 10. |
+| Lit map 87 vs Lit map 85 / Ranked leads 23 | "nobody has tested the actual clinical drug" vs "defactinib has already been given to dogs" | INTERNALLY INCONSISTENT | Line 87 is stale. |
+| Surface 60-62 vs Lit map | Surface report takes literature depth from `gene_evidence.csv`, which inherits all PubTator and regex issues above | note | e.g. CD248 has 8 papers in the table, 0 with "patient" tags. |
+
+### 5. Method weaknesses a statistician would raise
+
+1. **No uncertainty anywhere in the literature reports.** Retraction rates, template shares and per-gene flags are given as point values; per-gene flags with 15-40 papers flip with a single retraction (cyclin E1: 3/33).
+2. **The "template" adds no information beyond "ncRNA"** (8.6% vs 8.7% retraction), and its patient/cell-line components are mis-measured (29% of template papers report patient tissue; any use of the word "patients" removes a paper from the template).
+3. **Additive percentages** (`pct_cell_only + pct_ncrna`) used where a union was described, nearly doubling the weak-evidence list (20 named vs 11 true).
+4. **Corpus definition**: `osteosarcoma[tiab]` captures every paper that used U2OS/Saos-2/MG-63 as a tool; 25% of non-review papers do not mention osteosarcoma, OS, sarcoma or bone in the title. Gene "osteosarcoma paper" counts and cell-only shares are inflated by these.
+5. **Gene-mention counts compared with drug-trial counts** (the "trials follow drugs, not biology" headline) ignore the drug-name literature; the comparison is not like-for-like.
+6. **Retraction is a lagging, censored outcome**: papers from 2020-2026 have had less time to be retracted, so period and gene comparisons are confounded by publication year. Stratify or restrict to 2010-2019 for rates.
+7. **Surface screen validation is partly circular** (analyst-chosen "controls"), with no pre-specified success criterion and no sensitivity analysis shown; three of five leads are sensitive to the vital-tissue choice.
+8. **Multiple comparisons/selection**: the top-25 list is the extreme tail of 2,434 noisy ratios from n=88; ranks below the top ~5 are not stable.
