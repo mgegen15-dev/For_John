@@ -293,3 +293,183 @@ FINDING. 467 single-cell/spatial papers, 169 metastasis-focused, **27 with in vi
   subpopulations and macrophage-driven metastasis (title-level).
 FINDING. Canine: 498 dog+metastasis papers, 137 with in vivo metastasis endpoints. Dogs carry the
 only naturally occurring, spontaneously metastasising, immunocompetent osteosarcoma at scale.
+
+## 3. Clinical: every trial aimed at lung metastasis or the resected-metastasis setting
+
+Own cross-check of `data/osteosarcoma_trials.csv` (758 studies): **224** mention lung/metastasis/
+inhaled terms; **73** are explicitly lung-directed or lung-local. Plus ClinicalTrials.gov API v2
+searches run 2026-11-14 (`tools/lung_metastasis_map.py` writes `data/lung_metastasis_trials.csv`).
+
+### 3a. Lung-directed delivery (inhaled / aerosol) — the longest-running idea in the field
+
+| Agent | Trial / paper | n | Result |
+|---|---|---|---|
+| Inhaled GM-CSF (sargramostim) | NCT00066365, COG; **PMID 20576718** | 43 eligible | Doses 250–1,750 ug BID feasible, no DLT. **3-year EFS 7.8%, OS 35.4%.** Fas/FasL scores *fell* after treatment (1.3/0.88 pre vs 0.78/0.62 post); only 11/30 nodules CD1a+, 4/30 S100+, 6/30 clusterin+. Conclusion: "no detectable immunostimulatory effect in pulmonary metastases or improved outcome postrelapse" |
+| Inhaled lipid cisplatin (ILC) | NCT00102531 ph1b/2a; **PMID 23255417** | 19 treated | No haematologic/renal/oto toxicity; minimal systemic cisplatin. **11/19 had bulky disease and all progressed before cycle 7.** Of 8 with all lesions <=2 cm: 1 sustained PR, 2 stable then metastasectomy and pulmonary-recurrence-free at 1 year. "3 of 8 with less bulky disease had sustained benefit" |
+| Inhaled lipid cisplatin, phase 2 | **NCT01650090** (Eleison), completed Nov 2018, n=28, primary outcome "observed relapse-free interval vs historical controls" | 28 | **No results posted, no publication found** (Europe PMC search 2026-11-14). A registered CT.gov search found **no phase 3 of ILC in osteosarcoma**. |
+| Aerosol IL-2 (aldesleukin) | **NCT01590069**, MD Anderson, phase 1/2, started 2012-06-28, estimated n=70, completion pushed to **2029-04-30**, last update 2026-10-09 | — | **ACTIVE_NOT_RECRUITING, no results after 14 years.** Preclinical basis: PMID 24136885 and 24610870 — aerosol IL-2 raised NK numbers *only in lung*, no systemic toxicity, and aerosol IL-2 + NK cells beat either alone on tumour number/size/apoptosis and survival |
+| Aerosol gemcitabine | **NCT03093909** (MD Anderson), phase 1, recruiting since 2017-11, n=44, no results | — | Preclinical: PMID 15800950 (inhibits primary OS and lung metastases), 19803732 (safe + active in OS-bearing **dogs**), **29610563** (aerosol GCB started 48 h after amputation inhibited lung metastases and did **not** impair wound healing in skin, tail or bone) |
+| Inhaled rhIL-15 (dogs) | **PMID 35680383**, phase 1, 21 dogs, 18 evaluable | 18 | MTD 50 ug BID x14 d. **1 CR >1 year, 1 PR, 5 SD = clinical benefit rate 39%.** Low pretreatment lymphocyte count predicted benefit; PBMC cytotoxicity rise correlated with OS |
+| Inhaled rhIL-15, adjuvant (dogs) | **PMID 41209004**, NCI-COTC030 **phase 2**, planned 40 dogs | — | Designed to cut metastatic failure from a historical 40% to 20%. **DFS and OS were statistically INFERIOR to a validated historical control and the trial was halted for futility.** PBMC cytotoxicity fell after surgery and after chemotherapy (−18.2 +- 16.1%, p<0.001); IL-6 rose after amputation and after chemotherapy, correlating with falling cytotoxicity |
+| Inhaled rhIL-15 + doxorubicin preconditioning (dogs) | **PMID 41041167**, 10 dogs, 8 evaluable | 8 | 1 CR >1 yr, 2 SD: **CBR 30%, ORR 10%**. Doxorubicin lymphodepletion did **not** improve on monotherapy |
+| BIO-11006 (inhaled, MARCKS) | **NCT04183062** | 0 | WITHDRAWN — "the drug for this study was not available" |
+
+FINDING, and it is the most important negative result I found: **PMID 41209004** shows that giving
+an immune-stimulating inhaled drug *in the adjuvant window right after amputation* made dogs do
+**worse** than historical controls, and the correlative data say why — surgery and chemotherapy each
+suppress PBMC cytotoxicity and raise IL-6.
+HYPOTHESIS: the post-surgical window is immunosuppressed *and* IL-6-high, which is exactly the
+state that PMID 30135299 and 40882022 say favours lung colonization. Immune stimulation there may
+be the wrong move; **IL-6 / IL-1 blockade there may be the right one.** This is a testable,
+mechanism-linked prediction that nobody appears to have tried, and it unifies three separate
+findings in this file.
+
+### 3b. The resected-lung-metastasis setting
+
+| Agent | Trial | Design | n | Result |
+|---|---|---|---|---|
+| Inhaled GM-CSF | NCT00066365 (COG) | single arm, after thoracotomy | 43 | 3-yr EFS 7.8% (PMID 20576718) |
+| **Saracatinib (SRC inhibitor)** | **NCT00752206** (SARC) | **randomized, double-blind, PLACEBO-CONTROLLED, phase 2.5**, randomized within 6 weeks of complete resection of all lung nodules, 175 mg/day up to thirteen 28-day cycles | 38 randomized, 37 analysed (18 vs 19) | **Median PFS 19.4 mo (saracatinib) vs 8.6 mo (placebo), p=0.47**; median OS not reached in either arm. **TERMINATED: "DSMB recommended study termination for slow accrual and futility."** Ran 2009-03 to 2017-12 — **8.75 years for 38 patients.** (registry + **PMID 32398945**, Sarcoma 2020, open access) |
+| Dinutuximab + GM-CSF | NCT02484443 (COG AOST1421) | single arm | 39 | 28% EFS at 12 mo (11/39), below the required 16 — see `reports/Osteosarcoma pooled control dataset.md` |
+| Denosumab | NCT02470091 (COG AOST1321) cohort 2 | single arm | 38 | 26% EFS at 12 mo (10/38) — same source |
+| **OST-HER2 / OST31-164** (Listeria-HER2 vaccine) | **NCT04974008**, Emerald Clinical, phase 2, **ACTIVE_NOT_RECRUITING**, started 2021-10-21, primary outcome **event-free survival** | 39 | Press-reported 3-yr OS 72.7% vs 45.8% historical (see gaps report); **no peer-reviewed publication found**. Registry has **no posted results** |
+| **Viscum album extract (Iscador P, mistletoe)** | **NCT05726383** "MISTOSUS", phase 2, recruiting since 2024-05, n=32; **PMID 41789811** (Future Oncol 2026, OA) | 32 planned | Not yet reported. Rationale: pilot of **9** PAYA patients, **55% post-relapse EFS** at median 84 months follow-up. Stated benchmark: 30% PREFS-12 |
+| Thoracotomy vs VATS | **NCT05235165 = COG AOST2031**, phase 3 randomized, recruiting since 2022-04-01, completion 2031-03-31, n=62 estimated; design paper **PMID 36085388** | 62 | Primary outcome **4-year thoracic event-free survival**. Randomizes the *surgical approach*, not a drug |
+| Metastasectomy + pre-op immunotherapy + SBRT | NCT06114225 (Ruijin), phase 2 single arm, n=43, recruiting | 43 | Primary outcome 12-month PFS rate. No results |
+| Anti-angiogenics + chemo, resectable pulmonary mets | NCT03742193, phase 2, n=43, **status UNKNOWN** since 2019-08 | 43 | No results |
+| Canine ADXS31-164 (same vaccine as OST-HER2) | **PMID 39955616** (Mol Ther 2025) | **1-arm, multicentre, 118 dogs**, SOC then vaccine | 118 | **No significant difference in median DFI or OS vs a historical SOC cohort.** "Elite survivors" (DFI >490 d) had transient temperature and IL-6/TNF-alpha rises and robust PBMC cytotoxicity; short-term survivors caught up on repeat dosing |
+
+FINDING / CORRECTION to the earlier gaps report. `reports/Osteosarcoma and neuroblastoma research
+gaps.md` lists as gap 3 "No randomized test of drug therapy after complete metastasis surgery —
+only single-arm trials found." **That is not accurate.** NCT00752206 / PMID 32398945 was exactly
+that trial: randomized, double-blind, placebo-controlled, drug after complete pulmonary
+metastasectomy. The real finding is worse than "never tried": it **was** tried, it took almost nine
+years to randomize 38 patients, it was stopped for slow accrual and futility, and it left a
+**10.8-month median PFS difference (19.4 vs 8.6) with p=0.47** that nobody has followed up.
+HYPOTHESIS: the binding constraint in this setting is **accrual, not willingness to randomize**.
+Any new proposal has to solve 38-patients-in-9-years, which means either an international platform
+(FOSTER NCT07871864, 530 patients, randomized, recruiting) or pet dogs.
+
+FINDING. The canine ADXS31-164 result (**PMID 39955616**, 118 dogs, no DFI/OS benefit vs historical
+control) sits awkwardly beside the press-reported human OST-HER2 benefit against a historical
+control. Both are single-arm against historical controls; the larger, peer-reviewed one is negative.
+
+### 3c. Radiotherapy / SBRT to lung metastases
+
+FINDING. **PMID 41531260** (Pediatr Blood Cancer 2026): 24 patients, 71 lesions, 2015–2023; median
+40 Gy/5 fractions; **1-year cumulative local failure 13.6% (95% CI 6.6–23.2)**, 6-month 10.3%
+(4.5–18.9). 11 local failures: 4 in-field, 3 marginal, 4 out-of-field. Spine SBRT (HR 3.39,
+1.03–11.14) and larger PTV (HR 1.003 per unit, 1.001–1.006) predicted failure. 6- and 12-month OS
+87.5% and 64.1%. Grade 2 acute toxicity 5.6%, no acute grade >=3. Only **17% of lesions were
+parenchymal** (66% osseous).
+FINDING. **PMID 40509558** (Pediatr Blood Cancer 2025): 7 patients, 34 SBRT courses, 29% of sites
+pulmonary/mediastinal. Local control 88% of lesions; **all 4 local failures had BED <=48 Gy**;
+**median distant PFS 2.4 months.**
+HYPOTHESIS: SBRT controls what it irradiates and does nothing about what it does not — distant PFS
+of 2.4 months is the whole problem in one number. SBRT is therefore a *local* tool that needs a
+systemic partner, which is what NCT06492954 (atezolizumab + SBRT + surgery) and NCT06114225 test.
+Registry trials found: NCT02880319 (SBRT oligometastatic bone, n=150, has results), NCT02581384
+(SBRT pulmonary mets in Ewing/RMS/osteosarcoma, **TERMINATED after 5 patients**), NCT01586104
+(IMRT for lung metastases in younger patients, n=20, has results), NCT06074692 (PARP + SBRT +
+immunotherapy, recruiting), NCT06492954 (atezolizumab + SBRT + surgery, phase 1, n=12).
+
+### 3d. Regional / organ-directed delivery beyond inhalation (rarely discussed)
+
+FINDING, from own trial-file scan: two surgical-delivery programmes exist and are almost absent
+from osteosarcoma reviews:
+- **NCT02811523** "In Vivo Lung Perfusion for Pulmonary Metastases of Sarcoma", phase 1, recruiting since 2016-02, n=17.
+- **NCT03965234** "Pulmonary Suffusion in Controlling Minimal Residual Disease in Patients With Sarcoma or Colorectal Metastases", phase 1/2, recruiting since 2020-07, n=99. Preliminary phase 1 safety/drug analyses: **PMID 40940977** (Cancers 2025).
+HYPOTHESIS: pulmonary suffusion explicitly targets **minimal residual disease in the lung**, which
+is the dormancy state nothing else addresses. It deserves far more attention than it gets.
+
+### 3e. Maintenance after resection (lung-relevant but not lung-directed)
+
+Registry, own search: regorafenib maintenance **NCT04055220** (randomized, n=168) and **NCT04698785**
+(n=36); cabozantinib maintenance **NCT05135975** (n=86) and **NCT06341712** (randomized cabozantinib+BSC
+vs BSC, **TERMINATED after 10 patients**, has results — "the sponsor has decided to terminate");
+metformin maintenance **NCT04758000** (n=67); DFMO maintenance **NCT06892678** (n=15) and **NCT07321912**
+(n=406); ZKAB001 PD-L1 maintenance phase 3 **NCT04359550** (n=362, status UNKNOWN, no results —
+already flagged as a lost trial in the earlier reports); pazopanib maintenance within **NCT06239272**
+(NRSTS2021); FOSTER platform **NCT07871864** (phase 3, randomized, n=530, recruiting from 2026-10).
+
+## 4. Detection: does finding lung relapse earlier help?
+
+FINDING. **PMID 24249538** (Clin Orthop Relat Res 2014, Tata Memorial, open abstract): prospective
+randomized **noninferiority** trial, **500 non-metastatic extremity sarcoma patients**, 2006–2010,
+2x2 of **chest radiograph vs CT** and **3-monthly vs 6-monthly** follow-up; 178 deaths; median
+follow-up 42 months. 3-year OS/DFS overall 67% / 52%. **Chest radiograph 67% vs CT 66% 3-year OS**
+(HR 0.9, upper 90% CI 1.13); DFS 54% vs 49% (HR 0.82, upper 90% CI 0.97). **6-monthly 64% vs
+3-monthly 69% OS** (HR 1.2, upper 90% CI 1.47); DFS 51% vs 52%. ~90% of local recurrences were
+found by patients themselves. Conclusion: "inexpensive imaging detects the vast majority of
+recurrent disease ... without deleterious effects on eventual outcomes", though noninferiority of
+6-monthly on OS was **not conclusively demonstrated**.
+  LIMIT: "extremity sarcomas" — the abstract does not break down histology, and I could not retrieve
+  the full text (PMC blocked a captcha, europepmc.org host not reachable from this workspace), so
+  **the osteosarcoma fraction of those 500 patients is unverified.** Treat as sarcoma-wide evidence.
+
+FINDING. **PMID 38345039** (Pediatr Hematol Oncol 2024): 69 patients (35 osteosarcoma, 34 Ewing),
+**1,279 follow-up images**. 9 relapses: 5 in osteosarcoma (4 pulmonary, 1 local). **Only 2 of 9
+relapses were symptomatic; the rest were found on imaging.** Positive predictive value for relapse
+0.5 in osteosarcoma, 0.44 in Ewing. Probability of *any* anomaly 6% (95% CI 4–8) in osteosarcoma
+and 12% (10–15) in Ewing (Ewing patients were followed with MRI, osteosarcoma mostly with X-rays).
+"Abnormal findings on follow-up images rarely represent relapse."
+
+FINDING. No randomized surveillance trial in osteosarcoma is registered. The two randomized
+surveillance trials I found are **soft tissue sarcoma only**: **NCT04751409** (MD Anderson, limited
+vs intense follow-up, n=227, recruiting since 2020-12 — and its **primary outcome is fear of cancer
+recurrence**, not survival) and **NCT06526897** (ECOG-ACRIN, **phase 3 chest CT vs chest X-ray**,
+n=1,582, primary outcome overall survival, NOT_YET_RECRUITING, completion 2032-11).
+
+### ctDNA / liquid biopsy
+
+FINDING. 98 ctDNA/liquid-biopsy papers in 33,242; 57 metastasis-focused; 13 with an in vivo
+metastasis endpoint (own counts).
+- **PMID 39360936** (Clin Cancer Res 2024, National Pediatric Cancer Foundation): phase 2
+  gemcitabine + nab-paclitaxel in recurrent osteosarcoma, 18 patients, **PFS-4 28% (95% CI 13–59%)**,
+  2/18 confirmed PR. Serial CTC and ctDNA by ultralow-pass WGS was **feasible**; all 18 had
+  detectable CTCs, 10 had detectable ctDNA; **all 8 patients with MYC amplification at entry
+  progressed.** This is the only prospective multi-institution osteosarcoma trial I found with
+  serial liquid biopsy embedded.
+- **PMID 41673231** (NPJ Precis Oncol 2026): **5-hydroxymethylcytosine** in plasma cfDNA; 262-gene
+  signature; in validation, cluster 1 held 10/12 samples from patients with active disease and
+  cluster 2 held 26/33 from patients without. **Sensitivity 65%, specificity 64%** for active
+  disease. Honest conclusion: feasible, needs larger cohorts.
+- **PMID 42824543** (J Bone Oncol 2026, review): tumour-informed ctDNA gives the strongest
+  osteosarcoma MRD signal; postoperative positivity is associated with inferior EFS and in selected
+  patients precedes imaging relapse. Methylation is a mutation-independent adjunct; CTCs, EVs and
+  circulating miRNAs "remain exploratory signals without validated postoperative surveillance
+  actions". Explicitly states the field's open question: "Future studies should test whether
+  biomarker-triggered reassessment improves clinically meaningful outcomes ... rather than simply
+  documenting recurrence earlier." (abstract-only, review)
+
+**ANSWER to "does earlier detection change survival?"** FINDING: there is **no evidence in
+osteosarcoma that it does**, and the one randomized sarcoma trial (PMID 24249538) found that
+cheaper, less frequent imaging did not worsen 3-year OS. The mechanism by which earlier detection
+*could* help is well documented though: complete resection is the dominant survival factor
+(**PMID 42036655**, meta-analysis of 21 retrospective studies: metastasectomy vs none HR 0.29,
+95% CI 0.18–0.46; complete resection HR 0.21, 0.12–0.38 for post-relapse survival and HR 0.31,
+0.23–0.42 for post-metastasectomy OS; bilateral mets HR 1.56, 1.27–1.93; **VATS HR 1.69, 1.01–2.82**),
+and smaller/fewer nodules are more completely resectable.
+HYPOTHESIS: the untested clinical question is therefore not "can we detect relapse earlier" but
+"does ctDNA-triggered earlier *surgery* raise the complete-resection rate". That is a trial design
+nobody has registered.
+
+FINDING, selection-bias caution on the surgery data: **PMID 38375639** (Ann Surg 2024, systematic
+review): 11 studies, 1984–2017, all retrospective, none designed to compare metastasectomy vs none.
+3-year survival 0–54% with metastasectomy and 0–16% without, but "no PM patients were usually those
+with unresectable disease and/or considered to have a poor prognosis"; **all studies at high risk of
+bias; evidence level IV**. Authors call for an RCT while noting it is ethically challenging.
+Counterpoint on the upside: **PMID 34674575** (Tumori 2023), 463 consecutive children/AYA at three
+Italian centres, 1973–2014, median follow-up 18.6 years: **5-year OS 34.0%, 20-year OS 29.7%
+(95% CI 25.5–34.0)**; of 138 alive, **42 (30.4%) had recurrence cured by repeated metastasectomies.**
+FINDING. **PMID 42723688** (Transl Lung Cancer Res 2026, 159 patients, 229 metastasectomies,
+median follow-up 79.1 months): 3- and 5-year post-metastasis survival 52.2% and 36.0%.
+Palpation-assisted mini-thoracotomy found far more occult lesions than VATS (**43.4% vs 6.8%,
+p=0.004**) with comparable complications but **no survival difference**. The strongest independent
+predictor was **response to pre-operative systemic therapy: 5-year survival 41.1% in responders vs
+0.0% in non-responders (HR 0.22, p<0.001)**. Modelling suggested **2–3 months** as the optimal
+pre-operative surveillance window.
+HYPOTHESIS: that 41.1% vs 0.0% split is a ready-made biology-defined risk stratifier for the
+resected setting — the thing the earlier gaps report says osteosarcoma lacks — and it is available
+*before* surgery. A trial that enrolled only pre-operative non-responders would be enriching for
+an event rate near 100%, which fixes the power problem that killed NCT00752206.
