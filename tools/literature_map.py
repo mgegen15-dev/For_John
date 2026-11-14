@@ -30,8 +30,12 @@ GD2 = re.compile(r"\bGD2\b")
 
 papers, genes = [], C.defaultdict(lambda: C.Counter())
 first = {}
+seen = set()
 for line in open(L + "osteosarcoma_pubtator.jsonl"):
     d = json.loads(line)
+    if d["pmid"] in seen:  # PubTator can return a paper twice
+        continue
+    seen.add(d["pmid"])
     txt = d["title"] + " " + d["abstract"]
     y = int(d["year"]) if str(d["year"] or "").isdigit() else None
     t = {"pmid": d["pmid"], "year": y, "retracted": d["pmid"] in retr, "review": d["pmid"] in rev,
