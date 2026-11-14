@@ -92,3 +92,56 @@ We could not read the subgroup analyses of SARC024 or REGOBONE (no open full tex
 | Resistant clones with MYC, CCNE1, VEGFA, IGF1R amplification | Whole genomes of relapses (8 patients) | Clinical genomics, not specific to pills (PMID 37812025) |
 
 **Missing:** no study has biopsied osteosarcoma at the moment of progression on a pill to see what changed. This is a gap.
+
+## 4. Combinations
+
+**Tried, with results:**
+
+| Combination | Result | Source |
+|---|---|---|
+| Sorafenib + everolimus (mTOR blocker) | 6-month PFS 45%; missed its 50% target | PMID 25498219 |
+| Lenvatinib + IE (OLIE, randomized) | Small PFS gain (HR 0.54), not significant | PMC11581622 |
+| Apatinib + IE (OAIE, randomized) | PFS gain (HR 0.60), significant; lower ifosfamide dose given for longer | PMC12647724 |
+| Apatinib + camrelizumab (PD-1 antibody) | 6-month PFS 51%; missed its 60% target | PMC7223462 |
+| Cabozantinib + topotecan/cyclophosphamide | Given at the same time, too toxic; cabozantinib only on days 8–21 tolerated | PMID 37715723 |
+
+**Running, no results yet:** regorafenib + nivolumab (SARC038, NCT04803877, active, not recruiting); cabozantinib + atezolizumab (NCT05019703); cabozantinib + pembrolizumab (NCT05182164); cabozantinib + ifosfamide (NCT06156410); sunitinib + losartan, which blocks monocyte recruitment and gave a 50% clinical benefit rate with a similar pill in 28 pet dogs with lung metastases (NCT03900793; PMID 34580111); lenvatinib + everolimus against everolimus (NCT07619950, not yet open); several apatinib combinations in China.
+
+**Rational combinations not yet tried in patients** (ClinicalTrials.gov searches, 14 November 2026):
+- **Pill + selective FGFR blocker.** No trial. Supported by the FGFR–ERK escape preprint and by FGFR1 amplification in 18.5% of poor chemotherapy responders.
+- **Pill + selective MET blocker** (capmatinib, tepotinib, savolitinib). No trial. Pazopanib + crizotinib was synergistic in cell and mouse models (PMID 38423639).
+- **Pill + FAK blocker** (defactinib). No osteosarcoma trial outside a basket study.
+- **Pill + PI3K or IL-6 receptor blockers**, from the anlotinib-resistance work. No trial.
+- **Biomarker-selected pill trial** (VEGFA- or 4q12-amplified tumours). None found.
+- **Pill maintenance after complete surgical removal of a relapse.** No randomized trial found. This is the setting where cures still happen, and the project's pooled controls give a ready benchmark (20% event-free at 12 months, range 10–34%; 26–28% with dinutuximab or denosumab). FOSTER-CabOS and CabOSTar test maintenance after *first-line* treatment; a French trial (NCT04055220) randomizes regorafenib maintenance against observation after first-line treatment.
+
+## 5. Why they are not standard care
+
+**Guidelines and labels.**
+- US NCCN guidelines list regorafenib and sorafenib among second-line options for osteosarcoma, with cabozantinib and sorafenib + everolimus as "additional" options. This is from version 3.2023 as quoted in a trial protocol; we could not read the current NCCN document. The apatinib trial paper also says the class entered NCCN guidelines as second-line therapy (PMID 30559126).
+- The 2021 European guideline (ESMO and partners, PMID 34500044) discusses cabozantinib and regorafenib; we could not read its exact recommendation grades.
+- No regulator has approved any of these drugs for osteosarcoma. Cabozantinib is FDA-approved from age 12 for thyroid and neuroendocrine cancers, so a paediatric dose exists (40 mg under 40 kg, 60 mg above; [FDA](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-cabozantinib-adults-and-pediatric-patients-12-years-age-and-older-pnet-and-epnet)). Apatinib and anlotinib are sold mainly in China.
+
+**Cost.** Use is off-label and expensive. Cabozantinib's US cash price is roughly US$26,000–48,000 for 30 tablets depending on the source ([drugs.com](https://www.drugs.com/price-guide/cabometyx), [WebMDRx](https://www.webmdrx.com/drug-prices/cabometyx)); the NHS indicative price is £5,143 per 30 × 60 mg ([NHSBSA](https://dmd-browser.nhsbsa.nhs.uk/ampp/view/156345)). These are list or cash prices, not what health systems actually pay.
+
+**Children.**
+
+| Issue | Evidence | Source |
+|---|---|---|
+| Growth plates | 5 of 53 children (9.4%) on anti-vessel drugs in COG phase 1 trials had growth-plate widening (sunitinib, pazopanib); reversible after stopping. Growth-plate damage is a standard finding in animal studies. | PMID 25257751; PMID 27162053 |
+| Wound healing near surgery | Apatinib: severe wound breakdown in 11% (PMID 30559126). AOST2032 leaves out cabozantinib in the first chemotherapy cycle after surgery and tracks port-site wound problems. | NCT05691478 |
+| Collapsed lung | 9% (cabozantinib) to 18% (lenvatinib + IE) | PMC8763616; PMC11581622 |
+| Blood pressure, kidney, skin | Dose-limiting in children at higher cabozantinib doses; side effects at every dose level | PMID 29693796 |
+| Formulation | Cabozantinib comes only as tablets (no liquid found); lenvatinib capsules can be dispersed in water or apple juice ([label summary](https://drugs.com/dosage/lenvima.html)) | — |
+
+**Front-line and maintenance trials, status on 14 November 2026:**
+
+| Trial | Question | Status |
+|---|---|---|
+| COG AOST2032 (NCT05691478) | Cabozantinib added to MAP chemotherapy, then 6 months of cabozantinib alone, newly diagnosed, 1,122 planned | **Suspended**, reason given "Extend the observation period for current patients" (updated 27 October 2026). The dose-finding part closed in May 2025. No public explanation found; some hospital pages still list it as recruiting. |
+| Ipsen CabOSTar (NCT06341712) | Cabozantinib vs supportive care for residual disease after first-line treatment | **Terminated** after 10 patients (November 2024 – February 2026) for recruitment problems |
+| FOSTER-CabOS, part of the FOSTER platform (NCT07871864) | 12 months of cabozantinib vs supportive care after first-line treatment, 530 planned, 8 European countries | **Recruiting** since 7 October 2026 |
+| Léon Bérard (NCT04055220) | Regorafenib maintenance vs observation after first-line treatment | Recruiting since 2020 |
+| Peking University (NCT04351308) | Apatinib or PD-1 antibody added for poor responders at diagnosis | Status unknown since 2020 |
+
+**Our summary of why the class is stuck:** the gain is about two months of disease control, with no survival gain shown; there is no test to pick responders; the drugs are hard to combine with surgery and intensive chemotherapy in growing children; the main US front-line trial is paused and an industry maintenance trial could not recruit; and no company is seeking an osteosarcoma licence.
