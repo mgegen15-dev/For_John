@@ -4,7 +4,7 @@
 
 ## Who
 
-For John was started in November 2026 by John's older brother, who is not a scientist, after John died of osteosarcoma. The research was carried out with AI research assistants (Anthropic's Claude models, run in Claude Code). The AI searched databases, read papers, wrote and ran analysis code, and drafted the reports. A person directed the work, chose what to pursue, and decided what to publish.
+For John was started in November 2026 by John's older brother, who is not a scientist, after John died of osteosarcoma. The research was carried out with frontier AI models working as research assistants. The AI searched databases, read papers, wrote and ran analysis code, and drafted the reports. A person directed the work, chose what to pursue, and decided what to publish.
 
 No scientist has reviewed this work yet. Getting that review is the project's next step.
 
