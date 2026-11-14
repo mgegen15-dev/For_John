@@ -1,0 +1,218 @@
+{
+ "_note": "Hand-curated map from drug-name patterns (lower case regex) in osteosarcoma trial interventions to human target gene symbols. GD2 is a glycolipid, matched in the literature by text. Built for the For Johnny project; check before reuse.",
+ "lenvatinib": [
+  "KDR",
+  "FGFR1",
+  "RET",
+  "KIT",
+  "PDGFRA"
+ ],
+ "cabozantinib|zanzalintinib": [
+  "MET",
+  "KDR",
+  "AXL",
+  "RET"
+ ],
+ "sorafenib": [
+  "KDR",
+  "BRAF",
+  "PDGFRB",
+  "KIT"
+ ],
+ "apatinib": [
+  "KDR"
+ ],
+ "regorafenib": [
+  "KDR",
+  "TEK",
+  "KIT",
+  "RET",
+  "PDGFRB"
+ ],
+ "pazopanib": [
+  "KDR",
+  "PDGFRB",
+  "KIT"
+ ],
+ "sunitinib": [
+  "KDR",
+  "PDGFRB",
+  "KIT"
+ ],
+ "anlotinib": [
+  "KDR",
+  "FGFR1",
+  "PDGFRB"
+ ],
+ "bevacizumab": [
+  "VEGFA"
+ ],
+ "cixutumumab|imc-a12|robatumumab|ganitumab|amg 479|r1507|rg1507|cp-751|linsitinib": [
+  "IGF1R"
+ ],
+ "sirolimus|everolimus|temsirolimus|ridaforolimus|rad001|rapamycin": [
+  "MTOR"
+ ],
+ "palbociclib|pd0332991|abemaciclib|trilaciclib": [
+  "CDK4",
+  "CDK6"
+ ],
+ "olaparib|talazoparib|niraparib": [
+  "PARP1"
+ ],
+ "ceralasertib|m6620|elimusertib|bay 1895344": [
+  "ATR"
+ ],
+ "nivolumab|pembrolizumab|mk3475|camrelizumab|shr-1210|dostarlimab": [
+  "PDCD1"
+ ],
+ "atezolizumab|durvalumab|avelumab|zkab001": [
+  "CD274"
+ ],
+ "ipilimumab|tremelimumab": [
+  "CTLA4"
+ ],
+ "dinutuximab|hu3f8|naxitamab|anti-gd2|gd2|hu14.18|qarziba": [
+  "GD2"
+ ],
+ "hs-20093|enoblituzumab|8h9|b7-h3|b7h3|ifinatamab|risvutatug": [
+  "CD276"
+ ],
+ "trastuzumab|her2|cd19-her2": [
+  "ERBB2"
+ ],
+ "glembatumumab": [
+  "GPNMB"
+ ],
+ "denosumab": [
+  "TNFSF11"
+ ],
+ "zoledron": [
+  "FDPS"
+ ],
+ "dasatinib|saracatinib": [
+  "SRC"
+ ],
+ "imatinib": [
+  "KIT",
+  "PDGFRB",
+  "ABL1"
+ ],
+ "erlotinib|gefitinib|egfr806": [
+  "EGFR"
+ ],
+ "alisertib": [
+  "AURKA"
+ ],
+ "tazemetostat": [
+  "EZH2"
+ ],
+ "ivosidenib": [
+  "IDH1"
+ ],
+ "larotrectinib|entrectinib": [
+  "NTRK1"
+ ],
+ "selpercatinib": [
+  "RET"
+ ],
+ "erdafitinib": [
+  "FGFR1"
+ ],
+ "vemurafenib": [
+  "BRAF"
+ ],
+ "ulixertinib": [
+  "MAPK1"
+ ],
+ "selumetinib": [
+  "MAP2K1"
+ ],
+ "tipifarnib": [
+  "HRAS"
+ ],
+ "tegavivint": [
+  "CTNNB1"
+ ],
+ "9-ing-41|lithium": [
+  "GSK3B"
+ ],
+ "seclidemstat": [
+  "KDM1A"
+ ],
+ "selinexor|kcp-330": [
+  "XPO1"
+ ],
+ "vismodegib|ipi-926": [
+  "SMO"
+ ],
+ "ro4929097|cb-103": [
+  "NOTCH1"
+ ],
+ "tb-403": [
+  "PGF"
+ ],
+ "natalizumab": [
+  "ITGA4"
+ ],
+ "pepinemab": [
+  "SEMA4D"
+ ],
+ "lexatumumab|hgs-etr2|inbrx-109": [
+  "TNFRSF10B"
+ ],
+ "entinostat|romidepsin|belinostat|panobinostat|valproic": [
+  "HDAC1"
+ ],
+ "decitabine|azacitidine|cc-486|vidaza": [
+  "DNMT1"
+ ],
+ "samotolisib|copanlisib": [
+  "PIK3CA"
+ ],
+ "ensartinib": [
+  "ALK"
+ ],
+ "alvocidib": [
+  "CDK9"
+ ],
+ "tanespimycin": [
+  "HSP90AA1"
+ ],
+ "bortezomib": [
+  "PSMB5"
+ ],
+ "imetelstat": [
+  "TERT"
+ ],
+ "thalidomide": [
+  "CRBN"
+ ],
+ "celecoxib": [
+  "PTGS2"
+ ],
+ "eflornithine|dfmo": [
+  "ODC1"
+ ],
+ "mifamurtide": [
+  "NOD2"
+ ],
+ "nkg2d": [
+  "KLRK1"
+ ],
+ "ny-eso-1": [
+  "CTAG1B"
+ ],
+ "mage": [
+  "MAGEA1"
+ ],
+ "prame": [
+  "PRAME"
+ ],
+ "arginine deiminase": [
+  "ASS1"
+ ],
+ "metformin": [
+  "PRKAA1"
+ ]
+}
