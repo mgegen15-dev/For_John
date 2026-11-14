@@ -1,6 +1,6 @@
 # For Johnny
 
-*In memory of my brother, John.*
+*In memory of my little brother and best friend, John.*
 
 An open, independent effort focused on osteosarcoma: to tie together the research on it and find what has been overlooked. That means untested ideas, contradictions, lost trial results, and places where funding, trials and the literature don't line up. Neuroblastoma appears where its progress holds lessons for osteosarcoma.
 
