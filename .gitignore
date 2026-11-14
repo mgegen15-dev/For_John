@@ -1,2 +1,3 @@
 data/literature/osteosarcoma_pubtator.jsonl
 data/surface_targets_raw/
+__pycache__/
