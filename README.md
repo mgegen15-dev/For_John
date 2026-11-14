@@ -67,3 +67,15 @@ This project builds on, and hopes to feed into, the work of many others. If you 
 
 - **Researchers:** if a lead matches your work, or you find an error, please open an issue. Corrections are as valuable as confirmations.
 - **Re-running the analyses:** the scripts in `tools/` need only Python 3 and internet access. `tools/literature_fetch.py` downloads about 33,000 PubMed records, so it is not stored here.
+
+## Cite this
+
+If you use this work, please credit it as:
+
+> For John (2026). Open research on osteosarcoma. https://github.com/mgegen15-dev/For_John
+
+## License
+
+- **Reports, briefs, research notes and data:** [CC BY 4.0](LICENSE-CONTENT). Reuse freely with credit.
+- **Code in `tools/`:** [MIT](LICENSE).
+- Data drawn from PubMed, ClinicalTrials.gov, NIH RePORTER and other public sources remains subject to their own terms.
