@@ -57,7 +57,7 @@ Leads 1, 2 and 4 tie on score, ordered by which most directly tests a new treatm
 
 ### 4. Randomized trial in completely resected relapse
 
-**Why:** In the posted results, two drugs with completely different mechanisms left almost the same share of patients event-free at 12 months (26% and 28%), both within the historical range. Single-arm trials in this setting can't separate a drug's effect from who gets enrolled. Only a randomized trial can.
+**Why:** In the posted results, two drugs with completely different mechanisms left almost the same share of patients event-free at 12 months (26% and 28%), both within the historical range. Single-arm trials in this setting can't separate a drug's effect from who gets enrolled. Only a randomized trial can. One was tried: a placebo-controlled saracatinib trial after lung-metastasis surgery (NCT00752206) needed over 8 years to enrol 38 patients and was abandoned, with a non-significant 19.4 against 8.6 months progression-free. So the hard part is recruitment, which argues for running this question inside a large platform such as FOSTER's, possibly enriched for patients whose metastases did not respond to chemotherapy before surgery (see `reports/Stopping lung metastasis in osteosarcoma.md`).
 
 **Partners:** COG bone tumour committee; FOSTER, whose new trial platform (NCT07871864) could host a randomized arm. **Our role:** advocacy, backed by the pooled data from lead 2.
 

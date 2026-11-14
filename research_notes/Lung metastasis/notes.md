@@ -585,3 +585,24 @@ See the report for the written-up version. Ranked list:
 - Two of the strongest mechanistic papers (PMID 41648517, 42856637) are **bioRxiv preprints**.
 - Dog trial results are single-arm against historical controls, with the same bias problem as the
   human single-arm trials.
+
+## 8. A worked check on the method's error rate
+
+My script counts **37 GM-CSF (CSF2) papers and 0 with an in vivo metastasis endpoint.** Taken at
+face value that would say inhaled GM-CSF reached a 43-patient COG trial on no animal metastasis
+evidence. But PMID 20576718's own first sentence is "Based on preliminary data on the antitumor
+effects of GM-CSF in animal models, and promising phase I trials, we embarked on a feasibility
+study". So the preclinical work exists and my regex missed it (indexed under other terms, or in
+papers without "osteosarcoma" in title/abstract).
+CONCLUSION: every zero in the mechanism table should be read as "these keywords found none in this
+33k corpus", not "none exists". The trial-level zeros (ClinicalTrials.gov drug-by-drug queries in
+section 5) are much more reliable than the paper-level zeros, because they are exact-name lookups
+against a single registry rather than regex over abstracts.
+
+## 9. Files produced
+
+- `tools/lung_metastasis_map.py` — the analysis script (re-runnable, no network needed).
+- `data/lung_metastasis_mechanisms.csv` — 56 mechanisms x paper counts, with up to 40 in-vivo-metastasis PMIDs each.
+- `data/lung_metastasis_papers.csv` — one row per metastasis-focused research paper (9,130 rows) with flags.
+- `data/lung_metastasis_trials.csv` — the 224 lung/metastasis-mentioning trials, with a `lung_directed` flag marking the 73 explicitly lung-directed ones.
+- `reports/Stopping lung metastasis in osteosarcoma.md` — the reader-facing report.

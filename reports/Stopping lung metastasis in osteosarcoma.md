@@ -1,0 +1,200 @@
+# Stopping lung metastasis in osteosarcoma: what is known, what has been tried, and what has been missed
+
+*November 14, 2026. Built from 33,242 PubMed records in `data/literature/osteosarcoma_pubtator.jsonl`, the 758 registered studies in `data/osteosarcoma_trials.csv`, and live ClinicalTrials.gov API v2, PubMed and Europe PMC queries run on the date above. Script: `tools/lung_metastasis_map.py`. Data written: `data/lung_metastasis_mechanisms.csv`, `data/lung_metastasis_papers.csv`, `data/lung_metastasis_trials.csv`. Full working notes with every citation: `research_notes/Lung metastasis/notes.md`. Findings are separated from hypotheses throughout; "abstract-only" means only the abstract was read, which is nearly everything here.*
+
+## Summary
+
+Almost everyone who dies of osteosarcoma dies of lung metastases, and the biology of how the tumour colonizes the lung is now reasonably well understood: lung lining cells release IL-1alpha, which switches on a small, slow-growing subpopulation of tumour cells to pump out IL-6 and IL-8, and blocking that circuit stops metastasis in mice without slowing the primary tumour at all. The drugs that block IL-1, IL-6 and the IL-8 receptor are approved or in late trials for arthritis and other diseases, and **not one of them has ever been tested in an osteosarcoma trial**. Meanwhile the ideas that *were* tested — inhaled GM-CSF, inhaled cisplatin, aerosol interleukin-2, inhaled interleukin-15 in dogs — were all about stimulating immunity inside the lung, and the ones that reported results were negative; the dog version was actually **worse** than doing nothing, and the reason given in that paper is that surgery and chemotherapy themselves raise IL-6 and suppress immune killing. The most striking thing I found is that the one randomized, placebo-controlled drug trial in the exact situation that matters — a patient whose lung metastases have just been fully removed — did happen, took nearly nine years to enrol 38 patients, was stopped for slow accrual, and left behind a 19.4-month versus 8.6-month difference in progression-free survival that nobody ever followed up. On detection, there is no evidence that finding lung relapse earlier saves lives, and the one randomized trial in sarcoma found that cheap chest X-rays every six months did no worse than CT scans every three; what does predict survival is whether the surgeon gets every nodule out, and whether the tumour responded to drugs before surgery.
+
+---
+
+## 1. The biology: what actually has in vivo metastasis evidence
+
+I counted, for 56 mechanisms, how many papers exist, how many are about metastasis, and how many go beyond a dish to an animal with a metastasis endpoint. **Finding (own computation):** of 29,305 non-review, non-retracted osteosarcoma papers, **9,130 are metastasis-focused**, 3,579 mention the lung specifically, and only **1,093 (12%) have an in vivo metastasis endpoint**. That share has not budged in twenty years.
+
+### The best-evidenced mechanisms
+
+| Mechanism | Papers | In vivo metastasis studies | Drug that exists | Osteosarcoma trials |
+|---|---|---|---|---|
+| VEGF / VEGFR | 867 | 106 | many TKIs | 57 |
+| mTOR / PI3K / AKT | 1,203 | 92 | sirolimus, everolimus | 21 |
+| Macrophages / CSF1R | 225 | 35 | pexidartinib, emactuzumab | **0** |
+| Dormancy / micrometastasis | 234 | 32 | none specific | 0 |
+| Integrins | 267 | 32 | — | **0** |
+| **FAK** | 119 | **24** | **defactinib (FDA 2025)** | **0** |
+| **CXCR4 / CXCL12** | 139 | **24** | plerixafor, motixafortide | **0** |
+| Inhaled / aerosol delivery | 41 | 22 | several | 6 (see §2) |
+| **IL-6** | 259 | **20** | tocilizumab, siltuximab | **0** |
+| **Ezrin** | 103 | **17** | none clinical-grade | 0 |
+| Platelets / coagulation | 427 | 15 | aspirin, LPAR1 antagonists | **0** |
+| Neutrophils / NETs / MDSC | 242 | 14 | SX-682 | **0** |
+| **IL-8 / CXCL8** | 89 | **11** | reparixin, SX-682, ladarixin | **0** |
+| Fibroblasts / CAF | 121 | 8 | FAP agents | 0 |
+| **IL-1** | 216 | **7** | **anakinra, canakinumab** | **0** |
+| Glutamine metabolism | 69 | 5 | telaglenastat, DRP-104 | **0** |
+| DKK1 | 38 | 5 | DKN-01 | **0** |
+
+*Counts are keyword matches, not curation — see Limits. Trial counts for VEGF/mTOR come from `reports/Osteosarcoma literature map.md`; the zeros were checked drug by drug on ClinicalTrials.gov on 2026-11-14.*
+
+**Finding: the mechanisms with the most in vivo metastasis work are the ones that happened to have a pill lying around.** VEGF has 106 in vivo metastasis studies and 57 trials behind a literature of 68 osteosarcoma papers. IL-1, the upstream switch of the best-described lung-colonization circuit, has 7 and zero.
+
+### The lung niche circuit, in order
+
+1. **Lung epithelium releases IL-1alpha.** A 2025 *Cancer Research* paper combined an organotypic lung model, single-cell sequencing, human xenografts and immunocompetent mouse models and found metastasis is started by a **hypo-proliferative subpopulation** that makes IL-6 and IL-8 in response to **lung-epithelium-derived IL-1alpha**; disrupting IL-1 signalling genetically or with a drug "significantly reduced metastatic progression" ([PMID 40882022](https://pubmed.ncbi.nlm.nih.gov/40882022/), abstract-only).
+2. **IL-6 and IL-8 do the colonizing.** Both are higher in lung metastases than in matched primary tumours from the same patients; expression correlated with lung colonization efficiency in mice; blocking both barely touched proliferation in vitro or in vivo but **the combination inhibited metastasis across multiple models**. The amplifier is a feed-forward loop with **bronchial epithelial and bronchial smooth muscle cells** ([PMID 30135299](https://pubmed.ncbi.nlm.nih.gov/30135299/), *JCI Insight* 2018, abstract-only).
+3. **The IL-8 signal is receptor-level druggable.** Lung blood vessels express CXCL1 and tumour cells express its receptor CXCR2; CXCL1 from human pulmonary artery endothelial cells drove motility through CXCR2 → FAK → NF-kB → VCAM-1, and in vivo CXCL1 drove lung metastasis ([PMID 32079335](https://pubmed.ncbi.nlm.nih.gov/32079335/), [PMID 34760697](https://pubmed.ncbi.nlm.nih.gov/34760697/)). Separately, IL-8 made by tumour-associated macrophages promoted lung metastasis in vivo via FAK, and **an anti-IL-8 antibody blocked it** ([PMID 38302407](https://pubmed.ncbi.nlm.nih.gov/38302407/)).
+4. **The lung is prepared before any cell arrives.** Mice merely *preconditioned with tumour cell secretome* developed airway damage, inflammation, neutrophil infiltration and fibronectin/collagen deposition by resident activated fibroblasts, which accelerated metastasis. Depleting one secreted protein, **EFEMP1**, prevented lung metastasis; EFEMP1 was in the plasma of tumour-bearing mice and in patient biopsies with worse survival ([PMID 38031171](https://pubmed.ncbi.nlm.nih.gov/38031171/)).
+5. **The same happens in pet dogs, naturally.** Pre-metastatic lungs from 10 dogs with untreated osteosarcoma had significantly more CD204+ and CD206+ macrophages and CD11d+ bone-marrow-derived cells than 10 cancer-free dogs; the bone-marrow cells were *lower* once metastases established, so recruitment is transient ([PMID 39526499](https://pubmed.ncbi.nlm.nih.gov/39526499/)).
+6. **Innate activation in the lung can block seeding.** In a syngeneic model, particulate beta-glucan given *before* tumour cells "prevented tumour cell seeding in the lungs" and prolonged survival; it worked through macrophages and NK cells, and adding a CD40 agonist improved it further ([PMID 41083282](https://pubmed.ncbi.nlm.nih.gov/41083282/), *J Immunother Cancer* 2025).
+
+### Ezrin, the oldest lung-metastasis mechanism, and the drug that never came
+
+Ezrin has 17 in vivo metastasis studies. Small molecules that bind it (NSC305787, NSC668394) inhibited lung metastasis of ezrin-sensitive but not ezrin-resistant cells after tail-vein injection ([PMID 21706056](https://pubmed.ncbi.nlm.nih.gov/21706056/)). Locking ezrin either open or closed abolished metastasis, and both caused tumour cells to die soon after arriving in the lung, with changes in lactate and oxygen consumption that tie motility to metabolism ([PMID 22147261](https://pubmed.ncbi.nlm.nih.gov/22147261/)). A 2026 paper overturns the textbook by showing the "inactive" closed form is itself an RNA-binding protein that restores metastatic capability in ezrin-null xenografts ([PMID 41843652](https://pubmed.ncbi.nlm.nih.gov/41843652/)). **Finding: there is still no clinical-grade ezrin inhibitor.** Also worth knowing: 5 of the 10 most recent ezrin-titled records in the dataset are retractions or expressions of concern, so this literature carries the paper-mill problem described in `reports/Osteosarcoma literature map.md`.
+
+### A methodological finding that undercuts a lot of the rest
+
+The widely used intratibial K7M2 mouse model **is not a model of spontaneous metastasis**. Lung metastases were present in 100% of mice within one week; burden grew over four weeks (0.9% → 40.3%) but the *number* of foci did not (36.4 vs 49.3, p=0.18); and **amputating the injected leg thirty minutes after injection left metastatic burden unchanged** (48.9% vs 40.9%, p=0.819). The authors conclude seeding is immediate and primary-tumour-independent, and the model "should not be used to study the early components of the metastatic cascade" ([PMID 29601385](https://pubmed.ncbi.nlm.nih.gov/29601385/)).
+
+**Hypothesis.** Both of the dominant designs — tail vein and intratibial — measure **colonization and outgrowth**, not dissemination or waking from dormancy. That means the 1,093 in vivo metastasis papers mostly do not model the clinical state that matters most: a patient with no visible disease after surgery whose lungs hold sleeping cells. Dormancy has 32 in vivo metastasis papers and only 14 papers with dormancy in the title, several of them not osteosarcoma-specific.
+
+### Single-cell and cross-species data: the newest and least used
+
+A 2026 preprint assembled **over a million cells and nuclei** from human, canine, patient-derived xenograft and syngeneic mouse osteosarcoma at **both bone and lung sites**. Two conclusions stand out: **canine osteosarcoma was the most faithful model** of human tumour-host communication of those compared, and **lung metastases showed more intense matrix signalling than primary bone tumours**, with tumour-derived fibronectin engaging integrin and syndecan receptors on lung epithelium to drive a profibrotic niche ([PMID 41648517](https://pubmed.ncbi.nlm.nih.gov/41648517/), **bioRxiv preprint, not peer reviewed**). A second 2026 preprint imaged living osteosarcoma lung metastases and found drug-resistant cells concentrated **at the tumour–lung interface**; tumour cell death itself amplified FGFR–ERK signalling in neighbouring cells, and adding an FGFR inhibitor or pazopanib reversed it ([PMID 42856637](https://pubmed.ncbi.nlm.nih.gov/42856637/), **preprint**).
+
+---
+
+## 2. The clinic: every lung-directed and resected-metastasis trial I could find
+
+Of the 758 registered studies in the local file, **224 mention lung, metastasis or inhaled terms and 73 are explicitly lung-directed** (own count; `data/lung_metastasis_trials.csv`).
+
+### Lung-directed delivery: forty years, mostly negative
+
+| Agent | Trial / paper | Patients or dogs | Result |
+|---|---|---|---|
+| Inhaled GM-CSF | [NCT00066365](https://clinicaltrials.gov/study/NCT00066365) (COG); [PMID 20576718](https://pubmed.ncbi.nlm.nih.gov/20576718/) | 43 | Feasible to 1,750 ug twice daily, no dose-limiting toxicity. **3-year event-free survival 7.8%, overall survival 35.4%.** Fas/FasL staining *fell* after treatment. "No detectable immunostimulatory effect in pulmonary metastases or improved outcome postrelapse" |
+| Inhaled lipid cisplatin | [NCT00102531](https://clinicaltrials.gov/study/NCT00102531); [PMID 23255417](https://pubmed.ncbi.nlm.nih.gov/23255417/) | 19 | No kidney, ear or blood toxicity. 11 of 19 had bulky disease and **all progressed before cycle 7**. Of 8 with all nodules ≤2 cm: 1 lasting partial response, 2 stable then surgery and recurrence-free at a year |
+| Inhaled lipid cisplatin, phase 2 | [NCT01650090](https://clinicaltrials.gov/study/NCT01650090) (Eleison), completed Nov 2018 | 28 | **No results posted and no publication found.** No phase 3 in osteosarcoma is registered |
+| Aerosol interleukin-2 | [NCT01590069](https://clinicaltrials.gov/study/NCT01590069) (MD Anderson) | 70 planned | Started **June 2012**, still ACTIVE_NOT_RECRUITING, completion date now **April 2029**, **no results in 14 years**. The mouse data were good: aerosol IL-2 raised NK cells only in the lung, with no systemic toxicity, and IL-2 + NK cells beat either alone ([PMID 24136885](https://pubmed.ncbi.nlm.nih.gov/24136885/), [PMID 24610870](https://pubmed.ncbi.nlm.nih.gov/24610870/)) |
+| Aerosol gemcitabine | [NCT03093909](https://clinicaltrials.gov/study/NCT03093909) | 44 | Recruiting since Nov 2017, no results. Preclinically it worked in mice and in **dogs**, and starting it 48 hours after amputation inhibited lung metastases **without impairing wound healing** ([PMID 29610563](https://pubmed.ncbi.nlm.nih.gov/29610563/)) |
+| Inhaled IL-15, phase 1 (dogs) | [PMID 35680383](https://pubmed.ncbi.nlm.nih.gov/35680383/) | 21 dogs, 18 evaluable | Maximum tolerated dose 50 ug twice daily. **1 complete response over a year, 1 partial, 5 stable: clinical benefit 39%** |
+| Inhaled IL-15, adjuvant phase 2 (dogs) | [PMID 41209004](https://pubmed.ncbi.nlm.nih.gov/41209004/) (NCI-COTC030) | 40 planned | **Disease-free and overall survival were statistically INFERIOR to a validated historical control; halted for futility.** Immune killing by blood cells fell after surgery and again after chemotherapy (−18.2 ± 16.1%, p<0.001), and **IL-6 rose after both**, tracking the fall |
+| Inhaled IL-15 + doxorubicin (dogs) | [PMID 41041167](https://pubmed.ncbi.nlm.nih.gov/41041167/) | 10 dogs, 8 evaluable | Clinical benefit 30%, response rate 10%; lymphodepletion added nothing |
+| BIO-11006, inhaled | [NCT04183062](https://clinicaltrials.gov/study/NCT04183062) | 0 | Withdrawn, "the drug for this study was not available" |
+
+**This is the single most useful negative result in the whole search.** Giving an immune-stimulating inhaled drug in the window right after amputation made dogs do worse than historical controls, and the paper's own correlative data say the window is immunosuppressed **and IL-6-high** ([PMID 41209004](https://pubmed.ncbi.nlm.nih.gov/41209004/)).
+
+**Hypothesis.** That is precisely the state the biology papers say *favours* lung colonization ([PMID 30135299](https://pubmed.ncbi.nlm.nih.gov/30135299/), [PMID 40882022](https://pubmed.ncbi.nlm.nih.gov/40882022/)). So the post-surgical window may be the wrong place to **stimulate** immunity and the right place to **block IL-6 and IL-1**. Three separate findings — the dog trial's failure, the lung cytokine circuit and the absence of any cytokine-blockade trial — point at the same unperformed experiment.
+
+### The resected-lung-metastasis setting
+
+| Agent | Trial | Design | n | Result |
+|---|---|---|---|---|
+| Inhaled GM-CSF | NCT00066365 | single arm | 43 | 3-year EFS 7.8% |
+| **Saracatinib (SRC inhibitor)** | **[NCT00752206](https://clinicaltrials.gov/study/NCT00752206)**; **[PMID 32398945](https://pubmed.ncbi.nlm.nih.gov/32398945/)** | **randomized, double-blind, placebo-controlled**, started within 6 weeks of complete resection of all lung nodules | 38 randomized, 37 analysed | **Median PFS 19.4 months vs 8.6 months, p=0.47.** Overall survival not reached in either arm. **Terminated: "DSMB recommended study termination for slow accrual and futility."** It ran March 2009 to December 2017 — **8.75 years for 38 patients** |
+| Dinutuximab + GM-CSF | NCT02484443 (COG AOST1421) | single arm | 39 | 28% event-free at 12 months, below the 16 patients required |
+| Denosumab | NCT02470091 (AOST1321) cohort 2 | single arm | 38 | 26% event-free at 12 months |
+| **OST-HER2 / OST31-164** | [NCT04974008](https://clinicaltrials.gov/study/NCT04974008) | single arm, phase 2, primary outcome event-free survival | 39 | ACTIVE_NOT_RECRUITING. **No posted results and no peer-reviewed paper.** The 72.7% vs 45.8% three-year survival figure remains press-reported |
+| Same vaccine in dogs | **[PMID 39955616](https://pubmed.ncbi.nlm.nih.gov/39955616/)** (*Mol Ther* 2025) | single arm vs historical control | **118 dogs** | **No significant difference in disease-free interval or overall survival.** Long survivors had transient fever and IL-6/TNF-alpha rises and strong blood-cell killing; short survivors caught up after repeat dosing |
+| Mistletoe extract (Iscador P) | [NCT05726383](https://clinicaltrials.gov/study/NCT05726383) "MISTOSUS"; [PMID 41789811](https://pubmed.ncbi.nlm.nih.gov/41789811/) | single arm phase 2, recruiting since May 2024 | 32 | Not reported. Based on a pilot of **9** patients with 55% post-relapse event-free survival at a median 84 months |
+| Thoracotomy vs VATS | **[NCT05235165](https://clinicaltrials.gov/study/NCT05235165) = COG AOST2031** | **phase 3 randomized**, recruiting since April 2022, completion March 2031; design paper [PMID 36085388](https://pubmed.ncbi.nlm.nih.gov/36085388/) | 62 | Primary outcome 4-year thoracic event-free survival. Randomizes the **surgical approach**, not a drug |
+| Metastasectomy + pre-op immunotherapy + SBRT | [NCT06114225](https://clinicaltrials.gov/study/NCT06114225) | single arm phase 2 | 43 | Recruiting, no results |
+
+**Correction to an earlier report.** `reports/Osteosarcoma and neuroblastoma research gaps.md` lists as gap 3 that there is "no randomized test of drug therapy after complete metastasis surgery — only single-arm trials found." **That is wrong.** NCT00752206 was exactly that trial. The real situation is bleaker than "never tried": it was tried, it needed almost nine years for 38 patients, it was abandoned for accrual, and it left a **10.8-month median PFS gap that nobody pursued**. The binding constraint is accrual, not willingness to randomize — which is why the FOSTER platform ([NCT07871864](https://clinicaltrials.gov/study/NCT07871864), 530 patients, randomized, recruiting) and pet dogs matter so much.
+
+**A second caution.** The press-reported human OST-HER2 benefit against a historical control sits beside a larger, peer-reviewed, **negative** canine trial of the same vaccine construct in 118 dogs. Both are single-arm against historical controls; the bigger one found nothing.
+
+### Radiotherapy to lung metastases
+
+SBRT controls what it irradiates. In 24 patients and 71 lesions, one-year local failure was **13.6% (95% CI 6.6–23.2)** with no acute grade 3 toxicity, though only 17% of the lesions were in lung tissue ([PMID 41531260](https://pubmed.ncbi.nlm.nih.gov/41531260/)). In a smaller series, local control was 88% and **all four failures had a biologically effective dose of 48 Gy or less — but median distant progression-free survival was 2.4 months** ([PMID 40509558](https://pubmed.ncbi.nlm.nih.gov/40509558/)). One registered SBRT trial in sarcoma lung metastases was terminated after 5 patients ([NCT02581384](https://clinicaltrials.gov/study/NCT02581384)).
+
+### Two delivery routes almost nobody discusses
+
+**Finding (from the trial-file scan):** [NCT02811523](https://clinicaltrials.gov/study/NCT02811523) "In Vivo Lung Perfusion for Pulmonary Metastases of Sarcoma" (phase 1, recruiting since 2016) and [NCT03965234](https://clinicaltrials.gov/study/NCT03965234) "Pulmonary Suffusion in Controlling **Minimal Residual Disease** in Patients With Sarcoma" (phase 1/2, 99 patients, recruiting since 2020; early safety data [PMID 40940977](https://pubmed.ncbi.nlm.nih.gov/40940977/)). **Hypothesis:** pulmonary suffusion is the only clinical programme I found that explicitly targets minimal residual disease in the lung — the dormancy state nothing else addresses — and it is absent from the osteosarcoma reviews.
+
+---
+
+## 3. Detection: does finding lung relapse earlier help?
+
+**Finding: in osteosarcoma, there is no evidence that it does.**
+
+| Question | Evidence | Answer |
+|---|---|---|
+| Does more intense surveillance improve survival? | Randomized noninferiority trial, **500 non-metastatic extremity sarcoma patients**, chest X-ray vs CT and 3-monthly vs 6-monthly ([PMID 24249538](https://pubmed.ncbi.nlm.nih.gov/24249538/)) | 3-year OS **67% X-ray vs 66% CT** (HR 0.9, upper 90% CI 1.13); **64% 6-monthly vs 69% 3-monthly** (HR 1.2, upper 90% CI 1.47). ~90% of local recurrences were found by patients themselves. Noninferiority of 6-monthly on survival was *not* conclusively shown |
+| Do surveillance scans mostly find relapse? | 69 patients (35 osteosarcoma), **1,279 images**, 9 relapses ([PMID 38345039](https://pubmed.ncbi.nlm.nih.gov/38345039/)) | Only 2 of 9 relapses were symptomatic, so imaging found the rest — but positive predictive value was **0.5**, and "abnormal findings on follow-up images rarely represent relapse" |
+| Is there an osteosarcoma surveillance trial? | ClinicalTrials.gov, 2026-11-14 | **None.** The two randomized surveillance trials are soft-tissue-sarcoma only: [NCT04751409](https://clinicaltrials.gov/study/NCT04751409) (limited vs intense, 227 patients — **primary outcome is fear of recurrence**, not survival) and [NCT06526897](https://clinicaltrials.gov/study/NCT06526897) (ECOG-ACRIN, phase 3 CT vs X-ray, 1,582 patients, overall survival, not yet recruiting, completion 2032) |
+| Does ctDNA work? | Prospective phase 2 with serial liquid biopsy, 18 patients ([PMID 39360936](https://pubmed.ncbi.nlm.nih.gov/39360936/)) | Feasible. All 18 had detectable circulating tumour cells, 10 had ctDNA, and **all 8 patients with MYC amplification at entry progressed**. Four-month PFS was 28% (95% CI 13–59%) |
+| A mutation-free alternative? | 5-hydroxymethylcytosine in plasma cfDNA, 262-gene signature ([PMID 41673231](https://pubmed.ncbi.nlm.nih.gov/41673231/)) | **Sensitivity 65%, specificity 64%** for active disease. Feasible, needs bigger cohorts |
+| What does the field itself say is missing? | 2026 review ([PMID 42824543](https://pubmed.ncbi.nlm.nih.gov/42824543/)) | Tumour-informed ctDNA is the strongest MRD signal and can precede imaging relapse; circulating cells, vesicles and microRNAs "remain exploratory signals without validated postoperative surveillance actions". Future studies "should test whether biomarker-triggered reassessment improves clinically meaningful outcomes ... rather than simply documenting recurrence earlier" |
+
+**What does predict survival is the surgery, and the response before it.** A 2026 meta-analysis of 21 retrospective studies found metastasectomy associated with better post-relapse survival than none (**HR 0.29, 95% CI 0.18–0.46**), complete resection strongly favourable (**HR 0.21, 0.12–0.38**), bilateral disease worse (HR 1.56, 1.27–1.93) and video-assisted surgery modestly worse than open (**HR 1.69, 1.01–2.82**) ([PMID 42036655](https://pubmed.ncbi.nlm.nih.gov/42036655/)). A 2024 systematic review is blunt that these are all selection-biased, **level IV** evidence: the patients who did not get surgery were usually those who could not ([PMID 38375639](https://pubmed.ncbi.nlm.nih.gov/38375639/)). And at the optimistic end, 463 consecutive children and young adults treated with repeated metastasectomies over 40 years had **5-year survival 34.0% and 20-year survival 29.7%**, with 42 of 138 survivors (30.4%) cured by repeat operations ([PMID 34674575](https://pubmed.ncbi.nlm.nih.gov/34674575/)).
+
+The most actionable number I found in this whole section: in 159 patients and 229 metastasectomies with a median 79 months of follow-up, **response to pre-operative systemic therapy gave 5-year survival of 41.1% versus 0.0% in non-responders (HR 0.22, p<0.001)**. Palpation-assisted mini-thoracotomy found far more hidden nodules than VATS (**43.4% vs 6.8%, p=0.004**) with similar complications but **no survival difference**, and modelling put the best pre-operative watching window at **2–3 months** ([PMID 42723688](https://pubmed.ncbi.nlm.nih.gov/42723688/)).
+
+---
+
+## 4. Drugs that exist and have never reached an osteosarcoma trial
+
+Checked drug by drug on ClinicalTrials.gov API v2 (`query.cond=osteosarcoma` + `query.intr=<drug>`) on 2026-11-14.
+
+| Target | Drug | Status elsewhere | Osteosarcoma trials |
+|---|---|---|---|
+| **IL-1** | anakinra, canakinumab, rilonacept | approved | **0** |
+| **IL-6 / IL-6R** | tocilizumab, siltuximab, sarilumab | approved, biosimilars | **0** efficacy trials (one supportive-care listing in NCT04616248, an adult CD40-agonist basket trial whose endpoints are toxicity and dose) |
+| **CXCR1/2 (IL-8 receptor)** | SX-682 (oral), reparixin, ladarixin, navarixin | clinical | **0** |
+| **FAK** | defactinib | **FDA-approved 2025** | **0** |
+| **CXCR4** | plerixafor, motixafortide, mavorixafor | approved | **0** |
+| **DKK-1** | DKN-01 (sirexatamab) | clinical | **0** |
+| **CSF1R** | pexidartinib, emactuzumab | approved / clinical | **0** |
+| **LPAR1** | admilparant / BMS-986278 | **phase 3 in lung fibrosis** | **0** |
+| Glutaminase | telaglenastat, DRP-104 | clinical | **0** |
+| LOXL2, CCR5, NOTCH | simtuzumab, maraviroc, nirogacestat | approved / clinical | **0** |
+| Podoplanin | AP201 (humanized antibody) | preclinical | **0** |
+| Ezrin | NSC305787, WAY262611 | tool compounds | no clinical programme |
+
+### The platelet axis: the most complete untested chain in the file
+
+This did not appear in any of the project's earlier reports and I think it is the best genuinely new lead.
+
+- **Tissue factor** was highly expressed in **73.6% of 53 pre-treatment osteosarcoma biopsies** and associated with disease-free survival; knocking it down lowered **IL-8, CXCL1, SNAI1 and MMP2**, and blocking antibodies in mice reduced tumour growth, vessel density and **significantly reduced lung metastasis** ([PMID 26763081](https://pubmed.ncbi.nlm.nih.gov/26763081/)).
+- Osteosarcoma cells **activate platelets**, which release **lysophosphatidic acid**; **LPAR1** is upregulated in osteosarcoma; knocking out LPAR1 abolished early pulmonary metastatic foci; and **the oral LPAR1 antagonist ONO-7300243 prevented pulmonary metastasis in mouse models** ([PMID 34302117](https://pubmed.ncbi.nlm.nih.gov/34302117/), *Oncogene* 2021).
+- **Podoplanin** on tumour cells activates platelets through CLEC-2, and a **humanized anti-podoplanin antibody (AP201)** suppressed growth and pulmonary metastasis in vivo "without significant adverse events"; the mechanism runs through PDGFR activation by platelet releasate ([PMID 35381070](https://pubmed.ncbi.nlm.nih.gov/35381070/), *Clin Cancer Res* 2022).
+
+And a free natural experiment nobody seems to have noticed: **[NCT03244020](https://clinicaltrials.gov/study/NCT03244020)** randomizes **aspirin 325 mg daily versus enoxaparin** for clot prevention after orthopaedic oncology surgery in an estimated **2,868 patients with a dedicated primary-bone-tumour stratum**, enrolling since February 2018 with completion in July 2028. Its primary outcome is venous thromboembolism, not cancer.
+
+---
+
+## 5. The top gaps, as hypotheses
+
+Everything in this section is a **hypothesis**, not a finding. Each names its evidence, whether a drug exists, and the cheapest experiment that would test it.
+
+| # | Hypothesis | Evidence | Drug available | Cheapest test |
+|---|---|---|---|---|
+| **1** | **Blocking IL-1 (not stimulating immunity) in the window right after surgery prevents lung colonization.** | IL-1alpha from lung epithelium starts the IL-6/IL-8 programme and pharmacologic IL-1 disruption reduced metastatic progression ([PMID 40882022](https://pubmed.ncbi.nlm.nih.gov/40882022/)); IL-6/CXCL8 blockade stopped metastasis without affecting growth ([PMID 30135299](https://pubmed.ncbi.nlm.nih.gov/30135299/)); **IL-6 rises after amputation and after chemotherapy in dogs, tracking falling immune killing, and inhaled IL-15 in that window made things worse** ([PMID 41209004](https://pubmed.ncbi.nlm.nih.gov/41209004/)) | **anakinra, canakinumab** — approved, paediatric safety record, zero osteosarcoma trials | **Pet-dog adjuvant study after amputation**, with the canine pre-metastatic-niche macrophage count ([PMID 39526499](https://pubmed.ncbi.nlm.nih.gov/39526499/)) as a 4-week pharmacodynamic readout instead of waiting 2 years for survival |
+| **2** | **The IL-8 receptor, not IL-8 itself, is the practical handle.** | Anti-IL-8 antibody blocked lung metastasis in vivo ([PMID 38302407](https://pubmed.ncbi.nlm.nih.gov/38302407/)); lung-endothelial CXCL1 → CXCR2 → FAK → VCAM-1 drives colonization ([PMID 32079335](https://pubmed.ncbi.nlm.nih.gov/32079335/), [PMID 34760697](https://pubmed.ncbi.nlm.nih.gov/34760697/)) | **SX-682 (oral), reparixin, ladarixin** — clinical, zero osteosarcoma trials | SX-682 in the syngeneic K7M3 lung-colonization model, then a dog study; roughly one mouse experiment |
+| **3** | **Breaking the tumour–platelet handshake stops cells surviving the bloodstream and seeding the lung.** | Tissue factor in 73.6% of biopsies, blocking it reduced lung metastasis ([PMID 26763081](https://pubmed.ncbi.nlm.nih.gov/26763081/)); oral LPAR1 antagonist prevented pulmonary metastasis ([PMID 34302117](https://pubmed.ncbi.nlm.nih.gov/34302117/)); humanized anti-podoplanin antibody suppressed metastasis safely ([PMID 35381070](https://pubmed.ncbi.nlm.nih.gov/35381070/)) | **admilparant / BMS-986278, phase 3 in lung fibrosis**; aspirin | **A data request to [NCT03244020](https://clinicaltrials.gov/study/NCT03244020)** for an exploratory metastasis-free-survival analysis of its primary-bone-tumour stratum: cost is an email. Not a clean test (aspirin vs heparin, not vs nothing, and unpowered), but free |
+| **4** | **FAK is where the lung-niche signals converge, so defactinib blocks several at once.** | FAK sits downstream of IL-8 ([PMID 38302407](https://pubmed.ncbi.nlm.nih.gov/38302407/)), CXCL1 ([PMID 32079335](https://pubmed.ncbi.nlm.nih.gov/32079335/)), integrins ([PMID 36997926](https://pubmed.ncbi.nlm.nih.gov/36997926/)), LOX ([PMID 37013056](https://pubmed.ncbi.nlm.nih.gov/37013056/)) and a ZEB1/IQGAP3 axis where FAK inhibition reduced lung metastasis in vivo ([PMID 42520958](https://pubmed.ncbi.nlm.nih.gov/42520958/)); 24 in vivo metastasis studies | **defactinib, FDA-approved 2025**, zero osteosarcoma trials, NIH-funded at a veterinary school | **Pet-dog adjuvant trial** — already lead 1 of `reports/Ranked leads and research partners.md`; this report adds the mechanistic reason it should be FAK rather than DKK-1 |
+| **5** | **The resected-lung randomized question can be answered if you enrol only pre-operative non-responders.** | 5-year survival **41.1% in responders vs 0.0% in non-responders** (HR 0.22, p<0.001) ([PMID 42723688](https://pubmed.ncbi.nlm.nih.gov/42723688/)); the one randomized trial here needed 8.75 years for 38 patients and died of accrual ([NCT00752206](https://clinicaltrials.gov/study/NCT00752206), [PMID 32398945](https://pubmed.ncbi.nlm.nih.gov/32398945/)) | any of the above | **An arm on the FOSTER platform** ([NCT07871864](https://clinicaltrials.gov/study/NCT07871864)) restricted to non-responders, where the event rate approaches 100% and far fewer patients are needed |
+| **6** | **Earlier detection only helps if it buys a more complete operation, so the endpoint should be resection completeness, not lead time.** | Complete resection HR 0.21 for post-relapse survival ([PMID 42036655](https://pubmed.ncbi.nlm.nih.gov/42036655/)); more intense imaging did not improve survival ([PMID 24249538](https://pubmed.ncbi.nlm.nih.gov/24249538/)); the field's own review asks exactly this question ([PMID 42824543](https://pubmed.ncbi.nlm.nih.gov/42824543/)) | ctDNA assays exist and are feasible ([PMID 39360936](https://pubmed.ncbi.nlm.nih.gov/39360936/)) | A **single-arm feasibility study of ctDNA-triggered surgery** whose endpoint is the complete-resection rate against the published retrospective rate — no randomization needed to see a signal |
+| **7** | **Dogs can turn two-year survival endpoints into four-week biomarker endpoints for niche-directed drugs.** | Pre-metastatic niche is measurable in untreated dogs and recruitment is transient ([PMID 39526499](https://pubmed.ncbi.nlm.nih.gov/39526499/)); canine osteosarcoma was the most faithful cross-species model of tumour–host signalling ([PMID 41648517](https://pubmed.ncbi.nlm.nih.gov/41648517/), preprint); dogs die of metastasis at scale | n/a — this is infrastructure | Add lung-biopsy or lavage macrophage counts as a pharmacodynamic endpoint to **any** dog trial already running through the NCI Comparative Oncology Program |
+| **8** | **Resistance in lung metastases is born at the tumour–lung interface and is reversible with an FGFR inhibitor.** | Drug-resistant ERK-high cells concentrated at the interface; tumour cell death amplified FGFR–ERK in neighbours; fexagratinib or pazopanib reversed it ex vivo and in vivo ([PMID 42856637](https://pubmed.ncbi.nlm.nih.gov/42856637/), **preprint, not peer reviewed**) | fexagratinib, pazopanib, erdafitinib | Add an FGFR inhibitor to a cytotoxic in the **ex vivo lung-metastasis culture that paper already built** — the assay exists |
+
+Two further gaps worth stating plainly because they stop others wasting effort:
+
+- **Ezrin is a chemistry gap, not an evidence gap.** Seventeen in vivo metastasis studies over twenty years and still no clinical-grade inhibitor. "No trial" here does not mean "weak biology".
+- **Glutamine metabolism in osteosarcoma lung metastasis has 5 in vivo metastasis papers out of 33,242**, while telaglenastat and DRP-104 are clinical-stage. That is a cheap laboratory question, not a trial proposal.
+
+---
+
+## 6. Limits
+
+- **Every mechanism count is a keyword match on title and abstract, not curation.** "In vivo metastasis endpoint" means the abstract contains an animal term, metastasis wording **and** a metastasis-model phrase (tail vein, orthotopic, intratibial, lung nodules, metastatic burden and similar). It does **not** mean the mechanism was blocked and metastasis measured as the primary endpoint. Counts are a map of where effort went, not a verdict on quality.
+- **Mechanism definitions overlap on purpose**, so one paper can count under IL-6, STAT3 and macrophages. Columns do not sum, and nothing here should be treated as a partition of the literature.
+- **Almost everything is abstract-only.** Full text was read for nothing beyond what Europe PMC returned; PMC's HTML served a captcha and europepmc.org was not reachable through this workspace's proxy. Where a number comes from an abstract alone, that is marked.
+- **Two of the most interesting mechanistic papers are bioRxiv preprints** ([PMID 41648517](https://pubmed.ncbi.nlm.nih.gov/41648517/), [PMID 42856637](https://pubmed.ncbi.nlm.nih.gov/42856637/)) and have not been peer reviewed.
+- **"No trial exists" rests on ClinicalTrials.gov only.** EudraCT, ISRCTN, ChiCTR and jRCT were not searched, so a Chinese or Japanese trial of, say, tocilizumab in osteosarcoma would be missed. Given how much osteosarcoma trial activity in the earlier reports is Chinese, this is a real gap.
+- **The randomized surveillance trial is sarcoma-wide, not osteosarcoma.** [PMID 24249538](https://pubmed.ncbi.nlm.nih.gov/24249538/) studied 500 "extremity sarcoma" patients and the abstract does not break down histology; I could not retrieve the full text, so **the osteosarcoma fraction is unverified**.
+- **The metastasectomy evidence is retrospective and selection-biased throughout**, as its own systematic review says ([PMID 38375639](https://pubmed.ncbi.nlm.nih.gov/38375639/)). Hazard ratios from that literature describe who gets operated on as much as what the operation does.
+- **Dog trial results are single-arm against historical controls**, with exactly the bias problem that makes the human single-arm results in this setting hard to read. The inhaled IL-15 phase 2 result ([PMID 41209004](https://pubmed.ncbi.nlm.nih.gov/41209004/)) is the clearest case: it is a negative finding *relative to a historical cohort*, which is also how OST-HER2's positive figure is generated.
+- **Hypothesis 1 is my inference, not anyone's published claim.** No paper proposes IL-1 or IL-6 blockade in the post-surgical window; I am joining a dog trial's failure, its correlative cytokine data and two mouse mechanism papers. It should be read as a lead to check, not a conclusion.
+- The 33,000-record PubTator file is a snapshot and, as `reports/Osteosarcoma literature map.md` documents, a measurable slice of the osteosarcoma literature is unreliable. The ezrin and EMT counts here include that contamination.
+- **One worked example of how the keyword method can mislead.** My count returns **37 GM-CSF papers and zero with an in vivo metastasis endpoint**, which would suggest inhaled GM-CSF reached a 43-patient COG trial on no animal metastasis evidence at all. But the trial paper itself opens "based on preliminary data on the antitumor effects of GM-CSF in animal models" ([PMID 20576718](https://pubmed.ncbi.nlm.nih.gov/20576718/)). The preclinical work exists; it is indexed under terms my regex does not catch, or sits outside an osteosarcoma-titled paper. Read every zero in this report as "my keywords found none", not "none exists".
