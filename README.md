@@ -16,6 +16,7 @@ Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH Re
 - [Osteosarcoma clinical trials: what 40 years of registrations show](reports/Osteosarcoma%20clinical%20trials%20landscape.md): every registered osteosarcoma trial, why they stop, and trials whose results may be missing.
 - [A first pooled control dataset for osteosarcoma trials](reports/Osteosarcoma%20pooled%20control%20dataset.md): posted trial results placed side by side against historical benchmarks.
 - [The osteosarcoma literature map](reports/Osteosarcoma%20literature%20map.md): 33,000 papers scored by evidence quality and linked to trials and grants, with a close reading of four untested drug targets.
+- [Evidence risk flags for osteosarcoma genes](reports/Evidence%20risk%20flags%20for%20osteosarcoma%20genes.md): which genes' literature leans on the paper type most often retracted.
 - `research_notes/`: the sourced notes behind the report, including the verification pass.
 - `tools/`: scripts that rebuild every analysis from public data (NIH RePORTER, ClinicalTrials.gov, Europe PMC). Their output is in `data/`.
 
