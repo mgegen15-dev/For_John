@@ -1,5 +1,7 @@
 # For Johnny
 
+*In memory of my brother, John.*
+
 An open, independent effort to tie together the research on childhood osteosarcoma (and, secondarily, neuroblastoma) and find what has been overlooked: untested ideas, contradictions, lost trial results, and places where funding, trials and the literature don't line up.
 
 Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH RePORTER, Europe PMC) with scripts that anyone can re-run. Findings are leads for researchers to check, not conclusions.
@@ -21,6 +23,45 @@ Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH Re
 - `briefs/`: short research briefs for researchers and funders, starting with [a pet-dog trial of FAK or DKK1 blockade](briefs/Brief%20-%20pet%20dog%20trial%20of%20FAK%20or%20DKK1%20blockade.md).
 - `research_notes/`: the sourced notes behind the report, including the verification pass.
 - `tools/`: scripts that rebuild every analysis from public data (NIH RePORTER, ClinicalTrials.gov, Europe PMC). Their output is in `data/`.
+
+## Related work
+
+This project builds on, and hopes to feed into, the work of many others. If you know of something that belongs here, please open an issue.
+
+**Research consortia and trial groups**
+- [Children's Oncology Group (COG)](https://childrensoncologygroup.org/): runs most US paediatric osteosarcoma trials.
+- FOSTER (Fight Osteosarcoma Through European Research): the European osteosarcoma consortium, supported by the Bone Cancer Research Trust. Its new trial platform is [NCT07871864](https://clinicaltrials.gov/study/NCT07871864).
+- [Sarcoma Alliance for Research through Collaboration (SARC)](https://sarctrials.org/): runs sarcoma trials, including SARC024 and SARC028.
+- [NCI Comparative Oncology Program](https://ccr.cancer.gov/comparative-oncology-program): runs pet-dog cancer trials through the Comparative Oncology Trials Consortium.
+
+**Data and patient-partnered research**
+- [The Osteosarcoma Project (Count Me In)](https://osproject.org/): patients and families share samples and records for genomic research.
+- [Childhood Cancer Data Initiative (CCDI)](https://www.cancer.gov/research/areas/childhood/childhood-cancer-data-initiative): NCI's paediatric cancer data infrastructure.
+- [Pediatric Cancer Data Commons](https://commons.cri.uchicago.edu/): harmonized paediatric trial data, including bone tumours.
+- [St. Jude Cloud](https://www.stjude.cloud/) and [Gabriella Miller Kids First](https://kidsfirstdrc.org/): paediatric genomic data.
+- [PedcBioPortal](https://pedcbioportal.kidsfirstdrc.org/) and [cBioPortal](https://www.cbioportal.org/): browsable cancer genomics.
+- [Integrated Canine Data Commons](https://caninecommons.cancer.gov/): canine cancer data, including osteosarcoma.
+
+**Foundations and advocacy**
+- [MIB Agents](https://www.mibagents.org/): osteosarcoma-specific family community and research funder.
+- Osteosarcoma Institute (Dallas): a virtual institute that funds osteosarcoma trials and research.
+- [QuadW Foundation](https://quadw.org/), [Sarcoma Foundation of America](https://www.curesarcoma.org/), [Bone Cancer Research Trust](https://www.bcrt.org.uk/), [St. Baldrick's Foundation](https://www.stbaldricks.org/), [Alex's Lemonade Stand Foundation](https://www.alexslemonade.org/).
+- [Break Through Cancer](https://breakthroughcancer.org/): its Defying Osteosarcoma TeamLab is funded by family-led foundations.
+
+**Drug repurposing**
+- [Every Cure](https://everycure.org/): uses AI to find new uses for existing drugs.
+
+**Published analyses this project overlaps with**
+- Lagmay et al., [*J Clin Oncol* 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5012712/): the COG relapse benchmark used throughout this project.
+- [*Frontiers in Immunology* 2026](https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1790067/full): the clinical trial landscape of osteosarcoma, 864 trials from a commercial database.
+- [Evidence gap map across osteosarcoma tumour types](https://researchportal.plymouth.ac.uk/en/publications/evidence-distribution-across-osteosarcoma-tumour-types-an-evidenc/): built to inform the WHO classification.
+- Espejo Valle-Inclan et al., [*Cell* 2025](https://doi.org/10.1016/j.cell.2024.12.005): ongoing chromothripsis in osteosarcoma.
+
+**Tools for checking research and trials**
+- [Retraction Watch Database](https://retractionwatch.com/retraction-watch-database-user-guide/) and the [Problematic Paper Screener](https://www.irit.fr/~Guillaume.Cabanac/problematic-paper-screener): retractions and suspect papers.
+- [FDAAA TrialsTracker](https://fdaaa.trialstracker.net/): tracks unreported US trials.
+- [Open Targets](https://platform.opentargets.org/): evidence linking targets to diseases.
+- Data sources used here: [PubMed](https://pubmed.ncbi.nlm.nih.gov/), [PubTator3](https://www.ncbi.nlm.nih.gov/research/pubtator3/), [Europe PMC](https://europepmc.org/), [ClinicalTrials.gov](https://clinicaltrials.gov/), [NIH RePORTER](https://reporter.nih.gov/), [NCBI Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra).
 
 ## How to help
 
