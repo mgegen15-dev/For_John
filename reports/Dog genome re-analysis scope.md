@@ -25,7 +25,7 @@ That turns the lead from "is the 2025 genome-shattering pattern present in dogs?
 
 ## Why it can't be done in this workspace
 
-The tumour–normal genomes total roughly 35 trillion bases, many terabytes of raw reads, against about 30 GB of free space here. The analysis has to run in the cloud, where the SRA keeps copies that can be read without downloading.
+The tumour–normal genomes total almost 40 trillion bases, many terabytes of raw reads, against about 30 GB of free space here. The analysis has to run in the cloud, where the SRA keeps copies that can be read without downloading.
 
 ## What it would take
 
