@@ -160,9 +160,52 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
 
 <script>
 // ---------- Content (edit here) ----------
-const FINDINGS = [];      // filled in after the audit
-const ASKS = [];          // filled in after the audit
-const REPORTS = [];       // filled in after the audit
+const FINDINGS = [
+  { title: "Trials mostly fail to finish, not to work", label: "Confirmed",
+    body: "Of 99 osteosarcoma trials that stopped early, 44 stopped mainly because they couldn't recruit enough patients. Only about 7 to 9 stopped because the treatment didn't work. Across four decades there have been just 27 randomized trials devoted to osteosarcoma alone, and several large trials never reported their results.",
+    report: "reports/Osteosarcoma clinical trials landscape.md", reportName: "Trials report" },
+  { title: "One drug class clearly beats the benchmark, briefly", label: "Confirmed · who benefits is a Lead",
+    body: "In relapsed disease, pills that block the tumour's blood-vessel signal (VEGFR2) keep roughly 40 to 50% of patients free of progression at four months, against about 14% for other drugs. The effect fades within months. About 40% of tumours carry extra copies of the genes these pills target, and nobody has checked whether those are the patients who benefit. That can be tested with samples already stored from past trials.",
+    report: "reports/Why kinase-inhibitor pills work in osteosarcoma.md", reportName: "Kinase-inhibitor report" },
+  { title: "After surgery, block inflammation instead of boosting immunity?", label: "Hypothesis",
+    body: "In mice, lung tissue sends inflammatory signals (IL-1, IL-6, IL-8) that help osteosarcoma settle in the lung, and blocking them reduced spread. A dog trial that did the opposite, boosting immunity after amputation, did worse than past dogs on standard treatment. Approved drugs that block IL-1 and IL-6 exist, and none has been tested against osteosarcoma.",
+    report: "reports/Stopping lung metastasis in osteosarcoma.md", reportName: "Lung metastasis report" },
+  { title: "FAK and DKK1: the best-supported untested drug targets", label: "Lead",
+    body: "Blocking either protein reduced lung spread in mice, and drugs exist for both. Research programmes testing them in pet dogs with osteosarcoma already exist or are planned. Dogs get this cancer about ten times as often as people, and the disease is very similar.",
+    report: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md", reportName: "Research brief" },
+  { title: "New targets on the tumour surface", label: "Lead",
+    body: "Comparing 88 patient tumours with 54 healthy tissues ranked two proteins, LRRC15 and PTK7, near the top as targets for antibody drugs. A trial of a radioactive anti-LRRC15 antibody for relapsed osteosarcoma is already recruiting. PTK7 drugs are in trials for other cancers, but almost no one has studied PTK7 in osteosarcoma.",
+    report: "reports/New surface targets for osteosarcoma.md", reportName: "Surface targets report" },
+  { title: "Part of the research literature is unreliable", label: "Confirmed",
+    body: "Since 2010, 8.7% of one formulaic kind of osteosarcoma paper (microRNA studies) have been retracted, against 1.0% of other papers. We flag which genes' evidence leans on that kind of paper, so researchers know where to double-check.",
+    report: "reports/Evidence risk flags for osteosarcoma genes.md", reportName: "Risk flags report" },
+  { title: "Funding is thin where the gaps are", label: "Confirmed",
+    body: "NIH spent about $18 million on grants focused on osteosarcoma in 2025, and about half as much on it as on neuroblastoma over the last decade. The areas flagged above as gaps, such as blood-test monitoring, get the least.",
+    report: "reports/NIH funding for osteosarcoma.md", reportName: "Funding report" }
+];
+const ASKS = [
+  { title: "A sarcoma scientist to review this work.", text: "Tell us what is wrong and what is useful." },
+  { title: "Groups holding stored samples from kinase-inhibitor trials", text: "(SARC024, REGOBONE, OLIE, OAIE, CABONE, ADVL1622), to test whether tumour gene copies predict who benefits." },
+  { title: "Comparative oncology groups,", text: "to discuss a pet-dog study blocking IL-1 or IL-6 after amputation, and to share what existing dog studies of FAK blockers have shown." },
+  { title: "Trial sponsors with unreported osteosarcoma trials,", text: "to make their results public." },
+  { title: "Consortia such as FOSTER and the Children's Oncology Group,", text: "to use, correct and extend the pooled control dataset." }
+];
+const REPORTS = [
+  { title: "One-page summary", href: "SUMMARY.md" },
+  { title: "Ranked leads and research partners", href: "reports/Ranked leads and research partners.md", text: "the eleven leads, scored." },
+  { title: "Osteosarcoma research landscape and gaps", href: "reports/Osteosarcoma research landscape and gaps.md" },
+  { title: "Clinical trials landscape", href: "reports/Osteosarcoma clinical trials landscape.md" },
+  { title: "Pooled control dataset", href: "reports/Osteosarcoma pooled control dataset.md" },
+  { title: "Why kinase-inhibitor pills work", href: "reports/Why kinase-inhibitor pills work in osteosarcoma.md" },
+  { title: "Stopping lung metastasis", href: "reports/Stopping lung metastasis in osteosarcoma.md" },
+  { title: "New surface targets", href: "reports/New surface targets for osteosarcoma.md" },
+  { title: "Literature map", href: "reports/Osteosarcoma literature map.md" },
+  { title: "Evidence risk flags", href: "reports/Evidence risk flags for osteosarcoma genes.md" },
+  { title: "NIH funding", href: "reports/NIH funding for osteosarcoma.md" },
+  { title: "Dog genome re-analysis scope", href: "reports/Dog genome re-analysis scope.md" },
+  { title: "Research brief: FAK or DKK1 in pet dogs", href: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md" },
+  { title: "How this was made", href: "HOW_THIS_WAS_MADE.md", text: "methods, limits and how to re-run everything." }
+];
 const CHART = {
   benchmark: 12,
   rows: [

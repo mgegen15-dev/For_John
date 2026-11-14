@@ -11,7 +11,9 @@ Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.
 
 ## What's here
 
-- **Start here:** [The best leads, and who could test them](reports/Ranked%20leads%20and%20research%20partners.md)
+- **Website:** https://mgegen15-dev.github.io/For_John/
+- **Start here:** [One-page summary](SUMMARY.md) · [How this was made](HOW_THIS_WAS_MADE.md)
+- [The best leads, and who could test them](reports/Ranked%20leads%20and%20research%20partners.md)
 
 - [Osteosarcoma research landscape and gaps](reports/Osteosarcoma%20research%20landscape%20and%20gaps.md): the state of the field, lessons from neuroblastoma, and twelve candidate gaps with where each stands now.
 - [NIH funding for osteosarcoma, 2015–2025](reports/NIH%20funding%20for%20osteosarcoma.md): where NIH money for osteosarcoma goes, compared with neuroblastoma.
