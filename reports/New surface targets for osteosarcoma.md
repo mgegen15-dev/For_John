@@ -72,16 +72,16 @@ numbers below are produced by exactly the same pipeline as the candidate list.
 | Target | Status in osteosarcoma | Tumour median TPM | % tumours expressing | Worst vital normal TPM | Score | Rank of 2,434 |
 |---|---|---|---|---|---|---|
 | **LRRC15** | ADC target, sarcoma trials opening | 220 | 97.7% | 0.8 (stomach) | **6.77** | **1** |
-| **MMP14** | preclinical interest | 1,629 | 100% | 237.5 (artery) | 2.77 | 7 |
-| **CD276 / B7-H3** | ADCs + CAR-T in trials | 196 | 100% | 41.8 (nerve) | 2.20 | 15 |
-| **CDH11** | preclinical interest | 97 | 98.9% | 27.2 (artery) | 1.78 | 21 |
-| **ALPL** | in trials | 1,315 | 100% | 597.6 (liver) | 1.14 | 70 |
-| **GPNMB** | ADC in trials | 155 | 100% | 177.0 (nerve) | −0.19 | 617 |
-| **EPHA2** | in trials | 102 | 98.9% | 197.6 (nerve) | −0.94 | 1,263 |
-| **EGFR** | in trials | 10.5 | 68.2% | 43.1 (liver) | −1.32 | 1,554 |
-| **IL11RA** | ADC in trials | 6.0 | 59.1% | 80.6 (liver) | −2.10 | 1,998 |
-| **B4GALNT1 (GD2 synthase)** | CAR-T + antibody in trials | 6.3 | 61.4% | 93.6 (brain) | −2.26 | 2,062 |
-| **ERBB2 / HER2** | ADC + CAR-T in trials | 15.3 | 87.5% | 130.1 (heart) | −2.63 | 2,178 |
+| **MMP14** | preclinical interest | 1,629 | 100% | 237.5 (tibial artery) | 2.77 | 7 |
+| **CD276 / B7-H3** | ADCs + CAR-T in trials | 196 | 100% | 41.8 (aorta) | 2.20 | 15 |
+| **CDH11** | preclinical interest | 97 | 98.9% | 27.2 (lung) | 1.78 | 21 |
+| **ALPL** | in trials | 1,315 | 100% | 597.6 (whole blood) | 1.14 | 70 |
+| **GPNMB** | ADC in trials | 155 | 100% | 177.0 (aorta) | −0.19 | 617 |
+| **EPHA2** | in trials | 102 | 98.9% | 197.6 (oesophageal mucosa) | −0.94 | 1,263 |
+| **EGFR** | in trials | 10.5 | 68.2% | 43.1 (tibial nerve) | −1.32 | 1,554 |
+| **IL11RA** | ADC in trials | 6.0 | 59.1% | 80.6 (aorta) | −2.10 | 1,998 |
+| **B4GALNT1 (GD2 synthase)** | CAR-T + antibody in trials | 6.3 | 61.4% | 93.6 (cerebellum) | −2.26 | 2,062 |
+| **ERBB2 / HER2** | ADC + CAR-T in trials | 15.3 | 87.5% | 130.1 (tibial nerve) | −2.63 | 2,178 |
 
 Three things fall out of this table.
 
@@ -93,14 +93,15 @@ A screen that put B7-H3 at rank 1,800 would be worthless; this one puts it in th
 rank in the bottom half. For HER2 and EGFR this matches the clinical record: both have
 repeatedly failed or underwhelmed in osteosarcoma, and HER2 expression in osteosarcoma has been
 disputed in the literature for twenty years. Here HER2 sits at 15 TPM in tumours against 130 TPM
-in heart — the wrong direction for a cardiotoxic ADC. GD2 is a special case and the ranking
+in tibial nerve and 21 TPM in heart — the wrong direction for an agent whose dose-limiting
+toxicities are cardiac and neuropathic. GD2 is a special case and the ranking
 should be ignored for it: GD2 is a glycolipid, not a protein, so `B4GALNT1` mRNA is a poor proxy
 for how much antigen is on the cell, and GD2-directed agents can work regardless of what the
 synthase transcript does. IL11RA at 6 TPM in 59% of tumours is a genuine concern, not an
 artefact.
 
 **ALPL illustrates the screen's biggest blind spot.** It ranks 70th, held back by 598 TPM in
-liver — and that is real, bone and liver both make alkaline phosphatase. But GTEx contains no
+whole blood (neutrophils are full of alkaline phosphatase) and 52 TPM in liver — both real. But GTEx contains no
 bone, cartilage or osteoblast tissue at all. Any bone-restricted antigen therefore looks cleaner
 here than it is. That applies most of all to IFITM5 below.
 
@@ -149,7 +150,8 @@ antibody staining and immunofluorescence — `Enhanced` and `Supported` are the 
 ### 1. LRRC15 — the screen's own validation, and already being taken
 
 220 TPM in tumours, expressed in 97.7% of them, against 0.8 TPM in the worst vital tissue and
-3.1 TPM in fibroblasts. That is a ~270-fold window, the best in the dataset, and it is not a
+3.1 TPM in fibroblasts. That is a 122-fold window as scored (272-fold on the raw medians,
+before the pseudocount), the best in the dataset, and it is not a
 fluke of annotation: LRRC15 is a known ADC target. AbbVie's samrotamab vedotin (ABBV-085) was
 the first attempt; the search found three current programmes naming LRRC15, and **two of them
 explicitly list sarcoma**: SOT106 (NCT07801222, phase 1/2, lists osteosarcoma as a keyword) and
@@ -255,8 +257,8 @@ that.
 treatment-naive or near it. Osteosarcoma kills mainly through lung metastases that appear after
 chemotherapy, and antigen expression can change under treatment and at metastatic sites. Nothing
 here says whether these targets are still expressed in the relapsed, metastatic disease that is
-the actual clinical problem. With n=88 the confidence interval on any "% of tumours expressing"
-figure is roughly ±10 points.
+the actual clinical problem. With n=88 the 95% confidence interval on a "% of tumours
+expressing" figure is about ±6 points near 90% and ±10 points near 50%.
 
 **Bulk RNA-seq cannot separate tumour from stroma or immune infiltrate.** This is why the
 fibroblast column is in the table and why the immune-marker hits above are flagged. A high bulk
