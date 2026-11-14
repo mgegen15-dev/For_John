@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For John · Open osteosarcoma research</title>
+<meta name="description" content="An open, independent effort to tie together osteosarcoma research and find what has been overlooked. In memory of John.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #6f6e69;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11,11,11,0.10);
+  --accent: #2a78d6;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --bench: #d03b3b;
+  --link: #1c5cab;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --muted: #a3a29b;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255,255,255,0.10);
+    --accent: #3987e5;
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --bench: #e66767;
+    --link: #86b6ef;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
+  --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10); --accent: #3987e5;
+  --series-1: #3987e5; --series-2: #d95926; --bench: #e66767; --link: #86b6ef;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+a { color: var(--link); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+header.hero { padding: 64px 0 32px; }
+.hero h1 { font-size: clamp(40px, 8vw, 60px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em; }
+.dedication { font-style: italic; color: var(--ink-2); margin: 0 0 24px; font-size: 18px; }
+.lede { font-size: 20px; margin: 0 0 16px; }
+.note { font-size: 15px; color: var(--ink-2); border-left: 3px solid var(--axis); padding: 4px 0 4px 12px; margin: 24px 0 0; }
+nav.top { display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; margin-top: 24px; }
+section { padding: 32px 0; border-top: 1px solid var(--grid); }
+h2 { font-size: 26px; margin: 0 0 16px; letter-spacing: -0.01em; }
+h3 { font-size: 19px; margin: 24px 0 6px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 16px 0; }
+.finding h3 { margin-top: 0; }
+.tag { display: inline-block; font-size: 13px; font-weight: 600; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); margin-left: 6px; vertical-align: 2px; }
+.finding p { margin: 6px 0; }
+.finding .src { font-size: 14px; color: var(--muted); }
+ol.asks li, ul.list li { margin: 8px 0; }
+.chart-wrap { position: relative; }
+.chart-title { font-weight: 600; margin: 0 0 2px; }
+.chart-sub { color: var(--ink-2); font-size: 15px; margin: 0 0 12px; }
+svg text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.legend { display:flex; flex-wrap:wrap; gap:16px; font-size:14px; color:var(--ink-2); margin:0 0 8px; }
+.legend i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+.legend i.bench { width:2px; height:14px; border-radius:0; background:var(--bench); margin-right:8px; }
+.tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); opacity: 0; transition: opacity .1s; max-width: 260px; }
+.tip strong { display: block; font-size: 16px; }
+details { margin-top: 12px; font-size: 15px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { color: var(--ink-2); font-weight: 600; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14px; color: var(--ink-2); }
+.theme-toggle { background: none; border: 1px solid var(--axis); color: var(--ink-2); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 14px; cursor: pointer; }
+@media (max-width: 520px) { body { font-size: 16px; } .lede { font-size: 18px; } header.hero { padding-top: 40px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>For John</h1>
+  <p class="dedication">In memory of my little brother and best friend, John.</p>
+  <p class="lede">An open, independent effort focused on osteosarcoma: pulling together the published research, every registered trial and the funding behind it, to find what has been overlooked.</p>
+  <p>Survival for osteosarcoma that has spread or come back has barely changed in forty years. Plenty of research exists; it just isn't connected. This project connects it, in the open, so the people who can test new ideas can find them.</p>
+  <p class="note"><strong>Not medical advice.</strong> Nothing here is a recommendation about any patient's care. Findings are leads for researchers to check, not conclusions.</p>
+  <nav class="top" aria-label="Sections">
+    <a href="#findings">What we found</a>
+    <a href="#pills">The one drug class that works</a>
+    <a href="#ask">What we're asking</a>
+    <a href="#how">How this was made</a>
+    <a href="https://github.com/mgegen15-dev/For_John">All reports and data</a>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+  </nav>
+</header>
+
+<section id="findings">
+  <h2>What we found</h2>
+  <p>Each finding carries a label for how solid it is: <strong>Confirmed</strong> (checked against the original source), <strong>Lead</strong> (supported, but needs a scientist to test it), or <strong>Hypothesis</strong> (a reasoned idea, not yet tested).</p>
+  <div id="findingsList"><!-- filled from findings data below --></div>
+</section>
+
+<section id="pills">
+  <h2>The one drug class that clearly works, briefly</h2>
+  <div class="card chart-wrap" id="chartCard">
+    <p class="chart-title">Patients free of progression about four months into treatment, relapsed osteosarcoma</p>
+    <p class="chart-sub">Pooled from published trials and registry results, weighted by patients. The red line is the historical benchmark of about 12%.</p>
+    <div class="legend" aria-hidden="true"><span><i style="background:var(--series-1)"></i>Includes a kinase-inhibitor pill</span><span><i style="background:var(--series-2)"></i>No kinase-inhibitor pill</span><span><i class="bench"></i>Historical benchmark</span></div>
+    <div id="chart" role="img" aria-label="Bar chart of four-month progression-free rates by drug class"></div>
+    <div class="tip" id="tip" role="status" aria-live="polite"></div>
+    <details>
+      <summary>Show as a table</summary>
+      <table id="chartTable"><thead><tr><th>Treatment</th><th class="num">Patients</th><th class="num">4-month rate</th></tr></thead><tbody></tbody></table>
+    </details>
+  </div>
+  <p id="chartCaption"></p>
+</section>
+
+<section id="ask">
+  <h2>What we're asking</h2>
+  <ol class="asks" id="askList"></ol>
+  <p>If you work on osteosarcoma, or on any of the targets above, and something here is wrong or useful, please <a href="https://github.com/mgegen15-dev/For_John/issues">open an issue on GitHub</a>. Corrections are as valuable as confirmations.</p>
+</section>
+
+<section id="how">
+  <h2>How this was made</h2>
+  <ul class="list">
+    <li><strong>Who:</strong> started by John's brother, who is not a scientist, working with AI research assistants (Anthropic's Claude) to gather, analyse and cross-check public data.</li>
+    <li><strong>From what:</strong> 33,242 PubMed papers mentioning osteosarcoma, 758 studies on ClinicalTrials.gov, NIH grant records (2015–2025), Europe PMC full texts, and open genomic and tissue-expression data.</li>
+    <li><strong>Checked how:</strong> every headline claim was audited against its original source by an independent review pass, and the reports were corrected where it found errors. Each report ends with a change log.</li>
+    <li><strong>Not yet:</strong> peer-reviewed by a scientist. That is the next step, and we are asking for it.</li>
+    <li><strong>Open:</strong> every number can be rebuilt with the scripts in the repository. Reports and data are licensed CC BY 4.0, code is MIT.</li>
+  </ul>
+  <p><a href="https://github.com/mgegen15-dev/For_John/blob/main/HOW_THIS_WAS_MADE.md">Read the full methods and limitations</a></p>
+</section>
+
+<section id="reports">
+  <h2>The reports</h2>
+  <ul class="list" id="reportList"></ul>
+</section>
+
+<footer>
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+</footer>
+</div>
+
+<script>
+// ---------- Content (edit here) ----------
+const FINDINGS = [];      // filled in after the audit
+const ASKS = [];          // filled in after the audit
+const REPORTS = [];       // filled in after the audit
+const CHART = {
+  benchmark: 12,
+  rows: [
+    { label: "Other drugs (8 trial arms)", n: 271, value: 14.2, pill: false, note: "Older chemotherapy, antibodies, drug conjugates and DNA-repair drugs" },
+    { label: "Chemotherapy (IE) alone", n: 69, value: 56.1, pill: false, note: "Control arms of two randomized trials" },
+    { label: "Pill alone", n: 145, value: 52.5, pill: true, note: "41.4% if one trial's primary endpoint is used instead" },
+    { label: "Pill + chemotherapy (IE)", n: 128, value: 65.0, pill: true, note: "Three trials" },
+    { label: "Pill + PD-1 antibody", n: 43, value: 66.3, pill: true, note: "One trial (apatinib + camrelizumab)" }
+  ],
+  caption: "Taken alone, VEGFR2-blocking pills keep far more patients free of progression at four months than any other drug type, but the effect fades within months, and standard chemotherapy (ifosfamide and etoposide) does nearly as well, so combinations must be judged against chemotherapy, not the 12% line. In both randomized pill-plus-chemotherapy trials, overall survival was not improved. These are pooled across trials that measured progression slightly differently; treat them as approximate."
+};
+
+// ---------- Rendering ----------
+const repo = "https://github.com/mgegen15-dev/For_John/blob/main/";
+function el(tag, attrs, text) {
+  const e = document.createElement(tag);
+  if (attrs) for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (text != null) e.textContent = text;
+  return e;
+}
+function renderFindings() {
+  const box = document.getElementById("findingsList");
+  for (const f of FINDINGS) {
+    const c = el("article", { class: "card finding" });
+    const h = el("h3", null, f.title);
+    h.appendChild(el("span", { class: "tag" }, f.label));
+    c.appendChild(h);
+    c.appendChild(el("p", null, f.body));
+    const p = el("p", { class: "src" });
+    p.appendChild(document.createTextNode("Details: "));
+    const a = el("a", { href: repo + encodeURI(f.report) }, f.reportName);
+    p.appendChild(a);
+    c.appendChild(p);
+    box.appendChild(c);
+  }
+}
+function renderList(id, items) {
+  const ul = document.getElementById(id);
+  for (const it of items) {
+    const li = el("li");
+    if (it.href) { const a = el("a", { href: it.href.startsWith("http") ? it.href : repo + encodeURI(it.href) }, it.title); li.appendChild(a); }
+    else li.appendChild(el("strong", null, it.title));
+    if (it.text) li.appendChild(document.createTextNode(" " + it.text));
+    ul.appendChild(li);
+  }
+}
+function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+function renderChart() {
+  const host = document.getElementById("chart");
+  host.textContent = "";
+  const rows = CHART.rows;
+  if (!rows.length) return;
+  const W = Math.max(280, host.clientWidth), narrow = W < 520;
+  const labelW = narrow ? 0 : Math.min(190, W * 0.42), barH = 22, gap = narrow ? 34 : 18, labelUp = narrow ? 20 : 0;
+  const top = 8, H = top + rows.length * (barH + gap) + 28, plotW = W - labelW - 56;
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("width", W); svg.setAttribute("height", H); svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const x = v => labelW + (v / 100) * plotW;
+  // gridlines
+  for (const t of (narrow ? [0, 50, 100] : [0, 25, 50, 75, 100])) {
+    const l = document.createElementNS(ns, "line");
+    l.setAttribute("x1", x(t)); l.setAttribute("x2", x(t)); l.setAttribute("y1", top); l.setAttribute("y2", H - 24);
+    l.setAttribute("stroke", t === 0 ? css("--axis") : css("--grid")); l.setAttribute("stroke-width", 1);
+    svg.appendChild(l);
+    const tx = document.createElementNS(ns, "text");
+    tx.setAttribute("x", x(t)); tx.setAttribute("y", H - 6); tx.setAttribute("text-anchor", t === 0 && narrow ? "start" : "middle");
+    tx.setAttribute("font-size", 12); tx.setAttribute("fill", css("--muted")); tx.textContent = t + "%";
+    svg.appendChild(tx);
+  }
+  const tip = document.getElementById("tip"), card = document.getElementById("chartCard");
+  rows.forEach((r, i) => {
+    const y = top + i * (barH + gap) + gap / 2 + labelUp / 2;
+    const lab = document.createElementNS(ns, "text");
+    if (narrow) { lab.setAttribute("x", 0); lab.setAttribute("y", y - 7); lab.setAttribute("text-anchor", "start"); }
+    else { lab.setAttribute("x", labelW - 10); lab.setAttribute("y", y + barH / 2 + 5); lab.setAttribute("text-anchor", "end"); }
+    lab.setAttribute("font-size", 14); lab.setAttribute("fill", css("--ink")); lab.textContent = r.label;
+    svg.appendChild(lab);
+    const w = Math.max(2, x(r.value) - labelW), rad = Math.min(4, w / 2);
+    const path = document.createElementNS(ns, "path");
+    const x0 = labelW, x1 = labelW + w;
+    path.setAttribute("d", `M${x0},${y} H${x1 - rad} Q${x1},${y} ${x1},${y + rad} V${y + barH - rad} Q${x1},${y + barH} ${x1 - rad},${y + barH} H${x0} Z`);
+    path.setAttribute("fill", r.pill ? css("--series-1") : css("--series-2"));
+    svg.appendChild(path);
+    const val = document.createElementNS(ns, "text");
+    val.setAttribute("x", x1 + 6); val.setAttribute("y", y + barH / 2 + 5);
+    val.setAttribute("font-size", 14); val.setAttribute("font-weight", 600); val.setAttribute("fill", css("--ink"));
+    val.textContent = r.value.toFixed(0) + "%";
+    svg.appendChild(val);
+    const hit = document.createElementNS(ns, "rect");
+    hit.setAttribute("x", 0); hit.setAttribute("y", y - gap / 2); hit.setAttribute("width", W); hit.setAttribute("height", barH + gap);
+    hit.setAttribute("fill", "transparent"); hit.setAttribute("tabindex", "0");
+    hit.setAttribute("aria-label", `${r.label}: ${r.value.toFixed(1)}% of ${r.n} patients`);
+    const show = (ev) => {
+      tip.textContent = "";
+      tip.appendChild(el("strong", null, r.value.toFixed(1) + "% progression-free"));
+      tip.appendChild(el("div", null, r.label + " · " + r.n + " patients"));
+      if (r.note) tip.appendChild(el("div", null, r.note));
+      const cr = card.getBoundingClientRect();
+      const px = ev && ev.clientX ? ev.clientX - cr.left : x1;
+      tip.style.left = Math.min(Math.max(8, px + 12), cr.width - 270) + "px";
+      tip.style.top = (y + 40) + "px"; tip.style.opacity = 1;
+      path.setAttribute("opacity", 0.8);
+    };
+    const hide = () => { tip.style.opacity = 0; path.setAttribute("opacity", 1); };
+    hit.addEventListener("pointermove", show); hit.addEventListener("focus", show);
+    hit.addEventListener("pointerleave", hide); hit.addEventListener("blur", hide);
+    svg.appendChild(hit);
+  });
+  // benchmark: a short segment across each bar band only, so it never crosses a label
+  rows.forEach((r, i) => {
+    const y = top + i * (barH + gap) + gap / 2 + labelUp / 2;
+    const b = document.createElementNS(ns, "line");
+    b.setAttribute("x1", x(CHART.benchmark)); b.setAttribute("x2", x(CHART.benchmark));
+    b.setAttribute("y1", y - 4); b.setAttribute("y2", y + barH + 4);
+    b.setAttribute("stroke", css("--bench")); b.setAttribute("stroke-width", 2);
+    b.setAttribute("pointer-events", "none");
+    svg.appendChild(b);
+  });
+  host.appendChild(svg);
+}
+function renderTable() {
+  const tb = document.querySelector("#chartTable tbody");
+  for (const r of CHART.rows) {
+    const tr = el("tr");
+    tr.appendChild(el("td", null, r.label));
+    tr.appendChild(el("td", { class: "num" }, String(r.n)));
+    tr.appendChild(el("td", { class: "num" }, r.value.toFixed(1) + "%"));
+    tb.appendChild(tr);
+  }
+  document.getElementById("chartCaption").textContent = CHART.caption;
+}
+// theme toggle (per-viewer convenience only)
+(function () {
+  const btn = document.getElementById("themeToggle");
+  let saved = null;
+  try { saved = localStorage.getItem("forjohn-theme"); } catch (e) {}
+  if (saved) document.documentElement.setAttribute("data-theme", saved);
+  btn.addEventListener("click", () => {
+    const cur = document.documentElement.getAttribute("data-theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    renderChart();
+  });
+})();
+renderFindings();
+renderList("askList", ASKS);
+renderList("reportList", REPORTS);
+renderTable();
+renderChart();
+addEventListener("resize", () => renderChart());
+</script>
+</body>
+</html>
