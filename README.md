@@ -2,7 +2,7 @@
 
 *In memory of my little brother and best friend, John.*
 
-An open, independent effort focused on osteosarcoma: to tie together the research on it and find what has been overlooked. That means untested ideas, contradictions, lost trial results, and places where funding, trials and the literature don't line up. Neuroblastoma appears where its progress holds lessons for osteosarcoma.
+An open, independent effort focused on osteosarcoma: to tie together the research on it and find what has been overlooked. That means untested ideas, contradictions, lost trial results, and places where funding, trials and the literature don't line up. Osteosarcoma is the target; ideas are borrowed from anywhere: other sarcomas, neuroblastoma, adult cancers, other diseases, and dogs.
 
 Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH RePORTER, Europe PMC) with scripts that anyone can re-run. Findings are leads for researchers to check, not conclusions.
 
@@ -11,7 +11,7 @@ Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH Re
 
 ## What's here
 
-- **Start here:** [The ten best leads, and who could test them](reports/Ranked%20leads%20and%20research%20partners.md)
+- **Start here:** [The best leads, and who could test them](reports/Ranked%20leads%20and%20research%20partners.md)
 
 - [Research report: osteosarcoma and neuroblastoma research gaps](reports/Osteosarcoma%20and%20neuroblastoma%20research%20gaps.md): the research landscape, twelve candidate gaps, and how each held up when checked.
 - [NIH funding for osteosarcoma, 2015–2025](reports/NIH%20funding%20for%20osteosarcoma.md): where NIH money for osteosarcoma goes, compared with neuroblastoma.
