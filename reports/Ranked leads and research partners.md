@@ -1,4 +1,4 @@
-# For Johnny: the ten best leads, and who could test them
+# For John: the ten best leads, and who could test them
 
 *November 14, 2026. This ranks every lead from the project's five reports and matches each to the research groups best placed to act on it. Partners are drawn from public NIH grant records (`data/nih_osteosarcoma_projects.csv`), ClinicalTrials.gov sponsors and the published literature. Nobody named here has been contacted or has endorsed anything in this document.*
 

@@ -1,6 +1,6 @@
 # Osteosarcoma clinical trials: what 40 years of registrations show
 
-*Step 1 of the For Johnny dot-connecting plan. Built on November 14, 2026 from every study on ClinicalTrials.gov that lists osteosarcoma as a condition (758 studies, 603 of them interventional trials), plus a Europe PMC search of each finished trial's ID. Data: `data/osteosarcoma_trials.csv`, `data/osteosarcoma_trials_flags.csv`, `data/osteosarcoma_trials_publications.csv`. Scripts: `tools/trial_miner.py`, `tools/trial_analysis.py`, `tools/trial_publication_check.py`.*
+*Step 1 of the For John dot-connecting plan. Built on November 14, 2026 from every study on ClinicalTrials.gov that lists osteosarcoma as a condition (758 studies, 603 of them interventional trials), plus a Europe PMC search of each finished trial's ID. Data: `data/osteosarcoma_trials.csv`, `data/osteosarcoma_trials_flags.csv`, `data/osteosarcoma_trials_publications.csv`. Scripts: `tools/trial_miner.py`, `tools/trial_analysis.py`, `tools/trial_publication_check.py`.*
 
 ## Summary
 

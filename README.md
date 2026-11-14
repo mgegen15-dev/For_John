@@ -1,4 +1,4 @@
-# For Johnny
+# For John
 
 *In memory of my little brother and best friend, John.*
 

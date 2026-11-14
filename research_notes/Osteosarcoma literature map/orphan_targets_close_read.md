@@ -1,6 +1,6 @@
 # Orphan targets: critical close read of the osteosarcoma literature
 
-For Johnny — osteosarcoma research project. Four candidate "orphan" targets (substantial OS
+For John — osteosarcoma research project. Four candidate "orphan" targets (substantial OS
 literature, clinical-stage drug elsewhere, no OS trial registered): **DKK1, CCNE1, PTK2 (FAK),
 MDM2**.
 

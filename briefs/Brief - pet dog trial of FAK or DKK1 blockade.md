@@ -1,6 +1,6 @@
 # Research brief: a pet-dog trial of FAK or DKK1 blockade in osteosarcoma
 
-*For Johnny project · November 2026 · Supporting data and methods: this repository. Not medical advice.*
+*For John project · November 2026 · Supporting data and methods: this repository. Not medical advice.*
 
 ## The question
 

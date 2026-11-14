@@ -1,6 +1,6 @@
 # The osteosarcoma literature map: what 33,000 papers say, and what they don't
 
-*Step 2 of the For Johnny dot-connecting plan. Built on November 14, 2026 from every PubMed paper with "osteosarcoma" in its title or abstract (33,242 papers, 29,720 excluding reviews), with genes and chemicals tagged by NCBI's PubTator3 text-mining service. Each gene is linked to the 603 interventional trials in the trials report and the NIH grants in the funding report. Data: `data/osteosarcoma_gene_evidence.csv` (1,494 genes named in at least 5 papers), `data/osteosarcoma_paper_tags.csv` (one row per paper), `data/drug_targets_curated.json` (drug-to-target map). Scripts: `tools/literature_fetch.py`, `tools/literature_map.py`.*
+*Step 2 of the For John dot-connecting plan. Built on November 14, 2026 from every PubMed paper with "osteosarcoma" in its title or abstract (33,242 papers, 29,720 excluding reviews), with genes and chemicals tagged by NCBI's PubTator3 text-mining service. Each gene is linked to the 603 interventional trials in the trials report and the NIH grants in the funding report. Data: `data/osteosarcoma_gene_evidence.csv` (1,494 genes named in at least 5 papers), `data/osteosarcoma_paper_tags.csv` (one row per paper), `data/drug_targets_curated.json` (drug-to-target map). Scripts: `tools/literature_fetch.py`, `tools/literature_map.py`.*
 
 ## Summary
 
