@@ -14,3 +14,17 @@
 - **Other searches:** Europe PMC `NCT02273583` (1 hit, an unrelated review), `GLATO`, `"GLATO 2006"`, `osteossarcoma AND metronômica` (no trial report).
 - **Confidence: high.** Same design, regimen, dates, sponsor institution and PI as the registry record.
 
+## 2. NCT03063983 (GLATO2017): metronomic chemotherapy in metastatic osteosarcoma, Brazil
+
+**Found: nothing. No paper, abstract or press release reporting results.**
+
+- **Registry record** (opened https://clinicaltrials.gov/api/v2/studies/NCT03063983): acronym GLATO2017; sponsor GRAACC; responsible party Antônio Sérgio Petrilli; overall official Cláudia F. Fontes; started 2017-01-02; status unknown (last update 2017-03-13, last known "recruiting"); planned 158; estimated completion 2022-01-31; primary endpoint EFS with added metronomic therapy. No references, no results.
+- **Searched, nothing relevant:**
+  - Europe PMC: `NCT03063983` (2 hits, both reviews that only list the trial as ongoing: PMID 35409176, 33809018), `GLATO2017`, `"Latin American Group of Osteosarcoma"` (only GLATO 2006 and lab papers), `metastatic osteosarcoma AND metronomic AND (Latin American OR Brazil OR GRAACC)`, author search `AUTH:"Petrilli AS" AND osteosarcoma`, `Fontes CF AND osteosarcoma`, abstracts-only filter `osteosarcoma AND metronomic AND Brazil`.
+  - SIOP abstract books for 2014, 2015, 2017 and 2018 (Pediatr Blood Cancer; full text downloaded from PMC7168141, PMC7167893, PMC7167988, PMC7167781). Europe PMC matched them, but scanning the full text for "metronom" near "osteosarc" found no GLATO abstract. The match came from words scattered across the whole book.
+  - PubMed: `metronomic AND osteosarcoma AND metasta* AND (Brazil OR Argentina)[ad]` (0), `Petrilli AS[au] AND osteosarcoma, 2018-2026` (9 hits, all laboratory or genetics papers).
+  - Crossref bibliographic query (no relevant hit). WebSearch in English and Portuguese ("osteossarcoma metastático quimioterapia metronômica GRAACC") turned up only registry mirrors.
+  - OpenAlex could not be searched: the shared daily budget for this IP was used up.
+- **Side note:** WebSearch surfaced a 2011 abstract titled "Preliminary safety and outcome report of the metronomic therapy from the Latin American..." on aminer.org. That host is blocked in this session, so I never opened it. Its search snippet suggests it covers the earlier GLATO 2006 programme, not GLATO2017. Unverified.
+- **Confidence: moderate** that no results are public in indexed literature. Results could still sit in SIOP 2019-2025 abstract books (not scanned here) or in Brazilian theses. Next step: contact GRAACC (Petrilli or Fontes).
+
