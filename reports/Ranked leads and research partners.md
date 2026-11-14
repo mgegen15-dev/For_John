@@ -17,7 +17,7 @@ Each lead is scored 1 to 3 on four things, for a total out of 12:
 |---|---|---|---|---|---|---|
 | 1 | Pet-dog trial of a FAK or DKK1 drug after amputation | 2 | 3 | 2 | 3 | **10** |
 | 2 | Open pooled control dataset for relapse trials | 3 | 2 | 3 | 2 | **10** |
-| 3 | Recover results of large trials that never reported | 2 | 3 | 3 | 2 | **10** |
+| 3 | Recover results of large trials that never reported | 2 | 2 | 3 | 2 | **9** (partly done) |
 | 4 | Randomized trial in completely resected relapse | 3 | 3 | 1 | 3 | **10** |
 | 5 | Get a randomized test of kinase-inhibitor pills back on track | 3 | 2 | 1 | 3 | **9** |
 | 6 | Treatment adapted on ctDNA blood tests | 2 | 2 | 2 | 3 | **9** |
@@ -51,9 +51,9 @@ Leads 1 to 4 tie on score. They are ordered by which most directly tests a new t
 
 ### 3. Recover lost trial results
 
-**Why:** Five large randomized trials have status "unknown" and no posted results. The largest are two Brazilian trials of cheap oral metronomic chemotherapy that planned about 900 patients between them. Others are a 400-patient lithium trial and a 362-patient PD-L1 antibody trial. If any found a benefit, that matters; if not, that matters too.
+**Update (November 14, 2026):** the first pass is done. Three "missing" trials were in fact published, all negative, including the larger Brazilian metronomic maintenance trial (296 children randomized, no benefit). Still unreported: the 362-patient PD-L1 antibody maintenance phase 3 (ZKAB001), the 400-patient lithium trial, the Endostar trial and the Brazilian metastatic trial. See the trials report.
 
-**Partners:** the trial sponsors themselves, starting with GRAACC in Brazil (the metronomic trials), which can be contacted through their registry records. **We can do the first pass ourselves**, searching conference abstracts and Portuguese- and Chinese-language literature.
+**Partners:** the remaining trials' sponsors and investigators: Lee's Pharmaceutical (ZKAB001), Sun Yat-sen University Cancer Center (lithium), Simcere (Endostar) and GRAACC in Brazil. A short, polite question asking whether results exist is the next step.
 
 ### 4. Randomized trial in completely resected relapse
 

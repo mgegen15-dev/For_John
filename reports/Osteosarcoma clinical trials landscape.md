@@ -53,7 +53,7 @@ Some cases are telling. The 2024 cabozantinib maintenance trial CabOSTar (NCT063
 | NCT01002092 | 2009 | 160 | Endostar (endostatin) with chemotherapy | Chinese hospital |
 | NCT03063983 | 2017 | 158 | Metronomic chemotherapy in metastatic disease | Brazilian pediatric cancer group (GRAACC) |
 
-The two Brazilian metronomic trials stand out: together they planned nearly 900 patients on a cheap oral regimen, exactly the kind of low-cost maintenance strategy the research report highlights as under-tested.
+The two Brazilian metronomic trials stood out, together planning nearly 900 patients on a cheap oral regimen. The follow-up search below found that the larger one was published in 2017 and showed no benefit.
 
 **Finished trials with no paper citing them and no posted results.** Among interventional trials that ended between 2010 and 2023, 23 have neither results on ClinicalTrials.gov nor any paper in Europe PMC that cites their registry number, covering about 950 patients. The most notable:
 
@@ -68,10 +68,26 @@ The full list is in `data/osteosarcoma_trials_publications.csv`. **This method h
 
 **Results compliance for recent US trials is good.** Of 45 US phase 2-and-later trials completed since 2018, only 4 have no results posted.
 
+## Update: what the follow-up search found
+
+A follow-up search checked the nine highlighted trials one by one (details and sources: `research_notes/Lost trial results/lost_trials_search.md`). **Three of the "missing" trials had in fact been published**, without the registry number appearing where the automated check could see it. This confirms the caution above: the unpublished list is a list of leads, not proof.
+
+| Trial | What was found |
+|---|---|
+| NCT02273583, Brazilian metronomic maintenance (GLATO 2006) | **Published, negative.** 296 patients randomized (fewer than the 738 planned): 5-year event-free survival 61% with metronomic maintenance against 64% without (P = 0.40). Senerchia et al., *Cancer* 2017 (PMID 28263383) |
+| NCT00978471, high-dose thiotepa (France) | **Published, negative.** 44 randomized; 2-year overall survival 66.7% against 50.0%, not significant (P = 0.61). Marec-Bérard et al., *Eur J Cancer* 2020 (PMID 31838406) |
+| NCT03909776, intra-arterial cisplatin | **Published, negative.** A retrospective comparison (48 against 51 patients), with no benefit in local control or survival. Xie et al., *Cancer Manag Res* 2019 (PMID 31447583) |
+| NCT04359550, PD-L1 antibody (ZKAB001 / socazolimab) maintenance, phase 3 | **Phase 3 not reported.** The earlier single-arm phase 1/2 (21 patients) reported 71% event-free at 24 months (Zhou et al., *Clin Cancer Res* 2023, PMID 36469563). The drug is approved in China for cervical cancer, with no osteosarcoma filing found |
+| NCT02022358, glucarpidase (UK) | Partly: a 2013 university thesis covers it, but its results could not be read |
+| NCT03063983 (Brazil, metastatic), NCT01669369 (lithium, China), NCT01002092 (Endostar, China) | **Nothing found** in English-language sources. Chinese databases could not be searched from this workspace |
+| NCT02718482 (Italy) | Stopped at 7 patients; nothing to report |
+
+**What this changes.** The cheap-maintenance question is partly answered: metronomic maintenance after standard therapy was tested in 296 children and did not help. The genuinely unreported trials are now the 362-patient PD-L1 maintenance phase 3, the 400-patient lithium trial, the Endostar trial and the Brazilian metastatic trial. Each needs a direct question to its investigators or sponsor.
+
 ## What this connects to
 
 - **The pooled control dataset (gap 1 in the research report).** The 92 trials with posted results on ClinicalTrials.gov already hold arm-level outcomes in a standard format. Extracting them is the cheapest first version of the historical-control dataset the European consortium says is missing.
-- **Low-cost maintenance strategies.** Metronomic chemotherapy (nearly 900 planned patients in Brazil), DFMO, and lithium were all tested or are being tested, but the larger results are not in the registry. Recovering them would show whether any cheap maintenance approach deserves a definitive trial.
+- **Low-cost maintenance strategies.** Metronomic maintenance was tested in 296 randomized children in Brazil and did not help (published 2017). DFMO is being tested now, and lithium's 400-patient trial remains unreported.
 - **Recruitment is the bottleneck, not ideas.** With poor recruitment ending six times as many trials as lack of efficacy, platform designs such as the new FOSTER platform (NCT07871864) and pooled controls matter more than any single new drug.
 - **The China shift.** About a fifth of new trials now run in China, often without posted results. Following them requires Chinese-language conference abstracts and journals, which the research so far has not covered.
 
