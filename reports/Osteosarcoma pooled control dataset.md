@@ -91,6 +91,20 @@ Adding published papers more than doubled the dataset and changed one conclusion
 - No newer COG pooled benchmark for osteosarcoma exists. The resected-relapse figure of 20% (10–34%) still comes from the AOST0221 trial.
 - Several papers could be read only as abstracts because some publisher sites were unreachable from this workspace, so 27 of 60 rows are marked "abstract only".
 
+## Update: osteosarcoma results pulled out of basket trials
+
+Many osteosarcoma patients are enrolled in "basket" trials that mix several cancers, which the first pass set aside. A second pass searched all 114 such trials with posted results, plus their papers, and added **16 basket trials and about 400 osteosarcoma patients** (`data/osteosarcoma_relapse_benchmarks_basket.csv`; notes: `research_notes/Pooled controls/basket_trials_notes.md`). One trial tagged as basket, a St. Jude trial of bevacizumab with MAP, turned out to be osteosarcoma-only; it is kept as a first-line row (3-year event-free survival 57.5%).
+
+**The main picture holds.** Across all eight arms without a kinase-inhibitor pill or ifosfamide/etoposide, 271 patients, 14.2% were event-free or progression-free at about four months, close to the 12% benchmark. The pills alone remain around 50% (49.6% across 174 patients, once a second cabozantinib cohort, COG ADVL1622, is included).
+
+**Signals found inside basket trials:**
+- **Pazopanib + oral topotecan (PAZOTOP, NCT02357810):** 69.6% progression-free at 12 weeks in 28 osteosarcoma patients. It includes chemotherapy, so it compares with the ifosfamide/etoposide arms (42–66%), not with 12%. Abstract only.
+- **Cabozantinib in children and young adults (COG ADVL1622, NCT02867592):** about 35% had a response or stable disease, but only 14.7% were progression-free at one year, the same short-lived pattern as CABONE.
+- **Cixutumumab + temsirolimus:** 3 of 24 adults with osteosarcoma responded, against 0 of 10 children given the same drugs.
+- **Checkpoint inhibitors are confirmed inactive** in osteosarcoma cohorts: nivolumab 0 of 10, nivolumab + ipilimumab 0 of 10, and pembrolizumab + cyclophosphamide 1 of 15.
+
+Caveats: many basket arms have 10 or fewer osteosarcoma patients, adult basket trials enrolled more heavily pretreated patients than COG trials, and endpoint definitions differ.
+
 ## Limits
 
 - **Only trials that posted results are included.** Many osteosarcoma trials, including the large unknown-status trials in the trials report, never posted results, so this is a biased subset.
