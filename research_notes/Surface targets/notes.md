@@ -5,6 +5,10 @@ Built November 14, 2026. Script: `tools/surface_targets.py` (re-runnable, stages
 `data/osteosarcoma_surface_target_candidates.csv`. Report:
 `reports/New surface targets for osteosarcoma.md`.
 
+*Note added November 14, 2026: some trial statements below are out of date (LRRC15 and PTK7 trial
+statuses, MORAb-004 results, MRC2 drug programmes). The report and its change log hold the
+checked versions.*
+
 ## The question
 
 Osteosarcoma has had no new standard-of-care drug since the 1980s. The current wave of

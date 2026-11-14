@@ -1,6 +1,18 @@
 # For John: the best leads, and who could test them
 
-*Revised November 14, 2026 (second ranking), after four further research threads: kinase-inhibitor pills, tumour-surface targets, lung metastasis, and a full-text check of the FAK and DKK1 evidence. This ranks every open lead from the project's reports and matches each to the groups best placed to act on it. Partners come from public NIH grant records (`data/nih_osteosarcoma_projects.csv`), ClinicalTrials.gov sponsors and the published literature. Nobody named here has been contacted or has endorsed anything in this document.*
+*Last revised November 14, 2026, after an independent audit of every claim. This ranks the open leads from the project's reports and matches each to the institutions and programmes best placed to act on it. Partners come from public NIH grant records (`data/nih_osteosarcoma_projects.csv`, checked against NIH RePORTER), ClinicalTrials.gov sponsors and the published literature. No one at these institutions has been contacted, and none has endorsed anything in this document.*
+
+## Summary
+
+This page ranks eleven leads that could help children and young adults whose osteosarcoma has spread or come back. The top three are to test whether blocking inflammation after surgery (IL-1 or IL-6) keeps cancer out of the lungs, to find out whether gene copies in the tumour predict who benefits from VEGFR2-blocking kinase pills, and to publish the pooled control dataset this project has built. A pet-dog study of FAK or DKK1 blockade remains a strong lead, and the checking made its evidence stronger, but dog programmes for both targets already exist, so the useful step now is to support and learn from them, not to start one. Every lead is a hypothesis drawn from published work; none is a treatment recommendation. Partners are named as institutions and programmes, and none has been asked to take part yet.
+
+**How to read the labels.** After key numbers we say where they come from:
+
+- **(registry)**: an official database record, such as ClinicalTrials.gov, NIH RePORTER or an FDA notice.
+- **(paper, full text)**: read in the full published paper.
+- **(paper, abstract only)**: read only in the abstract.
+- **(press release only)**: from a company announcement, conference coverage or a web listing, with no peer-reviewed paper.
+- **(our calculation)**: counted or computed by this project.
 
 **Scope.** Osteosarcoma is the target. Ideas are borrowed from anywhere: other sarcomas, neuroblastoma, adult cancers, other diseases, and dogs.
 
@@ -8,60 +20,63 @@
 
 Each lead is scored 1 to 3 on four things, for a total out of 12:
 
-- **Evidence:** how well the underlying finding holds up after checking.
-- **Open:** whether it is still undone. A lead already under way scores low.
+- **Evidence:** how well the underlying finding holds up after checking. 3 = confirmed in full text and supported by more than one independent group or setting; 2 = at least one checked result that bears on the endpoint, but small, single-group or indirect; 1 = abstract-only or indirect.
+- **Open:** whether it is still undone. 3 = nobody found doing it; 2 = partly done or adjacent work exists; 1 = already under way by others.
 - **Feasibility:** how cheaply and quickly it could be done.
 - **Impact:** whether it could change outcomes for patients with metastatic or relapsed disease, the patients osteosarcoma kills.
 
+Leads with equal totals keep their previous order.
+
 ## The ranking
 
-| Rank | Lead | Evidence | Open | Feasibility | Impact | Total | Change since first ranking |
-|---|---|---|---|---|---|---|---|
-| 1 | Block IL-1 or IL-6 after surgery to stop lung metastasis | 2 | 3 | 2 | 3 | **10** | New, from the lung metastasis report |
-| 2 | Test whether gene amplifications predict who benefits from kinase-inhibitor pills | 2 | 3 | 2 | 3 | **10** | New, from the kinase-inhibitor report |
-| 3 | Publish the pooled control dataset | 3 | 2 | 3 | 2 | **10** | Was lead 2; much of the work is now done |
-| 4 | Pet-dog study of FAK or DKK1 blockade | 2 | 2 | 2 | 3 | **9** | Was lead 1. Defactinib has already been given to dogs; mouse evidence is thinner than first thought |
-| 5 | Confirm LRRC15 and PTK7 as new surface targets | 2 | 2 | 2 | 3 | **9** | New, from the surface-targets report |
-| 6 | Randomized trial after lung-metastasis surgery, run inside a platform | 3 | 2 | 1 | 3 | **9** | Was lead 4; one earlier attempt was found, abandoned for slow recruitment |
-| 7 | Block the IL-8 receptor (CXCR1/2) against lung metastasis | 2 | 3 | 2 | 2 | **9** | New |
-| 8 | Treatment adapted on ctDNA blood tests | 2 | 2 | 2 | 3 | **9** | Unchanged |
-| 9 | Add metastasis to an existing aspirin-versus-blood-thinner trial | 2 | 3 | 2 | 2 | **9** | New |
-| 10 | Chase the remaining unreported trials | 2 | 2 | 3 | 1 | **8** | Was lead 3; three "lost" trials turned out to be published |
-| 11 | Re-analyse dog genomes from NCI's canine trials | 2 | 3 | 2 | 1 | **8** | Unchanged |
+| Rank | Lead | Evidence | Open | Feasibility | Impact | Total |
+|---|---|---|---|---|---|---|
+| 1 | Block IL-1 or IL-6 after surgery to stop lung metastasis | 2 | 3 | 2 | 3 | **10** |
+| 2 | Test whether gene amplifications predict who benefits from VEGFR2-blocking pills | 2 | 3 | 2 | 3 | **10** |
+| 3 | Publish the pooled control dataset | 3 | 2 | 3 | 2 | **10** |
+| 4 | Pet-dog study of FAK or DKK1 blockade: support and learn from the existing programmes | 3 | 1 | 2 | 3 | **9** |
+| 5 | Confirm LRRC15 and PTK7 as new surface targets | 2 | 2 | 2 | 3 | **9** |
+| 6 | Randomized trial after lung-metastasis surgery, run inside a platform | 3 | 2 | 1 | 3 | **9** |
+| 7 | Treatment adapted on ctDNA blood tests | 2 | 2 | 2 | 3 | **9** |
+| 8 | Block the IL-8 receptor (CXCR1/2) against lung metastasis | 2 | 2 | 2 | 2 | **8** |
+| 9 | Add metastasis to an existing aspirin-versus-blood-thinner trial | 2 | 3 | 2 | 1 | **8** |
+| 10 | Chase the remaining unreported trials | 2 | 2 | 3 | 1 | **8** |
+| 11 | Re-analyse dog genomes from NCI's canine trials | 2 | 3 | 2 | 1 | **8** |
 
 **Done:** the paper-mill risk flag (`reports/Evidence risk flags for osteosarcoma genes.md`).
 
 **Dropped:**
-- **MDM2 inhibitors.** The evidence rests on one cell line, and the target is common only in low-grade osteosarcoma that surgery usually cures.
+- **MDM2 inhibitors.** The osteosarcoma evidence rests largely on one cell line. MDM2 amplification is the hallmark of low-grade osteosarcoma, which surgery usually cures, and is present in only a minority of high-grade tumours (9 of 66, 14%, in one sequencing cohort; paper, abstract only; PMID 31175097).
 - **Cyclin E1 (CDK2 inhibitors).** The weakest of the four targets read in full.
-- **Metronomic maintenance chemotherapy.** Tested in 296 children in Brazil, with no benefit (published 2017).
+- **Metronomic maintenance chemotherapy.** Tested in 296 randomized patients aged 30 or under in Brazil, Argentina and Uruguay, with no benefit: five-year event-free survival 61% against 64% (paper, abstract only; Cancer 2017, PMID 28263383).
 
 ## The leads in detail
 
 ### 1. Block IL-1 or IL-6 after surgery to stop lung metastasis
 
 **Why:**
-- Lung tissue releases IL-1α, which drives osteosarcoma cells to make IL-6 and IL-8 and colonize the lung. Blocking IL-1, or IL-6 together with IL-8, cut lung metastasis in mice (PMIDs 40882022, 30135299).
-- A canine trial of the opposite approach, boosting immunity with inhaled IL-15 after amputation, was stopped for futility and did *worse* than historical controls (NCI-COTC030, PMID 41209004). Its own data showed surgery and chemotherapy raise IL-6.
-- That suggests the weeks after surgery may be the time to *block* inflammation, not stimulate it.
-- The drugs are approved and inexpensive: anakinra (IL-1) and tocilizumab (IL-6), the latter available as biosimilars. Neither has an osteosarcoma trial.
-- IL-6 has a clean osteosarcoma literature (3% template papers, `reports/Evidence risk flags for osteosarcoma genes.md`).
+- Lung tissue releases IL-1α, which drives osteosarcoma cells to make IL-6 and IL-8 and colonize the lung. Blocking IL-1, or IL-6 together with IL-8, reduced lung metastasis in mice (paper, abstract only; PMIDs 40882022, 30135299).
+- A canine trial of the opposite approach, boosting immunity with inhaled IL-15 after amputation, was halted for futility: disease-free and overall survival were worse than historical controls given amputation and chemotherapy (paper, abstract only; NCI-COTC030, PMID 41209004). Its data also showed IL-6 rising after amputation and after chemotherapy.
+- That suggests the weeks after surgery may be the time to *block* inflammation, not stimulate it. This is our inference, not the trial authors' conclusion.
+- The drugs are approved and inexpensive: anakinra (IL-1) and tocilizumab (IL-6), the latter available as biosimilars. Neither has been tested as an anti-metastatic therapy in osteosarcoma. Anakinra has no osteosarcoma trial on ClinicalTrials.gov; tocilizumab appears only in an adult sarcoma immunotherapy combination trial (NCT04616248) whose endpoints are safety and dose (registry).
+- IL-6 has a clean osteosarcoma literature (3% template papers; our calculation, `reports/Evidence risk flags for osteosarcoma genes.md`).
 
-**Cheapest test:** a pet-dog study after amputation, using lung macrophage changes at four weeks as an early readout (PMID 39526499).
+**Cheapest test:** a pet-dog study after amputation, with metastasis-free survival as the endpoint. A necropsy study of 15 untreated dogs found a pre-metastatic macrophage change in the lung (paper, abstract only; PMID 39526499), which supports the rationale; whether that change could serve as an early on-treatment readout is untested.
 
 **Partners:**
-- NCI Comparative Oncology Program, which ran COTC030 and holds its data.
-- Ryan Roberts, Nationwide Children's, who holds an NIH grant on mechanisms of metastatic colonization.
-- UC Davis (Robert Rebhun, Robert Canter), who ran the canine inhaled IL-15 work.
+- The NCI Comparative Oncology Program, which ran COTC030 and holds its data.
+- The NIH-funded metastatic-colonization programme at Nationwide Children's Hospital (R01 CA260178; registry).
+- The UC Davis veterinary and surgical oncology team that ran the canine inhaled IL-15 work.
 
 **Details:** `reports/Stopping lung metastasis in osteosarcoma.md`.
 
-### 2. Do gene amplifications predict who benefits from kinase-inhibitor pills?
+### 2. Do gene amplifications predict who benefits from VEGFR2-blocking pills?
 
 **Why:**
-- Kinase-inhibitor pills are the only drug class clearly above the relapse benchmark, but the benefit lasts months. In both randomized pill-plus-chemotherapy trials, overall survival was numerically shorter with the pill.
-- About 40% of osteosarcomas carry extra copies of the genes these pills target (VEGFA, or KDR/PDGFRA/KIT).
-- No clinical study has checked whether those patients are the ones who respond. If they are, the pills could be given to the patients they help, and not to the rest.
+- VEGFR2-blocking kinase pills are the only single-agent class clearly above the relapse benchmark. Given alone, they leave about 52.5% of patients free of progression at four months, or 41.4% if the cabozantinib trial is counted by its own primary endpoint (our calculation, `reports/Osteosarcoma pooled control dataset.md`), against about 14% for other single agents. The benefit lasts months.
+- Overall survival has not improved. In OAIE, median survival was 18.1 against 22.9 months with the pill (HR 1.48; paper, full text), though its control arm received ifosfamide and etoposide on days 1–5 against days 1–3 in the apatinib arm. In OLIE, the hazard ratio was 1.28 at the primary analysis and 0.93 at the final analysis, so no difference either way (paper, full text).
+- In one sequencing cohort of 66 patients, at least 40% of tumours carried extra copies of genes these pills target (VEGFA, or the KDR/PDGFRA/KIT region) (paper, abstract only; PMID 31175097).
+- We found no clinical study that checks whether those patients are the ones who respond. If they are, the pills could be given to the patients they help, and not to the rest.
 
 **Cheapest test:** genotype archived tumour or banked blood DNA from the randomized trials (SARC024, REGOBONE, OLIE, OAIE) and the single-arm trials (CABONE, COG ADVL1622). Using the randomized trials allows a true drug-versus-control comparison.
 
@@ -70,54 +85,59 @@ Each lead is scored 1 to 3 on four things, for a total out of 12:
 - The French Sarcoma Group (REGOBONE).
 - Eisai and the ITCC consortium (OLIE).
 - COG (ADVL1622).
-- Richard Gorlick, MD Anderson, who runs NIH-funded genomically selected drug testing in patient-derived models.
+- MD Anderson Cancer Center's NIH-funded programme for genomically selected drug testing in osteosarcoma patient-derived models (U01 CA199221; registry).
 
 **Details:** `reports/Why kinase-inhibitor pills work in osteosarcoma.md`.
 
 ### 3. Publish the pooled control dataset
 
 **Why:**
-- The dataset now holds results from about 60 trials, roughly half from the registry and half from papers. It shows the 12% benchmark is wrong for chemotherapy combinations, because ifosfamide and etoposide alone keep 42–66% of patients progression-free at four months.
+- The dataset holds registry results, published trials and osteosarcoma arms from basket trials (`reports/Osteosarcoma pooled control dataset.md`). It shows that the 12% four-month benchmark, which COG built from 96 patients given single agents for measurable disease (paper, abstract only; PMID 27400942), does not apply to chemotherapy combinations: ifosfamide and etoposide alone keep 42–66% of patients progression-free at four months in the two randomized control arms (paper, full text).
 - A short paper or preprint would make the dataset citable.
 
 **Partners:**
-- FOSTER, through the Bone Cancer Research Trust, which funds it.
-- COG bone tumour committee.
-- Pediatric Cancer Data Commons.
+- FOSTER, the European osteosarcoma consortium, and its funders.
+- The COG bone tumour committee.
+- The Pediatric Cancer Data Commons.
 
 **We can do most of this ourselves**, ideally with a scientist co-author.
 
-### 4. Pet-dog study of FAK or DKK1 blockade
+### 4. Pet-dog study of FAK or DKK1 blockade: support and learn from the existing programmes
 
-**Why:** these are still the best-supported untested drug targets, but the full-text check changed the picture.
+**Why:** these remain the best-supported drug targets against lung metastasis that have not reached a human osteosarcoma trial, and the full-text check strengthened both. It also showed that dog work on both is already planned or under way, so this lead is now about supporting those programmes and filling the gaps they leave.
 - **FAK:**
-  - Defactinib, FDA-approved in 2025, has already been given to dogs with metastatic osteosarcoma in a Colorado State study; results not yet found.
-  - The only mouse study did not measure metastasis.
+  - Defactinib itself reduced lung metastasis in mice. In an orthotopic model (143B cells engineered to overexpress LOX, injected into the shin bone), 2 of 6 treated mice developed lung metastases against 6 of 6 controls (P = 0.03), with no change in primary tumour weight (paper, full text; Genes & Diseases 2023, PMID 37013056). It is small, uses one engineered cell line, and reports an unusually low dose (50 μg/kg twice daily).
+  - Defactinib is FDA-approved (accelerated approval, 8 May 2025, with avutometinib for KRAS-mutant low-grade serous ovarian cancer; registry).
+  - Colorado State University's veterinary cancer centre lists a study adding defactinib to losartan and toceranib in dogs with lung-metastatic osteosarcoma (press release only: web listing; status and results not found). Its NIH FAK grant (R37 CA303990, to August 2030) also plans a FAK-inhibitor study with platinum chemotherapy in dogs with naturally occurring osteosarcoma (registry).
 - **DKK1:**
-  - The best mouse result held up: lung metastasis in 2 of 10 treated against 7 of 9 untreated.
-  - An independent group reported the same direction.
-  - The drug, DKN-01, has never been given to a dog.
+  - The best mouse result held up on full-text reading: lung metastasis in 2 of 10 treated against 7 of 9 untreated (paper, full text; PMID 39805917).
+  - An independent group reported the same direction with an oral compound (paper, full text; PMID 39280613).
+  - Texas A&M's NIH grant (R21 CA286523, to December 2027) is developing a canine version of its DKK1 morpholino, with the stated goal of trials in client-owned dogs with osteosarcoma (registry).
+  - We found no report of the clinical anti-DKK1 antibody, DKN-01 (sirexatamab), being given to dogs.
 - The lung metastasis report adds a reason to favour FAK: it sits where several metastasis signals converge (IL-8, CXCL1, integrins).
 
+**What is still open:** a post-amputation study aimed at preventing metastasis (the existing FAK dog study treats dogs whose lung metastases are already visible); measuring FAK, activated FAK and DKK1 in banked dog tumours; and replication of the DKK1 mouse results in a model that neither original laboratory owns.
+
 **Partners:**
-- Daniel Regan, Colorado State: holds the NIH FAK grant and is at the veterinary center running the defactinib dog study.
-- David Loeb, Einstein, and Carl Gregory, Texas A&M: hold the NIH DKK-1 grants.
-- NCI Comparative Oncology Program.
+- Colorado State University's veterinary cancer centre and its NIH-funded FAK group.
+- Texas A&M's NIH-funded canine DKK1 morpholino programme (College of Medicine with the Department of Small Animal Clinical Sciences).
+- Albert Einstein College of Medicine's DKK-1 metastasis programme (NIH R01 CA262802, funded through June 2026; registry).
+- The NCI Comparative Oncology Program.
 
 **Details:** `briefs/Brief - pet dog trial of FAK or DKK1 blockade.md`.
 
 ### 5. Confirm LRRC15 and PTK7 as new surface targets
 
 **Why:**
-- In 88 patient tumours compared with 54 normal tissues, LRRC15 and PTK7 were made in almost every osteosarcoma and very little in vital organs. The same method ranked B7-H3, the current leading target, 15th, and HER2, which failed, near the bottom.
-- **LRRC15:** drug companies have just opened two sarcoma trials, one naming osteosarcoma. Following them matters more than starting anything new.
-- **PTK7:** four antibody-drug conjugates are already in early trials for other cancers, but osteosarcoma has fewer than five papers on it.
+- In 88 patient tumours compared with 54 normal tissues, LRRC15 and PTK7 were made in almost every osteosarcoma and very little in vital organs. The same method ranked B7-H3, the current leading target, 15th, and HER2, which failed, near the bottom (our calculation, `reports/New surface targets for osteosarcoma.md`). This is RNA, not protein.
+- **LRRC15:** companies have already moved. Three treatment trials target it: Lantheus's radiolabelled antibody LNTH-2403 in relapsed or refractory osteosarcoma only (Lu-TARGO, NCT07357519, phase 1/2, recruiting since February 2026); SOT106 in osteosarcoma and soft-tissue sarcoma (NCT07801222, not yet recruiting); and ZL-6201 in sarcoma and other tumours (NCT07374848, recruiting) (registry). Following them matters more than starting anything new.
+- **PTK7:** several antibody-drug conjugates are in early trials for other cancers (registry), but we found only one osteosarcoma paper on PTK7 in PubMed.
 
-**Cheapest test:** stain banked osteosarcoma tumours, including lung metastases and relapses, for PTK7 and LRRC15 protein. The finding so far is based on RNA only.
+**Cheapest test:** stain banked osteosarcoma tumours, including lung metastases and relapses, for PTK7 and LRRC15 protein.
 
 **Partners:**
 - The companies developing PTK7 drugs (HWK-007, KIVU-107, DAY301).
-- The LRRC15 trial sponsors (SOT106, ZL-6201).
+- The LRRC15 trial sponsors (Lantheus for LNTH-2403; the SOT106 and ZL-6201 developers).
 - Any group with an osteosarcoma tissue microarray, such as COG's biobank or FOSTER's sample programme.
 
 **Details:** `reports/New surface targets for osteosarcoma.md`.
@@ -125,62 +145,62 @@ Each lead is scored 1 to 3 on four things, for a total out of 12:
 ### 6. Randomized trial after lung-metastasis surgery, run inside a platform
 
 **Why:**
-- Single-arm trials in this setting cannot separate a drug's effect from who gets enrolled. Two very different drugs gave almost identical results (26% and 28% event-free at 12 months).
-- A randomized, placebo-controlled saracatinib trial was tried (NCT00752206). It needed over eight years to enrol 38 patients and was abandoned, with a non-significant 19.4 against 8.6 months progression-free.
-- So the obstacle is recruitment. The question needs a large platform such as FOSTER's new one (NCT07871864), possibly enriched for patients whose metastases did not respond to chemotherapy before surgery.
+- Single-arm trials in this setting cannot separate a drug's effect from who gets enrolled. Two very different drugs, denosumab and dinutuximab, gave almost identical results: 10 of 38 (26%) and 11 of 39 (28%) event-free at 12 months (paper, abstract only; PMIDs 41159913, 35809374). The COG benchmark for this setting is 20% at 12 months, and its 10–34% is the 95% confidence interval from one 42-patient trial, AOST0221 (paper, abstract only; PMID 27400942).
+- A randomized, placebo-controlled saracatinib trial was tried (NCT00752206). It took from March 2009 to August 2017 to enrol 38 patients and was closed for slow accrual and futility; progression-free survival was 19.4 against 8.6 months, not significant (P = 0.47) (registry; paper, abstract only, PMID 32398945).
+- So the obstacle is recruitment. Across osteosarcoma trials, recruitment problems ended five to six times as many trials as lack of efficacy (our calculation, `reports/Osteosarcoma clinical trials landscape.md`). The question needs a large platform such as FOSTER's new one (NCT07871864, recruiting since October 2026, about 530 planned; registry), possibly enriched for patients whose metastases did not respond to chemotherapy before surgery.
 
-**Partners:** FOSTER; COG bone tumour committee.
+**Partners:** FOSTER; the COG bone tumour committee.
 
-### 7. Block the IL-8 receptor (CXCR1/2)
+### 7. Treatment adapted on ctDNA blood tests
 
 **Why:**
-- An anti-IL-8 antibody blocked lung metastasis in mice (PMID 38302407).
-- Signalling through the CXCR2 receptor helps osteosarcoma cells stick to lung blood vessels (PMIDs 32079335, 34760697).
-- Oral CXCR1/2 blockers exist (SX-682, reparixin, ladarixin), and none has an osteosarcoma trial.
+- In osteosarcoma, tumour DNA was detectable in the blood of 57% of patients at diagnosis, and the risk of relapse and death rose with its level (paper, abstract only; Shulman 2018, PMID 30131550). The clean survival split in that study, and the published validation from the LEOPARD study, are in Ewing sarcoma (paper, abstract only; PMID 42743455). LEOPARD's osteosarcoma results are not yet published; its primary completion date is January 2027 (registry, NCT06068075).
+- The lung metastasis report adds a specific use: ctDNA could trigger earlier lung surgery, with complete removal as the outcome.
+- We found no osteosarcoma trial that changes treatment based on ctDNA. Earlier detection by scans alone has not been shown to improve survival.
+
+**Partners:** Dana-Farber Cancer Institute's NIH-funded paediatric sarcoma ctDNA programme, which leads LEOPARD (R37 CA244355, K08 CA290061; registry).
+
+### 8. Block the IL-8 receptor (CXCR1/2)
+
+**Why:**
+- An anti-IL-8 antibody mitigated lung metastasis in mice (paper, abstract only; PMID 38302407).
+- Signalling through the CXCR2 receptor helps osteosarcoma cells stick to lung blood vessels (paper, abstract only; PMIDs 32079335, 34760697).
+- Oral CXCR1/2 blockers exist (SX-682, reparixin, ladarixin). None has a human osteosarcoma trial on ClinicalTrials.gov (registry), but Colorado State University lists a dog trial adding ladarixin to losartan and toceranib after treatment for non-metastatic osteosarcoma (press release only: web listing; status not confirmed). That dog study is the natural first source of evidence, which lowers this lead's "open" score.
 - This fits naturally alongside lead 1.
 
-**Partners:** same as lead 1.
-
-### 8. Treatment adapted on ctDNA blood tests
-
-**Why:**
-- Tumour DNA in the blood predicts relapse; the LEOPARD study (NCT06068075) validated it at diagnosis.
-- The lung metastasis report adds a specific use: ctDNA could trigger earlier lung surgery, with complete removal as the outcome.
-- No trial yet changes treatment based on ctDNA. Earlier detection by scans alone has not been shown to improve survival.
-
-**Partners:** Brian Crompton and David Shulman, Dana-Farber, who hold the NIH ctDNA grants and lead LEOPARD.
+**Partners:** Colorado State University's veterinary cancer centre; the partners for lead 1.
 
 ### 9. Add metastasis to an existing aspirin-versus-blood-thinner trial
 
 **Why:**
 - Platelets help osteosarcoma cells survive in the bloodstream and settle in the lung.
-- Blocking tissue factor, LPAR1 or podoplanin reduced lung metastasis in mice (PMIDs 26763081, 34302117, 35381070).
-- An oral LPAR1 blocker, admilparant, is in phase 3 for lung fibrosis.
-- Separately, a large trial at Massachusetts General Hospital is randomizing about 2,868 orthopaedic oncology patients, including bone sarcoma, to aspirin or enoxaparin to prevent blood clots (NCT03244020, enrolling until 2028). Recording metastasis-free survival as an extra outcome in its bone-sarcoma patients would cost little.
+- Blocking tissue factor, LPAR1 or podoplanin reduced lung metastasis in mice (paper, abstract only; PMIDs 26763081, 34302117, 35381070).
+- An oral LPAR1 blocker, admilparant, is in phase 3 for lung fibrosis (registry; NCT06003426, NCT06025578).
+- Separately, a Massachusetts General Hospital trial is randomizing about 2,868 orthopaedic oncology patients, with a primary bone tumour stratum, to aspirin or enoxaparin to prevent blood clots (NCT03244020, enrolling by invitation, completion July 2028; registry). It enrols adults only, after pelvic or lower-limb surgery, so few osteosarcoma patients will be in it, which is why its impact score is 1. Recording metastasis-free survival in its bone-sarcoma patients would still cost little.
 
-**Partners:** the NCT03244020 investigators at Massachusetts General Hospital.
+**Partners:** the NCT03244020 study team at Massachusetts General Hospital.
 
 ### 10. Chase the remaining unreported trials
 
-**Why:** four trials still have no public results:
-- a 362-patient PD-L1 antibody maintenance phase 3 (ZKAB001, NCT04359550);
+**Why:** four large randomized trials, together planning about 1,080 patients, still have no public results (registry; our calculation, `reports/Osteosarcoma clinical trials landscape.md`):
+- a 362-patient PD-L1 antibody maintenance phase 3 (ZKAB001, NCT04359550; its earlier phase I/II in 21 patients is published, PMID 36469563);
 - a 400-patient lithium trial (NCT01669369);
 - an Endostar trial (NCT01002092);
 - the Brazilian metastatic metronomic trial (NCT03063983).
 
-Two more surfaced since:
-- a completed pediatric trial of the CD248 antibody MORAb-004 (NCT01748721);
-- an inhaled lipid cisplatin phase 2 completed in 2018 (NCT01650090).
+Also without public results: an inhaled lipid cisplatin phase 2 completed in 2018 with 28 patients (NCT01650090; registry). The earlier phase Ib/IIa in 19 patients is published (PMID 23255417) and is a different study. Beyond these, about 21 finished trials with about 810 patients have no results we could find, many of them supportive-care or imaging studies (our calculation).
+
+The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is published (Pediatr Blood Cancer 2018, PMID 29292843; 27 patients); only its registry results are missing.
 
 **Partners:** each trial's sponsor. A short, polite email asking whether results exist.
 
 ### 11. Re-analyse dog genomes from NCI's canine trials
 
 **Why:**
-- 743 open canine osteosarcoma genome runs include dogs from NCI's COTC021/022 trials, whose outcomes are known.
+- NCBI's Sequence Read Archive holds 743 open canine osteosarcoma whole-genome sequencing experiments, including deep tumour–normal genomes from 55 dogs in NCI's COTC021/022 trials, whose outcomes are known (registry; our calculation, `reports/Dog genome re-analysis scope.md`). The 743 are runs, not dogs, and many are shallow or blood-only.
 - Checking whether the 2025 genome-shattering pattern predicts survival in dogs would strengthen dogs as a model for testing therapies.
 
-**Partners:** NCI Comparative Oncology Program; Paul Meltzer (NCI).
+**Partners:** the NCI Comparative Oncology Program and the NCI Center for Cancer Research's genetics programme.
 
 **Details:** `reports/Dog genome re-analysis scope.md`.
 
@@ -191,9 +211,26 @@ Two more surfaced since:
    - pull osteosarcoma results out of sarcoma "basket" trials to enlarge it;
    - send the unreported-trial emails (lead 10).
 2. **First outreach:**
-   - the NCI Comparative Oncology Program, which connects to leads 1, 4, 7 and 11 at once;
-   - Colorado State, to ask what the defactinib dog study showed;
+   - the NCI Comparative Oncology Program, which connects to leads 1, 4, 8 and 11 at once;
+   - Colorado State University's veterinary cancer centre, to ask what its defactinib and ladarixin dog studies showed (leads 4 and 8);
+   - Texas A&M's canine DKK1 programme, to ask when a dog trial could start and whether a banked-tissue expression survey would help (lead 4);
    - MIB Agents, for a scientist to review the work and for introductions.
 3. **Second outreach:**
-   - the sarcoma trial groups holding kinase-inhibitor samples (lead 2);
+   - the sarcoma trial groups holding kinase-pill trial samples (lead 2);
    - the PTK7 and LRRC15 drug developers (lead 5).
+
+## Change log
+
+- **November 14, 2026 (audit corrections and re-scoring).**
+  - Lead 4 (FAK/DKK1 dogs): the claim that the only FAK mouse study did not measure metastasis was wrong. Defactinib reduced lung metastasis in an orthotopic mouse model (PMID 37013056). Evidence raised from 2 to 3. Dog programmes for both targets exist (Colorado State's defactinib study and its R37 grant, which plans a canine FAK study; Texas A&M's canine DKK1 morpholino), so Open fell from 2 to 1. Total unchanged at 9. The Einstein DKK-1 grant is described as funded through June 2026, its project end date on NIH RePORTER.
+  - Lead 8 (CXCR1/2, was lead 7): Colorado State lists a canine ladarixin trial, so Open fell from 3 to 2 (total 9 to 8). It now ranks below ctDNA.
+  - Lead 7 (ctDNA, was lead 8): LEOPARD's published validation is in Ewing sarcoma, not osteosarcoma; the osteosarcoma evidence is Shulman 2018. Score unchanged.
+  - Lead 9 (aspirin trial): the trial enrols adults only, so Impact fell from 2 to 1 (total 9 to 8).
+  - Lead 5: a third LRRC15 trial (LNTH-2403, NCT07357519, osteosarcoma only) was added.
+  - Lead 10: MORAb-004 is published (PMID 29292843) and was removed from the unreported list; trial totals now match the trials report.
+  - Lead 2: "overall survival numerically shorter in both randomized trials" was corrected (OLIE's final HR was 0.93); pill-alone rates now quoted both ways (52.5% and 41.4%); wording narrowed to VEGFR2-blocking pills.
+  - Lead 3: the 12% benchmark is described as not applicable to combinations, not as "wrong".
+  - Dropped list: MDM2 and metronomic wording corrected.
+  - Individual researchers are no longer named as partners; partners are named as institutions and programmes.
+  - Lead renumbering: old 7 is now 8 and old 8 is now 7. All other numbers are unchanged.
+- **November 13–14, 2026 (second ranking).** Four new research threads (kinase pills, surface targets, lung metastasis, FAK/DKK1 full-text check) added the IL-1/IL-6, gene-amplification, surface-target, CXCR1/2 and aspirin-trial leads and re-ordered the rest.
