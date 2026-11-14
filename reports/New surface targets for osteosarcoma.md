@@ -143,3 +143,186 @@ All 25 have "evidence at protein level" in HPA, i.e. the protein itself has been
 merely predicted from the transcript. "IHC"/"IF" are HPA's own reliability grades for its
 antibody staining and immunofluorescence — `Enhanced` and `Supported` are the strong grades,
 `Uncertain` means HPA itself does not trust the staining.
+
+## The five leads, in plain terms
+
+### 1. LRRC15 — the screen's own validation, and already being taken
+
+220 TPM in tumours, expressed in 97.7% of them, against 0.8 TPM in the worst vital tissue and
+3.1 TPM in fibroblasts. That is a ~270-fold window, the best in the dataset, and it is not a
+fluke of annotation: LRRC15 is a known ADC target. AbbVie's samrotamab vedotin (ABBV-085) was
+the first attempt; the search found three current programmes naming LRRC15, and **two of them
+explicitly list sarcoma**: SOT106 (NCT07801222, phase 1/2, lists osteosarcoma as a keyword) and
+ZL-6201 (NCT07374848, phase 1a/b in sarcoma, recruiting), plus an imaging agent LNTH-2403
+(NCT07272642). So this is not a new idea — but it is new to osteosarcoma's published literature,
+which contains only 6 LRRC15 papers. **The actionable point is that these trials exist and are
+recruiting now.** Anyone working on osteosarcoma should know the names.
+
+### 2. IFITM5 — the most interesting genuinely novel hit, with a caveat built in
+
+657 TPM in tumours, 88.6% expressing, 2.6 TPM in the worst vital tissue and **0.0 TPM in
+fibroblasts**. IFITM5 (also called BRIL) is an osteoblast-specific membrane protein; mutations in
+it cause osteogenesis imperfecta type V. Nothing in ClinicalTrials.gov targets it, and the
+osteosarcoma literature has 9 papers. On these numbers it is the cleanest window of any
+unexploited surface protein here, and the biology is coherent: osteosarcoma is a tumour of
+osteoblast lineage, so an osteoblast-restricted surface protein is exactly what you would hope to
+find. **But the caveat is unavoidable and specific: GTEx has no bone.** IFITM5's expression in
+normal osteoblasts, growth plate and remodelling bone is simply not in this dataset, and it will
+not be zero. A real assessment needs normal bone — paediatric growth plate especially, since the
+patients are children who are still growing. The honest statement is "best-looking novel target
+here, and the one whose risk this screen is least able to see".
+
+### 3. ADAM12 — modest expression, excellent specificity
+
+35 TPM in tumours but in 98.9% of them, against 1.8 TPM in the worst vital tissue (a brain
+region) and 9 TPM in the worst tissue overall. HPA gives it `Enhanced` IHC reliability, the top
+grade. Fibroblasts sit at 32 TPM, so part of this is mesenchymal lineage rather than tumour. No
+antibody or ADC programme targets it. ADAM12 is a sheddase involved in invasion, which also
+means a soluble ectodomain may circulate and soak up an antibody — worth checking before
+investing.
+
+### 4. PTK7 — the one you could test fastest
+
+93 TPM in tumours, 98.9% expressing, 39 TPM in lung as the worst vital tissue. The window is
+modest (2.3-fold), so on expression alone PTK7 would not stand out. What makes it a lead is
+that **four PTK7-directed ADCs are in phase 1 right now** — HWK-007 (NCT07444814), KIVU-107
+(NCT07229313, which already lists sarcoma), DAY301 (NCT06752681), and the original
+PF-06647020/PTK7-ADC (NCT03243331, completed). Osteosarcoma has fewer than five PTK7 papers. A
+drug that already exists and is already being given to sarcoma patients is a far cheaper
+experiment than a novel antigen, and the expression data here says osteosarcoma expresses it
+essentially universally.
+
+### 5. CD248 / endosialin (TEM1) — and a piece of history worth retrieving
+
+164 TPM, 100% of tumours, 80 TPM in coronary artery. The window is the weakest of the five, and
+the fibroblast value of 578 TPM is a warning: CD248 is a pericyte and activated-fibroblast
+antigen, so an antibody may be hitting stroma as much as tumour. It is on this list because the
+antibody already went into children: **MORAb-004 / ontuxizumab was tested in paediatric
+recurrent or refractory solid tumours (NCT01748721) and in adult solid tumours (NCT00847054),
+both completed.** Those trials have results or at least safety data, and this repo's existing
+work on unpublished trial results makes that a natural follow-up: find out what MORAb-004 did in
+the paediatric cohort before anyone re-raises an anti-CD248 antibody.
+
+### Also worth a look
+
+**MRC2** (Endo180/uPARAP, 436 TPM, 100% of tumours, `Enhanced` IHC, no drug programme anywhere)
+is a collagen-internalising receptor — mechanistically attractive for an ADC because it
+internalises by design, which is what an ADC needs. Its fibroblast value of 259 TPM is the
+problem. **CD109** (38 TPM, 96.6%, `Enhanced` IHC, no programme, under five osteosarcoma papers)
+is a GPI-anchored TGF-β co-receptor. **ULBP2** is an NKG2D ligand with a clean window (17 vs 6.7
+TPM) — interesting for NK-cell approaches rather than ADCs, but it is stress-induced and shed,
+so surface levels are unstable. **EPHB2** and **EPHA3** both score above EPHA2, the Eph receptor
+actually in trials. **ROBO1** has three CAR-NK trials (NCT03931720, NCT03941457, NCT03940820),
+though all are listed with unknown status from a single centre, which is a reason for caution
+rather than enthusiasm.
+
+### Candidates that are probably artefacts, named so nobody wastes time
+
+Three entries in the top 25 are likely to be bulk-RNA confounds rather than tumour antigens.
+**CD84**, **CSF1R** and **ITGA4** are immune-lineage markers, and HPA classes CD84 and CSF1R as
+immune-cell enriched or enhanced. Osteosarcoma biopsies contain abundant macrophages, so these
+may be measuring infiltrate, not tumour. CSF1R in particular is a macrophage marker; targeting
+it is a tumour-microenvironment strategy, not an antigen strategy. **SDC2**, **EMP3**,
+**SLC1A5** and **SLC16A1** are broadly expressed and their windows are under 2-fold. And one
+rank above the cut, **NDC1** and **LAPTM4A** pass the surface filter only because HPA lists the
+plasma membrane as a secondary location — NDC1 is a nuclear-pore protein. They are flagged
+`housekeeping` in the CSV and excluded from the shortlist for that reason.
+
+## Caveats
+
+These are ordered by how much they should change your reading.
+
+**RNA is not protein.** Everything here is transcript abundance. Antigen density on the cell
+surface — which is what an ADC or CAR actually sees, and what determines whether it works — can
+differ from mRNA by orders of magnitude, and depends on trafficking, shedding and turnover. The
+HPA columns are the only protein-level evidence in this report, and they say "this protein has
+been detected somewhere", not "this protein is on the surface of osteosarcoma cells at N copies".
+No candidate here is actionable without immunohistochemistry or flow cytometry on osteosarcoma
+tissue.
+
+**The normal-tissue reference contains no bone.** GTEx has 54 tissues and none of them is bone,
+cartilage, periosteum or growth plate. For a tumour of osteoblast lineage this is the single
+biggest gap: the normal cells most likely to share a surface antigen with the tumour are not in
+the comparison at all. IFITM5 and ALPL are both directly affected. Any bone-restricted antigen's
+window is overstated by this screen.
+
+**GTEx is adult; the patients are children.** The donors are adults, most of them middle-aged or
+older. Osteosarcoma occurs at the adolescent growth spurt, when bone is remodelling fast. A
+target that is quiet in adult tissue may be active in a growing child, and the screen cannot see
+that.
+
+**TARGET-OS is small and nearly all diagnostic biopsies.** 88 samples, all primary tumour, all
+treatment-naive or near it. Osteosarcoma kills mainly through lung metastases that appear after
+chemotherapy, and antigen expression can change under treatment and at metastatic sites. Nothing
+here says whether these targets are still expressed in the relapsed, metastatic disease that is
+the actual clinical problem. With n=88 the confidence interval on any "% of tumours expressing"
+figure is roughly ±10 points.
+
+**Bulk RNA-seq cannot separate tumour from stroma or immune infiltrate.** This is why the
+fibroblast column is in the table and why the immune-marker hits above are flagged. A high bulk
+TPM can come from tumour cells, from carcinoma-associated fibroblasts, from pericytes, or from
+macrophages, and the therapeutic consequences are completely different. Single-cell data would
+resolve this and was not used.
+
+**The surface annotation is noisy in both directions.** HPA's immunofluorescence localisation
+excluded CD276 — a target with ADCs and CAR-T in the clinic — because it saw only vesicles, and
+it excluded MMP14 and CDH11 from the plasma-membrane tier entirely. That is why the headline list
+uses a loose tier and why the tier is printed in the table. The intended cross-checks for this,
+the Cell Surface Protein Atlas / SURFY surfaceome and UniProt's curated subcellular locations,
+were both unreachable from this environment, so there is only one annotation source here where
+there should be three.
+
+**The score is a heuristic, not a model.** The log-ratio form, the 1 TPM pseudocount, the 10 TPM
+floor, the 5 TPM expression threshold and the choice of which 32 tissues count as "vital" are all
+judgement calls. Different choices reorder the middle of the list. They do not change the top
+few or the position of the controls, which is the main reason to believe the ranking at all.
+
+**Expression is necessary but nowhere near sufficient.** A real target also needs to internalise
+(for an ADC), not to be shed as a soluble decoy, to be homogeneously expressed within a tumour
+rather than patchy, and to be absent from haematopoietic stem cells. None of that is assessed
+here. ADAM12, CD248 and ULBP2 all have known shedding or soluble forms.
+
+**DepMap was not checked.** The plan included confirming that osteosarcoma cell lines express
+the top candidates, which matters because a target no cell line expresses is hard to work on
+preclinically. `depmap.org` returns an HTML bot-verification challenge instead of data from this
+environment, and the Sanger Cell Model Passports API is blocked by the proxy. **This step was
+not done by any route.** It is the main gap in the analysis.
+
+**Literature counts are incomplete by construction.** The repo's gene table only includes genes
+with at least five osteosarcoma papers, so "n/a" above means "fewer than five", not zero. That
+is still the informative direction for a novelty claim, but it is not a precise count.
+
+**The trial search matches text, not curated target fields.** ClinicalTrials.gov has no
+structured "target" field, so a target is counted when its name appears in a study's title,
+interventions, keywords or summary. That misses programmes that never name the target (early
+ABBV-085 records are an example of how easily this happens) and can over-count studies that
+merely mention a gene as a biomarker. The counts are a floor, and the specific NCT numbers
+quoted above were read individually.
+
+## Reproducing this
+
+```
+python3 tools/surface_targets.py all        # or: gdc hpa gtex rank hpadetail context
+```
+
+Stages cache into `data/surface_targets_raw/` (git-ignored, ~350 MB of GDC files), so re-runs are
+cheap and individual stages can be repeated. Two environment-specific notes: GTEx's bulk
+median-TPM files on `storage.googleapis.com` returned 403/404 here, so normals come through the
+API gene by gene; and the GTEx API defaults to the v10 dataset while its gene-lookup endpoint
+only returns GENCODE v26 identifiers, so everything is pinned to **GTEx v8** explicitly.
+
+## What would make this real
+
+In rough order of value per unit effort:
+
+1. **Immunohistochemistry on an osteosarcoma tissue microarray** for IFITM5, MRC2, CD109 and
+   ADAM12. This is the step that converts the whole exercise from a hypothesis to evidence.
+2. **Normal paediatric bone and growth plate expression** for IFITM5 and any other
+   bone-restricted candidate. Without it the top of this list cannot be assessed for safety.
+3. **Ask whether PTK7 ADCs can be tested in osteosarcoma.** Four are in phase 1; KIVU-107 already
+   lists sarcoma. This needs no new molecule.
+4. **Retrieve the MORAb-004 paediatric results** (NCT01748721) — an anti-CD248 antibody has
+   already been given to children with refractory solid tumours.
+5. **Single-cell or spatial data** to settle which of these signals is tumour and which is
+   stroma or macrophage.
+6. **Relapsed and metastatic samples**, since that is the disease that needs treating.

@@ -473,3 +473,115 @@ HYPOTHESIS: that 41.1% vs 0.0% split is a ready-made biology-defined risk strati
 resected setting — the thing the earlier gaps report says osteosarcoma lacks — and it is available
 *before* surgery. A trial that enrolled only pre-operative non-responders would be enriching for
 an event rate near 100%, which fixes the power problem that killed NCT00752206.
+
+## 5. Drugs that exist and have never reached an osteosarcoma trial
+
+FINDING. ClinicalTrials.gov API v2 queries run 2026-11-14, `query.cond=osteosarcoma` +
+`query.intr=<drug>`. Count = number of osteosarcoma studies returned.
+
+| Drug | Target | Osteosarcoma trials |
+|---|---|---|
+| anakinra, canakinumab, rilonacept | IL-1 | **0, 0, 0** |
+| tocilizumab, siltuximab, sarilumab | IL-6 / IL-6R | **1** (NCT04616248, supportive care in an adult CD40-agonist basket trial), 0, 0 |
+| reparixin, ladarixin, SX-682, navarixin | CXCR1/2 (IL-8 receptor) | **0, 0, 0, 0** |
+| defactinib, VS-6063, IN10018 | FAK | **0, 0, 0** |
+| plerixafor, motixafortide, mavorixafor | CXCR4 | **0** (the one "plerixafor" hit, NCT03612466, is a 153Sm-DOTMP trial, WITHDRAWN before enrolment — false match), 0, 0 |
+| DKN-01 / sirexatamab, BHQ880 | DKK-1 | **0, 0** |
+| pexidartinib, emactuzumab | CSF1R | **0, 0** |
+| telaglenastat (CB-839), DRP-104 | glutaminase / glutamine | **0, 0** |
+| galunisertib | TGF-beta R1 | **0** (vactosertib does appear in the local trial file) |
+| simtuzumab | LOXL2 | **0** |
+| maraviroc | CCR5 | **0** |
+| nirogacestat | NOTCH / gamma-secretase | **0** |
+| beta-glucan, selicrelumab (CD40 agonist) | innate immunity | **0, 0** |
+| **admilparant / BMS-986278 (phase 3 in IPF)** | **LPAR1** | **0** |
+| AP201 (humanized anti-podoplanin) | PDPN / CLEC-2 | **0** (not registered in any indication) |
+| WAY262611, NSC305787/NSC668394 | DKK-1 small molecule, ezrin | tool compounds, no clinical programme |
+
+### The platelet axis — the most complete untested chain I found
+
+FINDING. **PMID 26763081** (Thromb Haemost 2016): tissue factor was highly expressed in **73.6% of
+53 pre-treatment osteosarcoma biopsies** and expression associated significantly with disease-free
+survival; knockdown reduced **IL-8, CXCL1, SNAI1 and MMP2**; blocking antibodies in 143B-bearing
+mice reduced tumour growth, microvessel density and **significantly reduced lung metastasis**.
+FINDING. **PMID 34302117** (Oncogene 2021): osteosarcoma cells commonly induce platelet activation;
+activated platelets release abundant **lysophosphatidic acid**; **LPAR1** is upregulated in
+osteosarcoma (public datasets + in-house PDX); LPAR1 knockout abolished platelet-mediated invasion
+and **early pulmonary metastatic foci**; and the **orally available LPAR1 antagonist ONO-7300243
+prevented pulmonary metastasis in mouse models**.
+FINDING. **PMID 35381070** (Clin Cancer Res 2022): **podoplanin** activates platelets through
+CLEC-2; the neutralizing antibody PG4D2 "significantly suppressed tumor growth and pulmonary
+metastasis in osteosarcoma xenograft models highly expressing PDPN", and a **humanized IgG4
+anti-PDPN antibody, AP201**, suppressed growth and metastasis in vivo "without significant adverse
+events". Mechanism: platelet releasate activates PDGFR.
+FINDING (own count): platelets/coagulation = 427 papers, 144 metastasis-focused, 15 with in vivo
+metastasis endpoints. No osteosarcoma trial of any anti-platelet or LPAR1 agent.
+FINDING (a free natural experiment). **NCT03244020** (Massachusetts General Hospital, phase 4,
+**randomized, n=2,868 estimated, ENROLLING_BY_INVITATION since 2018-02, completion 2028-07**)
+randomizes **aspirin 325 mg daily vs enoxaparin** for VTE prophylaxis after orthopaedic oncology
+surgery, with a **dedicated "primary bone tumor" stratum**. Primary outcome is venous
+thromboembolism, not metastasis.
+HYPOTHESIS: this trial is already randomizing bone-sarcoma patients to an anti-platelet drug versus
+an anticoagulant in the peri-operative window. An **exploratory metastasis-free-survival analysis
+of the primary-bone-tumour stratum costs nothing but a data request**, and it is the cheapest
+possible test of the platelet-metastasis hypothesis in humans. (It is not a clean test: aspirin vs
+LMWH is not aspirin vs nothing, LMWH has its own anti-metastatic literature, and the trial is not
+powered or stratified for this.)
+
+## 6. Top overlooked opportunities (HYPOTHESES, each with evidence, drug, cheapest test)
+
+See the report for the written-up version. Ranked list:
+1. IL-1 blockade in the post-surgical window (anakinra/canakinumab). Evidence PMID 40882022
+   (IL-1alpha from lung epithelium initiates the IL-6/CXCL8 programme; pharmacologic IL1
+   disruption reduced metastatic progression), PMID 30135299, PMID 41209004 (IL-6 rises after
+   amputation and after chemotherapy and tracks falling cytotoxicity). Drug: anakinra, generic-ish,
+   paediatric safety record in systemic JIA. Cheapest test: pet-dog adjuvant study after amputation.
+2. CXCR1/2 blockade (SX-682 oral, reparixin, ladarixin). Evidence PMID 30135299, 38302407
+   (anti-IL-8 antibody reduced lung metastasis in vivo), 32079335 + 34760697 (lung-endothelial
+   CXCL1 -> CXCR2 -> FAK -> VCAM-1). Zero trials. Cheapest test: SX-682 in the K7M3 syngeneic
+   lung-colonization model, then dogs.
+3. The platelet axis (LPAR1 antagonist, anti-PDPN). Evidence PMIDs 26763081, 34302117, 35381070.
+   Drug: admilparant/BMS-986278 is in phase 3 for IPF. Cheapest test: the NCT03244020 secondary
+   analysis, plus admilparant in an orthotopic-amputation mouse model.
+4. Defactinib (FAK) as the convergence node. Evidence PMID 42520958, 37013056, 36997926, 38302407,
+   32079335 — FAK sits downstream of IL-8, CXCL1, integrins and LOX. FDA-approved 2025, zero
+   osteosarcoma trials, NIH-funded at a veterinary school (Regan, Colorado State).
+   Cheapest test: pet-dog adjuvant trial — this is already lead 1 of `Ranked leads`.
+5. Re-run the resected-lung randomized question, enriched on pre-operative non-response.
+   Evidence PMID 42723688 (5-year survival 41.1% responders vs 0.0% non-responders, HR 0.22,
+   p<0.001) + NCT00752206 (38 patients in 8.75 years, stopped for accrual). Cheapest test: a
+   FOSTER-platform arm (NCT07871864) restricted to non-responders, where event rates approach 100%.
+6. ctDNA-triggered *earlier surgery*, not earlier drugs. Evidence PMID 42036655 (complete
+   resection HR 0.21), PMID 42824543, PMID 39360936. Cheapest test: a single-arm feasibility study
+   measuring complete-resection rate against the retrospective rate.
+7. The pre-metastatic niche in dogs as a ready-made platform. Evidence PMID 39526499 (CD204+,
+   CD206+ macrophages and CD11d+ BMDCs raised in pre-metastatic canine lung; recruitment transient),
+   PMID 41648517 (canine OS the most faithful cross-species model). Cheapest test: use lung biopsy
+   / BAL macrophage counts as the pharmacodynamic endpoint for any niche-directed drug in dogs,
+   which turns a 2-year survival endpoint into a 4-week biomarker endpoint.
+8. Lung interface adaptive resistance (FGFR). Evidence PMID 42856637 (preprint): ERK-high cells
+   enriched at the tumour-lung interface; tumour lysis amplifies FGFR-ERK in neighbours;
+   fexagratinib or pazopanib suppressed it. Cheapest test: add an FGFR inhibitor to an existing
+   cytotoxic in the ex vivo pulmonary metastasis culture that paper already built.
+9. Glutamine metabolism: 5 in vivo metastasis papers in 33,242; telaglenastat and DRP-104 are
+   clinical-stage; zero trials. Cheapest test: a lab experiment, not a trial.
+10. Ezrin: ~20 years of in vivo metastasis evidence (17 papers), zero clinical-grade inhibitor.
+   This is a medicinal-chemistry gap. Cheapest useful act: say so publicly so nobody mistakes
+   "no trial" for "no evidence".
+
+## 7. Limits of this analysis
+
+- All mechanism counts are **keyword matches on title+abstract**, not curation. "In vivo metastasis"
+  means the abstract contains an animal term, metastasis wording and a metastasis-model phrase; it
+  does **not** mean the mechanism was blocked and metastasis measured as the endpoint.
+- Mechanism regexes overlap deliberately (a paper can count under IL-6, STAT3 and macrophages), so
+  columns do not sum.
+- Abstracts only for essentially everything. Full text was retrieved for nothing except what Europe
+  PMC returned as an abstract; PMC HTML was blocked by a captcha and europepmc.org was not
+  reachable through this workspace's proxy.
+- The 33k PubTator file is a snapshot; "no trial exists" claims rest on ClinicalTrials.gov only
+  (no EudraCT, ISRCTN, ChiCTR or jRCT), so a Chinese or Japanese registry trial of, say,
+  tocilizumab in osteosarcoma would be missed.
+- Two of the strongest mechanistic papers (PMID 41648517, 42856637) are **bioRxiv preprints**.
+- Dog trial results are single-arm against historical controls, with the same bias problem as the
+  human single-arm trials.

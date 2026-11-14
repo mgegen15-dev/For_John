@@ -34,7 +34,7 @@ Leads 1, 2 and 4 tie on score, ordered by which most directly tests a new treatm
 
 ### 1. Pet-dog trial of a FAK or DKK1 drug
 
-**Why:** FAK and DKK1 have the best evidence of any untested target. Blocking either reduced tumour growth or metastasis in mice, and drugs exist: defactinib (FAK, FDA-approved in 2025 for an ovarian cancer) and DKN-01 (DKK1, in trials for gastric cancer). Neither drug has been tested in osteosarcoma models, and neither target has any dog data. Dogs get osteosarcoma about ten times as often as people, and trials in pet dogs after amputation can answer the metastasis question in one to two years.
+**Why:** FAK and DKK1 have the best evidence of any untested target. Blocking either reduced tumour growth or metastasis in mice, and drugs exist: defactinib (FAK, FDA-approved in 2025 for an ovarian cancer) and DKN-01 (DKK1, in trials for gastric cancer). Neither clinical drug has been tested in a published osteosarcoma model. A full-text check found that Colorado State lists a canine study that has already given defactinib to dogs with metastatic osteosarcoma (results not yet found); DKN-01 has never been given to a dog. The check also found the mouse evidence is thinner than the abstracts suggested: the FAK study did not measure metastasis, and the DKK1 work comes from two labs sharing one model. See the revised brief. Dogs get osteosarcoma about ten times as often as people, and trials in pet dogs after amputation can answer the metastasis question in one to two years.
 
 **Partners:**
 - Daniel Regan, Colorado State University: holds the NIH grant on FAK inhibition in osteosarcoma, at a veterinary school.
