@@ -1,6 +1,6 @@
 # For John: the best leads, and who could test them
 
-*Last revised November 14, 2026, after an independent audit of every claim. This ranks the open leads from the project's reports and matches each to the institutions and programmes best placed to act on it. Partners come from public NIH grant records (`data/nih_osteosarcoma_projects.csv`, checked against NIH RePORTER), ClinicalTrials.gov sponsors and the published literature. No one at these institutions has been contacted, and none has endorsed anything in this document.*
+*Last revised November 14, 2026, after an independent audit of its claims against primary sources. This ranks the open leads from the project's reports and matches each to the institutions and programmes best placed to act on it. Partners come from public NIH grant records (`data/nih_osteosarcoma_projects.csv`, checked against NIH RePORTER), ClinicalTrials.gov sponsors and the published literature. No one at these institutions has been contacted, and none has endorsed anything in this document.*
 
 ## Summary
 
@@ -58,10 +58,10 @@ Leads with equal totals keep their previous order.
 - Lung tissue releases IL-1α, which drives osteosarcoma cells to make IL-6 and IL-8 and colonize the lung. Blocking IL-1, or IL-6 together with IL-8, reduced lung metastasis in mice (paper, abstract only; PMIDs 40882022, 30135299).
 - A canine trial of the opposite approach, boosting immunity with inhaled IL-15 after amputation, was halted for futility: disease-free and overall survival were worse than historical controls given amputation and chemotherapy (paper, abstract only; NCI-COTC030, PMID 41209004). Its data also showed IL-6 rising after amputation and after chemotherapy.
 - That suggests the weeks after surgery may be the time to *block* inflammation, not stimulate it. This is our inference, not the trial authors' conclusion.
-- The drugs are approved and inexpensive: anakinra (IL-1) and tocilizumab (IL-6), the latter available as biosimilars. Neither has been tested as an anti-metastatic therapy in osteosarcoma. Anakinra has no osteosarcoma trial on ClinicalTrials.gov; tocilizumab appears only in an adult sarcoma immunotherapy combination trial (NCT04616248) whose endpoints are safety and dose (registry).
+- The drugs are approved and inexpensive: anakinra (IL-1) and tocilizumab (IL-6), the latter available as biosimilars. Neither has a registered efficacy trial in osteosarcoma on ClinicalTrials.gov; tocilizumab appears only in an adult sarcoma immunotherapy combination trial (NCT04616248) whose endpoints are safety and dose (registry). NIH has funded one osteosarcoma grant on IL-6/IL-8 (K08 CA201638, 2016–2020; registry).
 - IL-6 has a clean osteosarcoma literature (3% template papers; our calculation, `reports/Evidence risk flags for osteosarcoma genes.md`).
 
-**Cheapest test:** a pet-dog study after amputation, with metastasis-free survival as the endpoint. A necropsy study of 15 untreated dogs found a pre-metastatic macrophage change in the lung (paper, abstract only; PMID 39526499), which supports the rationale; whether that change could serve as an early on-treatment readout is untested.
+**Cheapest test:** a pet-dog study after amputation, with metastasis-free survival as the endpoint. A necropsy study of 15 untreated dogs found a pre-metastatic macrophage change in the lung (paper, abstract only; PMID 39526499), which supports the rationale. Those counts were made at necropsy, so using them as an early readout in live dogs (for example at four weeks) is untested.
 
 **Partners:**
 - The NCI Comparative Oncology Program, which ran COTC030 and holds its data.
@@ -131,7 +131,8 @@ Leads with equal totals keep their previous order.
 **Why:**
 - In 88 patient tumours compared with 54 normal tissues, LRRC15 and PTK7 were made in almost every osteosarcoma and very little in vital organs. The same method ranked B7-H3, the current leading target, 15th, and HER2, which failed, near the bottom (our calculation, `reports/New surface targets for osteosarcoma.md`). This is RNA, not protein.
 - **LRRC15:** companies have already moved. Three treatment trials target it: Lantheus's radiolabelled antibody LNTH-2403 in relapsed or refractory osteosarcoma only (Lu-TARGO, NCT07357519, phase 1/2, recruiting since February 2026); SOT106 in osteosarcoma and soft-tissue sarcoma (NCT07801222, not yet recruiting); and ZL-6201 in sarcoma and other tumours (NCT07374848, recruiting) (registry). Following them matters more than starting anything new.
-- **PTK7:** several antibody-drug conjugates are in early trials for other cancers (registry), but we found only one osteosarcoma paper on PTK7 in PubMed.
+  A fourth record, NCT07272642 (Radiopharm Theranostics, an imaging and safety study of "NTH-2403" in solid tumours), is not yet recruiting; we could not confirm that it is the same antibody (registry).
+- **PTK7:** three antibody-drug conjugates are in active early trials for other cancers; Pfizer's earlier PF-06647020 trials are completed (registry). We found only one osteosarcoma paper on PTK7 in PubMed. PTK7's rank is sensitive to method: it falls from 64th to 551st when all 54 normal tissues are used, whereas LRRC15 stays in the top 3 under every variant (our calculation), so LRRC15 is the stronger of the two.
 
 **Cheapest test:** stain banked osteosarcoma tumours, including lung metastases and relapses, for PTK7 and LRRC15 protein.
 
@@ -163,9 +164,9 @@ Leads with equal totals keep their previous order.
 ### 8. Block the IL-8 receptor (CXCR1/2)
 
 **Why:**
-- An anti-IL-8 antibody mitigated lung metastasis in mice (paper, abstract only; PMID 38302407).
+- An anti-IL-8 antibody reduced lung metastasis in mice (paper, abstract only; PMID 38302407).
 - Signalling through the CXCR2 receptor helps osteosarcoma cells stick to lung blood vessels (paper, abstract only; PMIDs 32079335, 34760697).
-- Oral CXCR1/2 blockers exist (SX-682, reparixin, ladarixin). None has a human osteosarcoma trial on ClinicalTrials.gov (registry), but Colorado State University lists a dog trial adding ladarixin to losartan and toceranib after treatment for non-metastatic osteosarcoma (press release only: web listing; status not confirmed). That dog study is the natural first source of evidence, which lowers this lead's "open" score.
+- Oral CXCR1/2 blockers exist (SX-682, reparixin, ladarixin). None has a registered efficacy trial in osteosarcoma on ClinicalTrials.gov (registry), but Colorado State University lists a dog trial adding ladarixin to losartan and toceranib after treatment for non-metastatic osteosarcoma (press release only: web listing; status not confirmed). That dog study is the natural first source of evidence, which lowers this lead's "open" score.
 - This fits naturally alongside lead 1.
 
 **Partners:** Colorado State University's veterinary cancer centre; the partners for lead 1.
@@ -190,14 +191,14 @@ Leads with equal totals keep their previous order.
 
 Also without public results: an inhaled lipid cisplatin phase 2 completed in 2018 with 28 patients (NCT01650090; registry). The earlier phase Ib/IIa in 19 patients is published (PMID 23255417) and is a different study. Beyond these, about 21 finished trials with about 810 patients have no results we could find, many of them supportive-care or imaging studies (our calculation).
 
-The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is published (Pediatr Blood Cancer 2018, PMID 29292843; 27 patients); only its registry results are missing.
+The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is not unreported: it is published (Pediatr Blood Cancer 2018, PMID 29292843; 27 patients), and a randomized soft-tissue sarcoma trial of the same antibody was negative (PMID 31034598). Only its registry results are missing.
 
 **Partners:** each trial's sponsor. A short, polite email asking whether results exist.
 
 ### 11. Re-analyse dog genomes from NCI's canine trials
 
 **Why:**
-- NCBI's Sequence Read Archive holds 743 open canine osteosarcoma whole-genome sequencing experiments, including deep tumour–normal genomes from 55 dogs in NCI's COTC021/022 trials, whose outcomes are known (registry; our calculation, `reports/Dog genome re-analysis scope.md`). The 743 are runs, not dogs, and many are shallow or blood-only.
+- NCBI's Sequence Read Archive holds 743 open canine osteosarcoma whole-genome sequencing experiments (747 runs; registry). These are not 743 dogs: about 91 dogs have deep tumour–normal genomes, 55 of them from NCI's COTC021/022 trials, whose outcomes are known (our calculation, `reports/Dog genome re-analysis scope.md`). Many of the other runs are shallow or blood-only.
 - Checking whether the 2025 genome-shattering pattern predicts survival in dogs would strengthen dogs as a model for testing therapies.
 
 **Partners:** the NCI Comparative Oncology Program and the NCI Center for Cancer Research's genetics programme.
@@ -226,8 +227,10 @@ The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is 
   - Lead 8 (CXCR1/2, was lead 7): Colorado State lists a canine ladarixin trial, so Open fell from 3 to 2 (total 9 to 8). It now ranks below ctDNA.
   - Lead 7 (ctDNA, was lead 8): LEOPARD's published validation is in Ewing sarcoma, not osteosarcoma; the osteosarcoma evidence is Shulman 2018. Score unchanged.
   - Lead 9 (aspirin trial): the trial enrols adults only, so Impact fell from 2 to 1 (total 9 to 8).
-  - Lead 5: a third LRRC15 trial (LNTH-2403, NCT07357519, osteosarcoma only) was added.
+  - Lead 5: a third LRRC15 treatment trial (LNTH-2403, NCT07357519, osteosarcoma only) was added; PTK7 now has three active conjugates, not four, and its rank's sensitivity to method is stated.
   - Lead 10: MORAb-004 is published (PMID 29292843) and was removed from the unreported list; trial totals now match the trials report.
+  - Lead 1: the canine lung-macrophage readout is described as untested in live dogs; zero-trial claims now read "no registered efficacy trial in osteosarcoma on ClinicalTrials.gov".
+  - Lead 11: dog-genome counts now distinguish experiments (743), runs (747) and dogs with deep tumour–normal genomes (about 91).
   - Lead 2: "overall survival numerically shorter in both randomized trials" was corrected (OLIE's final HR was 0.93); pill-alone rates now quoted both ways (52.5% and 41.4%); wording narrowed to VEGFR2-blocking pills.
   - Lead 3: the 12% benchmark is described as not applicable to combinations, not as "wrong".
   - Dropped list: MDM2 and metronomic wording corrected.

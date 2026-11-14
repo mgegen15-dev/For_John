@@ -68,5 +68,5 @@ Contact the NCI Comparative Oncology Program, which also appears in the pet-dog 
   - PRJNA247491 is 16 runs and 0.74 Tbases from 2 dogs, not 12 runs and 0.6 Tbases.
   - PRJNA1367604 is tumour-only at about 6–7x; the earlier note that run counts "include both tumour and matched normal samples" held only for some projects.
   - The deep tumour–normal data volume is about 33 Tbases, not "almost 40" (39.4 is all runs).
-  - Lead numbers updated: dog genomes are lead 11 (was 7) and ctDNA is lead 8 (was 6).
+  - Lead numbers updated: dog genomes are lead 11 (was 7) and ctDNA is lead 7 (was 6, then briefly 8).
   - The loss-of-heterozygosity claim now cites its source (PMID 39814020) and says it was a paediatric and adult cohort.

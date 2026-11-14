@@ -3,7 +3,7 @@
 *Started 2026-11-14. Separate FINDING (seen in a source) from HYPOTHESIS (my inference).
 Every finding carries a PMID / NCT / URL. "abstract-only" marks claims read only from an abstract.*
 
-Context already read (not redone): `reports/Osteosarcoma and neuroblastoma research gaps.md`,
+Context already read (not redone): `reports/Osteosarcoma research landscape and gaps.md`,
 `reports/Osteosarcoma literature map.md`, `reports/Osteosarcoma pooled control dataset.md`,
 `reports/Ranked leads and research partners.md`.
 

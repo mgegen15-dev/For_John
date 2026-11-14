@@ -20,7 +20,7 @@ Can blocking FAK or DKK1, with drugs that already exist or are being built for d
 
 ## Why these two targets
 
-We scored all 1,494 genes named in at least five of the 33,242 osteosarcoma papers we downloaded from PubMed (our calculation; a PubMed title/abstract search returned 33,367 on November 14, 2026). We linked each gene to the 603 registered osteosarcoma treatment trials and to NIH grants (our calculation; `data/`), read the abstracts for the strongest untested candidates, then read the full text of every paper this brief relies on. Verification notes: `research_notes/Osteosarcoma literature map/fak_dkk1_full_text_check.md`.
+We scored all 1,487 genes named in at least five of the 33,242 osteosarcoma papers we downloaded from PubMed (our calculation; a PubMed title/abstract search returned 33,367 on November 14, 2026). We linked each gene to the 603 registered osteosarcoma treatment trials and to NIH grants (our calculation; `data/`), read the abstracts for the strongest untested candidates, then read the full text of the papers this brief relies on wherever it was available. Verification notes: `research_notes/Osteosarcoma literature map/fak_dkk1_full_text_check.md`.
 
 The two targets have different strengths:
 - **FAK** has an approved drug, defactinib, that has already been given to dogs with osteosarcoma, and one small mouse study in which defactinib itself reduced lung metastasis.
@@ -31,15 +31,15 @@ The two targets have different strengths:
 - **Mouse evidence:** two studies, one with each kind of readout.
   - **Defactinib against lung metastasis** (Chen et al., Genes & Diseases 2023, Baylor College of Medicine; PMID 37013056). Human 143B osteosarcoma cells engineered to overexpress LOX, an enzyme that raises FAK activity, were injected into the shin bone of immune-deficient mice, 6 per arm. Oral defactinib from one week after injection, twice daily for three weeks, left 2 of 6 mice with microscopic lung metastases against 6 of 6 controls (P = 0.03), with no significant change in primary tumour weight (P = 0.108) (paper, full text). Limits: very small, one engineered cell line chosen for high LOX, no amputation step, and a dose printed as 50 μg/kg, far below usual mouse doses, which we cannot explain from the paper.
   - **PF562271 against growth** (PMID 28406574). This oral FAK inhibitor halved tumour volume and weight and reduced blood-vessel density in 143B tumours under the skin (50 mg/kg twice daily, n = 6 per group). Metastasis was not measured, the model was not in bone, and sensitivity did not track FAK activity across six cell lines (paper, full text).
-  - A 2026 study reports that FAK activation mediates IQGAP3-driven lung metastasis in osteosarcoma (paper, abstract only; PMID 42520958).
+  - A 2026 study links FAK activation to IQGAP3-driven lung metastasis: activating FAK restored metastasis in IQGAP3-knockdown cells (paper, abstract only; PMID 42520958). It did not test a FAK inhibitor, so it supports FAK's role, not the drug.
 - **Patient evidence:**
   - Activated FAK (pY397) is high in 62% of tumours (33 of 53). It predicted survival only in the 33 patients who had metastases (hazard ratio 2.32, P = 0.048), not across all 53, although it was linked to poor response to chemotherapy in all patients (paper, full text; PMID 28846700). The planned dog population, after amputation, is the setting where this marker was *not* prognostic.
   - A three-protein panel (beta5 integrin, FAK, GSK3beta) separated good from poor chemotherapy responders in 36 pre-treatment biopsies (paper, abstract only; PMID 23845472). It is a single small series, and without the full text we could not check whether it was validated on an independent set.
 - **Contradicting evidence:** narrow. Two in-vitro papers question FAK's role in specific processes (PMIDs 16759849, 12376862). In a PubMed search of FAK inhibitors in osteosarcoma animal models, we found no study reporting failure.
-- **Literature quality:** 1 retraction in 95 FAK osteosarcoma papers since 2010 (our calculation).
+- **Literature quality:** clean. The one retracted paper since 2010 among 95 that mention FAK is about AURKB, not FAK (our calculation).
 - **Drug:** defactinib, FDA accelerated approval on 8 May 2025 with avutometinib for KRAS-mutant recurrent low-grade serous ovarian cancer (registry).
 - **In dogs:** Colorado State University's Flint Animal Cancer Center lists a study adding oral defactinib to the losartan–toceranib regimen in dogs with lung-metastatic osteosarcoma, with drug-level (pharmacokinetic) sampling (press release only: web listing; enrolment status and results not found). Colorado State's NIH FAK grant (R37 CA303990, September 2025 to August 2030) separately plans to test a FAK inhibitor with platinum chemotherapy in dogs with naturally occurring osteosarcoma (registry).
-- **Human trials:** none registered in osteosarcoma (registry).
+- **Human trials:** no registered efficacy trial in osteosarcoma on ClinicalTrials.gov (registry).
 
 ### DKK1
 
@@ -51,12 +51,12 @@ The two targets have different strengths:
 - **Caution:**
   - The decisive work comes from two laboratories (Loeb, Johns Hopkins then Albert Einstein; Gregory, Texas A&M), and they are less independent than they look. The antibody and small-molecule results come from the same laboratory, and the morpholino laboratory deliberately used the antibody laboratory's patient-derived model so the results could be compared.
   - One older paper found that *raising* DKK1 inhibits osteosarcoma growth (paper, abstract only; PMID 24859848).
-  - Two of 28 DKK1 osteosarcoma papers since 2010 are retracted (our calculation).
+  - Two of 28 papers since 2010 that mention DKK1 are retracted, but neither is about DKK1 (PMIDs 35635031, 36944905; our calculation).
   - Independent replication, in a model neither laboratory owns, is the priority.
 - **Drugs:**
   - DKN-01 (sirexatamab), an anti-DKK1 antibody in clinical trials for gastric and other cancers. We found no report of it being given to dogs.
   - A canine DKK1 morpholino (cDkkMo) is being developed at Texas A&M under NIH grant R21 CA286523 (January 2025 to December 2027), "with the ultimate goal of performing veterinary clinical trials in client-owned dogs with OS". The grant tests it in canine osteosarcoma cell lines and canine patient-derived tumours in mice, alone and with cisplatin (registry).
-- **Human trials:** none registered in osteosarcoma (registry).
+- **Human trials:** no registered efficacy trial in osteosarcoma on ClinicalTrials.gov (registry).
 
 ### What neither target has yet
 
@@ -113,5 +113,6 @@ No published study has reported FAK, activated FAK or DKK1 protein in dog osteos
   - "No study has measured FAK or DKK1 in dog tumours" narrowed to protein in published studies, noting that public canine RNA data exist.
   - "Over 90% of dogs die within two years" replaced with a sourced statement.
   - The serum DKK1 endpoint claim was narrowed to what the mouse paper shows.
+  - Aligned with the rewritten literature and lung reports: 1,487 scored genes (was 1,494); the FAK and DKK1 retractions are described as being about other genes; PMID 42520958 is no longer read as showing that FAK inhibition reduced metastasis.
   - The questions now ask about the existing dog programmes, and the design now specifies dogs without visible metastases.
 - **Earlier in November 2026 (full-text check).** Every cited paper was read in full where available. This corrected the DKK1 evidence (two laboratories, not three; one paper counted twice; one antibody result significant only after exclusions) and added the Colorado State defactinib dog study.

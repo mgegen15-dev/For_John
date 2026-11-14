@@ -1,6 +1,6 @@
 # Osteosarcoma clinical gaps: registry and literature check
 
-Date of check: 2026-11-13. Checks the "gaps" (1, 2, 3, 4, 5, 6, 11, 12) and the "untested transfers" table in `reports/Osteosarcoma and neuroblastoma research gaps.md`.
+Date of check: 2026-11-13. Checks the "gaps" (1, 2, 3, 4, 5, 6, 11, 12) and the "untested transfers" table in `reports/Osteosarcoma research landscape and gaps.md`.
 
 Verdict key: STILL OPEN (nothing found where I could search) / PARTLY ADDRESSED / ALREADY DONE or UNDER WAY.
 

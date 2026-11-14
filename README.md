@@ -4,7 +4,7 @@
 
 An open, independent effort focused on osteosarcoma: to tie together the research on it and find what has been overlooked. That means untested ideas, contradictions, lost trial results, and places where funding, trials and the literature don't line up. Osteosarcoma is the target; ideas are borrowed from anywhere: other sarcomas, neuroblastoma, adult cancers, other diseases, and dogs.
 
-Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH RePORTER, Europe PMC) with scripts that anyone can re-run. Findings are leads for researchers to check, not conclusions.
+Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.gov, NIH RePORTER, Europe PMC, NCBI Sequence Read Archive). Most analyses have scripts in `tools/` that anyone can re-run; a few counts were made with one-off database queries described in the report concerned. Findings are leads for researchers to check, not conclusions. The reports were checked against primary sources by an independent audit in November 2026 (`research_notes/Audit/`).
 
 > **Not medical advice.** Nothing in this repository is a recommendation about any patient's care. Families should discuss treatment and trial options with their child's oncology team.
 
@@ -13,19 +13,19 @@ Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH Re
 
 - **Start here:** [The best leads, and who could test them](reports/Ranked%20leads%20and%20research%20partners.md)
 
-- [Research report: osteosarcoma and neuroblastoma research gaps](reports/Osteosarcoma%20and%20neuroblastoma%20research%20gaps.md): the research landscape, twelve candidate gaps, and how each held up when checked.
+- [Osteosarcoma research landscape and gaps](reports/Osteosarcoma%20research%20landscape%20and%20gaps.md): the state of the field, lessons from neuroblastoma, and twelve candidate gaps with where each stands now.
 - [NIH funding for osteosarcoma, 2015–2025](reports/NIH%20funding%20for%20osteosarcoma.md): where NIH money for osteosarcoma goes, compared with neuroblastoma.
 - [Osteosarcoma clinical trials: what 40 years of registrations show](reports/Osteosarcoma%20clinical%20trials%20landscape.md): every registered osteosarcoma trial, why they stop, and trials whose results may be missing.
 - [A first pooled control dataset for osteosarcoma trials](reports/Osteosarcoma%20pooled%20control%20dataset.md): posted trial results placed side by side against historical benchmarks.
 - [The osteosarcoma literature map](reports/Osteosarcoma%20literature%20map.md): 33,000 papers scored by evidence quality and linked to trials and grants, with a close reading of four untested drug targets.
 - [Evidence risk flags for osteosarcoma genes](reports/Evidence%20risk%20flags%20for%20osteosarcoma%20genes.md): which genes' literature leans on the paper type most often retracted.
-- [Why kinase-inhibitor pills work in osteosarcoma](reports/Why%20kinase-inhibitor%20pills%20work%20in%20osteosarcoma.md): how the only drug class above the relapse benchmark works, who might respond, why the benefit is short, and why it never became standard.
+- [Why kinase-inhibitor pills work in osteosarcoma](reports/Why%20kinase-inhibitor%20pills%20work%20in%20osteosarcoma.md): how VEGFR2-blocking kinase pills, the only drug class clearly above the relapse benchmark, work, who might respond, why the benefit is short, and why it never became standard.
 - [New surface targets for osteosarcoma](reports/New%20surface%20targets%20for%20osteosarcoma.md): an open-data screen of 88 patient tumours against normal tissues for proteins that antibody drugs or CAR-T could target.
 - [Stopping lung metastasis in osteosarcoma](reports/Stopping%20lung%20metastasis%20in%20osteosarcoma.md): what is known about how osteosarcoma spreads to the lung, every trial aimed at it, and eight untested ideas, led by IL-1/IL-6 blockade after surgery.
-- [Dog genome re-analysis: what's available and what it would take](reports/Dog%20genome%20re-analysis%20scope.md): 743 open canine osteosarcoma genome runs, including dogs from NCI trials with known outcomes.
+- [Dog genome re-analysis: what's available and what it would take](reports/Dog%20genome%20re-analysis%20scope.md): 743 open canine osteosarcoma sequencing experiments, including deep tumour–normal genomes from 55 dogs in NCI trials with known outcomes.
 - `briefs/`: short research briefs for researchers and funders, starting with [a pet-dog trial of FAK or DKK1 blockade](briefs/Brief%20-%20pet%20dog%20trial%20of%20FAK%20or%20DKK1%20blockade.md).
-- `research_notes/`: the sourced notes behind the report, including the verification pass.
-- `tools/`: scripts that rebuild every analysis from public data (NIH RePORTER, ClinicalTrials.gov, Europe PMC). Their output is in `data/`.
+- `research_notes/`: the sourced notes behind the reports, including the verification pass and the November 2026 audit.
+- `tools/`: scripts that rebuild most analyses from public data (NIH RePORTER, ClinicalTrials.gov, Europe PMC, PubTator3). Their output is in `data/`.
 
 ## Related work
 
@@ -69,7 +69,7 @@ This project builds on, and hopes to feed into, the work of many others. If you 
 ## How to help
 
 - **Researchers:** if a lead matches your work, or you find an error, please open an issue. Corrections are as valuable as confirmations.
-- **Re-running the analyses:** the scripts in `tools/` need only Python 3 and internet access. `tools/literature_fetch.py` downloads about 33,000 PubMed records, so it is not stored here.
+- **Re-running the analyses:** the scripts in `tools/` need Python 3 and internet access; `tools/pool_relapse_benchmarks.py` also needs pandas (`pip install pandas`). `tools/literature_fetch.py` downloads about 33,000 PubMed records, so it is not stored here.
 
 ## Cite this
 
