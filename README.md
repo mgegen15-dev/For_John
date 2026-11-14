@@ -2,7 +2,7 @@
 
 *In memory of my brother, John.*
 
-An open, independent effort to tie together the research on childhood osteosarcoma (and, secondarily, neuroblastoma) and find what has been overlooked: untested ideas, contradictions, lost trial results, and places where funding, trials and the literature don't line up.
+An open, independent effort focused on osteosarcoma: to tie together the research on it and find what has been overlooked. That means untested ideas, contradictions, lost trial results, and places where funding, trials and the literature don't line up. Neuroblastoma appears where its progress holds lessons for osteosarcoma.
 
 Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH RePORTER, Europe PMC) with scripts that anyone can re-run. Findings are leads for researchers to check, not conclusions.
 
