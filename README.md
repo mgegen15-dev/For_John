@@ -1,5 +1,11 @@
-# For_Johnny
-curing cancer
+# For Johnny
+
+An open, independent effort to tie together the research on childhood osteosarcoma (and, secondarily, neuroblastoma) and find what has been overlooked: untested ideas, contradictions, lost trial results, and places where funding, trials and the literature don't line up.
+
+Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH RePORTER, Europe PMC) with scripts that anyone can re-run. Findings are leads for researchers to check, not conclusions.
+
+> **Not medical advice.** Nothing in this repository is a recommendation about any patient's care. Families should discuss treatment and trial options with their child's oncology team.
+
 
 ## What's here
 
@@ -12,3 +18,8 @@ curing cancer
 - [The osteosarcoma literature map](reports/Osteosarcoma%20literature%20map.md): 33,000 papers scored by evidence quality and linked to trials and grants, with a close reading of four untested drug targets.
 - `research_notes/`: the sourced notes behind the report, including the verification pass.
 - `tools/`: scripts that rebuild every analysis from public data (NIH RePORTER, ClinicalTrials.gov, Europe PMC). Their output is in `data/`.
+
+## How to help
+
+- **Researchers:** if a lead matches your work, or you find an error, please open an issue. Corrections are as valuable as confirmations.
+- **Re-running the analyses:** the scripts in `tools/` need only Python 3 and internet access. `tools/literature_fetch.py` downloads about 33,000 PubMed records, so it is not stored here.
