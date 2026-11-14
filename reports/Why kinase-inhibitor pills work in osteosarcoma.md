@@ -144,4 +144,44 @@ We could not read the subgroup analyses of SARC024 or REGOBONE (no open full tex
 | Léon Bérard (NCT04055220) | Regorafenib maintenance vs observation after first-line treatment | Recruiting since 2020 |
 | Peking University (NCT04351308) | Apatinib or PD-1 antibody added for poor responders at diagnosis | Status unknown since 2020 |
 
-**Our summary of why the class is stuck:** the gain is about two months of disease control, with no survival gain shown; there is no test to pick responders; the drugs are hard to combine with surgery and intensive chemotherapy in growing children; the main US front-line trial is paused and an industry maintenance trial could not recruit; and no company is seeking an osteosarcoma licence.
+**Our summary of why the class is stuck:** the gain is about two months of disease control, with no survival gain shown; there is no test to pick responders; the drugs are hard to combine with surgery and intensive chemotherapy in growing children; the main US front-line trial is paused and an industry maintenance trial could not recruit; and we found no company seeking an osteosarcoma licence.
+
+## 6. The best testable idea
+
+**Hypothesis.** In relapsed osteosarcoma treated with a VEGFR2-blocking pill, tumours with extra copies of VEGFA (6p21) or of the KDR/PDGFRA/KIT region (4q12), together about 40% of patients, stay progression-free substantially longer than tumours with neither. A fair pre-set threshold would be a hazard ratio of 0.5 or lower. If true, this group should also account for most patients still progression-free at 12 months.
+
+**Why this idea.**
+- Every active drug blocks VEGFR2, and these two amplifications put more of the drug's target pathway into the tumour.
+- A matched patient-derived tumour model and the liver-cancer precedent both point the same way.
+- No one has tested it in patients.
+- It can be answered cheaply with tissue or banked blood from trials already done. Gene copy number can be read from routine sequencing panels, from FISH, or from low-coverage sequencing of tumour DNA in blood. AOST2032 already banks blood for tumour DNA.
+- The answer would change how FOSTER-CabOS, and AOST2032 if it restarts, select or stratify patients.
+
+**How to test it, cheapest first.**
+1. Use archived samples from the randomized trials (SARC024, REGOBONE, OLIE, OAIE). Randomized trials allow the real test: does the amplification predict benefit *from the drug*, compared with placebo or chemotherapy alone, rather than just better outcomes in general? Add single-arm cohorts (CABONE, ADVL1622, ITCC-050) for the 12-month question.
+2. Use centres that routinely sequence tumours (for example MSK, which reported the two subsets) to look back at their patients who later received regorafenib or cabozantinib.
+3. Stratify new trials by amplicon status from diagnostic tissue.
+
+**What would disprove it.** Among 100 or more pooled patients treated with a pill, a hazard ratio of 0.8 or above for amplified against non-amplified tumours, or no difference in the drug-versus-control comparison in the randomized trials.
+
+**Runner-up ideas (also hypotheses).**
+- Site, not genes, explains benefit: compare lung and bone lesions *within the same patients* on existing trial scans.
+- A randomized trial of pill maintenance after complete surgical removal of a lung relapse, judged against the resected-relapse benchmark in the project's pooled control dataset.
+- Pill plus an FGFR blocker, to stop the FGFR–ERK escape seen at the tumour–lung border.
+
+## Limits
+
+- **Most biomarker findings are exploratory**, from single trials of 28–105 patients, with many tests and no correction for multiple comparisons.
+- **Several sources were read only as abstracts** (REGOBONE, SARC024, sorafenib trials, most lab studies); this is marked in the notes. Europe PMC full-text service returned errors this session; full texts came from PMC where open.
+- The NCCN and ESMO guideline wording came secondhand (a trial-protocol quote found by web search). Protocol PDFs on cdn.clinicaltrials.gov could not be reached from this workspace.
+- The reason AOST2032 was suspended is only the one-line registry entry; we found no public statement.
+- Chinese trial registries and Chinese-language journals were not searched, so front-line apatinib or anlotinib work registered only in China may be missing.
+- Cross-trial comparisons mix drugs, doses, ages, endpoints and lines of therapy. Prices are cash or list prices.
+- The ADVL1622 osteosarcoma results come from registry postings; no peer-reviewed paper was found.
+
+## Next steps
+
+1. Ask the CABONE (Institut Bergonié), REGOBONE (French Sarcoma Group), SARC024 (SARC) and OLIE (Eisai / ITCC) teams whether baseline tumour or plasma samples exist with copy-number data; a pooled amplicon-versus-outcome analysis is the cheapest decisive test.
+2. Ask COG what "extend the observation period" means for AOST2032, and whether its ctDNA samples could be used for the amplicon question.
+3. Add the ADVL1622 osteosarcoma results and the OLIE/OAIE survival figures to the pooled control dataset.
+4. Re-read the SARC024 and REGOBONE full texts when access allows, for subgroup data.
