@@ -94,8 +94,8 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
 <header class="hero">
   <h1>For John</h1>
   <p class="dedication">In memory of my little brother and best friend, John.</p>
-  <p class="lede">An open, independent effort focused on osteosarcoma: pulling together the published research, every registered trial and the funding behind it, to find what has been overlooked.</p>
-  <p>Survival for osteosarcoma that has spread or come back has barely changed in forty years. Plenty of research exists; it just isn't connected. This project connects it, in the open, so the people who can test new ideas can find them.</p>
+  <p class="lede">An open, independent effort to bring together published osteosarcoma research, every registered trial and the funding behind it, and find what’s been overlooked.</p>
+  <p>Survival for osteosarcoma that has spread or come back has barely changed in forty years. There’s plenty of research, but it isn’t connected. This project brings it together, in the open, so people who can test new ideas can find them.</p>
   <p class="note"><strong>Not medical advice.</strong> Nothing here is a recommendation about any patient's care. Findings are leads for researchers to check, not conclusions.</p>
   <nav class="top" aria-label="Sections">
     <a href="#findings">What we found</a>
@@ -161,26 +161,26 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
 <script>
 // ---------- Content (edit here) ----------
 const FINDINGS = [
-  { title: "Trials mostly fail to finish, not to work", label: "Confirmed",
-    body: "Of 99 osteosarcoma trials that stopped early, 44 stopped mainly because they couldn't recruit enough patients. Only about 7 to 9 stopped because the treatment didn't work. Across four decades there have been just 27 randomized trials devoted to osteosarcoma alone, and several large trials never reported their results.",
+  { title: "Trials struggle to finish", label: "Confirmed",
+    body: "Of 99 osteosarcoma trials that stopped early, 44 stopped mainly because they couldn’t recruit enough patients. Only about 7 to 9 stopped because the treatment didn’t work. Across four decades, just 27 randomized trials have focused on osteosarcoma alone. Several large trials never reported their results.",
     report: "reports/Osteosarcoma clinical trials landscape.md", reportName: "Trials report" },
-  { title: "One drug class clearly beats the benchmark, briefly", label: "Confirmed · who benefits is a Lead",
-    body: "In relapsed disease, pills that block the tumour's blood-vessel signal (VEGFR2) keep roughly 40 to 50% of patients free of progression at four months, against about 14% for other drugs. The effect fades within months. About 40% of tumours carry extra copies of the genes these pills target, and nobody has checked whether those are the patients who benefit. That can be tested with samples already stored from past trials.",
+  { title: "One drug class does better, briefly", label: "Confirmed · who benefits is a Lead",
+    body: "For osteosarcoma that has come back, pills that block the tumour’s blood-vessel signal (VEGFR2) keep roughly 40 to 50% of patients free of progression at four months, compared with about 14% for other drugs. The effect fades within months. In about 40% of tumours, there are extra copies of the genes these pills target. Nobody has checked whether those are the patients who benefit. Researchers can test this using samples already stored from past trials.",
     report: "reports/Why kinase-inhibitor pills work in osteosarcoma.md", reportName: "Kinase-inhibitor report" },
-  { title: "After surgery, block inflammation instead of boosting immunity?", label: "Hypothesis",
-    body: "In mice, lung tissue sends inflammatory signals (IL-1, IL-6, IL-8) that help osteosarcoma settle in the lung, and blocking them reduced spread. A dog trial that did the opposite, boosting immunity after amputation, did worse than past dogs on standard treatment. Approved drugs that block IL-1 and IL-6 exist, and none has been tested against osteosarcoma.",
+  { title: "Block inflammation after surgery?", label: "Hypothesis",
+    body: "In mice, lung tissue sends inflammatory signals (IL-1, IL-6 and IL-8) that help osteosarcoma settle in the lung. Blocking those signals reduced spread. A dog trial took the opposite approach, boosting immunity after amputation. Those dogs did worse than dogs given standard treatment in the past. Approved drugs that block IL-1 and IL-6 exist, but none has been tested in an osteosarcoma efficacy trial.",
     report: "reports/Stopping lung metastasis in osteosarcoma.md", reportName: "Lung metastasis report" },
-  { title: "FAK and DKK1: the best-supported untested drug targets", label: "Lead",
-    body: "Blocking either protein reduced lung spread in mice, and drugs exist for both. Research programmes testing them in pet dogs with osteosarcoma already exist or are planned. Dogs get this cancer about ten times as often as people, and the disease is very similar.",
+  { title: "FAK and DKK1: strong targets not yet tried in people", label: "Lead",
+    body: "Blocking either protein reduced lung spread in mice, and drugs exist for both. Research programmes to test them in pet dogs with osteosarcoma are already in place or planned. Dogs get this cancer about ten times as often as people, and the disease is very similar.",
     report: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md", reportName: "Research brief" },
   { title: "New targets on the tumour surface", label: "Lead",
-    body: "Comparing 88 patient tumours with 54 healthy tissues ranked two proteins, LRRC15 and PTK7, near the top as targets for antibody drugs. A trial of a radioactive anti-LRRC15 antibody for relapsed osteosarcoma is already recruiting. PTK7 drugs are in trials for other cancers, but almost no one has studied PTK7 in osteosarcoma.",
+    body: "A comparison of 88 patient tumours with 54 healthy tissues ranked two proteins, LRRC15 and PTK7, near the top as targets for antibody drugs. A trial of a radioactive anti-LRRC15 antibody for osteosarcoma that has come back is already recruiting. PTK7 drugs are in trials for other cancers, but almost no one has studied PTK7 in osteosarcoma.",
     report: "reports/New surface targets for osteosarcoma.md", reportName: "Surface targets report" },
-  { title: "Part of the research literature is unreliable", label: "Confirmed",
-    body: "Since 2010, 8.7% of one formulaic kind of osteosarcoma paper (microRNA studies) have been retracted, against 1.0% of other papers. We flag which genes' evidence leans on that kind of paper, so researchers know where to double-check.",
+  { title: "Some research is unreliable", label: "Confirmed",
+    body: "Since 2010, 8.7% of one formulaic type of osteosarcoma paper (microRNA studies) have been retracted, compared with 1.0% of other papers. We flag genes whose evidence relies on this type of paper, so researchers know where to double-check.",
     report: "reports/Evidence risk flags for osteosarcoma genes.md", reportName: "Risk flags report" },
-  { title: "Funding is thin where the gaps are", label: "Confirmed",
-    body: "NIH spent about $18 million on grants focused on osteosarcoma in 2025, and about half as much on it as on neuroblastoma over the last decade. The areas flagged above as gaps, such as blood-test monitoring, get the least.",
+  { title: "Research gaps get little funding", label: "Confirmed",
+    body: "NIH spent about $18 million on grants focused on osteosarcoma in 2025. Over the last decade, it spent about half as much on osteosarcoma as on neuroblastoma. The research gaps highlighted above, such as blood-test monitoring, receive the least funding.",
     report: "reports/NIH funding for osteosarcoma.md", reportName: "Funding report" }
 ];
 const ASKS = [
