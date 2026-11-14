@@ -20,6 +20,7 @@ Everything here is built from public sources (PubMed, ClinicalTrials.gov, NIH Re
 - [The osteosarcoma literature map](reports/Osteosarcoma%20literature%20map.md): 33,000 papers scored by evidence quality and linked to trials and grants, with a close reading of four untested drug targets.
 - [Evidence risk flags for osteosarcoma genes](reports/Evidence%20risk%20flags%20for%20osteosarcoma%20genes.md): which genes' literature leans on the paper type most often retracted.
 - [Why kinase-inhibitor pills work in osteosarcoma](reports/Why%20kinase-inhibitor%20pills%20work%20in%20osteosarcoma.md): how the only drug class above the relapse benchmark works, who might respond, why the benefit is short, and why it never became standard.
+- [New surface targets for osteosarcoma](reports/New%20surface%20targets%20for%20osteosarcoma.md): an open-data screen of 88 patient tumours against normal tissues for proteins that antibody drugs or CAR-T could target.
 - [Dog genome re-analysis: what's available and what it would take](reports/Dog%20genome%20re-analysis%20scope.md): 743 open canine osteosarcoma genome runs, including dogs from NCI trials with known outcomes.
 - `briefs/`: short research briefs for researchers and funders, starting with [a pet-dog trial of FAK or DKK1 blockade](briefs/Brief%20-%20pet%20dog%20trial%20of%20FAK%20or%20DKK1%20blockade.md).
 - `research_notes/`: the sourced notes behind the report, including the verification pass.
