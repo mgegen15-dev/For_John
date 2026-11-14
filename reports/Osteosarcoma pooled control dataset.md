@@ -1,6 +1,6 @@
 # A first pooled control dataset for osteosarcoma trials
 
-*Built on November 14, 2026 from arm-level results posted on ClinicalTrials.gov. Script: `tools/pooled_controls.py`. Raw extract: `data/osteosarcoma_posted_outcomes.csv` (2,783 efficacy rows from 117 trials). Curated comparison table: `data/osteosarcoma_relapse_benchmarks.csv`.*
+*Built on November 14, 2026 from arm-level results posted on ClinicalTrials.gov, then extended with published papers. Script: `tools/pooled_controls.py`. Raw extract: `data/osteosarcoma_posted_outcomes.csv` (2,783 efficacy rows from 117 trials). Curated tables: `data/osteosarcoma_relapse_benchmarks.csv` (registry) and `data/osteosarcoma_relapse_benchmarks_published.csv` (60 rows from published papers covering 32 trials, 26 of them new, about 738 more patients; each row records its PubMed ID or DOI and whether the full text or only the abstract was read). Notes on conflicts: `research_notes/Pooled controls/published_results_notes.md`.*
 
 ## Summary
 
@@ -65,6 +65,31 @@ These four arms are the best available controls for any new first-line trial.
 - **Kinase-inhibitor pills are the only class above the line**, and only before randomization. COG's front-line test of cabozantinib (AOST2032) is suspended, and the industry maintenance trial CabOSTar closed after 10 patients. The one class with a repeatable signal has no randomized trial currently enrolling in the US.
 - **ATR and PARP inhibitors show no single-agent signal so far.** Olaparib plus ceralasertib (15%) and elimusertib (no responses in 22 patients across three groups, NCT05071209) both sit at the benchmark. This tempers the DNA-repair transfer ideas in the research report: if they work, it is likely only in a biomarker-selected group, which has not been tested.
 - **Resected-relapse results cluster tightly.** Any new claim in this setting, including the OST-HER2 vaccine's press-reported results, should be compared with these arms and with the 10–34% range before it is believed.
+
+## Update: published results added, and a correction
+
+Adding published papers more than doubled the dataset and changed one conclusion.
+
+**The 12% benchmark is the wrong yardstick for chemotherapy combinations.** In two randomized trials, patients given ifosfamide and etoposide (IE) alone, the usual relapse chemotherapy, did far better than 12%. In OLIE, 66% were progression-free at four months; in OAIE, 42%. So most of what looked like a striking effect of "pill + IE" in single-arm trials was the IE itself. In OLIE the difference was 76% against 66%.
+
+**4-month event-free or progression-free rate in measurable relapse, pooled by drug class** (weighted by patients; mixes two estimation methods, so treat as approximate):
+
+| Drug class | Trial arms | Patients | 4-month rate | Range across arms |
+|---|---|---|---|---|
+| Older chemotherapy and cytotoxics (single agents) | 3 | 133 | 12.5% | 0–28% |
+| Antibodies, drug conjugates, DNA-repair drugs | 3 | 71 | 12.7% | 7–15% |
+| Kinase-inhibitor pill alone | 4 | 145 | **52.5%** | 29–71% |
+| Kinase-inhibitor pill + IE | 3 | 128 | 65.0% | 51–76% |
+| Kinase-inhibitor pill + PD-1 antibody (camrelizumab + apatinib) | 1 | 43 | 66.3% | — |
+| IE alone (randomized control arms) | 2 | 69 | 56.1% | 42–66% |
+
+**What still holds:** kinase-inhibitor pills given alone sit far above the older single agents, confirming them as the one class with real activity. **What changes:** combinations must be judged against IE, not against 12%. Among the randomized evidence, the Chinese OAIE trial (apatinib + IE against IE) showed 65.8% against 41.6%. That is a larger gap than OLIE's and deserves attention.
+
+**Other findings from the papers:**
+- The 12% benchmark itself breaks down by drug: docetaxel 23%, oxaliplatin 31%, ixabepilone 9%, rebeccamycin 6%, and topotecan, irinotecan and imatinib 0% (Lagmay 2016, Table 2).
+- Registry and paper figures disagree for several trials, because the registry often posts crude counts while papers report Kaplan–Meier estimates. For example, CABONE's registry figure is 33% non-progression at six months, against 52% at six months (and 71% at four) in the paper. Where both exist, the published file uses the paper's figure and the notes record the difference.
+- No newer COG pooled benchmark for osteosarcoma exists. The resected-relapse figure of 20% (10–34%) still comes from the AOST0221 trial.
+- Several papers could be read only as abstracts because some publisher sites were unreachable from this workspace, so 27 of 60 rows are marked "abstract only".
 
 ## Limits
 

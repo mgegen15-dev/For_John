@@ -63,7 +63,7 @@ Leads 1 to 4 tie on score. They are ordered by which most directly tests a new t
 
 ### 5. A randomized test of kinase-inhibitor pills
 
-**Why:** These pills (cabozantinib, regorafenib, lenvatinib) are the only drug class clearly above the relapse benchmark. Yet COG's first-line cabozantinib trial (AOST2032) is suspended, and the industry maintenance trial CabOSTar closed after 10 patients.
+**Why:** These pills (cabozantinib, regorafenib, lenvatinib, apatinib) are the only drug class clearly above the relapse benchmark: about 52% of patients progression-free at four months when given alone, against about 12% for older single agents. Combinations with chemotherapy must be judged against chemotherapy alone, which does better than the old benchmark; in the one randomized trial where the gap was large (OAIE, China), apatinib + IE gave 66% against 42%. Yet COG's first-line cabozantinib trial (AOST2032) is suspended, and the industry maintenance trial CabOSTar closed after 10 patients.
 
 **Partners:** COG; FOSTER; families and foundations such as MIB Agents, whose voice carries weight on why trials stall. **Our role:** documenting the recruitment problem with the trials data.
 
