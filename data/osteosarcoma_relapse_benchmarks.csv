@@ -1,0 +1,19 @@
+setting,nct_id,trial,agent,arm,measure,time_frame,n,events_or_value,percent,ci_low,ci_high,source_note
+measurable relapse,NCT02470091,COG AOST1321,denosumab,Cohort 1: measurable,disease control (event-free),4 months,15,1,6.7,,,ClinicalTrials.gov posted results
+measurable relapse,NCT02097238,COG AOST1322,eribulin,single arm,disease control success,4 months,19,0,0.0,,,ClinicalTrials.gov posted results
+measurable relapse,NCT04417062,Dana-Farber,olaparib + ceralasertib,Cohort 1: measurable unresectable,event-free,4 months,34,5,14.7,,,ClinicalTrials.gov posted results
+measurable relapse,NCT02487979,COG AOST1521,glembatumumab vedotin,single arm,disease control success,first 6 cycles (about 4 months),22,3,13.6,,,ClinicalTrials.gov posted results
+measurable relapse,NCT02432274,Eisai phase 1/2,lenvatinib,Cohort 2B single agent,progression-free rate,4 months,28,,32.1,15.9,52.4,ClinicalTrials.gov posted results
+measurable relapse,NCT02432274,Eisai phase 1/2,lenvatinib + ifosfamide + etoposide,Cohort 3B combination,progression-free rate,4 months,15,,66.7,38.4,88.2,ClinicalTrials.gov posted results
+measurable relapse,NCT02243605,CABONE,cabozantinib,osteosarcoma cohort,non-progression,6 months,42,,33.3,19.6,49.6,ClinicalTrials.gov posted results
+measurable relapse,NCT02048371,SARC024,regorafenib,osteosarcoma cohort,median progression-free survival (months),,22,3.6,,2.0,7.6,ClinicalTrials.gov posted results
+measurable relapse,NCT02048371,SARC024,placebo,osteosarcoma cohort,median progression-free survival (months),,20,1.7,,1.2,1.8,ClinicalTrials.gov posted results
+measurable relapse,NCT04154189,OLIE,lenvatinib + ifosfamide + etoposide,Arm A,median progression-free survival (months),,40,6.5,,5.7,8.2,ClinicalTrials.gov posted results
+measurable relapse,NCT04154189,OLIE,ifosfamide + etoposide,Arm B (control),median progression-free survival (months),,41,5.5,,2.9,6.5,ClinicalTrials.gov posted results
+measurable relapse,NCT03006848,avelumab phase 2,avelumab,single arm,median progression-free survival (weeks),,18,8.0,,6.7,9.1,ClinicalTrials.gov posted results
+resected relapse,NCT02484443,COG AOST1421,dinutuximab + GM-CSF,single arm,disease control (event-free),12 months,39,11,28.2,,,ClinicalTrials.gov posted results
+resected relapse,NCT02470091,COG AOST1321,denosumab,Cohort 2: resected,disease control (event-free),12 months,38,10,26.3,,,ClinicalTrials.gov posted results
+newly diagnosed,NCT00134030,EURAMOS-1,MAP,good responders (MAP-GR),event-free survival,3 years,359,,74,69,79,ClinicalTrials.gov posted results
+newly diagnosed,NCT00134030,EURAMOS-1,MAP + pegylated interferon,good responders (MAPifn),event-free survival,3 years,357,,77,72,81,ClinicalTrials.gov posted results
+newly diagnosed,NCT00134030,EURAMOS-1,MAP,poor responders (MAP-PR),event-free survival,3 years,310,,55,49,60,ClinicalTrials.gov posted results
+newly diagnosed,NCT00134030,EURAMOS-1,MAP + ifosfamide/etoposide,poor responders (MAPIE),event-free survival,3 years,308,,53,47,59,ClinicalTrials.gov posted results
