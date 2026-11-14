@@ -71,3 +71,9 @@ old=[pick(k) for k in sel['Older cytotoxics (single agents/doublets)']]+[pick(se
 n,p,lo,hi,mn,mx=summ(old); print(f'older + imatinib: arms 4 n {n} {p:.1f}% ({lo:.0f}-{hi:.0f}) range {mn}-{mx}')
 nonT=old+bio
 n,p,lo,hi,mn,mx=summ(nonT); print(f'ALL non-VEGFR single-agent-type arms: arms {len(nonT)} n {n} {p:.1f}% ({lo:.0f}-{hi:.0f}) range {mn}-{mx}')
+# CABONE framing check (audit 2026-11-14): the main table uses CABONE's KM PFS at
+# 4 months (71.4%). The trial's own primary endpoint, crude 6-month
+# non-progression, was 33.3% (14/42), the same in paper and registry.
+cab_crude=pick(('registry','CABONE','cabozantinib','non-progression','6 months'))
+alt=[r for r in base if 'CABONE' not in r.trial]+[cab_crude]
+n,p,lo,hi,mn,mx=summ(alt); print(f'TKI alone with CABONE crude 6-month primary endpoint (33.3%) instead of KM 4-month: arms {len(alt)} n {n} {p:.1f}% ({lo:.0f}-{hi:.0f}) range {mn}-{mx}')

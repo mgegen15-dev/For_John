@@ -27,6 +27,7 @@ re-runnable without re-downloading. Run stages individually or all at once:
     python3 tools/surface_targets.py gtex     # normal tissue medians
     python3 tools/surface_targets.py rank     # score + write the CSV
     python3 tools/surface_targets.py context  # trials + literature for the top
+    python3 tools/surface_targets.py sensitivity  # re-rank the CSV under other score choices
     python3 tools/surface_targets.py all
 
 Nothing here needs credentials; every endpoint used is public.
@@ -751,14 +752,49 @@ def stage_hpa_detail(n=25):
     print(f"[hpa] detail for {len(det)} genes")
 
 
+def stage_sensitivity():
+    """Re-rank the output CSV under alternative score choices (no downloads).
+
+    Prints the overall rank (of all scored genes) of the leads and controls under:
+    the published score; all 54 GTEx tissues as the denominator instead of the 32
+    vital ones; all 54 tissues plus GTEx cultured fibroblasts; pseudocount 0.1 and 5;
+    and no %-expressing multiplier."""
+    import math
+    rows = list(csv.DictReader(open(OUT_CSV)))
+    tm = lambda r: float(r["tumour_median_tpm"])
+    fr = lambda r: float(r["pct_tumours_expressing"]) / 100
+    vit = lambda r: float(r["max_vital_normal_tpm"])
+    anyt = lambda r: float(r["max_any_normal_tpm"])
+    fib = lambda r: float(r["gtex_fibroblast_tpm"] or 0)
+    variants = {
+        "published": lambda r: float(r["window_score"]),
+        "all_54_tissues": lambda r: math.log2((tm(r) + 1) / (anyt(r) + 1)) * fr(r),
+        "all_54_plus_fibroblasts": lambda r: math.log2((tm(r) + 1) / (max(anyt(r), fib(r)) + 1)) * fr(r),
+        "pseudocount_0.1": lambda r: math.log2((tm(r) + .1) / (vit(r) + .1)) * fr(r),
+        "pseudocount_5": lambda r: math.log2((tm(r) + 5) / (vit(r) + 5)) * fr(r),
+        "no_expressing_multiplier": lambda r: math.log2((tm(r) + 1) / (vit(r) + 1)),
+    }
+    ranks = {}
+    for k, f in variants.items():
+        srt = sorted(rows, key=lambda r: (-f(r), r["symbol"]))
+        ranks[k] = {r["symbol"]: i + 1 for i, r in enumerate(srt)}
+    genes = ["LRRC15", "IFITM5", "PANX3", "ADAM12", "TMEM119", "MMP14", "CD276", "CDH11",
+             "MRC2", "PTK7", "CD109", "CD248"]
+    print("gene".ljust(9) + "".join(k[:24].rjust(26) for k in variants))
+    for g in genes:
+        if g in ranks["published"]:
+            print(g.ljust(9) + "".join(str(ranks[k][g]).rjust(26) for k in variants))
+
+
 STAGES = {
     "gdc": stage_gdc, "hpa": stage_hpa, "gtex": stage_gtex,
     "rank": stage_rank, "context": stage_context, "hpadetail": stage_hpa_detail,
+    "sensitivity": stage_sensitivity,
 }
 
 if __name__ == "__main__":
     args = sys.argv[1:] or ["all"]
-    order = ["gdc", "hpa", "gtex", "rank", "hpadetail", "context"]
+    order = ["gdc", "hpa", "gtex", "rank", "hpadetail", "context", "sensitivity"]
     todo = order if args == ["all"] else args
     for s in todo:
         if s not in STAGES:

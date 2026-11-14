@@ -23,7 +23,22 @@ def stop_reason(t):
 out = {}
 stopped = [r for r in IV if r["status"] in ("TERMINATED", "WITHDRAWN", "SUSPENDED")]
 out["stop_reasons"] = C.Counter(stop_reason(r["why_stopped"]) for r in stopped).most_common()
-out["patients_in_stopped_trials"] = sum(int(r["enrollment"] or 0) for r in stopped)
+# Patients in stopped trials. Terminated trials usually report ACTUAL enrolment;
+# suspended trials report the PLANNED (estimated) number; withdrawn trials enrolled 0.
+# Report these separately rather than as one sum.
+def _n(r): return int(r["enrollment"] or 0)
+pst = {}
+for st in ("TERMINATED", "SUSPENDED", "WITHDRAWN"):
+    g = [r for r in stopped if r["status"] == st]
+    pst[st.lower()] = {
+        "trials": len(g),
+        "patients_total": sum(_n(r) for r in g),
+        "patients_actual": sum(_n(r) for r in g if r["enrollment_type"] == "ACTUAL"),
+        "trials_with_actual": sum(r["enrollment_type"] == "ACTUAL" for r in g),
+        "patients_estimated": sum(_n(r) for r in g if r["enrollment_type"] != "ACTUAL"),
+        "trials_with_estimated": sum(r["enrollment_type"] != "ACTUAL" for r in g),
+    }
+out["patients_in_stopped_trials"] = pst
 
 # results posting: completed, phase 2+, at least one US site, completed 2018 or later
 def needs_results(r):
@@ -45,6 +60,7 @@ for r in IV:
     by[dec]["all"] += 1
     by[dec]["os_only"] += r["scope"] == "os_only"
     by[dec]["randomized_os_only"] += r["scope"] == "os_only" and r["allocation"] == "RANDOMIZED"
+    by[dec]["bone_sarcoma"] += r["scope"] == "bone_sarcoma"
     by[dec]["china"] += "China" in r["countries"]
     by[dec]["us"] += "United States" in r["countries"]
 out["by_period"] = {k: dict(v) for k, v in sorted(by.items())}
@@ -56,17 +72,30 @@ def drugs(r):
 dc = C.Counter(d for r in IV if r["scope"] == "os_only" for d in drugs(r))
 out["drug_mentions_os_only_top"] = dc.most_common(40)
 
-# primary endpoints in osteosarcoma-only phase 2+
-ep = C.Counter()
+# primary endpoints in osteosarcoma-only phase 2+.
+# A trial counts once for EVERY endpoint type its primary outcomes name, so the
+# columns do not sum to the number of trials. "other" = names none of the types.
+EP_TYPES = [
+    ("event-free / progression-free survival", r"events?.free|progress(ion)?.free|\bpfs\b|\befs\b|disease.free|relapse.free"),
+    ("overall survival", r"overall survival|\bos rate\b|(?<!free )\bsurvival rate"),
+    ("response rate", r"response|\borr\b|recist"),
+    ("toxicity / safety", r"toxic|adverse|safety|dose"),
+]
+ep, ep_sole = C.Counter(), C.Counter()
+ep_trials = C.defaultdict(list)
+n_ep = 0
 for r in IV:
     if r["scope"] != "os_only" or not re.search(r"PHASE2|PHASE3", r["phase"]): continue
+    n_ep += 1
     t = r["primary_outcomes"].lower()
-    ep["event-free / progression-free survival" if re.search(r"event.free|progression.free|pfs|efs|disease.free|relapse.free", t)
-       else "overall survival" if re.search(r"overall survival", t)
-       else "response rate" if re.search(r"response|orr|recist", t)
-       else "toxicity / safety" if re.search(r"toxic|adverse|safety|dose", t)
-       else "other"] += 1
-out["primary_endpoints_os_only_phase2plus"] = ep.most_common()
+    hit = [name for name, pat in EP_TYPES if re.search(pat, t)] or ["other"]
+    for h in hit:
+        ep[h] += 1
+        ep_trials[h].append(r["nct_id"])
+    if len(hit) == 1: ep_sole[hit[0]] += 1
+out["primary_endpoints_os_only_phase2plus"] = {"trials": n_ep, "any_mention": ep.most_common(),
+                                               "sole_type": ep_sole.most_common(),
+                                               "overall_survival_trials": ep_trials["overall survival"]}
 
 flags = []
 for r in IV:

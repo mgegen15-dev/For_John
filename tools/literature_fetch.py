@@ -34,10 +34,12 @@ def esearch(term):
 
 
 base = "osteosarcoma[tiab]"
-pmids = esearch(base)
+pmids = list(dict.fromkeys(esearch(base)))  # de-duplicate (overlapping year windows)
 for name, extra in [("reviews", "review[pt]"), ("retracted", "retracted publication[pt]")]:
     with open(f"{OUT}/osteosarcoma_{name}_pmids.txt", "w") as f:
-        f.write("\n".join(esearch(f"{base} AND {extra}")))
+        # The year windows above can overlap at their edges for papers with two
+        # publication dates (print and electronic), so de-duplicate before writing.
+        f.write("\n".join(sorted(set(esearch(f"{base} AND {extra}")), key=int)) + "\n")
 print(len(pmids), "papers")
 
 done = set()
