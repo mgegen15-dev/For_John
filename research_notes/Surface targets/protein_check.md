@@ -264,4 +264,5 @@ Mooney 2026) and the St. Jude TMA (O'Reilly 2026) already exist.
 - Surface report: two PTK7 programmes are missing (IDE034, NCT07503808; LY4175408, NCT07046923) and
   cofetuzumab's NCT04189614 is terminated.
 - Surface report: "the osteosarcoma literature has only 6 papers naming LRRC15" is now out of date
-  (PubMed returns 19 for LRRC15 AND (osteosarcoma OR sarcoma), several from 2025–26; registry).
+  (PubMed returns 11 for "LRRC15 AND osteosarcoma" on November 19, 2026, 7 of them from 2025–26;
+  registry).
