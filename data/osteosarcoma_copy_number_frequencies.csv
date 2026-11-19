@@ -1,0 +1,72 @@
+gene,cytoband,why_listed,event,definition,n_patients,n_altered,pct,ci95_low,ci95_high,published_comparison
+VEGFA,6p21.1,VEGF ligand; lead 2 (6p21 amplicon),amp,amplification: CN >= 2 x ploidy (primary),81,13,16.0,9.6,25.5,"24% (14 of 59 patients; 17 samples) Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534) | 23% Sayles 2019, whole genomes, >4 purity-adjusted copies (paper, full text; PMC7134333) | 17% (35 of 204) Japan C-CAT panel, 204 patients, any alteration (paper, full text; PMC11785636)"
+VEGFA,6p21.1,VEGF ligand; lead 2 (6p21 amplicon),gain,gain: CN >= 1.5 x ploidy (lenient),81,23,28.4,19.7,39.0,
+VEGFA,6p21.1,VEGF ligand; lead 2 (6p21 amplicon),high8,high copy: CN >= 8 (strict),81,12,14.8,8.7,24.1,
+VEGFA,6p21.1,VEGF ligand; lead 2 (6p21 amplicon),gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,30,37.0,27.3,47.9,
+KDR,4q12,VEGFR2; lead 2 (4q12 amplicon),amp,amplification: CN >= 2 x ploidy (primary),81,7,8.6,4.2,16.8,"15% (11 samples) Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534)"
+KDR,4q12,VEGFR2; lead 2 (4q12 amplicon),gain,gain: CN >= 1.5 x ploidy (lenient),81,19,23.5,15.6,33.8,
+KDR,4q12,VEGFR2; lead 2 (4q12 amplicon),high8,high copy: CN >= 8 (strict),81,5,6.2,2.7,13.6,
+KDR,4q12,VEGFR2; lead 2 (4q12 amplicon),gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,30,37.0,27.3,47.9,
+PDGFRA,4q12,PDGFR-alpha; lead 2 (4q12 amplicon),amp,amplification: CN >= 2 x ploidy (primary),81,10,12.3,6.8,21.3,"18% (13 samples) Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534)"
+PDGFRA,4q12,PDGFR-alpha; lead 2 (4q12 amplicon),gain,gain: CN >= 1.5 x ploidy (lenient),81,21,25.9,17.6,36.4,
+PDGFRA,4q12,PDGFR-alpha; lead 2 (4q12 amplicon),high8,high copy: CN >= 8 (strict),81,6,7.4,3.4,15.2,
+PDGFRA,4q12,PDGFR-alpha; lead 2 (4q12 amplicon),gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,32,39.5,29.6,50.4,
+KIT,4q12,KIT; lead 2 (4q12 amplicon),amp,amplification: CN >= 2 x ploidy (primary),81,9,11.1,6.0,19.8,"15% (11 samples) Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534)"
+KIT,4q12,KIT; lead 2 (4q12 amplicon),gain,gain: CN >= 1.5 x ploidy (lenient),81,21,25.9,17.6,36.4,
+KIT,4q12,KIT; lead 2 (4q12 amplicon),high8,high copy: CN >= 8 (strict),81,6,7.4,3.4,15.2,
+KIT,4q12,KIT; lead 2 (4q12 amplicon),gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,32,39.5,29.6,50.4,
+FGFR1,8p11.23,"FGFR1; target of lenvatinib, FGFR blockers",amp,amplification: CN >= 2 x ploidy (primary),81,5,6.2,2.7,13.6,"9.6% (24 of 275 bone osteosarcomas) by FISH, Amary 2014 (paper, full text; PMC4303166)"
+FGFR1,8p11.23,"FGFR1; target of lenvatinib, FGFR blockers",gain,gain: CN >= 1.5 x ploidy (lenient),81,10,12.3,6.8,21.3,
+FGFR1,8p11.23,"FGFR1; target of lenvatinib, FGFR blockers",high8,high copy: CN >= 8 (strict),81,2,2.5,0.7,8.6,
+FGFR1,8p11.23,"FGFR1; target of lenvatinib, FGFR blockers",gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,11,13.6,7.8,22.7,
+MET,7q31.2,MET; cabozantinib target,amp,amplification: CN >= 2 x ploidy (primary),81,0,0.0,0.0,4.5,
+MET,7q31.2,MET; cabozantinib target,gain,gain: CN >= 1.5 x ploidy (lenient),81,3,3.7,1.3,10.3,
+MET,7q31.2,MET; cabozantinib target,high8,high copy: CN >= 8 (strict),81,0,0.0,0.0,4.5,
+MET,7q31.2,MET; cabozantinib target,gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,13,16.0,9.6,25.5,
+MYC,8q24.21,MYC; common osteosarcoma amplicon,amp,amplification: CN >= 2 x ploidy (primary),81,26,32.1,22.9,42.9,"39% Sayles 2019, whole genomes, >4 purity-adjusted copies (paper, full text; PMC7134333) | 17% altered Bousquet 2026, Foundation Medicine panel, 653 patients aged 40 or under (paper, abstract only; PMID 42424099)"
+MYC,8q24.21,MYC; common osteosarcoma amplicon,gain,gain: CN >= 1.5 x ploidy (lenient),81,45,55.6,44.7,65.9,
+MYC,8q24.21,MYC; common osteosarcoma amplicon,high8,high copy: CN >= 8 (strict),81,23,28.4,19.7,39.0,
+MYC,8q24.21,MYC; common osteosarcoma amplicon,gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,42,51.9,41.1,62.4,
+CCNE1,19q12,cyclin E1; CDK2 inhibitors,amp,amplification: CN >= 2 x ploidy (primary),81,15,18.5,11.6,28.3,"33% Sayles 2019, whole genomes, >4 purity-adjusted copies (paper, full text; PMC7134333) | 8% (6 samples) Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534)"
+CCNE1,19q12,cyclin E1; CDK2 inhibitors,gain,gain: CN >= 1.5 x ploidy (lenient),81,27,33.3,24.0,44.1,
+CCNE1,19q12,cyclin E1; CDK2 inhibitors,high8,high copy: CN >= 8 (strict),81,12,14.8,8.7,24.1,
+CCNE1,19q12,cyclin E1; CDK2 inhibitors,gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,32,39.5,29.6,50.4,
+CDK4,12q14.1,CDK4; CDK4/6 inhibitors,amp,amplification: CN >= 2 x ploidy (primary),81,3,3.7,1.3,10.3,"11% Sayles 2019, whole genomes, >4 purity-adjusted copies (paper, full text; PMC7134333) | 14% (9 of 66) Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534)"
+CDK4,12q14.1,CDK4; CDK4/6 inhibitors,gain,gain: CN >= 1.5 x ploidy (lenient),81,8,9.9,5.1,18.3,
+CDK4,12q14.1,CDK4; CDK4/6 inhibitors,high8,high copy: CN >= 8 (strict),81,3,3.7,1.3,10.3,
+CDK4,12q14.1,CDK4; CDK4/6 inhibitors,gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,17,21.0,13.5,31.1,
+MDM2,12q15,MDM2; MDM2 inhibitors,amp,amplification: CN >= 2 x ploidy (primary),81,2,2.5,0.7,8.6,"14% (9 of 66) Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534)"
+MDM2,12q15,MDM2; MDM2 inhibitors,gain,gain: CN >= 1.5 x ploidy (lenient),81,4,4.9,1.9,12.0,
+MDM2,12q15,MDM2; MDM2 inhibitors,high8,high copy: CN >= 8 (strict),81,1,1.2,0.2,6.7,
+MDM2,12q15,MDM2; MDM2 inhibitors,gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,15,18.5,11.6,28.3,
+PTK2,8q24.3,FAK; defactinib,amp,amplification: CN >= 2 x ploidy (primary),81,9,11.1,6.0,19.8,
+PTK2,8q24.3,FAK; defactinib,gain,gain: CN >= 1.5 x ploidy (lenient),81,27,33.3,24.0,44.1,
+PTK2,8q24.3,FAK; defactinib,high8,high copy: CN >= 8 (strict),81,4,4.9,1.9,12.0,
+PTK2,8q24.3,FAK; defactinib,gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,32,39.5,29.6,50.4,
+DKK1,10q21.1,DKK1 region; DKN-01,amp,amplification: CN >= 2 x ploidy (primary),81,2,2.5,0.7,8.6,
+DKK1,10q21.1,DKK1 region; DKN-01,gain,gain: CN >= 1.5 x ploidy (lenient),81,5,6.2,2.7,13.6,
+DKK1,10q21.1,DKK1 region; DKN-01,high8,high copy: CN >= 8 (strict),81,1,1.2,0.2,6.7,
+DKK1,10q21.1,DKK1 region; DKN-01,gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,9,11.1,6.0,19.8,
+DKK1,10q21.1,DKK1 region; DKN-01,deepdel,deep deletion: min CN = 0,81,0,0.0,0.0,4.5,
+DKK1,10q21.1,DKK1 region; DKN-01,loss,loss: CN < 0.65 x ploidy,81,37,45.7,35.3,56.5,
+CD276,15q24.1,B7-H3; ADCs and CAR-T,amp,amplification: CN >= 2 x ploidy (primary),81,0,0.0,0.0,4.5,
+CD276,15q24.1,B7-H3; ADCs and CAR-T,gain,gain: CN >= 1.5 x ploidy (lenient),81,4,4.9,1.9,12.0,
+CD276,15q24.1,B7-H3; ADCs and CAR-T,high8,high copy: CN >= 8 (strict),81,1,1.2,0.2,6.7,
+CD276,15q24.1,B7-H3; ADCs and CAR-T,gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,10,12.3,6.8,21.3,
+ERBB2,17q12,HER2; ADCs,amp,amplification: CN >= 2 x ploidy (primary),81,0,0.0,0.0,4.5,
+ERBB2,17q12,HER2; ADCs,gain,gain: CN >= 1.5 x ploidy (lenient),81,0,0.0,0.0,4.5,
+ERBB2,17q12,HER2; ADCs,high8,high copy: CN >= 8 (strict),81,0,0.0,0.0,4.5,
+ERBB2,17q12,HER2; ADCs,gt4,CN > 4 absolute (Sayles 2019 threshold; comparison only),81,6,7.4,3.4,15.2,
+RB1,13q14.2,tumour suppressor,deepdel,deep deletion: min CN = 0,81,8,9.9,5.1,18.3,
+RB1,13q14.2,tumour suppressor,loss,loss: CN < 0.65 x ploidy,81,52,64.2,53.3,73.8,"64% deletion, SV or SNV Sayles 2019, whole genomes, >4 purity-adjusted copies (paper, full text; PMC7134333) | 22% altered Bousquet 2026, Foundation Medicine panel, 653 patients aged 40 or under (paper, abstract only; PMID 42424099)"
+CDKN2A,9p21.3,tumour suppressor; CDK4/6 rationale,deepdel,deep deletion: min CN = 0,81,11,13.6,7.8,22.7,"22% (16 samples) deleted Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534) | 18% altered Japan C-CAT panel, 204 patients, any alteration (paper, full text; PMC11785636)"
+CDKN2A,9p21.3,tumour suppressor; CDK4/6 rationale,loss,loss: CN < 0.65 x ploidy,81,39,48.1,37.6,58.9,
+TP53,17p13.1,tumour suppressor,deepdel,deep deletion: min CN = 0,81,6,7.4,3.4,15.2,
+TP53,17p13.1,tumour suppressor,loss,loss: CN < 0.65 x ploidy,81,51,63.0,52.1,72.7,"74% deletion, SV or SNV Sayles 2019, whole genomes, >4 purity-adjusted copies (paper, full text; PMC7134333) | 55% altered Bousquet 2026, Foundation Medicine panel, 653 patients aged 40 or under (paper, abstract only; PMID 42424099)"
+PTEN,10q23.31,tumour suppressor; PI3K/mTOR rationale,deepdel,deep deletion: min CN = 0,81,2,2.5,0.7,8.6,"3% (2 of 66) deletion or truncating mutation Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534)"
+PTEN,10q23.31,tumour suppressor; PI3K/mTOR rationale,loss,loss: CN < 0.65 x ploidy,81,42,51.9,41.1,62.4,"56% loss Sayles 2019, whole genomes, >4 purity-adjusted copies (paper, full text; PMC7134333)"
+vegfr_any_amp,,lead 2 grouping,amp,"any of VEGFA, KDR, PDGFRA, KIT amplified",81,19,23.5,15.6,33.8,"at least 40% PDGFRA or VEGFA amplified Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534)"
+4q12_amp,,lead 2 grouping,amp,"any of KDR, PDGFRA, KIT (4q12) amplified",81,10,12.3,6.8,21.3,"20% (13 of 66 patients) Suehara 2019, MSK-IMPACT, 66 patients (paper, full text; PMC6825534)"
+pill_target_any_amp,,lead 2 grouping,amp,"any of VEGFA, KDR, PDGFRA, KIT, FGFR1, MET amplified",81,23,28.4,19.7,39.0,
+vegfr_any_gain,,lead 2 grouping,gain,"any of VEGFA, KDR, PDGFRA, KIT at CN >= 1.5 x ploidy",81,38,46.9,36.4,57.7,
+vegfr_any_high8,,lead 2 grouping,high8,"any of VEGFA, KDR, PDGFRA, KIT at CN >= 8",81,17,21.0,13.5,31.1,

@@ -21,7 +21,7 @@ Survival for osteosarcoma that has spread or come back has barely changed since 
 2. **One drug class clearly beats the benchmark, briefly.** *Confirmed; who benefits is a Lead.*
    - In relapsed disease, VEGFR2-blocking kinase-inhibitor pills keep roughly 40–50% of patients free of progression at four months, against about 14% for other drugs.
    - The effect fades within months.
-   - About 40% of tumours carry extra copies of the genes these pills target, but no study has checked whether those patients are the ones who benefit.
+   - Between a quarter and two-fifths of tumours carry extra copies of the genes these pills target, depending on how amplification is defined, but no study has checked whether those patients are the ones who benefit.
    - That can be tested with samples already stored from past trials.
    - [Pooled controls](reports/Osteosarcoma%20pooled%20control%20dataset.md) · [Kinase-inhibitor report](reports/Why%20kinase-inhibitor%20pills%20work%20in%20osteosarcoma.md)
 3. **The weeks after surgery may be the moment to block inflammation, not boost immunity.** *Hypothesis.*

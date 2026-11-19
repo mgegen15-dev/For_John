@@ -62,7 +62,7 @@ Relapsed, measurable osteosarcoma. "PFS" means progression-free survival; "OS" m
 | 8p11 | FGFR1 | 18.5% of poor chemotherapy responders, none of the good responders (352 samples from 288 patients) (paper, abstract only) | PMID 24861215 |
 | MET | MET receptor (cabozantinib target) | First cloned from an osteosarcoma cell line; drives bone-cell transformation in models; not often amplified | reviewed in PMC8763616 |
 
-Together, at least 40% of patients have VEGFA or PDGFRA amplification (paper, abstract only; PMID 31175097). VEGFA amplification is also enriched in the drug-resistant clones that come back at relapse, which is the setting where the pills are tested (8 patients; paper, abstract only; PMID 37812025).
+Together, at least 40% of patients have VEGFA or PDGFRA amplification in that cohort (paper, abstract only; PMID 31175097). In open TARGET-OS data from 81 patients at diagnosis, 23.5% carry a clear amplification of VEGFA, KDR, PDGFRA or KIT, and 47% by a looser threshold (our calculation; `reports/Copy-number changes and the kinase-pill biomarker.md`). VEGFA amplification is also enriched in the drug-resistant clones that come back at relapse, which is the setting where the pills are tested (8 patients; paper, abstract only; PMID 37812025).
 
 **What the lab studies show.** Most of these were read as abstracts only and were not re-checked by the audit.
 
@@ -104,7 +104,7 @@ We could not read the subgroup analyses of SARC024 or REGOBONE (no open full tex
 
 **Survival.** No randomized trial has shown that these pills help patients live longer:
 
-- **SARC024 and REGOBONE** let placebo patients switch to the drug on progression; 10 of 20 and 10 of 12 did (paper, abstract only). Crossover hides any survival effect.
+- **SARC024 and REGOBONE** let placebo patients switch to the drug on progression; 10 of 20 and 10 of 12 did (paper, abstract only; the SARC024 registry participant flow records 11 crossovers). Crossover hides any survival effect.
 - **OLIE.** 12-month survival was 49% with lenvatinib + IE against 72% with IE alone (registry), with HR 1.28 at the primary analysis. At the final analysis requested by the FDA, the hazard ratio was 0.93 (0.53–1.62), so no difference (paper, full text). The authors note that more patients in the IE arm went on to surgery or later treatment.
 - **OAIE.** Median survival was 18.1 months with apatinib + IE against 22.9 months with IE alone (HR 1.48). In the apatinib arm, 30% received no further treatment, against 19% in the IE arm (paper, full text). The IE-alone arm also received more chemotherapy per cycle (days 1–5 against days 1–3).
 
