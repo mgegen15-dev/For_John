@@ -39,43 +39,53 @@ Score (0-100, every part stated so it can be argued with):
                       + 5 f(papers, 100)]
                      x (1 - 0.5 * pct_cell_only_or_ncrna / 100)
                      x risk factor (high 0.5, elevated 0.75, otherwise 1)
-              -- or, if higher, DRUG LITERATURE = 20 f(drug_papers, 30), where
-                 drug_papers is the PubMed count of osteosarcoma[tiab] AND
-                 "<drug>"[tiab] for the gene's best-documented drug with <= 3
-                 ChEMBL mechanisms (gene tagging misses papers that name only
-                 the drug, e.g. propranolol or digoxin).
+                     -- or, if higher, DRUG LITERATURE = 20 f(drug_papers, 30).
+                     drug_papers is the larger of two PubMed counts,
+                     osteosarcoma[tiab] AND "<drug>"[tiab], and the same with
+                     the drug's non-trade synonyms OR-ed (tretinoin also
+                     matches "all-trans retinoic acid"), for the gene's
+                     best-documented drug with <= 3 ChEMBL mechanisms.
+                     Endogenous substances (adenosine, estradiol ...) get none.
+                     This route exists because gene tagging misses papers that
+                     name only the drug (propranolol, digoxin).
   EXPRESSION(0-25) = 25 x f(median TPM, 50) x (% tumours with TPM >= 5) / 100
   DRUGGABLE (0-25) = phase (approved 10, phase 3 only 6)
                      + oral 5
                      + paediatric experience (>= 5 interventional trials that
-                       enrol children 5; 1-4 trials 3; none 0; not queried 0)
+                       enrol children 5; 1-4 trials 3; none or not queried 0)
                      + safety (no boxed warning 5; boxed warning 2)
-                     -- taken from the single best drug for the gene.
+                     -- all from the single best drug for the gene
+                     (see drug_rank_key).
   UNTESTED  (0-20) = 20 no osteosarcoma trial has used any drug against the gene;
+                     10 only indirect use (a drug with > 3 ChEMBL mechanisms,
+                        or listed as an intervention but not named in the
+                        trial title, e.g. a supportive-care or backbone role);
                       6 a drug against it was named in the title of a basket
                         trial that enrolled osteosarcoma among other cancers;
-                     10 only "indirect" use (a multi-target drug with > 3
-                        ChEMBL mechanisms, or the drug is listed as an intervention but not
-                        named in the trial title, e.g. a supportive-care or
-                        backbone role);
-                      0 a trial named a drug against the gene in the title of an
-                        osteosarcoma or bone-sarcoma trial.
+                      0 named in the title of an osteosarcoma or bone-sarcoma
+                        trial.
   TOTAL = (EVIDENCE + EXPRESSION + DRUGGABLE + UNTESTED) x direction factor
           direction factor = 1 if the best drug inhibits/blocks/antagonises
           the target, 0.75 if it is an agonist/activator (the "make more of
           it" logic is weaker for a tumour-expressed protein).
 
-Shortlist rules: no exclusion flag, not an existing project lead, at least
-10 osteosarcoma papers with 3 or more mentioning animal data, or at least 5
-osteosarcoma papers naming the drug, and not removed on hand review (REVIEW
-below gives every removal and its reason).
+Exclusion flags (rows kept in the CSV, column `excluded`): targets of classes
+already heavily trialled in osteosarcoma (HEAVY: VEGFR multi-kinase, mTOR,
+PD-1/PD-L1, CTLA4, CDK4/6, IGF1R, GD2, B7-H3, HER2, RANKL, FDPS, PARP, SRC,
+EGFR ...), cytotoxic chemotherapy targets, genes with < 5 gene-tagged papers
+and < 5 papers naming a drug, a drug already named in an osteosarcoma trial
+title, and drugs that act only on a mutant protein.
 
-Exclusions from the shortlist (kept in the CSV, flagged): targets already
-heavily trialled in osteosarcoma (VEGFR multi-kinase, mTOR, PD-1/PD-L1, CTLA4,
-CDK4/6, IGF1R, GD2, B7-H3, HER2, RANKL, FDPS, PARP1, SRC ...), cytotoxic
-chemotherapy targets, and genes with no osteosarcoma literature row (fewer than
-5 non-review papers). The project's existing leads (IL-1/IL-6, CXCR1/2, FAK,
-DKK1, platelets/LPAR1) are flagged as existing_lead and listed separately.
+Shortlist rules (top 20): no exclusion flag; UNTESTED >= 10; the gene at
+>= 5 TPM in at least half of tumours; >= 10 gene-tagged papers with >= 3
+mentioning animal data, or >= 5 papers naming the drug; not an existing
+project lead (EXISTING: IL-1/IL-6, CXCR1/2, FAK, DKK1, platelets/LPAR1 --
+scored and printed separately); one row per best drug; and not removed on
+hand review. REVIEW records every hand judgement. Notes starting with
+"weak", "thin evidence", "wrong direction", "RNA argues against" or "dead end"
+keep the gene on the list with that verdict, so readers see why it fails;
+any other note (annotation artefact, drug not available, already tested,
+class already trialled ...) removes it.
 
 Every output row is a hypothesis for laboratory testing, not a treatment
 recommendation. Nothing here needs credentials.
@@ -134,7 +144,7 @@ EXISTING = {
 REVIEW = {
     "CD4": "annotation artefact: papers are about CD4+ T cells and RNA comes from infiltrating immune cells; ibalizumab only blocks HIV entry",
     "KEAP1": "wrong direction: dimethyl fumarate inhibits KEAP1 and so activates NRF2, which protects tumour cells from chemotherapy",
-    "NFE2L2": "wrong direction: the drugs activate NRF2",
+    "NFE2L2": "merged with KEAP1: same wrong-direction NRF2 activation",
     "TGFB1": "annotation artefact: luspatercept traps activin/GDF11, not TGF-beta1; no approved TGF-beta1 blocker",
     "TGFB3": "annotation artefact: luspatercept traps activin/GDF11, not TGF-beta3",
     "TGFB2": "annotation artefact: luspatercept traps activin/GDF11, not TGF-beta2",
@@ -142,11 +152,11 @@ REVIEW = {
     "NFKB1": "drug not available: edasalonexent failed phase 3 and is not marketed",
     "NFKB2": "drug not available: edasalonexent failed phase 3 and is not marketed",
     "FN1": "drug not available: L19-IL2 is a phase 3 immunocytokine that uses fibronectin only as an address",
-    "MMP2": "dead end: MMP inhibitors (marimastat and others) failed phase 3 trials across cancers in 1997-2002",
+    "MMP2": "merged with MMP9: same failed MMP-inhibitor class",
     "MMP9": "dead end: MMP inhibitors failed phase 3 trials across cancers",
-    "MMP13": "dead end: MMP inhibition failed across cancers; doxycycline is a weak, non-selective MMP inhibitor",
-    "MMP1": "dead end: MMP inhibition failed across cancers",
-    "MMP7": "dead end: MMP inhibition failed across cancers",
+    "MMP13": "merged with MMP9: same failed class; doxycycline is a weak, non-selective MMP inhibitor",
+    "MMP1": "merged with MMP9: same failed class",
+    "MMP7": "merged with MMP9: same failed class",
     "ITGAV": "overlaps the platelet lead: abciximab is a platelet GPIIb/IIIa blocker; the alphav integrin blocker cilengitide failed in glioblastoma",
     "MDM2": "previously dropped by this project: rests on one cell line and needs wild-type TP53",
     "TP53": "previously dropped (MDM2): TP53 is credited only through MDM2-p53 interaction blockers",
@@ -168,13 +178,13 @@ REVIEW = {
     "FGFR2": "class already trialled: FGFR inhibitors (erdafitinib)",
     "ODC1": "already being tested: DFMO trial in Ewing sarcoma and osteosarcoma (NCT07321912)",
     "PSMD14": "annotation artefact and class trialled: proteasome inhibitors (bortezomib, ixazomib) are in sarcoma trials",
-    "APP": "dead end: amyloid antibodies",
+    "APP": "not a cancer idea: amyloid antibodies",
     "AXL": "class already trialled: cabozantinib blocks AXL",
     "CCN2": "drug not available: pamrevlumab failed phase 3; CTGF literature carries a high paper-mill flag",
     "IFNG": "wrong direction: emapalumab neutralises interferon-gamma, which supports anti-tumour immunity",
     "CD86": "wrong direction: abatacept suppresses T-cell activation",
     "CD80": "wrong direction: abatacept suppresses T-cell activation",
-    "ITGB2": "dead end: lifitegrast is an eye drop",
+    "ITGB2": "not a cancer idea: lifitegrast is an eye drop",
     "ENG": "drug not available: carotuximab failed phase 3 in angiosarcoma",
     "SMO": "already tested: vismodegib trial included osteosarcoma (NCT01154452)",
     "HDAC1": "class already trialled: HDAC inhibitors", "HDAC2": "class already trialled: HDAC inhibitors",
@@ -183,9 +193,8 @@ REVIEW = {
     "XPO1": "already tested: selinexor trials include osteosarcoma",
     "RAF1": "class already trialled: sorafenib/regorafenib",
     "CA2": "thin evidence: 5 papers; topiramate is a weak carbonic anhydrase inhibitor",
-    "IMPDH2": "annotation artefact: thioguanine is antimetabolite chemotherapy; 5 papers",
-    "ANGPT2": "dead end: faricimab is given into the eye",
-    "HBB": "dead end: efaproxiral (radiation sensitiser) was abandoned",
+    "ANGPT2": "not a cancer idea: faricimab is given into the eye",
+    "HBB": "not a cancer idea: efaproxiral (radiation sensitiser) was abandoned",
     "HSPA1A": "drug not available: CD24Fc", "HSPA1B": "drug not available: CD24Fc",
     "HMGB1": "drug not available: CD24Fc; high paper-mill flag",
     "E2F1": "drug not available: edifoligide failed", "E2F4": "drug not available: edifoligide failed",
@@ -196,8 +205,8 @@ REVIEW = {
     "EZH2": "already tested: tazemetostat basket trial", "KDM1A": "already tested: seclidemstat trial",
     "PTGS2": "already tested: celecoxib trials", "CD47": "already tested: magrolimab trial",
     "DDB1": "class already trialled: thalidomide analogues",
-    "VWF": "dead end: caplacizumab blocks von Willebrand factor to treat a clotting disorder; overlaps the platelet lead",
-    "PLAT": "dead end: aminocaproic acid is an antifibrinolytic for bleeding",
+    "VWF": "not a cancer idea: caplacizumab blocks von Willebrand factor to treat a clotting disorder; overlaps the platelet lead",
+    "PLAT": "not a cancer idea: aminocaproic acid is an antifibrinolytic for bleeding",
     "IL6ST": "existing lead (IL-6): satralizumab and the IL-6 receptor",
     "MAPK14": "drug not available: no p38 inhibitor is approved (ARRY-797 failed phase 3)",
     "HAVCR2": "drug not available: sabatolimab (TIM-3) failed phase 3 in myelodysplasia",
@@ -207,7 +216,61 @@ REVIEW = {
     "BCL2": "RNA argues against: median 4 TPM, expressed in 39% of tumours; 59% of its papers are cell-line-only or microRNA-type",
     "MEN1": "thin evidence: 6 papers; menin inhibitors act on KMT2A-rearranged leukaemia",
     "EDNRA": "thin evidence: 8 papers",
+    "VKORC1": "overlaps the anticoagulant lead (lead 9); warfarin's osteosarcoma papers are mostly about thrombosis and drug interactions",
+    "CACNA1C": "annotation artefact: verapamil's osteosarcoma papers test it as a P-glycoprotein (drug-pump) blocker, not a calcium-channel drug; that approach failed in clinical trials in other cancers",
+    "CACNB3": "annotation artefact: as CACNA1C (bepridil, verapamil)",
+    "CACNA1D": "annotation artefact: as CACNA1C", "CACNB1": "annotation artefact: as CACNA1C",
+    "CACNA2D1": "annotation artefact: as CACNA1C (gabapentin/pregabalin papers are about cancer pain)",
+    "PRKCA": "weak: midostaurin is a broad multi-kinase inhibitor and protein kinase C evidence is thin",
+    "PRKCD": "weak: midostaurin is a broad multi-kinase inhibitor", "PRKCG": "RNA argues against (0.1 TPM)",
+    "PDGFB": "not a cancer idea: pegpleranib is an eye injection that failed phase 3",
+    "FCGR3A": "annotation artefact: Fc receptor engaged by therapeutic antibodies",
+    "PPIA": "drug not available: alisporivir is not approved; cyclosporine is an immunosuppressant",
+    "FAAH": "annotation artefact: paracetamol",
+    "E2F3": "drug not available: edifoligide failed",
+    "GHR": "same axis as IGF1R, which failed in 13 osteosarcoma trials; pegvisomant lowers IGF-1",
+    "JAK2": "weak: osteosarcoma JAK2 papers are mostly natural-product cell-line studies; no study of an approved JAK inhibitor found; median 6.8 TPM",
+    "JAK1": "weak: 10 papers, 1 with animal data",
+    "ABCB1": "dead end: P-glycoprotein blockers (tariquidar, zosuquidar, verapamil) failed to reverse chemoresistance in clinical trials in other cancers",
+    "NGF": "drug not available: anti-NGF antibodies (tanezumab, fulranumab) are pain drugs and were not approved",
+    "FAP": "drug not available: F19 is a radiolabelled antibody that was not approved; FAP marks fibroblasts (see the surface-target report)",
+    "FTO": "drug not available: bisantrene is an old anthracene cytotoxic in phase 3 for leukaemia only",
+    "CDK9": "class already trialled: alvocidib (flavopiridol) is in the osteosarcoma trial list",
+    "CDK1": "class already trialled: alvocidib", "CDK2": "class already trialled: alvocidib; cyclin E1/CDK2 was the weakest orphan target in the literature map",
+    "CDK7": "class already trialled: alvocidib",
+    "E2F2": "drug not available: edifoligide failed", "IKBKB": "drug not available: bardoxolone methyl is not approved",
+    "IMPDH1": "already tested: mycophenolate mofetil phase II ESMMO trial in Thailand (TCTR20190701001, not on ClinicalTrials.gov) was negative, 15 patients (PMID 40938558)",
+    "IMPDH2": "already tested: mycophenolate mofetil phase II ESMMO trial (TCTR20190701001) was negative (PMID 40938558)",
+    "SOST": "wrong direction: romosozumab blocks sclerostin to switch Wnt bone-building on; anabolic bone drugs raise osteosarcoma safety concerns",
+    "ALOX5": "annotation mismatch: sulfasalazine's osteosarcoma rationale is the cystine pump xCT (SLC7A11) and ferroptosis, in cell lines; the drug is poorly absorbed from the gut",
+    "BCL2L2": "drug not available: navitoclax is not approved",
+    "PIK3R3": "class already trialled: PI3K inhibitors",
+    "IFNGR1": "already tested: interferon-gamma appears in an osteosarcoma trial; the drug-name count reflects interferon-gamma biology papers",
+    "IFNGR2": "already tested: interferon-gamma appears in an osteosarcoma trial; the drug-name count reflects interferon-gamma biology papers",
+    "IL18": "drug not available: tadekinig alfa is not approved",
+    "BSG": "drug not available: gavilimomab is not approved",
+    "HGF": "drug not available: rilotumumab failed phase 3; MET-class drugs are already trialled",
+    "BMPR2": "wrong direction: dibotermin alfa is BMP-2, a bone-growth stimulant",
+    "PPARG": "annotation problem: the PPAR-gamma idea is the agonist pioglitazone (discussed in the report), but ChEMBL's top 'inhibitor' is bardoxolone methyl",
+    "AGER": "drug not available: azeliragon failed phase 3 in Alzheimer's disease",
+    "MAP3K5": "drug not available: selonsertib failed phase 3",
+    "AHR": "not a cancer idea: tapinarof is a skin cream that activates AHR",
+    "PTGFR": "wrong direction: dinoprost activates the prostaglandin F receptor",
+    "IL11RA": "wrong direction: oprelvekin is IL-11 itself; IL-11 receptor is already an osteosarcoma surface target in development",
+    "PRKAB1": "drug not available: acadesine is not approved; metformin (AMPK route) is already in a bone-sarcoma trial",
+    "NQO1": "drug not available: vatiquinone is not approved",
+    "PPARA": "weak: the 11 PPARA papers are lipid and bone-cell biology; we found no osteosarcoma study of fenofibrate",
+    "CA9": "weak: hypoxia marker at median 1.8 TPM; no osteosarcoma study of an approved carbonic anhydrase inhibitor found",
 }
+
+
+def review_note(gene):
+    if gene in REVIEW:
+        return REVIEW[gene]
+    if gene.startswith("CACN"):
+        return ("annotation artefact: calcium-channel drug papers in osteosarcoma (verapamil, "
+                "bepridil) test P-glycoprotein reversal or cancer pain, not the channel")
+    return ""
 
 INHIBIT = re.compile(r"INHIBITOR|ANTAGONIST|BLOCKER|NEGATIVE|INVERSE|ANTISENSE|"
                      r"DEGRADER|DISRUPTING|BINDING AGENT|CROSS-LINKING|SEQUESTERING",
@@ -484,13 +547,30 @@ def load_context():
     return ev, risk, tum, gtex, trials
 
 
-def drug_rank_key(d, info, paed):
+def drug_rank_key(d, info, paed, lit=None):
     """Best drug for a gene: not withdrawn, acts on the wild-type protein,
-    inhibits rather than activates, approved, oral, no boxed warning, most
-    paediatric trial experience."""
+    inhibits rather than activates, approved, selective (<= 3 ChEMBL
+    mechanisms), has >= 5 osteosarcoma papers of its own, oral, no boxed warning, most paediatric trial experience."""
+    lit = lit or {}
     return (not d["withdrawn"], not info["variant_only"],
             bool(INHIBIT.search(info["action"])), d["phase"],
+            len(d["mechanisms"]) <= 3, lit.get(d["chembl_id"], 0) >= 5,
             d["oral"], not d["boxed_warning"], paed.get(d["chembl_id"], 0) or 0)
+
+
+def drug_lit_counts():
+    """{chembl_id: osteosarcoma papers naming the drug} from both PubMed caches."""
+    pp, ps = cache("pubmed_drug_counts.json"), cache("pubmed_drug_counts_syn.json")
+    pubmed = json.load(open(pp)) if os.path.exists(pp) else {}
+    pubsyn = json.load(open(ps)) if os.path.exists(ps) else {}
+    b = json.load(open(cache("build.json")))
+    out = {}
+    for pid, d in b["drugs"].items():
+        cn = clean_name(d["name"])
+        if cn in ENDOGENOUS:
+            continue
+        out[pid] = max(pubmed.get(cn, 0), pubsyn.get(pid, {}).get("count", 0))
+    return out
 
 
 def untested_grade(hits):
@@ -511,13 +591,12 @@ def score_genes(ctg=None):
     b = json.load(open(cache("build.json")))
     drugs, gene_drugs, trial_hits = b["drugs"], b["gene_drugs"], b["trial_hits"]
     ev, risk, tum, gtex, _ = load_context()
-    pp = cache("pubmed_drug_counts.json")
-    pubmed = json.load(open(pp)) if os.path.exists(pp) else {}
+    lit = drug_lit_counts()
     rows = []
     for g, dd in gene_drugs.items():
         cand = [(drugs[pid], info) for pid, info in dd.items() if pid in drugs]
         cand = [c for c in cand if not c[0]["withdrawn"]] or cand
-        cand.sort(key=lambda c: drug_rank_key(c[0], c[1], paed), reverse=True)
+        cand.sort(key=lambda c: drug_rank_key(c[0], c[1], paed, lit), reverse=True)
         best, binfo = cand[0]
         e, r, t = ev.get(g, {}), risk.get(g, {}), tum.get(g)
         # ---- EVIDENCE
@@ -532,9 +611,8 @@ def score_genes(ctg=None):
         # ---- DRUG LITERATURE (alternative evidence route)
         dp, dpn = 0, ""
         for dr, _ in cand:
-            cn = clean_name(dr["name"])
-            if len(dr["mechanisms"]) <= 3 and cn not in ENDOGENOUS:
-                c = pubmed.get(cn, 0)
+            if len(dr["mechanisms"]) <= 3:
+                c = lit.get(dr["chembl_id"], 0)
                 if c > dp:
                     dp, dpn = c, dr["name"]
         E = max(E, 20 * f(dp, 30))
@@ -553,8 +631,8 @@ def score_genes(ctg=None):
             excl.append("heavily trialled class")
         if g in CHEMO or g.startswith(CHEMO_PREFIX):
             excl.append("cytotoxic chemotherapy / steroid target")
-        if not e:
-            excl.append("no osteosarcoma literature row (<5 papers)")
+        if not e and dp < 5:
+            excl.append("no osteosarcoma literature (<5 gene-tagged papers and <5 naming the drug)")
         if U == 0:
             excl.append("already named in an osteosarcoma trial")
         if binfo["variant_only"]:
@@ -652,8 +730,15 @@ def stage_ctgov(n=N_CTGOV):
     rows, drugs, gene_drugs = score_genes(load_ctgov())
     _, _, _, _, local_trials = load_context()
     hard = ("heavily trialled", "cytotoxic", "no osteosarcoma literature", "mutant form")
-    picks = [r["gene"] for r in rows if not any(h in r["excluded"] for h in hard)
-             and r["gene"] not in REVIEW][:n]
+    picks, drugs_seen = [], set()
+    for r in rows:
+        if (not any(h in r["excluded"] for h in hard)
+                and (not review_note(r["gene"]) or review_note(r["gene"]).startswith(SOFT_REVIEW))
+                and num(r["pct_tumours_expressing"]) >= 50
+                and r["best_drug"] not in drugs_seen):  # one gene per drug (complexes)
+            picks.append(r["gene"])
+            drugs_seen.add(r["best_drug"])
+    picks = picks[:n]
     picks += [g for g in EXISTING if g in gene_drugs and g not in picks]
     path = cache("ctgov_drugs.json")
     done = json.load(open(path)) if os.path.exists(path) else {}
@@ -708,7 +793,8 @@ ENDOGENOUS = {
     "glutamine", "arginine", "zinc", "cholesterol", "glucose", "dextrose", "oxygen",
     "nitric oxide", "hydrogen peroxide", "hyaluronic acid", "aminolevulinic acid",
     "levothyroxine", "liothyronine", "somatostatin", "oxytocin", "vasopressin",
-    "thrombin", "ethanol", "iron", "copper", "magnesium", "potassium", "calcium",
+    "thrombin", "parathyroid hormone", "guanidine", "isoproterenol", "nicotine",
+    "thyrotropin", "ethanol", "iron", "copper", "magnesium", "potassium", "calcium",
 }
 
 
@@ -732,6 +818,48 @@ def stage_pubmed():
             print(f"[pubmed] {i}/{len(names)}")
     json.dump(done, open(path, "w"))
     print(f"[pubmed] {len(done)} drug counts cached")
+    stage_pubmed_synonyms()
+
+
+SYN_FOR_PUBMED = {"INN", "USAN", "BAN", "JAN", "RESEARCH_CODE", "FDA", "OTHER"}
+
+
+def pubmed_names(m):
+    """Preferred name plus non-trade synonyms (e.g. tretinoin -> all-trans
+    retinoic acid, pexidartinib -> PLX3397), salt words stripped, max 8."""
+    out = [clean_name(m["pref_name"].lower())]
+    for syn in m.get("molecule_synonyms") or []:
+        if syn.get("syn_type") in SYN_FOR_PUBMED and syn.get("molecule_synonym"):
+            n = clean_name(syn["molecule_synonym"].lower())
+            if len(n) >= 5 and n not in out and n not in ENDOGENOUS and '"' not in n:
+                out.append(n)
+    return out[:8]
+
+
+def stage_pubmed_synonyms():
+    """Second count per drug: osteosarcoma[tiab] AND (any of its names)[tiab]."""
+    b = json.load(open(cache("build.json")))
+    mols = load_drugs()
+    path = cache("pubmed_drug_counts_syn.json")
+    done = json.load(open(path)) if os.path.exists(path) else {}
+    todo = [pid for pid in b["drugs"] if pid not in done and pid in mols]
+    for i, pid in enumerate(todo):
+        names = pubmed_names(mols[pid])
+        if clean_name(mols[pid]["pref_name"].lower()) in ENDOGENOUS:
+            continue
+        q = " OR ".join(f'"{n}"[tiab]' for n in names)
+        try:
+            d = get_json(EUTILS, {"db": "pubmed", "retmode": "json", "rettype": "count",
+                                  "term": f"osteosarcoma[tiab] AND ({q})"})
+            done[pid] = {"count": int(d["esearchresult"]["count"]), "names": names}
+        except (RuntimeError, KeyError, ValueError) as e:
+            print(f"[pubmed-syn] {pid}: {e}", flush=True)
+        time.sleep(0.36)
+        if i % 100 == 0:
+            json.dump(done, open(path, "w"))
+            print(f"[pubmed-syn] {i}/{len(todo)}", flush=True)
+    json.dump(done, open(path, "w"))
+    print(f"[pubmed-syn] {len(done)} drug counts cached")
 
 
 # -------------------------------------------------------- stage: abstracts
@@ -760,7 +888,7 @@ def stage_abstracts(queries):
 
 # ------------------------------------------------------------- stage: score
 CSV_FIELDS = [
-    "shortlist_rank", "gene", "score", "evidence_pts", "expression_pts", "druggable_pts",
+    "shortlist_rank", "verdict", "gene", "score", "evidence_pts", "expression_pts", "druggable_pts",
     "untested_pts", "direction_factor", "best_drug", "best_drug_phase", "best_drug_action",
     "best_drug_mechanism", "best_drug_oral", "best_drug_boxed_warning",
     "best_drug_first_approval", "best_drug_paediatric_trials", "other_drugs", "n_drugs",
@@ -768,24 +896,52 @@ CSV_FIELDS = [
     "gtex_median_tpm_all_tissues", "gtex_highest_tissue", "os_papers", "in_vivo",
     "patients", "dog", "pct_cell_only_or_ncrna", "retracted", "risk_flag", "nih_grants",
     "drug_os_papers", "drug_os_papers_drug", "os_trial_status", "os_trials",
-    "os_trial_drugs", "existing_lead", "excluded", "review_note",
+    "os_trial_drugs", "existing_lead", "excluded", "review_note", "same_target_genes",
 ]
+
+
+# Review notes that keep a gene on the shortlist (shown with its verdict, so
+# a reader sees why a high scorer is a dead end); every other review category
+# (annotation artefact, drug not available, already tested, class already
+# trialled, overlaps an existing lead ...) removes it.
+SOFT_REVIEW = ("weak", "thin evidence", "wrong direction", "RNA argues against", "dead end")
+
+
+def verdict(r):
+    note = r.get("review_note", "")
+    if not note:
+        return "candidate"
+    return note.split(":")[0]
 
 
 def eligible(r):
     lit = (num(r["os_papers"]) >= 10 and num(r["in_vivo"]) >= 3) or r["drug_os_papers"] >= 5
-    return lit and not r["excluded"] and not r["existing_lead"] and not r["review_note"]
+    expressed = num(r["pct_tumours_expressing"]) >= 50
+    soft = not r["review_note"] or r["review_note"].startswith(SOFT_REVIEW)
+    return (lit and expressed and r["untested_pts"] >= 10 and not r["excluded"]
+            and not r["existing_lead"] and soft)
 
 
 def stage_score(n_short=20):
     rows, _, _ = score_genes(load_ctgov())
-    rank = 0
+    rank, seen = 0, {}
     for r in rows:
-        r["review_note"] = REVIEW.get(r["gene"], "")
+        r["review_note"] = review_note(r["gene"])
         r["shortlist_rank"] = ""
+        r["same_target_genes"] = ""
         if rank < n_short and eligible(r):
+            # One shortlist row per drug target: complex I subunits (metformin)
+            # or IMPDH1/IMPDH2 would otherwise fill several places.
+            key = r["best_drug"]
+            if key in seen:
+                seen[key]["same_target_genes"] = (seen[key]["same_target_genes"] + " " + r["gene"]).strip()
+                r["review_note"] = f"same drug target as {seen[key]['gene']}"
+                continue
             rank += 1
             r["shortlist_rank"] = rank
+            seen[key] = r
+    for r in rows:
+        r["verdict"] = verdict(r) if r["shortlist_rank"] else ""
     with open(OUT_CSV, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=CSV_FIELDS, extrasaction="ignore")
         w.writeheader()
@@ -797,7 +953,7 @@ def stage_score(n_short=20):
             print(f"{r['shortlist_rank']:>3} {r['gene']:<9}{r['score']:>6} {r['evidence_pts']:>5} "
                   f"{r['expression_pts']:>5} {r['druggable_pts']:>3} {r['untested_pts']:>3}  "
                   f"{r['best_drug']} (phase {r['best_drug_phase']}; drug papers "
-                  f"{r['drug_os_papers']}; trials: {r['os_trial_status']})")
+                  f"{r['drug_os_papers']}; trials: {r['os_trial_status']}) [{r['verdict']}]")
     print("\nExisting project leads:")
     for r in rows:
         if r["existing_lead"]:
