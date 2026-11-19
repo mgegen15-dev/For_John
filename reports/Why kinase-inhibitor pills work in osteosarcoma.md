@@ -1,6 +1,6 @@
 # Why VEGFR-blocking kinase-inhibitor pills work in osteosarcoma, and why they are not yet standard
 
-*Built from trial papers (full text where open access), ClinicalTrials.gov records and preclinical studies. Last revised November 14, 2026, after an independent audit. Working notes with every source: `research_notes/Kinase inhibitors/notes.md`. Uses the same figures as the pooled control dataset (`reports/Osteosarcoma pooled control dataset.md`) and the trials landscape report.*
+*Built from trial papers (full text where open access), ClinicalTrials.gov records and preclinical studies. Last revised November 14, 2026, after an independent audit; updated November 19, 2026 (MYC, CabOSTar results, new resected-relapse benchmark; see the change log). Working notes with every source: `research_notes/Kinase inhibitors/notes.md`. Uses the same figures as the pooled control dataset (`reports/Osteosarcoma pooled control dataset.md`) and the trials landscape report.*
 
 ## Summary
 
@@ -13,6 +13,7 @@ Oral kinase inhibitors that block VEGFR2, the main receptor for the blood-vessel
 - **(paper, abstract only)**: read only in the abstract.
 - **(press release only)**: reported by a company or the media, not in a peer-reviewed paper.
 - **(our calculation)**: counted or computed by this project from the files above.
+- **(preprint, abstract only)**: read only in the abstract of a preprint, which has not been peer-reviewed.
 
 ## The evidence in one table
 
@@ -127,6 +128,7 @@ Pooling patient-level data from the two trials could tell these apart.
 | FGFR–ERK signalling switched on at the tumour–lung border when nearby tumour cells die | Live lung-metastasis models; blocked by an FGFR inhibitor or pazopanib | Lab, preprint (bioRxiv 2026, not peer reviewed; indexed in PubMed as PMID 42856637; abstract only) |
 | PTEN loss and MAPK reactivation; IL-6/STAT3; others | Anlotinib-resistant cell lines | Lab only (PMID 35318116, 37404767, 38532893) |
 | Resistant clones with MYC, CCNE1, VEGFA, IGF1R amplification | Whole genomes of relapses (8 patients) | Clinical genomics, not specific to pills (PMID 37812025) |
+| MYC-driven tumour cells resist cabozantinib | Cell lines from MYC-hyperactivated mouse osteosarcomas needed about 8 times more cabozantinib to be inhibited than p53-driven lines (mean IC50 5.51 against 0.65 µM; fold change our calculation). In mice, cabozantinib-containing regimens still delayed progression of MYC-driven tumours compared with no treatment | Lab, preprint (Kappa et al., bioRxiv, September 2026, [doi 10.64898/2026.09.21.753033](https://doi.org/10.64898/2026.09.21.753033); preprint, abstract only) |
 
 **Missing:** we found no study that biopsied osteosarcoma at the moment of progression on a pill to see what changed. This is a gap.
 
@@ -162,7 +164,8 @@ Pooling patient-level data from the two trials could tell these apart.
 - **Biomarker-selected pill trial** (VEGFA- or 4q12-amplified tumours). None found.
 - **Pill maintenance after complete surgical removal of a relapse.** No randomized trial found. This is the setting where cures still happen, and the pooled control dataset gives ready comparators:
   - the COG AOST0221 benchmark: 20% event-free at 12 months, 95% CI 10–34%, from one 42-patient trial (paper, full text);
-  - 26–28% with dinutuximab or denosumab (registry).
+  - 26–28% with dinutuximab or denosumab (registry);
+  - a November 2026 COG update of the AOST0221 benchmark: 22% event-free at 12 months (95% CI 15–31%) in 99 patients from three COG phase 2 trials (preprint, abstract only; doi 10.64898/2026.11.13.26368045).
 
   The nearest trials test maintenance after *first-line* treatment instead: FOSTER-CabOS, CabOSTar, and a French trial (NCT04055220) that randomizes regorafenib maintenance against observation.
 
@@ -191,7 +194,7 @@ Pooling patient-level data from the two trials could tell these apart.
 | Trial | Question | Status |
 |---|---|---|
 | COG AOST2032 (NCT05691478) | Cabozantinib added to MAP chemotherapy, then 6 months of cabozantinib alone, in newly diagnosed patients; 1,122 planned | **Suspended.** Reason given: "Extend the observation period for current patients" (updated 27 October 2026). The dose-finding part closed in May 2025. We found no public explanation; some hospital pages still list it as recruiting |
-| Ipsen CabOSTar (NCT06341712) | Cabozantinib vs supportive care for residual disease after first-line treatment | **Terminated** after 10 patients (November 2024 – February 2026) for recruitment problems |
+| Ipsen CabOSTar (NCT06341712) | Cabozantinib vs supportive care for residual disease after first-line treatment | **Terminated** after 10 patients (November 2024 – February 2026) for recruitment problems. Results posted 29 October 2026 contain **no efficacy data**: every efficacy outcome says the planned analyses "were not performed as the study was terminated early"; only adverse events are reported, for 5 patients on cabozantinib and 3 on supportive care alone (registry, 19 November 2026) |
 | FOSTER-CabOS, part of the FOSTER platform (NCT07871864) | 12 cycles (about 12 months) of cabozantinib vs supportive care after first-line treatment, 8 European countries. The 530 planned patients are for the whole FOSTER platform, not FOSTER-CabOS alone | **Recruiting** since 7 October 2026 |
 | Léon Bérard (NCT04055220) | Regorafenib maintenance vs observation after first-line treatment, bone sarcomas, 168 planned | Recruiting since 2020 |
 | Peking University (NCT04351308) | Apatinib or PD-1 antibody added for poor responders at diagnosis | Status unknown since 2020 |
@@ -223,6 +226,8 @@ Pooling patient-level data from the two trials could tell these apart.
 2. **Use centres that routinely sequence tumours** to look back at their patients who later received regorafenib or cabozantinib. For example, MSK reported the two subsets.
 3. **Stratify new trials** by amplicon status from diagnostic tissue.
 
+**Record MYC status as well.** Any amplification test should record MYC copy number as a variable alongside VEGFA and 4q12, for three reasons. MYC (8q24) is amplified in 26 of 81 TARGET-OS tumours (32.1%; our calculation, `reports/Copy-number changes and the kinase-pill biomarker.md`). In 105 children and young adults, MYC amplification (more than 7 copies, 16% of patients) went with 3-year overall survival of 27% against 74% (adjusted HR 3.4), independent of metastatic status (paper, abstract only; *Cancer* 2025, PMID 41199591). And MYC-driven mouse osteosarcoma cells resisted cabozantinib in the laboratory (preprint, abstract only; see the resistance table). If MYC-amplified tumours do worse on a pill, or MYC amplification co-occurs with VEGFA or 4q12 amplification in some tumours, leaving it out could hide or fake a VEGFA or 4q12 effect (our inference).
+
 **What would disprove it.** Either of these:
 
 - among 100 or more pooled patients treated with a pill, a hazard ratio of 0.8 or above for amplified against non-amplified tumours;
@@ -252,6 +257,13 @@ Pooling patient-level data from the two trials could tell these apart.
 4. **Re-read the SARC024 and REGOBONE full texts** when access allows, for subgroup data.
 
 ## Change log
+
+**November 19, 2026.** Updated from the new-evidence scan (`reports/Whats new in osteosarcoma research.md`).
+
+- **MYC added to the amplification test (section 6) and to the resistance table:** 32.1% of TARGET-OS tumours amplified (our calculation, copy-number report); MYC amplification predicts poor survival (Cancer 2025, PMID 41199591; paper, abstract only); MYC-driven mouse osteosarcoma lines resisted cabozantinib in vitro (bioRxiv 2026; preprint, abstract only).
+- **CabOSTar:** its posted results (29 October 2026) contain no efficacy data (registry).
+- **Resected-relapse comparators:** the COG 99-patient update (22%, 95% CI 15–31%) added beside the AOST0221 benchmark, which is kept.
+- **New label (preprint, abstract only):** read only in a preprint's abstract; preprints are not peer-reviewed.
 
 **November 13–14, 2026.** The report was revised after an independent audit (`research_notes/Audit/audit_B_trials_controls_pills.md`).
 

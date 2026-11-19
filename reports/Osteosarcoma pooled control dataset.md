@@ -1,6 +1,6 @@
 # A first pooled control dataset for osteosarcoma trials
 
-*Built from arm-level results that sponsors posted to ClinicalTrials.gov, then extended with published papers and with osteosarcoma cohorts pulled out of basket trials. Last revised November 14, 2026, after an independent audit. Scripts: `tools/pooled_controls.py` (registry extract), `tools/pool_relapse_benchmarks.py` (class pooling). Raw extract: `data/osteosarcoma_posted_outcomes.csv`, with 2,783 efficacy rows from 117 trials. Curated tables:*
+*Built from arm-level results that sponsors posted to ClinicalTrials.gov, then extended with published papers and with osteosarcoma cohorts pulled out of basket trials. Last revised November 14, 2026, after an independent audit; updated November 19, 2026 with a new COG benchmark (see the change log). Scripts: `tools/pooled_controls.py` (registry extract), `tools/pool_relapse_benchmarks.py` (class pooling). Raw extract: `data/osteosarcoma_posted_outcomes.csv`, with 2,783 efficacy rows from 117 trials. Curated tables:*
 
 - *`data/osteosarcoma_relapse_benchmarks.csv`: registry results.*
 - *`data/osteosarcoma_relapse_benchmarks_published.csv`: 60 rows from published papers.*
@@ -19,6 +19,7 @@ Osteosarcoma has no shared, standardized set of control outcomes against which t
 - **(paper, abstract only)**: read only in the abstract.
 - **(press release only)**: reported by a company or the media, not in a peer-reviewed paper.
 - **(our calculation)**: counted or computed by this project from the files above.
+- **(preprint, abstract only)**: read only in the abstract of a preprint, which has not been peer-reviewed.
 
 ## What is in the dataset
 
@@ -102,6 +103,8 @@ Patients whose relapse has been completely removed by surgery, so there is nothi
 
 **Historical benchmark:** in COG AOST0221, 42 patients with a first, completely resected lung relapse, 20% were event-free at 12 months. The 95% confidence interval was 10–34% (paper, full text). That interval is the uncertainty around one trial's estimate, not a range across trials.
 
+**Updated benchmark (preprint):** a November 2026 COG analysis pooled 99 patients with lung-only relapse after complete resection, enrolled on three COG single-arm phase 2 trials. Twelve-month event-free survival was 22% (95% CI 15–31%), ranging from 14% to 29% across the three trials, and median event-free survival 4.8 months; patients whose first relapse came within two years of diagnosis did worse (p = 0.009). The authors note that nearly doubling the cohort left the confidence interval about as wide as before, and conclude that smaller effects "will require randomization" (preprint, abstract only; Chou et al., medRxiv, November 16, 2026, [doi 10.64898/2026.11.13.26368045](https://doi.org/10.64898/2026.11.13.26368045)). The abstract does not name the three trials, so we cannot tell how far they overlap with the arms in the table above. The AOST0221 figure is kept as the published benchmark, and this preprint is not yet a row in `data/osteosarcoma_relapse_benchmarks_published.csv`.
+
 The only randomized comparison found is a small one. In the SARC saracatinib trial after lung metastasis surgery, median progression-free survival was 19.4 months with saracatinib (n=18) and 8.6 months with placebo (n=19), P = 0.47 (paper, full text).
 
 Two drugs with very different mechanisms, an anti-GD2 antibody and a bone-targeted RANKL antibody, gave similar 12-month results in the two larger arms (26–28%). One possible explanation is that the 12-month figure depends more on which patients are enrolled after surgery than on the drug. *This is a hypothesis.* There are only two comparable arms, and the small olaparib + ceralasertib cohort reached 40%. Either way, a randomized trial in this setting (gap 2 in the research report) is the only way to tell drug effect from patient selection.
@@ -133,12 +136,12 @@ The four EURAMOS-1 arms are the best available controls for any new first-line t
 
   The one immunotherapy combination with clear activity so far pairs a VEGFR-blocking pill with a PD-1 antibody (APFAO, 66% at 4 months), and it missed its own 6-month target.
 - **The ATR/PARP evidence in osteosarcoma is a single combination.** Olaparib + ceralasertib sits at the benchmark (15% at 4 months). No single-agent ATR or PARP inhibitor cohort in osteosarcoma has reported. This tempers the DNA-repair transfer ideas in the research report: if these drugs work, it may only be in a biomarker-selected group, which has not been tested.
-- **No newer COG pooled benchmark.** We found no newer COG pooled benchmark for osteosarcoma. COG has published such benchmarks for rhabdomyosarcoma and for non-rhabdomyosarcoma soft-tissue sarcoma.
+- **No newer peer-reviewed COG pooled benchmark.** We found no newer peer-reviewed COG pooled benchmark for osteosarcoma; the one update, for resected lung-only relapse (99 patients, 22% at 12 months), is so far a preprint (preprint, abstract only; see above). COG has published such benchmarks for rhabdomyosarcoma and for non-rhabdomyosarcoma soft-tissue sarcoma.
 
 ## What this connects to
 
 - **Front-line testing of the pills has stalled in the US.** COG's front-line cabozantinib trial, AOST2032, is suspended (registry). Ipsen's maintenance trial CabOSTar closed after 10 patients (registry). We found no randomized kinase-inhibitor trial currently enrolling at a US site (registry; our calculation). In Europe, FOSTER-CabOS (part of NCT07871864) and a French regorafenib maintenance trial (NCT04055220) are recruiting (registry).
-- **Resected relapse.** Any new claim in this setting should be compared with these arms and with the AOST0221 benchmark (20%, 95% CI 10–34%) before it is believed. That includes the OST-HER2 vaccine's reported results (press release only).
+- **Resected relapse.** Any new claim in this setting should be compared with these arms and with the AOST0221 benchmark (20%, 95% CI 10–34%, n = 42) and its larger COG update (22%, 95% CI 15–31%, n = 99; preprint, abstract only) before it is believed. That includes the OST-HER2 vaccine's reported results (press release only).
 - **The kinase-inhibitor report** (`reports/Why kinase-inhibitor pills work in osteosarcoma.md`) uses these same figures.
 
 ## Limits
@@ -156,6 +159,8 @@ The four EURAMOS-1 arms are the best available controls for any new first-line t
 3. Ask COG for the ADVL1622 definition of "disease control", so it can enter the 4-month table.
 
 ## Change log
+
+**November 19, 2026.** Added the COG update for resected lung-only relapse (Chou et al., medRxiv 2026; 99 patients; 12-month event-free survival 22%, 95% CI 15–31%), labelled (preprint, abstract only), alongside the AOST0221 benchmark, which is kept. "No newer COG pooled benchmark" now reads "no newer peer-reviewed" benchmark. New label **(preprint, abstract only)**: read only in a preprint's abstract; preprints are not peer-reviewed. The data files were not changed.
 
 **November 13–14, 2026.** The report was consolidated into one current version after an independent audit (`research_notes/Audit/audit_B_trials_controls_pills.md`). Earlier "Update" sections were folded into the text.
 

@@ -1,6 +1,6 @@
 # Osteosarcoma clinical trials: what 40 years of registrations show
 
-*Step 1 of the For John dot-connecting plan. Built from every study on ClinicalTrials.gov that lists osteosarcoma as a condition (758 studies, 603 of them interventional trials), a Europe PMC search of each finished trial's registry number, and a one-by-one follow-up search of nine trials whose results looked missing. Last revised November 14, 2026, after an independent audit. Data: `data/osteosarcoma_trials.csv`, `data/osteosarcoma_trials_flags.csv`, `data/osteosarcoma_trials_publications.csv`. Scripts: `tools/trial_miner.py`, `tools/retag_trial_scope.py`, `tools/trial_analysis.py`, `tools/trial_publication_check.py`. Follow-up search log: `research_notes/Lost trial results/lost_trials_search.md`.*
+*Step 1 of the For John dot-connecting plan. Built from every study on ClinicalTrials.gov that lists osteosarcoma as a condition (758 studies, 603 of them interventional trials), a Europe PMC search of each finished trial's registry number, and a one-by-one follow-up search of nine trials whose results looked missing. Last revised November 14, 2026, after an independent audit; JCOG0905 note added November 19, 2026. Data: `data/osteosarcoma_trials.csv`, `data/osteosarcoma_trials_flags.csv`, `data/osteosarcoma_trials_publications.csv`. Scripts: `tools/trial_miner.py`, `tools/retag_trial_scope.py`, `tools/trial_analysis.py`, `tools/trial_publication_check.py`. Follow-up search log: `research_notes/Lost trial results/lost_trials_search.md`.*
 
 ## Summary
 
@@ -56,6 +56,8 @@ Some cases are telling. Ipsen's 2024 cabozantinib maintenance trial CabOSTar (NC
 (our calculation, from registry fields)
 
 Across all start years there are 98 osteosarcoma-only interventional trials, 27 of them randomized (our calculation). The remaining interventional trials are 10 "bone sarcoma" trials that never name osteosarcoma and 495 basket trials, which include osteosarcoma among other cancers.
+
+**A randomized trial outside this count: JCOG0905.** The Japan Clinical Oncology Group's randomized trial of MAP chemotherapy with or without ifosfamide for poor responders is registered only in the Japan Registry of Clinical Trials (jRCTs031180126, as given in the paper); searches of ClinicalTrials.gov for "JCOG0905" and for that jRCT number return nothing, and it is not in `data/osteosarcoma_trials.csv` (registry, November 19, 2026). So it is not among the 27. It randomized 103 poor responders (51 to MAP, 52 to MAP plus ifosfamide): disease-free survival did not differ (HR 1.05, 95% CI 0.55–1.98), overall survival was numerically worse with ifosfamide (HR 1.48, 95% CI 0.68–3.22), and 9 against 0 patients stopped treatment for adverse events (paper, abstract only; *J Clin Oncol* 2025, PMID 40138604). Like EURAMOS-1, it found that intensifying chemotherapy for poor responders does not help. Counting trials registered outside ClinicalTrials.gov would raise the randomized total to at least 28; we did not search jRCT, UMIN or other registries systematically.
 
 **How the tags work.** A trial is "osteosarcoma-only" if every listed condition names osteosarcoma (or osteogenic sarcoma), or is a generic bone-sarcoma term or a bare site descriptor such as "Lung Metastases", and at least one condition names osteosarcoma. It is "bone sarcoma" if the conditions are generic bone-sarcoma or bone-tumour terms that never name osteosarcoma. Everything else is "basket". The earlier version of the tag also accepted any condition containing "recurrent", "refractory", "metastatic", "lung" or "neoplasm". That let Ewing sarcoma, rhabdomyosarcoma and even lung-cancer trials in. The corrected tag errs toward exclusion. Some true osteosarcoma trials are still counted as basket: OS2006 lists only "Sarcoma", and NCT03909776 lists endpoint names instead of a disease. So the osteosarcoma-only counts are more likely to be slight undercounts than overcounts, but they remain approximate.
 
@@ -131,6 +133,8 @@ That leaves 21 trials and about 810 patients with no results found (our calculat
 3. Step 2 of the plan: extract claims from the osteosarcoma literature and link them to these trials and to the NIH grants.
 
 ## Change log
+
+**November 19, 2026.** Checked whether JCOG0905 (randomized, Japan) is in the trial file: it is not, because it is registered only in jRCT (jRCTs031180126), so it is outside ClinicalTrials.gov and not among the 27 randomized osteosarcoma-only trials. Its published result (JCO 2025, PMID 40138604; paper, abstract only) was added below the count. The count itself is unchanged.
 
 **November 13–14, 2026.** The report was consolidated into one current version after an independent audit (`research_notes/Audit/audit_B_trials_controls_pills.md`). Earlier "Update" sections were folded into the text.
 

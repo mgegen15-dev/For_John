@@ -4,7 +4,8 @@
 normal-tissue medians, Human Protein Atlas surface annotation, ClinicalTrials.gov API v2 (trial
 statuses re-checked November 14, 2026). Script: `tools/surface_targets.py`. Full table:
 `data/osteosarcoma_surface_target_candidates.csv` (2,434 genes). Working notes:
-`research_notes/Surface targets/notes.md`.*
+`research_notes/Surface targets/notes.md`. Updated November 19, 2026 with a protein-level check of the leads
+(`research_notes/Surface targets/protein_check.md`) and new trial records; see the change log.*
 
 ## Summary
 
@@ -18,7 +19,10 @@ normal tissues. The top hit, LRRC15, already has four registered trials, two of 
 including one specifically in relapsed osteosarcoma. Below it the screen points to IFITM5,
 ADAM12, MRC2, PTK7 and CD248. This is RNA, not protein, from 88 diagnostic biopsies, compared
 against adult tissue that contains no bone, so every lead needs checking in tumour tissue before
-anyone acts on it.
+anyone acts on it. A protein check in November 2026 found that only LRRC15 has been measured as
+protein in patient osteosarcomas, in three independent studies; PTK7 has been stained only in two
+models, IFITM5 and ADAM12 have no human osteosarcoma protein data at all, and TMEM119, which our
+surface filter excluded, has surface staining in patient tumours.
 
 **How to read the labels.** Key numbers carry one of these tags:
 - **(registry)**: read directly from an official registry or public database: ClinicalTrials.gov,
@@ -29,6 +33,8 @@ anyone acts on it.
   page.
 - **(our calculation)**: we computed it from this repository's data files with the script named
   above.
+- **(preprint, abstract only)**: we read only the abstract of a preprint, which has not been
+  peer-reviewed.
 
 ## Why this screen
 
@@ -179,6 +185,14 @@ the live HPA agreed.
 Two genes with higher overall scores, PANX3 and TMEM119 (overall ranks 3 and 5), are not in this
 list because HPA gives them only low surface confidence.
 
+**TMEM119 should be considered despite the filter.** A 2026 mass-spectrometry study of 22
+osteosarcoma patient-derived xenografts ranked TMEM119 4th of 190 surface candidates, and on a
+tissue microarray of patient osteosarcomas found "robust staining" with "distinct surface
+staining", with limited staining in 21 of 22 normal paediatric tissues (tonsil the exception)
+(paper, full text; Mooney et al., *Cell Rep* 2026, PMID 42647168). In our screen it has 565 TPM
+in 98.9% of tumours (our calculation). So the HPA-based surface call was wrong for TMEM119, and
+the shortlist should be re-run with it admitted.
+
 ## How much the ranking depends on our choices
 
 The ranks of the top two candidates hold up; most of the others depend on which normal tissues
@@ -217,13 +231,48 @@ LRRC15 programmes (registry, November 14, 2026):
   (NCT07374848): **recruiting** since March 2026.
 - **SOT106** (SOTIO), an LRRC15 ADC, phase 1/2 in LRRC15-positive osteosarcoma and soft-tissue
   sarcoma (NCT07801222): **not yet recruiting** (planned start September 2026, not yet updated).
-- **NTH-2403** (Radiopharm Theranostics), a lutetium-177 anti-LRRC15 antibody imaging and safety
-  study in other solid tumours (NCT07272642): **not yet recruiting**; it does not list sarcoma.
-  It appears to be the same antibody as LNTH-2403, but we did not confirm this.
+- **LNTH-2403** (Radiopharm Theranostics), an imaging and safety study in colorectal, head and
+  neck, lung and triple-negative breast cancer (NCT07272642): **not yet recruiting**; it does not
+  list sarcoma. The record names its drug "LNTH-2403 (177Lu-DOTA-DUNP19)", so it is the same
+  lutetium-177 anti-LRRC15 antibody as in Lu-TARGO (registry, November 19, 2026). An earlier
+  version of this report called it "NTH-2403" and could not confirm the match.
 
-So this is not a new idea, and industry is ahead of the published osteosarcoma literature, which
-has only 6 papers naming LRRC15 (our calculation). Anyone working on osteosarcoma should know
-these trials.
+Status on November 19, 2026 (registry): Lu-TARGO and ZL-6201 are recruiting; SOT106 is still not
+yet recruiting; none has posted results. A completed one-patient LRRC15 SPECT imaging study in
+Wuhan (NCT07651020) adds nothing.
+
+So this is not a new idea, and industry is ahead of the published osteosarcoma literature. The
+repository's evidence tables held 6 papers naming LRRC15 when this report was built (our
+calculation); a PubMed search for "LRRC15 AND osteosarcoma" now returns 11, 7 of them from
+2025–26 (registry, November 19, 2026). Anyone working on osteosarcoma should know these trials.
+
+**Protein evidence (added November 19, 2026).** LRRC15 is the only lead measured as protein in
+patient osteosarcomas:
+- **Cui et al., *J Orthop Res* 2020 (PMID 32902907; paper, abstract only).** On a tissue
+  microarray, 63 of 69 osteosarcomas (91.3%) stained, 51 (74%) at 2+ or 3+ (percentage our
+  calculation). Higher LRRC15 went with more metastasis, chemoresistance and shorter survival. The
+  abstract does not give the antibody or the primary/metastasis split.
+- **O'Reilly et al., *Clin Cancer Res* 2026 (PMID 41627173; paper, full text).** 18 archived
+  paediatric primary tumours stained with clone EPR8188(2): median H-score 113.5, range 0–236. In
+  mice, LRRC15 RNA was limited to hair follicles, marrow mesenchymal stem cells and osteoblasts,
+  and LRRC15 CAR-T cells were active without detectable toxicity; tumours escaped by losing the
+  antigen.
+- **Moquin-Beaudry et al., *Nat Commun* 2026 (PMID 42399228; paper, full text).** Spatial
+  transcriptomics of 26 samples from 19 patients, including metastases and relapses: LRRC15 is
+  part of a 9-gene osteosarcoma surface signature that holds at relapse, and its staining matched
+  its RNA. The authors stress that no single target is expressed throughout a tumour, and give no
+  per-gene positivity rates.
+- **Mooney et al., *Cell Rep* 2026 (PMID 42647168; paper, full text).** Mass-spectrometry
+  surfaceome and global proteome of 22 osteosarcoma patient-derived xenografts: LRRC15 enriched by
+  both methods and among the top hits.
+
+What is still missing: positivity rates in paired primary, lung-metastasis and relapse tissue,
+and protein in human osteoblasts, growth plate and marrow, which matters most for a lutetium-177
+antibody (our inference). **Cheapest next step:** stain a tissue microarray of paired primary,
+lung-metastasis and relapse tissue, plus paediatric growth plate and marrow, with the EPR8188(2)
+clone, scoring H-score and % positive cells. Before that, ask Lantheus and SOTIO whether they will
+publish their screening staining data; SOT106 enrols only LRRC15-positive tumours, so SOTIO must
+have an assay.
 
 ### 2. IFITM5: the most interesting new hit, with a built-in caveat
 
@@ -239,11 +288,25 @@ A real assessment needs normal bone, especially paediatric growth plate, since t
 still growing. In short, it is the best-looking new target here, and the one whose risk this
 screen is least able to see.
 
+**There is no human osteosarcoma protein data for IFITM5** (checked November 19, 2026). HPA has
+no tissue staining for it (registry), PubMed's IFITM5 osteosarcoma papers are case reports,
+transcriptomics or one cell-line study, and a 2026 spatial study that found IFITM5 in its
+osteosarcoma surface signature by RNA could not stain it because no validated antibody was
+available (paper, full text; PMID 42399228). A preprint reports that the osteoblastic cell state
+is dampened in metastases and after treatment (preprint, abstract only; Tanaka et al., bioRxiv
+2026), so an osteoblast protein may be lower in exactly the lesions a drug would treat (our
+inference). Since no antibody is ready, the cheapest next step is RNA in-situ staining of tumours,
+metastases and paediatric growth plate.
+
 ### 3. ADAM12: modest expression, good specificity on our main measure
 
 35 TPM in tumours but in 98.9% of them, against 1.8 TPM in the worst vital tissue (a brain
 region) and 9 TPM in the worst tissue overall (our calculation). HPA gives it `Enhanced` IHC
-reliability, the top grade (registry). Fibroblasts sit at 32 TPM, so part of this signal is
+reliability, the top grade (registry), but that grade rests on three antibodies whose staining
+patterns disagree: one stains placenta and marrow, one chondrocytes and testis, and one brain,
+gut and kidney strongly (registry, checked November 19, 2026). We cannot tell which is right, so
+the grade is uninformative. **There is no human osteosarcoma protein data for ADAM12**: the only
+osteosarcoma study is a mouse model (paper, abstract only; PMID 23490646). Fibroblasts sit at 32 TPM, so part of this signal is
 mesenchymal lineage rather than tumour, and counting fibroblasts drops it to rank 213 (see the
 sensitivity table). We found no antibody or ADC programme against it; the only registered trial
 naming ADAM12 uses it as a biomarker (registry). ADAM12 is a sheddase involved in invasion, which
@@ -257,8 +320,22 @@ The window is modest (2.3-fold), and PTK7 is also 116 TPM in uterus and 72 TPM i
 so its rank depends on which tissues count. What makes it a lead is that **three PTK7-directed
 ADCs are in phase 1 now**: HWK-007 (NCT07444814), KIVU-107 (NCT07229313) and DAY301
 (NCT06752681), all recruiting (registry). They follow Pfizer's earlier PTK7 ADC, PF-06647020,
-whose trials are completed (NCT02222922; NCT03243331, with gedatolisib). KIVU-107 lists sarcoma
-among eligible tumours. We have no evidence that any sarcoma patient has been dosed. Fewer than
+whose trials are completed (NCT02222922; NCT03243331, with gedatolisib); the later
+AbbVie trial of the same drug, cofetuzumab pelidotin, in PTK7-expressing lung cancer
+(NCT04189614) was **terminated** for "strategic considerations" (registry). KIVU-107 lists sarcoma
+among eligible tumours. We have no evidence that any sarcoma patient has been dosed. Two more
+PTK7 programmes were found on November 19, 2026 (registry): **IDE034** (IDEAYA, NCT07503808), a
+B7-H3 × PTK7 bispecific ADC in carcinomas whose tumours express both antigens, recruiting; and
+**LY4175408** (Lilly, NCT07046923), active and not recruiting, which is **possibly PTK7-directed
+(inferred)**: the record does not name its target, but it excludes patients who had a PTK7 ADC
+with a topoisomerase I inhibitor payload. Neither lists osteosarcoma.
+
+PTK7's **protein evidence is partial**: two osteosarcoma xenografts (one from a relapse) and two
+cell lines stained positive, and a paediatric normal-tissue array was negative or weak in every
+organ (paper, full text; Lee et al., *Cell Rep Med* 2023, PMID 37343516), and the 2026 xenograft
+proteomics study names it (paper, full text). **No series of patient osteosarcomas has been
+stained for PTK7.** Cheapest next step: stain an osteosarcoma tissue array with the clinical-trial
+PTK7 assay and cut-off. Fewer than
 five osteosarcoma papers name PTK7 (our calculation). Testing an existing drug is a cheaper
 experiment than building one for a new antigen.
 
@@ -403,14 +480,18 @@ identifiers, so everything is pinned to **GTEx v8**.
 In rough order of value per unit effort:
 
 1. **Immunohistochemistry on an osteosarcoma tissue microarray** for IFITM5, MRC2, CD109 and
-   ADAM12. This is the step that would turn these hypotheses into evidence. For MRC2, start from
+   ADAM12. This is the step that would turn these hypotheses into evidence. *Update, November 19,
+   2026:* one array of primaries with paired lung metastases and relapses, plus paediatric growth
+   plate, stained for LRRC15, PTK7, TMEM119 and CD109, with IFITM5 by RNA in-situ staining (no
+   validated antibody exists) and ADAM12 with two HPA antibodies side by side, would settle most of
+   the open protein questions. COG's and St. Jude's osteosarcoma arrays already exist. For MRC2, start from
    the published sarcoma staining (PMID 36399638).
 2. **Normal paediatric bone and growth-plate expression** for IFITM5 and any other
    bone-restricted candidate. Without it, the top of this list cannot be assessed for safety.
 3. **Follow the LRRC15 trials**, especially the recruiting osteosarcoma trial of LNTH-2403
    (NCT07357519).
-4. **Ask whether PTK7 ADCs can be tested in osteosarcoma.** Three are in phase 1, and KIVU-107
-   already lists sarcoma. This needs no new molecule.
+4. **Ask whether PTK7 ADCs can be tested in osteosarcoma.** Three are in phase 1, plus the
+   B7-H3 × PTK7 conjugate IDE034, and KIVU-107 already lists sarcoma. This needs no new molecule.
 5. **Single-cell or spatial data** to settle which signals are tumour and which are stroma or
    macrophage.
 6. **Relapsed and metastatic samples**, since that is the disease that needs treating.
@@ -442,3 +523,20 @@ In rough order of value per unit effort:
   - **Wording.** "No new standard of care since the 1980s" is qualified for mifamurtide (EU,
     2009), and "osteosarcoma-specific" and "already being given to sarcoma patients" are
     softened.
+- **November 19, 2026.** Updated from the protein check
+  (`research_notes/Surface targets/protein_check.md`) and a ClinicalTrials.gov and PubMed re-check:
+  - **NCT07272642 resolved.** The record names its drug "LNTH-2403 (177Lu-DOTA-DUNP19)", the same
+    antibody as Lu-TARGO; "NTH-2403 … not confirmed" removed. Lu-TARGO and ZL-6201 recruiting;
+    SOT106 still not yet recruiting (registry).
+  - **LRRC15 protein evidence added** (Cui 2020, abstract only; O'Reilly 2026, Moquin-Beaudry 2026
+    and Mooney 2026, full text), with the cheapest next step. Paper count updated: PubMed returns
+    11 for "LRRC15 AND osteosarcoma" (registry); the earlier 6 is kept as the evidence-table count.
+  - **IFITM5 and ADAM12:** stated that neither has human osteosarcoma protein data; ADAM12's
+    `Enhanced` HPA grade rests on antibodies that disagree.
+  - **PTK7:** IDE034 (NCT07503808) added; LY4175408 (NCT07046923) added as possibly
+    PTK7-directed (inferred); cofetuzumab's NCT04189614 terminated; protein evidence partial, no
+    patient tumour series.
+  - **TMEM119:** excluded by the HPA surface filter but shows surface staining in patient tumours
+    (Mooney 2026, full text), so it should be considered.
+  - **New label (preprint, abstract only):** read only in a preprint's abstract; preprints are not
+    peer-reviewed.

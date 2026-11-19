@@ -13,6 +13,7 @@ We measured extra and missing gene copies in diagnostic tumours from 81 young pa
 - **(paper, abstract only)**: read only in the abstract.
 - **(press release only)**: from a company announcement or the media, with no peer-reviewed paper. None are used here.
 - **(our calculation)**: counted or computed by this project from the files above.
+- **(preprint, abstract only)**: read only in the abstract of a preprint, which has not been peer-reviewed.
 
 ## What we used
 
@@ -159,6 +160,7 @@ At 90% power with a 23.5% amplified share: 122 events, 136 patients with results
 3. **Question B as a pre-planned, hypothesis-generating interaction test** in the four randomized trials. The power is too low to settle it (30–57%), so report it as an estimate with its confidence interval, and plan to add FOSTER-CabOS and any restarted AOST2032 to a later pooled analysis.
 4. **Fix the definition in advance**: main call at twice the tumour's average copy number, lenient call at 1.5 times as a sensitivity analysis, VEGFA and 4q12 also analysed separately. Ploidy-aware copy-number calling is needed; a fixed "more than 4 copies" rule would misclassify many tumours.
 5. **Measure the right sample.** Trial patients have relapsed, but most stored tissue is from diagnosis. VEGFA amplification is enriched in the clones that return at relapse (8 patients; paper, abstract only; PMID 37812025). Where both exist, test the relapse sample or the blood taken at trial entry.
+6. **Record MYC status as a variable.** MYC (8q24) is amplified in 26 of 81 TARGET-OS tumours here (32.1%, 95% CI 22.9–42.9%; our calculation, table above). In 105 children and young adults, MYC amplification (more than 7 copies, 16%) went with 3-year overall survival of 27% against 74%, adjusted HR 3.4 (paper, abstract only; *Cancer* 2025, PMID 41199591). Cell lines from MYC-driven mouse osteosarcomas were about 8 times less sensitive to cabozantinib than p53-driven lines (mean IC50 5.51 against 0.65 µM; preprint, abstract only; Kappa et al., bioRxiv 2026, doi 10.64898/2026.09.21.753033; fold change our calculation). So MYC should be measured with the same ploidy-aware call and entered in the Cox model, both as a possible confounder of a VEGFA or 4q12 effect and as a candidate marker of pill resistance in its own right (our inference).
 
 ## Limits
 
@@ -178,3 +180,4 @@ From the repository root: `python3 tools/copy_number_map.py all`. It downloads 1
 ## Change log
 
 - **19 November 2026.** First version. Open TARGET-OS copy number (81 patients) mapped for 18 genes; compared with five published studies; RNA correlation for 12 genes; sample-size note for lead 2.
+- **19 November 2026 (later).** Recommended design step 6 added: record MYC status in the amplification test (32.1% amplified here; MYC amplification predicts poor survival, Cancer 2025, PMID 41199591; MYC-driven mouse cells resisted cabozantinib, bioRxiv 2026). New label **(preprint, abstract only)**: read only in a preprint's abstract; preprints are not peer-reviewed.

@@ -532,8 +532,9 @@ def score_genes(ctg=None):
         # ---- DRUG LITERATURE (alternative evidence route)
         dp, dpn = 0, ""
         for dr, _ in cand:
-            if len(dr["mechanisms"]) <= 3:
-                c = pubmed.get(clean_name(dr["name"]), 0)
+            cn = clean_name(dr["name"])
+            if len(dr["mechanisms"]) <= 3 and cn not in ENDOGENOUS:
+                c = pubmed.get(cn, 0)
                 if c > dp:
                     dp, dpn = c, dr["name"]
         E = max(E, 20 * f(dp, 30))
@@ -692,7 +693,23 @@ SALT = re.compile(r"\b(anhydrous|hydrochloride|dihydrochloride|hcl|sodium|potass
 
 
 def clean_name(name):
-    return re.sub(r"\s+", " ", SALT.sub("", name)).strip()
+    c = re.sub(r"\s+", " ", SALT.sub("", name)).strip()
+    # "dimethyl fumarate" must not shrink to "dimethyl".
+    return name if c in ("dimethyl", "monomethyl", "") or len(c) < 4 else c
+
+
+# Endogenous substances: an osteosarcoma paper naming adenosine, estradiol or
+# dopamine is almost never about the drug, so these get no drug-literature credit.
+ENDOGENOUS = {
+    "adenosine", "estradiol", "estrone", "calcitonin", "caffeine", "dopamine",
+    "capsaicin", "angiotensin ii", "ferric", "acetylcholine", "glucagon",
+    "epinephrine", "norepinephrine", "cortisone", "hydrocortisone", "corticotropin",
+    "histamine", "serotonin", "testosterone", "progesterone", "insulin", "heparin",
+    "glutamine", "arginine", "zinc", "cholesterol", "glucose", "dextrose", "oxygen",
+    "nitric oxide", "hydrogen peroxide", "hyaluronic acid", "aminolevulinic acid",
+    "levothyroxine", "liothyronine", "somatostatin", "oxytocin", "vasopressin",
+    "thrombin", "ethanol", "iron", "copper", "magnesium", "potassium", "calcium",
+}
 
 
 def stage_pubmed():

@@ -208,7 +208,8 @@ any report or note, and touch the leads:
 - **TMEM119 surface protein** (Mooney 2026) contradicts the HPA-based surface filter that kept it
   out of the shortlist.
 - **ARTEMIS-011 CI** in the PubMed abstract (0.21–1.23) disagrees with the repo's data table
-  (0.20–0.55). Needs the full paper.
+  (0.20–0.55). Needs the full paper. *Resolved November 19, 2026: re-reading the abstract, 0.20–0.55 is the progression-free
+  survival HR's CI and 0.21–1.23 belongs to the overall-survival HR (0.51). No conflict, no typo.*
 - Nothing found contradicts the lung-metastasis inflammation lead, the kinase-pill benefit
   estimate, or the trials-fail-to-finish finding.
 

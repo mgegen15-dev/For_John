@@ -120,12 +120,14 @@ ADCs with the same payload class (registry; the target is our inference).
 
 ## What should change in existing reports
 
-We did not edit other reports. These are the corrections and updates we found:
+These are the corrections and updates we found. They were applied to the named reports on
+November 19, 2026; each report's change log records what changed.
 
 1. **Osteosarcoma research landscape and gaps.** ARTEMIS-011 is now a journal paper (Ann Oncol 2026,
-   PMID 42933637); replace "no journal paper yet (press release only)". The abstract prints the
-   hazard ratio's 95% CI as 0.21–1.23, which conflicts with the 0.20–0.55 in
-   `data/osteosarcoma_relapse_benchmarks_published.csv`; check the full paper before quoting either.
+   PMID 42933637); replace "no journal paper yet (press release only)". *Corrected November 19:*
+   there is no CI conflict. The abstract gives the progression hazard ratio as 0.33 (95% CI
+   0.20–0.55), matching `data/osteosarcoma_relapse_benchmarks_published.csv`; the 0.21–1.23
+   interval belongs to the immature overall-survival hazard ratio (0.51).
 2. **Same report.** The PEPN1924 result is cited to PMID 40911899, a preclinical paper. Cite the
    trial paper, PMID 42131734 (1 of 9 with stable disease past 24 weeks).
 3. **Same report and the pooled control dataset.** The resected lung-relapse benchmark (20%, 95% CI
@@ -142,7 +144,9 @@ We did not edit other reports. These are the corrections and updates we found:
    MYC amplification predicts poor survival and, in mice, cabozantinib resistance. CabOSTar's
    posted results contain no efficacy data.
 7. **Osteosarcoma clinical trials landscape.** JCOG0905 (randomised, negative) is one more
-   osteosarcoma-only randomised trial to check against the count of 27.
+   osteosarcoma-only randomised trial to check against the count of 27. *Checked November 19:* it
+   is registered only in jRCT (jRCTs031180126), so it is outside ClinicalTrials.gov and not among
+   the 27.
 
 ## Limits
 
@@ -163,3 +167,7 @@ We did not edit other reports. These are the corrections and updates we found:
 
 - **November 19, 2026.** First version. Part B scan of June 1, 2025 to November 19, 2026; Part A
   protein check of LRRC15, PTK7, IFITM5 and ADAM12, with MRC2, CD109, CD248 and B7-H3 for context.
+- **November 19, 2026 (later).** The recommended changes were applied to the other reports. Item 1
+  corrected: the ARTEMIS-011 abstract's "0.21–1.23" is the overall-survival interval (HR 0.51), not
+  the progression one, so the abstract and the data table agree (0.33, 95% CI 0.20–0.55). Item 7
+  resolved: JCOG0905 is registered only in jRCT.
