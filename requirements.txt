@@ -1,0 +1,5 @@
+# For John: software used to build the analyses (verified November 2026).
+# Python 3.13.18 was used; any Python 3.10 or newer should work.
+# All scripts in tools/ use only the Python standard library except
+# tools/pool_relapse_benchmarks.py, which needs pandas.
+pandas==3.0.5

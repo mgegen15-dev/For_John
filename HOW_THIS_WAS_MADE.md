@@ -29,7 +29,9 @@ Nothing here uses private patient data.
 ## How claims were checked
 
 1. **Primary sources first.** Numbers were taken from the original paper, registry record or database wherever possible, not from reviews or press coverage.
-2. **Independent audit.** Before release, every headline claim in every report was re-checked by a separate review pass that did not see the original reasoning. The eleven earlier reports were audited on November 14, 2026; the three newest (approved drugs, copy number, what's new) on November 20, 2026, when a repo-wide consistency check was also run and both sets of findings were applied (`research_notes/Audit/`). It checked trial registries, PubMed and NIH records directly, and recomputed statistics from the data files. Of about 560 claims checked, roughly two-thirds were confirmed as written. The rest were wrong, overstated, out of date or unverifiable, and were corrected or labelled.
+2. **Separate audit passes.** Before release, every headline claim in every report was re-checked by a separate review pass that did not see the original reasoning. The eleven earlier reports were audited on November 14, 2026; the three newest (approved drugs, copy number, what's new) on November 20, 2026, when a repo-wide consistency check was also run and both sets of findings were applied (`research_notes/Audit/`). The reviewers checked trial registries, PubMed and NIH records directly, and recomputed statistics from the data files. Of about 690 claims checked across both rounds, most were confirmed as written. The rest were wrong, overstated, out of date or unverifiable, and were corrected or labelled.
+
+   **These audits were run by AI models working as independent reviewers, not by people.** They were rigorous and caught real errors, but they are not a substitute for review by independent scientists. No person outside the project has yet checked this work. A third-party audit is welcome: start with [AUDIT_GUIDE.md](AUDIT_GUIDE.md).
 3. **Corrections are shown, not hidden.** Each report ends with a change log listing what changed and why. Several early conclusions were overturned by later checking, and the reports say so.
 4. **Confidence labels.** Key numbers carry a label for where they came from:
    - **(registry):** posted on ClinicalTrials.gov.
@@ -61,6 +63,8 @@ The lesson built into this project is that every AI-generated claim needs checki
 - **Not medical advice.** Nothing here is a recommendation about any patient's care.
 
 ## Re-running the analyses
+
+A frozen version of everything described here is tagged `v1.0` in git. [DATA_MANIFEST.md](DATA_MANIFEST.md) lists every data file with its checksum and retrieval date, and `requirements.txt` pins the software versions.
 
 Most analyses can be rebuilt from public data with the scripts in `tools/`. A few counts (registry spot checks, some PubMed searches, and the new-evidence scan) were made with one-off database queries described in the report concerned.
 
