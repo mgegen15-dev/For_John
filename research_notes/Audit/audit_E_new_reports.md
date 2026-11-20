@@ -61,3 +61,120 @@ Score recomputation: an independent script re-applied the stated formula (eviden
 | 118 | Defactinib FDA accelerated approval May 2025 | CONFIRMED | Avutometinib + defactinib co-pack, May 8, 2025, KRAS-mutated low-grade serous ovarian cancer | FDA |
 | 56-63 | Approval years and boxed warnings for capivasertib 2023, mavorixafor 2024, plerixafor 2008, belzutifan 2021, belumosudil 2021, pexidartinib 2019 (liver boxed warning), tisotumab 2021 | CONFIRMED | Match FDA approval history | FDA (general knowledge, checked) |
 
+
+## File 2: reports/Copy-number changes and the kinase-pill biomarker.md
+
+Recomputation: independent scripts (`audit2/cn.py`, `cn2.py`, `wgs.py`, `rna.py`) read the 81 ASCAT2 allele-specific segment files and the 81 gene-level files directly from `data/copy_number_raw/`, using the manifest to map files to cases. Ploidy was computed as the length-weighted mean autosomal total copy number. The script applies "amplified" as CN ≥ 2 × that ploidy (`call_one`, line 370), exactly as the report describes. The ploidy-relative threshold is applied as described.
+
+| Line | Claim | Verdict | Correct wording / note | Source |
+|---|---|---|---|---|
+| 7, 20 | 81 patients, one diagnostic primary each; median age 14.5 (3.6–32.4); 18 aged ≥ 18 | CONFIRMED | 81 cases with both segment and gene-level files; ages.json gives median 14.48, range 3.56–32.38, 18 aged ≥ 18 | raw files (recount) |
+| 24 | Median ploidy 3.3; 55 of 81 ≥ 3 copies | CONFIRMED | 3.343; 55 | recount |
+| 24 | ERBB2 passes ">4 copies" in 7.4% | CONFIRMED | 6/81. A stronger illustration: under ">4 copies", VEGFA would be "amplified" in 37.0% and MYC in 51.9% | recount |
+| 32-38 | VEGFA 13 (16.0%, 9.6–25.5) / 23 / 12; KDR 7/19/5; PDGFRA 10/21/6; KIT 9/21/6; any 4q12 10 (12.3%); VEGFA or 4q12 19 (23.5%, 15.6–33.8), lenient 38 (46.9%), strict 17 (21.0%); + FGFR1/MET 23 (28.4%) | CONFIRMED | Every count and Wilson CI reproduced exactly | recount |
+| 32-40 | MSK: VEGFA 24% of 59; KDR 15%, PDGFRA 18%, KIT 15%; 4q12 20% of 66; "at least 40%"; 37 of 71 samples metastatic/relapse | CONFIRMED | Full text: "VEGFA ... amplified in 14 of 59 patients (24%)"; "4q12 ... 13 of 66 patients (20%)"; "at least 40% of patients have tumors harboring PDGFRA or VEGFA amplification"; MSK calls gains at fold change > 2.0 | Suehara 2019, PMC6825534 (PMID 31175097) |
+| 32 | Sayles 2019 VEGFA 23%; Japan 17% of 204 | CONFIRMED | Sayles: "VEGFA (23%)"; C-CAT: "VEGFA (35 patients; 17%)" (any alteration) | PMC7134333; PMC11785636 |
+| 42 | KDR never amplified without PDGFRA; all three together in 7 of 10; 8 of 10 at 2–3× | CONFIRMED | 0; 7; 8 | recount |
+| 44 | MSK: mutually exclusive "with one exception" | CONFIRMED | Quote in full text (log odds −1.87) | PMC6825534 |
+| 46-51 | 2×2 table 4/9/6/62; OR 4.55; Fisher p = 0.0496; 3× cut: 2 tumours, p = 0.23; in 3 of 4 overlaps VEGFA 4.3–5.2×, 4q12 2.2–3.0× | CONFIRMED | Cells and Fisher p = 0.0496 reproduced. The sample OR is 4.59; 4.55 is presumably the conditional MLE (say which). 3× cut: 2 with 4q12, 1 overlap, p = 0.233. Overlap ratios: (5.20, 3.01), (4.32, 2.16), (4.56, 2.74), plus (2.41, 2.75) | recount |
+| 55 | WGS cross-check: 24 patients; VEGFA agreed 24/24, 4 amplified on both, r = 0.98; 4q12 23–24/24, none amplified | CONFIRMED | 27 WGS files, 24 shared cases; VEGFA 24/24, 4 on both, r = 0.978; PDGFRA 24, KIT 23, KDR 24 agree; 0 4q12 amplified | recount |
+| 63-71 | MYC 26 (32.1%), CCNE1 15, PTK2 9 (8 of 9 with MYC, p = 0.0003), FGFR1 5, CDK4 3, MDM2 2, DKK1 2, MET/CD276/ERBB2 0; lenient counts | CONFIRMED | All reproduced (PTK2 with MYC Fisher p = 0.00034) | recount |
+| 63 | Sayles MYC 39% (>4 copies); FMI MYC 17% altered (653 patients) | CONFIRMED | "MYC was amplified in 39% of patients having at least >4 copies"; FMI abstract "MYC (17%)" | PMC7134333; PMID 42424099 |
+| 64, 67, 68 | MSK CCNE1 8% of samples; CDK4 14% of 66; MDM2 14% of 66; Sayles CCNE1 33%, CDK4 11% | CONFIRMED (minor) | MDM2 9/66 (14%) is right. For CDK4, MSK's Table 2 gives 9 samples (13%); 9/66 patients = 13.6% | PMC6825534; PMC7134333 |
+| 66 | FGFR1 "9.6% of 275 by FISH (Amary 2014)" | CONFIRMED as quoted; **source error** | The paper's text says "24 (9.6%) of 275", but 24/275 = **8.7%**, which is what its own Table 4 shows. Quote 8.7% (24/275) and note the paper's arithmetic slip. Either way it is consistent with our 6.2%. | Amary 2014, PMC4303166 (PMID 24861215) |
+| 74 | FMI: CDK4/MDM2 more frequent in young adults | CONFIRMED | "frequent amplification of CDK4 and MDM2 in young adults" | PMID 42424099 |
+| 80-84 | RB1 8 / 52; CDKN2A 11 / 39; TP53 6 / 51; PTEN 2 / 42; DKK1 0 / 37, with CIs | CONFIRMED | All reproduced | recount |
+| 80-83 | Sayles RB1 64%, TP53 74%, PTEN 56%; MSK CDKN2A 22%, PTEN 3%; Japan CDKN2A 18%; FMI TP53 55% | CONFIRMED | All quoted correctly | papers as cited |
+| 94-100 | Spearman rho and CIs; median TPM amplified vs not | CONFIRMED | Our values: VEGFA 0.22 (−0.00 to 0.42); KDR 0.20 (−0.02 to 0.40); PDGFRA 0.55 (0.38–0.69); KIT 0.16; FGFR1 0.57; CCNE1 0.51; MYC 0.41; medians match (KDR amp 19.1 vs reported 19.2). CI method differences only. | recount from data/surface_targets_raw |
+| 104 | MSK strong PDGFRA staining in 4q12-amplified tumours | CONFIRMED | "showed strong PDGFRA expression by immunohistochemistry" | PMC6825534 |
+| 118 | SARC024: 22 pill / 20 control / 11 crossed | CONFIRMED | Registry osteosarcoma cohort: regorafenib 22, placebo 9 + crossover 11 = 20 | NCT02048371 results |
+| 119 | REGOBONE 26 / 12 / 10 | CONFIRMED (note) | 26 / 12 are the **efficacy-evaluable** patients. 43 were randomised (5 excluded for protocol violations). The "242 randomized" total therefore mixes evaluable (REGOBONE) and randomised (other trials) counts; 247 if REGOBONE is counted as randomised. | PMID 30477937 |
+| 120 | OLIE 40 / 41 | CONFIRMED | Registry flow 40 / 41 | NCT04154189 |
+| 121 | OAIE 53 / 28, 2:1 | CONFIRMED | 81 enrolled: 53 vs 28 | PMC12647724 (PMID 41290609), Nat Commun 2025 |
+| 122-124 | CABONE 45 enrolled / 42 evaluable; ADVL1622 osteosarcoma 29; ITCC-050 osteosarcoma 31 | CONFIRMED | Registry flows: 45; 29; Cohort 2B 31 | NCT02243605, NCT02867592, NCT02432274 |
+| 7, 126 | "the existing trials hold about 267 such patients" | **OVERSTATED (undercount)** | Arithmetic reproduces (141 randomised pill + 21 crossover + 105 single arm). But ITCC-050 also treated **42 more relapsed osteosarcoma patients with lenvatinib + ifosfamide/etoposide** (Cohort 3A 7 + 15, Cohort 3B 20; registry flow). Counting them gives about 309 pill-treated patients (135 with IE). | NCT02432274 participant flow |
+| 131 | 9.5% progression-free at 12 months in CABONE (paper, full text) | UNVERIFIABLE | Not in the abstract (6-month non-progression 33%); the full text is paywalled here | PMID 32078813 |
+| 139-146 | Schoenfeld: 40% → 69 events / 76 / 127; 23.5% → 91 / 101 / 169; 20% → 103 / 114 / 190; 16% → 122 / 136 / 226; 90% power 122 / 136; interaction 364 (1:1) / 409 (2:1), 404–455 patients | CONFIRMED | Re-derived: events = (1.96 + 0.8416)² / (p(1−p)(ln 0.5)²) gives 68.07, 90.87, 102.1, 121.55 (ceil 69, 91, 103, 122). Interaction with q(1−q) = 0.25 or 0.222 gives 363.5 and 408.9. Patients = raw events / 0.9 / yield, rounded up. (Rounding events up first would give 77 and 102, so the difference is cosmetic.) | our calculation |
+| 152-154 | Power 99.5 / 94 / 86%; 96 / 81 / 69%; 57 / 38 / 30% | CONFIRMED | Reproduced from Φ(√(E·k)·ln 2 − 1.96) with E = 0.9 × n × yield; interaction uses the pooled allocation 141 / 242 | our calculation |
+| 160 | "any restarted AOST2032" | CONFIRMED | NCT05691478 is SUSPENDED (registry update 18 Nov 2026, "extend the observation period") | CT.gov |
+| 162 | "VEGFA amplification is enriched in the clones that return at relapse (8 patients)" | **OVERSTATED** | The abstract says **MYC** gain was enriched in resistant clones (6 of 7 patients). VEGFA amplifications "were also observed" in resistant clones. Enrichment is not shown for VEGFA. Fair wording: "VEGFA amplification was among the changes seen in clones that dominated at relapse". | PMID 37812025 |
+| 163 | MYC amplification (> 7 copies, 16%) of 105: 3-year OS 27% vs 74%, adjusted HR 3.4 | CONFIRMED | Matches the abstract | PMID 41199591 |
+| 163 | Kappa bioRxiv 2026: mean IC50 5.51 vs 0.65 µM, about 8-fold | CONFIRMED | The bioRxiv API abstract (v1, 26 Sep 2026) gives these values; 5.51 / 0.65 = 8.5. **Note:** in vivo, cabozantinib-containing regimens still delayed progression in the MYC models, so the resistance is in vitro (and to the TIGIT combination). | api.biorxiv.org 10.64898/2026.09.21.753033 |
+| 178 | 189 files, about 274 MB | CONFIRMED | manifest 189; du 274 MB | repo |
+| 182 | "RNA correlation for 12 genes"; "mapped for 18 genes" | CONFIRMED | EXPR_GENES has 12; 18 genes in the calls | tools/copy_number_map.py |
+
+
+## File 3: reports/Whats new in osteosarcoma research.md
+
+| Line | Claim | Verdict | Correct wording / note | Source |
+|---|---|---|---|---|
+| 11-13, 36 | ARTEMIS-011: risvutatug rezetecan vs gemcitabine-docetaxel, 80 vs 42, after ≥ 2 lines; median PFS 5.5 vs 1.4 months, HR 0.33; grade ≥ 3 TRAEs 93% vs 83%, serious 64% vs 29%; OS immature | CONFIRMED | Abstract matches exactly (HR 0.33, 95% CI 0.20–0.55; OS HR 0.51, 0.21–1.23). Note it is a **Chinese-only**, open-label trial; the report could say so | PMID 42933637 (Ann Oncol 2026) |
+| 127-130, 171-172 | 0.21–1.23 is the OS interval, not the PFS one | CONFIRMED | As stated in the abstract | PMID 42933637 |
+| 13-15 | "A Children's Oncology Group analysis of 99 patients **confirms** ... about one in five stays relapse-free a year" | OVERSTATED (label) | The numbers are right (99 patients; 12-month EFS 22%, 15–31%; median EFS 4.8 months; "Smaller effect sizes will require randomization"; early relapse within 2 years worse, p = 0.009). But the Summary does not say this is an **unreviewed medRxiv preprint** (16 Nov 2026). Say "a preprint ... reports" rather than "confirms". | medRxiv 10.64898/2026.11.13.26368045 (API) |
+| 37 | COG item details | CONFIRMED | Matches the preprint abstract | same |
+| 15-16, 38, 93 | LRRC15: 63 of 69 stained, 51 (74%) at 2+/3+; 18 primaries, median H-score 113.5; spatial cohort; 22 PDXs by mass spec; workshop names an LRRC15 ADC | CONFIRMED | Cui 2020: 63/69 (91.3%); 2+ 25 and 3+ 26 = 51 (73.9%). O'Reilly 2026 full text: median H-score 113.5 (range 0–236), n = 18. Moquin-Beaudry 2026: LRRC15 among 6 signature genes checked by IHC. Mooney 2026: 22 PDXs. Workshop abstract: "An ADC targeting LRRC15 with an osteosarcoma-relevant payload is a promising therapeutic approach". **Note:** "two of them in patient tumours" holds (O'Reilly, Moquin-Beaudry). Moquin-Beaudry's IHC on relapse samples specifically is not quantified. | PMID 32902907; PMC13080327; PMC13470005; PMC13671662; PMID 42613365 |
+| 93 | ABBV-085: 85 adults; payload-type side effects; 4 partial responses among 20 osteosarcoma/UPS | CONFIRMED | 85 enrolled; 10 osteosarcoma + 10 UPS at 3.6 mg/kg; ORR 20%, "four confirmed partial responses"; fatigue, nausea, decreased appetite | PMID 33820780 |
+| 94 | Cofetuzumab grade ≥ 3 neutropenia 25% | CONFIRMED | "25% of patients had grade ≥ 3 neutropenia" | PMID 34083232 |
+| 138 | Cofetuzumab NCT04189614 terminated | CONFIRMED | TERMINATED ("Strategic considerations") | CT.gov |
+| 17-18 vs 94 | "PTK7 has been stained in only **two** osteosarcoma models" vs Part A "Two PDXs (one from a relapse) **and two cell lines** positive" | INCONSISTENT | That is four models (two PDXs, two cell lines). Say "in two PDXs and two cell lines, and in no series of patient tumours". | report lines 17 and 94 |
+| 18-19, 95-96 | IFITM5 and ADAM12 "have **never** been measured as protein in human osteosarcoma" | CONFIRMED (absolute word) | PubMed (20 Nov 2026) has 8 IFITM5 + osteosarcoma records. The only protein measurement is a western blot of **transfected** SaOS-2 cells (PMID 28123530). ADAM12 has 3 records, and its tumour work is in mouse models (PMID 23490646). Safer wording: "no published measurement in human osteosarcoma tissue (PubMed, Nov 2026)". | PubMed esearch |
+| 20, 39, 144 | MYC amplification 16% of 105, 3-year OS 27% vs 74%, adjusted HR 3.4; MYC-driven mouse cells about 8-fold more resistant to cabozantinib in vitro | CONFIRMED | Both abstracts match; 5.51 / 0.65 = 8.5 | PMID 41199591; bioRxiv 10.64898/2026.09.21.753033 |
+| 143-144 | "MYC amplification predicts ... **in mice**, cabozantinib resistance" | OVERSTATED | The resistance was shown **in vitro** in mouse-derived cell lines. In the orthotopic MYC-hyperactivated mice, cabozantinib-containing regimens still *delayed* progression versus control; what failed was the added benefit of anti-TIGIT. Say "in cell lines from MYC-driven mouse tumours". | bioRxiv abstract |
+| 40, 131-132 | PEPN1924: 41 of 50 passed a lenient HER2 screen; 1 of 9 stable past 24 weeks; landscape had cited preclinical PMID 40911899 | CONFIRMED | Abstract: 50 screened, 41 eligible (> 10% cells, any intensity), 9 treated, 1 with > 24 weeks of SD. 40911899 is the PDX/cell-line paper. The landscape report now cites 42131734 (change applied). | PMID 42131734, 40911899 |
+| 48, 146-149 | JCOG0905: 103 randomised; DFS HR 1.05 (0.55–1.98); registered only in jRCT (jRCTs031180126) | CONFIRMED | 51 + 52 = 103; HR 1.05 (0.55–1.98); jRCTs031180126 in abstract | PMID 40138604 |
+| 49, 145 | CabOSTar NCT06341712: results posted, 10 patients, efficacy "not collected and analyzed" | CONFIRMED | TERMINATED, 10 enrolled, hasResults true; every efficacy outcome says planned analyses were not performed (only TEAEs reported) | CT.gov API |
+| 50 | Turkish real-world TKIs: median PFS 4.4 months in osteosarcoma; 72 patients | CONFIRMED | Matches | PMID 42715501 |
+| 51 | Umbrella pilot: 19 patients, median PFS 50 days | CONFIRMED | Matches (ChiCTR2000036618) | PMID 41372533 |
+| 52 | SBRT + ICI: median PFS 5.68 months in 18, pneumonitis 4/18; "Uncontrolled" | OVERSTATED (minor) | The numbers are right. It is a retrospective series with **non-randomised comparison groups** (ICI-only n = 21, ICI + conventional RT n = 23), so "uncontrolled" is not accurate; "retrospective, non-randomised" is. | PMID 41325874 |
+| 53 | Olaparib + irinotecan: ORR 9.1% in 70; one osteosarcoma PR | CONFIRMED (minor) | 70 included, 66 treated; ORR 9.1%; one osteosarcoma PR | PMID 41591981 |
+| 54 | Dogs, radiation + Lm-HER2: 5 of 15 helped, no control | CONFIRMED | "delayed primary tumor progression and prolonged overall survival in 5/15 dogs" (pilot) | PMID 42291138 |
+| 55 | Dogs, histotripsy: immune activation; "a subset" outlived expectations | CONFIRMED | Matches | PMID 42588726 |
+| 56 | Dogs, inhaled IL-15 did worse than controls; IL-6 rose after surgery | CONFIRMED | Controls were a **historical** cohort; trial halted for futility; IL-6 rose post-amputation | PMID 41209004 |
+| 57, 98-101 | Mooney (Cell Rep 2026): ROR2 absent from 25 and TMEM119 limited in 21 of 22 normal paediatric tissues; 22 PDXs; MRC2, CD109, EPHB2, EPHA3, EMP3 enriched | CONFIRMED | Full text: "Virtually no expression of ROR2 ... in any of the 25 normal pediatric tissues"; "limited expression across 21/22 normal pediatric tissues, with the exception of ... tonsil"; MRC2, CD109, EPHA3, EPHB2 "enriched by both methods"; EMP3 identified | PMC13671662 |
+| 98-102 | TMEM119 ranks 5th overall by RNA, dropped for low surface confidence; ROR2 shortlist rank 55; five of top 25 (MRC2 4, CD109 7, EPHB2 8, EPHA3 14, EMP3 21) | CONFIRMED | Surface CSV: TMEM119 overall 5, surface_confidence "low", no shortlist rank; ROR2 shortlist 55 | data/osteosarcoma_surface_target_candidates.csv |
+| 58 | CADM1 ADC: all six PDXs responded, three completely | CONFIRMED | 1 maintained CR + 2 CR + 3 PR | PMID 41517891 |
+| 59 | Vobramitamab: response not linked to B7-H3 level | CONFIRMED | "No clear association ... between B7-H3 protein expression and therapeutic response" | PMID 41941262 |
+| 60 | Meflin ADC | CONFIRMED | Matches | PMID 41120731 |
+| 61 | Workshop priorities: LRRC15 ADC, SMARCAL1, KIF18A, eIF4A1, RUNX2, MYC | CONFIRMED | All six named | PMID 42613365 |
+| 62 | SMARCAL1 germline variants in 1.8–3% across four cohorts | CONFIRMED | 2.6%, 2.9%, 3%, 1.8% | PMID 41066719 |
+| 63 | Early vs late osteoblast-like epigenetic states, different drug responses | CONFIRMED | Matches | PMID 41037662 |
+| 64 | bioRxiv Jun 2026: metastases and treated tumours lose the osteoblastic state (24 tumours) | CONFIRMED | 12 Jun 2026, snRNA-seq of 24 tumours | bioRxiv 10.64898/2026.06.10.731352 |
+| 65 | ctDNA "positioned for clinical implementation" | CONFIRMED | Exact phrase in abstract | PMID 42086782 |
+| 66 | Plasma DKK1 fell 12.4% per 30 days (34 patients); tumour DKK1 HR 1.35 per SD; "medRxiv Nov 2026" | CONFIRMED | Posted 4 Nov 2026. Note that the HR 1.35 is for tumour **RNA** expression in transcriptomic cohorts | medRxiv 10.64898/2026.11.03.26367177 |
+| 67 | Research Square lung-fibroblast preprints | UNVERIFIABLE | No DOI given in the report; the notes cite only "Research Square, Jul 2025 / Aug 2026". Add DOIs. | notes line 180 |
+| 68 | KIF18A inhibitor active in genome-doubled cells and xenografts | CONFIRMED | AM-1882 in SPT (WGD SJSA1) cells; xenografts used U2OS/MG63 | PMID 42328720 |
+| 72 | 49 new interventional CT.gov records naming osteosarcoma since June 1, 2025 | CONFIRMED | `query.cond=osteosarcoma`, interventional, first posted 2025-06-01 to 2026-11-19: 49 (64 with full-text `query.term`) | CT.gov API v2 |
+| 73-80 | Four not in repo tables: FIERCe NCT07227571 (FOLR1 CAR-T, Fred Hutch, 1–75, recruiting since Jan 2026); NCT07596693 KXV01 in-body lentivirus TCR, recruiting; NCT07774533 B7-H3 nanobody PET, Peking Univ First Hosp, recruiting, primary completion Aug 2026; NCT07787429 mifamurtide vs sorafenib, Poland, 40 planned, recruiting | CONFIRMED | All registry fields match (FIERCe start 2026-01-16; KXV01 adults 18–70, China; PET primary completion 2026-08-05 actual; Dragonfly 40 estimated). All four are now in `data/osteosarcoma_trials.csv`, so "not in repo" describes scan time | CT.gov API |
+| 82 | FOLR1 ranks 1,924th of 2,434 (17.8 TPM, 77%) | CONFIRMED | overall rank 1924; 17.804 TPM; 77.3% | surface CSV |
+| 89, 161 | HPA has "no tissue staining at all" for LRRC15 or IFITM5 | CONFIRMED (nuance) | HPA JSON: Reliability (IH) is None for both. HPA does list a protein-tissue specificity for LRRC15 ("Tissue enriched: skin"), apparently from non-IHC data, so "no staining" is right but "no protein data" would not be. | proteinatlas.org/ENSG00000172061.json |
+| 110-114 | Lu-TARGO NCT07357519 recruiting at 2 US sites; ZL-6201 NCT07374848 recruiting at 12 sites, China and US, updated Nov 18; SOT106 NCT07801222 not yet recruiting, planned Sep 30 start; NCT07272642 not yet recruiting, drug "LNTH-2403 (177Lu-DOTA-DUNP19)"; none has results | CONFIRMED | All match the registry (NCT07272642 intervention description: "LNTH-2403 (177Lu-DOTA-DUNP19) ... targeting the LRRC15 epitope"; sponsor Radiopharm Theranostics, Australia) | CT.gov API |
+| 116-119 | IDE034 B7-H3 × PTK7 ADC NCT07503808 recruiting; LY4175408 NCT07046923 inferred PTK7 from exclusion criteria | CONFIRMED | IDE034 record says tumours "that express B7-H3 and PTK7". LY4175408 excludes "Prior treatment with a PTK7 ADC with a topoisomerase I inhibitor as payload". **Status:** NCT07046923 is now ACTIVE_NOT_RECRUITING (the report gives no status, fine) | CT.gov API |
+| 139-140 | PubMed "LRRC15 AND osteosarcoma" returns 11, 7 from 2025–26 | CONFIRMED | 11; 2025–26: 42647168, 42613365, 42589239, 42326738, 41627173, 41022704, 40368742 | PubMed esearch |
+| 155 | 2,665 PubMed osteosarcoma records in the window | CONFIRMED (approx.) | `osteosarcoma[tiab]` with PDAT 2025/06/01–2026/11/19 gives 2,670 on 20 Nov. State the query | PubMed esearch |
+| 123-149 | Corrections "applied to the named reports" | CONFIRMED | Landscape: ARTEMIS now PMID 42933637, PEPN1924 now 42131734. Pooled controls: COG n = 99 update added. Surface report: "NTH-2403 ... could not confirm" now historical. Trials landscape: JCOG0905 note. Kinase-pill report: MYC added | grep of reports/ |
+
+
+## Verdict counts
+
+| File | CONFIRMED | WRONG | OVERSTATED | INCONSISTENT | UNVERIFIABLE |
+|---|---|---|---|---|---|
+| Approved drugs (repurposing) | 45 | 3 | 2 | 1 | 1 |
+| Copy number | 31 | 0 | 2 | 0 | 1 |
+| What's new | 39 | 0 | 3 | 1 | 1 |
+| **Total** | **115** | **3** | **7** | **2** | **3** |
+
+Overall the three reports hold up well. Every PMID resolves to the paper described, every registry status checked matches, and every number derived from repository data could be recomputed independently: all 1,141 repurposing scores, all copy-number frequencies and CIs, the 2×2 table and Fisher test, the WGS cross-check, the RNA correlations, and every Schoenfeld sample-size and power figure.
+
+## Top must-fix
+
+1. **Approved drugs, line 98: misattributed quote.** "the most ready drug with the least settled biology" is not in `reports/Stopping lung metastasis in osteosarcoma.md`; it appears only in `research_notes/Lung metastasis/notes.md`. Remove the quotation marks, or cite the lung report's actual wording ("0 anti-metastasis trials").
+2. **Approved drugs, line 93: IL-6 score range is wrong.** "62.4 to 73.0" omits IL6R (tocilizumab), which scores 45.9. The top value (IL6ST 73.0) rests on satralizumab, an anti-IL-6 *receptor* antibody that ChEMBL credits to IL6ST, which is itself an annotation artefact. Correct to "45.9 (IL6R, tocilizumab) to 73.0".
+3. **Copy number, lines 7 and 126: pill-treated pool undercounted.** ITCC-050 (NCT02432274) also treated 42 relapsed osteosarcoma patients with lenvatinib + ifosfamide/etoposide (Cohorts 3A and 3B). The pool is about 309, not 267; add these patients or state why they are excluded. Also note that REGOBONE's 26/12 are evaluable, not randomised (43 randomised).
+4. **Copy number, line 162: VEGFA "enriched" at relapse is overstated.** PMID 37812025 shows enrichment for **MYC** (6 of 7). VEGFA amplification was only "also observed" in resistant clones.
+5. **Approved drugs, lines 37 and 41: "0 (0 / 0)" papers for the retinoid rows.** The rows show RARG and RXRB counts only. RARA has 13 papers and RXRA 17, and the row's own key citation (PMID 22485251) is about RARα. A reader checking PubMed would see this at once.
+6. **Approved drugs, line 58: ROCK "contradicted in one good model".** The LM8 finding is an in vitro migration assay (Y-27632), not a metastasis experiment. Reword.
+7. **What's new, lines 143-144: "in mice, cabozantinib resistance".** The resistance is in vitro in mouse-derived cell lines. In vivo, cabozantinib still delayed progression in the MYC models.
+8. **What's new, Summary line 13: preprint not labelled.** The COG n = 99 analysis is an unreviewed medRxiv preprint. Change "confirms" to "a preprint reports".
+9. **What's new, line 17 vs 94: PTK7 "two models" vs "two PDXs and two cell lines".** Make these consistent.
+10. **Approved drugs: AKT lead should state that no capivasertib osteosarcoma data exist.** The 6/6 xenograft result is for MK-2206 and GSK690693, and PubMed has 0 osteosarcoma papers naming capivasertib/AZD5363. Minor date fixes: vitamin D receptor drugs are not "approved 1999" (calcitriol 1978), and abatacept was approved in 2005, not 2006.
+11. **Minor:** quote Amary 2014 FGFR1 as 24/275 = 8.7% (the paper's text misprints 9.6%; its Table 4 says 8.7%). Call the SBRT + ICI series "retrospective, non-randomised" rather than "uncontrolled". Drop "post-surgery" for the ATRA experiment unless the full text shows resection. Add DOIs for the Research Square preprints. Describe the TCTR, NCI-MATCH and plerixafor/CycloSam exceptions wherever "no osteosarcoma trial" is used, and keep the "on ClinicalTrials.gov" qualifier.
