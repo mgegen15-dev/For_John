@@ -4,7 +4,7 @@
 
 ## Summary
 
-Most children who die of osteosarcoma die because it spreads to the lungs, and in forty years no drug added to standard chemotherapy has clearly reduced that. FAK and DKK1 are two of the best-supported drug targets against lung spread that have not reached a human osteosarcoma trial: in mice, blocking either one reduced lung metastasis in small studies. Pet dogs get the same cancer naturally, and work in dogs on both targets has already begun: Colorado State University has given the approved FAK drug defactinib to dogs with osteosarcoma, and Texas A&M is preparing a dog version of a DKK1-blocking drug for trials in pet dogs. This brief asks what those programmes have found, and what a study aimed at *preventing* lung spread after amputation would still need. It is based on published work, not new experiments.
+Most children who die of osteosarcoma die because it spreads to the lungs, and in forty years no drug added to standard chemotherapy has clearly reduced that (mifamurtide's benefit remains disputed). FAK and DKK1 are two of the best-supported drug targets against lung spread that have not reached a human osteosarcoma trial: in mice, blocking either one reduced lung metastasis in small studies. Pet dogs get the same cancer naturally, and work in dogs on both targets has already begun: Colorado State University lists a study giving the approved FAK drug defactinib to dogs with osteosarcoma (status and results unconfirmed), and Texas A&M is preparing a dog version of a DKK1-blocking drug for trials in pet dogs. This brief asks what those programmes have found, and what a study aimed at *preventing* lung spread after amputation would still need. It is based on published work, not new experiments.
 
 **How to read the labels.** After key numbers we say where they come from:
 
@@ -20,10 +20,10 @@ Can blocking FAK or DKK1, with drugs that already exist or are being built for d
 
 ## Why these two targets
 
-We scored all 1,487 genes named in at least five of the 33,242 osteosarcoma papers we downloaded from PubMed (our calculation; a PubMed title/abstract search returned 33,367 on November 14, 2026). We linked each gene to the 603 registered osteosarcoma treatment trials and to NIH grants (our calculation; `data/`), read the abstracts for the strongest untested candidates, then read the full text of the papers this brief relies on wherever it was available. Verification notes: `research_notes/Osteosarcoma literature map/fak_dkk1_full_text_check.md`.
+We scored all 1,487 genes named in at least five of the 29,720 non-review papers among the 33,242 osteosarcoma papers we downloaded from PubMed (our calculation; a PubMed title/abstract search returned 33,367 on November 14, 2026). We linked each gene to the 603 registered interventional osteosarcoma trials (including supportive-care, imaging and basket trials) and to NIH grants (our calculation; `data/`), read the abstracts for the strongest untested candidates, then read the full text of the papers this brief relies on wherever it was available. Verification notes: `research_notes/Osteosarcoma literature map/fak_dkk1_full_text_check.md`.
 
 The two targets have different strengths:
-- **FAK** has an approved drug, defactinib, that has already been given to dogs with osteosarcoma, and one small mouse study in which defactinib itself reduced lung metastasis.
+- **FAK** has an approved drug, defactinib, that Colorado State lists in a study for dogs with osteosarcoma (web listing; status and results unconfirmed), and one small mouse study in which defactinib itself reduced lung metastasis.
 - **DKK1** has more mouse evidence against metastasis, including in the implant-amputate-watch design a dog study would copy, and a dog-specific DKK1 drug is in preclinical development. The clinical anti-DKK1 antibody has not, as far as we found, been given to dogs.
 
 ### FAK (PTK2)
@@ -49,7 +49,7 @@ The two targets have different strengths:
   - **A small-molecule DKK1 inhibitor, WAY262611,** reduced metastasis in the antibody laboratory's own model (paper, abstract only; PMID 39781890; PMID 39713389 is its preprint, not a separate study). A free preprint version exists (PMC11661202), so its numbers can be checked; we have not yet done so.
   - **An independent group** in China reported that an oral compound that lowers DKK1 reduced lung metastasis and bone destruction in an orthotopic model, with methotrexate as an active comparator (paper, full text; PMID 39280613).
 - **Caution:**
-  - The decisive work comes from two laboratories (Loeb, Johns Hopkins then Albert Einstein; Gregory, Texas A&M), and they are less independent than they look. The antibody and small-molecule results come from the same laboratory, and the morpholino laboratory deliberately used the antibody laboratory's patient-derived model so the results could be compared.
+  - The decisive work comes from two laboratories (one at Johns Hopkins, then Albert Einstein College of Medicine; one at Texas A&M), and they are less independent than they look. The antibody and small-molecule results come from the same laboratory, and the morpholino laboratory deliberately used the antibody laboratory's patient-derived model so the results could be compared.
   - One older paper found that *raising* DKK1 inhibits osteosarcoma growth (paper, abstract only; PMID 24859848).
   - Two of 28 papers since 2010 that mention DKK1 are retracted, but neither is about DKK1 (PMIDs 35635031, 36944905; our calculation).
   - Independent replication, in a model neither laboratory owns, is the priority.
@@ -64,7 +64,7 @@ No published study has reported FAK, activated FAK or DKK1 protein in dog osteos
 
 ## Why dogs
 
-- Pet dogs develop osteosarcoma far more often than people, about ten times as often by a commonly cited estimate, and the disease is biologically similar.
+- Pet dogs develop osteosarcoma far more often than people, about ten times as often by a commonly cited estimate (not re-checked against a primary source here), and the disease is biologically similar.
 - Most dogs die of lung metastases within a year or two even with chemotherapy (review, PMID 32165755). In a 324-dog randomized trial of standard care with or without sirolimus, median survival was about 282 days (paper, abstract only; PMID 33753454).
 - A post-amputation study can test anti-metastatic drugs, the gap that matters most for children, within one to two years.
 - NIH funds canine osteosarcoma studies through the NCI Comparative Oncology Program and cooperative agreements at UC Davis (U01 CA281905) and Tufts (U01 CA272268) (registry). Break Through Cancer's family-funded Defying Osteosarcoma TeamLab, launched in 2025, also includes comparative canine trials (press release only).
@@ -72,7 +72,7 @@ No published study has reported FAK, activated FAK or DKK1 protein in dog osteos
 ## Why it is timely
 
 - NIH funds osteosarcoma work on both targets: FAK inhibition at Colorado State's veterinary school (R37 CA303990, to August 2030), DKK-1 at Albert Einstein College of Medicine (R01 CA262802, funded through June 2026) and the canine DKK1 morpholino at Texas A&M (R21 CA286523, to December 2027) (registry).
-- VEGFR2-blocking kinase pills are the only drug class clearly above the historical benchmark in relapsed osteosarcoma, but their benefit is brief and they have not improved survival (`reports/Why kinase-inhibitor pills work in osteosarcoma.md`). New anti-metastatic candidates are needed.
+- VEGFR2-blocking kinase pills are the most consistently active targeted drugs in relapsed osteosarcoma, but their benefit is brief and they have not improved survival (`reports/Why kinase-inhibitor pills work in osteosarcoma.md`). Relapse chemotherapy (ifosfamide and etoposide) also does well over the first months, and the only randomized win in relapse so far is an antibody-drug conjugate against B7-H3 (ARTEMIS-011). New anti-metastatic candidates are needed.
 - Our close reading of MDM2, the most-studied untested target, found its osteosarcoma evidence weaker than its paper count suggests (`research_notes/Osteosarcoma literature map/orphan_targets_close_read.md`), which leaves FAK and DKK1 as the stronger candidates.
 
 ## A possible design, for discussion
@@ -106,6 +106,12 @@ No published study has reported FAK, activated FAK or DKK1 protein in dog osteos
 
 ## Change log
 
+- **November 20, 2026 (consistency check).**
+  - Colorado State's canine defactinib study is now described everywhere as a web listing with status and results unconfirmed, not as a study that has already treated dogs (summary and "different strengths").
+  - "The only drug class clearly above the historical benchmark" replaced: VEGFR2-blocking pills are the most consistently active targeted drugs in relapse, but IE chemotherapy alone also reaches 42–66% at four months, and the B7-H3 conjugate in ARTEMIS-011 beat gemcitabine–docetaxel in a randomized trial.
+  - "603 registered osteosarcoma treatment trials" corrected to 603 interventional trials (they include supportive-care, imaging and basket trials); the gene threshold is five non-review papers.
+  - "Ten times as often" marked as not re-checked; mifamurtide's disputed benefit noted; the two DKK1 laboratories are described by institution.
+  - The literature map and lung metastasis report now carry the defactinib mouse result, so the November 14 alignment note below is now true.
 - **November 14, 2026 (independent audit).**
   - FAK: the brief said there was no mouse evidence against metastasis and that the only mouse efficacy study used a different drug. That was wrong. Defactinib itself reduced lung metastasis in an orthotopic mouse model (2 of 6 against 6 of 6, P = 0.03; PMID 37013056, read in full). The framing of the two targets was rewritten.
   - DKK1: added the canine DKK1 morpholino being developed for trials in pet dogs (NIH R21 CA286523), which the brief had missed. "DKN-01 has never been given to a dog" softened to "we found no report".

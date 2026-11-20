@@ -98,7 +98,7 @@ Full texts from NCBI PMC efetch; Bousquet 2026 and Marinoff 2023 only had abstra
 - **Sayles 2019, Cancer Discov** (PMC7134333; full text). WGS of 30 tumours from 23 patients, merged with a published 31-patient WGS set. Thresholds >4, >8, >12 purity-adjusted copies (absolute, not ploidy-relative). MYC 39%, CCNE1 33%, RAD21 38%, VEGFA 23%, AURKB 13%, CDK4 11%; TP53 74%, RB1 64%, PTEN 56% (deletions, SVs and SNVs combined). Denominator for the per-patient percentages not stated in the sentences read.
 - **Bousquet 2026, Cancer** (PMC13348730, PMID 42424099; abstract only). Foundation Medicine panel, 653 patients aged 40 or under. TP53 55%, RB1 22%, MYC 17%, CCND3 16% altered; CDK4/MDM2 amplification more frequent in young adults, MYC/CCND3/CCNE1 in children and adolescents.
 - **Japan C-CAT, Int J Clin Oncol 2025** (PMC11785636; full text). 204 patients. "TP53 (79 patients; 39%), followed by RB1 (42; 21%), CDKN2A (36; 18%), VEGFA (35; 17%), CDKN2B (33; 16%), and CCND3 (33; 16%)". Alteration type not split in that sentence.
-- **Amary 2014, Cancer Med** (PMC4303166; full text). FGFR1 amplification by FISH in 24 of 275 bone osteosarcomas (9.6%); 18.5% of poor responders.
+- **Amary 2014, Cancer Med** (PMC4303166; full text). FGFR1 amplification by FISH in 24 of 275 bone osteosarcomas (8.7%; the text prints 9.6%, Table 4 gives 8.7%); 18.5% of poor responders.
 - **Marinoff 2023, JCO Precis Oncol** (PMC10531050; abstract only). 92 patients (OncoPanel) plus 86 (MSK-IMPACT); MYC amplification linked to worse 3-year survival in both. No frequencies in the abstract.
 - **Behjati 2017** (PMC5490007), **Chen 2014** (PMC4096827), **Recurrent OS 2023** (PMC10646480): no per-gene amplification percentages for our genes found by text search.
 
@@ -114,7 +114,7 @@ Agreements and disagreements with TARGET-OS (primary call unless stated):
 | CDK4 | 3.7% | 11% Sayles, 14% MSK | Lower, same likely reason |
 | MYC | 32.1% (22.9–42.9) | 39% Sayles (>4 copies), 17% altered Bousquet | Within range |
 | CCNE1 | 18.5% | 33% Sayles, 8% MSK | Between the two |
-| FGFR1 | 6.2% (2.7–13.6) | 9.6% FISH (Amary) | Consistent |
+| FGFR1 | 6.2% (2.7–13.6) | 8.7% (24 of 275) FISH (Amary; the paper's text misprints 9.6%) | Consistent |
 | CDKN2A deep deletion | 13.6% | 22% MSK, 18% C-CAT | Somewhat lower; MSK counts any deletion |
 | RB1, TP53, PTEN loss | 64%, 63%, 52% relative loss | 64%, 74%, 56% Sayles (incl. SVs/SNVs) | Consistent; copy number alone misses TP53 intron-1 rearrangements |
 
@@ -125,14 +125,15 @@ Trial pool (osteosarcoma patients only):
 | Trial | Drug | Design | Pill arm | Control | Crossover onto pill | Source (label) |
 |---|---|---|---|---|---|---|
 | SARC024 | regorafenib | randomized vs placebo | 22 | 20 | 11 | NCT02048371 participant flow: 22 / 9 placebo / 11 crossover (registry). The repo's kinase notes cite 10 of 20 crossing over from the abstract; the registry flow says 11 |
-| REGOBONE | regorafenib | randomized 2:1 vs placebo | 26 | 12 | 10 | PMID 30477937 (paper, abstract only) |
+| REGOBONE | regorafenib | randomized 2:1 vs placebo | 26 | 12 | 10 | PMID 30477937 (paper, abstract only): 43 randomized (29 / 14); 26 / 12 are the efficacy-evaluable patients |
 | OLIE | lenvatinib + IE | randomized vs IE | 40 | 41 | 0 | NCT04154189 (registry) |
 | OAIE | apatinib + IE | randomized 2:1 vs IE | 53 | 28 | 0 | PMC12647724 (paper, full text) |
 | CABONE | cabozantinib | single arm | 45 (42 evaluable) | – | – | NCT02243605 (registry); 42 in paper |
 | ADVL1622 | cabozantinib | single arm, osteosarcoma stratum | 29 | – | – | NCT02867592 (registry) |
 | ITCC-050 | lenvatinib | single arm, osteosarcoma expansion | 31 | – | – | NCT02432274 cohort 2B (registry) |
+| ITCC-050 | lenvatinib + IE | single arm, osteosarcoma combination cohorts | 42 | – | – | NCT02432274 participant flow: cohort 3A 7 + 15, cohort 3B 20 (registry); added 20 Nov 2026 after audit E |
 
-Totals: 267 pill-exposed (141 randomized pill arms + 21 crossover + 105 single arm); 174 on a pill alone (no IE); 242 in the four randomized trials.
+Totals (updated 20 Nov 2026): 309 pill-exposed (141 randomized pill arms + 21 crossover + 147 single arm); 174 on a pill alone (no IE); 135 with IE; 242 in the four randomized trials (247 counting all 43 REGOBONE patients randomized). The 19 Nov version counted 267 and missed ITCC-050's combination cohorts.
 
 Assumptions: two-sided alpha 0.05; Schoenfeld events formula; 90% of patients have a PFS event by analysis (CABONE 9.5% progression-free at 12 months); two tissue scenarios, 100% and 60% of patients with usable copy-number data (60% is our guess for archival tissue plus plasma; not measured). Amplified share p: 23.5% (our VEGFR-set call), 16.0% (VEGFA only), 40% (MSK), 20% (pessimistic).
 
@@ -153,7 +154,7 @@ Power available from the pool at HR 0.5:
 
 | Pool | n | p = 0.235, 100% data | p = 0.235, 60% data | p = 0.16, 60% | p = 0.40, 60% |
 |---|---|---|---|---|---|
-| All pill-exposed | 267 | 0.995 | 0.94 | 0.86 | 0.98 |
+| All pill-exposed | 309 | 0.998 | 0.97 | 0.91 | 0.99 |
 | Pill alone (no IE) | 174 | 0.96 | 0.81 | 0.69 | 0.91 |
 | Randomized, interaction | 242 | 0.57 | 0.38 | 0.30 | 0.48 |
 

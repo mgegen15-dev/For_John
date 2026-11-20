@@ -4,7 +4,7 @@
 
 ## Summary
 
-We measured extra and missing gene copies in diagnostic tumours from 81 young patients in the US TARGET osteosarcoma project, using free public data. Extra copies of the genes behind VEGFR2-blocking pills (VEGFA, or the KDR/PDGFRA/KIT region) were found in about one patient in four (23.5%) by our main definition, and in nearly half (46.9%) by a lenient one. The figure of "at least 40%" quoted from a US cancer centre study sits between the two, so the answer depends on how "amplified" is defined, and any trial test must fix the definition in advance. Unlike that study, we did not find that the two gene regions exclude each other: 4 patients carried both, mostly high VEGFA with a modest 4q12 gain. Using the trials already done, about 100 pill-treated patients with tumour data would be enough to show whether amplified tumours stay controlled for twice as long, and the existing trials hold about 267 such patients. Proving that the amplification predicts benefit *from the pill* rather than just a better outlook needs roughly 400 or more patients in randomized trials, more than the four existing randomized trials have together (242).
+We measured extra and missing gene copies in diagnostic tumours from 81 young patients in the US TARGET osteosarcoma project, using free public data. Extra copies of the genes behind VEGFR2-blocking pills (VEGFA, or the KDR/PDGFRA/KIT region) were found in about one patient in four (23.5%) by our main definition, and in nearly half (46.9%) by a lenient one. The figure of "at least 40%" quoted from a US cancer centre study sits between the two, so the answer depends on how "amplified" is defined, and any trial test must fix the definition in advance. Unlike that study, we did not find that the two gene regions exclude each other: 4 patients carried both, mostly high VEGFA with a modest 4q12 gain. Using the trials already done, about 100 pill-treated patients with tumour data would be enough to show whether amplified tumours stay controlled for twice as long, and the existing trials hold about 309 such patients. Proving that the amplification predicts benefit *from the pill* rather than just a better outlook needs roughly 400 or more patients in randomized trials, more than the four existing randomized trials have together (242 efficacy-evaluable; 247 counting all of REGOBONE's randomized patients).
 
 **How to read the labels.** After key numbers we say where they come from:
 
@@ -48,7 +48,7 @@ TARGET-OS, 81 patients (our calculation). "CI" is the 95% confidence interval.
 | **VEGFA amplified** | 4 | 9 |
 | **VEGFA not amplified** | 6 | 62 |
 
-Odds ratio 4.55, Fisher p = 0.0496 (our calculation): if anything, they occur together *more* often than chance. At a stricter cut-off (3 times the average), only 2 tumours had 4q12 amplification, one of them with VEGFA as well, and no pattern either way can be shown (p = 0.23; our calculation). In three of the four overlapping tumours, VEGFA was high (4.3–5.2 times the average) and 4q12 was modest (2.2–3.0 times).
+Odds ratio 4.55 (conditional maximum-likelihood estimate; the simple cross-product ratio is 4.59), Fisher p = 0.0496 (our calculation): if anything, they occur together *more* often than chance. At a stricter cut-off (3 times the average), only 2 tumours had 4q12 amplification, one of them with VEGFA as well, and no pattern either way can be shown (p = 0.23; our calculation). In three of the four overlapping tumours, VEGFA was high (4.3–5.2 times the average) and 4q12 was modest (2.2–3.0 times).
 
 **What this means for lead 2.** The amplified group is about 24% by our main call and 47% by the lenient one. A trial analysis should fix the definition before seeing outcomes and report both. Because the two regions can overlap, the analysis should also count "VEGFA or 4q12" once per patient, not add the two percentages.
 
@@ -63,7 +63,7 @@ TARGET-OS, 81 patients, main call (our calculation). "Published" is the closest 
 | MYC (8q24) | none direct; CDK inhibitors in models | 26 (32.1%) | 22.9–42.9% | 45 (55.6%) | 39% (Sayles, >4 copies) (paper, full text); 17% altered (Foundation Medicine, 653 patients) (paper, abstract only) | Within range |
 | CCNE1 (19q12) | CDK2 inhibitors | 15 (18.5%) | 11.6–28.3% | 27 (33.3%) | 33% (Sayles); 8% of samples (MSK) (paper, full text) | Between the two |
 | PTK2 / FAK (8q24) | defactinib | 9 (11.1%) | 6.0–19.8% | 27 (33.3%) | none found | Mostly travels with MYC: 8 of 9 also MYC-amplified (p = 0.0003) |
-| FGFR1 (8p11) | FGFR blockers; lenvatinib | 5 (6.2%) | 2.7–13.6% | 10 (12.3%) | 9.6% of 275 by FISH (Amary 2014) (paper, full text) | Consistent |
+| FGFR1 (8p11) | FGFR blockers; lenvatinib | 5 (6.2%) | 2.7–13.6% | 10 (12.3%) | 8.7% (24 of 275) by FISH (Amary 2014; the paper's text prints 9.6%, its Table 4 gives 8.7%) (paper, full text) | Consistent |
 | CDK4 (12q14) | CDK4/6 inhibitors | 3 (3.7%) | 1.3–10.3% | 8 (9.9%) | 14% of 66 (MSK); 11% (Sayles) (paper, full text) | **Lower** |
 | MDM2 (12q15) | MDM2 inhibitors | 2 (2.5%) | 0.7–8.6% | 4 (4.9%) | 14% of 66 (MSK) (paper, full text) | **Lower** |
 | DKK1 (10q21) | DKN-01 | 2 (2.5%) | 0.7–8.6% | 5 (6.2%) | none found | — |
@@ -116,14 +116,15 @@ All percentages in both tables are (our calculation) unless labelled otherwise. 
 | Trial | Drug | Design | On the pill | Control | Crossed over onto the pill | Source |
 |---|---|---|---|---|---|---|
 | SARC024 | regorafenib | randomized vs placebo | 22 | 20 | 11 | NCT02048371 (registry) |
-| REGOBONE | regorafenib | randomized 2:1 vs placebo | 26 | 12 | 10 | PMID 30477937 (paper, abstract only) |
+| REGOBONE | regorafenib | randomized 2:1 vs placebo | 26 | 12 | 10 | PMID 30477937 (paper, abstract only): 43 randomized (29 and 14); 26 and 12 were efficacy-evaluable and are used here |
 | OLIE | lenvatinib + IE | randomized vs IE | 40 | 41 | — | NCT04154189 (registry) |
 | OAIE | apatinib + IE | randomized 2:1 vs IE | 53 | 28 | — | PMC12647724 (paper, full text) |
 | CABONE | cabozantinib | single arm | 45 enrolled, 42 evaluable | — | — | NCT02243605 (registry); paper |
 | COG ADVL1622 | cabozantinib | single arm, osteosarcoma group | 29 | — | — | NCT02867592 (registry) |
-| ITCC-050 | lenvatinib | single arm, osteosarcoma group | 31 | — | — | NCT02432274 (registry) |
+| ITCC-050 | lenvatinib | single arm, osteosarcoma group (cohort 2B) | 31 | — | — | NCT02432274 (registry) |
+| ITCC-050 | lenvatinib + IE | single arm, osteosarcoma (cohorts 3A and 3B) | 42 | — | — | NCT02432274 participant flow: 7 + 15 + 20 (registry) |
 
-In all: **267 patients received a pill** (174 on the pill alone, 93 with IE chemotherapy), and **242 were in the four randomized trials** (our calculation). For SARC024, the registry lists 11 placebo patients who crossed over; the trial abstract, as quoted in our kinase-pill report, says 10 of 20.
+In all: **about 309 patients received a pill** (174 on the pill alone, 135 with IE chemotherapy), and **242 were in the four randomized trials** (our calculation; REGOBONE counted by its 38 efficacy-evaluable patients, 247 if all 43 randomized are counted). The first version of this note counted 267 and missed ITCC-050's 42 combination patients. For SARC024, the registry lists 11 placebo patients who crossed over; the trial abstract, as quoted in our kinase-pill report, says 10 of 20.
 
 **Assumptions (our calculation).**
 
@@ -149,17 +150,17 @@ At 90% power with a 23.5% amplified share: 122 events, 136 patients with results
 
 | Pool | Patients | All have DNA, 23.5% amplified | 60% have DNA, 23.5% amplified | 60% have DNA, 16% amplified |
 |---|---|---|---|---|
-| Everyone who got a pill | 267 | 99.5% | 94% | 86% |
+| Everyone who got a pill | 309 | 99.8% | 97% | 91% |
 | Pill alone only (no IE) | 174 | 96% | 81% | 69% |
 | Randomized trials, Question B | 242 | 57% | 38% | 30% |
 
 **Recommended design.**
 
-1. **Question A first, with all pill-treated patients.** Pool the pill arms of SARC024, REGOBONE, OLIE and OAIE with CABONE, ADVL1622 and ITCC-050, plus crossover patients from the start of their pill treatment. Analyse progression-free survival with a Cox model stratified by trial, because drugs, doses, IE backbones and ages differ. If 60% of patients have usable DNA, this has about 94% power for a hazard ratio of 0.5.
+1. **Question A first, with all pill-treated patients.** Pool the pill arms of SARC024, REGOBONE, OLIE and OAIE with CABONE, ADVL1622 and both ITCC-050 osteosarcoma groups (lenvatinib alone, and with IE), plus crossover patients from the start of their pill treatment. Analyse progression-free survival with a Cox model stratified by trial, because drugs, doses, IE backbones and ages differ. If 60% of patients have usable DNA, this has about 97% power for a hazard ratio of 0.5.
 2. **If funds allow only part of this, start with the single-agent trials** (SARC024, REGOBONE, CABONE, ADVL1622, ITCC-050; 174 patients). This keeps chemotherapy out of the comparison, with about 81% power at 60% DNA yield.
 3. **Question B as a pre-planned, hypothesis-generating interaction test** in the four randomized trials. The power is too low to settle it (30–57%), so report it as an estimate with its confidence interval, and plan to add FOSTER-CabOS and any restarted AOST2032 to a later pooled analysis.
 4. **Fix the definition in advance**: main call at twice the tumour's average copy number, lenient call at 1.5 times as a sensitivity analysis, VEGFA and 4q12 also analysed separately. Ploidy-aware copy-number calling is needed; a fixed "more than 4 copies" rule would misclassify many tumours.
-5. **Measure the right sample.** Trial patients have relapsed, but most stored tissue is from diagnosis. VEGFA amplification is enriched in the clones that return at relapse (8 patients; paper, abstract only; PMID 37812025). Where both exist, test the relapse sample or the blood taken at trial entry.
+5. **Measure the right sample.** Trial patients have relapsed, but most stored tissue is from diagnosis. In 8 patients followed through treatment, MYC gain was enriched in the clones that dominated at relapse (6 of 7), and VEGFA amplification was among the changes also seen in those clones (paper, abstract only; PMID 37812025). Where both exist, test the relapse sample or the blood taken at trial entry.
 6. **Record MYC status as a variable.** MYC (8q24) is amplified in 26 of 81 TARGET-OS tumours here (32.1%, 95% CI 22.9–42.9%; our calculation, table above). In 105 children and young adults, MYC amplification (more than 7 copies, 16%) went with 3-year overall survival of 27% against 74%, adjusted HR 3.4 (paper, abstract only; *Cancer* 2025, PMID 41199591). Cell lines from MYC-driven mouse osteosarcomas were about 8 times less sensitive to cabozantinib than p53-driven lines (mean IC50 5.51 against 0.65 µM; preprint, abstract only; Kappa et al., bioRxiv 2026, doi 10.64898/2026.09.21.753033; fold change our calculation). So MYC should be measured with the same ploidy-aware call and entered in the Cox model, both as a possible confounder of a VEGFA or 4q12 effect and as a candidate marker of pill resistance in its own right (our inference).
 
 ## Limits
@@ -181,3 +182,4 @@ From the repository root: `python3 tools/copy_number_map.py all`. It downloads 1
 
 - **19 November 2026.** First version. Open TARGET-OS copy number (81 patients) mapped for 18 genes; compared with five published studies; RNA correlation for 12 genes; sample-size note for lead 2.
 - **19 November 2026 (later).** Recommended design step 6 added: record MYC status in the amplification test (32.1% amplified here; MYC amplification predicts poor survival, Cancer 2025, PMID 41199591; MYC-driven mouse cells resisted cabozantinib, bioRxiv 2026). New label **(preprint, abstract only)**: read only in a preprint's abstract; preprints are not peer-reviewed.
+- **20 November 2026 (audit corrections).** ITCC-050's 42 relapsed osteosarcoma patients given lenvatinib with ifosfamide and etoposide (cohorts 3A and 3B; NCT02432274 participant flow) added to the pill-treated pool, which rises from 267 to about 309; power figures for that pool re-derived with `tools/copy_number_map.py power` (99.8%, 97%, 91%; was 99.5%, 94%, 86%); other figures unchanged. REGOBONE's 26 and 12 are now described as efficacy-evaluable (43 randomized). PMID 37812025 shows MYC, not VEGFA, enriched in relapse clones; wording corrected. Amary 2014 FGFR1 quoted as 8.7% (24 of 275), with the paper's misprint noted. The odds ratio is identified as the conditional estimate.

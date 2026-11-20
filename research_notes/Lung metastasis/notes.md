@@ -546,7 +546,7 @@ See the report for the written-up version. Ranked list:
 4. Defactinib (FAK) as the convergence node. Evidence PMID 42520958, 37013056, 36997926, 38302407,
    32079335 — FAK sits downstream of IL-8, CXCL1, integrins and LOX. FDA-approved 2025, zero
    osteosarcoma trials, NIH-funded at a veterinary school (Regan, Colorado State).
-   Cheapest test: pet-dog adjuvant trial — this is already lead 1 of `Ranked leads`.
+   Cheapest test: pet-dog adjuvant trial — this is lead 4 of `Ranked leads` (the note originally said lead 1, which is IL-1/IL-6 blockade).
 5. Re-run the resected-lung randomized question, enriched on pre-operative non-response.
    Evidence PMID 42723688 (5-year survival 41.1% responders vs 0.0% non-responders, HR 0.22,
    p<0.001) + NCT00752206 (38 patients in 8.75 years, stopped for accrual). Cheapest test: a

@@ -46,7 +46,7 @@ Effect: **+** strengthens the named lead or report, **−** weakens it, **±** m
    HR of 0.33; `data/osteosarcoma_relapse_benchmarks_published.csv` records 0.20–0.55. One of the
    two is a transcription error; check the full paper. *In repo: data tables; the landscape report
    still says "there is no journal paper yet (press release only)".* Effect: **+** for
-   antigen-directed drugs (lead 5) and for randomising in relapse (lead 6); updates the landscape,
+   antigen-directed drugs (leads 5 and 6) and for randomising in relapse (lead 7); updates the landscape,
    pooled-control and trials reports.
 2. **PEPN1924, trastuzumab deruxtecan in HER2-positive relapsed osteosarcoma (COG).** Reed et al.,
    JCO Oncol Adv 2025 (PMID 42131734, PMC13166107; paper, abstract read). 41 of 50 screened met a
@@ -61,7 +61,7 @@ Effect: **+** strengthens the named lead or report, **−** weakens it, **±** m
    (95% CI 15–31%)**, ranging 14–29% across trials; relapse within two years of diagnosis worse
    (p = 0.009). Authors: "single arm trials of new approaches will only be able to identify large
    effect sizes. Smaller effect sizes will require randomization." *Not in repo.* Effect: **+** for
-   lead 6 and for the landscape report's design argument; the AOST0221 benchmark quoted there
+   lead 7 and for the landscape report's design argument; the AOST0221 benchmark quoted there
    (20%, 10–34%, n = 42) can now be replaced by 22% (15–31%, n = 99).
 4. **JCOG0905, MAP vs MAP + ifosfamide in poor responders, randomised.** JCO 2025 (PMID 40138604,
    PMC12118622; paper, abstract only). 103 randomised; DFS HR 1.05 (0.55–1.98); OS numerically
@@ -109,11 +109,11 @@ Effect: **+** strengthens the named lead or report, **−** weakens it, **±** m
 13. **Surface and global proteomics of 22 PDXs (BC Cancer, CHOP, COG).** Mooney et al., Cell Rep
     2026 (PMID 42647168; paper, full text). Top new candidates SGCD, ROR2, TMEM119; LRRC15, MRC2,
     CADM1, CD109, MMP14, ALPL, EPHA3, EPHB2 confirmed at protein level; ROR2 and TMEM119 nearly
-    absent from normal paediatric tissue by IHC. *Data tables only.* Effect: **+** for lead 5;
+    absent from normal paediatric tissue by IHC. *Data tables only.* Effect: **+** for lead 5 (LRRC15);
     **−** for our HPA surface filter, which excluded TMEM119.
 14. **LRRC15 CAR-T cells (St. Jude).** O'Reilly et al., Clin Cancer Res 2026 (PMID 41627173; paper,
     full text). 18 paediatric primaries, median H-score 113.5; CAR-T active and non-toxic in mice;
-    antigen-loss escape. Effect: **+** lead 5.
+    antigen-loss escape. Effect: **+** lead 5 (LRRC15).
 15. **Spatial transcriptomic atlas of aggressive osteosarcoma (19 patients, 26 samples).**
     Moquin-Beaudry et al., Nat Commun 2026 (PMID 42399228; paper, full text). 9-gene surface
     signature including LRRC15 and IFITM5, stable at relapse; IHC shows components in different
@@ -127,7 +127,7 @@ Effect: **+** strengthens the named lead or report, **−** weakens it, **±** m
     et al., Br J Cancer 2026 (PMID 42613365; paper, abstract only). Expert consensus: an **LRRC15 ADC
     "with an osteosarcoma-relevant payload"** is promising; SMARCAL1 inhibitors/degraders "very high
     priority"; KIF18A preclinical work required; eIF4A1 inhibitor early-phase study warranted;
-    RUNX2 and MYC high priority. Effect: **+** lead 5, independent of us.
+    RUNX2 and MYC high priority. Effect: **+** lead 5 (LRRC15), independent of us.
 18. **Meflin (ISLR) ADC.** Oncogene 2025 (PMID 41120731; paper, abstract only). Meflin high in
     recurrent, doxorubicin-resistant cells; MMAE ADC effective in mice. Effect: **0**.
 19. **Vobramitamab duocarmazine (B7-H3 ADC), paediatric xenografts.** Clin Cancer Res 2026 (PMID
@@ -165,7 +165,7 @@ Effect: **+** strengthens the named lead or report, **−** weakens it, **±** m
 24. **International framework for molecular classifiers.** Marinoff et al., NPJ Precis Oncol 2026
     (PMID 42086782; paper, abstract only). An international working group concludes that
     **pre-treatment ctDNA is "positioned for clinical implementation"** while other classifiers
-    need prospective validation. Effect: **+** lead 7 (ctDNA-adapted treatment).
+    need prospective validation. Effect: **+** lead 8 (ctDNA-adapted treatment).
 
 ### E. Lung metastasis and the inflammation leads
 
@@ -177,8 +177,8 @@ Effect: **+** strengthens the named lead or report, **−** weakens it, **±** m
 
 Also read, lower priority:
 - Lung-fibroblast inflammatory niche drives dormancy, stemness and doxorubicin resistance
-  (Research Square, Jul 2025; preprint, abstract only) and doxorubicin-induced IL-1β/COX-2 loop
-  (Research Square, Aug 2026; preprint, abstract only). Both **+** for lead 1 in mechanism only.
+  (Research Square, Jul 2025, doi 10.21203/rs.3.rs-7037095/v1; preprint, abstract only) and doxorubicin-induced IL-1β/COX-2 loop
+  (Research Square, Aug 2026, doi 10.21203/rs.3.rs-10122129/v1; preprint, abstract only). Both **+** for lead 1 in mechanism only.
 - IL-1α from lung epithelium drives IL-6/CXCL8 in metastasis-initiating cells; IL-1 blockade cut
   metastasis (Cancer Res 2025, PMID 40882022; abstract only). **Already in the lung report.**
 - KIF18A inhibitor active in whole-genome-doubled osteosarcoma cells and xenografts (Cancer Biol
@@ -223,3 +223,5 @@ any report or note, and touch the leads:
 - Most items were read as abstracts only. Full text was read for Mooney 2026, O'Reilly 2026,
   Moquin-Beaudry 2026 and Lee 2023.
 - Preprints are not peer-reviewed.
+
+*Lead numbers updated November 20, 2026 to the re-ranked list in `reports/Ranked leads and research partners.md` (old 5 split into 5 LRRC15 and 6 PTK7; old 6 → 7; old 7 → 8).*

@@ -80,7 +80,7 @@ All entries are abstract-only unless stated. Europe PMC pulls are cached in `dat
 ### 4.8 Tissue factor -- tisotumab vedotin (approved 2021, antibody-drug conjugate, boxed warning)
 - For: tissue factor highly expressed in 73.6% of 53 pre-treatment biopsies and associated with shorter disease-free survival; blocking antibodies reduced 143B growth, tumour vessel density and lung metastasis from the primary tumour (PMID 26763081). Platelet-derived TGF-beta induces tissue factor on osteosarcoma cells; low-molecular-weight heparin suppressed tumour growth (PMID 29949655).
 - Against: in GTEx, normal lung has a median of 96.7 TPM against 12.8 TPM in tumours (our calculation, from the surface-target data), so an MMAE-carrying ADC would meet more target in healthy lung than in tumour. That fits a *blocking* antibody (no payload) better than tisotumab.
-- Links to the project's platelet lead (lead 9): the same platelet -> TGF-beta -> tissue factor -> thrombin circuit.
+- Links to the project's platelet lead (lead 10; lead 9 before the November 20, 2026 re-ranking): the same platelet -> TGF-beta -> tissue factor -> thrombin circuit.
 - Cheapest next step: tissue factor staining of matched lung metastases and adjacent normal lung.
 
 ### 4.9 IMPDH -- mycophenolate: dead end (tested)
@@ -102,8 +102,8 @@ Existing leads are kept out of the shortlist (flag `existing_lead`) but scored t
 | FAK (lead 4) | PTK2 (defactinib) | 75.4 | 7th | Agrees: evidence 21.7/30, RNA in every tumour. ChEMBL still lists defactinib as phase 3 |
 | IL-6 (lead 1) | IL6ST (satralizumab) 73.0; IL6 (siltuximab) 62.4; IL6R (tocilizumab) 45.9 | | 7th (IL6ST) | IL-6 itself has a large clean literature (evidence 24.3) but almost no tumour RNA (median 0.3 TPM), which fits the lead's logic: IL-6 comes from the lung and the host after surgery, not the tumour |
 | IL-1 (lead 1) | IL1R1 (anakinra) 67.4; IL1B (canakinumab) 60.1 | | 9th (IL1R1) | Receptor made by almost every tumour (median 45.9 TPM); IL-1beta ligand barely (1.4 TPM) |
-| CXCR1/2 (lead 8) | CXCR2 (ladarixin) 37.8; CXCR1 33.2 | | below 20th | Almost no tumour RNA (0.6-0.7 TPM; neutrophil receptors) and no approved drug (ladarixin is phase 3) |
-| Platelets / anticoagulants (lead 9) | ITGB3 (abciximab) 69.3; F2R (vorapaxar) 68.2; PTGS1 (aspirin) 61.7 | | 9th (ITGB3, F2R) | Platelet receptor genes are expressed by tumours (F2R 36 TPM, ITGB3 33 TPM); tissue factor (new, 4.8) joins this circuit |
+| CXCR1/2 (lead 9; was 8) | CXCR2 (ladarixin) 37.8; CXCR1 33.2 | | below 20th | Almost no tumour RNA (0.6-0.7 TPM; neutrophil receptors) and no approved drug (ladarixin is phase 3) |
+| Platelets / anticoagulants (lead 10; was 9) | ITGB3 (abciximab) 69.3; F2R (vorapaxar) 68.2; PTGS1 (aspirin) 61.7 | | 9th (ITGB3, F2R) | Platelet receptor genes are expressed by tumours (F2R 36 TPM, ITGB3 33 TPM); tissue factor (new, 4.8) joins this circuit |
 | DKK1 (lead 4), LPAR1 | -- | -- | -- | No phase 3-4 drug in ChEMBL (DKN-01 is phase 2), so the screen cannot see them |
 
 So the screen independently ranks the project's FAK, IL-6/IL-1 and platelet leads in the same band as its own best new candidates, which is a useful sanity check on the scoring. CXCR4 overlaps the lung-metastasis report's list of ready drugs but is not one of the eleven ranked leads.

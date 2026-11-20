@@ -676,13 +676,15 @@ def stage_expression():
 # --------------------------------------------------------------- stage: power
 # Osteosarcoma patients who received a VEGFR2-blocking pill (or its control)
 # in the trials named for lead 2. Numbers are as read; "label" is the
-# report's confidence label. ITCC-050 is included as a single-arm source.
+# report's confidence label. ITCC-050 is included as a single-arm source
+# (cohort 2B lenvatinib alone; cohorts 3A/3B lenvatinib + IE).
 TRIALS = [
     # name, drug, design, pill arm, control arm, crossover onto pill, label, source
     ("SARC024", "regorafenib", "randomized vs placebo", 22, 20, 11,
      "registry", "NCT02048371 participant flow: 22 regorafenib, 9 placebo, 11 placebo then crossover"),
     ("REGOBONE", "regorafenib", "randomized 2:1 vs placebo", 26, 12, 10,
-     "paper, abstract only", "PMID 30477937 (registry NCT02389244 has no posted results)"),
+     "paper, abstract only", "PMID 30477937: 43 randomized (29 regorafenib, 14 placebo); "
+     "26 and 12 efficacy-evaluable, used here (registry NCT02389244 has no posted results)"),
     ("OLIE", "lenvatinib + IE", "randomized vs IE", 40, 41, 0,
      "registry", "NCT04154189 participant flow"),
     ("OAIE", "apatinib + IE", "randomized 2:1 vs IE", 53, 28, 0,
@@ -693,6 +695,10 @@ TRIALS = [
      "registry", "NCT02867592 participant flow"),
     ("ITCC-050", "lenvatinib", "single arm (osteosarcoma expansion)", 31, 0, 0,
      "registry", "NCT02432274 cohort 2B"),
+    # Added 2026-11-20 (audit E): ITCC-050 also treated relapsed osteosarcoma
+    # with lenvatinib + ifosfamide/etoposide (cohort 3A 7 + 15, cohort 3B 20).
+    ("ITCC-050 combination", "lenvatinib + IE", "single arm (osteosarcoma, cohorts 3A and 3B)", 42, 0, 0,
+     "registry", "NCT02432274 participant flow: cohort 3A 7 + 15, cohort 3B 20 started"),
 ]
 
 

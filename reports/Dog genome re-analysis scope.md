@@ -1,10 +1,10 @@
 # Dog genome re-analysis: what's available and what it would take
 
-*Lead 11 of `reports/Ranked leads and research partners.md`. Scoped on November 14, 2026 from NCBI's Sequence Read Archive (SRA) and BioProject databases through E-utilities. No genomes have been analysed yet.*
+*Lead 12 of `reports/Ranked leads and research partners.md`. Scoped on November 14, 2026 from NCBI's Sequence Read Archive (SRA) and BioProject databases through E-utilities. No genomes have been analysed yet.*
 
 ## Summary
 
-Far more open genome data from pet dogs with osteosarcoma exists than the project first assumed (24 genomes). By our count, about **90 dogs have deep whole-genome sequencing of both tumour and normal tissue** in the SRA, and another 200 or so trial dogs have shallow tumour-only genomes. The most valuable set is new: deep tumour–normal genomes from 55 dogs enrolled in the **NCI Comparative Oncology Trials Consortium studies COTC021 and COTC022**, a randomized trial with recorded outcomes, so their genomes could in principle be linked to how long each dog lived. That turns the lead from "is the genome-shattering pattern recently described in human osteosarcoma present in dogs?" into a better question: **does it predict outcome in dogs, as genome-wide loss of heterozygosity does in people?** If it does, dogs become a validated model for testing drugs aimed at that biology.
+Far more open genome data from pet dogs with osteosarcoma exists than the project first assumed (24 genomes). By our count, about **91 dogs have deep whole-genome sequencing of both tumour and normal tissue** in the SRA, and about 230 more dogs (about 227 by the table below) have shallow tumour-only genomes, mostly from trials. The most valuable set is new: deep tumour–normal genomes from 55 dogs enrolled in the **NCI Comparative Oncology Trials Consortium studies COTC021 and COTC022**, a randomized trial with recorded outcomes, so their genomes could in principle be linked to how long each dog lived. That turns the lead from "is the genome-shattering pattern recently described in human osteosarcoma present in dogs?" into a better question: **does it predict outcome in dogs, as genome-wide loss of heterozygosity does in people?** If it does, dogs become a validated model for testing drugs aimed at that biology.
 
 **How to read the labels.** **(registry)** means taken directly from a public database record, here NCBI SRA or BioProject; **(our calculation)** means we derived it from those records, for example by counting distinct dogs from sample names; **(paper, full text)**, **(paper, abstract only)** and **(press release only)** mark figures from publications.
 
@@ -70,3 +70,4 @@ Contact the NCI Comparative Oncology Program, which also appears in the pet-dog 
   - The deep tumour–normal data volume is about 33 Tbases, not "almost 40" (39.4 is all runs).
   - Lead numbers updated: dog genomes are lead 11 (was 7) and ctDNA is lead 7 (was 6, then briefly 8).
   - The loss-of-heterozygosity claim now cites its source (PMID 39814020) and says it was a paediatric and adult cohort.
+- **November 20, 2026.** Lead numbers updated after the ranked leads were re-ranked (lead 5 split into LRRC15 and PTK7): dog genomes are now lead 12 (was 11) and ctDNA is lead 8 (was 7). The ctDNA reference in the liquid-biopsy paragraph had said lead 8 while ctDNA was lead 7; under the new numbering it is correct. Summary counts now match the table: about 91 deep tumour–normal dogs and about 230 (table: ~227) shallow tumour-only dogs.

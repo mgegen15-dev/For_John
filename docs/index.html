@@ -98,7 +98,7 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
   <p class="note"><strong>Not medical advice.</strong> Nothing here is a recommendation about any patient's care. Findings are leads for researchers to check, not conclusions.</p>
   <nav class="top" aria-label="Sections">
     <a href="#findings">What we found</a>
-    <a href="#pills">The one drug class that works</a>
+    <a href="#pills">Kinase-inhibitor pills</a>
     <a href="#ask">What we're asking</a>
     <a href="#how">How this was made</a>
     <a href="https://github.com/mgegen15-dev/For_John">All reports and data</a>
@@ -113,7 +113,7 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
 </section>
 
 <section id="pills">
-  <h2>The one drug class that clearly works, briefly</h2>
+  <h2>Kinase-inhibitor pills: active, but briefly</h2>
   <div class="card chart-wrap" id="chartCard">
     <p class="chart-title">Patients free of progression about four months into treatment, relapsed osteosarcoma</p>
     <p class="chart-sub">Pooled from published trials and registry results, weighted by patients. The red line is the historical benchmark of about 12%.</p>
@@ -139,9 +139,9 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
   <ul class="list">
     <li><strong>Who:</strong> built by John Gegen’s brother, leveraging frontier AI models to gather, analyse and cross-check the public research.</li>
     <li><strong>From what:</strong> 33,242 PubMed papers mentioning osteosarcoma, 758 studies on ClinicalTrials.gov, NIH grant records (2015–2025), Europe PMC full texts, and open genomic and tissue-expression data.</li>
-    <li><strong>Checked how:</strong> every headline claim was audited against its original source by an independent review pass, and the reports were corrected where it found errors. Each report ends with a change log.</li>
+    <li><strong>Checked how:</strong> every headline claim was audited against its original source by an independent review pass, the newest reports in a second audit with a repo-wide consistency check, and the reports were corrected where these found errors. Each report ends with a change log.</li>
     <li><strong>Not yet:</strong> peer-reviewed by a scientist. That is the next step, and we are asking for it.</li>
-    <li><strong>Open:</strong> every number can be rebuilt with the scripts in the repository. Reports and data are licensed CC BY 4.0, code is MIT.</li>
+    <li><strong>Open:</strong> most analyses can be rebuilt with the scripts in the repository; a few counts came from one-off database queries described in each report. Reports and data are licensed CC BY 4.0, code is MIT.</li>
   </ul>
   <p><a href="https://github.com/mgegen15-dev/For_John/blob/main/HOW_THIS_WAS_MADE.md">Read the full methods and limitations</a></p>
 </section>
@@ -161,52 +161,53 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
 // ---------- Content (edit here) ----------
 const FINDINGS = [
   { title: "Trials struggle to finish", label: "Confirmed",
-    body: "Of 99 osteosarcoma trials that stopped early, 44 stopped mainly because they couldn’t recruit enough patients. Only about 7 to 9 stopped because the treatment didn’t work. Across four decades, just 27 randomized trials have focused on osteosarcoma alone. Several large trials never reported their results.",
+    body: "Of 99 osteosarcoma trials that stopped early, 44 stopped mainly because they couldn’t recruit enough patients. Only about 7 to 9 stopped because the treatment didn’t work. Across four decades, ClinicalTrials.gov lists just 27 randomized trials focused on osteosarcoma alone. A Children’s Oncology Group preprint of 99 patients finds that only about 1 in 5 stays relapse-free a year after lung metastases are removed, and that modest gains will need randomized trials.",
     report: "reports/Osteosarcoma clinical trials landscape.md", reportName: "Trials report" },
-  { title: "One drug class does better, briefly", label: "Confirmed · who benefits is a Lead",
-    body: "For osteosarcoma that has come back, pills that block the tumour’s blood-vessel signal (VEGFR2) keep roughly 40 to 50% of patients free of progression at four months, compared with about 14% for other drugs. The effect fades within months. Between a quarter and two-fifths of tumours carry extra copies of the genes these pills target. Nobody has checked whether those are the patients who benefit. Researchers can test this using samples already stored from past trials.",
-    report: "reports/Why kinase-inhibitor pills work in osteosarcoma.md", reportName: "Kinase-inhibitor report" },
+  { title: "Kinase-inhibitor pills: active, but briefly", label: "Confirmed · who benefits is a Lead",
+    body: "For osteosarcoma that has come back, pills that block the tumour’s blood-vessel signal (VEGFR2) keep roughly 40 to 50% of patients free of progression at four months, compared with about 14% for other single drugs. The effect fades within months, and standard relapse chemotherapy also does well early on. In open data from 81 tumours, about a quarter carry extra copies of the genes these pills target by a strict definition, and nearly half by a looser one. Nobody has checked whether those are the patients who benefit. Past trials treated about 309 patients with these pills, so researchers can test this using stored samples.",
+    report: "reports/Copy-number changes and the kinase-pill biomarker.md", reportName: "Copy-number report" },
   { title: "Block inflammation after surgery?", label: "Hypothesis",
-    body: "In mice, lung tissue sends inflammatory signals (IL-1, IL-6 and IL-8) that help osteosarcoma settle in the lung. Blocking those signals reduced spread. A dog trial took the opposite approach, boosting immunity after amputation. Those dogs did worse than dogs given standard treatment in the past. Approved drugs that block IL-1 and IL-6 exist, but none has been tested in an osteosarcoma efficacy trial.",
+    body: "In mice, lung tissue sends inflammatory signals (IL-1, IL-6 and IL-8) that help osteosarcoma settle in the lung. Blocking those signals reduced spread. A dog trial took the opposite approach, boosting immunity after amputation. Those dogs did worse than dogs given standard treatment in the past. Approved drugs that block IL-1 and IL-6 exist, but neither has a registered efficacy trial in osteosarcoma.",
     report: "reports/Stopping lung metastasis in osteosarcoma.md", reportName: "Lung metastasis report" },
   { title: "FAK and DKK1: strong targets not yet tried in people", label: "Lead",
-    body: "Blocking either protein reduced lung spread in mice, and drugs exist for both. Research programmes to test them in pet dogs with osteosarcoma are already in place or planned. Dogs get this cancer about ten times as often as people, and the disease is very similar.",
+    body: "Blocking either protein reduced lung spread in small mouse studies, and drugs exist for both. Studies in pet dogs with osteosarcoma are listed or planned, but their results are not yet public. Dogs get this cancer far more often than people, by one common estimate about ten times as often, and the disease is very similar. A screen of 2,400 approved drugs adds two weaker ideas: AKT blockers and CXCR4 blockers.",
     report: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md", reportName: "Research brief" },
-  { title: "New targets on the tumour surface", label: "Lead",
-    body: "A comparison of 88 patient tumours with 54 healthy tissues ranked two proteins, LRRC15 and PTK7, near the top as targets for antibody drugs. A trial of a radioactive anti-LRRC15 antibody for osteosarcoma that has come back is already recruiting. PTK7 drugs are in trials for other cancers, but almost no one has studied PTK7 in osteosarcoma.",
+  { title: "Antibody-drug conjugates, and a confirmed new target", label: "Lead",
+    body: "A drug that carries chemotherapy to the tumour marker B7-H3 beat standard chemotherapy in a randomized trial in relapse, though with heavier side effects. Our comparison of 88 patient tumours with 54 healthy tissues ranked LRRC15 top; three studies have now found the LRRC15 protein in patient tumours, and four registered trials target it, one in relapsed osteosarcoma. PTK7 also ranked high, but no series of patient tumours has been stained for it yet.",
     report: "reports/New surface targets for osteosarcoma.md", reportName: "Surface targets report" },
   { title: "Some research is unreliable", label: "Confirmed",
     body: "Since 2010, 8.7% of one formulaic type of osteosarcoma paper (microRNA studies) have been retracted, compared with 1.0% of other papers. We flag genes whose evidence relies on this type of paper, so researchers know where to double-check.",
     report: "reports/Evidence risk flags for osteosarcoma genes.md", reportName: "Risk flags report" },
   { title: "Research gaps get little funding", label: "Confirmed",
-    body: "NIH spent about $18 million on grants focused on osteosarcoma in 2025. Over the last decade, it spent about half as much on osteosarcoma as on neuroblastoma. The research gaps highlighted above, such as blood-test monitoring, receive the least funding.",
+    body: "NIH spent about $18 million on grants focused on osteosarcoma in 2025. Over 2015 to 2025, it spent about half as much on osteosarcoma ($108 million) as on neuroblastoma ($212 to 227 million). The research gaps highlighted above, such as blood-test monitoring, receive the least funding.",
     report: "reports/NIH funding for osteosarcoma.md", reportName: "Funding report" }
 ];
 const ASKS = [
   { title: "A sarcoma scientist to review this work.", text: "Tell us what is wrong and what is useful." },
-  { title: "Groups holding stored samples from kinase-inhibitor trials", text: "(SARC024, REGOBONE, OLIE, OAIE, CABONE, ADVL1622), to test whether tumour gene copies predict who benefits." },
-  { title: "Comparative oncology groups,", text: "to discuss a pet-dog study blocking IL-1 or IL-6 after amputation, and to share what existing dog studies of FAK blockers have shown." },
+  { title: "Groups holding stored samples from kinase-inhibitor trials", text: "(SARC024, REGOBONE, OLIE, OAIE, CABONE, ADVL1622, ITCC-050), to test whether tumour gene copies predict who benefits." },
+  { title: "Comparative oncology groups,", text: "to discuss a pet-dog study blocking IL-1 or IL-6 after amputation, and to share what the listed dog studies of FAK blockers have shown." },
+  { title: "Groups with osteosarcoma tissue arrays,", text: "to stain primary tumours, lung metastases and relapses for LRRC15 and PTK7, and LRRC15 trial sponsors, to publish their screening data." },
   { title: "Trial sponsors with unreported osteosarcoma trials,", text: "to make their results public." },
   { title: "Consortia such as FOSTER and the Children's Oncology Group,", text: "to use, correct and extend the pooled control dataset." }
 ];
 const REPORTS = [
   { title: "One-page summary", href: "SUMMARY.md" },
-  { title: "Ranked leads and research partners", href: "reports/Ranked leads and research partners.md", text: "the eleven leads, scored." },
+  { title: "Ranked leads and research partners", href: "reports/Ranked leads and research partners.md", text: "the fourteen leads, scored." },
   { title: "Osteosarcoma research landscape and gaps", href: "reports/Osteosarcoma research landscape and gaps.md" },
   { title: "Clinical trials landscape", href: "reports/Osteosarcoma clinical trials landscape.md" },
   { title: "Pooled control dataset", href: "reports/Osteosarcoma pooled control dataset.md" },
   { title: "Why kinase-inhibitor pills work", href: "reports/Why kinase-inhibitor pills work in osteosarcoma.md" },
+  { title: "Copy-number changes and the kinase-pill biomarker", href: "reports/Copy-number changes and the kinase-pill biomarker.md", text: "how often tumours carry extra copies of the pills’ target genes, and how many trial patients a test would need." },
   { title: "Stopping lung metastasis", href: "reports/Stopping lung metastasis in osteosarcoma.md" },
   { title: "New surface targets", href: "reports/New surface targets for osteosarcoma.md" },
-  { title: "Approved drugs worth testing", href: "reports/Approved drugs worth testing in osteosarcoma.md" },
-  { title: "Copy-number changes and the kinase-pill biomarker", href: "reports/Copy-number changes and the kinase-pill biomarker.md" },
+  { title: "Approved drugs worth testing", href: "reports/Approved drugs worth testing in osteosarcoma.md", text: "a screen of 2,400 approved and late-stage drugs, including the dead ends." },
   { title: "What's new in osteosarcoma research", href: "reports/Whats new in osteosarcoma research.md", text: "June 2025 to November 2026, checked against the leads." },
   { title: "Literature map", href: "reports/Osteosarcoma literature map.md" },
   { title: "Evidence risk flags", href: "reports/Evidence risk flags for osteosarcoma genes.md" },
   { title: "NIH funding", href: "reports/NIH funding for osteosarcoma.md" },
   { title: "Dog genome re-analysis scope", href: "reports/Dog genome re-analysis scope.md" },
   { title: "Research brief: FAK or DKK1 in pet dogs", href: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md" },
-  { title: "How this was made", href: "HOW_THIS_WAS_MADE.md", text: "methods, limits and how to re-run everything." }
+  { title: "How this was made", href: "HOW_THIS_WAS_MADE.md", text: "methods, limits and how to re-run the analyses." }
 ];
 const CHART = {
   benchmark: 12,
@@ -217,7 +218,7 @@ const CHART = {
     { label: "Pill + chemotherapy (IE)", n: 128, value: 65.0, pill: true, note: "Three trials" },
     { label: "Pill + PD-1 antibody", n: 43, value: 66.3, pill: true, note: "One trial (apatinib + camrelizumab)" }
   ],
-  caption: "Taken alone, VEGFR2-blocking pills keep far more patients free of progression at four months than any other drug type, but the effect fades within months, and standard chemotherapy (ifosfamide and etoposide) does nearly as well, so combinations must be judged against chemotherapy, not the 12% line. In both randomized pill-plus-chemotherapy trials, overall survival was not improved. These are pooled across trials that measured progression slightly differently; treat them as approximate."
+  caption: "Taken alone, VEGFR2-blocking pills keep far more patients free of progression at four months than other single drugs, but the effect fades within months, and standard relapse chemotherapy (ifosfamide and etoposide) does about as well over this period, so combinations must be judged against chemotherapy, not the 12% line. In both randomized pill-plus-chemotherapy trials, overall survival was not improved. The chart does not include the B7-H3 antibody-drug conjugate, which beat a different chemotherapy (gemcitabine and docetaxel) in a randomized trial reported in 2026. These rates are pooled across trials that measured progression slightly differently; treat them as approximate."
 };
 
 // ---------- Rendering ----------

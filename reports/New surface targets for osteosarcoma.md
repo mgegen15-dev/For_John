@@ -19,9 +19,10 @@ normal tissues. The top hit, LRRC15, already has four registered trials, two of 
 including one specifically in relapsed osteosarcoma. Below it the screen points to IFITM5,
 ADAM12, MRC2, PTK7 and CD248. This is RNA, not protein, from 88 diagnostic biopsies, compared
 against adult tissue that contains no bone, so every lead needs checking in tumour tissue before
-anyone acts on it. A protein check in November 2026 found that only LRRC15 has been measured as
-protein in patient osteosarcomas, in three independent studies; PTK7 has been stained only in two
-models, IFITM5 and ADAM12 have no human osteosarcoma protein data at all, and TMEM119, which our
+anyone acts on it. A protein check in November 2026 found that, among the five leads, only LRRC15 has been measured as
+protein in patient osteosarcomas, in three studies of patient tumours (Cui 2020, O'Reilly 2026,
+Moquin-Beaudry 2026) plus one of patient-derived xenografts (Mooney 2026); PTK7 has been stained only in two
+xenografts and two cell lines, IFITM5 and ADAM12 have no human osteosarcoma protein data at all, and TMEM119, which our
 surface filter excluded, has surface staining in patient tumours.
 
 **How to read the labels.** Key numbers carry one of these tags:
@@ -246,7 +247,7 @@ repository's evidence tables held 6 papers naming LRRC15 when this report was bu
 calculation); a PubMed search for "LRRC15 AND osteosarcoma" now returns 11, 7 of them from
 2025–26 (registry, November 19, 2026). Anyone working on osteosarcoma should know these trials.
 
-**Protein evidence (added November 19, 2026).** LRRC15 is the only lead measured as protein in
+**Protein evidence (added November 19, 2026).** Among the five leads, LRRC15 is the only one measured as protein in
 patient osteosarcomas:
 - **Cui et al., *J Orthop Res* 2020 (PMID 32902907; paper, abstract only).** On a tissue
   microarray, 63 of 69 osteosarcomas (91.3%) stained, 51 (74%) at 2+ or 3+ (percentage our
@@ -336,7 +337,8 @@ organ (paper, full text; Lee et al., *Cell Rep Med* 2023, PMID 37343516), and th
 proteomics study names it (paper, full text). **No series of patient osteosarcomas has been
 stained for PTK7.** Cheapest next step: stain an osteosarcoma tissue array with the clinical-trial
 PTK7 assay and cut-off. Fewer than
-five osteosarcoma papers name PTK7 (our calculation). Testing an existing drug is a cheaper
+five osteosarcoma papers in our PubTator-tagged set name PTK7 (our calculation), and a PubMed search for
+"PTK7 AND osteosarcoma" returns one record, from 2008 (registry, November 20, 2026). Testing an existing drug is a cheaper
 experiment than building one for a new antigen.
 
 ### 5. CD248 / endosialin (TEM1): an antibody already tested, and it did not help in sarcoma
@@ -498,6 +500,7 @@ In rough order of value per unit effort:
 
 ## Change log
 
+- **November 20, 2026.** Consistency fixes: the protein summary now says "among the five leads" (TMEM119, which also has patient staining, is not one of the five); the LRRC15 protein evidence is counted the same way as in the ranked leads (three studies of patient tumours plus one of PDXs); PTK7 staining is described as two xenografts and two cell lines; the PTK7 paper count now gives both bases (fewer than five in our tagged set; one PubMed record for "PTK7 AND osteosarcoma").
 - **November 13, 2026.** First version.
 - **November 14, 2026.** Revised after an independent audit
   (`research_notes/Audit/audit_C_literature_risk_surface.md`) and a live re-check of

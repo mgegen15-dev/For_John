@@ -17,17 +17,19 @@ Everything comes from public sources:
 | PubMed, with NCBI PubTator3 annotations | Every paper with "osteosarcoma" in the title or abstract, with genes and chemicals tagged automatically | 33,242 papers |
 | ClinicalTrials.gov | Every study listing osteosarcoma as a condition, plus posted results | 758 studies |
 | Europe PMC and PubMed Central | Full texts of open-access papers, used to check claims | — |
-| NIH RePORTER | NIH grants naming osteosarcoma or neuroblastoma, fiscal years 2015–2025 | about 2,700 osteosarcoma grant-years |
-| NCI Genomic Data Commons (TARGET-OS) | Tumour RNA sequencing from 88 patients | — |
+| NIH RePORTER | NIH grants naming osteosarcoma or neuroblastoma, fiscal years 2015–2025 | about 2,700 osteosarcoma grant records (most only mention osteosarcoma in passing) |
+| NCI Genomic Data Commons (TARGET-OS) | Tumour RNA sequencing from 88 patients; open copy-number files (SNP-array gene-level and segment calls, with whole-genome calls as a check) from 81 patients | 189 copy-number files |
 | GTEx v8 and the Human Protein Atlas | Normal-tissue expression and protein location | 54 tissues |
 | NCBI Sequence Read Archive | Metadata on canine osteosarcoma genomes | 747 runs |
+| ChEMBL | Approved and phase 3 drugs and their protein targets, for the repurposing screen | 2,400 drugs on 1,141 genes |
+| bioRxiv, medRxiv and Research Square | Preprints from June 2025 to November 2026, for the new-evidence scan (labelled as preprints) | about 100 titles screened |
 
 Nothing here uses private patient data.
 
 ## How claims were checked
 
 1. **Primary sources first.** Numbers were taken from the original paper, registry record or database wherever possible, not from reviews or press coverage.
-2. **Independent audit.** Before release, every headline claim in every report was re-checked by a separate review pass that did not see the original reasoning. It checked trial registries, PubMed and NIH records directly, and recomputed statistics from the data files. Of about 560 claims checked, roughly two-thirds were confirmed as written. The rest were wrong, overstated, out of date or unverifiable, and were corrected or labelled.
+2. **Independent audit.** Before release, every headline claim in every report was re-checked by a separate review pass that did not see the original reasoning. The eleven earlier reports were audited on November 14, 2026; the three newest (approved drugs, copy number, what's new) on November 20, 2026, when a repo-wide consistency check was also run and both sets of findings were applied (`research_notes/Audit/`). It checked trial registries, PubMed and NIH records directly, and recomputed statistics from the data files. Of about 560 claims checked, roughly two-thirds were confirmed as written. The rest were wrong, overstated, out of date or unverifiable, and were corrected or labelled.
 3. **Corrections are shown, not hidden.** Each report ends with a change log listing what changed and why. Several early conclusions were overturned by later checking, and the reports say so.
 4. **Confidence labels.** Key numbers carry a label for where they came from:
    - **(registry):** posted on ClinicalTrials.gov.
@@ -35,6 +37,7 @@ Nothing here uses private patient data.
    - **(paper, abstract only):** only the abstract could be read.
    - **(press release only):** no peer-reviewed source found.
    - **(our calculation):** computed by this project from the data files.
+   - **(preprint, abstract only):** only the abstract of a preprint, which has not been peer-reviewed, was read.
 
 ## What the AI did well, and where it went wrong
 
@@ -59,7 +62,7 @@ The lesson built into this project is that every AI-generated claim needs checki
 
 ## Re-running the analyses
 
-Every number can be rebuilt from public data with the scripts in `tools/`.
+Most analyses can be rebuilt from public data with the scripts in `tools/`. A few counts (registry spot checks, some PubMed searches, and the new-evidence scan) were made with one-off database queries described in the report concerned.
 
 **Requirements:** Python 3.10 or newer, internet access, and `pandas` (only for `tools/pool_relapse_benchmarks.py`). Everything else uses the Python standard library. Run every script from the repository root.
 
@@ -81,6 +84,8 @@ pip install pandas
 | `tools/paper_mill_flag.py` | `data/osteosarcoma_evidence_risk_*.csv` | none (needs the map above) | seconds |
 | `tools/surface_targets.py` | `data/osteosarcoma_surface_target_candidates.csv` | NCI GDC, GTEx, Human Protein Atlas | about 30 minutes (downloads 370 MB) |
 | `tools/lung_metastasis_map.py` | `data/lung_metastasis_*.csv` | none (needs the literature fetch) | about a minute |
+| `tools/copy_number_map.py` | `data/osteosarcoma_copy_number_frequencies.csv` and the biomarker sample-size figures (`python3 tools/copy_number_map.py all`) | NCI GDC (downloads 189 open files, about 274 MB); reuses the RNA files from `tools/surface_targets.py` | several minutes |
+| `tools/repurposing_screen.py` | `data/osteosarcoma_repurposing_candidates.csv` (stages `chembl`, `build`, `pubmed`, `ctgov`, `score`) | ChEMBL, PubMed, ClinicalTrials.gov; needs the RNA summary from `tools/surface_targets.py` | about an hour (the PubMed stage takes about 40 minutes) |
 
 Three hand-curated files are not produced by a script:
 - `data/drug_targets_curated.json`, the drug-to-target map;

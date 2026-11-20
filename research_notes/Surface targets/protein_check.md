@@ -1,4 +1,4 @@
-# Protein-level check of the surface-target leads (lead 5)
+# Protein-level check of the surface-target leads (leads 5 and 6; lead 5 before the November 20, 2026 split)
 
 *Working notes, November 19, 2026. Question: are the RNA-ranked leads in
 `reports/New surface targets for osteosarcoma.md` (LRRC15, IFITM5, ADAM12, PTK7, plus MRC2, CD248,

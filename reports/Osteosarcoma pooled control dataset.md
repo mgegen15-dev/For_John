@@ -10,7 +10,7 @@
 
 ## Summary
 
-Osteosarcoma has no shared, standardized set of control outcomes against which to judge small single-arm trials, a gap the European FOSTER consortium names. This dataset is a first public version, built from registry results, published papers and basket trials. In measurable relapsed disease, drugs without a VEGFR-blocking kinase inhibitor leave about **14% of patients event-free at four months**, close to the historical benchmark of 12%. VEGFR-blocking kinase-inhibitor pills given alone reach roughly **40–50%**, depending on how the cabozantinib trial is counted. But ifosfamide plus etoposide (IE) chemotherapy alone also reaches **42–66%**, so combinations with IE must be judged against IE, not against 12%. In the two randomized pill-plus-IE trials, adding the pill delayed progression but did not improve overall survival.
+Osteosarcoma has no shared, standardized set of control outcomes against which to judge small single-arm trials, a gap the European FOSTER consortium names. This dataset is a first public version, built from registry results, published papers and basket trials. In measurable relapsed disease, drugs without a VEGFR2-blocking kinase inhibitor leave about **14% of patients event-free at four months**, close to the historical benchmark of 12%. VEGFR2-blocking kinase-inhibitor pills given alone reach roughly **40–50%**, depending on how the cabozantinib trial is counted. But ifosfamide plus etoposide (IE) chemotherapy alone also reaches **42–66%**, so combinations with IE must be judged against IE, not against 12%. In the two randomized pill-plus-IE trials, adding the pill delayed progression but did not improve overall survival.
 
 **How to read the labels.** After each key number we say where it comes from:
 
@@ -73,22 +73,22 @@ One row per trial arm, weighted by patients. Paper values replace registry value
 | Older chemotherapy: COG pooled single agents (which include imatinib), eribulin, gemcitabine + nab-paclitaxel | 3 | 133 | 12.5% | 0–28% |
 | Antibodies, drug conjugates, DNA-repair drugs (denosumab, glembatumumab, olaparib + ceralasertib) | 3 | 71 | 12.7% | 7–15% |
 | IGF-1R antibody (R1507, basket trial) | 1 | 40 | 19.7% | — |
-| Kinase inhibitor that does not target VEGFR (imatinib, adult basket trial) | 1 | 27 | 18.5% | — |
-| **VEGFR-blocking kinase inhibitor alone** (sorafenib, apatinib, lenvatinib, cabozantinib) | 4 | 145 | **52.5%** | 29–71% |
-| VEGFR-blocking kinase inhibitor + IE (ITCC-050, OLIE, OAIE) | 3 | 128 | 65.0% | 51–76% |
-| VEGFR-blocking kinase inhibitor + PD-1 antibody (APFAO) | 1 | 43 | 66.3% | — |
+| Kinase inhibitor that does not target VEGFR2 (imatinib, adult basket trial) | 1 | 27 | 18.5% | — |
+| **VEGFR2-blocking kinase inhibitor alone** (sorafenib, apatinib, lenvatinib, cabozantinib) | 4 | 145 | **52.5%** | 29–71% |
+| VEGFR2-blocking kinase inhibitor + IE (ITCC-050, OLIE, OAIE) | 3 | 128 | 65.0% | 51–76% |
+| VEGFR2-blocking kinase inhibitor + PD-1 antibody (APFAO) | 1 | 43 | 66.3% | — |
 | IE alone (OLIE and OAIE randomized control arms) | 2 | 69 | 56.1% | 42–66% |
 
 **Sensitivity checks** (our calculation):
 
 - **CABONE primary endpoint.** Using CABONE's primary endpoint (33% at 6 months) instead of its 4-month Kaplan–Meier estimate (71%) lowers the pill-alone rate from 52.5% to **41.4%**. The true 4-month figure for the class therefore lies roughly between 40% and 50%.
 - **Adding ADVL1622.** Adding the second cabozantinib cohort, COG ADVL1622, gives 49.6% across 174 patients. Its 35% is a "response or disease control over six cycles" rate, not a 4-month progression-free rate, so it is left out of the main table.
-- **All arms without a VEGFR inhibitor or IE.** Pooling the 8 arms that contain neither a VEGFR-blocking pill nor IE (271 patients) gives **14.2%**, close to the 12% benchmark.
+- **All arms without a VEGFR2 inhibitor or IE.** Pooling the 8 arms that contain neither a VEGFR2-blocking pill nor IE (271 patients) gives **14.2%**, close to the 12% benchmark.
 
 **What this shows.**
 
-- **Pills alone versus other single agents.** VEGFR-blocking kinase-inhibitor pills given alone sit well above every single-agent class without a VEGFR inhibitor. That is the most consistent signal in relapsed osteosarcoma.
-- **The class is VEGFR inhibitors, not kinase inhibitors in general.** Imatinib, which does not block VEGFR2, sat at 0% in the COG pool and 18.5% in an adult basket trial (paper, abstract only).
+- **Pills alone versus other single agents.** VEGFR2-blocking kinase-inhibitor pills given alone sit well above every single-agent class without a VEGFR2 inhibitor. That is the most consistent signal in relapsed osteosarcoma.
+- **The class is VEGFR2 inhibitors, not kinase inhibitors in general.** Imatinib, which does not block VEGFR2, sat at 0% in the COG pool and 18.5% in an adult basket trial (paper, abstract only).
 - **IE sets the bar for combinations.** IE chemotherapy alone also sits well above 12%, so any regimen containing IE, or a similar chemotherapy partner, must be compared with IE's 42–66%, not with 12%.
 
 ## Resected relapse
@@ -105,7 +105,7 @@ Patients whose relapse has been completely removed by surgery, so there is nothi
 
 **Updated benchmark (preprint):** a November 2026 COG analysis pooled 99 patients with lung-only relapse after complete resection, enrolled on three COG single-arm phase 2 trials. Twelve-month event-free survival was 22% (95% CI 15–31%), ranging from 14% to 29% across the three trials, and median event-free survival 4.8 months; patients whose first relapse came within two years of diagnosis did worse (p = 0.009). The authors note that nearly doubling the cohort left the confidence interval about as wide as before, and conclude that smaller effects "will require randomization" (preprint, abstract only; Chou et al., medRxiv, November 16, 2026, [doi 10.64898/2026.11.13.26368045](https://doi.org/10.64898/2026.11.13.26368045)). The abstract does not name the three trials, so we cannot tell how far they overlap with the arms in the table above. The AOST0221 figure is kept as the published benchmark, and this preprint is not yet a row in `data/osteosarcoma_relapse_benchmarks_published.csv`.
 
-The only randomized comparison found is a small one. In the SARC saracatinib trial after lung metastasis surgery, median progression-free survival was 19.4 months with saracatinib (n=18) and 8.6 months with placebo (n=19), P = 0.47 (paper, full text).
+The only randomized comparison found is a small one. In the SARC saracatinib trial after lung metastasis surgery, median progression-free survival was 19.4 months with saracatinib (n=18) and 8.6 months with placebo (n=19), P = 0.47 (paper, full text); the registry lists 38 enrolled, 37 analysed (registry).
 
 Two drugs with very different mechanisms, an anti-GD2 antibody and a bone-targeted RANKL antibody, gave similar 12-month results in the two larger arms (26–28%). One possible explanation is that the 12-month figure depends more on which patients are enrolled after surgery than on the drug. *This is a hypothesis.* There are only two comparable arms, and the small olaparib + ceralasertib cohort reached 40%. Either way, a randomized trial in this setting (gap 2 in the research report) is the only way to tell drug effect from patient selection.
 
@@ -134,7 +134,7 @@ The four EURAMOS-1 arms are the best available controls for any new first-line t
   - pembrolizumab in SARC028: 1 of 22 (paper, abstract only);
   - pembrolizumab in a Norway/Italy trial: 0 of 12 had clinical benefit at 18 weeks (paper, abstract only).
 
-  The one immunotherapy combination with clear activity so far pairs a VEGFR-blocking pill with a PD-1 antibody (APFAO, 66% at 4 months), and it missed its own 6-month target.
+  The one immunotherapy combination with clear activity so far pairs a VEGFR2-blocking pill with a PD-1 antibody (APFAO, 66% at 4 months), and it missed its own 6-month target.
 - **The ATR/PARP evidence in osteosarcoma is a single combination.** Olaparib + ceralasertib sits at the benchmark (15% at 4 months). No single-agent ATR or PARP inhibitor cohort in osteosarcoma has reported. This tempers the DNA-repair transfer ideas in the research report: if these drugs work, it may only be in a biomarker-selected group, which has not been tested.
 - **No newer peer-reviewed COG pooled benchmark.** We found no newer peer-reviewed COG pooled benchmark for osteosarcoma; the one update, for resected lung-only relapse (99 patients, 22% at 12 months), is so far a preprint (preprint, abstract only; see above). COG has published such benchmarks for rhabdomyosarcoma and for non-rhabdomyosarcoma soft-tissue sarcoma.
 
@@ -159,6 +159,8 @@ The four EURAMOS-1 arms are the best available controls for any new first-line t
 3. Ask COG for the ADVL1622 definition of "disease control", so it can enter the 4-month table.
 
 ## Change log
+
+**November 20, 2026.** Naming made consistent with the other reports: the pill class is now called "VEGFR2-blocking" throughout the text (the November 14 entry below records the earlier name). The saracatinib result now notes the registry's 38 enrolled and 37 analysed. Data files unchanged.
 
 **November 19, 2026.** Added the COG update for resected lung-only relapse (Chou et al., medRxiv 2026; 99 patients; 12-month event-free survival 22%, 95% CI 15–31%), labelled (preprint, abstract only), alongside the AOST0221 benchmark, which is kept. "No newer COG pooled benchmark" now reads "no newer peer-reviewed" benchmark. New label **(preprint, abstract only)**: read only in a preprint's abstract; preprints are not peer-reviewed. The data files were not changed.
 

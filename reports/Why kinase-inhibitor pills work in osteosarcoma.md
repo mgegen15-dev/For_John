@@ -1,10 +1,10 @@
-# Why VEGFR-blocking kinase-inhibitor pills work in osteosarcoma, and why they are not yet standard
+# Why VEGFR2-blocking kinase-inhibitor pills work in osteosarcoma, and why they are not yet standard
 
 *Built from trial papers (full text where open access), ClinicalTrials.gov records and preclinical studies. Last revised November 14, 2026, after an independent audit; updated November 19, 2026 (MYC, CabOSTar results, new resected-relapse benchmark; see the change log). Working notes with every source: `research_notes/Kinase inhibitors/notes.md`. Uses the same figures as the pooled control dataset (`reports/Osteosarcoma pooled control dataset.md`) and the trials landscape report.*
 
 ## Summary
 
-Oral kinase inhibitors that block VEGFR2, the main receptor for the blood-vessel growth signal VEGF, are the most consistently active drugs in relapsed osteosarcoma, with the best evidence for regorafenib, cabozantinib, sorafenib, apatinib and lenvatinib; kinase inhibitors that do not block VEGFR2, such as imatinib, dasatinib and alisertib, have not worked. The effect looks mainly anti-vascular: lung metastases turn necrotic and hollow out, and PET scans dim within four weeks. The benefit is real but brief: in the cabozantinib trial CABONE, 33% of patients were free of progression at 6 months by the trial's own primary endpoint, and only 9.5% at 12 months by Kaplan–Meier estimate. No randomized trial has shown longer survival, and no test can yet say who will benefit. About 40% of tumours carry extra copies of VEGF-pathway genes, but no clinical study we found has checked whether those patients respond better. That check can be done with samples that already exist, and it is the single most useful next step.
+Oral kinase inhibitors that block VEGFR2, the main receptor for the blood-vessel growth signal VEGF, are the most consistently active drugs in relapsed osteosarcoma, with the best evidence for regorafenib, cabozantinib, sorafenib, apatinib and lenvatinib; kinase inhibitors that do not block VEGFR2, such as imatinib, dasatinib and alisertib, have not worked. The effect looks mainly anti-vascular: lung metastases turn necrotic and hollow out, and PET scans dim within four weeks. The benefit is real but brief: in the cabozantinib trial CABONE, 33% of patients were free of progression at 6 months by the trial's own primary endpoint, and only 9.5% at 12 months by Kaplan–Meier estimate. No randomized trial has shown longer survival, and no test can yet say who will benefit. Between about one tumour in four (23.5%) and nearly half (46.9%) carry extra copies of VEGF-pathway genes, depending on the definition (81 TARGET-OS tumours at diagnosis; our calculation), and a US cancer-centre cohort reports at least 40%; but no clinical study we found has checked whether those patients respond better. That check can be done with samples that already exist, and it is the single most useful next step.
 
 **How to read the labels.** After each key number we say where it comes from:
 
@@ -19,7 +19,7 @@ Oral kinase inhibitors that block VEGFR2, the main receptor for the blood-vessel
 
 Relapsed, measurable osteosarcoma. "PFS" means progression-free survival; "OS" means overall survival; "IE" means ifosfamide plus etoposide, the usual relapse chemotherapy.
 
-**VEGFR-blocking pills:**
+**VEGFR2-blocking pills:**
 
 | Drug | Trial | Patients | Key result | Source |
 |---|---|---|---|---|
@@ -45,7 +45,7 @@ Relapsed, measurable osteosarcoma. "PFS" means progression-free survival; "OS" m
 | Dasatinib (does not block VEGFR2) | SARC009 | 46 | 10.9% progression-free at 6 months (registry) | NCT00464620 |
 | Alisertib (aurora kinase inhibitor) | COG ADVL0921 | 10 | 0 of 10 responses (registry; paper, full text) | NCT01154816 |
 
-**Pooled** (our calculation, from the pooled control dataset): VEGFR-blocking pills given alone leave about 52.5% of patients event-free or progression-free at four months across four trials (145 patients), using CABONE's Kaplan–Meier 4-month figure. Using CABONE's primary endpoint instead gives 41.4%. Arms without a VEGFR-blocking pill or IE average 14.2% (271 patients). IE chemotherapy alone, in the two randomized control arms, gave 42–66% (paper, full text). So VEGFR-blocking pills clearly beat other single agents, but in combination with IE they must be judged against IE, not against 12%.
+**Pooled** (our calculation, from the pooled control dataset): VEGFR2-blocking pills given alone leave about 52.5% of patients event-free or progression-free at four months across four trials (145 patients), using CABONE's Kaplan–Meier 4-month figure. Using CABONE's primary endpoint instead gives 41.4%. Arms without a VEGFR2-blocking pill or IE average 14.2% (271 patients). IE chemotherapy alone, in the two randomized control arms, gave 42–66% (paper, full text). So VEGFR2-blocking pills clearly beat other single agents, but in combination with IE they must be judged against IE, not against 12%.
 
 **The two randomized pill + IE trials.** Neither was designed to measure survival, and their survival results do not point to a benefit:
 
@@ -54,16 +54,16 @@ Relapsed, measurable osteosarcoma. "PFS" means progression-free survival; "OS" m
 
 ## 1. Why they work: which kinase matters
 
-**What the tumours carry.** Osteosarcoma has few point mutations but many extra gene copies. Two of the commonly amplified regions hold the pills' targets, and they rarely occur together:
+**What the tumours carry.** Osteosarcoma has few point mutations but many extra gene copies. Two of the commonly amplified regions hold the pills' targets. In one US cohort they rarely occurred together, but in open TARGET-OS data they overlapped in 4 of 81 tumours, more often than chance, though weakly (p = 0.0496; copy-number report):
 
 | Gene region | Genes | How often | Source |
 |---|---|---|---|
-| 6p21 | VEGFA (the vessel growth signal) | 24% (MSK, 66 patients) (paper, abstract only); 23% (Sayles, whole genomes) (paper, full text; the audit could not re-open it) | PMID 31175097; PMC7134333 |
-| 4q12 | KDR (= VEGFR2), PDGFRA, KIT | 20% (MSK), with strong PDGFRA protein (paper, abstract only) | PMID 31175097 |
+| 6p21 | VEGFA (the vessel growth signal) | 24% of 59 evaluable patients (MSK cohort of 66) (paper, full text); 23% (Sayles, whole genomes) (paper, full text; the audit could not re-open it) | PMID 31175097 (PMC6825534); PMC7134333 |
+| 4q12 | KDR (= VEGFR2), PDGFRA, KIT | 20% of 66 (MSK), with strong PDGFRA protein (paper, full text) | PMID 31175097 (PMC6825534) |
 | 8p11 | FGFR1 | 18.5% of poor chemotherapy responders, none of the good responders (352 samples from 288 patients) (paper, abstract only) | PMID 24861215 |
 | MET | MET receptor (cabozantinib target) | First cloned from an osteosarcoma cell line; drives bone-cell transformation in models; not often amplified | reviewed in PMC8763616 |
 
-Together, at least 40% of patients have VEGFA or PDGFRA amplification in that cohort (paper, abstract only; PMID 31175097). In open TARGET-OS data from 81 patients at diagnosis, 23.5% carry a clear amplification of VEGFA, KDR, PDGFRA or KIT, and 47% by a looser threshold (our calculation; `reports/Copy-number changes and the kinase-pill biomarker.md`). VEGFA amplification is also enriched in the drug-resistant clones that come back at relapse, which is the setting where the pills are tested (8 patients; paper, abstract only; PMID 37812025).
+Together, at least 40% of patients have VEGFA or PDGFRA amplification in that cohort (paper, full text; PMID 31175097). In open TARGET-OS data from 81 patients at diagnosis, 23.5% carry a clear amplification of VEGFA, KDR, PDGFRA or KIT, and 47% by a looser threshold (our calculation; `reports/Copy-number changes and the kinase-pill biomarker.md`). In 8 patients followed through treatment, MYC gain was enriched in the drug-resistant clones that came back at relapse (6 of 7), and VEGFA amplification was also seen in such clones; relapse is the setting where the pills are tested (paper, abstract only; PMID 37812025).
 
 **What the lab studies show.** Most of these were read as abstracts only and were not re-checked by the audit.
 
@@ -210,7 +210,7 @@ Pooling patient-level data from the two trials could tell these apart.
 
 ## 6. The best testable idea
 
-**Hypothesis.** In relapsed osteosarcoma treated with a VEGFR2-blocking pill, tumours with extra copies of VEGFA (6p21) or of the KDR/PDGFRA/KIT region (4q12) stay progression-free substantially longer than tumours with neither. Together these two groups are about 40% of patients. A fair pre-set threshold would be a hazard ratio of 0.5 or lower. If true, this group should also account for most patients still progression-free at 12 months.
+**Hypothesis.** In relapsed osteosarcoma treated with a VEGFR2-blocking pill, tumours with extra copies of VEGFA (6p21) or of the KDR/PDGFRA/KIT region (4q12) stay progression-free substantially longer than tumours with neither. Together these two groups are between about one in four (23.5%) and nearly half (46.9%) of patients, depending on the definition (our calculation, 81 TARGET-OS tumours at diagnosis); one US cohort reports at least 40%. A fair pre-set threshold would be a hazard ratio of 0.5 or lower. If true, this group should also account for most patients still progression-free at 12 months.
 
 **Why this idea.**
 
@@ -222,7 +222,7 @@ Pooling patient-level data from the two trials could tell these apart.
 
 **How to test it, cheapest first.**
 
-1. **Use archived samples from the randomized trials** (SARC024, REGOBONE, OLIE, OAIE). Randomized trials allow the real test: does the amplification predict benefit *from the drug*, compared with placebo or chemotherapy alone, rather than just better outcomes in general? Add single-arm cohorts (CABONE, ADVL1622, ITCC-050) for the 12-month question.
+1. **Use archived samples from the randomized trials** (SARC024, REGOBONE, OLIE, OAIE). Randomized trials allow the real test: does the amplification predict benefit *from the drug*, compared with placebo or chemotherapy alone, rather than just better outcomes in general? Add single-arm cohorts (CABONE, ADVL1622, and ITCC-050's lenvatinib-alone and lenvatinib-plus-IE osteosarcoma groups) for the 12-month question. Together these trials treated about 309 osteosarcoma patients with a pill (our calculation, copy-number report).
 2. **Use centres that routinely sequence tumours** to look back at their patients who later received regorafenib or cabozantinib. For example, MSK reported the two subsets.
 3. **Stratify new trials** by amplicon status from diagnostic tissue.
 
@@ -257,6 +257,15 @@ Pooling patient-level data from the two trials could tell these apart.
 4. **Re-read the SARC024 and REGOBONE full texts** when access allows, for subgroup data.
 
 ## Change log
+
+**November 20, 2026.** Audit corrections (`research_notes/Audit/consistency_check.md`, `research_notes/Audit/audit_E_new_reports.md`).
+
+- **Amplification share:** "about 40%" replaced with the copy-number report's framing: 23.5% by our main definition and 46.9% by a looser one (81 TARGET-OS tumours at diagnosis), with MSK's "at least 40%" quoted as one cohort's figure (summary and section 6).
+- **Overlap:** "they rarely occur together" replaced; TARGET-OS found more overlap than chance, though weakly (4 of 81, p = 0.0496).
+- **MSK (Suehara 2019) labels:** now (paper, full text), PMC6825534; VEGFA given as 24% of 59 evaluable patients.
+- **Relapse clones (PMID 37812025):** MYC, not VEGFA, was enriched in resistant clones; VEGFA amplification was also seen.
+- **Naming:** title and tables now say VEGFR2-blocking throughout.
+- **Trial pool for the test:** ITCC-050's lenvatinib-plus-IE osteosarcoma cohorts named; about 309 pill-treated patients in all.
 
 **November 19, 2026.** Updated from the new-evidence scan (`reports/Whats new in osteosarcoma research.md`).
 
