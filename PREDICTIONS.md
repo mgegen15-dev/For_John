@@ -1,0 +1,38 @@
+# Predictions log
+
+*Started November 22, 2026. This is a public, dated record of what For John predicts, written before the answers are known. When trials, studies or reviewers report, each prediction will be marked right, wrong or unresolved. Entries are never edited after the fact; corrections and outcomes are added below each one with a date.*
+
+**Why keep this.** Anyone can explain results after they arrive. Committing to predictions in advance is the honest test of whether connecting the published evidence, as this project does, finds real signals. If our hit rate is poor, that is worth knowing too.
+
+**How to read it.** Each prediction states what we expect, what would prove it wrong, how and roughly when it could be tested, and our confidence: a rough probability that it turns out right, which is our judgement, not a calculation. Most are hypotheses for researchers to test. **Not medical advice.**
+
+## Predictions
+
+| # | Prediction | Would be proved wrong if | How and when it could be tested | Confidence | Status |
+|---|---|---|---|---|---|
+| P1 | In relapsed osteosarcoma treated with a VEGFR2-blocking pill (cabozantinib, regorafenib, sorafenib, lenvatinib, apatinib), patients whose tumours carry VEGFA or 4q12 (KDR/PDGFRA/KIT) amplification have longer progression-free survival than those without | A pooled analysis of 100 or more pill-treated patients finds a hazard ratio of 0.8 or higher for amplified against non-amplified | Genotyping stored samples from SARC024, REGOBONE, OLIE, OAIE, CABONE, ADVL1622 and ITCC-050 (lead 2); any time samples are analysed | 40% | Open |
+| P2 | MYC amplification is associated with shorter progression-free survival on VEGFR2-blocking pills | The same pooled analysis finds no difference or the opposite | As P1, recording MYC status | 50% | Open |
+| P3 | Blocking IL-1 or IL-6 in the weeks after amputation reduces or delays lung metastasis in pet dogs with osteosarcoma | A randomized or well-controlled canine study finds no delay in time to lung metastasis | A pet-dog study (lead 1); 2–3 years if started | 25% | Open |
+| P4 | When LRRC15-directed drugs report results in relapsed osteosarcoma (Lu-TARGO / LNTH-2403, ZL-6201, SOT106), at least one shows objective responses or clear disease control in osteosarcoma patients | All three report no responses and progression-free rates at or below the historical benchmark | Trial results, likely 2027–2029 | 55% | Open |
+| P5 | A series of patient osteosarcomas stained for PTK7 protein will show moderate-to-high staining in most tumours | A tissue-array study finds PTK7 absent or weak in most osteosarcomas | Tissue-array staining (lead 6); any time | 50% | Open |
+| P6 | Defactinib (or another clinical FAK inhibitor) delays lung metastasis in an independent osteosarcoma model or in pet dogs | Independent replication finds no effect on metastasis | Colorado State's canine studies or an independent mouse study (lead 4) | 35% | Open |
+| P7 | DKK1 blockade reduces lung metastasis when replicated in a model not owned by the two labs that first reported it | Independent replication finds no effect | Independent mouse or canine study (lead 4) | 40% | Open |
+| P8 | Adding a VEGFR2-blocking pill to first-line chemotherapy (COG AOST2032 or FOSTER's platform) does not improve overall survival, although it may improve event-free survival modestly | AOST2032 or a FOSTER arm reports a statistically significant overall-survival benefit | Trial results, late 2020s | 65% | Open |
+| P9 | The B7-H3 antibody-drug conjugate studied in ARTEMIS-011 will not show a significant overall-survival benefit in that trial's mature results | Mature results show a significant overall-survival benefit | ARTEMIS-011 mature survival data | 50% | Open |
+| P10 | Single-agent drugs without VEGFR2 activity, tested in measurable relapsed osteosarcoma, will continue to leave about 10–20% of patients progression-free at four months | A new single-agent non-VEGFR drug reaches 35% or more in a phase 2 of 30 or more patients | New phase 2 results | 75% | Open |
+| P11 | In resected lung-only relapse, single-arm trials will keep landing within the historical range (about 15–30% event-free at 12 months), regardless of mechanism | A single-arm trial of 30 or more patients reaches 45% or more event-free at 12 months | New single-arm results | 70% | Open |
+| P12 | At least one of the four large unreported randomized trials (ZKAB001 / NCT04359550, lithium / NCT01669369, Endostar / NCT01002092, the Brazilian metastatic metronomic trial / NCT03063983) will be found to have completed without showing benefit | All four report a benefit, or are confirmed never to have enrolled | Sponsor replies or later publications (lead 11) | 60% | Open |
+| P13 | More papers in the high paper-mill-risk group of genes will be retracted over the next three years than in the typical-risk group, relative to their size | Over 2027–2029, retraction rates in the two groups are similar | PubMed retraction status, re-run of `tools/paper_mill_flag.py` in 2029 | 80% | Open |
+| P14 | In dogs from NCI's COTC021/022 trials, the genome-shattering pattern described in human osteosarcoma (loss-translocation-amplification chromothripsis) is present in a substantial share of tumours | Re-analysis of the deep tumour–normal genomes finds the pattern in fewer than 10% of dogs | Re-analysis (lead 12) | 55% | Open |
+
+## Outcomes
+
+*None recorded yet. Each outcome will be added here with its date, source and verdict (right, wrong or unresolved), without changing the prediction above.*
+
+## Scorecard
+
+| Resolved | Right | Wrong | Unresolved |
+|---|---|---|---|
+| 0 | 0 | 0 | 14 |
+
+*Change log:* 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0.

@@ -13,6 +13,7 @@ Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.
 
 - **Website:** https://mgegen15-dev.github.io/For_John/
 - **Start here:** [One-page summary](SUMMARY.md) · [How this was made](HOW_THIS_WAS_MADE.md)
+- **Predictions:** [Dated, testable predictions](PREDICTIONS.md), so anyone can check our hit rate as results come in
 - **For auditors:** [Auditor's guide](AUDIT_GUIDE.md) · [Data manifest](DATA_MANIFEST.md) · frozen version: git tag `v1.0`
 - [The best leads, and who could test them](reports/Ranked%20leads%20and%20research%20partners.md): fourteen leads, scored, each matched to the institutions best placed to test it.
 
