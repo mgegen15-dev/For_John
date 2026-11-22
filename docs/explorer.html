@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence explorer · For John</title>
+<meta name="description" content="Type a gene, drug or target and see everything the For John osteosarcoma project knows about it: papers, evidence quality, trials, tumour expression, copy number, approved drugs and reports.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #6f6e69;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11,11,11,0.10);
+  --accent: #2a78d6;
+  --accent-soft: rgba(42,120,214,0.10);
+  --warn: #b4540f;
+  --bench: #d03b3b;
+  --link: #1c5cab;
+  --row-hover: rgba(11,11,11,0.035);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --muted: #a3a29b;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255,255,255,0.10);
+    --accent: #3987e5;
+    --accent-soft: rgba(57,135,229,0.16);
+    --warn: #e08a4a;
+    --bench: #e66767;
+    --link: #86b6ef;
+    --row-hover: rgba(255,255,255,0.04);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
+  --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10); --accent: #3987e5;
+  --accent-soft: rgba(57,135,229,0.16); --warn: #e08a4a; --bench: #e66767; --link: #86b6ef;
+  --row-hover: rgba(255,255,255,0.04);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+a { color: var(--link); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.wide { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+header.hero { padding: 48px 0 16px; }
+.hero h1 { font-size: clamp(34px, 7vw, 48px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em; }
+.lede { font-size: 19px; margin: 0 0 12px; }
+.note { font-size: 15px; color: var(--ink-2); border-left: 3px solid var(--axis); padding: 4px 0 4px 12px; margin: 16px 0 0; }
+nav.top { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; font-size: 15px; margin-top: 20px; }
+.theme-toggle { background: none; border: 1px solid var(--axis); color: var(--ink-2); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 14px; cursor: pointer; }
+
+.controls { padding: 16px 0 8px; }
+.search { position: relative; }
+.search label { display: block; font-weight: 600; margin-bottom: 6px; }
+.search input {
+  width: 100%; font: inherit; font-size: 18px; padding: 12px 14px; border-radius: 10px;
+  border: 1px solid var(--axis); background: var(--surface); color: var(--ink);
+}
+.search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+.hint { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+.chip {
+  font: inherit; font-size: 14px; padding: 5px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--axis); background: var(--surface); color: var(--ink-2);
+}
+.chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); font-weight: 600; }
+.chip:focus-visible, .sortbtn:focus-visible, tr.row:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.status { font-size: 15px; color: var(--ink-2); margin: 10px 0; min-height: 1.6em; }
+.msg { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.msg strong { display: block; margin-bottom: 4px; }
+
+.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+thead th { color: var(--ink-2); font-weight: 600; white-space: nowrap; position: sticky; top: 0; background: var(--surface); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tbody tr:last-child td { border-bottom: none; }
+tr.row { cursor: pointer; }
+tr.row:hover { background: var(--row-hover); }
+td.gene { font-weight: 650; white-space: nowrap; }
+td .sub { display: block; font-size: 13px; color: var(--muted); font-weight: 400; }
+.sortbtn { font: inherit; color: inherit; background: none; border: none; padding: 0; cursor: pointer; font-weight: 600; }
+.sortbtn::after { content: ""; display: inline-block; width: 1em; color: var(--muted); }
+th[aria-sort="ascending"] .sortbtn::after { content: " ▲"; }
+th[aria-sort="descending"] .sortbtn::after { content: " ▼"; }
+.sm { display: none; }
+.flag { display: inline-block; font-size: 13px; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); white-space: nowrap; }
+.flag.high { border-color: var(--bench); color: var(--bench); }
+.flag.elevated { border-color: var(--warn); color: var(--warn); }
+.flag.lead { border-color: var(--accent); color: var(--accent); }
+.more { margin: 12px 0; }
+.btn { font: inherit; font-size: 15px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--axis); background: var(--surface); color: var(--ink); cursor: pointer; }
+
+dialog#detail {
+  width: min(760px, calc(100vw - 24px)); max-height: calc(100vh - 32px); padding: 0;
+  border: 1px solid var(--border); border-radius: 14px; background: var(--surface); color: var(--ink);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+}
+dialog#detail::backdrop { background: rgba(0,0,0,0.45); }
+.dhead { position: sticky; top: 0; background: var(--surface); padding: 16px 20px 10px; border-bottom: 1px solid var(--grid); display: flex; gap: 12px; align-items: flex-start; z-index: 1; }
+.dhead h2 { margin: 0; font-size: 26px; letter-spacing: -0.01em; line-height: 1.2; }
+.dhead .aka { font-size: 14px; color: var(--muted); margin: 2px 0 0; }
+.dhead .x { margin-left: auto; flex: none; }
+.dbody { padding: 4px 20px 20px; }
+.dbody h3 { font-size: 17px; margin: 20px 0 6px; }
+.dbody p { margin: 6px 0; }
+dl.kv { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 0; margin: 0; font-size: 15px; }
+dl.kv dt, dl.kv dd { margin: 0; padding: 5px 0; border-bottom: 1px solid var(--grid); }
+dl.kv dt { color: var(--ink-2); padding-right: 12px; }
+dl.kv dd { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.leadbox { background: var(--accent-soft); border-radius: 10px; padding: 10px 14px; margin: 12px 0 4px; }
+.small { font-size: 14px; color: var(--ink-2); }
+ul.links { margin: 6px 0; padding-left: 20px; font-size: 15px; }
+ul.links li { margin: 3px 0; overflow-wrap: anywhere; }
+table.mini { font-size: 14px; margin-top: 4px; }
+table.mini th, table.mini td { padding: 4px 6px; }
+.legend-list { font-size: 14px; color: var(--ink-2); margin: 6px 0; padding-left: 20px; }
+.legend-list li { margin: 3px 0; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+section.about { padding: 24px 0; border-top: 1px solid var(--grid); margin-top: 32px; }
+section.about h2 { font-size: 22px; margin: 0 0 10px; }
+footer { padding: 24px 0 64px; border-top: 1px solid var(--grid); font-size: 14px; color: var(--ink-2); }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .lede { font-size: 17px; }
+  header.hero { padding-top: 32px; }
+  .hide-sm { display: none; }
+  .hint { display: none; }
+  .lg { display: none; }
+  .sm { display: inline; }
+  #results th, #results td { padding: 7px 6px; }
+  #results .flag { font-size: 12px; padding: 0 6px; }
+  .note { font-size: 14px; }
+  th, td { padding: 7px 8px; }
+  table { font-size: 14px; }
+  dl.kv { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  dialog#detail { width: 100vw; max-width: 100vw; max-height: 100vh; height: 100%; margin: 0; border-radius: 0; border: none; }
+  .dhead, .dbody { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <h1>Evidence explorer</h1>
+  <p class="lede">Type a gene, drug or target to see everything this project has gathered about it in one place: how much osteosarcoma research exists and of what kind, paper-mill risk, trials, how strongly tumours make it, copy-number changes, approved drugs, and the reports that discuss it.</p>
+  <p class="note"><strong>Not medical advice.</strong> These are research tables for scientists to check, not guidance about anyone's care. Data are current as of the retrieval dates in the <a href="https://github.com/mgegen15-dev/For_John/blob/main/DATA_MANIFEST.md">data manifest</a><span id="asof"></span>.</p>
+  <nav class="top" aria-label="Site">
+    <a href="./">For John home</a>
+    <a href="#about">How to read this</a>
+    <a href="https://github.com/mgegen15-dev/For_John">All reports and data</a>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+  </nav>
+</header>
+</div>
+
+<main class="wide">
+  <div class="controls">
+    <div class="search">
+      <label for="q">Search</label>
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="e.g. LRRC15, IL-6, FAK, capivasertib, lung metastasis" aria-describedby="qhint">
+      <p class="hint" id="qhint">Gene symbols, common names (HER2, FAK, B7-H3), drug names, or any word from the notes. Click a row for the full record.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Quick filters">
+      <button type="button" class="chip" data-filter="leads" aria-pressed="false">Project leads</button>
+      <button type="button" class="chip" data-filter="untried" aria-pressed="false">Has approved drug, no osteosarcoma trial</button>
+      <button type="button" class="chip" data-filter="risk" aria-pressed="false">High paper-mill risk</button>
+      <button type="button" class="chip" data-filter="surface" aria-pressed="false">Surface targets</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite">Loading data…</p>
+  </div>
+  <div id="loadError" class="msg" hidden></div>
+  <div class="tablewrap" id="tableWrap" hidden>
+    <table id="results">
+      <caption class="sr-only">Genes matching the search; click a row for details</caption>
+      <thead>
+        <tr>
+          <th scope="col" data-key="gene"><button class="sortbtn" type="button">Gene</button></th>
+          <th scope="col" class="num" data-key="papers"><button class="sortbtn" type="button">Papers</button></th>
+          <th scope="col" class="num hide-sm" data-key="in_vivo"><button class="sortbtn" type="button">Animal / patient</button></th>
+          <th scope="col" data-key="risk"><button class="sortbtn" type="button"><span class="lg">Risk flag</span><span class="sm">Risk</span></button></th>
+          <th scope="col" class="num" data-key="trials"><button class="sortbtn" type="button"><span class="lg">OS trials</span><span class="sm">Trials</span></button></th>
+          <th scope="col" class="num hide-sm" data-key="tpm"><button class="sortbtn" type="button">Tumour RNA</button></th>
+          <th scope="col" class="hide-sm" data-key="drug"><button class="sortbtn" type="button">Drugs</button></th>
+          <th scope="col" data-key="lead"><button class="sortbtn" type="button">Lead</button></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <div class="more" id="moreWrap" hidden><button type="button" class="btn" id="moreBtn">Show more</button></div>
+</main>
+
+<div class="wrap">
+<section class="about" id="about">
+  <h2>How to read this</h2>
+  <ul class="legend-list" id="legendPage"></ul>
+  <p class="small">The table is built by <code>tools/build_explorer_data.py</code> from the project's data files and can be rebuilt by anyone. Counts come from automated tagging of 33,242 PubMed papers and 758 ClinicalTrials.gov studies, so they are approximate; gene names in papers are sometimes mis-tagged. Check the original sources before relying on any number.</p>
+</section>
+<footer>
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+</footer>
+</div>
+
+<dialog id="detail" aria-labelledby="dTitle">
+  <div class="dhead">
+    <div><h2 id="dTitle"></h2><p class="aka" id="dAka"></p></div>
+    <button type="button" class="btn x" id="dClose" aria-label="Close details">Close</button>
+  </div>
+  <div class="dbody" id="dBody"></div>
+</dialog>
+
+<script>
+"use strict";
+const REPO = "https://github.com/mgegen15-dev/For_John/blob/main/";
+const PAGE = 150;
+const LEGEND = [
+  ["Confirmed", "checked against the original source."],
+  ["Lead", "supported, but needs a scientist to test it."],
+  ["Hypothesis", "a reasoned idea, not yet tested. Every project lead is a hypothesis drawn from published work, not a treatment recommendation."],
+  ["Papers", "PubMed papers mentioning osteosarcoma that are tagged with this gene (PubTator3), all years."],
+  ["Animal / patient", "papers with mouse, rat or other animal experiments, and papers with human tumour samples or patient cohorts. Dog papers are counted separately."],
+  ["MicroRNA-type", "microRNA, lncRNA or circRNA papers, the paper type most often retracted in this field."],
+  ["Risk flag", "High: at least 35% of the gene's papers since 2010 are microRNA-type, or at least 8% are retracted. Elevated: at least 20% or 4%. Typical: neither. It flags a pattern, not misconduct. Blank means the gene was not assessed."],
+  ["OS trials", "interventional ClinicalTrials.gov studies including osteosarcoma whose drug targets this gene, from a hand-curated drug-to-target map."],
+  ["Tumour RNA", "median TPM (transcripts per million) across 88 TARGET-OS patient tumours; the % is the share of tumours above 5 TPM. Above about 10 TPM is clearly made."],
+  ["Surface rank", "rank in this project's screen for cell-surface proteins made much more in tumours than in vital normal tissues (lower is better)."],
+  ["Approved drug", "best approved or late-stage drug acting on this protein (ChEMBL), from the repurposing screen. Verdicts: candidate, weak, wrong direction (the drug pushes the protein the wrong way), dead end."]
+];
+const FILTERS = {
+  leads: g => !!g.lead,
+  untried: g => g.repurposing && g.repurposing.phase === "Approved" && g.repurposing.os_trial_status === "none" && !g.trials
+                && (g.papers || 0) >= 5 && !/wrong direction|dead end/.test(g.repurposing.verdict || ""),
+  risk: g => g.risk === "high",
+  surface: g => g.surface && g.surface.rank != null
+};
+const RISK_ORDER = { high: 3, elevated: 2, typical: 1 };
+
+let DATA = [], META = {}, view = [], shown = PAGE;
+let sortKey = "papers", sortDir = -1, relevance = false;
+const active = new Set();
+
+function el(tag, attrs, text) {
+  const e = document.createElement(tag);
+  if (attrs) for (const k in attrs) { if (attrs[k] != null) e.setAttribute(k, attrs[k]); }
+  if (text != null) e.textContent = text;
+  return e;
+}
+function norm(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]/g, ""); }
+function fmt(v, suffix) { return v == null || v === "" ? "–" : (typeof v === "number" ? v.toLocaleString("en-US") : String(v)) + (suffix || ""); }
+function reportUrl(path) { return REPO + encodeURI(path); }
+function reportName(path) { return path.replace(/^(reports|briefs)\//, "").replace(/\.md$/, "").replace(/^Brief - /, "Brief: "); }
+
+function prep(g) {
+  const drugs = [];
+  if (g.repurposing) { drugs.push(g.repurposing.best_drug); (g.repurposing.other_drugs || []).forEach(d => drugs.push(d)); }
+  (g.trial_drugs || []).forEach(t => { drugs.push(t.drug); (t.also || []).forEach(a => drugs.push(a)); });
+  g._sym = norm(g.gene);
+  g._alias = (g.aliases || []).map(norm);
+  g._drugs = drugs.filter(Boolean).map(d => d.toLowerCase());
+  g._drugN = g._drugs.map(norm);
+  const r = g.repurposing || {};
+  g._text = [g.gene, (g.aliases || []).join(" "), g.note, r.target, r.mechanism, r.note, r.verdict,
+             g.lead && g.lead.title, g._drugs.join(" ")].filter(Boolean).join(" ").toLowerCase();
+  g._repText = (g.reports || []).join(" ").toLowerCase();
+  g._drugLabel = r.best_drug ? r.best_drug + (r.phase && r.phase !== "Approved" ? " (" + r.phase.toLowerCase() + ")" : "")
+               : (g.trial_drugs && g.trial_drugs.length ? g.trial_drugs[0].drug + " (in trials)" : "");
+}
+
+function score(g, qRaw, qN, words) {
+  if (!qN) return 1;
+  if (g._sym === qN) return 100;
+  if (g._alias.includes(qN)) return 90;
+  if (g._drugN.includes(qN)) return 80;
+  if (qN.length >= 2 && g._sym.startsWith(qN)) return 70 - Math.min(20, g._sym.length - qN.length);
+  if (qN.length >= 3 && g._drugN.some(d => d.startsWith(qN))) return 55;
+  if (qN.length >= 2 && g._alias.some(a => a.startsWith(qN))) return 50;
+  if (words.length && words.every(w => g._text.includes(w))) return 20 + (g.lead ? 5 : 0);
+  if (words.length && words.every(w => g._text.includes(w) || g._repText.includes(w))) return 10;
+  return 0;
+}
+
+function sortVal(g, k) {
+  switch (k) {
+    case "gene": return g.gene;
+    case "risk": return RISK_ORDER[g.risk] || 0;
+    case "drug": return g._drugLabel || "";
+    case "lead": return g.lead ? 100 - g.lead.n : -1;
+    case "in_vivo": return (g.in_vivo || 0) + (g.patient || 0);
+    default: return g[k] == null ? -Infinity : g[k];
+  }
+}
+
+function update() {
+  const qRaw = document.getElementById("q").value.trim().toLowerCase();
+  const qN = norm(qRaw);
+  const words = qRaw.split(/\s+/).filter(w => w.length > 1);
+  const out = [];
+  for (const g of DATA) {
+    let ok = true;
+    for (const f of active) if (!FILTERS[f](g)) { ok = false; break; }
+    if (!ok) continue;
+    const s = score(g, qRaw, qN, words);
+    if (s > 0) { g._score = s; out.push(g); }
+  }
+  if (qN && relevance) {
+    out.sort((a, b) => b._score - a._score || (b.papers || 0) - (a.papers || 0));
+  } else {
+    out.sort((a, b) => {
+      const x = sortVal(a, sortKey), y = sortVal(b, sortKey);
+      if (typeof x === "string" || typeof y === "string") return sortDir * String(x).localeCompare(String(y));
+      return sortDir * (x - y) || (b.papers || 0) - (a.papers || 0);
+    });
+  }
+  view = out; shown = PAGE;
+  render();
+}
+
+function flagSpan(risk) {
+  if (!risk) return el("span", { class: "sub" }, "–");
+  return el("span", { class: "flag " + risk }, risk);
+}
+
+function render() {
+  const tb = document.getElementById("tbody");
+  tb.textContent = "";
+  const n = Math.min(shown, view.length);
+  for (let i = 0; i < n; i++) {
+    const g = view[i];
+    const tr = el("tr", { class: "row", tabindex: "0", "aria-label": g.gene + ": open details" });
+    const tdG = el("td", { class: "gene" }, g.gene);
+    if (g.aliases && g.aliases.length) tdG.appendChild(el("span", { class: "sub" }, g.aliases.slice(0, 2).join(", ")));
+    tr.appendChild(tdG);
+    tr.appendChild(el("td", { class: "num" }, fmt(g.papers)));
+    tr.appendChild(el("td", { class: "num hide-sm" }, g.papers == null ? "–" : fmt(g.in_vivo) + " / " + fmt(g.patient)));
+    const tdR = el("td"); tdR.appendChild(flagSpan(g.risk)); tr.appendChild(tdR);
+    tr.appendChild(el("td", { class: "num" }, g.trials ? String(g.trials) : (g.papers != null || g.trial_drugs ? "0" : "–")));
+    const tdT = el("td", { class: "num hide-sm" }, g.tpm == null ? "–" : fmt(g.tpm));
+    if (g.pct_expr != null) tdT.appendChild(el("span", { class: "sub" }, g.pct_expr + "% of tumours"));
+    tr.appendChild(tdT);
+    const tdD = el("td", { class: "hide-sm" }, g._drugLabel || "–");
+    if (g.repurposing && g.repurposing.verdict) tdD.appendChild(el("span", { class: "sub" }, g.repurposing.verdict));
+    tr.appendChild(tdD);
+    const tdL = el("td");
+    if (g.lead) tdL.appendChild(el("span", { class: "flag lead", title: g.lead.title }, "Lead " + g.lead.n));
+    else if (g.surface && g.surface.rank != null && g.surface.rank <= 30) tdL.appendChild(el("span", { class: "sub" }, "surface #" + g.surface.rank));
+    else tdL.appendChild(el("span", { class: "sub" }, "–"));
+    tr.appendChild(tdL);
+    tr.addEventListener("click", () => openDetail(g));
+    tr.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openDetail(g); } });
+    tb.appendChild(tr);
+  }
+  const st = document.getElementById("status");
+  const q = document.getElementById("q").value.trim();
+  if (!view.length) {
+    st.textContent = q ? "Nothing matches “" + q + "”" + (active.size ? " with these filters." : ". Try a gene symbol (e.g. IL6), a common name (HER2) or a drug." )
+                       : "No genes match these filters.";
+  } else {
+    st.textContent = (view.length === DATA.length ? "All " : "") + view.length.toLocaleString("en-US") + (view.length === 1 ? " gene" : " genes") +
+      (q ? " matching “" + q + "”" : "") + (active.size ? " (filtered)" : "") +
+      (view.length > n ? ", showing the first " + n : "") + ". Click a row for details.";
+  }
+  document.getElementById("tableWrap").hidden = !view.length;
+  document.getElementById("moreWrap").hidden = view.length <= n;
+  document.querySelectorAll("#results thead th").forEach(th => {
+    th.setAttribute("aria-sort", !relevance || !norm(q) ? (th.dataset.key === sortKey ? (sortDir > 0 ? "ascending" : "descending") : "none") : "none");
+  });
+}
+
+// ---------- detail card ----------
+function kv(dl, label, value) {
+  if (value == null || value === "" || value === "–") return;
+  dl.appendChild(el("dt", null, label));
+  const dd = el("dd");
+  if (value instanceof Node) dd.appendChild(value); else dd.textContent = String(value);
+  dl.appendChild(dd);
+}
+function section(body, title) { body.appendChild(el("h3", null, title)); const dl = el("dl", { class: "kv" }); body.appendChild(dl); return dl; }
+function linkList(items) {
+  const ul = el("ul", { class: "links" });
+  for (const [text, href] of items) { const li = el("li"); li.appendChild(el("a", { href, rel: "noopener" }, text)); ul.appendChild(li); }
+  return ul;
+}
+function nctLinks(ids) {
+  const span = el("span");
+  ids.forEach((id, i) => {
+    if (i) span.appendChild(document.createTextNode(", "));
+    span.appendChild(el("a", { href: "https://clinicaltrials.gov/study/" + encodeURIComponent(id), rel: "noopener" }, id));
+  });
+  return span;
+}
+function humanKey(k) { const s = k.replace(/_/g, " "); return s.charAt(0).toUpperCase() + s.slice(1); }
+
+function openDetail(g) {
+  const dlg = document.getElementById("detail");
+  document.getElementById("dTitle").textContent = g.gene;
+  const aka = [];
+  if (g.aliases && g.aliases.length) aka.push("Also: " + g.aliases.join(", "));
+  if (g.repurposing && g.repurposing.target) aka.push(g.repurposing.target);
+  document.getElementById("dAka").textContent = aka.join(" · ");
+  const body = document.getElementById("dBody");
+  body.textContent = "";
+
+  if (g.lead) {
+    const box = el("div", { class: "leadbox" });
+    const p = el("p");
+    p.appendChild(el("strong", null, "Project lead " + g.lead.n + " of 14: "));
+    p.appendChild(document.createTextNode(g.lead.title + "."));
+    box.appendChild(p);
+    box.appendChild(el("p", { class: "small" }, "Label: " + g.lead.label + ". Score " + g.lead.score + " of 12 (evidence " + g.lead.evidence + " of 3) in the ranked leads report."));
+    body.appendChild(box);
+  }
+  if (g.note) { body.appendChild(el("h3", null, "What the project says")); body.appendChild(el("p", null, g.note)); }
+
+  if (g.papers != null || g.risk) {
+    const dl = section(body, "Osteosarcoma research on this gene");
+    kv(dl, "Papers (all years)", fmt(g.papers));
+    if (g.first_year) kv(dl, "First paper", String(g.first_year));
+    kv(dl, "Papers since 2021", g.since_2021 == null ? null : fmt(g.since_2021));
+    kv(dl, "With animal experiments", g.in_vivo == null ? null : fmt(g.in_vivo));
+    kv(dl, "With patient samples or cohorts", g.patient == null ? null : fmt(g.patient));
+    kv(dl, "With pet dogs", g.dog == null ? null : fmt(g.dog));
+    kv(dl, "MicroRNA-type papers", g.pct_ncrna == null ? null : g.pct_ncrna + "%");
+    kv(dl, "Cell-line-only or microRNA-type", g.pct_cell_or_ncrna == null ? null : g.pct_cell_or_ncrna + "%");
+    kv(dl, "Retracted papers", g.retracted == null ? null : fmt(g.retracted));
+    if (g.risk) {
+      const f = el("span"); f.appendChild(flagSpan(g.risk));
+      const rd = g.risk_detail;
+      if (rd) f.appendChild(document.createTextNode(" " + rd.pct_retracted + "% of " + rd.papers_since_2010 + " papers since 2010 retracted (95% CI " + String(rd.pct_retracted_ci95).replace("-", "–") + "%)" + (rd.fragile ? "; flag would change with one retraction fewer" : "")));
+      kv(dl, "Paper-mill risk flag", f);
+    }
+    kv(dl, "NIH grants naming it (2015–2025)", g.nih_grants == null ? null : fmt(g.nih_grants));
+  }
+
+  if (g.trials || g.trial_drugs || g.nct) {
+    const dl = section(body, "Osteosarcoma trials");
+    kv(dl, "Trials of drugs aimed at it", fmt(g.trials || 0));
+    kv(dl, "Furthest phase reached", g.best_phase);
+    if (g.nct && g.nct.length) kv(dl, "Example trials", nctLinks(g.nct));
+    if (g.trial_drugs && g.trial_drugs.length) {
+      const t = el("table", { class: "mini" });
+      const hr = el("tr"); ["Drug in trials", "Trials", "Examples"].forEach((h, i) => hr.appendChild(el("th", i === 1 ? { class: "num" } : null, h)));
+      const th = el("thead"); th.appendChild(hr); t.appendChild(th);
+      const tb = el("tbody");
+      for (const d of g.trial_drugs) {
+        const tr = el("tr");
+        const td = el("td", null, d.drug);
+        if (d.also && d.also.length) td.appendChild(el("span", { class: "sub" }, "also " + d.also.join(", ")));
+        tr.appendChild(td);
+        tr.appendChild(el("td", { class: "num" }, String(d.trials)));
+        const tdn = el("td"); tdn.appendChild(nctLinks(d.nct)); tr.appendChild(tdn);
+        tb.appendChild(tr);
+      }
+      t.appendChild(tb);
+      const wrap = el("div", { class: "tablewrap" }); wrap.style.marginTop = "8px"; wrap.appendChild(t);
+      body.appendChild(wrap);
+    }
+  }
+
+  if (g.tpm != null || g.surface) {
+    const dl = section(body, "How strongly tumours make it");
+    kv(dl, "Median in 88 patient tumours", g.tpm == null ? null : g.tpm + " TPM");
+    kv(dl, "Tumours making it (above 5 TPM)", g.pct_expr == null ? null : g.pct_expr + "%");
+    const s = g.surface;
+    if (s) {
+      kv(dl, "Surface-target shortlist rank", s.rank == null ? "not shortlisted" : "#" + s.rank);
+      kv(dl, "Highest vital normal tissue", s.max_vital_normal_tpm == null ? null : s.max_vital_normal_tpm + " TPM (" + s.worst_vital_tissue + ")");
+      kv(dl, "Tumour-vs-normal window score", s.window_score);
+      kv(dl, "Confidence it sits on the cell surface", s.surface_confidence);
+    }
+  }
+
+  if (g.copy_number) {
+    body.appendChild(el("h3", null, "Copy-number changes (81 TARGET-OS tumours" + (g.copy_number.cytoband ? ", " + g.copy_number.cytoband : "") + ")"));
+    const t = el("table", { class: "mini" });
+    const hr = el("tr"); ["Definition", "Tumours", "95% CI"].forEach((h, i) => hr.appendChild(el("th", i ? { class: "num" } : null, h)));
+    const th = el("thead"); th.appendChild(hr); t.appendChild(th);
+    const tb = el("tbody");
+    let pub = null;
+    for (const e of g.copy_number.events) {
+      const tr = el("tr");
+      tr.appendChild(el("td", null, (e.region ? e.region + ": " : "") + e.definition));
+      tr.appendChild(el("td", { class: "num" }, e.pct + "% (" + e.n + " of " + e.of + ")"));
+      tr.appendChild(el("td", { class: "num" }, e.ci));
+      tb.appendChild(tr);
+      if (e.published && !pub) pub = e.published;
+    }
+    t.appendChild(tb);
+    const wrap = el("div", { class: "tablewrap" }); wrap.appendChild(t); body.appendChild(wrap);
+    if (pub) body.appendChild(el("p", { class: "small" }, "Published comparison: " + pub));
+  }
+
+  const r = g.repurposing;
+  if (r) {
+    const dl = section(body, "Approved and late-stage drugs");
+    kv(dl, "Best drug", r.best_drug + (r.phase ? " (" + r.phase.toLowerCase() + (r.first_approval ? ", first approved " + r.first_approval : "") + ")" : ""));
+    kv(dl, "How it acts", r.mechanism || r.action);
+    kv(dl, "Taken by mouth", r.oral ? "yes" : "no");
+    if (r.boxed_warning) kv(dl, "Boxed safety warning", "yes");
+    if (r.other_drugs && r.other_drugs.length) kv(dl, "Other drugs on this target", r.other_drugs.join(", ") + (r.n_drugs > r.other_drugs.length + 1 ? " and more (" + r.n_drugs + " in all)" : ""));
+    kv(dl, "Repurposing score", r.score == null ? null : r.score + " of 100");
+    if (r.shortlist_rank) kv(dl, "Repurposing shortlist rank", "#" + r.shortlist_rank);
+    kv(dl, "Screen verdict", r.verdict);
+    kv(dl, "In osteosarcoma trials?", r.os_trial_status === "none" ? "no trial found" : r.os_trial_status);
+    if (r.os_trials && r.os_trials.length) kv(dl, "Matching trials", nctLinks(r.os_trials));
+    kv(dl, "Left off the shortlist because", r.excluded);
+    if (r.note) body.appendChild(el("p", { class: "small" }, "Review note: " + r.note));
+  }
+
+  for (const [key, title] of [["survival", "Survival analysis"], ["contradictions", "Contradictions in the literature"]]) {
+    if (!g[key] || !g[key].length) continue;
+    body.appendChild(el("h3", null, title));
+    for (const rec of g[key]) {
+      const dl = el("dl", { class: "kv" });
+      for (const k in rec) kv(dl, humanKey(k), rec[k]);
+      body.appendChild(dl);
+    }
+  }
+
+  body.appendChild(el("h3", null, "Read more"));
+  const links = [];
+  for (const p of g.reports || []) links.push(["Report: " + reportName(p), reportUrl(p)]);
+  const term = g.gene === "GD2" ? "GD2" : g.gene;
+  links.push(["PubMed: " + term + " and osteosarcoma", "https://pubmed.ncbi.nlm.nih.gov/?term=" + encodeURIComponent(term + " AND osteosarcoma")]);
+  links.push(["ClinicalTrials.gov: osteosarcoma studies mentioning " + term, "https://clinicaltrials.gov/search?cond=Osteosarcoma&term=" + encodeURIComponent(term)]);
+  if (r && r.best_drug) links.push(["ClinicalTrials.gov: osteosarcoma studies of " + r.best_drug, "https://clinicaltrials.gov/search?cond=Osteosarcoma&intr=" + encodeURIComponent(r.best_drug)]);
+  body.appendChild(linkList(links));
+
+  const det = el("details");
+  det.appendChild(el("summary", null, "What the labels mean"));
+  det.appendChild(legendList());
+  body.appendChild(det);
+  body.appendChild(el("p", { class: "small" }, "Not medical advice. Automated counts; check the original sources."));
+
+  try { history.replaceState(null, "", "#" + encodeURIComponent(g.gene)); } catch (e) {}
+  if (typeof dlg.showModal === "function") { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute("open", "");
+  body.scrollTop = 0; dlg.scrollTop = 0;
+}
+function closeDetail() {
+  const dlg = document.getElementById("detail");
+  if (dlg.open) { if (typeof dlg.close === "function") dlg.close(); else dlg.removeAttribute("open"); }
+}
+function legendList() {
+  const ul = el("ul", { class: "legend-list" });
+  for (const [k, v] of LEGEND) { const li = el("li"); li.appendChild(el("strong", null, k + ": ")); li.appendChild(document.createTextNode(v)); ul.appendChild(li); }
+  return ul;
+}
+
+// ---------- wiring ----------
+function setup() {
+  const q = document.getElementById("q");
+  let t = null;
+  q.addEventListener("input", () => { relevance = true; clearTimeout(t); t = setTimeout(update, 60); });
+  document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+    const f = b.dataset.filter;
+    if (active.has(f)) active.delete(f); else active.add(f);
+    b.setAttribute("aria-pressed", active.has(f) ? "true" : "false");
+    update();
+  }));
+  document.querySelectorAll("#results thead th").forEach(th => th.querySelector("button").addEventListener("click", () => {
+    const k = th.dataset.key;
+    if (!relevance && sortKey === k) sortDir = -sortDir;
+    else { sortKey = k; sortDir = (k === "gene" || k === "drug") ? 1 : -1; }
+    relevance = false;
+    update();
+  }));
+  document.getElementById("moreBtn").addEventListener("click", () => { shown += PAGE * 2; render(); });
+  const dlg = document.getElementById("detail");
+  document.getElementById("dClose").addEventListener("click", closeDetail);
+  dlg.addEventListener("click", e => { if (e.target === dlg) closeDetail(); });
+  dlg.addEventListener("close", () => { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} });
+  document.getElementById("legendPage").replaceWith(Object.assign(legendList(), { id: "legendPage" }));
+}
+
+(function theme() {
+  const btn = document.getElementById("themeToggle");
+  let saved = null;
+  try { saved = localStorage.getItem("forjohn-theme"); } catch (e) {}
+  if (saved) document.documentElement.setAttribute("data-theme", saved);
+  btn.addEventListener("click", () => {
+    const cur = document.documentElement.getAttribute("data-theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+  });
+})();
+
+function showError(detail) {
+  const box = document.getElementById("loadError");
+  box.textContent = "";
+  box.appendChild(el("strong", null, "The evidence table could not be loaded."));
+  box.appendChild(el("p", null, location.protocol === "file:"
+    ? "Browsers block loading data from a page opened as a file. Open the online version of the site, or serve the docs folder locally (for example: cd docs && python3 -m http.server) and visit http://localhost:8000/explorer.html."
+    : "Please reload the page. If it keeps failing, the data file docs/data/explorer.json may be missing: rebuild it with python3 tools/build_explorer_data.py."));
+  if (detail) box.appendChild(el("p", { class: "small" }, "Details: " + detail));
+  box.hidden = false;
+  document.getElementById("status").textContent = "";
+}
+
+setup();
+fetch("data/explorer.json", { cache: "no-cache" })
+  .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(d => {
+    META = d.meta || {}; DATA = d.genes || [];
+    DATA.forEach(prep);
+    if (META.manifest_date) document.getElementById("asof").textContent = " (manifest dated " + META.manifest_date + "; table built " + META.built + ")";
+    const h = decodeURIComponent((location.hash || "").slice(1));
+    if (h && !["about"].includes(h)) {
+      const g = DATA.find(x => x.gene === h);
+      if (g) { document.getElementById("q").value = g.gene; relevance = true; update(); openDetail(g); return; }
+    }
+    update();
+  })
+  .catch(err => showError(err && err.message));
+</script>
+</body>
+</html>

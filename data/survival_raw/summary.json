@@ -1,0 +1,187 @@
+{
+ "cohort": {
+  "os_event": 87,
+  "os_days": 87,
+  "efs_event": 85,
+  "metastatic": 23,
+  "age_years": 89,
+  "sex": 89,
+  "good_response": 35,
+  "protocol": 88,
+  "os_event_supp": 86,
+  "n_patients": 89,
+  "n_cn": 81,
+  "n_rna": 88,
+  "n_both": 80,
+  "deaths": 30,
+  "efs_events": 42,
+  "efs_from_supplement": 0,
+  "os_supp_differs": [
+   "TARGET-40-0A4HX8",
+   "TARGET-40-PAMJXS",
+   "TARGET-40-PAUXPZ"
+  ],
+  "exploratory_genes": [
+   [
+    "IFITM5",
+    "surface top 25"
+   ],
+   [
+    "ADAM12",
+    "surface top 25"
+   ],
+   [
+    "MRC2",
+    "surface top 25"
+   ],
+   [
+    "ULBP2",
+    "surface top 25"
+   ],
+   [
+    "CD109",
+    "surface top 25"
+   ],
+   [
+    "EPHB2",
+    "surface top 25"
+   ],
+   [
+    "CD248",
+    "surface top 25"
+   ],
+   [
+    "CD84",
+    "surface top 25"
+   ],
+   [
+    "SDC2",
+    "surface top 25"
+   ],
+   [
+    "ROBO1",
+    "surface top 25"
+   ],
+   [
+    "SLC16A1",
+    "surface top 25"
+   ],
+   [
+    "EPHA3",
+    "surface top 25"
+   ],
+   [
+    "SMO",
+    "surface top 25"
+   ],
+   [
+    "VANGL1",
+    "surface top 25"
+   ],
+   [
+    "LHFPL2",
+    "surface top 25"
+   ],
+   [
+    "RELL1",
+    "surface top 25"
+   ],
+   [
+    "ITGA4",
+    "surface top 25"
+   ],
+   [
+    "CSF1R",
+    "surface top 25"
+   ],
+   [
+    "EMP3",
+    "surface top 25"
+   ],
+   [
+    "ADGRA2",
+    "surface top 25"
+   ],
+   [
+    "SLC1A5",
+    "surface top 25"
+   ],
+   [
+    "TMEM101",
+    "surface top 25"
+   ],
+   [
+    "PIGW",
+    "surface top 25"
+   ],
+   [
+    "KEAP1",
+    "repurposing shortlist"
+   ],
+   [
+    "EPAS1",
+    "repurposing shortlist"
+   ],
+   [
+    "ROCK2",
+    "repurposing shortlist"
+   ],
+   [
+    "MMP9",
+    "repurposing shortlist"
+   ],
+   [
+    "PRKCA",
+    "repurposing shortlist"
+   ],
+   [
+    "VDR",
+    "repurposing shortlist"
+   ],
+   [
+    "JAK2",
+    "repurposing shortlist"
+   ],
+   [
+    "RARG",
+    "repurposing shortlist"
+   ],
+   [
+    "PTH1R",
+    "repurposing shortlist"
+   ],
+   [
+    "CD86",
+    "repurposing shortlist"
+   ],
+   [
+    "F3",
+    "repurposing shortlist"
+   ],
+   [
+    "RXRB",
+    "repurposing shortlist"
+   ],
+   [
+    "SOST",
+    "repurposing shortlist"
+   ],
+   [
+    "BMPR2",
+    "repurposing shortlist"
+   ],
+   [
+    "PPARA",
+    "repurposing shortlist"
+   ],
+   [
+    "PTGFR",
+    "repurposing shortlist"
+   ],
+   [
+    "IL11RA",
+    "repurposing shortlist"
+   ]
+  ]
+ }
+}

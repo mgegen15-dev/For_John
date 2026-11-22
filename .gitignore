@@ -3,3 +3,5 @@ data/surface_targets_raw/
 __pycache__/
 data/copy_number_raw/
 data/repurposing_raw/
+data/literature/pubtator_relations.jsonl
+data/literature/kg_abc_cache.json

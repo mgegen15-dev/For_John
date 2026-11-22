@@ -101,6 +101,7 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
     <a href="#pills">Kinase-inhibitor pills</a>
     <a href="#ask">What we're asking</a>
     <a href="#how">How this was made</a>
+    <a href="explorer.html">Evidence explorer</a>
     <a href="https://github.com/mgegen15-dev/For_John">All reports and data</a>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
   </nav>
@@ -191,6 +192,7 @@ const ASKS = [
   { title: "Consortia such as FOSTER and the Children's Oncology Group,", text: "to use, correct and extend the pooled control dataset." }
 ];
 const REPORTS = [
+  { title: "Evidence explorer", href: "explorer.html", local: true, text: "search any gene, drug or target and see the papers, risk flags, trials, tumour expression and drugs behind it." },
   { title: "One-page summary", href: "SUMMARY.md" },
   { title: "Ranked leads and research partners", href: "reports/Ranked leads and research partners.md", text: "the fourteen leads, scored." },
   { title: "Osteosarcoma research landscape and gaps", href: "reports/Osteosarcoma research landscape and gaps.md" },
@@ -249,7 +251,7 @@ function renderList(id, items) {
   const ul = document.getElementById(id);
   for (const it of items) {
     const li = el("li");
-    if (it.href) { const a = el("a", { href: it.href.startsWith("http") ? it.href : repo + encodeURI(it.href) }, it.title); li.appendChild(a); }
+    if (it.href) { const a = el("a", { href: it.local || it.href.startsWith("http") ? it.href : repo + encodeURI(it.href) }, it.title); li.appendChild(a); }
     else li.appendChild(el("strong", null, it.title));
     if (it.text) li.appendChild(document.createTextNode(" " + it.text));
     ul.appendChild(li);

@@ -12,6 +12,7 @@ Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.
 ## What's here
 
 - **Website:** https://mgegen15-dev.github.io/For_John/
+- **Evidence explorer:** https://mgegen15-dev.github.io/For_John/explorer.html: type a gene, drug or target to see its papers, paper-mill risk flag, trials, tumour expression, copy-number changes, approved drugs and the reports that discuss it (built by `tools/build_explorer_data.py`).
 - **Start here:** [One-page summary](SUMMARY.md) · [How this was made](HOW_THIS_WAS_MADE.md)
 - **Predictions:** [Dated, testable predictions](PREDICTIONS.md), so anyone can check our hit rate as results come in
 - **For auditors:** [Auditor's guide](AUDIT_GUIDE.md) · [Data manifest](DATA_MANIFEST.md) · frozen version: git tag `v1.0`
