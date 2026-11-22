@@ -233,7 +233,7 @@ UP = re.compile(r"\b(?:promot(?!er)|enhanc|increas|induc|activat|facilitat|stimu
                 r"contribut|augment|potentiat|elevat|trigger|boost|aggravat|exacerbat)\w*", re.I)
 DOWN = re.compile(r"\b(?:inhibit(?!ors?\b)|suppress(?!or)|reduc|decreas|attenuat|block|impair|abolish|abrogat|prevent|"
                   r"repress|down-?regulat|diminish|restrain|limit|hamper|hinder|lower|reverse|revers|"
-                  r"overc[oa]m|counteract|antagoni[sz]|curb|retard)\w*", re.I)
+                  r"overc[oa]m|counteract|antagoni[sz]|curb|retard|inactivat|deactivat|dephosphorylat|silenc|knock(?:ed)?[- ]?down)\w*", re.I)
 NEG = re.compile(r"\b(?:not|no|neither|nor|failed|without|unaffected|independent of|did not|does not|cannot|"
                  r"minimal|little|marginal|negligible|unchanged|whether)\b", re.I)
 # Words around a gene mention that invert its role: "knockdown of X inhibited ..."
@@ -241,10 +241,15 @@ FLIP_BEFORE = re.compile(r"(?:knock[- ]?down|disrupt\w* (?:of )?|silenc\w*|deple
                          r"block\w* (?:of )?|blockade of|suppress\w* of|down-?regulat\w* (?:of )?|deficien\w* "
                          r"(?:of |in )?|si-?rna|sh-?rna|(?:low|lower|reduced|decreased) (?:expression|levels?) of|"
                          r"targeting|ablat\w* (?:of )?|antagoni\w* (?:of )?|abrogat\w* (?:of )?|anti-|"
-                         r"neutrali[sz]\w* (?:of )?|delet\w* (?:of )?)\s*(?:the |of )?(?:\w+[- ])?$", re.I)
+                         r"neutrali[sz]\w* (?:of )?|delet\w* (?:of )?)\s*(?:the |of )?(?:[\w/]+[- /])?$", re.I)
 FLIP_AFTER = re.compile(r"^[\s-]*(?:knock[- ]?down|inhibitors?|inhibition|blockade|blocking|silencing|"
                         r"deficien\w*|depletion|antagonists?|(?:monoclonal )?antibod\w*|neutrali[sz]\w*|"
-                        r"deletion|null|-/-|knock[- ]?out|siRNA|shRNA|loss|low expression)\b", re.I)
+                        r"deletion|null|-/-|knock[- ]?out|siRNA|shRNA|loss|low expression|inactivation|suppression|"
+                        r"down-?regulation|silenced|depleted|knocked[- ]down)\b", re.I)
+VERB_ON = re.compile(UP.pattern + "|" + DOWN.pattern, re.I)
+MEDIATED = re.compile(r"-(?:induced|mediated|promoted|enhanced|driven|triggered|dependent)|\b(?:induced|mediated|caused) by|"
+                      r"\beffects? of\b|\brescu|\brestor|\brevert", re.I)
+OUTCOME_INHIBITED = re.compile(r"^\s*(?:inhibition|suppression|arrest|reduction|decrease|retardation|blockade)", re.I)
 SENT_SPLIT = re.compile(r"(?<=[.!?])\s+(?=[A-Z(\[])")
 PT_OUTCOME = {"MESH:D009362": "metastasis", "MESH:D009361": "metastasis"}  # Neoplasm Metastasis / Invasiveness
 PT_TUMOUR = {"MESH:D012516", "MESH:D009369", "MESH:D012509", "MESH:D001859", "MESH:D063646"}  # OS, neoplasms, sarcoma, bone neoplasms, carcinogenesis
@@ -297,11 +302,27 @@ def sentence_edges(d):
         good = [(mt.start(), mt.end(), -1) for mt in PROG_GOOD.finditer(sent)]
         found = {}
         for es, ee, nid, typ in occ:
-            flip = 1
+            flip, verb_obj = 1, False
             if typ == "gene":
                 if FLIP_BEFORE.search(sent[max(0, es - 45):es]) or FLIP_AFTER.search(sent[ee:ee + 25]):
                     flip = -1
+                else:  # gene as the object of a verb: "curcumin inhibited AKT and reduced proliferation"
+                    win = sent[max(0, es - 50):es]
+                    last = None
+                    for m in VERB_ON.finditer(win):
+                        last = m
+                    if last and not re.search(r"[,;:]|\b(?:which|that|while|whereas|but|by|in|of cells)\b", win[last.end():]) \
+                            and len(win[last.end():].split()) <= 6:
+                        flip = -1 if DOWN.match(last.group(0)) else 1
+                        verb_obj = True
+            # "PI3K/AKT pathway", "AKT signalling": a pathway named as a mediator of someone else's effect.
+            # Its direction is only trusted when a verb acts on it ("activating the PI3K/AKT pathway").
+            pathway = typ == "gene" and flip == 1 and not verb_obj and (
+                re.search(r"/\s*$", sent[max(0, es - 2):es]) or re.match(r"^(?:/|\s*-?\s*(?:signal|pathway|axis|cascade))",
+                                                                         sent[ee:ee + 20], re.I))
             for os_, oe, o, pol, selfsig in outs:
+                if pathway:
+                    break
                 if os_ < ee and oe > es:  # overlapping spans
                     continue
                 if typ == "chemical" and o == "chemoresistance" and (
@@ -309,16 +330,27 @@ def sentence_edges(d):
                     continue  # "cisplatin resistance": the drug is part of the outcome phrase
                 if selfsig:
                     gap = sent[ee:os_] if es < os_ else sent[oe:es]
-                    if len(gap) > 120 or NEG.search(gap):
+                    if len(gap) > 120 or NEG.search(gap) or (es > os_ and not re.search(
+                            r"^\W*(?:\w+\W+){0,3}?(?:of|by)\W+(?:the\W+)?(?:\w+\W+)?$", gap)):
+                        continue  # "anti-tumour effects of X" yes; "anti-tumour effects via the X pathway" no
+                    if any(ee < s0 < os_ or oe < s0 < es for s0, _, n0, _ in occ if n0 != nid):
                         continue
                     sign = pol
                 elif es < os_:  # "X promotes metastasis"
                     gap = sent[ee:os_]
-                    if len(gap) > 150 or NEG.search(gap):
+                    if len(gap) > 120 or NEG.search(gap) or MEDIATED.search(gap):
                         continue
-                    ups = [m.end() for m in UP.finditer(gap)]
-                    downs = [m.end() for m in DOWN.finditer(gap)]
+                    if any(ee < s0 < os_ for s0, _, n0, _ in occ if n0 != nid):
+                        continue  # another gene/drug sits between: X is probably not the agent
+                    if OUTCOME_INHIBITED.match(sent[oe:oe + 20]):
+                        pol = -pol  # "... cell growth inhibition"
+                    # nouns right after the gene ("AKT activation") describe the gene, not the effect
+                    ups = [m.end() for m in UP.finditer(gap) if not (m.start() < 20 and re.search(r"(?:ion|ity)$", m.group(0)))]
+                    downs = [m.end() for m in DOWN.finditer(gap) if not (m.start() < 20 and re.search(r"(?:ion|ity)$", m.group(0)))]
                     if not ups and not downs:
+                        if verb_obj and len(gap) < 60 and re.search(r"\band\b", gap):
+                            # "inhibited AKT activation and proliferation": one verb, two objects
+                            found.setdefault((nid, typ, o), []).append(pol)
                         continue
                     sign = 1 if max(ups or [-1]) > max(downs or [-1]) else -1
                     sign *= pol
@@ -461,6 +493,12 @@ def build():
 # ---------------------------------------------------------------- contradictions
 LEAD_GENES = {"IL6", "IL1A", "IL1B", "CXCL8", "CXCR1", "CXCR2", "CXCR4", "CXCL12", "PTK2", "DKK1", "AKT1", "AKT2",
               "AKT3", "MYC", "VEGFA", "KDR", "LRRC15", "PTK7", "CCNE1", "MDM2"}
+# Genes mostly used as read-outs of an outcome (apoptosis or EMT markers), not studied as causes:
+# their "contradictions" are usually the read-out moving with the outcome. Ranked down (x0.3).
+READOUT = {"CASP3", "CASP7", "CASP8", "CASP9", "BAX", "BAK1", "BCL2", "BCL2L1", "MCL1", "PARP1", "BID", "CYCS",
+           "CDKN1A", "CDKN1B", "CCND1", "CCNB1", "CDK1", "CDK2", "CDK4", "MKI67", "PCNA", "MMP2", "MMP9", "MMP7",
+           "TIMP1", "TIMP2", "CDH1", "CDH2", "VIM", "SNAI1", "SNAI2", "TWIST1", "ZEB1", "MAP1LC3A", "MAP1LC3B",
+           "BECN1", "SQSTM1", "FN1", "ACTB", "GAPDH"}
 CONTRA_OUTCOMES = set(OUTCOMES) | {"poor_prognosis"}  # 'osteosarcoma_tumour' is too vague (expression vs effect)
 RAW = "data/repurposing_raw/"
 
@@ -532,7 +570,9 @@ def contradictions(ev, tags, label, sent_store, docs):
             "outcome": o, "lead_gene": lead, "n_up": len(pos), "n_down": len(neg),
             "weight_up": round(wp, 2), "weight_down": round(wn, 2),
             "majority": "+" if wp > wn else "-", "minority_share": round(minority / (wp + wn), 3),
-            "score": round(minority, 2), "priority_score": round(minority * (2 if lead else 1), 2),
+            "readout_marker": a in READOUT,
+            "score": round(minority, 2),
+            "priority_score": round(minority * (2 if lead else 1) * (0.3 if a in READOUT else 1), 2),
             "n_up_in_vivo_patient_dog": sum(tags[p]["in_vivo"] or tags[p]["patients"] or tags[p]["dog"] for p in pos),
             "n_down_in_vivo_patient_dog": sum(tags[p]["in_vivo"] or tags[p]["patients"] or tags[p]["dog"] for p in neg),
             "n_up_ncrna": sum(tags[p]["ncrna"] for p in pos), "n_down_ncrna": sum(tags[p]["ncrna"] for p in neg),
@@ -572,6 +612,15 @@ OUTCOME_WORDS = {  # PubMed query terms for the direct-link check
     "poor_prognosis": "(survival OR prognosis)",
 }
 TOK = re.compile(r"[a-z0-9][a-z0-9\-]*")
+SALT = re.compile(r"\s+(?:anhydrous|sodium|potassium|calcium|hydrochloride|hcl|mesylate|maleate|tartrate|citrate|"
+                  r"sulfate|sulphate|phosphate|acetate|fumarate|succinate|besylate|tosylate|bromide|chloride|"
+                  r"hydrobromide|monohydrate|dihydrate|trihydrate|hemihydrate|disodium|dipotassium|meglumine|"
+                  r"lysine|tromethamine|malate|lactate|gluconate|pegol)\b.*$", re.I)
+
+
+def clean_name(n):
+    """'dacomitinib anhydrous' -> 'dacomitinib' (for display and PubMed queries)."""
+    return SALT.sub("", n).strip()
 
 
 def approved_drug_targets():
@@ -744,6 +793,13 @@ def abc_candidates():
     by_gene = C.defaultdict(list)
     for (g, o), v in bcs.items():
         by_gene[g].append((o, v))
+    # B-outcome pairs already reached by some approved drug in an OS abstract ("class already tested")
+    tested = C.defaultdict(set)
+    for cid, d in drugs.items():
+        for p, outs in hits.get(cid, {}).items():
+            for g, (sab, _, _) in d["targets"].items():
+                for o in outs:
+                    tested[(g, o)].add(clean_name(d["name"]))
     chains = []
     for cid, d in drugs.items():
         os_papers = hits.get(cid, {})
@@ -755,7 +811,8 @@ def abc_candidates():
                 if direct:
                     continue  # an OS abstract already names this drug together with this outcome
                 eff = sab * v["sign"]
-                chains.append({"drug": d["name"], "chembl_id": cid, "first_approval": d["first_approval"],
+                chains.append({"drug": clean_name(d["name"]),
+                               "same_target_drugs_in_os_with_outcome": "; ".join(sorted(tested.get((g, o), set()))[:8]), "chembl_id": cid, "first_approval": d["first_approval"],
                                "action": act, "mechanism": mech, "gene": g, "drug_to_gene": "+" if sab > 0 else "-",
                                "outcome": o, "gene_to_outcome": "+" if v["sign"] > 0 else "-",
                                "drug_effect_on_outcome": "+" if eff > 0 else "-",
@@ -769,8 +826,10 @@ def abc_candidates():
                                "os_corpus_pmids_naming_drug": ";".join(sorted(os_papers, key=int)[:10])})
     print(f"{len(chains)} candidate chains with no direct drug-outcome OS abstract")
     for c in chains:
+        c["class_already_tested"] = bool(c["same_target_drugs_in_os_with_outcome"])
         c["score"] = round(c["bc_weight"] * c["bc_consistency"] / (c["n_drug_targets"] ** 0.5)
-                           * (1.0 if c["os_corpus_papers_naming_drug"] == 0 else 0.5), 3)
+                           * (1.0 if c["os_corpus_papers_naming_drug"] == 0 else 0.5)
+                           * (0.3 if c["class_already_tested"] else 1.0), 3)
     chains.sort(key=lambda c: -c["score"])
     return chains, tags
 
@@ -813,7 +872,8 @@ def abc(n_check=30, n_broad=400):
     cols = ["rank", "score", "drug", "chembl_id", "first_approval", "action", "mechanism", "gene", "drug_to_gene",
             "outcome", "gene_to_outcome", "drug_effect_on_outcome", "beneficial", "bc_papers", "bc_papers_against",
             "bc_weight", "bc_consistency", "bc_in_vivo_patient_dog", "bc_pmids", "broad_pubs_any",
-            "broad_pubs_same_direction", "n_drug_targets", "os_corpus_papers_naming_drug", "os_corpus_pmids_naming_drug",
+            "broad_pubs_same_direction", "n_drug_targets", "class_already_tested", "same_target_drugs_in_os_with_outcome",
+            "os_corpus_papers_naming_drug", "os_corpus_pmids_naming_drug",
             "checked", "pubmed_drug_and_os", "pubmed_drug_os_outcome", "pubmed_os_titles", "review", "review_note",
             "status"]
     out = picked + [c for c in top if not c.get("checked")]

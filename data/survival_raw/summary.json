@@ -3,7 +3,7 @@
   "os_event": 87,
   "os_days": 87,
   "efs_event": 85,
-  "metastatic": 23,
+  "metastatic": 88,
   "age_years": 89,
   "sex": 89,
   "good_response": 35,
@@ -15,6 +15,7 @@
   "n_both": 80,
   "deaths": 30,
   "efs_events": 42,
+  "metastatic_yes": 23,
   "efs_from_supplement": 0,
   "os_supp_differs": [
    "TARGET-40-0A4HX8",
@@ -183,5 +184,27 @@
     "repurposing shortlist"
    ]
   ]
+ },
+ "medians": {
+  "MYC_amp": null,
+  "VEGFR_axis_amp": null,
+  "CCNE1_amp": null,
+  "PTK2_amp": null,
+  "CDKN2A_deepdel": null,
+  "FGA": 0.6709119958836158,
+  "LOH_fraction": 0.30267203844809093,
+  "RNA_PTK2": 4.469014075514991,
+  "RNA_DKK1": 3.0516516428856226,
+  "RNA_LRRC15": 7.787510122733586,
+  "RNA_PTK7": 6.546839900402674,
+  "RNA_IL6": 0.36126246884375224,
+  "RNA_IL1A": 0.21828490473893014,
+  "RNA_IL1B": 1.2776981630784163,
+  "RNA_CXCL8": 1.2474052571370327,
+  "RNA_IL6R": 2.8761023427189762,
+  "RNA_CXCR4": 5.975189499033533,
+  "RNA_AKT1": 5.413224836512252,
+  "RNA_AKT2": 4.571561339196152,
+  "RNA_AKT3": 2.8366011186629256
  }
 }

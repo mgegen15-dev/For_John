@@ -401,6 +401,9 @@ def stage_build():
             pl = float(c["ploidy"])
             rec[name] = int(c[col])
             rec[name + "_cont"] = max(float(c[k]) for k in cols) / pl
+        # post-hoc (notes section 5): MYC >= 8 absolute copies, close to the
+        # published ">7 copies" definition (Cancer 2025, PMID 41199591)
+        rec["MYC_high8"] = int(c["MYC_high8"]) if c is not None else None
         if usi in gi:
             rec["FGA"], rec["LOH_fraction"], rec["ascat_ploidy"] = gi[usi]
         else:
@@ -730,6 +733,21 @@ def control_tests(rows):
                         "km5_marker_pos": km_at(t[g == 1], e[g == 1], five),
                         "km5_marker_neg": km_at(t[g == 0], e[g == 0], five),
                         "converged": fit["converged"]})
+    # Post-hoc: MYC >= 8 copies (published-style definition), OS
+    sub = [r for r in rows if r["MYC_high8"] is not None and r["os_days"] is not None and r["metastatic"] is not None]
+    g = np.array([r["MYC_high8"] for r in sub], int)
+    t, e = _arr(sub, ["os_days"])[:, 0], _arr(sub, ["os_event"])[:, 0].astype(int)
+    chi2, p, _, _ = logrank(t, e, g)
+    fit = cox(np.column_stack([g, [r["metastatic"] for r in sub]]), t, e)
+    five = 5 * DAYS_PER_YEAR
+    out.append({"family": "post hoc: MYC published cut-off", "marker": "MYC_high8",
+                "marker_label": "MYC >= 8 copies", "marker_type": "copy number", "outcome": "OS",
+                "method": "log-rank (p); Cox HR adjusted for metastasis", "adjusted_for": "metastasis at diagnosis (HR only)",
+                "marker_definition": "MYC CN >= 8 absolute copies", "n": len(sub), "events": int(e.sum()),
+                "n_marker_pos": int(g.sum()), "events_marker_pos": int(e[g == 1].sum()),
+                "effect_measure": "HR (binary, adjusted Cox)", "effect": fit["hr"][0], "ci_low": fit["lo"][0],
+                "ci_high": fit["hi"][0], "p": p, "km5_marker_pos": km_at(t[g == 1], e[g == 1], five),
+                "km5_marker_neg": km_at(t[g == 0], e[g == 0], five), "converged": fit["converged"]})
     # Age (per 10 years) adjusted for metastasis, for context
     sub = [r for r in rows if r["age_years"] is not None and r["os_days"] is not None and r["metastatic"] is not None]
     X = np.column_stack([[r["age_years"] / 10 for r in sub], [r["metastatic"] for r in sub]])
@@ -832,7 +850,7 @@ def km_figure(path, t, e, g, labels, title, outcome, note):
     import matplotlib.pyplot as plt
     plt.rcParams.update({"font.size": 11, "svg.fonttype": "none", "font.family": "DejaVu Sans"})
     fig = plt.figure(figsize=(7.2, 5.6), facecolor="white")
-    ax = fig.add_axes([0.13, 0.36, 0.82, 0.55], facecolor="white")
+    ax = fig.add_axes([0.23, 0.36, 0.73, 0.55], facecolor="white")
     ticks = [0, 2, 4, 6, 8, 10]
     for grp, col, lab in [(1, COL_POS, labels[1]), (0, COL_NEG, labels[0])]:
         tt, ee = t[g == grp], e[g == grp]
@@ -854,18 +872,17 @@ def km_figure(path, t, e, g, labels, title, outcome, note):
     ax.text(0.99, 0.97, note, transform=ax.transAxes, ha="right", va="top", fontsize=10,
             color="#111827", bbox=dict(facecolor="white", edgecolor="#d1d5db", boxstyle="round,pad=0.4"))
     # Number at risk
-    tab = fig.add_axes([0.13, 0.06, 0.82, 0.16], facecolor="white")
+    tab = fig.add_axes([0.23, 0.06, 0.73, 0.16], facecolor="white")
     tab.set_xlim(0, 10.5)
     tab.set_ylim(-0.5, 1.6)
     tab.axis("off")
-    tab.text(-0.3, 1.45, "Number at risk", fontsize=10, fontweight="bold", ha="left")
+    tab.text(-0.3, 1.45, "Number at risk", fontsize=10, fontweight="bold", ha="right")
     for yrow, (grp, col, lab) in zip([0.8, 0.0], [(1, COL_POS, labels[1]), (0, COL_NEG, labels[0])]):
         tt = t[g == grp]
+        tab.text(-0.3, yrow, lab, ha="right", va="center", fontsize=9.5, color=col, clip_on=False)
         for x in ticks:
             tab.text(x, yrow, str(int(np.sum(tt >= x * DAYS_PER_YEAR))), ha="center", va="center",
                      fontsize=10, color=col)
-    fig.text(0.01, 0.235, labels[1], color=COL_POS, fontsize=9, ha="left")
-    fig.text(0.01, 0.135, labels[0], color=COL_NEG, fontsize=9, ha="left")
     fig.savefig(path, format="svg", facecolor="white")
     plt.close(fig)
 
@@ -877,23 +894,30 @@ def forest_figure(path, res):
     plt.rcParams.update({"font.size": 10.5, "svg.fonttype": "none", "font.family": "DejaVu Sans"})
     a = [r for r in res if r["family"].startswith("A")]
     n = len(a)
-    fig, ax = plt.subplots(figsize=(8.6, 0.36 * n + 1.6), facecolor="white")
-    fig.subplots_adjust(left=0.40, right=0.97, top=0.92, bottom=0.11)
+    fig, ax = plt.subplots(figsize=(9.0, 0.36 * n + 1.8), facecolor="white")
+    fig.subplots_adjust(left=0.36, right=0.88, top=0.92, bottom=0.12)
+    short = {"copy number": "per +1× ploidy", "genome instability": "per +10 points",
+             "RNA": "per doubling"}
     for i, r in enumerate(a):
         y = n - 1 - i
         hr, lo, hi = (float(r[k]) for k in ("effect", "ci_low", "ci_high"))
         ax.plot([lo, hi], [y, y], color="#374151", lw=1.5)
         ax.plot(hr, y, "s", color="#1d4ed8", ms=6)
-        ax.text(1.02, y, f"q={float(r['q_family']):.2f}", transform=ax.get_yaxis_transform(),
+        ax.text(1.01, y, f"q = {float(r['q_family']):.2f}", transform=ax.get_yaxis_transform(),
                 va="center", fontsize=9, color="#374151")
     ax.axvline(1, color="#9ca3af", lw=1, ls="--")
     ax.set_xscale("log")
+    ax.set_xticks([0.25, 0.5, 1, 2, 4, 8])
+    ax.set_xticklabels(["0.25", "0.5", "1", "2", "4", "8"])
+    ax.minorticks_off()
+    ax.set_xlim(0.18, 9)
     ax.set_yticks(range(n))
-    ax.set_yticklabels([f"{r['marker_label']}  ({r['marker_definition'].replace('per ', '/ ')})" for r in a][::-1],
-                       fontsize=9)
-    ax.set_xlabel("Hazard ratio for death, adjusted for metastasis at diagnosis (log scale, 95% CI)")
-    ax.set_title("Pre-specified markers and overall survival (TARGET-OS)", loc="left", fontweight="bold",
-                 fontsize=11.5)
+    ax.set_yticklabels([f"{r['marker_label'].replace('Any VEGFA/KDR/PDGFRA/KIT', 'VEGFA/4q12').replace('CDKN2A deep deletion', 'CDKN2A copies, lowest point')} ({short[r['marker_type']]})"
+                        for r in a][::-1], fontsize=9.5)
+    ax.set_xlabel("Hazard ratio for death (95% CI), adjusted for metastasis at diagnosis\n"
+                  "<1 = longer survival, >1 = shorter survival; q = BH-adjusted p", fontsize=10)
+    fig.suptitle("Pre-specified markers and overall survival, TARGET-OS", x=0.02, ha="left",
+                 fontweight="bold", fontsize=12)
     ax.grid(axis="x", color="#e5e7eb")
     ax.spines[["top", "right"]].set_visible(False)
     fig.savefig(path, format="svg", facecolor="white")
