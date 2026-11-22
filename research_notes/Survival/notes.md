@@ -1,6 +1,6 @@
 # Survival working notes (22 November 2026)
 
-Question: do the project's leads predict patient outcome in open TARGET-OS patient data? This is new evidence, not a literature summary. Script: `tools/survival_analysis.py`. Results table: `data/osteosarcoma_survival_results.csv`. Figures: `docs/figures/survival_*.svg`. Report: `reports/Do the leads predict survival.md`. Raw clinical downloads: `data/survival_raw/` (git-ignored, like the other raw folders).
+Question: do the project's leads predict patient outcome in open TARGET-OS patient data? This is new evidence, not a literature summary. Script: `tools/survival_analysis.py`. Results table: `data/osteosarcoma_survival_results.csv`. Figures: `docs/figures/survival_*.svg`. Report: `reports/Do the leads predict survival.md`. Raw clinical downloads and the per-patient table: `data/survival_raw/` (open-access, de-identified TARGET data; kept in git for reproducibility, unlike the larger raw folders).
 
 ## 0. Order of work (anti-fishing record)
 

@@ -721,7 +721,7 @@ def pubmed_titles(cache, pmids):
 ABC_REVIEW = {}
 
 
-def abc(n_check=30):
+def abc_candidates():
     tags = load_tags()
     docs = load_corpus()
     bc, _ = gene_outcome_evidence()
@@ -773,3 +773,64 @@ def abc(n_check=30):
                            * (1.0 if c["os_corpus_papers_naming_drug"] == 0 else 0.5), 3)
     chains.sort(key=lambda c: -c["score"])
     return chains, tags
+
+
+def abc(n_check=30, n_broad=400):
+    """Score A -> B -> C chains, add broad-literature support, check the top ones in PubMed."""
+    import math
+    chains, tags = abc_candidates()
+    cache = _cache()
+    top = chains[:n_broad]
+    for i, c in enumerate(top):
+        b = broad_drug_gene(cache, c["drug"]).get(c["gene"], {})
+        want = "negative_correlate" if c["drug_to_gene"] == "-" else "positive_correlate"
+        c["broad_pubs_any"] = sum(b.values())
+        c["broad_pubs_same_direction"] = b.get(want, 0)
+        c["score"] = round(c["score"] * (1 + 0.25 * math.log10(1 + c["broad_pubs_any"])), 3)
+        if i % 100 == 0:
+            print(f"  broad literature {i}/{len(top)}", flush=True)
+    top.sort(key=lambda c: -c["score"])
+    # choose distinct drug-outcome pairs, at most 3 per B gene, for the PubMed check
+    picked, per_gene, seen = [], C.Counter(), set()
+    for c in top:
+        k = (c["drug"], c["outcome"])
+        if k in seen or per_gene[c["gene"]] >= 3:
+            continue
+        seen.add(k); per_gene[c["gene"]] += 1
+        picked.append(c)
+        if len(picked) >= n_check:
+            break
+    for c in picked:
+        name = c["drug"]
+        n_os, ids = pubmed_count(cache, f'"{name}" AND osteosarcoma')
+        n_oc, ids2 = pubmed_count(cache, f'"{name}" AND osteosarcoma AND {OUTCOME_WORDS[c["outcome"]]}')
+        c["pubmed_drug_and_os"] = n_os
+        c["pubmed_drug_os_outcome"] = n_oc
+        c["pubmed_os_titles"] = " || ".join(f"{p}: {t[:120]}" for p, t in pubmed_titles(cache, ids[:5]).items())
+        c["checked"] = True
+        rv = ABC_REVIEW.get((c["drug"], c["gene"], c["outcome"]))
+        c["review"], c["review_note"] = rv if rv else ("", "")
+    cols = ["rank", "score", "drug", "chembl_id", "first_approval", "action", "mechanism", "gene", "drug_to_gene",
+            "outcome", "gene_to_outcome", "drug_effect_on_outcome", "beneficial", "bc_papers", "bc_papers_against",
+            "bc_weight", "bc_consistency", "bc_in_vivo_patient_dog", "bc_pmids", "broad_pubs_any",
+            "broad_pubs_same_direction", "n_drug_targets", "os_corpus_papers_naming_drug", "os_corpus_pmids_naming_drug",
+            "checked", "pubmed_drug_and_os", "pubmed_drug_os_outcome", "pubmed_os_titles", "review", "review_note",
+            "status"]
+    out = picked + [c for c in top if not c.get("checked")]
+    for i, c in enumerate(out, 1):
+        c["rank"] = i
+        c["status"] = "hypothesis (untested link)"
+    with open("data/osteosarcoma_hidden_links.csv", "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
+        w.writeheader(); w.writerows(out)
+    print(f"wrote {len(out)} chains ({len(picked)} PubMed-checked) -> data/osteosarcoma_hidden_links.csv")
+
+
+if __name__ == "__main__":
+    cmd = sys.argv[1] if len(sys.argv) > 1 else "all"
+    if cmd in ("fetch", "all"):
+        fetch_relations()
+    if cmd in ("build", "all"):
+        build()
+    if cmd in ("abc", "all"):
+        abc()

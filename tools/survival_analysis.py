@@ -34,7 +34,7 @@ Outputs:
 
   data/osteosarcoma_survival_results.csv     one row per test
   data/survival_raw/patients.csv             per-patient analysis table
-                                             (git-ignored, like other raw data)
+                                             (open, de-identified TARGET data)
   data/survival_raw/summary.json             numbers used by the report
   docs/figures/survival_*.svg                Kaplan-Meier plots
 
@@ -422,14 +422,14 @@ def stage_build():
                 "n_both": sum(r["has_cn"] and r["has_rna"] for r in rows),
                 "deaths": sum(1 for r in rows if r["os_event"] == 1),
                 "efs_events": sum(1 for r in rows if r["efs_event"] == 1),
-                "metastatic": sum(1 for r in rows if r["metastatic"] == 1),
+                "metastatic_yes": sum(1 for r in rows if r["metastatic"] == 1),
                 "efs_from_supplement": sum(1 for r in rows if r["efs_source"] == "supplement"),
                 "os_supp_differs": [r["case"] for r in rows if r["os_days"] is not None and r["os_days_supp"] is not None
                                     and abs(r["os_days"] - r["os_days_supp"]) > 0.5],
                 "exploratory_genes": expl})
     save_summary("cohort", cov)
     print(f"[build] {n} patients ({cov['n_cn']} CN, {cov['n_rna']} RNA); "
-          f"{cov['deaths']} deaths, {cov['efs_events']} EFS events, {cov['metastatic']} metastatic")
+          f"{cov['deaths']} deaths, {cov['efs_events']} EFS events, {cov['metastatic_yes']} metastatic of {cov['metastatic']} known")
 
 
 # ----------------------------------------------------------------- statistics
