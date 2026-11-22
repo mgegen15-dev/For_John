@@ -254,6 +254,38 @@ def main():
         rs = rows(fname)
         if not rs:
             continue
+        if key == "survival" and "marker" in rs[0]:
+            # survival output: one row per test; map markers to genes, keep pre-specified tests
+            known = {g for g in genes}
+            out_rs = []
+            for r in rs:
+                m = r["marker"]
+                if m.startswith("RNA_"):
+                    syms = [m[4:]]
+                elif m.startswith("VEGFR_axis"):
+                    syms = ["VEGFA", "KDR", "PDGFRA", "KIT"]
+                elif "_" in m and m.split("_")[0].isupper():
+                    syms = [m.split("_")[0]]
+                else:
+                    continue  # clinical or whole-genome measures (e.g. FGA = fraction of genome altered), not genes
+                ci = " (95%% CI %s to %s)" % (r["ci_low"], r["ci_high"]) if r.get("ci_low") and r.get("ci_high") else ""
+                res = "%s %s%s, p = %s" % (r.get("effect_measure", ""), r.get("effect", ""), ci, r.get("p", ""))
+                pre = bool(r.get("q_all_prespecified"))
+                for sym in syms:
+                    if sym in known:
+                        out_rs.append({"gene": sym, "test": "%s; %s" % (r.get("marker_label", ""), r.get("method", "")),
+                                       "outcome": r.get("outcome", ""), "result": res,
+                                       "corrected_q": r.get("q_all_prespecified") or r.get("q_family", ""),
+                                       "pre_specified": "yes" if pre else "no (exploratory)",
+                                       "source": "reports/Do the leads predict survival.md (our calculation, TARGET-OS)"})
+            rs = out_rs
+            if not rs:
+                continue
+        if key == "contradictions" and "entity" in rs[0]:
+            # knowledge-graph output: keep gene rows and the compact, human-readable fields
+            keepf = ("outcome", "n_up", "n_down", "majority", "classification", "classification_note")
+            rs = [dict({"gene": r["entity"]}, **{k: r.get(k, "") for k in keepf})
+                  for r in rs if r.get("entity_type") == "gene"]
         col = next((c for c in ("gene", "symbol", "gene_symbol", "target", "Gene") if c in rs[0]), None)
         if not col:
             print("skipped %s: no gene/symbol column" % fname); continue

@@ -90,6 +90,9 @@ pip install pandas
 | `tools/lung_metastasis_map.py` | `data/lung_metastasis_*.csv` | none (needs the literature fetch) | about a minute |
 | `tools/copy_number_map.py` | `data/osteosarcoma_copy_number_frequencies.csv` and the biomarker sample-size figures (`python3 tools/copy_number_map.py all`) | NCI GDC (downloads 189 open files, about 274 MB); reuses the RNA files from `tools/surface_targets.py` | several minutes |
 | `tools/repurposing_screen.py` | `data/osteosarcoma_repurposing_candidates.csv` (stages `chembl`, `build`, `pubmed`, `ctgov`, `score`) | ChEMBL, PubMed, ClinicalTrials.gov; needs the RNA summary from `tools/surface_targets.py` | about an hour (the PubMed stage takes about 40 minutes) |
+| `tools/survival_analysis.py` | `data/osteosarcoma_survival_results.csv` (lead markers against survival) | NCI GDC (open TARGET-OS clinical files, stored in `data/survival_raw/`); reuses copy-number and RNA files | a few minutes |
+| `tools/knowledge_graph.py` | `data/osteosarcoma_knowledge_graph_edges.csv`, `_contradictions.csv`, `_hidden_links.csv` (`fetch`, `build`, `abc`) | PubTator3, ChEMBL; needs the literature fetch | about an hour first time; under a minute from cache |
+| `tools/build_explorer_data.py` | `docs/data/explorer.json` (the evidence explorer) | none | seconds |
 
 Three hand-curated files are not produced by a script:
 - `data/drug_targets_curated.json`, the drug-to-target map;
