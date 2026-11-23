@@ -6,7 +6,7 @@
 <title>For John · Open osteosarcoma research</title>
 <meta name="description" content="An open, independent effort to tie together osteosarcoma research and find what has been overlooked. In memory of John.">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/">
-<meta name="theme-color" content="#ffd84a">
+<meta name="theme-color" content="#14264a">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta property="og:type" content="website">
@@ -24,156 +24,133 @@
 <meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <style>
-:root {
-  color-scheme: light;
-  --page: #fbfbf9; --surface: #ffffff; --band: #f1f0ec;
-  --ink: #111111; --ink-2: #4a4a47; --muted: #6b6b66;
-  --grid: #dcdbd4; --axis: #c3c2b7; --border: rgba(17,17,17,0.12); --rule: #111111;
-  --hl: #ffd84a;
-  --accent: #2a78d6; --series-1: #2a78d6; --series-2: #eb6834; --bench: #d03b3b; --link: #111111;
-  --ink-confirmed: #0e6b4a; --ink-lead: #1a5494; --ink-hypothesis: #a3401a;
-  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
-  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --page: #0e0e0d; --surface: #171716; --band: #1a1a18;
-    --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
-    --grid: #2e2e2b; --axis: #3a3a36; --border: rgba(255,255,255,0.12); --rule: #f0efec;
-    --hl: #f2c230;
-    --accent: #3987e5; --series-1: #3987e5; --series-2: #d95926; --bench: #e66767; --link: #f0efec;
-    --ink-confirmed: #6fd9b2; --ink-lead: #8cbcf2; --ink-hypothesis: #f09570;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --page: #0e0e0d; --surface: #171716; --band: #1a1a18;
-  --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
-  --grid: #2e2e2b; --axis: #3a3a36; --border: rgba(255,255,255,0.12); --rule: #f0efec;
-  --hl: #f2c230;
-  --accent: #3987e5; --series-1: #3987e5; --series-2: #d95926; --bench: #e66767; --link: #f0efec;
-  --ink-confirmed: #6fd9b2; --ink-lead: #8cbcf2; --ink-hypothesis: #f09570;
-}
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--page); color: var(--ink); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; border-top: 10px solid var(--hl); }
-a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hl); text-decoration-thickness: 2px; text-underline-offset: 3px; }
-a:hover { background: var(--hl); color: #111; }
-mark { background: var(--hl); color: #111; padding: 0 4px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
-.mono { font-family: var(--mono); font-size: 13px; letter-spacing: 0.01em; color: var(--ink-2); }
+/* Home page only. Shared tokens, top bar, buttons and footer are in site.css. */
+section { padding: 96px 0; }
+section.paper { background: var(--paper); }
+section.pale { background: var(--band); }
+h2 { font-size: 36px; line-height: 44px; }
+.sec-intro { max-width: 680px; margin: 16px 0 0; color: var(--ink-2); }
+.more { margin: 32px 0 0; font-size: 16px; }
+.more a { margin-right: 24px; font-weight: 500; }
 
-/* ---- masthead ---- */
-.mast { padding: 22px 0 56px; }
-.mast-top { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: baseline; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid var(--grid); }
-nav.top { display: flex; flex-wrap: wrap; gap: 6px 20px; align-items: center; font-size: 14.5px; }
-.mast h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(72px, 15.5vw, 196px); line-height: 0.92; letter-spacing: -0.045em; margin: 44px 0 0 -0.04em; }
-.dedication { font-family: var(--serif); font-size: clamp(19px, 2.4vw, 26px); line-height: 1.4; margin: 22px 0 0; color: var(--ink-2); }
-.mast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 56px; margin-top: 52px; padding-top: 24px; border-top: 2px solid var(--rule); }
-.lede { margin: 0; font-size: 18.5px; line-height: 1.6; }
-.facts { margin: 0; font-family: var(--serif); font-size: clamp(21px, 2.3vw, 27px); line-height: 1.5; letter-spacing: -0.01em; }
-.note { font-size: 14.5px; color: var(--ink-2); margin: 28px 0 0; max-width: 70ch; }
+/* ---- first screen ---- */
+.navyband { background: var(--navy); color: var(--on-navy); }
+.hero { padding: 96px 0; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; align-items: center; }
+.hero h1 { font-size: 52px; line-height: 60px; }
+.dedication { font-family: var(--serif); font-weight: 300; font-size: 22px; line-height: 30px; color: var(--gold); margin: 24px 0 0; }
+.lede { font-size: 20px; line-height: 31px; color: var(--on-navy-2); margin: 24px 0 0; max-width: 620px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+.hero-figure { margin: 0; }
+.hero-figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.hero-figure figcaption { font-size: 14.5px; line-height: 22px; color: var(--on-navy-2); margin-top: 12px; }
+.panel { background: var(--paper); color: var(--ink); border-radius: 4px; padding: 24px; }
 
-/* ---- sections: a heading column and a content column ---- */
-section { padding: 0 0 64px; }
-.sec { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 9fr); gap: 20px 56px; border-top: 2px solid var(--rule); padding-top: 22px; }
-.sec-head { position: sticky; top: 18px; align-self: start; }
-h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 2.9vw, 36px); line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 14px; }
-.sec-head p { margin: 0 0 12px; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
-.key { list-style: none; margin: 14px 0 0; padding: 0; font-size: 14.5px; line-height: 1.5; color: var(--ink-2); }
-.key li { margin: 6px 0; }
-.key b { font-weight: 600; }
-.t-confirmed { color: var(--ink-confirmed); } .t-lead { color: var(--ink-lead); } .t-hypothesis { color: var(--ink-hypothesis); }
+/* ---- plain figures ---- */
+.figures { padding: 64px 0; }
+.figs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin: 0; }
+.figs div { border-top: 1px solid var(--line); padding-top: 16px; }
+.figs dd { margin: 0; font-family: var(--serif); font-weight: 300; font-size: 56px; line-height: 60px; letter-spacing: -0.02em; font-variant-numeric: lining-nums; }
+.figs dt { margin-top: 8px; color: var(--ink-2); font-size: 16px; line-height: 24px; }
 
-/* ---- findings: ruled rows, not cards ---- */
-.finding { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 6px 24px; padding: 20px 0 22px; border-bottom: 1px solid var(--grid); }
-.finding:first-child { padding-top: 2px; }
-.tag { margin: 5px 0 0; font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--ink-2); }
+/* ---- lists: a metadata column beside the content ---- */
+.rows { margin-top: 48px; border-top: 1px solid var(--line); }
+.finding { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 10fr); gap: 8px 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.tag { margin: 6px 0 0; font-family: var(--mono); font-size: 13px; line-height: 18px; color: var(--ink-2); }
 .confirmed .tag { color: var(--ink-confirmed); } .lead .tag { color: var(--ink-lead); } .hypothesis .tag { color: var(--ink-hypothesis); }
-h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(20px, 2vw, 24px); line-height: 1.22; letter-spacing: -0.015em; margin: 0 0 6px; }
-.finding p { margin: 0; }
-.finding .src { font-size: 14.5px; margin-top: 8px; color: var(--muted); }
-.more { margin: 22px 0 0; font-size: 15.5px; }
+h3 { font: 500 22px/30px var(--sans); margin: 0; letter-spacing: -0.005em; }
+.finding p { margin: 8px 0 0; max-width: 720px; }
+.finding .src { font-size: 15px; line-height: 22px; }
+.key { display: flex; flex-wrap: wrap; gap: 8px 32px; list-style: none; margin: 24px 0 0; padding: 0; font-size: 15px; line-height: 22px; color: var(--ink-2); }
+.key b { font-family: var(--mono); font-weight: 500; font-size: 13px; }
+.t-confirmed { color: var(--ink-confirmed); } .t-lead { color: var(--ink-lead); } .t-hypothesis { color: var(--ink-hypothesis); }
 
 /* ---- chart ---- */
 .chart-wrap { position: relative; }
-.chart-title { font-weight: 600; font-size: 17px; margin: 0 0 2px; }
-.chart-sub { color: var(--ink-2); font-size: 14.5px; margin: 0 0 12px; }
+.chart-title { font-weight: 500; font-size: 17px; line-height: 24px; margin: 0 0 4px; }
+.chart-sub { color: var(--ink-2); font-size: 14.5px; line-height: 22px; margin: 0 0 12px; }
 svg text { font-family: var(--sans); }
-.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--ink-2); margin: 0 0 8px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13.5px; line-height: 20px; color: var(--ink-2); margin: 0 0 8px; }
 .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
 .legend i.bench { width: 2px; height: 14px; border-radius: 0; background: var(--bench); margin-right: 8px; }
-.tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--rule); padding: 8px 10px; font-size: 14px; opacity: 0; transition: opacity .1s; max-width: 260px; }
+.tip { position: absolute; pointer-events: none; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; font-size: 14px; line-height: 20px; opacity: 0; transition: opacity .1s; max-width: 260px; }
 .tip strong { display: block; font-size: 16px; }
 details { margin-top: 12px; font-size: 15px; }
-summary { cursor: pointer; }
-table { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
-th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
-th { color: var(--ink-2); font-weight: 600; }
+summary { cursor: pointer; color: var(--link); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 22px; margin-top: 8px; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--ink-2); font-weight: 500; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
-#chartCaption { font-size: 15.5px; color: var(--ink-2); margin: 16px 0 0; max-width: 68ch; }
+.pills-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: start; }
+#chartCaption { color: var(--ink-2); margin: 16px 0 0; }
+.hero .panel #chartCaption { display: none; }
 
 /* ---- asks ---- */
-ol.asks { list-style: none; counter-reset: ask; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 44px; }
-ol.asks li { counter-increment: ask; position: relative; margin: 0; padding: 14px 0 16px 46px; border-bottom: 1px solid var(--grid); font-size: 16px; line-height: 1.5; }
-ol.asks li::before { content: counter(ask); position: absolute; left: 0; top: 8px; font-family: var(--serif); font-weight: 600; font-size: 28px; line-height: 1.2; font-variant-numeric: lining-nums; }
+ol.asks { list-style: none; counter-reset: ask; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 64px; border-top: 1px solid var(--line); }
+ol.asks li { counter-increment: ask; position: relative; margin: 0; padding: 24px 0 24px 64px; border-bottom: 1px solid var(--line); }
+ol.asks li::before { content: counter(ask); position: absolute; left: 0; top: 16px; font-family: var(--serif); font-weight: 300; font-size: 36px; line-height: 44px; color: var(--ink-2); }
+ol.asks strong { font-weight: 500; }
 
 /* ---- methods and report index ---- */
-.linkrow { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 26px; padding: 0; margin: 18px 0 0; font-weight: 600; font-size: 16px; }
-.linkrow li { margin: 0; }
-#reportList { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 44px; }
-.rep-group > h3 { font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: 0.01em; color: var(--ink-2); margin: 0 0 6px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+.linkrow { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 0; margin: 24px 0 0; font-weight: 500; }
+#reportList { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 64px; margin-top: 48px; }
+.rep-group > h3 { font: 400 13px/18px var(--mono); color: var(--ink-2); padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .rep-group ul { list-style: none; margin: 0; padding: 0; }
-.rep-group li { margin: 0; padding: 9px 0; border-bottom: 1px solid var(--grid); font-size: 16px; line-height: 1.4; }
-.rep-group li a { font-weight: 600; }
-.rep-group li span { display: block; color: var(--ink-2); font-size: 14px; margin-top: 3px; }
+.rep-group li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.rep-group li a { font-weight: 500; text-decoration: none; }
+.rep-group li a:hover { text-decoration: underline; }
+.rep-group li span { display: block; color: var(--ink-2); font-size: 14.5px; line-height: 22px; margin-top: 4px; }
 
-footer { border-top: 2px solid var(--rule); padding: 20px 0 56px; font-size: 14px; color: var(--ink-2); }
-footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 40px; justify-content: space-between; }
-footer p { margin: 0; }
-.theme-toggle { background: none; border: 1px solid var(--rule); color: var(--ink); border-radius: 2px; padding: 3px 12px; font: inherit; font-size: 14px; cursor: pointer; }
-.theme-toggle:hover { background: var(--hl); color: #111; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.skip { position: absolute; left: -9999px; top: 0; z-index: 20; background: var(--hl); color: #111; padding: 12px 18px; font-weight: 600; }
-.skip:focus { left: 0; }
-
-/* ---- left-margin rail ---- */
+/* ---- left-margin rail on very wide screens ---- */
 .rail { display: none; }
-@media (min-width: 1240px) {
-  .rail { display: block; position: fixed; left: 26px; top: 50%; transform: translateY(-50%); width: 170px; z-index: 5; opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
+@media (min-width: 1680px) {
+  .rail { display: block; position: fixed; left: 32px; top: 50%; transform: translateY(-50%); width: 160px; z-index: 5; opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
   .rail.show { opacity: 1; visibility: visible; }
   .rail ol { list-style: none; margin: 0; padding: 0; }
-  .rail a { display: block; padding: 6px 0 6px 12px; border-left: 3px solid var(--grid); font-size: 14px; line-height: 1.35; color: var(--muted); text-decoration: none; }
-  .rail a:hover { color: var(--ink); background: none; }
-  .rail a.active { color: var(--ink); font-weight: 600; border-left-color: var(--hl); }
-  .rail .rail-end { margin-top: 12px; }
-  .wrap { margin-left: 222px; margin-right: 28px; }
+  .rail a { display: block; padding: 8px 0 8px 12px; border-left: 2px solid var(--line); font-size: 14px; line-height: 20px; color: var(--muted); text-decoration: none; }
+  .rail a:hover { color: var(--ink); }
+  .rail a.active { color: var(--ink); font-weight: 500; border-left-color: var(--gold); }
 }
-@media (min-width: 1600px) { .wrap { margin-left: auto; margin-right: auto; } }
 
-@media (max-width: 860px) {
-  .mast-grid, .sec, ol.asks, #reportList { grid-template-columns: 1fr; }
-  .sec-head { position: static; }
-  section { padding-bottom: 48px; }
+@media (max-width: 960px) {
+  .hero-grid, .pills-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .figs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  ol.asks, #reportList { grid-template-columns: 1fr; }
 }
-@media (max-width: 520px) {
-  body { font-size: 16px; }
-  .wrap { padding: 0 18px; }
-  .mast h1 { margin-top: 30px; }
-  .finding { grid-template-columns: 1fr; gap: 2px; }
-  .tag { margin: 0; order: 2; }
-}
-@media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+@media (max-width: 760px) {
+  section, .hero { padding: 56px 0; }
+  .figures { padding: 48px 0; }
+  .hero h1 { font-size: 34px; line-height: 40px; }
+  h2 { font-size: 27px; line-height: 34px; }
+  .dedication { font-size: 19px; line-height: 27px; }
+  .lede { font-size: 18px; line-height: 28px; }
+  .figs dd { font-size: 40px; line-height: 44px; }
+  .finding { grid-template-columns: 1fr; }
+  .tag { margin: 0; }
+  ol.asks li { padding-left: 48px; }
+  .panel { padding: 16px; }
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="./">For John</a>
+    <nav aria-label="Site">
+      <a href="#findings">Findings</a>
+      <a href="#reports">Reports</a>
+      <a href="explorer.html">Evidence Explorer</a>
+      <a href="how-this-was-made.html">Methods</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+    <a class="btn btn-gold" href="audit-guide.html">Review This Work</a>
+  </div>
+</header>
 
 <nav class="rail" id="rail" aria-label="On This Page">
   <ol>
@@ -183,60 +160,60 @@ footer p { margin: 0; }
     <li><a href="#how">How This Was Made</a></li>
     <li><a href="#reports">The Reports</a></li>
   </ol>
-  <div class="rail-end"><a href="explorer.html">Evidence Explorer</a></div>
 </nav>
 
-<header class="mast hero">
- <div class="wrap">
-  <div class="mast-top">
-    <span class="mono">Open osteosarcoma research · Version 1.0 · November 2026</span>
-    <nav class="top" aria-label="Sections">
-      <a href="#findings">What We Found</a>
-      <a href="#ask">What We're Asking</a>
-      <a href="#reports">The Reports</a>
-      <a href="explorer.html">Evidence Explorer</a>
-      <a href="https://github.com/mgegen15-dev/For_John">Source and Data</a>
-      <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
-    </nav>
-  </div>
-  <h1>For John</h1>
-  <p class="dedication">In memory of my little brother and best friend, John.</p>
-  <div class="mast-grid">
+<div class="navyband hero">
+ <div class="wrap hero-grid">
+  <div>
+    <h1>Connecting decades of osteosarcoma research to find what has been overlooked.</h1>
+    <p class="dedication">In memory of my little brother and best friend, John.</p>
     <p class="lede">For John was created in honor of John Gegen. Researchers have spent decades building knowledge about osteosarcoma, often in separate labs, trials and journals. I’m leveraging frontier AI models to bring that work together, connect the dots between studies, and carry the connections to the people who can test them.</p>
-    <p class="facts">Built from <mark>33,242 papers</mark>, <mark>758 clinical trials</mark>, NIH grant records and open tumour data. The result is <mark>14 ranked leads</mark> across <mark>16 reports</mark>, with every claim traced to its source.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="summary.html">Read the Summary</a>
+      <a class="btn btn-line" href="reports/ranked-leads-and-research-partners.html">See the Ranked Leads</a>
+    </div>
   </div>
-  <p class="note"><strong>Not medical advice.</strong> Nothing here is a recommendation about any patient's care. Findings are leads for researchers to check, not conclusions.</p>
+  <!-- First-screen image. To use a photograph, save it as docs/john.jpg and set HERO_PHOTO in the script below. -->
+  <figure class="hero-figure" id="heroFigure"></figure>
  </div>
-</header>
+</div>
 
 <main id="main">
 
-<section id="findings">
- <div class="wrap"><div class="sec">
-  <div class="sec-head">
-    <h2>What We Found</h2>
-    <p>Seven findings, each labelled for how solid it is.</p>
-    <ul class="key">
-      <li><b class="t-confirmed">Confirmed</b>: checked against the original source.</li>
-      <li><b class="t-lead">Lead</b>: supported, but needs a scientist to test it.</li>
-      <li><b class="t-hypothesis">Hypothesis</b>: a reasoned idea, not yet tested.</li>
-    </ul>
-  </div>
-  <div>
-    <div id="findingsList"><!-- filled from findings data below --></div>
-    <p class="more"><a href="summary.html">Read the One-Page Summary</a> &nbsp; <a href="reports/ranked-leads-and-research-partners.html">See All Fourteen Ranked Leads</a></p>
-  </div>
- </div></div>
+<section class="figures" aria-label="The project in numbers">
+ <div class="wrap">
+  <dl class="figs">
+    <div><dd>33,242</dd><dt>papers read</dt></div>
+    <div><dd>758</dd><dt>clinical trials</dt></div>
+    <div><dd>14</dd><dt>ranked leads</dt></div>
+    <div><dd>16</dd><dt>reports, every claim sourced</dt></div>
+  </dl>
+ </div>
+</section>
+
+<section id="findings" class="paper">
+ <div class="wrap">
+  <h2>What We Found</h2>
+  <p class="sec-intro">Seven findings, each labelled for how solid it is. Not medical advice: these are leads for researchers to check, not conclusions.</p>
+  <ul class="key">
+    <li><b class="t-confirmed">Confirmed</b> checked against the original source</li>
+    <li><b class="t-lead">Lead</b> supported, but needs a scientist to test it</li>
+    <li><b class="t-hypothesis">Hypothesis</b> a reasoned idea, not yet tested</li>
+  </ul>
+  <div class="rows" id="findingsList"><!-- filled from findings data below --></div>
+  <p class="more"><a href="summary.html">Read the One-Page Summary</a><a href="reports/ranked-leads-and-research-partners.html">See All Fourteen Ranked Leads</a></p>
+ </div>
 </section>
 
 <section id="pills">
- <div class="wrap"><div class="sec">
-  <div class="sec-head">
-    <h2>Kinase-Inhibitor Pills: Active, but Briefly</h2>
-    <p>The one drug class that clearly beats older single drugs in relapse, and the open question of who it works for.</p>
-    <p><a href="reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html">Read the Full Analysis</a></p>
-  </div>
+ <div class="wrap pills-grid">
   <div>
+    <h2>Kinase-Inhibitor Pills: Active, but Briefly</h2>
+    <p class="sec-intro">The one drug class that clearly beats older single drugs in relapse, and the open question of who it works for.</p>
+    <p id="chartCaption"></p>
+    <p class="more"><a href="reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html">Read the Full Analysis</a></p>
+  </div>
+  <div id="chartHome">
     <div class="chart-wrap" id="chartCard">
       <p class="chart-title">Patients free of progression about four months into treatment, relapsed osteosarcoma</p>
       <p class="chart-sub">Pooled from published trials and registry results, weighted by patients. The red line is the historical benchmark of about 12%.</p>
@@ -248,56 +225,45 @@ footer p { margin: 0; }
         <table id="chartTable"><thead><tr><th>Treatment</th><th class="num">Patients</th><th class="num">4-month rate</th></tr></thead><tbody></tbody></table>
       </details>
     </div>
-    <p id="chartCaption"></p>
   </div>
- </div></div>
+ </div>
 </section>
 
-<section id="ask">
- <div class="wrap"><div class="sec">
-  <div class="sec-head">
-    <h2>What We're Asking</h2>
-    <p>Six requests, in order of priority. Something here wrong or useful? <a href="https://github.com/mgegen15-dev/For_John/issues">Open an issue on GitHub</a>. Corrections are as valuable as confirmations.</p>
-  </div>
-  <div>
-    <ol class="asks" id="askList"></ol>
-    <p class="more">Details of each ask are in the <a href="summary.html">summary</a>.</p>
-  </div>
- </div></div>
+<section id="ask" class="pale">
+ <div class="wrap">
+  <h2>What We're Asking</h2>
+  <p class="sec-intro">Six requests, in order of priority. Something here wrong or useful? <a href="https://github.com/mgegen15-dev/For_John/issues">Open an issue on GitHub</a>. Corrections are as valuable as confirmations.</p>
+  <ol class="asks" id="askList"></ol>
+  <p class="more"><a href="summary.html">Details of Each Ask</a></p>
+ </div>
 </section>
 
 <section id="how">
- <div class="wrap"><div class="sec">
-  <div class="sec-head">
-    <h2>How This Was Made</h2>
-  </div>
-  <div>
-    <p style="margin:0;max-width:68ch">Built by John Gegen’s brother, leveraging frontier AI models, from 33,242 papers, 758 registered trials, NIH grant records and open tumour data. Every headline claim was audited against its original source in review passes run by AI models, and each report ends with a change log of what was corrected. No independent person has checked the work yet. That is the next step, and we are asking for it.</p>
-    <ul class="linkrow">
-      <li><a href="how-this-was-made.html">Methods and Limits</a></li>
-      <li><a href="audit-guide.html">Auditor's Guide</a></li>
-      <li><a href="predictions.html">Predictions Log</a></li>
-      <li><a href="data-manifest.html">Data Manifest</a></li>
-    </ul>
-  </div>
- </div></div>
+ <div class="wrap">
+  <h2>How This Was Made</h2>
+  <p class="sec-intro">Built by John Gegen’s brother, leveraging frontier AI models, from 33,242 papers, 758 registered trials, NIH grant records and open tumour data. Every headline claim was audited against its original source in review passes run by AI models, and each report ends with a change log of what was corrected. No independent person has checked the work yet. That is the next step, and we are asking for it.</p>
+  <ul class="linkrow">
+    <li><a href="how-this-was-made.html">Methods and Limits</a></li>
+    <li><a href="audit-guide.html">Auditor's Guide</a></li>
+    <li><a href="predictions.html">Predictions Log</a></li>
+    <li><a href="data-manifest.html">Data Manifest</a></li>
+  </ul>
+ </div>
 </section>
 
-<section id="reports">
- <div class="wrap"><div class="sec">
-  <div class="sec-head">
-    <h2>The Reports</h2>
-    <p>Every claim traces to a source, and each report ends with a log of what we got wrong and fixed.</p>
-  </div>
+<section id="reports" class="paper">
+ <div class="wrap">
+  <h2>The Reports</h2>
+  <p class="sec-intro">Every claim traces to a source, and each report ends with a log of what we got wrong and fixed.</p>
   <div id="reportList"></div>
- </div></div>
+ </div>
 </section>
 
 </main>
 
-<footer>
+<footer class="site">
  <div class="wrap">
-  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
   <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
  </div>
 </footer>
@@ -369,6 +335,10 @@ const CHART = {
   caption: "Taken alone, the pills beat other single drugs at four months, but standard relapse chemotherapy does about as well, and in both randomized pill-plus-chemotherapy trials survival was not improved. Rates are pooled across trials that measured progression slightly differently, so treat them as approximate."
 };
 
+// First-screen image. Leave empty to show the chart there. To use a photograph, save it in docs/
+// (for example docs/john.jpg) and set: { src: "john.jpg", alt: "…", caption: "…" }.
+const HERO_PHOTO = null;
+
 // ---------- Rendering ----------
 const repo = "https://github.com/mgegen15-dev/For_John/blob/main/";
 const PAGES = { "SUMMARY.md": "summary.html", "HOW_THIS_WAS_MADE.md": "how-this-was-made.html", "AUDIT_GUIDE.md": "audit-guide.html", "PREDICTIONS.md": "predictions.html", "DATA_MANIFEST.md": "data-manifest.html", "reports/Approved drugs worth testing in osteosarcoma.md": "reports/approved-drugs-worth-testing-in-osteosarcoma.html", "reports/Contradictions and hidden links in the osteosarcoma literature.md": "reports/contradictions-and-hidden-links-in-the-osteosarcoma-literature.html", "reports/Copy-number changes and the kinase-pill biomarker.md": "reports/copy-number-changes-and-the-kinase-pill-biomarker.html", "reports/Do the leads predict survival.md": "reports/do-the-leads-predict-survival.html", "reports/Dog genome re-analysis scope.md": "reports/dog-genome-re-analysis-scope.html", "reports/Evidence risk flags for osteosarcoma genes.md": "reports/evidence-risk-flags-for-osteosarcoma-genes.html", "reports/NIH funding for osteosarcoma.md": "reports/nih-funding-for-osteosarcoma.html", "reports/New surface targets for osteosarcoma.md": "reports/new-surface-targets-for-osteosarcoma.html", "reports/Osteosarcoma clinical trials landscape.md": "reports/osteosarcoma-clinical-trials-landscape.html", "reports/Osteosarcoma literature map.md": "reports/osteosarcoma-literature-map.html", "reports/Osteosarcoma pooled control dataset.md": "reports/osteosarcoma-pooled-control-dataset.html", "reports/Osteosarcoma research landscape and gaps.md": "reports/osteosarcoma-research-landscape-and-gaps.html", "reports/Ranked leads and research partners.md": "reports/ranked-leads-and-research-partners.html", "reports/Stopping lung metastasis in osteosarcoma.md": "reports/stopping-lung-metastasis-in-osteosarcoma.html", "reports/Whats new in osteosarcoma research.md": "reports/whats-new-in-osteosarcoma-research.html", "reports/Why kinase-inhibitor pills work in osteosarcoma.md": "reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html", "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md": "briefs/brief-pet-dog-trial-of-fak-or-dkk1-blockade.html" };
@@ -431,7 +401,7 @@ function renderChart() {
   host.textContent = "";
   const rows = CHART.rows;
   if (!rows.length) return;
-  const W = Math.max(280, host.clientWidth), narrow = W < 520;
+  const W = Math.max(240, host.clientWidth), narrow = W < 520;
   const labelW = narrow ? 0 : Math.min(190, W * 0.42), barH = 22, gap = narrow ? 34 : 18, labelUp = narrow ? 20 : 0;
   const top = 8, H = top + rows.length * (barH + gap) + 28, plotW = W - labelW - 56;
   const ns = "http://www.w3.org/2000/svg";
@@ -530,6 +500,24 @@ renderFindings();
 renderList("askList", ASKS);
 renderReports(REPORTS);
 renderTable();
+(function heroImage() {
+  const fig = document.getElementById("heroFigure");
+  if (HERO_PHOTO && HERO_PHOTO.src) {
+    fig.appendChild(el("img", { src: HERO_PHOTO.src, alt: HERO_PHOTO.alt || "" }));
+    if (HERO_PHOTO.caption) fig.appendChild(el("figcaption", null, HERO_PHOTO.caption));
+    return;
+  }
+  // No photograph yet: the chart moves up to the first screen and its own section is hidden.
+  const panel = el("div", { class: "panel" });
+  panel.appendChild(document.getElementById("chartCard"));
+  fig.appendChild(panel);
+  const cap = el("figcaption");
+  cap.appendChild(document.createTextNode("One finding from the pooled trial record. "));
+  cap.appendChild(el("a", { href: "reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html", style: "color:inherit" }, "Read the full analysis"));
+  fig.appendChild(cap);
+  document.getElementById("pills").hidden = true;
+  const r = document.querySelector('#rail a[href="#pills"]'); if (r) r.parentNode.hidden = true;
+})();
 renderChart();
 addEventListener("resize", () => renderChart());
 
@@ -540,7 +528,7 @@ addEventListener("resize", () => renderChart());
   const links = Array.from(rail.querySelectorAll("ol a"));
   const sections = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
 
-  const hero = document.querySelector("header.hero");
+  const hero = document.querySelector(".hero");
   if (hero) {
     new IntersectionObserver(
       es => es.forEach(e => rail.classList.toggle("show", !e.isIntersecting)),

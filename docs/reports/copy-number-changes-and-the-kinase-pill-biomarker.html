@@ -6,7 +6,7 @@
 <title>Copy-Number Changes in Osteosarcoma, and How to Test Them as a Kinase-Pill Biomarker · For John</title>
 <meta name="description" content="Built from open-access NCI GDC copy-number and RNA data for the TARGET-OS project, published genomic studies and ClinicalTrials.gov records. Written November 19, 2026. Script:…">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/copy-number-changes-and-the-kinase-pill-biomarker.html">
-<meta name="theme-color" content="#ffd84a">
+<meta name="theme-color" content="#14264a">
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../icon-180.png">
 <meta property="og:type" content="article">
@@ -21,28 +21,31 @@
 <meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
 <link rel="stylesheet" href="../doc.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to Content</a>
 
-<header class="docbar">
-  <div class="docbar-in">
-    <a class="home" href="../index.html">For John</a>
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
     <nav aria-label="Site">
-      <a href="../index.html">Home</a>
+      <a href="../index.html#findings">Findings</a>
+      <a href="../index.html#reports">Reports</a>
       <a href="../explorer.html">Evidence Explorer</a>
-      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and Data</a>
+      <a href="../how-this-was-made.html">Methods</a>
     </nav>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
   </div>
 </header>
 
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-we-used">What We Used</a></li><li class="l1"><a href="#1-the-pill-target-genes-how-often-and-do-they-overlap">1. The Pill-Target Genes: How Often, and Do They Overlap?</a></li><li class="l1"><a href="#2-other-actionable-copy-number-changes">2. Other Actionable Copy-Number Changes</a></li><li class="l1"><a href="#3-does-extra-dna-mean-more-rna">3. Does Extra DNA Mean More RNA?</a></li><li class="l1"><a href="#4-design-note-for-lead-2-how-many-patients-from-which-trials">4. Design Note for Lead 2: How Many Patients, from Which Trials?</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#reproduce">Reproduce</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb"><a href="../index.html">Home</a> · Report</p>
+    <p class="crumb">Report · <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Copy-number%20changes%20and%20the%20kinase-pill%20biomarker.md">reports/Copy-number changes and the kinase-pill biomarker.md</a></p>
     <h1>Copy-Number Changes in Osteosarcoma, and How to Test Them as a Kinase-Pill Biomarker</h1>
     <p><em>Built from open-access NCI GDC copy-number and RNA data for the TARGET-OS project, published genomic studies and ClinicalTrials.gov records. Written November 19, 2026. Script: <code>tools/copy_number_map.py</code>. Table: <code>data/osteosarcoma_copy_number_frequencies.csv</code>. Working notes with quotes and every number: <code>research_notes/Copy number/notes.md</code>. This is groundwork for lead 2 in <code>reports/Ranked leads and research partners.md</code>.</em></p>
     <h2 id="summary">Summary</h2>
@@ -601,23 +604,23 @@
   </main>
 </div>
 
-<footer>
-  <div class="docbar-in">
-    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
-    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
-  </div>
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+ </div>
 </footer>
 
 <script>
 (function () {
   var btn = document.getElementById("themeToggle"), root = document.documentElement;
-  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
   btn.addEventListener("click", function () {
     var dark = root.getAttribute("data-theme") === "dark" ||
       (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
-    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
   });
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {

@@ -6,7 +6,7 @@
 <title>How This Was Made · For John</title>
 <meta name="description" content="For John is an open, independent project. This page explains who built it, how, from what, how claims were checked, and what its limits are, so that anyone can judge how much to trust it. Who…">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/how-this-was-made.html">
-<meta name="theme-color" content="#ffd84a">
+<meta name="theme-color" content="#14264a">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta property="og:type" content="article">
@@ -21,28 +21,31 @@
 <meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="doc.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to Content</a>
 
-<header class="docbar">
-  <div class="docbar-in">
-    <a class="home" href="index.html">For John</a>
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="index.html">For John</a>
     <nav aria-label="Site">
-      <a href="index.html">Home</a>
+      <a href="index.html#findings">Findings</a>
+      <a href="index.html#reports">Reports</a>
       <a href="explorer.html">Evidence Explorer</a>
-      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and Data</a>
+      <a href="how-this-was-made.html">Methods</a>
     </nav>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+    <a class="btn btn-gold" href="audit-guide.html">Review This Work</a>
   </div>
 </header>
 
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#who">Who</a></li><li class="l1"><a href="#from-what">From What</a></li><li class="l1"><a href="#how-claims-were-checked">How Claims Were Checked</a></li><li class="l1"><a href="#what-the-ai-did-well-and-where-it-went-wrong">What the AI Did Well, and Where It Went Wrong</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#re-running-the-analyses">Re-Running the Analyses</a></li><li class="l1"><a href="#contact-and-corrections">Contact and Corrections</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb"><a href="index.html">Home</a> · Document</p>
+    <p class="crumb">Document · <a href="https://github.com/mgegen15-dev/For_John/blob/main/HOW_THIS_WAS_MADE.md">HOW_THIS_WAS_MADE.md</a></p>
     <h1>How This Was Made</h1>
     <p><em>For John is an open, independent project. This page explains who built it, how, from what, how claims were checked, and what its limits are, so that anyone can judge how much to trust it.</em></p>
     <h2 id="who">Who</h2>
@@ -277,23 +280,23 @@
   </main>
 </div>
 
-<footer>
-  <div class="docbar-in">
-    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
-    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
-  </div>
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+ </div>
 </footer>
 
 <script>
 (function () {
   var btn = document.getElementById("themeToggle"), root = document.documentElement;
-  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
   btn.addEventListener("click", function () {
     var dark = root.getAttribute("data-theme") === "dark" ||
       (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
-    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
   });
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {

@@ -6,7 +6,7 @@
 <title>Stopping Lung Metastasis in Osteosarcoma: What Is Known, What Has Been Tried, and What Has Been Missed · For John</title>
 <meta name="description" content="November 14, 2026. Built from 33,242 PubMed records in data/literature/osteosarcoma_pubtator.jsonl, the 758 registered studies in data/osteosarcoma_trials.csv, and live ClinicalTrials.gov API…">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/stopping-lung-metastasis-in-osteosarcoma.html">
-<meta name="theme-color" content="#ffd84a">
+<meta name="theme-color" content="#14264a">
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../icon-180.png">
 <meta property="og:type" content="article">
@@ -21,28 +21,31 @@
 <meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
 <link rel="stylesheet" href="../doc.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to Content</a>
 
-<header class="docbar">
-  <div class="docbar-in">
-    <a class="home" href="../index.html">For John</a>
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
     <nav aria-label="Site">
-      <a href="../index.html">Home</a>
+      <a href="../index.html#findings">Findings</a>
+      <a href="../index.html#reports">Reports</a>
       <a href="../explorer.html">Evidence Explorer</a>
-      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and Data</a>
+      <a href="../how-this-was-made.html">Methods</a>
     </nav>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
   </div>
 </header>
 
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#1-the-biology-what-actually-has-in-vivo-metastasis-evidence">1. The Biology: What Actually Has in Vivo Metastasis Evidence</a></li><li class="l1"><a href="#the-best-evidenced-mechanisms">The Best-Evidenced Mechanisms</a></li><li class="l1"><a href="#the-lung-niche-circuit-in-order">The Lung Niche Circuit, in Order</a></li><li class="l1"><a href="#ezrin-the-oldest-lung-metastasis-mechanism-and-the-drug-that-never-came">Ezrin, the Oldest Lung-Metastasis Mechanism, and the Drug That Never Came</a></li><li class="l1"><a href="#a-methodological-finding-that-undercuts-a-lot-of-the-rest">A Methodological Finding That Undercuts a Lot of the Rest</a></li><li class="l1"><a href="#single-cell-and-cross-species-data-the-newest-and-least-used">Single-Cell and Cross-Species Data: The Newest and Least Used</a></li><li class="l1"><a href="#2-the-clinic-every-lung-directed-and-resected-metastasis-trial-we-could-find">2. The Clinic: Every Lung-Directed and Resected-Metastasis Trial We Could Find</a></li><li class="l1"><a href="#lung-directed-delivery-forty-years-mostly-negative">Lung-Directed Delivery: Forty Years, Mostly Negative</a></li><li class="l1"><a href="#the-resected-lung-metastasis-setting">The Resected-Lung-Metastasis Setting</a></li><li class="l1"><a href="#radiotherapy-to-lung-metastases">Radiotherapy to Lung Metastases</a></li><li class="l1"><a href="#two-delivery-routes-almost-nobody-discusses">Two Delivery Routes Almost Nobody Discusses</a></li><li class="l1"><a href="#3-detection-does-finding-lung-relapse-earlier-help">3. Detection: Does Finding Lung Relapse Earlier Help?</a></li><li class="l1"><a href="#4-drugs-that-exist-and-have-no-osteosarcoma-efficacy-trial">4. Drugs That Exist and Have No Osteosarcoma Efficacy Trial</a></li><li class="l1"><a href="#the-platelet-axis-the-most-complete-untested-chain-in-the-file">The Platelet Axis: The Most Complete Untested Chain in the File</a></li><li class="l1"><a href="#5-the-top-gaps-as-hypotheses">5. The Top Gaps, as Hypotheses</a></li><li class="l1"><a href="#6-limits">6. Limits</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb"><a href="../index.html">Home</a> · Report</p>
+    <p class="crumb">Report · <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Stopping%20lung%20metastasis%20in%20osteosarcoma.md">reports/Stopping lung metastasis in osteosarcoma.md</a></p>
     <h1>Stopping Lung Metastasis in Osteosarcoma: What Is Known, What Has Been Tried, and What Has Been Missed</h1>
     <p><em>November 14, 2026. Built from 33,242 PubMed records in <code>data/literature/osteosarcoma_pubtator.jsonl</code>, the 758 registered studies in <code>data/osteosarcoma_trials.csv</code>, and live ClinicalTrials.gov API v2, PubMed E-utilities and Europe PMC REST API queries run on the date above. Script: <code>tools/lung_metastasis_map.py</code>. Data written: <code>data/lung_metastasis_mechanisms.csv</code>, <code>data/lung_metastasis_papers.csv</code>, <code>data/lung_metastasis_trials.csv</code>. Full working notes with every citation: <code>research_notes/Lung metastasis/notes.md</code>.</em></p>
     <p><strong>How to read the labels.</strong> Key numbers carry one of these tags: <strong>(registry)</strong> means taken from a public record, here ClinicalTrials.gov or PubMed; <strong>(paper, full text)</strong> means the full article was read; <strong>(paper, abstract only)</strong> means only the abstract was available, which is true of nearly every publication cited here; <strong>(press release only)</strong> means a company or news announcement with no peer-reviewed publication; <strong>(our calculation)</strong> means we counted or derived it from the data files above; <strong>(preprint, abstract only)</strong> means only the abstract of a preprint, which is not peer-reviewed, was read. Findings are separated from hypotheses throughout.</p>
@@ -613,23 +616,23 @@
   </main>
 </div>
 
-<footer>
-  <div class="docbar-in">
-    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
-    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
-  </div>
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+ </div>
 </footer>
 
 <script>
 (function () {
   var btn = document.getElementById("themeToggle"), root = document.documentElement;
-  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
   btn.addEventListener("click", function () {
     var dark = root.getAttribute("data-theme") === "dark" ||
       (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
-    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
   });
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {

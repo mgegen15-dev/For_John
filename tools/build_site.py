@@ -95,7 +95,7 @@ TEMPLATE = """<!doctype html>
 <title>{title} · For John</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{site}{out}">
-<meta name="theme-color" content="#ffd84a">
+<meta name="theme-color" content="#14264a">
 <link rel="icon" href="{up}icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{up}icon-180.png">
 <meta property="og:type" content="article">
@@ -110,28 +110,31 @@ TEMPLATE = """<!doctype html>
 <meta name="twitter:image" content="{site}og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{up}site.css">
 <link rel="stylesheet" href="{up}doc.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to Content</a>
 
-<header class="docbar">
-  <div class="docbar-in">
-    <a class="home" href="{up}index.html">For John</a>
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="{up}index.html">For John</a>
     <nav aria-label="Site">
-      <a href="{up}index.html">Home</a>
+      <a href="{up}index.html#findings">Findings</a>
+      <a href="{up}index.html#reports">Reports</a>
       <a href="{up}explorer.html">Evidence Explorer</a>
-      <a href="{repo}">Source and Data</a>
+      <a href="{up}how-this-was-made.html">Methods</a>
     </nav>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+    <a class="btn btn-gold" href="{up}audit-guide.html">Review This Work</a>
   </div>
 </header>
 
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol>{toc}</ol></nav>
   <main id="main" class="doc">
-    <p class="crumb"><a href="{up}index.html">Home</a> · {kind}</p>
+    <p class="crumb">{kind} · <a href="{repo}{srcq}">{src}</a></p>
     <h1>{title}</h1>
 {body}
     <hr>
@@ -139,23 +142,23 @@ TEMPLATE = """<!doctype html>
   </main>
 </div>
 
-<footer>
-  <div class="docbar-in">
-    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
-    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
-  </div>
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+ </div>
 </footer>
 
 <script>
 (function () {{
   var btn = document.getElementById("themeToggle"), root = document.documentElement;
-  try {{ var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); }} catch (e) {{}}
+  try {{ var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); }} catch (e) {{}}
   btn.addEventListener("click", function () {{
     var dark = root.getAttribute("data-theme") === "dark" ||
       (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
-    try {{ localStorage.setItem("fj-theme", next); }} catch (e) {{}}
+    try {{ localStorage.setItem("forjohn-theme", next); }} catch (e) {{}}
   }});
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {{

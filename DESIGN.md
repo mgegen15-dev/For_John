@@ -190,8 +190,20 @@ For John is an open research project with a personal reason behind it. It sits b
 7. Light and dark versions both checked, text contrast 4.5:1 or better.
 8. No item on the "Do not" list is present.
 
-## Open decisions
+## Where the system lives
 
-- **A photograph of John.** Every charity in the set leads with a face. It would be the strongest single change, and it is the family's decision.
-- **The headline sentence.** It needs to say what the project does in one line, as CureSearch's does. A draft: "Connecting decades of osteosarcoma research to find what has been overlooked."
-- **A short web address.** A domain such as forjohn.org would replace the long GitHub address in the top bar and in emails.
+- `docs/site.css` holds the shared colours, type, top bar, buttons and footer. Every page loads it.
+- `docs/index.html` (home), `docs/doc.css` with `tools/build_site.py` (report pages) and `docs/explorer.html` add only what is particular to them.
+- A left-margin section list appears on the home page on very wide screens (1,680px and up). It is an addition to the references, kept because it helps on a long page.
+
+## Pending
+
+These are waiting on a decision or on something only the family can supply. The site works without them.
+
+| Item | Status | What happens meanwhile |
+|---|---|---|
+| A photograph of John, or of John and Michael, on the first screen | Waiting for the photo | The project's chart sits in that place. To switch, save the photo in `docs/` and set `HERO_PHOTO` in `docs/index.html`; the chart then returns to its own section. |
+| The headline sentence | Draft in use: "Connecting decades of osteosarcoma research to find what has been overlooked." | Change the `<h1>` in `docs/index.html` and the text in the link-preview image. |
+| A short web address (for example forjohn.org) | Not bought | The site stays at mgegen15-dev.github.io/For_John. |
+| An outside review of the design | Not run | An AI usability test (TheySaid) is connected and can be run on the live site once approved. |
+| Dark-mode check of every report page | Home, one report and the explorer checked | The rest share the same stylesheet. |

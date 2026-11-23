@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="For John">
-  <rect width="64" height="64" fill="#ffd84a"/>
-  <text x="32" y="47" text-anchor="middle" fill="#111111"
-        font-family="IBM Plex Serif, Georgia, serif" font-size="42" font-weight="600">J</text>
+  <rect width="64" height="64" rx="4" fill="#14264a"/>
+  <text x="32" y="46" text-anchor="middle" fill="#f7c020"
+        font-family="Source Serif 4, Georgia, serif" font-size="42" font-weight="400">J</text>
 </svg>
