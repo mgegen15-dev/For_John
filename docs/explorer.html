@@ -182,16 +182,16 @@ footer { padding: 24px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to Content</a>
 <div class="wrap">
 <header class="hero">
-  <h1>Evidence explorer</h1>
+  <h1>Evidence Explorer</h1>
   <p class="lede">Type a gene, drug or target to see everything this project has gathered about it in one place: how much osteosarcoma research exists and of what kind, paper-mill risk, trials, how strongly tumours make it, copy-number changes, approved drugs, and the reports that discuss it.</p>
   <p class="note"><strong>Not medical advice.</strong> These are research tables for scientists to check, not guidance about anyone's care. Data are current as of the retrieval dates in the <a href="https://github.com/mgegen15-dev/For_John/blob/main/DATA_MANIFEST.md">data manifest</a><span id="asof"></span>.</p>
   <nav class="top" aria-label="Site">
-    <a href="./">For John home</a>
-    <a href="#about">How to read this</a>
-    <a href="https://github.com/mgegen15-dev/For_John">All reports and data</a>
+    <a href="./">For John Home</a>
+    <a href="#about">How to Read This</a>
+    <a href="https://github.com/mgegen15-dev/For_John">All Reports and Data</a>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
   </nav>
 </header>
@@ -205,10 +205,10 @@ footer { padding: 24px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
       <p class="hint" id="qhint">Gene symbols, common names (HER2, FAK, B7-H3), drug names, or any word from the notes. Click a row for the full record.</p>
     </div>
     <div class="chips" role="group" aria-label="Quick filters">
-      <button type="button" class="chip" data-filter="leads" aria-pressed="false">Project leads</button>
-      <button type="button" class="chip" data-filter="untried" aria-pressed="false">Has approved drug, no osteosarcoma trial</button>
-      <button type="button" class="chip" data-filter="risk" aria-pressed="false">High paper-mill risk</button>
-      <button type="button" class="chip" data-filter="surface" aria-pressed="false">Surface targets</button>
+      <button type="button" class="chip" data-filter="leads" aria-pressed="false">Project Leads</button>
+      <button type="button" class="chip" data-filter="untried" aria-pressed="false">Has Approved Drug, No Osteosarcoma Trial</button>
+      <button type="button" class="chip" data-filter="risk" aria-pressed="false">High Paper-Mill Risk</button>
+      <button type="button" class="chip" data-filter="surface" aria-pressed="false">Surface Targets</button>
     </div>
     <p class="status" id="status" role="status" aria-live="polite">Loading data…</p>
   </div>
@@ -220,9 +220,9 @@ footer { padding: 24px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
         <tr>
           <th scope="col" data-key="gene"><button class="sortbtn" type="button">Gene</button></th>
           <th scope="col" class="num" data-key="papers"><button class="sortbtn" type="button">Papers</button></th>
-          <th scope="col" class="num hide-sm" data-key="in_vivo"><button class="sortbtn" type="button">Animal / patient</button></th>
-          <th scope="col" data-key="risk"><button class="sortbtn" type="button"><span class="lg">Risk flag</span><span class="sm">Risk</span></button></th>
-          <th scope="col" class="num" data-key="trials"><button class="sortbtn" type="button"><span class="lg">OS trials</span><span class="sm">Trials</span></button></th>
+          <th scope="col" class="num hide-sm" data-key="in_vivo"><button class="sortbtn" type="button">Animal / Patient</button></th>
+          <th scope="col" data-key="risk"><button class="sortbtn" type="button"><span class="lg">Risk Flag</span><span class="sm">Risk</span></button></th>
+          <th scope="col" class="num" data-key="trials"><button class="sortbtn" type="button"><span class="lg">OS Trials</span><span class="sm">Trials</span></button></th>
           <th scope="col" class="num hide-sm" data-key="tpm"><button class="sortbtn" type="button">Tumour RNA</button></th>
           <th scope="col" class="hide-sm" data-key="drug"><button class="sortbtn" type="button">Drugs</button></th>
           <th scope="col" data-key="lead"><button class="sortbtn" type="button">Lead</button></th>
@@ -236,7 +236,7 @@ footer { padding: 24px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
 
 <div class="wrap">
 <section class="about" id="about">
-  <h2>How to read this</h2>
+  <h2>How to Read This</h2>
   <ul class="legend-list" id="legendPage"></ul>
   <p class="small">The table is built by <code>tools/build_explorer_data.py</code> from the project's data files and can be rebuilt by anyone. Counts come from automated tagging of 33,242 PubMed papers and 758 ClinicalTrials.gov studies, so they are approximate; gene names in papers are sometimes mis-tagged. Check the original sources before relying on any number.</p>
 </section>
@@ -454,7 +454,7 @@ function openDetail(g) {
     box.appendChild(el("p", { class: "small" }, "Label: " + g.lead.label + ". Score " + g.lead.score + " of 12 (evidence " + g.lead.evidence + " of 3) in the ranked leads report."));
     body.appendChild(box);
   }
-  if (g.note) { body.appendChild(el("h3", null, "What the project says")); body.appendChild(el("p", null, g.note)); }
+  if (g.note) { body.appendChild(el("h3", null, "What the Project Says")); body.appendChild(el("p", null, g.note)); }
 
   if (g.papers != null || g.risk) {
     const dl = section(body, "Osteosarcoma research on this gene");
@@ -551,7 +551,7 @@ function openDetail(g) {
     if (r.note) body.appendChild(el("p", { class: "small" }, "Review note: " + r.note));
   }
 
-  for (const [key, title] of [["survival", "Survival analysis"], ["contradictions", "Contradictions in the literature"]]) {
+  for (const [key, title] of [["survival", "Survival Analysis"], ["contradictions", "Contradictions in the Literature"]]) {
     if (!g[key] || !g[key].length) continue;
     body.appendChild(el("h3", null, title));
     for (const rec of g[key]) {
@@ -561,7 +561,7 @@ function openDetail(g) {
     }
   }
 
-  body.appendChild(el("h3", null, "Read more"));
+  body.appendChild(el("h3", null, "Read More"));
   const links = [];
   for (const p of g.reports || []) links.push(["Report: " + reportName(p), reportUrl(p)]);
   const term = g.gene === "GD2" ? "GD2" : g.gene;
@@ -571,7 +571,7 @@ function openDetail(g) {
   body.appendChild(linkList(links));
 
   const det = el("details");
-  det.appendChild(el("summary", null, "What the labels mean"));
+  det.appendChild(el("summary", null, "What the Labels Mean"));
   det.appendChild(legendList());
   body.appendChild(det);
   body.appendChild(el("p", { class: "small" }, "Not medical advice. Automated counts; check the original sources."));

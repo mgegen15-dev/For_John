@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>New surface targets for osteosarcoma · For John</title>
+<title>New Surface Targets for Osteosarcoma · For John</title>
 <meta name="description" content="Built November 13–14, 2026 from open data: 88 TARGET-OS tumour RNA-seq samples (NCI GDC), GTEx v8 normal-tissue medians, Human Protein Atlas surface annotation, ClinicalTrials.gov API v2 (trial…">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/new-surface-targets-for-osteosarcoma.html">
 <meta name="theme-color" content="#0f2a44">
@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="../icon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="For John">
-<meta property="og:title" content="New surface targets for osteosarcoma · For John">
+<meta property="og:title" content="New Surface Targets for Osteosarcoma · For John">
 <meta property="og:description" content="Built November 13–14, 2026 from open data: 88 TARGET-OS tumour RNA-seq samples (NCI GDC), GTEx v8 normal-tissue medians, Human Protein Atlas surface annotation, ClinicalTrials.gov API v2 (trial…">
 <meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/new-surface-targets-for-osteosarcoma.html">
 <meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
@@ -25,25 +25,25 @@
 <link rel="stylesheet" href="../doc.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to Content</a>
 
 <header class="docbar">
   <div class="docbar-in">
     <a class="home" href="../index.html">For John</a>
     <nav aria-label="Site">
       <a href="../index.html">Home</a>
-      <a href="../explorer.html">Evidence explorer</a>
-      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and Data</a>
     </nav>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
   </div>
 </header>
 
 <div class="doclayout">
-  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#why-this-screen">Why this screen</a></li><li class="l1"><a href="#method">Method</a></li><li class="l1"><a href="#how-the-comparison-genes-ranked">How the comparison genes ranked</a></li><li class="l1"><a href="#results-top-25-surface-candidates-outside-the-comparison-set">Results: top 25 surface candidates outside the comparison set</a></li><li class="l1"><a href="#how-much-the-ranking-depends-on-our-choices">How much the ranking depends on our choices</a></li><li class="l1"><a href="#the-five-leads-in-plain-terms">The five leads, in plain terms</a></li><li class="l1"><a href="#1-lrrc15-the-top-hit-and-already-in-osteosarcoma-trials">1. LRRC15: the top hit, and already in osteosarcoma trials</a></li><li class="l1"><a href="#2-ifitm5-the-most-interesting-new-hit-with-a-built-in-caveat">2. IFITM5: the most interesting new hit, with a built-in caveat</a></li><li class="l1"><a href="#3-adam12-modest-expression-good-specificity-on-our-main-measure">3. ADAM12: modest expression, good specificity on our main measure</a></li><li class="l1"><a href="#4-ptk7-the-one-you-could-test-fastest">4. PTK7: the one you could test fastest</a></li><li class="l1"><a href="#5-cd248-endosialin-tem1-an-antibody-already-tested-and-it-did-not-help-in-sarcoma">5. CD248 / endosialin (TEM1): an antibody already tested, and it did not help in sarcoma</a></li><li class="l1"><a href="#also-worth-a-look">Also worth a look</a></li><li class="l1"><a href="#candidates-that-are-probably-artefacts">Candidates that are probably artefacts</a></li><li class="l1"><a href="#caveats">Caveats</a></li><li class="l1"><a href="#reproducing-this">Reproducing this</a></li><li class="l1"><a href="#what-would-make-this-real">What would make this real</a></li><li class="l1"><a href="#change-log">Change log</a></li></ol></nav>
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#why-this-screen">Why This Screen</a></li><li class="l1"><a href="#method">Method</a></li><li class="l1"><a href="#how-the-comparison-genes-ranked">How the Comparison Genes Ranked</a></li><li class="l1"><a href="#results-top-25-surface-candidates-outside-the-comparison-set">Results: Top 25 Surface Candidates Outside the Comparison Set</a></li><li class="l1"><a href="#how-much-the-ranking-depends-on-our-choices">How Much the Ranking Depends on Our Choices</a></li><li class="l1"><a href="#the-five-leads-in-plain-terms">The Five Leads, in Plain Terms</a></li><li class="l1"><a href="#1-lrrc15-the-top-hit-and-already-in-osteosarcoma-trials">1. LRRC15: The Top Hit, and Already in Osteosarcoma Trials</a></li><li class="l1"><a href="#2-ifitm5-the-most-interesting-new-hit-with-a-built-in-caveat">2. IFITM5: The Most Interesting New Hit, with a Built-In Caveat</a></li><li class="l1"><a href="#3-adam12-modest-expression-good-specificity-on-our-main-measure">3. ADAM12: Modest Expression, Good Specificity on Our Main Measure</a></li><li class="l1"><a href="#4-ptk7-the-one-you-could-test-fastest">4. PTK7: The One You Could Test Fastest</a></li><li class="l1"><a href="#5-cd248-endosialin-tem1-an-antibody-already-tested-and-it-did-not-help-in-sarcoma">5. CD248 / Endosialin (TEM1): An Antibody Already Tested, and It Did Not Help in Sarcoma</a></li><li class="l1"><a href="#also-worth-a-look">Also Worth a Look</a></li><li class="l1"><a href="#candidates-that-are-probably-artefacts">Candidates That Are Probably Artefacts</a></li><li class="l1"><a href="#caveats">Caveats</a></li><li class="l1"><a href="#reproducing-this">Reproducing This</a></li><li class="l1"><a href="#what-would-make-this-real">What Would Make This Real</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
     <p class="crumb"><a href="../index.html">Home</a> · Report</p>
-    <h1>New surface targets for osteosarcoma</h1>
+    <h1>New Surface Targets for Osteosarcoma</h1>
     <p><em>Built November 13–14, 2026 from open data: 88 TARGET-OS tumour RNA-seq samples (NCI GDC), GTEx v8
     normal-tissue medians, Human Protein Atlas surface annotation, ClinicalTrials.gov API v2 (trial
     statuses re-checked November 14, 2026). Script: <code>tools/surface_targets.py</code>. Full table:
@@ -77,7 +77,7 @@
       above.
     - <strong>(preprint, abstract only)</strong>: we read only the abstract of a preprint, which has not been
       peer-reviewed.</p>
-    <h2 id="why-this-screen">Why this screen</h2>
+    <h2 id="why-this-screen">Why This Screen</h2>
     <p>No new agent has become standard treatment for osteosarcoma in the US since the 1980s;
     mifamurtide was approved in the EU in 2009 for non-metastatic disease (registry). Most of the
     drug trials are not antibodies at all. The most-trialled targets are blood-vessel receptors hit
@@ -122,7 +122,7 @@
        CDH11, which we added because they are known mesenchymal or sarcoma antigens. They are scored
        alongside the candidates and flagged in the output table.</li>
     </ol>
-    <h2 id="how-the-comparison-genes-ranked">How the comparison genes ranked</h2>
+    <h2 id="how-the-comparison-genes-ranked">How the Comparison Genes Ranked</h2>
     <p>These numbers come from the same pipeline as the candidate list (our calculation).</p>
     <div class="tablewrap"><table>
     <thead>
@@ -261,7 +261,7 @@
     blood (neutrophils are full of alkaline phosphatase) and 52 TPM in liver (registry). But GTEx
     contains no bone, cartilage or osteoblast tissue. Any bone-restricted antigen therefore looks
     cleaner here than it is. That applies most of all to IFITM5 below.</p>
-    <h2 id="results-top-25-surface-candidates-outside-the-comparison-set">Results: top 25 surface candidates outside the comparison set</h2>
+    <h2 id="results-top-25-surface-candidates-outside-the-comparison-set">Results: Top 25 Surface Candidates Outside the Comparison Set</h2>
     <p>Ranked by therapeutic-window score (our calculation). This is the <code>rank_shortlist</code> column in the
     CSV: genes outside the comparison set, with plasma-membrane support (high or medium tier), after
     dropping genes the HPA classes as housekeeping. That filter mostly removes nuclear-pore, Golgi,
@@ -634,7 +634,7 @@
     (paper, full text; Mooney et al., <em>Cell Rep</em> 2026, PMID 42647168). In our screen it has 565 TPM
     in 98.9% of tumours (our calculation). So the HPA-based surface call was wrong for TMEM119, and
     the shortlist should be re-run with it admitted.</p>
-    <h2 id="how-much-the-ranking-depends-on-our-choices">How much the ranking depends on our choices</h2>
+    <h2 id="how-much-the-ranking-depends-on-our-choices">How Much the Ranking Depends on Our Choices</h2>
     <p>The ranks of the top two candidates hold up; most of the others depend on which normal tissues
     count. Re-ranking the same table under alternative choices gives these overall ranks out of
     2,434 (our calculation; <code>python3 tools/surface_targets.py sensitivity</code>):</p>
@@ -713,8 +713,8 @@
     uterus (116 TPM) and CD248 in fat (365 TPM). Adding fibroblasts moves ADAM12 to 213. So three of
     the five leads below (ADAM12, PTK7, CD248) depend on treating those tissues as acceptable
     exposure. LRRC15 and IFITM5 stay in the top three under every variant we tried.</p>
-    <h2 id="the-five-leads-in-plain-terms">The five leads, in plain terms</h2>
-    <h3 id="1-lrrc15-the-top-hit-and-already-in-osteosarcoma-trials">1. LRRC15: the top hit, and already in osteosarcoma trials</h3>
+    <h2 id="the-five-leads-in-plain-terms">The Five Leads, in Plain Terms</h2>
+    <h3 id="1-lrrc15-the-top-hit-and-already-in-osteosarcoma-trials">1. LRRC15: The Top Hit, and Already in Osteosarcoma Trials</h3>
     <p>220 TPM in tumours, expressed in 97.7% of them, against 0.8 TPM in the worst vital tissue and 3.1
     TPM in fibroblasts (our calculation). That is a 122-fold window as scored (272-fold on the raw
     medians, before the pseudocount), the best in the dataset. LRRC15 is a known ADC target, and
@@ -766,7 +766,7 @@
     clone, scoring H-score and % positive cells. Before that, ask Lantheus and SOTIO whether they will
     publish their screening staining data; SOT106 enrols only LRRC15-positive tumours, so SOTIO must
     have an assay.</p>
-    <h3 id="2-ifitm5-the-most-interesting-new-hit-with-a-built-in-caveat">2. IFITM5: the most interesting new hit, with a built-in caveat</h3>
+    <h3 id="2-ifitm5-the-most-interesting-new-hit-with-a-built-in-caveat">2. IFITM5: The Most Interesting New Hit, with a Built-In Caveat</h3>
     <p>657 TPM in tumours, 88.6% expressing, 2.6 TPM in the worst vital tissue and <strong>0.0 TPM in
     fibroblasts</strong> (our calculation; GTEx registry). IFITM5 (also called BRIL) is an osteoblast
     membrane protein, and a recurrent variant in it causes osteogenesis imperfecta type V (paper,
@@ -787,7 +787,7 @@
     2026), so an osteoblast protein may be lower in exactly the lesions a drug would treat (our
     inference). Since no antibody is ready, the cheapest next step is RNA in-situ staining of tumours,
     metastases and paediatric growth plate.</p>
-    <h3 id="3-adam12-modest-expression-good-specificity-on-our-main-measure">3. ADAM12: modest expression, good specificity on our main measure</h3>
+    <h3 id="3-adam12-modest-expression-good-specificity-on-our-main-measure">3. ADAM12: Modest Expression, Good Specificity on Our Main Measure</h3>
     <p>35 TPM in tumours but in 98.9% of them, against 1.8 TPM in the worst vital tissue (a brain
     region) and 9 TPM in the worst tissue overall (our calculation). HPA gives it <code>Enhanced</code> IHC
     reliability, the top grade (registry), but that grade rests on three antibodies whose staining
@@ -800,7 +800,7 @@
     naming ADAM12 uses it as a biomarker (registry). ADAM12 is a sheddase involved in invasion, which
     also means a soluble form may circulate and soak up an antibody. That is worth checking before
     investing.</p>
-    <h3 id="4-ptk7-the-one-you-could-test-fastest">4. PTK7: the one you could test fastest</h3>
+    <h3 id="4-ptk7-the-one-you-could-test-fastest">4. PTK7: The One You Could Test Fastest</h3>
     <p>93 TPM in tumours, 98.9% expressing, 39 TPM in lung as the worst vital tissue (our calculation).
     The window is modest (2.3-fold), and PTK7 is also 116 TPM in uterus and 72 TPM in fibroblasts,
     so its rank depends on which tissues count. What makes it a lead is that <strong>three PTK7-directed
@@ -824,7 +824,7 @@
     five osteosarcoma papers in our PubTator-tagged set name PTK7 (our calculation), and a PubMed search for
     "PTK7 AND osteosarcoma" returns one record, from 2008 (registry, November 20, 2026). Testing an existing drug is a cheaper
     experiment than building one for a new antigen.</p>
-    <h3 id="5-cd248-endosialin-tem1-an-antibody-already-tested-and-it-did-not-help-in-sarcoma">5. CD248 / endosialin (TEM1): an antibody already tested, and it did not help in sarcoma</h3>
+    <h3 id="5-cd248-endosialin-tem1-an-antibody-already-tested-and-it-did-not-help-in-sarcoma">5. CD248 / Endosialin (TEM1): An Antibody Already Tested, and It Did Not Help in Sarcoma</h3>
     <p>164 TPM, 100% of tumours, 80 TPM in coronary artery (our calculation). The window is the weakest
     of the five, and the fibroblast value of 578 TPM is a warning: CD248 is a pericyte and
     activated-fibroblast antigen, so an antibody may hit stroma as much as tumour. Its rank also
@@ -845,7 +845,7 @@
     <p>So a plain anti-CD248 antibody was safe in children and did not work in a randomised sarcoma
     trial. CD248 stays on the list only as an expression observation. Any new attempt would need a
     different kind of agent, such as an ADC, and a reason to expect a different result.</p>
-    <h3 id="also-worth-a-look">Also worth a look</h3>
+    <h3 id="also-worth-a-look">Also Worth a Look</h3>
     <p><strong>MRC2</strong> (Endo180/uPARAP; 436 TPM, 100% of tumours, <code>Enhanced</code> IHC) is a collagen-internalising
     receptor. It internalises by design, which is what an ADC needs. We found no clinical
     programme, but <strong>preclinical MRC2 ADCs exist, including one developed for sarcoma</strong>. Evans et
@@ -861,7 +861,7 @@
     above EPHA2 (1.05 and 0.73 against −0.94). <strong>ROBO1</strong> has three CAR-NK trials (NCT03931720,
     NCT03941457, NCT03940820), all from one sponsor, started in 2019 and now of unknown status
     (registry), which is a reason for caution.</p>
-    <h3 id="candidates-that-are-probably-artefacts">Candidates that are probably artefacts</h3>
+    <h3 id="candidates-that-are-probably-artefacts">Candidates That Are Probably Artefacts</h3>
     <p><strong>CD84</strong>, <strong>CSF1R</strong> and <strong>ITGA4</strong> are immune-cell receptors. Osteosarcoma biopsies contain many
     macrophages and other immune cells, so these signals may come from those cells, not tumour. HPA
     classes CSF1R as "immune cell enhanced" (registry). CD84 is classed as "low immune cell
@@ -925,14 +925,14 @@
     misses programmes that never name the target and can over-count studies that mention a gene only
     as a biomarker. The specific NCT numbers quoted above were read individually on November 14,
     2026.</p>
-    <h2 id="reproducing-this">Reproducing this</h2>
+    <h2 id="reproducing-this">Reproducing This</h2>
     <p><code>python3 tools/surface_targets.py all          # or: gdc hpa gtex rank hpadetail context sensitivity
     python3 tools/surface_targets.py sensitivity  # re-rank the published CSV under other choices</code></p>
     <p>Stages cache into <code>data/surface_targets_raw/</code> (git-ignored, about 350 MB of GDC files), so re-runs
     are cheap. GTEx's bulk median-TPM files returned 403/404 here, so normals come through the API gene
     by gene. The GTEx API defaults to v10, but its gene-lookup endpoint returns only GENCODE v26
     identifiers, so everything is pinned to <strong>GTEx v8</strong>.</p>
-    <h2 id="what-would-make-this-real">What would make this real</h2>
+    <h2 id="what-would-make-this-real">What Would Make This Real</h2>
     <p>In rough order of value per unit effort:</p>
     <ol>
     <li><strong>Immunohistochemistry on an osteosarcoma tissue microarray</strong> for IFITM5, MRC2, CD109 and
@@ -952,7 +952,7 @@
        macrophage.</li>
     <li><strong>Relapsed and metastatic samples</strong>, since that is the disease that needs treating.</li>
     </ol>
-    <h2 id="change-log">Change log</h2>
+    <h2 id="change-log">Change Log</h2>
     <ul>
     <li><strong>November 20, 2026.</strong> Consistency fixes: the protein summary now says "among the five leads" (TMEM119, which also has patient staining, is not one of the five); the LRRC15 protein evidence is counted the same way as in the ranked leads (three studies of patient tumours plus one of PDXs); PTK7 staining is described as two xenografts and two cell lines; the PTK7 paper count now gives both bases (fewer than five in our tagged set; one PubMed record for "PTK7 AND osteosarcoma").</li>
     <li><strong>November 13, 2026.</strong> First version.</li>

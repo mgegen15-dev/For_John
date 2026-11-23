@@ -21,6 +21,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from titlecase import titlecase
+
 try:
     import markdown
 except ImportError:
@@ -111,22 +114,22 @@ TEMPLATE = """<!doctype html>
 <link rel="stylesheet" href="{up}doc.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to Content</a>
 
 <header class="docbar">
   <div class="docbar-in">
     <a class="home" href="{up}index.html">For John</a>
     <nav aria-label="Site">
       <a href="{up}index.html">Home</a>
-      <a href="{up}explorer.html">Evidence explorer</a>
-      <a href="{repo}">Source and data</a>
+      <a href="{up}explorer.html">Evidence Explorer</a>
+      <a href="{repo}">Source and Data</a>
     </nav>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
   </div>
 </header>
 
 <div class="doclayout">
-  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol>{toc}</ol></nav>
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol>{toc}</ol></nav>
   <main id="main" class="doc">
     <p class="crumb"><a href="{up}index.html">Home</a> · {kind}</p>
     <h1>{title}</h1>
@@ -192,7 +195,10 @@ def build():
         # the first H1 is the page title; it is rendered by the template, not the body
         m = re.match(r"#\s+(.+?)\n", text)
         title = m.group(1).strip() if m else slug(src).replace("-", " ").capitalize()
+        title = titlecase(title)
         body_md = text[m.end():] if m else text
+        # headings are title-cased on the site only; the Markdown sources are left as written
+        body_md = re.sub(r"(?m)^(#{2,4}\s+)(.+)$", lambda h: h.group(1) + titlecase(h.group(2)), body_md)
 
         md.reset()
         body = md.convert(body_md)

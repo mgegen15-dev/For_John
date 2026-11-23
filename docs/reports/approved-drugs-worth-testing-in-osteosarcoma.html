@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Approved drugs worth testing in osteosarcoma · For John</title>
+<title>Approved Drugs Worth Testing in Osteosarcoma · For John</title>
 <meta name="description" content="Built November 19, 2026. A systematic screen of approved and late-stage drugs for targets that look relevant to osteosarcoma but have had no osteosarcoma trial on ClinicalTrials.gov. Data:…">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/approved-drugs-worth-testing-in-osteosarcoma.html">
 <meta name="theme-color" content="#0f2a44">
@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="../icon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="For John">
-<meta property="og:title" content="Approved drugs worth testing in osteosarcoma · For John">
+<meta property="og:title" content="Approved Drugs Worth Testing in Osteosarcoma · For John">
 <meta property="og:description" content="Built November 19, 2026. A systematic screen of approved and late-stage drugs for targets that look relevant to osteosarcoma but have had no osteosarcoma trial on ClinicalTrials.gov. Data:…">
 <meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/approved-drugs-worth-testing-in-osteosarcoma.html">
 <meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
@@ -25,25 +25,25 @@
 <link rel="stylesheet" href="../doc.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to Content</a>
 
 <header class="docbar">
   <div class="docbar-in">
     <a class="home" href="../index.html">For John</a>
     <nav aria-label="Site">
       <a href="../index.html">Home</a>
-      <a href="../explorer.html">Evidence explorer</a>
-      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and Data</a>
     </nav>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
   </div>
 </header>
 
 <div class="doclayout">
-  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#the-shortlist">The shortlist</a></li><li class="l1"><a href="#the-eight-new-ideas-read-closely">The eight new ideas, read closely</a></li><li class="l1"><a href="#dead-ends-the-screen-turned-up">Dead ends the screen turned up</a></li><li class="l1"><a href="#where-this-agrees-with-the-projects-existing-leads">Where this agrees with the project's existing leads</a></li><li class="l1"><a href="#how-the-screen-works">How the screen works</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#reproducing-this">Reproducing this</a></li><li class="l1"><a href="#change-log">Change log</a></li></ol></nav>
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#the-shortlist">The Shortlist</a></li><li class="l1"><a href="#the-eight-new-ideas-read-closely">The Eight New Ideas, Read Closely</a></li><li class="l1"><a href="#dead-ends-the-screen-turned-up">Dead Ends the Screen Turned Up</a></li><li class="l1"><a href="#where-this-agrees-with-the-projects-existing-leads">Where This Agrees with the Project's Existing Leads</a></li><li class="l1"><a href="#how-the-screen-works">How the Screen Works</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#reproducing-this">Reproducing This</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
     <p class="crumb"><a href="../index.html">Home</a> · Report</p>
-    <h1>Approved drugs worth testing in osteosarcoma</h1>
+    <h1>Approved Drugs Worth Testing in Osteosarcoma</h1>
     <p><em>Built November 19, 2026. A systematic screen of approved and late-stage drugs for targets that look relevant to osteosarcoma but have had no osteosarcoma trial on ClinicalTrials.gov. Data: <code>data/osteosarcoma_repurposing_candidates.csv</code> (one row per target gene, 1,141 genes). Script: <code>tools/repurposing_screen.py</code>. Working notes with every PubMed ID: <code>research_notes/Repurposing/notes.md</code>.</em></p>
     <blockquote>
     <p><strong>Not medical advice.</strong> Every drug named here is a hypothesis for laboratory or veterinary testing. None is a treatment recommendation, and none should be given to a patient outside a clinical trial on the strength of this page.</p>
@@ -59,7 +59,7 @@
     <li><strong>(our calculation)</strong>: counted or computed by this project.</li>
     </ul>
     <p>Every paper in this report was read as an abstract only; no full texts were read for this screen. A few background facts, such as the history of a drug class, are marked <strong>(general knowledge)</strong>: we did not re-check them against a source in this pass.</p>
-    <h2 id="the-shortlist">The shortlist</h2>
+    <h2 id="the-shortlist">The Shortlist</h2>
     <p>The 20 highest-scoring targets that pass the automatic filters (below) and survive hand review. Nine rows, covering eight drug ideas (the two retinoid rows are one idea), are genuine new candidates. The other eleven are shown with their verdict because a reader scanning a drug database would otherwise reach for them: they score well on paper but act in the wrong direction, belong to a class that has already failed, or rest on weak evidence. All numbers are our calculation from registry data (ChEMBL, ClinicalTrials.gov, PubMed, TARGET-OS RNA-seq).</p>
     <div class="tablewrap"><table>
     <thead>
@@ -278,7 +278,7 @@
     </tbody>
     </table></div>
     <p><em>Score out of 100 (formula below). "Osteosarcoma papers on the gene" are papers tagged with the gene by PubTator3, with the animal and patient tags from the literature map. "Papers naming the drug" counts PubMed papers with osteosarcoma and the drug (or any of its non-trade names) in the title or abstract, for the best-documented selective drug against that target: plerixafor for CXCR4, fasudil for ROCK, afuresertib for AKT, ergocalciferol for the vitamin D receptor. The vitamin D count (208) is inflated by bone-biology studies that use osteosarcoma cell lines as stand-ins for normal bone cells. For the two retinoid rows, the score is that of the top-scoring gene (RARG, RXRB), whose own paper counts are 0; the paper counts shown are per gene, and the row's key citation (PMID 22485251) is about RARα. First-approval years are ChEMBL's except where corrected: calcitriol was approved in the US in 1978 (ChEMBL's 1999 is for cholecalciferol) and abatacept in December 2005 (ChEMBL gives 2006) (general knowledge). None of the 20 has had a drug against it named in the title of any osteosarcoma trial on ClinicalTrials.gov (registry); CXCR4 and CSF1R score 10 rather than 20 on "untested" because plerixafor appears in one trial for stem-cell collection and sunitinib and pazopanib, which hit CSF1R among many kinases, have been trialled. None of the 20 targets is named in the title of a focused NIH osteosarcoma grant (registry, via the literature map's grant matching).</em></p>
-    <h2 id="the-eight-new-ideas-read-closely">The eight new ideas, read closely</h2>
+    <h2 id="the-eight-new-ideas-read-closely">The Eight New Ideas, Read Closely</h2>
     <p>For each we read the most-cited and most relevant osteosarcoma abstracts on the target and the drug. Paediatric experience is the number of interventional trials of the drug on ClinicalTrials.gov that enrol children (registry), which is not the same as a licence or a dose for children.</p>
     <div class="tablewrap"><table>
     <thead>
@@ -376,7 +376,7 @@
     <li>Tisotumab vedotin is a large antibody conjugate given into a vein; antibodies penetrate dense bone tumours poorly, and normal lung carries more of its target than the tumour.</li>
     </ul>
     <p>The ClinicalTrials.gov API v2 was searched on November 19, 2026 for every drug above together with "osteosarcoma": none has an osteosarcoma trial on ClinicalTrials.gov (registry). The only hits were an adult all-comer basket trial that includes capivasertib (NCI-MATCH, NCT02465060; osteosarcoma is not among its listed conditions), a withdrawn stem-cell-mobilisation study using plerixafor (NCT03612466) and a survivorship programme using cholecalciferol (NCT04671693) (registry, rechecked November 20, 2026). Other registries can hold trials ClinicalTrials.gov lacks, as the mycophenolate case below shows. PubMed searches for each drug with osteosarcoma found one clinical report touching two of the ideas: a retrospective series of 15 patients given the "Di Bella" multitherapy, a mixture including ATRA, vitamin D, melatonin and somatostatin analogues, written by the method's own proponents, with no control group and no way to attribute any effect to one agent (paper, abstract only; PMID 36179729). We do not count it as evidence either way.</p>
-    <h2 id="dead-ends-the-screen-turned-up">Dead ends the screen turned up</h2>
+    <h2 id="dead-ends-the-screen-turned-up">Dead Ends the Screen Turned Up</h2>
     <p>These are worth writing down because each looks attractive in a drug database.</p>
     <div class="tablewrap"><table>
     <thead>
@@ -419,7 +419,7 @@
     </tr>
     </tbody>
     </table></div>
-    <h2 id="where-this-agrees-with-the-projects-existing-leads">Where this agrees with the project's existing leads</h2>
+    <h2 id="where-this-agrees-with-the-projects-existing-leads">Where This Agrees with the Project's Existing Leads</h2>
     <p>The existing leads were kept off the shortlist so that it adds new names, but they were scored the same way (our calculation):</p>
     <ul>
     <li><strong>FAK (defactinib)</strong> scores 75.4 and would sit 7th. Its evidence score (21.7 of 30) is among the best of any target.</li>
@@ -429,7 +429,7 @@
     <li><strong>DKK1 and LPAR1</strong> are invisible to this screen because no phase 3 or approved drug acts on them in ChEMBL.</li>
     </ul>
     <p>CXCR4 overlaps the lung-metastasis work: the report lists 0 anti-metastasis trials of CXCR4 blockers, and its working notes (<code>research_notes/Lung metastasis/notes.md</code>) describe CXCR4 as the most ready drug with the least settled biology. This screen reaches the same view from a different direction.</p>
-    <h2 id="how-the-screen-works">How the screen works</h2>
+    <h2 id="how-the-screen-works">How the Screen Works</h2>
     <ol>
     <li><strong>Drugs and targets.</strong> From the ChEMBL REST API, every molecule with max_phase 4 (4,225 records) and max_phase 3 (1,892) and all 7,561 mechanism records (registry), kept where the target is a human protein. Vaccines, replacement and digestive enzymes, fusion-protein targets and imaging agents are dropped; drugs that act only on a mutant protein (sotorasib, vorasidenib) are not credited to the normal gene. That leaves 2,400 drugs on 1,141 genes (our calculation).</li>
     <li><strong>Joins.</strong> Tumour RNA from 88 TARGET-OS tumours (median TPM, and the share of tumours at 5 TPM or more); the literature map's per-gene paper counts, animal, patient and dog tags, microRNA-type share and paper-mill risk flag; NIH grant counts; and a PubMed count of osteosarcoma papers naming each drug.</li>
@@ -456,14 +456,14 @@
     <li><strong>The score is a ranking aid, not a measure of promise.</strong> The weights are our choice, and a different weighting would reorder the middle of the list. The hand review (156 written notes) is a judgement, and every note is in the CSV so it can be challenged.</li>
     <li><strong>Hypotheses, not treatments.</strong> A drug that slows a mouse tumour often does nothing in patients. Nothing here supports giving any of these drugs to a patient outside a trial.</li>
     </ul>
-    <h2 id="reproducing-this">Reproducing this</h2>
+    <h2 id="reproducing-this">Reproducing This</h2>
     <p><code>python3 tools/repurposing_screen.py chembl   # ChEMBL molecules (phase 4 and 3), mechanisms, targets
     python3 tools/repurposing_screen.py build    # gene table + matching against data/osteosarcoma_trials.csv
     python3 tools/repurposing_screen.py pubmed   # PubMed counts of osteosarcoma + each drug (slow, ~40 min)
     python3 tools/repurposing_screen.py ctgov    # ClinicalTrials.gov checks; run twice
     python3 tools/repurposing_screen.py score    # writes data/osteosarcoma_repurposing_candidates.csv</code></p>
     <p>Raw downloads are cached in <code>data/repurposing_raw/</code> (git-ignored). The tumour RNA summary must already exist from <code>python3 tools/surface_targets.py gdc</code>.</p>
-    <h2 id="change-log">Change log</h2>
+    <h2 id="change-log">Change Log</h2>
     <ul>
     <li><strong>November 19, 2026.</strong> First version.</li>
     <li><strong>November 20, 2026 (audit corrections).</strong> IL-6 score range corrected to 45.9 (IL6R, tocilizumab) to 73.0, with the IL6ST/satralizumab value flagged as a likely annotation artefact. The quotation attributed to the lung-metastasis report is now attributed to its working notes. Retinoid rows now show per-gene paper counts (RARA 13, RXRA 17) instead of the top gene's 0. ROCK: the LM8 result is described as an in vitro migration assay, not a metastasis experiment. AKT: it is now explicit that no osteosarcoma paper tests capivasertib; the xenograft result is for MK-2206 and GSK690693. Approval years corrected (calcitriol 1978, abatacept 2005). ATRA: "post-surgery" dropped, since the abstract describes no resection. The no-trial statement now says "on ClinicalTrials.gov" and lists the three non-osteosarcoma hits. Lead number for the platelet circuit updated after the re-ranking (was lead 9, now lead 10). Limits now note that the direction penalty misses KEAP1 inhibitors and that PMID 18300418 is a symposium chapter; "never had an osteosarcoma trial" in the header now reads "no osteosarcoma trial on ClinicalTrials.gov".</li>

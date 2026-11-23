@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Copy-number changes in osteosarcoma, and how to test them as a kinase-pill biomarker · For John</title>
+<title>Copy-Number Changes in Osteosarcoma, and How to Test Them as a Kinase-Pill Biomarker · For John</title>
 <meta name="description" content="Built from open-access NCI GDC copy-number and RNA data for the TARGET-OS project, published genomic studies and ClinicalTrials.gov records. Written November 19, 2026. Script:…">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/copy-number-changes-and-the-kinase-pill-biomarker.html">
 <meta name="theme-color" content="#0f2a44">
@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="../icon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="For John">
-<meta property="og:title" content="Copy-number changes in osteosarcoma, and how to test them as a kinase-pill biomarker · For John">
+<meta property="og:title" content="Copy-Number Changes in Osteosarcoma, and How to Test Them as a Kinase-Pill Biomarker · For John">
 <meta property="og:description" content="Built from open-access NCI GDC copy-number and RNA data for the TARGET-OS project, published genomic studies and ClinicalTrials.gov records. Written November 19, 2026. Script:…">
 <meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/copy-number-changes-and-the-kinase-pill-biomarker.html">
 <meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
@@ -25,25 +25,25 @@
 <link rel="stylesheet" href="../doc.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to Content</a>
 
 <header class="docbar">
   <div class="docbar-in">
     <a class="home" href="../index.html">For John</a>
     <nav aria-label="Site">
       <a href="../index.html">Home</a>
-      <a href="../explorer.html">Evidence explorer</a>
-      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and Data</a>
     </nav>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
   </div>
 </header>
 
 <div class="doclayout">
-  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-we-used">What we used</a></li><li class="l1"><a href="#1-the-pill-target-genes-how-often-and-do-they-overlap">1. The pill-target genes: how often, and do they overlap?</a></li><li class="l1"><a href="#2-other-actionable-copy-number-changes">2. Other actionable copy-number changes</a></li><li class="l1"><a href="#3-does-extra-dna-mean-more-rna">3. Does extra DNA mean more RNA?</a></li><li class="l1"><a href="#4-design-note-for-lead-2-how-many-patients-from-which-trials">4. Design note for lead 2: how many patients, from which trials?</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#reproduce">Reproduce</a></li><li class="l1"><a href="#change-log">Change log</a></li></ol></nav>
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-we-used">What We Used</a></li><li class="l1"><a href="#1-the-pill-target-genes-how-often-and-do-they-overlap">1. The Pill-Target Genes: How Often, and Do They Overlap?</a></li><li class="l1"><a href="#2-other-actionable-copy-number-changes">2. Other Actionable Copy-Number Changes</a></li><li class="l1"><a href="#3-does-extra-dna-mean-more-rna">3. Does Extra DNA Mean More RNA?</a></li><li class="l1"><a href="#4-design-note-for-lead-2-how-many-patients-from-which-trials">4. Design Note for Lead 2: How Many Patients, from Which Trials?</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#reproduce">Reproduce</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
     <p class="crumb"><a href="../index.html">Home</a> · Report</p>
-    <h1>Copy-number changes in osteosarcoma, and how to test them as a kinase-pill biomarker</h1>
+    <h1>Copy-Number Changes in Osteosarcoma, and How to Test Them as a Kinase-Pill Biomarker</h1>
     <p><em>Built from open-access NCI GDC copy-number and RNA data for the TARGET-OS project, published genomic studies and ClinicalTrials.gov records. Written November 19, 2026. Script: <code>tools/copy_number_map.py</code>. Table: <code>data/osteosarcoma_copy_number_frequencies.csv</code>. Working notes with quotes and every number: <code>research_notes/Copy number/notes.md</code>. This is groundwork for lead 2 in <code>reports/Ranked leads and research partners.md</code>.</em></p>
     <h2 id="summary">Summary</h2>
     <p>We measured extra and missing gene copies in diagnostic tumours from 81 young patients in the US TARGET osteosarcoma project, using free public data. Extra copies of the genes behind VEGFR2-blocking pills (VEGFA, or the KDR/PDGFRA/KIT region) were found in about one patient in four (23.5%) by our main definition, and in nearly half (46.9%) by a lenient one. The figure of "at least 40%" quoted from a US cancer centre study sits between the two, so the answer depends on how "amplified" is defined, and any trial test must fix the definition in advance. Unlike that study, we did not find that the two gene regions exclude each other: 4 patients carried both, mostly high VEGFA with a modest 4q12 gain. Using the trials already done, about 100 pill-treated patients with tumour data would be enough to show whether amplified tumours stay controlled for twice as long, and the existing trials hold about 309 such patients. Proving that the amplification predicts benefit <em>from the pill</em> rather than just a better outlook needs roughly 400 or more patients in randomized trials, more than the four existing randomized trials have together (242 efficacy-evaluable; 247 counting all of REGOBONE's randomized patients).</p>
@@ -56,14 +56,14 @@
     <li><strong>(our calculation)</strong>: counted or computed by this project from the files above.</li>
     <li><strong>(preprint, abstract only)</strong>: read only in the abstract of a preprint, which has not been peer-reviewed.</li>
     </ul>
-    <h2 id="what-we-used">What we used</h2>
+    <h2 id="what-we-used">What We Used</h2>
     <ul>
     <li><strong>Tumours.</strong> 81 patients from TARGET-OS, one diagnostic primary tumour each, before treatment, with a matched blood sample (registry). Median age at diagnosis 14.5 years, range 3.6–32.4; 18 were 18 or older (our calculation).</li>
     <li><strong>Copy number.</strong> GDC "Gene Level Copy Number" files from SNP arrays (ASCAT2 method), which give whole-number copy counts already corrected for normal cells in the sample. They are <strong>open access</strong>; only the raw array files are controlled (registry). Whole-genome copy number for 24 of the same patients was used as a check.</li>
     <li><strong>RNA.</strong> The TARGET-OS RNA files this project had already downloaded for the surface-target report; 80 patients had both RNA and copy number.</li>
     </ul>
     <p><strong>Why the definition matters.</strong> Osteosarcoma cells often carry three or four copies of every chromosome instead of two. In these tumours the median was 3.3 copies, and 55 of 81 had three or more (our calculation). A fixed cut-off such as "more than 4 copies" then labels whole-chromosome gains as amplifications. As a check, ERBB2 (HER2), which no tumour here amplifies by our main call, passes "more than 4 copies" in 7.4% of tumours. So our main call is <strong>at least twice the tumour's own average copy number</strong>, close to what clinical sequencing panels call amplification. We also report a lenient call (1.5 times) and a strict one (8 copies or more).</p>
-    <h2 id="1-the-pill-target-genes-how-often-and-do-they-overlap">1. The pill-target genes: how often, and do they overlap?</h2>
+    <h2 id="1-the-pill-target-genes-how-often-and-do-they-overlap">1. The Pill-Target Genes: How Often, and Do They Overlap?</h2>
     <p>TARGET-OS, 81 patients (our calculation). "CI" is the 95% confidence interval.</p>
     <div class="tablewrap"><table>
     <thead>
@@ -170,7 +170,7 @@
     <p>Odds ratio 4.55 (conditional maximum-likelihood estimate; the simple cross-product ratio is 4.59), Fisher p = 0.0496 (our calculation): if anything, they occur together <em>more</em> often than chance. At a stricter cut-off (3 times the average), only 2 tumours had 4q12 amplification, one of them with VEGFA as well, and no pattern either way can be shown (p = 0.23; our calculation). In three of the four overlapping tumours, VEGFA was high (4.3–5.2 times the average) and 4q12 was modest (2.2–3.0 times).</p>
     <p><strong>What this means for lead 2.</strong> The amplified group is about 24% by our main call and 47% by the lenient one. A trial analysis should fix the definition before seeing outcomes and report both. Because the two regions can overlap, the analysis should also count "VEGFA or 4q12" once per patient, not add the two percentages.</p>
     <p><strong>Cross-check.</strong> For the 24 patients with whole-genome data, VEGFA calls agreed in all 24 (4 amplified on both platforms), with a correlation of 0.98 between the two copy-number measures (our calculation). The 4q12 genes also agreed (23 or 24 of 24), but none of these 24 had a 4q12 amplification, so this check says little about 4q12.</p>
-    <h2 id="2-other-actionable-copy-number-changes">2. Other actionable copy-number changes</h2>
+    <h2 id="2-other-actionable-copy-number-changes">2. Other Actionable Copy-Number Changes</h2>
     <p>TARGET-OS, 81 patients, main call (our calculation). "Published" is the closest figure we read.</p>
     <div class="tablewrap"><table>
     <thead>
@@ -322,7 +322,7 @@
     </tbody>
     </table></div>
     <p>All percentages in both tables are (our calculation) unless labelled otherwise. "Relative loss" means fewer than 0.65 times the tumour's average copy number.</p>
-    <h2 id="3-does-extra-dna-mean-more-rna">3. Does extra DNA mean more RNA?</h2>
+    <h2 id="3-does-extra-dna-mean-more-rna">3. Does Extra DNA Mean More RNA?</h2>
     <p>80 patients with both measures; Spearman correlation between copy number (relative to the tumour average) and RNA level (our calculation).</p>
     <div class="tablewrap"><table>
     <thead>
@@ -392,7 +392,7 @@
     <li><strong>PDGFRA</strong> is the 4q12 gene whose RNA clearly follows its copy number, matching MSK's strong PDGFRA staining in 4q12-amplified tumours (paper, full text).</li>
     <li>More genes, including CDK4, MDM2, PTK2, MET and CD276, are in the working notes.</li>
     </ul>
-    <h2 id="4-design-note-for-lead-2-how-many-patients-from-which-trials">4. Design note for lead 2: how many patients, from which trials?</h2>
+    <h2 id="4-design-note-for-lead-2-how-many-patients-from-which-trials">4. Design Note for Lead 2: How Many Patients, from Which Trials?</h2>
     <p><strong>The two questions.</strong> They need very different numbers of patients.</p>
     <ul>
     <li><strong>Question A (prognostic among pill-treated patients).</strong> Among patients given a VEGFR2-blocking pill, do those with VEGFA or 4q12 amplification stay progression-free longer? Target: hazard ratio 0.5 or lower.</li>
@@ -590,7 +590,7 @@
     </ul>
     <h2 id="reproduce">Reproduce</h2>
     <p>From the repository root: <code>python3 tools/copy_number_map.py all</code>. It downloads 189 open files (about 274 MB) into <code>data/copy_number_raw/</code> (git-ignored), reuses the RNA files in <code>data/surface_targets_raw/</code>, and writes <code>data/osteosarcoma_copy_number_frequencies.csv</code>. It uses only the Python standard library.</p>
-    <h2 id="change-log">Change log</h2>
+    <h2 id="change-log">Change Log</h2>
     <ul>
     <li><strong>19 November 2026.</strong> First version. Open TARGET-OS copy number (81 patients) mapped for 18 genes; compared with five published studies; RNA correlation for 12 genes; sample-size note for lead 2.</li>
     <li><strong>19 November 2026 (later).</strong> Recommended design step 6 added: record MYC status in the amplification test (32.1% amplified here; MYC amplification predicts poor survival, Cancer 2025, PMID 41199591; MYC-driven mouse cells resisted cabozantinib, bioRxiv 2026). New label <strong>(preprint, abstract only)</strong>: read only in a preprint's abstract; preprints are not peer-reviewed.</li>

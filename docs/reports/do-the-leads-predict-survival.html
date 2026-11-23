@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Do the leads predict survival? A test in open patient data · For John</title>
+<title>Do the Leads Predict Survival? A Test in Open Patient Data · For John</title>
 <meta name="description" content="Built November 22, 2026 from open NCI Genomic Data Commons (GDC) data for the TARGET osteosarcoma project: clinical records, tumour RNA and tumour copy number for up to 89 children and young…">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/do-the-leads-predict-survival.html">
 <meta name="theme-color" content="#0f2a44">
@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="../icon-180.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="For John">
-<meta property="og:title" content="Do the leads predict survival? A test in open patient data · For John">
+<meta property="og:title" content="Do the Leads Predict Survival? A Test in Open Patient Data · For John">
 <meta property="og:description" content="Built November 22, 2026 from open NCI Genomic Data Commons (GDC) data for the TARGET osteosarcoma project: clinical records, tumour RNA and tumour copy number for up to 89 children and young…">
 <meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/do-the-leads-predict-survival.html">
 <meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
@@ -25,25 +25,25 @@
 <link rel="stylesheet" href="../doc.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to Content</a>
 
 <header class="docbar">
   <div class="docbar-in">
     <a class="home" href="../index.html">For John</a>
     <nav aria-label="Site">
       <a href="../index.html">Home</a>
-      <a href="../explorer.html">Evidence explorer</a>
-      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and Data</a>
     </nav>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
   </div>
 </header>
 
 <div class="doclayout">
-  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-we-did">What we did</a></li><li class="l1"><a href="#first-check-does-the-method-find-what-it-should">First check: does the method find what it should?</a></li><li class="l1"><a href="#results-the-20-pre-specified-markers">Results: the 20 pre-specified markers</a></li><li class="l1"><a href="#the-myc-result-in-more-detail">The MYC result, in more detail</a></li><li class="l1"><a href="#what-this-means-for-each-lead">What this means for each lead</a></li><li class="l1"><a href="#exploratory-screen-not-pre-specified">Exploratory screen (not pre-specified)</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and reproduction</a></li><li class="l1"><a href="#change-log">Change log</a></li></ol></nav>
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-we-did">What We Did</a></li><li class="l1"><a href="#first-check-does-the-method-find-what-it-should">First Check: Does the Method Find What It Should?</a></li><li class="l1"><a href="#results-the-20-pre-specified-markers">Results: The 20 Pre-Specified Markers</a></li><li class="l1"><a href="#the-myc-result-in-more-detail">The MYC Result, in More Detail</a></li><li class="l1"><a href="#what-this-means-for-each-lead">What This Means for Each Lead</a></li><li class="l1"><a href="#exploratory-screen-not-pre-specified">Exploratory Screen (Not Pre-Specified)</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
     <p class="crumb"><a href="../index.html">Home</a> · Report</p>
-    <h1>Do the leads predict survival? A test in open patient data</h1>
+    <h1>Do the Leads Predict Survival? A Test in Open Patient Data</h1>
     <p><em>Built November 22, 2026 from open NCI Genomic Data Commons (GDC) data for the TARGET osteosarcoma project: clinical records, tumour RNA and tumour copy number for up to 89 children and young adults. Script: <code>tools/survival_analysis.py</code>. Results table: <code>data/osteosarcoma_survival_results.csv</code> (one row per test). Figures: <code>docs/figures/survival_*.svg</code>. Working notes, including the analysis plan written before any marker was compared with outcome: <code>research_notes/Survival/notes.md</code>. This is new evidence produced by this project, not a literature summary.</em></p>
     <h2 id="summary">Summary</h2>
     <p>We asked whether the tumour features behind this project's leads (gene amplifications, gene activity and genome damage) go with shorter survival in 89 young patients from the US TARGET osteosarcoma study. The method works: metastasis at diagnosis, the best-known risk factor, came out exactly as expected, with about five times the risk of death. None of the 20 lead-related markers we chose in advance showed a convincing link with survival or with metastasis at diagnosis once we allowed for the number of tests. Most notably, MYC amplification, reported in 2025 to triple the risk of death, made no visible difference here, and even the upper end of our confidence range falls below the reported effect. With only 30 deaths, the study could reliably detect only large effects (roughly a tripling of risk), so for most leads the honest answer is "no association detected, too small a study to rule out a moderate one", which neither strengthens nor weakens them much.</p>
@@ -61,7 +61,7 @@
     <li><strong>p:</strong> the raw p-value for one test. <strong>q:</strong> the p-value after the Benjamini–Hochberg correction for running many tests. We call a result convincing only if q &lt; 0.10 for the main test.</li>
     <li><strong>OS (overall survival):</strong> time to death from any cause. <strong>EFS (event-free survival):</strong> time to relapse, progression, a second cancer or death, whichever came first.</li>
     </ul>
-    <h2 id="what-we-did">What we did</h2>
+    <h2 id="what-we-did">What We Did</h2>
     <p><strong>Patients.</strong> TARGET-OS patients with tumour RNA (88) or copy-number data (81) from the diagnostic biopsy, before treatment: 89 in all, 52 male and 37 female, median age 14.5 years (range 3.6–32.4), diagnosed 2000–2012 and treated on US cooperative-group and other chemotherapy protocols (registry). 23 of 88 had metastases at diagnosis. 87 have survival data, with 30 deaths; patients still alive were followed for a median of 4.7 years. 85 have event-free survival data, with 42 events (our calculation).</p>
     <p><strong>Clinical data.</strong> The GDC case records hold vital status, days to death or last follow-up, first event (relapse, death, second cancer) with its timing, metastasis at diagnosis, age and sex for nearly every patient. Histologic response (tumour kill by pre-surgery chemotherapy) exists for only 35 of the 89, from the open clinical spreadsheet, so it was used only as an extra check. The two sources agree except for three patients' follow-up times, which we tested both ways (registry; our calculation). Field-by-field counts are in the notes, section 1.</p>
     <p><strong>Plan fixed in advance.</strong> Before comparing any marker with any outcome, we wrote down 20 markers, the tests and the correction for multiple testing (notes, section 2):</p>
@@ -71,10 +71,10 @@
     <li><strong>RNA:</strong> PTK2, DKK1, LRRC15, PTK7, IL6, IL1A, IL1B, CXCL8, IL6R, CXCR4, AKT1, AKT2 and AKT3.</li>
     </ul>
     <p>For each marker: (A, the main test) a Cox model of OS with the marker as a continuous value, adjusted for metastasis at diagnosis; (B) Kaplan–Meier curves and a log-rank test for OS, splitting at amplified/not or at the median RNA level; (C, D) the same for EFS; (E) whether the marker differs between patients with and without metastasis at diagnosis. Each group of 20 tests was corrected separately; we also corrected across all 100. Sensitivity checks: adding age, using the alternative follow-up times, and a check that the HR is stable over time. The statistics were coded with numpy and scipy and agree with the standard <code>lifelines</code> package to four decimal places (our calculation).</p>
-    <h2 id="first-check-does-the-method-find-what-it-should">First check: does the method find what it should?</h2>
+    <h2 id="first-check-does-the-method-find-what-it-should">First Check: Does the Method Find What It Should?</h2>
     <p>Yes. Patients with metastasis at diagnosis had 4.8 times the risk of death (95% CI 2.3–10.0; p = 0.000003), with 25% alive at five years against 76% (our calculation; <code>docs/figures/survival_metastasis_os.svg</code>). This matches the long-known gap in osteosarcoma. Good histologic response also went with longer survival, in the expected direction (HR 0.25, 0.05–1.18, p = 0.059; 35 patients) (our calculation).</p>
     <p><strong>How big an effect could we see?</strong> With about 29 deaths and a median split, the study had 80% power to detect an HR of about 2.8 or more; for amplifications present in 11–33% of patients, about 3.1–5.3 (our calculation, Schoenfeld's formula). Smaller effects, such as an HR of 1.5, could easily be missed.</p>
-    <h2 id="results-the-20-pre-specified-markers">Results: the 20 pre-specified markers</h2>
+    <h2 id="results-the-20-pre-specified-markers">Results: The 20 Pre-Specified Markers</h2>
     <p>Overall survival. The main test (A) is the continuous marker, adjusted for metastasis at diagnosis. The split test (B) compares amplified with not amplified, or above with at-or-below the median RNA level, without adjustment. All values (our calculation).</p>
     <div class="tablewrap"><table>
     <thead>
@@ -379,14 +379,14 @@
     </tbody>
     </table></div>
     <p>Across all 100 pre-specified tests together, the smallest corrected q was 0.44 (our calculation). Adding age to the main model, or using the alternative follow-up times, changed no conclusion (notes, section 4.4).</p>
-    <h2 id="the-myc-result-in-more-detail">The MYC result, in more detail</h2>
+    <h2 id="the-myc-result-in-more-detail">The MYC Result, in More Detail</h2>
     <p>A 2025 study of 105 children and young adults reported 3-year survival of 27% with MYC amplification against 74% without, an adjusted HR of 3.4 (paper, abstract only; <em>Cancer</em> 2025, PMID 41199591). The leads report cites it to argue that MYC status should be recorded in any kinase-pill biomarker study. Here:</p>
     <ul>
     <li>By our pre-specified call (at least twice the tumour average), 26 of 79 patients were MYC-amplified; 5-year OS was 60% against 61%, HR 1.18 (0.54–2.56) (our calculation; <code>docs/figures/survival_myc_amp_os.svg</code>).</li>
     <li>That study counted "more than 7 copies" as amplified, so after seeing the result we also tried 8 or more copies. This was <strong>not pre-specified</strong> and is labelled post hoc in the results table. 23 of 79 were positive; HR adjusted for metastasis 1.45 (0.65–3.23), log-rank p = 0.63, 5-year OS 60% against 61% (our calculation).</li>
     <li>Both upper confidence limits (2.56 and 3.23) fall below the published 3.4. Our data therefore argue against an effect that large in TARGET-OS, though a moderate effect remains possible. The two cohorts may differ in how copies were counted (29% positive here against 16% there), and we could not tell from the abstract whether the published cohort includes TARGET patients.</li>
     </ul>
-    <h2 id="what-this-means-for-each-lead">What this means for each lead</h2>
+    <h2 id="what-this-means-for-each-lead">What This Means for Each Lead</h2>
     <p>Lead numbers follow <code>reports/Ranked leads and research partners.md</code>. <strong>Strengthen</strong>, <strong>weaken</strong> or <strong>no information</strong> is our judgement of what these data add, not a re-scoring of the lead.</p>
     <div class="tablewrap"><table>
     <thead>
@@ -460,7 +460,7 @@
     </tr>
     </tbody>
     </table></div>
-    <h2 id="exploratory-screen-not-pre-specified">Exploratory screen (not pre-specified)</h2>
+    <h2 id="exploratory-screen-not-pre-specified">Exploratory Screen (Not Pre-Specified)</h2>
     <p>We also tested every gene in the surface-target top 25 and the repurposing shortlist (40 genes after removing duplicates) against OS, with their own multiple-testing correction. Two passed q &lt; 0.10 (our calculation):</p>
     <ul>
     <li><strong>SOST</strong> (sclerostin; a repurposing-screen gene marked "wrong direction"): HR 1.21 per doubling (1.08–1.36), p = 0.0015, q = 0.06.</li>
@@ -479,7 +479,7 @@
     <li><strong>Data quality.</strong> Three patients' follow-up times differ between the GDC records and the clinical spreadsheet; using either gave the same conclusions. Histologic response is missing for 54 of 89 patients.</li>
     <li><strong>Post hoc analysis.</strong> The MYC 8-copy test was added after seeing the main result, and is labelled as such.</li>
     </ul>
-    <h2 id="files-and-reproduction">Files and reproduction</h2>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
     <li><code>tools/survival_analysis.py</code>: run <code>python3 tools/survival_analysis.py all</code> from the repository root. It downloads the GDC clinical records and spreadsheets to <code>data/survival_raw/</code> and reuses the RNA and copy-number caches from <code>tools/surface_targets.py</code> and <code>tools/copy_number_map.py</code>. Needs numpy, scipy and matplotlib (<code>requirements.txt</code>). Two full runs gave identical results.</li>
     <li><code>data/osteosarcoma_survival_results.csv</code>: 146 rows, one per test, with n, events, HR and 95% CI, raw p, q within its family (<code>q_family</code>) and across all pre-specified tests (<code>q_all_prespecified</code>), 5-year Kaplan–Meier estimates, and the sensitivity results (age-adjusted, alternative follow-up times, proportional-hazards check).</li>
@@ -487,7 +487,7 @@
     <li><code>docs/figures/</code>: Kaplan–Meier plots with numbers at risk for metastasis (the positive control), MYC, VEGFA/4q12, PTK2 amplification, LOH, and DKK1, IL6, CXCR4 and LRRC15 RNA; plus the forest plot of all 20 markers.</li>
     <li><code>research_notes/Survival/notes.md</code>: data inventory, the pre-specified plan, full results and the log of post hoc changes.</li>
     </ul>
-    <h2 id="change-log">Change log</h2>
+    <h2 id="change-log">Change Log</h2>
     <ul>
     <li><strong>November 22, 2026.</strong> First version. Pre-specified test of 20 lead-related markers against overall survival, event-free survival and metastasis at diagnosis in open TARGET-OS data (89 patients, 30 deaths). The positive control passed (metastasis HR 4.83). No pre-specified marker passed multiple-testing correction. Post hoc MYC check at 8 or more copies added. Exploratory screen of 40 surface and repurposing genes: SOST and ROBO1 flagged for checking elsewhere.</li>
     </ul>
