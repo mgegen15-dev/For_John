@@ -1,0 +1,973 @@
+{
+ "mib-agents": {
+  "url": "https://www.mibagents.org/",
+  "status": 200,
+  "style": {
+   "title": "MIB Agents | Pediatric Osteosarcoma Research & Nonprofit",
+   "h1": {
+    "font": "Times New Roman",
+    "size": "32px",
+    "weight": "700",
+    "lh": "normal",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "Times New Roman",
+    "size": "24px",
+    "weight": "700",
+    "lh": "normal",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "h3": {
+    "font": "Times New Roman",
+    "size": "18.72px",
+    "weight": "700",
+    "lh": "normal",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "body": {
+    "font": "Times New Roman",
+    "size": "16px",
+    "weight": "400",
+    "lh": "normal",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "nav": {
+    "font": "Times New Roman",
+    "size": "16px",
+    "weight": "400",
+    "lh": "normal",
+    "ls": "normal",
+    "color": "rgb(0, 0, 238)",
+    "transform": "none"
+   },
+   "para": {
+    "font": "Times New Roman",
+    "size": "16px",
+    "lh": "normal",
+    "width": 1424,
+    "color": "rgb(0, 0, 0)"
+   },
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "textColors": [
+    "rgb(0, 0, 238)",
+    "rgb(0, 0, 0)"
+   ],
+   "bgColors": [],
+   "pageHeight": 3309,
+   "imgs": 20
+  },
+  "requests": 49,
+  "failedHosts": [
+   "cdn.prod.website-files.com",
+   "cdnjs.cloudflare.com",
+   "cdn.lightwidget.com",
+   "d3n6by2snqaq74.cloudfront.net",
+   "code.jquery.com",
+   "d3e54v103j8qbb.cloudfront.net",
+   "cdn.jsdelivr.net",
+   "www.googletagmanager.com",
+   "acsbapp.com",
+   "clearimpact.com",
+   "connect.facebook.net",
+   "widgets.guidestar.org"
+  ]
+ },
+ "osteosarcoma-institute": {
+  "url": "https://www.osinst.org/",
+  "error": "Error: page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://www.osinst.org/\nCall log:\n\u001b[2m  - navigating to \"https://www.osinst.org/\", waiting until \"domcont",
+  "requests": 2,
+  "failedHosts": [
+   "osinst.org"
+  ]
+ },
+ "sarcoma-foundation": {
+  "url": "https://www.curesarcoma.org/",
+  "error": "Error: page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://www.curesarcoma.org/\nCall log:\n\u001b[2m  - navigating to \"https://www.curesarcoma.org/\", waiting unti",
+  "requests": 2,
+  "failedHosts": [
+   "curesarcoma.org"
+  ]
+ },
+ "bone-cancer-research-trust": {
+  "url": "https://www.bcrt.org.uk/",
+  "status": 403,
+  "style": {
+   "title": "Just a moment...",
+   "h1": {
+    "font": "system-ui",
+    "size": "40px",
+    "weight": "600",
+    "lh": "50px",
+    "ls": "normal",
+    "color": "rgb(49, 49, 49)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "system-ui",
+    "size": "24px",
+    "weight": "600",
+    "lh": "30px",
+    "ls": "normal",
+    "color": "rgb(49, 49, 49)",
+    "transform": "none"
+   },
+   "h3": null,
+   "body": {
+    "font": "system-ui",
+    "size": "16px",
+    "weight": "400",
+    "lh": "18.4px",
+    "ls": "normal",
+    "color": "rgb(49, 49, 49)",
+    "transform": "none"
+   },
+   "nav": null,
+   "para": {
+    "font": "system-ui",
+    "size": "16px",
+    "lh": "24px",
+    "width": 896,
+    "color": "rgb(49, 49, 49)"
+   },
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "textColors": [
+    "rgb(49, 49, 49)",
+    "rgb(0, 0, 238)"
+   ],
+   "bgColors": [],
+   "pageHeight": 947,
+   "imgs": 1
+  },
+  "requests": 7,
+  "failedHosts": [
+   "challenges.cloudflare.com"
+  ]
+ },
+ "alexs-lemonade": {
+  "url": "https://www.alexslemonade.org/",
+  "status": 403,
+  "style": {
+   "title": "Just a moment...",
+   "h1": {
+    "font": "system-ui",
+    "size": "40px",
+    "weight": "600",
+    "lh": "50px",
+    "ls": "normal",
+    "color": "rgb(49, 49, 49)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "system-ui",
+    "size": "24px",
+    "weight": "600",
+    "lh": "30px",
+    "ls": "normal",
+    "color": "rgb(49, 49, 49)",
+    "transform": "none"
+   },
+   "h3": null,
+   "body": {
+    "font": "system-ui",
+    "size": "16px",
+    "weight": "400",
+    "lh": "18.4px",
+    "ls": "normal",
+    "color": "rgb(49, 49, 49)",
+    "transform": "none"
+   },
+   "nav": null,
+   "para": {
+    "font": "system-ui",
+    "size": "16px",
+    "lh": "24px",
+    "width": 896,
+    "color": "rgb(49, 49, 49)"
+   },
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "textColors": [
+    "rgb(49, 49, 49)",
+    "rgb(0, 0, 238)"
+   ],
+   "bgColors": [],
+   "pageHeight": 947,
+   "imgs": 1
+  },
+  "requests": 7,
+  "failedHosts": [
+   "challenges.cloudflare.com"
+  ]
+ },
+ "st-jude": {
+  "url": "https://www.stjude.org/",
+  "status": 200,
+  "style": {
+   "title": "St. Jude Children's Research Hospital",
+   "h1": {
+    "font": "SJ Sans",
+    "size": "61.56px",
+    "weight": "700",
+    "lh": "71.82px",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "SJ Sans",
+    "size": "27.36px",
+    "weight": "700",
+    "lh": "30.78px",
+    "ls": "normal",
+    "color": "rgb(19, 92, 176)",
+    "transform": "none"
+   },
+   "h3": {
+    "font": "SJ Sans",
+    "size": "27.36px",
+    "weight": "700",
+    "lh": "30.78px",
+    "ls": "normal",
+    "color": "rgb(19, 92, 176)",
+    "transform": "none"
+   },
+   "body": {
+    "font": "SJ Sans",
+    "size": "18.24px",
+    "weight": "400",
+    "lh": "27.36px",
+    "ls": "normal",
+    "color": "rgb(26, 26, 26)",
+    "transform": "none"
+   },
+   "nav": {
+    "font": "SJ Sans",
+    "size": "18.24px",
+    "weight": "400",
+    "lh": "27.36px",
+    "ls": "normal",
+    "color": "rgb(19, 92, 176)",
+    "transform": "none"
+   },
+   "para": {
+    "font": "SJ Sans",
+    "size": "22.8px",
+    "lh": "34.2px",
+    "width": 527,
+    "color": "rgb(26, 26, 26)"
+   },
+   "bodyBg": "rgb(255, 255, 255)",
+   "textColors": [
+    "rgb(19, 92, 176)",
+    "rgb(0, 0, 0)",
+    "rgb(26, 26, 26)",
+    "rgb(255, 255, 255)",
+    "rgb(77, 77, 77)"
+   ],
+   "bgColors": [
+    "rgb(255, 255, 255)",
+    "rgb(0, 0, 0)",
+    "rgb(230, 230, 230)"
+   ],
+   "pageHeight": 6222,
+   "imgs": 32
+  },
+  "requests": 73,
+  "failedHosts": [
+   "cdn.cookielaw.org",
+   "js.sentry-cdn.com",
+   "assets.adobedtm.com",
+   "s.go-mpulse.net",
+   "p11.techlab-cdn.com"
+  ]
+ },
+ "childrens-cancer-research-fund": {
+  "url": "https://childrenscancer.org/",
+  "status": 200,
+  "style": {
+   "title": "Children's Cancer Research Fund",
+   "h1": {
+    "font": "adobe-text-pro",
+    "size": "75px",
+    "weight": "400",
+    "lh": "82.5px",
+    "ls": "0.5px",
+    "color": "rgb(143, 161, 67)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "adobe-text-pro",
+    "size": "34.28px",
+    "weight": "400",
+    "lh": "37.708px",
+    "ls": "0.5px",
+    "color": "rgb(255, 255, 255)",
+    "transform": "none"
+   },
+   "h3": null,
+   "body": {
+    "font": "adobe-text-pro",
+    "size": "20px",
+    "weight": "400",
+    "lh": "34px",
+    "ls": "normal",
+    "color": "rgb(33, 33, 33)",
+    "transform": "none"
+   },
+   "nav": {
+    "font": "adobe-text-pro",
+    "size": "21px",
+    "weight": "400",
+    "lh": "21px",
+    "ls": "normal",
+    "color": "rgb(39, 39, 39)",
+    "transform": "none"
+   },
+   "para": {
+    "font": "adobe-text-pro",
+    "size": "20px",
+    "lh": "34px",
+    "width": 329,
+    "color": "rgb(33, 33, 33)"
+   },
+   "bodyBg": "rgb(255, 255, 255)",
+   "textColors": [
+    "rgb(63, 141, 167)",
+    "rgb(33, 33, 33)",
+    "rgba(0, 0, 0, 0.55)",
+    "rgb(143, 161, 67)",
+    "rgb(255, 255, 255)"
+   ],
+   "bgColors": [
+    "rgb(239, 239, 239)",
+    "rgb(21, 3, 3)",
+    "rgb(255, 255, 255)",
+    "rgb(213, 213, 213)",
+    "rgb(147, 163, 75)"
+   ],
+   "pageHeight": 5241,
+   "imgs": 17
+  },
+  "requests": 31,
+  "failedHosts": [
+   "static.cloudflareinsights.com",
+   "widgets.guidestar.org",
+   "giving.gofundme.com",
+   "script.crazyegg.com",
+   "bat.bing.com",
+   "www.googletagmanager.com"
+  ]
+ },
+ "curesearch": {
+  "url": "https://curesearch.org/",
+  "status": 200,
+  "style": {
+   "title": "Homepage - CureSearch",
+   "h1": {
+    "font": "Montserrat",
+    "size": "70px",
+    "weight": "800",
+    "lh": "72.1px",
+    "ls": "-2.1px",
+    "color": "rgb(101, 40, 114)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "Montserrat",
+    "size": "27.84px",
+    "weight": "800",
+    "lh": "33.408px",
+    "ls": "normal",
+    "color": "rgb(101, 40, 114)",
+    "transform": "uppercase"
+   },
+   "h3": {
+    "font": "Montserrat",
+    "size": "20.96px",
+    "weight": "800",
+    "lh": "25.3616px",
+    "ls": "-0.2096px",
+    "color": "rgb(101, 40, 114)",
+    "transform": "none"
+   },
+   "body": {
+    "font": "Montserrat",
+    "size": "17px",
+    "weight": "400",
+    "lh": "27.03px",
+    "ls": "normal",
+    "color": "rgb(79, 71, 82)",
+    "transform": "none"
+   },
+   "nav": {
+    "font": "Montserrat",
+    "size": "17px",
+    "weight": "400",
+    "lh": "0px",
+    "ls": "normal",
+    "color": "rgb(101, 40, 114)",
+    "transform": "none"
+   },
+   "para": {
+    "font": "Montserrat",
+    "size": "17px",
+    "lh": "27.03px",
+    "width": 528,
+    "color": "rgb(101, 40, 114)"
+   },
+   "bodyBg": "rgb(255, 255, 255)",
+   "textColors": [
+    "rgb(101, 40, 114)",
+    "rgb(79, 71, 82)",
+    "rgb(255, 255, 255)",
+    "rgb(0, 0, 0)",
+    "rgb(162, 56, 186)"
+   ],
+   "bgColors": [
+    "rgba(20, 8, 26, 0.55)",
+    "rgb(246, 245, 250)",
+    "rgb(224, 217, 229)",
+    "rgb(255, 255, 255)",
+    "rgb(0, 0, 0)",
+    "rgb(248, 241, 250)"
+   ],
+   "pageHeight": 6068,
+   "imgs": 27
+  },
+  "requests": 31,
+  "failedHosts": [
+   "www.googletagmanager.com"
+  ]
+ },
+ "cancer-research-uk": {
+  "url": "https://www.cancerresearchuk.org/",
+  "status": 200,
+  "style": {
+   "title": "Cancer Research UK | The world's leading cancer charity",
+   "h1": {
+    "font": "ProgressFont",
+    "size": "72px",
+    "weight": "500",
+    "lh": "92px",
+    "ls": "normal",
+    "color": "rgb(255, 255, 255)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "ProgressFont",
+    "size": "42px",
+    "weight": "500",
+    "lh": "58px",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "h3": {
+    "font": "ProgressFont",
+    "size": "22px",
+    "weight": "500",
+    "lh": "32px",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "body": {
+    "font": "PoppinsFont",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "nav": {
+    "font": "PoppinsFont",
+    "size": "18px",
+    "weight": "600",
+    "lh": "28px",
+    "ls": "0.36px",
+    "color": "rgb(230, 0, 121)",
+    "transform": "none"
+   },
+   "para": {
+    "font": "PoppinsFont",
+    "size": "28px",
+    "lh": "40px",
+    "width": 640,
+    "color": "rgb(255, 255, 255)"
+   },
+   "bodyBg": "rgb(255, 255, 255)",
+   "textColors": [
+    "rgb(0, 0, 0)",
+    "rgb(26, 32, 44)",
+    "rgb(255, 255, 255)",
+    "rgb(0, 0, 126)",
+    "rgb(230, 0, 121)"
+   ],
+   "bgColors": [
+    "rgb(255, 255, 255)"
+   ],
+   "pageHeight": 7123,
+   "imgs": 17
+  },
+  "requests": 37,
+  "failedHosts": [
+   "www.googletagmanager.com",
+   "images.ctfassets.net",
+   "cdn.cookielaw.org"
+  ]
+ },
+ "arc-institute": {
+  "url": "https://arcinstitute.org/",
+  "status": 200,
+  "style": {
+   "title": "Arc Institute",
+   "h1": {
+    "font": "Tiempos Headline",
+    "size": "40px",
+    "weight": "300",
+    "lh": "48px",
+    "ls": "normal",
+    "color": "rgb(0, 115, 230)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "Tiempos Headline",
+    "size": "40px",
+    "weight": "300",
+    "lh": "48px",
+    "ls": "normal",
+    "color": "rgb(12, 32, 67)",
+    "transform": "none"
+   },
+   "h3": {
+    "font": "IBM Plex Sans",
+    "size": "24px",
+    "weight": "400",
+    "lh": "34px",
+    "ls": "normal",
+    "color": "rgb(12, 32, 67)",
+    "transform": "none"
+   },
+   "body": {
+    "font": "IBM Plex Sans",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px",
+    "ls": "normal",
+    "color": "rgb(17, 24, 28)",
+    "transform": "none"
+   },
+   "nav": {
+    "font": "IBM Plex Sans",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px",
+    "ls": "normal",
+    "color": "rgb(0, 115, 230)",
+    "transform": "none"
+   },
+   "para": {
+    "font": "IBM Plex Sans",
+    "size": "16px",
+    "lh": "24px",
+    "width": 660,
+    "color": "rgb(12, 32, 67)"
+   },
+   "bodyBg": "rgb(251, 248, 242)",
+   "textColors": [
+    "rgb(17, 24, 28)",
+    "rgb(12, 32, 67)",
+    "rgb(82, 91, 107)",
+    "rgb(0, 0, 0)",
+    "rgb(0, 115, 230)"
+   ],
+   "bgColors": [
+    "rgb(247, 249, 251)",
+    "rgb(255, 255, 255)",
+    "rgb(0, 115, 230)"
+   ],
+   "pageHeight": 4268,
+   "imgs": 8
+  },
+  "requests": 70,
+  "failedHosts": [
+   "cdn.sanity.io",
+   "www.googletagmanager.com",
+   "kkri8zur.api.sanity.io",
+   "static.cloudflareinsights.com"
+  ]
+ },
+ "broad-institute": {
+  "url": "https://www.broadinstitute.org/",
+  "status": 403,
+  "style": {
+   "title": "Access Denied",
+   "h1": {
+    "font": "Times New Roman",
+    "size": "32px",
+    "weight": "700",
+    "lh": "normal",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "h2": null,
+   "h3": null,
+   "body": {
+    "font": "Times New Roman",
+    "size": "16px",
+    "weight": "400",
+    "lh": "normal",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "nav": null,
+   "para": null,
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "textColors": [
+    "rgb(0, 0, 0)"
+   ],
+   "bgColors": [],
+   "pageHeight": 900,
+   "imgs": 0
+  },
+  "requests": 1,
+  "failedHosts": []
+ },
+ "wellcome": {
+  "url": "https://wellcome.org/",
+  "status": 200,
+  "style": {
+   "title": "Home | Wellcome",
+   "h1": {
+    "font": "Wellcome",
+    "size": "43.664px",
+    "weight": "600",
+    "lh": "56.7632px",
+    "ls": "-0.5px",
+    "color": "rgb(34, 52, 56)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "Inter",
+    "size": "26.304px",
+    "weight": "600",
+    "lh": "39.456px",
+    "ls": "0.4px",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "h3": {
+    "font": "Inter",
+    "size": "22.272px",
+    "weight": "600",
+    "lh": "33.408px",
+    "ls": "0.4px",
+    "color": "rgb(34, 52, 56)",
+    "transform": "none"
+   },
+   "body": {
+    "font": "Inter",
+    "size": "16.176px",
+    "weight": "400",
+    "lh": "24.264px",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "nav": {
+    "font": "Wellcome",
+    "size": "13.664px",
+    "weight": "700",
+    "lh": "20.496px",
+    "ls": "normal",
+    "color": "rgb(34, 52, 56)",
+    "transform": "none"
+   },
+   "para": {
+    "font": "Inter",
+    "size": "16.176px",
+    "lh": "24.264px",
+    "width": 1344,
+    "color": "rgb(0, 0, 0)"
+   },
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "textColors": [
+    "rgb(34, 52, 56)",
+    "rgb(245, 246, 238)",
+    "rgb(0, 0, 0)",
+    "rgb(68, 82, 84)",
+    "rgb(101, 115, 115)"
+   ],
+   "bgColors": [
+    "rgb(255, 255, 255)",
+    "rgb(202, 195, 250)",
+    "lab(0 0 0 / 0.25)",
+    "rgba(255, 255, 255, 0.9)",
+    "rgb(237, 235, 250)",
+    "rgb(245, 246, 238)"
+   ],
+   "pageHeight": 4792,
+   "imgs": 11
+  },
+  "requests": 46,
+  "failedHosts": [
+   "cms.wellcome.org",
+   "cc.cdn.civiccomputing.com",
+   "www.googletagmanager.com"
+  ]
+ },
+ "our-world-in-data": {
+  "url": "https://ourworldindata.org/",
+  "status": 200,
+  "style": {
+   "title": "Our World in Data",
+   "h1": null,
+   "h2": {
+    "font": "Playfair Display",
+    "size": "32px",
+    "weight": "600",
+    "lh": "40px",
+    "ls": "normal",
+    "color": "rgb(247, 192, 32)",
+    "transform": "none"
+   },
+   "h3": {
+    "font": "Playfair Display",
+    "size": "18px",
+    "weight": "700",
+    "lh": "23.9999px",
+    "ls": "normal",
+    "color": "rgb(29, 61, 99)",
+    "transform": "none"
+   },
+   "body": {
+    "font": "Lato",
+    "size": "16px",
+    "weight": "400",
+    "lh": "25.6px",
+    "ls": "normal",
+    "color": "rgb(29, 61, 99)",
+    "transform": "none"
+   },
+   "nav": {
+    "font": "Lato",
+    "size": "20px",
+    "weight": "400",
+    "lh": "24px",
+    "ls": "normal",
+    "color": "rgb(255, 255, 255)",
+    "transform": "none"
+   },
+   "para": {
+    "font": "Lato",
+    "size": "14px",
+    "lh": "21px",
+    "width": 268,
+    "color": "rgb(29, 61, 99)"
+   },
+   "bodyBg": "rgb(255, 255, 255)",
+   "textColors": [
+    "rgb(29, 61, 99)",
+    "rgb(66, 101, 145)",
+    "rgb(0, 33, 71)",
+    "rgb(255, 255, 255)",
+    "rgb(87, 114, 145)"
+   ],
+   "bgColors": [
+    "rgb(247, 247, 247)",
+    "rgb(219, 229, 240)",
+    "rgb(240, 244, 250)",
+    "rgb(0, 33, 71)",
+    "rgb(247, 192, 32)",
+    "rgb(231, 242, 255)"
+   ],
+   "pageHeight": 4906,
+   "imgs": 35
+  },
+  "requests": 37,
+  "failedHosts": [
+   "www.googletagmanager.com",
+   "static.cloudflareinsights.com",
+   "o4508220267036672.ingest.de.sentry.io"
+  ]
+ },
+ "simons-foundation": {
+  "url": "https://www.simonsfoundation.org/",
+  "status": 200,
+  "style": {
+   "title": "Simons Foundation",
+   "h1": {
+    "font": "Founders Grotesk",
+    "size": "19.52px",
+    "weight": "400",
+    "lh": "21.472px",
+    "ls": "normal",
+    "color": "rgb(252, 246, 241)",
+    "transform": "none"
+   },
+   "h2": {
+    "font": "Founders Grotesk",
+    "size": "19.52px",
+    "weight": "500",
+    "lh": "21.472px",
+    "ls": "normal",
+    "color": "rgb(252, 246, 241)",
+    "transform": "none"
+   },
+   "h3": {
+    "font": "Founders Grotesk",
+    "size": "32.4px",
+    "weight": "500",
+    "lh": "30.78px",
+    "ls": "-0.324px",
+    "color": "rgb(29, 41, 84)",
+    "transform": "none"
+   },
+   "body": {
+    "font": "Founders Grotesk",
+    "size": "19.52px",
+    "weight": "400",
+    "lh": "21.472px",
+    "ls": "normal",
+    "color": "rgb(29, 41, 84)",
+    "transform": "none"
+   },
+   "nav": {
+    "font": "Founders Grotesk",
+    "size": "19.52px",
+    "weight": "400",
+    "lh": "0px",
+    "ls": "normal",
+    "color": "rgb(252, 246, 241)",
+    "transform": "none"
+   },
+   "para": {
+    "font": "Tiempos Headline",
+    "size": "41.12px",
+    "lh": "45.232px",
+    "width": 971,
+    "color": "rgb(252, 246, 241)"
+   },
+   "bodyBg": "rgb(255, 255, 255)",
+   "textColors": [
+    "rgb(29, 41, 84)",
+    "rgb(252, 246, 241)",
+    "rgba(29, 41, 84, 0.67)"
+   ],
+   "bgColors": [
+    "rgb(29, 41, 84)",
+    "rgb(255, 255, 255)",
+    "rgb(0, 0, 0)"
+   ],
+   "pageHeight": 7600,
+   "imgs": 26
+  },
+  "requests": 44,
+  "failedHosts": [
+   "cdnjs.cloudflare.com",
+   "image.mux.com",
+   "www.googletagmanager.com",
+   "challenges.cloudflare.com",
+   "stream.mux.com"
+  ]
+ },
+ "hhmi": {
+  "url": "https://www.hhmi.org/",
+  "status": 200,
+  "style": {
+   "title": "HHMI: Discoveries that advance human health for decades to come",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "body": {
+    "font": "Helvetica Now Text",
+    "size": "18px",
+    "weight": "400",
+    "lh": "27px",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "nav": null,
+   "para": null,
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "textColors": [
+    "rgb(255, 255, 255)"
+   ],
+   "bgColors": [
+    "rgb(0, 0, 0)"
+   ],
+   "pageHeight": 5654,
+   "imgs": 0
+  },
+  "requests": 26,
+  "failedHosts": [
+   "static.cloudflareinsights.com",
+   "script.crazyegg.com",
+   "chimpstatic.com",
+   "www.googletagmanager.com"
+  ]
+ },
+ "distill": {
+  "url": "https://distill.pub/",
+  "status": 200,
+  "style": {
+   "title": "Distill — Latest articles about machine learning",
+   "h1": null,
+   "h2": {
+    "font": "-apple-system",
+    "size": "26px",
+    "weight": "700",
+    "lh": "31.2px",
+    "ls": "normal",
+    "color": "rgba(0, 0, 0, 0.8)",
+    "transform": "none"
+   },
+   "h3": null,
+   "body": {
+    "font": "-apple-system",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24.8px",
+    "ls": "normal",
+    "color": "rgb(0, 0, 0)",
+    "transform": "none"
+   },
+   "nav": null,
+   "para": {
+    "font": "-apple-system",
+    "size": "16px",
+    "lh": "24px",
+    "width": 394,
+    "color": "rgba(0, 0, 0, 0.8)"
+   },
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "textColors": [
+    "rgba(0, 0, 0, 0.8)",
+    "rgba(0, 0, 0, 0.67)",
+    "rgba(255, 255, 255, 0.8)"
+   ],
+   "bgColors": [
+    "rgb(255, 255, 255)",
+    "rgb(15, 46, 61)"
+   ],
+   "pageHeight": 8080,
+   "imgs": 32
+  },
+  "requests": 34,
+  "failedHosts": [
+   "www.google-analytics.com"
+  ]
+ }
+}

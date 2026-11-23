@@ -5,3 +5,6 @@ data/copy_number_raw/
 data/repurposing_raw/
 data/literature/pubtator_relations.jsonl
 data/literature/kg_abc_cache.json
+
+# Reference screenshots of other organisations' sites are kept locally only
+design/references/*.png

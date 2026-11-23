@@ -1,0 +1,183 @@
+{
+ "st-jude": {
+  "sectionPadding": [],
+  "maxWidths": [
+   1185
+  ],
+  "button": {
+   "radius": "100px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(102, 102, 102)",
+   "pad": "1px 6px",
+   "size": "16px",
+   "weight": "700"
+  }
+ },
+ "childrens-cancer-research-fund": {
+  "sectionPadding": [],
+  "maxWidths": [
+   1160,
+   800,
+   1000
+  ],
+  "button": {
+   "radius": "0px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(63, 141, 167)",
+   "pad": "10px 15px",
+   "size": "16px",
+   "weight": "400"
+  }
+ },
+ "curesearch": {
+  "sectionPadding": [
+   [
+    64,
+    64
+   ],
+   [
+    129,
+    96
+   ],
+   [
+    96,
+    96
+   ],
+   [
+    96,
+    96
+   ],
+   [
+    0,
+    96
+   ],
+   [
+    115,
+    115
+   ]
+  ],
+  "maxWidths": [
+   608,
+   960
+  ],
+  "button": {
+   "radius": "0px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(101, 40, 114)",
+   "pad": "0px 23px",
+   "size": "14px",
+   "weight": "800"
+  }
+ },
+ "cancer-research-uk": {
+  "sectionPadding": [],
+  "maxWidths": [
+   768,
+   960,
+   640,
+   1440
+  ],
+  "button": {
+   "radius": "0px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(230, 0, 121)",
+   "pad": "12px 24px",
+   "size": "18px",
+   "weight": "500"
+  }
+ },
+ "arc-institute": {
+  "sectionPadding": [],
+  "maxWidths": [
+   720,
+   1440,
+   701
+  ],
+  "button": {
+   "radius": "0px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 115, 230)",
+   "pad": "2px 0px",
+   "size": "16px",
+   "weight": "400"
+  }
+ },
+ "wellcome": {
+  "sectionPadding": [
+   [
+    32,
+    32
+   ],
+   [
+    64,
+    64
+   ]
+  ],
+  "maxWidths": [
+   1344
+  ],
+  "button": {
+   "radius": "4px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 52, 56)",
+   "pad": "0px 16px",
+   "size": "16.176px",
+   "weight": "400"
+  }
+ },
+ "our-world-in-data": {
+  "sectionPadding": [
+   [
+    24,
+    0
+   ]
+  ],
+  "maxWidths": [
+   1280
+  ],
+  "button": {
+   "radius": "0px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(206, 38, 30)",
+   "pad": "8.5px 24px",
+   "size": "14px",
+   "weight": "500"
+  }
+ },
+ "simons-foundation": {
+  "sectionPadding": [],
+  "maxWidths": [
+   746,
+   684,
+   800,
+   1252
+  ],
+  "button": {
+   "radius": "100px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(252, 246, 241)",
+   "pad": "0px",
+   "size": "19.52px",
+   "weight": "400"
+  }
+ },
+ "hhmi": {
+  "sectionPadding": [],
+  "maxWidths": [
+   1220
+  ],
+  "button": {
+   "radius": "0px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(255, 255, 255)",
+   "pad": "0px",
+   "size": "18px",
+   "weight": "400"
+  }
+ },
+ "distill": {
+  "sectionPadding": [],
+  "maxWidths": [],
+  "button": null
+ }
+}
