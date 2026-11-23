@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contradictions and hidden links in the osteosarcoma literature · For John</title>
+<meta name="description" content="Built November 22, 2026 from the same 33,242 PubMed papers as the literature map (every paper with &quot;osteosarcoma&quot; in its title or abstract), using relations extracted by NCBI&#x27;s PubTator3 service…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/contradictions-and-hidden-links-in-the-osteosarcoma-literature.html">
+<meta name="theme-color" content="#0f2a44">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Contradictions and hidden links in the osteosarcoma literature · For John">
+<meta property="og:description" content="Built November 22, 2026 from the same 33,242 PubMed papers as the literature map (every paper with &quot;osteosarcoma&quot; in its title or abstract), using relations extracted by NCBI&#x27;s PubTator3 service…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/contradictions-and-hidden-links-in-the-osteosarcoma-literature.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="docbar">
+  <div class="docbar-in">
+    <a class="home" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html">Home</a>
+      <a href="../explorer.html">Evidence explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-we-built">What we built</a></li><li class="l1"><a href="#contradictions-where-papers-point-opposite-ways">Contradictions: where papers point opposite ways</a></li><li class="l1"><a href="#hidden-links-untested-drug-gene-outcome-chains">Hidden links: untested drug → gene → outcome chains</a></li><li class="l1"><a href="#what-this-means-for-the-ranked-leads">What this means for the ranked leads</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#reproducing-this">Reproducing this</a></li><li class="l1"><a href="#change-log">Change log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb"><a href="../index.html">Home</a> · Report</p>
+    <h1>Contradictions and hidden links in the osteosarcoma literature</h1>
+    <p><em>Built November 22, 2026 from the same 33,242 PubMed papers as the literature map (every paper with "osteosarcoma" in its title or abstract), using relations extracted by NCBI's PubTator3 service plus our own sentence-level rules. It is the systematic version of "connecting the dots": a map of which genes and drugs the papers say push which outcomes up or down. Data: <code>data/osteosarcoma_knowledge_graph_edges.csv</code> (66,329 edge rows), <code>data/osteosarcoma_contradictions.csv</code> (172 pairs reported in both directions), <code>data/osteosarcoma_hidden_links.csv</code> (drug → gene → outcome chains). Script: <code>tools/knowledge_graph.py</code>. Working notes with every PMID: <code>research_notes/Knowledge graph/notes.md</code>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>We turned 33,242 osteosarcoma papers into a map of "this gene or drug pushes this outcome up or down", then looked for places where papers disagree and for drug-to-outcome chains nobody has tested. Of the 20 strongest disagreements, half turned out to be our software misreading sentences; the real ones are mostly known two-sided biology (TGF-beta, MYC, beta-catenin, TNF) or lab conditions that differ from the clinic, such as low doses of chemotherapy making cells more mobile in a dish. The one disagreement that changes a project lead is about CXCR4: in mice it drives lung metastasis, but in 223 patients' tumours high CXCR4 and CXCL12 went with a better outcome. The graph supports the IL-6/IL-8, FAK, DKK1 and AKT leads: every paper that seemed to point the other way was a misreading. The surviving untested chains are hypotheses, not findings; the most useful new ones point to the platelet lead (caplacizumab against von Willebrand factor, abciximab against integrin alpha-v) and to STAT3 (fedratinib), and two warn of possible harm (carbamazepine and emapalumab).</p>
+    <p><strong>How to read the labels.</strong> After key numbers we say where they come from:</p>
+    <ul>
+    <li><strong>(registry)</strong>: an official database record, such as PubMed's own listings and search counts, ChEMBL's drug mechanisms, ClinicalTrials.gov or an FDA notice.</li>
+    <li><strong>(paper, full text)</strong>: read in the full published paper.</li>
+    <li><strong>(paper, abstract only)</strong>: read only in the abstract.</li>
+    <li><strong>(preprint, abstract only)</strong>: read only in the abstract of a preprint, which has not been peer-reviewed.</li>
+    <li><strong>(press release only)</strong>: from a company announcement, conference coverage or a web listing, with no peer-reviewed paper.</li>
+    <li><strong>(our calculation)</strong>: counted or computed by this project from the files named above.</li>
+    </ul>
+    <p>Everything in this report is (paper, abstract only) or (our calculation) unless marked otherwise: no full texts were read for it.</p>
+    <h2 id="what-we-built">What we built</h2>
+    <ul>
+    <li><strong>Nodes:</strong> genes (with the literature map's corrections for PubTator's known naming mistakes), drugs and other chemicals, and eight outcomes defined from abstract wording: metastasis (including invasion and migration), proliferation (including tumour growth), apoptosis, chemoresistance, survival/prognosis, angiogenesis, stemness and immune evasion.</li>
+    <li><strong>Edges, two layers.</strong> PubTator3, NCBI's text-mining service, supplied 102,827 relations for 18,576 of the papers, labelled positive correlation, negative correlation, association, binding, co-treatment, comparison or drug interaction (registry). PubTator does not tag outcomes such as proliferation or apoptosis, so we added our own sentence-level rules: a gene or drug and an outcome word in the same sentence, with a direction word between them ("promotes", "inhibits") and corrections for "knockdown of", "inhibitor of" and similar. In a hand check of 90 random edges, about two in three (61 of 90) were right (our calculation).</li>
+    <li><strong>Evidence weights:</strong> each paper counts 1, multiplied by 1.5 for each of animal, patient or dog data, and halved for microRNA-type papers (the kind most often retracted) and reviews. Retracted papers are left out.</li>
+    <li><strong>Result:</strong> 66,329 edge rows linking 5,601 genes, 3,501 chemicals, the 8 outcomes and a general "osteosarcoma" node from PubTator (our calculation).</li>
+    </ul>
+    <h2 id="contradictions-where-papers-point-opposite-ways">Contradictions: where papers point opposite ways</h2>
+    <p>We looked for gene → outcome and drug → outcome pairs reported in opposite directions by at least two non-retracted research papers on each side. <strong>172 pairs qualify</strong> (151 genes, 21 drugs; our calculation). We ranked them by the evidence weight of the weaker side, counted the project's lead genes double, and pushed down genes that are mostly used as read-outs (caspases, BAX/BCL2 and similar). For the top 20 we read the abstracts on both sides and sorted each into one of four kinds:</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Kind</th>
+    <th>What it means</th>
+    <th>Top 20</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Extraction artefact</td>
+    <td>Our rules misread the sentence, usually a gene named as a step in a drug's pathway, or PubTator gave the wrong gene</td>
+    <td>10</td>
+    </tr>
+    <tr>
+    <td>Genuine biological context-dependence</td>
+    <td>The gene really does both, depending on dose, cell state or form</td>
+    <td>6</td>
+    </tr>
+    <tr>
+    <td>Model difference</td>
+    <td>Lab conditions or study populations differ (low-dose drug in a dish against the clinic; mice against patients)</td>
+    <td>4</td>
+    </tr>
+    <tr>
+    <td>Likely error or low-quality side</td>
+    <td>One side looks wrong or weak</td>
+    <td>0</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><em>Our calculation, from hand reading (paper, abstract only).</em></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Rank</th>
+    <th>Pair</th>
+    <th>Papers saying up</th>
+    <th>Papers saying down</th>
+    <th>Kind</th>
+    <th>What is going on</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>MYC → proliferation</td>
+    <td>10</td>
+    <td>6</td>
+    <td>Artefact</td>
+    <td>"Rb knockdown and MYC overexpression increased proliferation" read as knockdown of MYC</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>AKT1 → proliferation</td>
+    <td>21</td>
+    <td>7</td>
+    <td>Artefact</td>
+    <td>AKT named as a pathway step in a drug's effect; no abstract reports AKT slowing osteosarcoma growth</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>TGF-beta1 → proliferation</td>
+    <td>11</td>
+    <td>13</td>
+    <td>Genuine</td>
+    <td>Growth inhibition in 1987–1995 culture work (PMIDs 3480288, 7768643) against stimulation and pro-tumour effects later, including canine osteosarcoma (14633705, 24684686)</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>MYC → apoptosis</td>
+    <td>7</td>
+    <td>5</td>
+    <td>Genuine</td>
+    <td>MYC primes drug-induced cell death, yet MYC knockdown also kills osteosarcoma cells (18375382; 19996588)</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>Doxorubicin → metastasis</td>
+    <td>10</td>
+    <td>57</td>
+    <td>Model</td>
+    <td>Low doses made cells more mobile and stem-like in a dish (28454389, 28552603, 38064181); treatment doses reduce metastasis in dogs and mice</td>
+    </tr>
+    <tr>
+    <td>6</td>
+    <td>Doxorubicin → poor prognosis</td>
+    <td>14</td>
+    <td>9</td>
+    <td>Artefact</td>
+    <td>"Poor-prognosis osteosarcoma" describes the patients, not the drug</td>
+    </tr>
+    <tr>
+    <td>7</td>
+    <td>Cisplatin → apoptosis</td>
+    <td>80</td>
+    <td>10</td>
+    <td>Artefact</td>
+    <td>Resistance genes that "inhibit cisplatin-induced apoptosis"</td>
+    </tr>
+    <tr>
+    <td>8</td>
+    <td>DKK1 → metastasis</td>
+    <td>5</td>
+    <td>3</td>
+    <td>Artefact</td>
+    <td>"An antibody against DKK-1 prevented metastasis" misread; one paper is Dickkopf-3, mis-tagged as DKK1 (15087387)</td>
+    </tr>
+    <tr>
+    <td>9</td>
+    <td>VEGFA → angiogenesis</td>
+    <td>34</td>
+    <td>5</td>
+    <td>Artefact</td>
+    <td>Sentences about anti-VEGF therapy; one real nuance, IL-8 rather than VEGF-A drove blood-vessel cell migration in a 3D model (24372172)</td>
+    </tr>
+    <tr>
+    <td>10</td>
+    <td>Beta-catenin → proliferation</td>
+    <td>18</td>
+    <td>8</td>
+    <td>Genuine</td>
+    <td>Wnt/beta-catenin was inactive in 90% of 52 high-grade tumours, and switching it on slowed growth and induced differentiation (19882675); many other papers find the opposite</td>
+    </tr>
+    <tr>
+    <td>11</td>
+    <td>Methotrexate level → prognosis</td>
+    <td>7</td>
+    <td>9</td>
+    <td>Model</td>
+    <td>Higher blood levels went with better outcome in Scandinavian cohorts (12751380) but peaks above 1,500 µM with worse event-free survival in 107 patients at one centre, 58.5% against 75.5% at 5 years (15073863)</td>
+    </tr>
+    <tr>
+    <td>12</td>
+    <td>Beta-catenin → metastasis</td>
+    <td>16</td>
+    <td>7</td>
+    <td>Genuine</td>
+    <td>The beta-catenin blocker ICG-001 slowed growth but increased lung spread in mice (34062831); higher cytoplasmic beta-catenin went with less metastasis (24690154)</td>
+    </tr>
+    <tr>
+    <td>13</td>
+    <td>mTOR → proliferation</td>
+    <td>13</td>
+    <td>6</td>
+    <td>Artefact</td>
+    <td>Inhibitor names ("mammalian target of rapamycin")</td>
+    </tr>
+    <tr>
+    <td>14</td>
+    <td>AKT1 → metastasis</td>
+    <td>15</td>
+    <td>5</td>
+    <td>Artefact</td>
+    <td>Pathway-step sentences</td>
+    </tr>
+    <tr>
+    <td>15</td>
+    <td>Doxorubicin → apoptosis</td>
+    <td>74</td>
+    <td>6</td>
+    <td>Artefact</td>
+    <td>Resistance and sensitiser sentences</td>
+    </tr>
+    <tr>
+    <td>16</td>
+    <td>p53 → proliferation</td>
+    <td>6</td>
+    <td>27</td>
+    <td>Genuine</td>
+    <td>The minority is mutant p53, which gains cancer-promoting functions; normal and mutant p53 share one node</td>
+    </tr>
+    <tr>
+    <td>17</td>
+    <td>CXCL12 → metastasis</td>
+    <td>4</td>
+    <td>3</td>
+    <td>Model</td>
+    <td>In 223 untreated tumours, strong CXCL12 and CXCR4 went with a better outcome and fewer metastases (22173290); in mice the pair drives lung metastasis (18071913, 27300512)</td>
+    </tr>
+    <tr>
+    <td>18</td>
+    <td>TNF → proliferation</td>
+    <td>7</td>
+    <td>9</td>
+    <td>Genuine</td>
+    <td>High-dose TNF used to kill tumours in limb perfusion against low-level TNF that feeds osteosarcoma cells (10732774; 2450880)</td>
+    </tr>
+    <tr>
+    <td>19</td>
+    <td>Cisplatin → metastasis</td>
+    <td>8</td>
+    <td>54</td>
+    <td>Model</td>
+    <td>Low concentrations induced a mobile, mesenchymal state in a dish (28105207, 33757752)</td>
+    </tr>
+    <tr>
+    <td>20</td>
+    <td>Cisplatin → proliferation</td>
+    <td>7</td>
+    <td>91</td>
+    <td>Artefact</td>
+    <td>"Cisplatin-induced" phrases; one real effect, cisplatin expanding a tumour-forming stem-like fraction (18332870)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><em>Paper counts are our calculation (non-review, non-retracted; one direction per paper). Weights and every PMID are in <code>data/osteosarcoma_contradictions.csv</code>; reading notes in the research notes.</em></p>
+    <p><strong>What the real contradictions say.</strong> Three are worth carrying forward:
+    - <strong>CXCR4 and CXCL12 in patients</strong> (rank 17). This is the only contradiction that cuts against a project lead (lead 14, CXCR4 blockers). The study's authors suggest that tumour cells making CXCL12 may be held in the bone. Our software missed the CXCR4 half of the same sentence, so CXCR4 itself shows 19 papers for promoting metastasis and 1 against.
+    - <strong>Beta-catenin</strong> (ranks 10 and 12). Blocking beta-catenin-driven transcription increased lung spread in mice (34062831). This is a caution for any Wnt-blocking idea, and it is indirectly reassuring for DKK1 blockade (lead 4), which releases Wnt signalling rather than blocking it.
+    - <strong>Low-dose chemotherapy</strong> (ranks 5 and 19). Several groups found that sublethal doxorubicin or cisplatin makes osteosarcoma cells more mobile. This is a lab effect, not a clinical one, but it fits lead 1's argument that treatment can switch on programmes that help metastasis.</p>
+    <p><strong>The lead genes outside the top 20.</strong> We also read the minority side for VEGFA → metastasis, AKT1 → apoptosis, FAK (PTK2) → metastasis, MDM2 → proliferation, IL-1beta → proliferation and IL-6 → metastasis. All were misreadings except IL-1beta, which slowed osteosarcoma cell growth while making the cells more bone-like in two 1989 culture studies (2521862, 2786815). That is a growth result, not a lung-colonisation one, so it does not weaken lead 1. For FAK and IL-6 the "against" sentences actually support the lead: FAK <em>activation</em> rescued metastasis (42520958), and added IL-6 restored migration (30385323).</p>
+    <h2 id="hidden-links-untested-drug-gene-outcome-chains">Hidden links: untested drug → gene → outcome chains</h2>
+    <p>This is the Swanson approach, named after the information scientist who in the 1980s linked fish oil to Raynaud's disease by joining two literatures that never cited each other. Here: an approved drug <strong>A</strong> acts on a gene <strong>B</strong>; osteosarcoma papers say <strong>B</strong> moves an outcome <strong>C</strong>; and no osteosarcoma abstract names <strong>A</strong> together with <strong>C</strong>.</p>
+    <ul>
+    <li><strong>A → B</strong> comes from ChEMBL's drug-mechanism records for approved drugs (registry), or, at half weight, from PubTator3's counts of papers across all of PubMed reporting that a drug lowers or raises a gene (at least 10 papers, at least 70% in one direction).</li>
+    <li><strong>B → C</strong> comes from this corpus: at least 3 papers on one side and at least 70% of the evidence weight on that side.</li>
+    <li><strong>Not tested</strong> means no osteosarcoma abstract in the corpus names the drug with the outcome. Chains whose mechanism has already been tried with a sibling drug (ranibizumab through bevacizumab, pertuzumab through trastuzumab) are kept in the data file but not counted as hidden.</li>
+    </ul>
+    <p>That gave <strong>1,913 chains across 89 genes and 445 drugs; 972 of them are "class already tested"</strong> (our calculation). We checked the top 30 untested chains in PubMed (<code>"drug" AND osteosarcoma</code>, and the same with outcome words) and read the titles that came back (registry, November 22, 2026), then kept 12 and dropped 18. Drops included mithramycin, which has 20 osteosarcoma papers; drugs off the market; a diagnostic peptide; and chains resting on a confusion, such as calcitonin against the migraine target CGRP, which come from the same gene.</p>
+    <p><strong>Every chain below is a hypothesis.</strong> None has been tested in osteosarcoma, and the middle link rests on automated reading of abstracts.</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>#</th>
+    <th>Drug (approved for)</th>
+    <th>Acts on</th>
+    <th>Osteosarcoma papers: gene → outcome (for / against)</th>
+    <th>Direction for patients</th>
+    <th>PubMed "drug AND osteosarcoma"</th>
+    <th>Key supporting PMIDs</th>
+    <th>Note</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>Capivasertib (breast cancer)</td>
+    <td>Blocks AKT (registry)</td>
+    <td>AKT → growth 21 / 7; → metastasis 15 / 5</td>
+    <td>Beneficial</td>
+    <td>0</td>
+    <td>16142341, 22102563, 20740623</td>
+    <td>Already lead 13; all "against" papers were misreadings</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>Mavorixafor (WHIM syndrome)</td>
+    <td>Blocks CXCR4 (registry)</td>
+    <td>CXCR4 → poor survival 7 / 0</td>
+    <td>Beneficial</td>
+    <td>0</td>
+    <td>26546437, 32314796, 36816176</td>
+    <td>Already lead 14; contradicted by 223 patient tumours (22173290)</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>Nelfinavir (HIV)</td>
+    <td>Lowers AKT in 40 papers, any disease</td>
+    <td>AKT → less apoptosis 14 / 3</td>
+    <td>Beneficial</td>
+    <td>0</td>
+    <td>21617855, 28316059</td>
+    <td>Oral, generic; a second route to the AKT chain</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>Fedratinib (myelofibrosis)</td>
+    <td>Lowers STAT3 in 13 papers</td>
+    <td>STAT3 → growth 18 / 2</td>
+    <td>Beneficial</td>
+    <td>0</td>
+    <td>28423603, 21340507, 20546860</td>
+    <td>STAT3 is an orphan target with 308 papers and no trial; ruxolitinib is the same idea</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>Siltuximab (Castleman disease)</td>
+    <td>Blocks IL-6 (registry)</td>
+    <td>IL-6 → growth 4 / 0</td>
+    <td>Beneficial</td>
+    <td>1 (a computer prediction, 39833053)</td>
+    <td>22743617, 26623559</td>
+    <td>Fits lead 1; tocilizumab is already named with metastasis in the corpus</td>
+    </tr>
+    <tr>
+    <td>6</td>
+    <td>Belumosudil (graft-versus-host disease)</td>
+    <td>Blocks ROCK (registry)</td>
+    <td>ROCK1 → metastasis 10 / 2</td>
+    <td>Beneficial</td>
+    <td>0 (fasudil 4, none on metastasis)</td>
+    <td>29753317, 33225581</td>
+    <td>Weakest: mostly microRNA-type papers, and ROCK1 has a high paper-mill flag; ROCK inhibitors made bone cells <em>more</em> mobile in one study (21394446)</td>
+    </tr>
+    <tr>
+    <td>7</td>
+    <td>Caplacizumab (a clotting disorder, aTTP)</td>
+    <td>Blocks von Willebrand factor (registry)</td>
+    <td>VWF → metastasis 3 / 1</td>
+    <td>Beneficial</td>
+    <td>0</td>
+    <td>33101888, 15467717</td>
+    <td>Fits lead 10: 33101888 shows VWF binding platelets' GPIb drives metastasis, the exact step caplacizumab blocks</td>
+    </tr>
+    <tr>
+    <td>8</td>
+    <td>Abciximab (heart procedures)</td>
+    <td>Blocks integrin alpha-v/beta-3 and platelet GPIIb/IIIa (registry)</td>
+    <td>Integrin alpha-v → metastasis 5 / 0</td>
+    <td>Beneficial</td>
+    <td>0</td>
+    <td>12384999, 30691475, 34884541</td>
+    <td>Fits lead 10 (scores 69.3 in the repurposing screen); check whether it is still marketed</td>
+    </tr>
+    <tr>
+    <td>9</td>
+    <td>Carbamazepine (epilepsy)</td>
+    <td>Raises P-glycoprotein in 18 papers</td>
+    <td>P-glycoprotein → poor survival 15 / 0</td>
+    <td><strong>Harmful</strong></td>
+    <td>2 (not about this)</td>
+    <td>17088985, 11294418</td>
+    <td>Known drug-interaction pharmacology; relevant to choosing seizure medicines during doxorubicin treatment</td>
+    </tr>
+    <tr>
+    <td>10</td>
+    <td>Emapalumab (HLH)</td>
+    <td>Blocks interferon-gamma (registry)</td>
+    <td>Interferon-gamma → less growth 7 / 3</td>
+    <td><strong>Harmful</strong></td>
+    <td>0</td>
+    <td>1932372, 2121483, 24612598</td>
+    <td>Interferon-gamma slows osteosarcoma cells in culture; blocking it could remove a brake. Low practical relevance</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><em>Paper counts and scores: our calculation. Drug mechanisms: ChEMBL (registry) or PubTator3 counts (our calculation). PubMed counts: registry, November 22, 2026. A third harm-direction chain, omaveloxolone (an NRF2 activator) → NRF2 → metastasis, rests on 3 papers, one of them about thyroid cancer.</em></p>
+    <p><strong>Reading the table.</strong> The method found the project's two newest repurposing leads (AKT and CXCR4 blockers) as its top two chains by a different route from the repurposing screen, which is a useful check that it works. The genuinely new ideas are the two platelet-axis drugs, which strengthen lead 10 with a specific mechanism, and JAK inhibitors as a way to reach STAT3. The two harm-direction chains matter only if a patient is already taking the drug, and the carbamazepine one is known pharmacology rather than a discovery.</p>
+    <h2 id="what-this-means-for-the-ranked-leads">What this means for the ranked leads</h2>
+    <p>Counts are osteosarcoma research papers for / against, after removing reviews and retracted papers (our calculation).</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Lead (from <code>reports/Ranked leads and research partners.md</code>)</th>
+    <th>What the graph says</th>
+    <th>Verdict</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1. Block IL-1 or IL-6 after surgery</td>
+    <td>IL-6 → metastasis 7 / 2, and both "against" sentences actually support IL-6 driving migration; IL-6 → poor survival 5 / 0; IL-8 → metastasis 5 / 0. The only contrary IL-1 data are two 1989 culture studies on growth, not lung spread. Low-dose chemotherapy making cells more mobile (above) fits the lead's logic</td>
+    <td><strong>Supports</strong></td>
+    </tr>
+    <tr>
+    <td>2. Gene amplification and VEGFR2 pills</td>
+    <td>VEGF-A → angiogenesis 34 / 5, → metastasis 21 / 3, → poor survival 20 / 1, every minority sentence a misreading. The graph cannot say whether amplification predicts benefit</td>
+    <td>Consistent, not tested</td>
+    </tr>
+    <tr>
+    <td>4. FAK or DKK1 in pet dogs</td>
+    <td>FAK → metastasis 5 / 2 and DKK1 → metastasis 5 / 3, all minority sentences misreadings. The beta-catenin findings suggest that releasing Wnt signalling, which DKK1 blockade does, is unlikely to promote metastasis</td>
+    <td><strong>Supports</strong></td>
+    </tr>
+    <tr>
+    <td>5–6. LRRC15, PTK7</td>
+    <td>Too few papers: LRRC15 has 3 sentence-level links and PTK7 none</td>
+    <td>No information</td>
+    </tr>
+    <tr>
+    <td>9. Block CXCR1/2</td>
+    <td>IL-8 → metastasis 5 / 0</td>
+    <td>Supports, thinly</td>
+    </tr>
+    <tr>
+    <td>10. Platelets and metastasis</td>
+    <td>Two of the surviving hidden links are platelet-axis drugs: caplacizumab (von Willebrand factor) and abciximab (integrin alpha-v and GPIIb/IIIa)</td>
+    <td><strong>Supports, adds candidates</strong></td>
+    </tr>
+    <tr>
+    <td>13. AKT blockers</td>
+    <td>AKT → growth 21 / 7, → metastasis 15 / 5, → less apoptosis 14 / 3; every minority sentence was AKT named as a pathway step. Capivasertib → AKT → growth is the top hidden link. This does not address the lead's real problem: the AKT-cisplatin synergy needed normal p53 (25482935)</td>
+    <td><strong>Supports</strong></td>
+    </tr>
+    <tr>
+    <td>14. CXCR4 blockers</td>
+    <td>Mouse data one-sided (CXCR4 → metastasis 19 / 1), but in 223 untreated patient tumours strong CXCR4 and CXCL12 went with better outcome and fewer metastases (22173290). This patient-level contradiction is not yet on the leads page</td>
+    <td><strong>Contradicts, in patients</strong></td>
+    </tr>
+    <tr>
+    <td>Dropped: MDM2</td>
+    <td>MDM2 → growth 3 / 3, all inhibitor-sentence misreadings</td>
+    <td>Nothing new</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><strong>Suggested follow-ups.</strong> Add the 223-patient CXCR4/CXCL12 result to lead 14. Add caplacizumab to lead 10 as a drug that blocks the exact VWF-platelet step shown to drive osteosarcoma metastasis in mice (33101888). Read in full the four papers that most change how leads 4, 10 and 14 read: 22173290, 19882675, 34062831 and 33101888.</p>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li><strong>Automated relation extraction makes many errors.</strong> In a hand check of 90 random sentence-level links, 61 (68%) were right (our calculation). The commonest errors: a gene named as a step in someone else's pathway, chains of microRNA "sponges" read the wrong way round, "rescue" and "reverse" sentences, and genes that PubTator names wrongly. We found five new naming errors beyond the literature map's correction table: "p27" tagged as DCTN6, "Dickkopf-3" as DKK1, "TGF-alpha" as TNF, "GLUT-1" as CSE and "HDAC6" as a mouse gene. Single links are unreliable; only patterns across many papers mean anything, and every contradiction and chain reported here was read by hand.</li>
+    <li><strong>Abstracts only.</strong> No full texts were read for this report. An abstract can overstate or leave out the result that matters.</li>
+    <li><strong>Direction is inferred, not measured.</strong> PubTator3's relations are document-level, and its "positive correlation" can mean "is higher in the tumour" as easily as "drives it". Our sentence rules infer direction from words such as "promotes" and "inhibits". Neither distinguishes cause from correlation, a cell line from a patient, or a high dose from a low one.</li>
+    <li><strong>Outcomes are broad.</strong> "Metastasis" includes cell migration and invasion in a dish; "proliferation" includes cell viability; "poor prognosis" includes any association with shorter survival. Normal and mutant p53 share one node.</li>
+    <li><strong>Recall is low.</strong> The rules skip any sentence where another gene sits between the gene and the outcome, so many real findings are missing, such as the CXCR4 half of the 223-patient study.</li>
+    <li><strong>"Not tested" means not in an abstract.</strong> A drug could have been tested in a paper whose abstract does not name it, in a conference abstract or in an unpublished study. The PubMed check covers only the top 30 chains.</li>
+    <li><strong>Hidden links are hypotheses.</strong> A → B links from the wider literature are co-mention counts. B → C links rest on a few papers, some of them microRNA-type papers of the kind most often retracted (ROCK1 especially). A plausible chain is a reason to look, not a reason to treat.</li>
+    <li><strong>Retraction notices slip through.</strong> Notices and corrections have their own PubMed IDs and are not on the retracted list, so a few entered the data (for example 38464341).</li>
+    </ul>
+    <h2 id="reproducing-this">Reproducing this</h2>
+    <p><code>python3 tools/knowledge_graph.py fetch   # PubTator3 relations (about 15 minutes; cache is git-ignored)
+    python3 tools/knowledge_graph.py build   # edge file and contradictions (offline, about 30 seconds)
+    python3 tools/knowledge_graph.py abc     # hidden links (PubTator3 and PubMed queries, cached)</code></p>
+    <p>The hidden-link step uses the ChEMBL download cached by <code>python3 tools/repurposing_screen.py chembl</code> in <code>data/repurposing_raw/</code>; without it, it falls back to <code>data/osteosarcoma_repurposing_candidates.csv</code>.</p>
+    <h2 id="change-log">Change log</h2>
+    <ul>
+    <li><strong>November 22, 2026.</strong> First version.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Contradictions%20and%20hidden%20links%20in%20the%20osteosarcoma%20literature.md">reports/Contradictions and hidden links in the osteosarcoma literature.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer>
+  <div class="docbar-in">
+    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+  });
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Osteosarcoma clinical trials: what 40 years of registrations show · For John</title>
+<meta name="description" content="Step 1 of the For John dot-connecting plan. Built from every study on ClinicalTrials.gov that lists osteosarcoma as a condition (758 studies, 603 of them interventional trials), a Europe PMC…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/osteosarcoma-clinical-trials-landscape.html">
+<meta name="theme-color" content="#0f2a44">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Osteosarcoma clinical trials: what 40 years of registrations show · For John">
+<meta property="og:description" content="Step 1 of the For John dot-connecting plan. Built from every study on ClinicalTrials.gov that lists osteosarcoma as a condition (758 studies, 603 of them interventional trials), a Europe PMC…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/osteosarcoma-clinical-trials-landscape.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="docbar">
+  <div class="docbar-in">
+    <a class="home" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html">Home</a>
+      <a href="../explorer.html">Evidence explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#why-trials-stop">Why trials stop</a></li><li class="l1"><a href="#how-trial-design-changed-over-time">How trial design changed over time</a></li><li class="l1"><a href="#trials-whose-results-looked-missing-and-what-a-follow-up-search-found">Trials whose results looked missing, and what a follow-up search found</a></li><li class="l1"><a href="#what-this-connects-to">What this connects to</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#next-steps">Next steps</a></li><li class="l1"><a href="#change-log">Change log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb"><a href="../index.html">Home</a> · Report</p>
+    <h1>Osteosarcoma clinical trials: what 40 years of registrations show</h1>
+    <p><em>Step 1 of the For John dot-connecting plan. Built from every study on ClinicalTrials.gov that lists osteosarcoma as a condition (758 studies, 603 of them interventional trials), a Europe PMC search of each finished trial's registry number, and a one-by-one follow-up search of nine trials whose results looked missing. Last revised November 14, 2026, after an independent audit; JCOG0905 note added November 19, 2026. Data: <code>data/osteosarcoma_trials.csv</code>, <code>data/osteosarcoma_trials_flags.csv</code>, <code>data/osteosarcoma_trials_publications.csv</code>. Scripts: <code>tools/trial_miner.py</code>, <code>tools/retag_trial_scope.py</code>, <code>tools/trial_analysis.py</code>, <code>tools/trial_publication_check.py</code>. Follow-up search log: <code>research_notes/Lost trial results/lost_trials_search.md</code>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>Osteosarcoma trials mostly fail to finish rather than fail to work. Of the 99 interventional trials that were terminated, withdrawn or suspended, 44 stopped mainly for poor recruitment and 20 for business or funding reasons, while only about 7 to 9 cited lack of efficacy; the 65 terminated trials had enrolled about 1,970 patients before they stopped. Randomized evidence is thin: we count 27 randomized trials devoted to osteosarcoma alone across about four decades, and the five largest have not updated their records in years. Trials with a site in China now make up about a fifth of new trials, yet none has posted results on ClinicalTrials.gov. Three trials that first looked unpublished turned out to be published, all with negative results. Four large randomized trials, together planning about 1,080 patients, still have no public results.</p>
+    <p><strong>How to read the labels.</strong> After each key number we say where it comes from:</p>
+    <ul>
+    <li><strong>(registry)</strong>: read from the ClinicalTrials.gov record.</li>
+    <li><strong>(paper, full text)</strong>: read in the full published paper.</li>
+    <li><strong>(paper, abstract only)</strong>: read only in the abstract.</li>
+    <li><strong>(press release only)</strong>: reported by a company or the media, not in a peer-reviewed paper.</li>
+    <li><strong>(our calculation)</strong>: counted or computed by this project from the files above.</li>
+    </ul>
+    <h2 id="why-trials-stop">Why trials stop</h2>
+    <p>Among the 99 interventional trials that were terminated (65), withdrawn before enrolling anyone (26) or suspended (8) (registry):</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Main reason in the registry, grouped automatically</th>
+    <th>Trials</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Poor recruitment</td>
+    <td>44</td>
+    </tr>
+    <tr>
+    <td>Business or funding decision</td>
+    <td>20</td>
+    </tr>
+    <tr>
+    <td>No reason given</td>
+    <td>9</td>
+    </tr>
+    <tr>
+    <td>Other</td>
+    <td>8</td>
+    </tr>
+    <tr>
+    <td>Lack of efficacy</td>
+    <td>7</td>
+    </tr>
+    <tr>
+    <td>Drug supply ran out, or IND withdrawn</td>
+    <td>7</td>
+    </tr>
+    <tr>
+    <td>COVID-19</td>
+    <td>2</td>
+    </tr>
+    <tr>
+    <td>Safety review</td>
+    <td>2</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>(our calculation)</p>
+    <p>The grouping takes the first matching keyword in each free-text reason, so mixed reasons are counted once. Two trials grouped under recruitment also cite futility or a missed primary objective (NCT00752206, NCT01313884). One trial grouped under efficacy, the tumour-infiltrating-lymphocyte trial NCT06566092, was in fact closed on a company decision "after reviewing the available safety and efficacy data". Another, NCT03468075, says only "stopping rules met". So <strong>about 7 to 9 trials stopped for lack of efficacy</strong>, depending on how these mixed reasons are read (our calculation). Poor recruitment ended roughly five to six times as many trials. Each trial and its stated reason is in <code>data/osteosarcoma_trials_flags.csv</code>.</p>
+    <p><strong>Patients in stopped trials.</strong> Terminated, suspended and withdrawn trials report enrolment differently, so we count them separately (our calculation, from registry enrolment fields):</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Status</th>
+    <th>Trials</th>
+    <th>Patients</th>
+    <th>What the number means</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Terminated</td>
+    <td>65</td>
+    <td>about 1,970</td>
+    <td>Actually enrolled: 1,813 in 63 trials that report an actual count, plus 154 planned in 2 trials that report only an estimate</td>
+    </tr>
+    <tr>
+    <td>Suspended</td>
+    <td>8</td>
+    <td>1,521</td>
+    <td><strong>Planned</strong>, not enrolled. 1,122 of these are COG AOST2032 (cabozantinib, NCT05691478), suspended to "extend the observation period for current patients"</td>
+    </tr>
+    <tr>
+    <td>Withdrawn</td>
+    <td>26</td>
+    <td>0</td>
+    <td>Withdrawn trials enrolled nobody</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Some cases are telling. Ipsen's 2024 cabozantinib maintenance trial CabOSTar (NCT06341712) closed after 10 patients because of "ongoing recruitment challenges" (registry). Merck's robatumumab IGF-1R trial (NCT00617890) enrolled 219 people before stopping "for strategic reasons, not for a safety concern" (registry). It did post results, which are used in the pooled control dataset. Iovance's TIL trial in children (NCT06566092) closed after 5 patients (registry).</p>
+    <h2 id="how-trial-design-changed-over-time">How trial design changed over time</h2>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Start years</th>
+    <th>Interventional trials</th>
+    <th>Osteosarcoma-only</th>
+    <th>Randomized, osteosarcoma-only</th>
+    <th>Bone sarcoma, osteosarcoma not named</th>
+    <th>With a US site</th>
+    <th>With a site in China</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>2005–2009</td>
+    <td>85</td>
+    <td>14</td>
+    <td>7</td>
+    <td>0</td>
+    <td>59</td>
+    <td>2</td>
+    </tr>
+    <tr>
+    <td>2010–2014</td>
+    <td>93</td>
+    <td>16</td>
+    <td>3</td>
+    <td>1</td>
+    <td>66</td>
+    <td>1</td>
+    </tr>
+    <tr>
+    <td>2015–2019</td>
+    <td>120</td>
+    <td>17</td>
+    <td>4</td>
+    <td>3</td>
+    <td>81</td>
+    <td>16</td>
+    </tr>
+    <tr>
+    <td>2020–2024</td>
+    <td>165</td>
+    <td>31</td>
+    <td>9</td>
+    <td>2</td>
+    <td>82</td>
+    <td>32</td>
+    </tr>
+    <tr>
+    <td>2025–2029 (so far)</td>
+    <td>62</td>
+    <td>12</td>
+    <td>3</td>
+    <td>4</td>
+    <td>33</td>
+    <td>13</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>(our calculation, from registry fields)</p>
+    <p>Across all start years there are 98 osteosarcoma-only interventional trials, 27 of them randomized (our calculation). The remaining interventional trials are 10 "bone sarcoma" trials that never name osteosarcoma and 495 basket trials, which include osteosarcoma among other cancers.</p>
+    <p><strong>A randomized trial outside this count: JCOG0905.</strong> The Japan Clinical Oncology Group's randomized trial of MAP chemotherapy with or without ifosfamide for poor responders is registered only in the Japan Registry of Clinical Trials (jRCTs031180126, as given in the paper); searches of ClinicalTrials.gov for "JCOG0905" and for that jRCT number return nothing, and it is not in <code>data/osteosarcoma_trials.csv</code> (registry, November 19, 2026). So it is not among the 27. It randomized 103 poor responders (51 to MAP, 52 to MAP plus ifosfamide): disease-free survival did not differ (HR 1.05, 95% CI 0.55–1.98), overall survival was numerically worse with ifosfamide (HR 1.48, 95% CI 0.68–3.22), and 9 against 0 patients stopped treatment for adverse events (paper, abstract only; <em>J Clin Oncol</em> 2025, PMID 40138604). Like EURAMOS-1, it found that intensifying chemotherapy for poor responders does not help. Counting trials registered outside ClinicalTrials.gov would raise the randomized total to at least 28; we did not search jRCT, UMIN or other registries systematically.</p>
+    <p><strong>How the tags work.</strong> A trial is "osteosarcoma-only" if every listed condition names osteosarcoma (or osteogenic sarcoma), or is a generic bone-sarcoma term or a bare site descriptor such as "Lung Metastases", and at least one condition names osteosarcoma. It is "bone sarcoma" if the conditions are generic bone-sarcoma or bone-tumour terms that never name osteosarcoma. Everything else is "basket". The earlier version of the tag also accepted any condition containing "recurrent", "refractory", "metastatic", "lung" or "neoplasm". That let Ewing sarcoma, rhabdomyosarcoma and even lung-cancer trials in. The corrected tag errs toward exclusion. Some true osteosarcoma trials are still counted as basket: OS2006 lists only "Sarcoma", and NCT03909776 lists endpoint names instead of a disease. So the osteosarcoma-only counts are more likely to be slight undercounts than overcounts, but they remain approximate.</p>
+    <p><strong>China.</strong> Trials with a site in China rose from 1 in 2010–2014 to 32 in 2020–2024, about one in five new trials (registry; our calculation). None of the 64 interventional trials with a Chinese site has posted results on ClinicalTrials.gov (registry). By comparison, 131 of 384 trials with a US site have (registry).</p>
+    <p><strong>Main endpoints in osteosarcoma-only phase 2 and 3 trials</strong> (79 trials; our calculation). A trial counts once for every endpoint type its primary outcomes name, so the numbers add up to more than 79:</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Primary endpoint names</th>
+    <th>Trials</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Event-free, progression-free, disease-free or relapse-free survival</td>
+    <td>40</td>
+    </tr>
+    <tr>
+    <td>Response rate</td>
+    <td>20</td>
+    </tr>
+    <tr>
+    <td>Toxicity, safety or dose</td>
+    <td>16</td>
+    </tr>
+    <tr>
+    <td>Overall survival</td>
+    <td>4</td>
+    </tr>
+    <tr>
+    <td>None of these</td>
+    <td>14</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Overall survival is a primary endpoint in 4 trials: NCT00978471 (high-dose thiotepa), NCT05691478 (AOST2032), NCT07477457 and NCT04319874. It is the only primary endpoint in 2 of them (our calculation, keyword matching on registry text). Response rate is still the second most named endpoint, even though, as the research report notes, osteosarcoma's bony matrix rarely shrinks on scans.</p>
+    <h2 id="trials-whose-results-looked-missing-and-what-a-follow-up-search-found">Trials whose results looked missing, and what a follow-up search found</h2>
+    <p>The automated check had two kinds of lead:</p>
+    <ul>
+    <li>Large randomized osteosarcoma-only trials with status "unknown", where nobody has updated the record.</li>
+    <li>Finished trials with neither posted results nor any Europe PMC paper that cites their registry number.</li>
+    </ul>
+    <p>Nine of these were then searched one by one: PubMed, Europe PMC, conference abstract books, theses and web searches in English, Portuguese and Chinese. <strong>Three had in fact been published.</strong> None of the three cites its registry number where the automated check could see it. So every "no paper found" row below is a lead to check, not proof that results went unpublished.</p>
+    <p><strong>Large randomized trials with status "unknown".</strong> All five numbers are planned enrolment; none of these trials has posted results (registry).</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Trial</th>
+    <th>Started</th>
+    <th>Planned patients</th>
+    <th>Question</th>
+    <th>Sponsor</th>
+    <th>What the follow-up found</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>NCT02273583 (GLATO 2006)</td>
+    <td>2006</td>
+    <td>738</td>
+    <td>Metronomic oral cyclophosphamide and methotrexate maintenance after standard therapy</td>
+    <td>GRAACC, Brazil (Latin American Group of Osteosarcoma Treatment)</td>
+    <td><strong>Published, negative.</strong> 296 children and young adults up to age 30 were randomized (fewer than planned). 5-year event-free survival 61% with maintenance against 64% without, P = 0.40 (paper, abstract only). Senerchia et al., <em>Cancer</em> 2017, PMID 28263383</td>
+    </tr>
+    <tr>
+    <td>NCT01669369</td>
+    <td>2013</td>
+    <td>400</td>
+    <td>Lithium carbonate added to chemotherapy before surgery</td>
+    <td>Sun Yat-sen University, China</td>
+    <td>Nothing found in English-language sources. Chinese databases (CNKI, Wanfang) could not be searched</td>
+    </tr>
+    <tr>
+    <td>NCT04359550</td>
+    <td>2020</td>
+    <td>362</td>
+    <td>PD-L1 antibody ZKAB001 (socazolimab) maintenance against placebo, phase 3</td>
+    <td>Lee's Pharmaceutical</td>
+    <td><strong>Phase 3 not reported.</strong> The earlier single-arm phase 1/2 (21 patients) reported 71% event-free at 24 months (paper, abstract only; Zhou et al., <em>Clin Cancer Res</em> 2023, PMID 36469563). Its registry record was last updated in April 2020 and lists no sites (registry)</td>
+    </tr>
+    <tr>
+    <td>NCT01002092</td>
+    <td>2009</td>
+    <td>160</td>
+    <td>Endostar (recombinant endostatin) with chemotherapy</td>
+    <td>Shandong Simcere-Medgenn Bio-pharmaceutical (Endostar's maker), with military hospitals in Nanjing, Jinan, Xi'an and Beijing</td>
+    <td>Nothing found. Other Chinese Endostar studies in osteosarcoma exist, but none matches this trial's sites, dose or size</td>
+    </tr>
+    <tr>
+    <td>NCT03063983 (GLATO2017)</td>
+    <td>2017</td>
+    <td>158</td>
+    <td>Metronomic chemotherapy in metastatic disease</td>
+    <td>GRAACC, Brazil</td>
+    <td>Nothing found, including in four SIOP abstract books</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>On socazolimab's status: a 2025 phase 3 paper in lung cancer states that China's regulator gave it conditional approval for cervical cancer in December 2023 (paper, full text). We did not find the regulator's own notice. We found no osteosarcoma filing.</p>
+    <p><strong>Finished trials with no posted results and no paper citing their registry number.</strong> Among interventional trials that ended between 2010 and 2023, the automated check found 23, covering 949 patients (our calculation). The follow-up search found two of them published:</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Trial</th>
+    <th>Status</th>
+    <th>Patients</th>
+    <th>Question</th>
+    <th>What the follow-up found</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>NCT00978471 (OSII-TTP)</td>
+    <td>Completed 2018</td>
+    <td>44</td>
+    <td>High-dose thiotepa with stem-cell rescue added to chemotherapy, randomized, in <strong>relapsed</strong> osteosarcoma</td>
+    <td><strong>Published, negative.</strong> 2-year overall survival 66.7% against 50.0%; hazard ratio 0.83, P = 0.61 (paper, abstract only). Marec-Bérard et al., <em>Eur J Cancer</em> 2020, PMID 31838406</td>
+    </tr>
+    <tr>
+    <td>NCT03909776</td>
+    <td>Registered as completed 2019</td>
+    <td>99</td>
+    <td>Intra-arterial cisplatin infused into the limb</td>
+    <td><strong>Published, negative.</strong> A retrospective series registered after the fact: 48 intra-arterial patients against 51 historical intravenous controls, with no gain in local control (P = 0.34) or survival (P = 0.17) (paper, abstract only). Xie et al., <em>Cancer Manag Res</em> 2019, PMID 31447583</td>
+    </tr>
+    <tr>
+    <td>NCT02022358 (GLU 1)</td>
+    <td>Terminated 2015</td>
+    <td>34</td>
+    <td>Glucarpidase to reduce methotrexate side effects in bone sarcoma, randomized</td>
+    <td><strong>Partly found.</strong> A 2013 University College London MD(Res) thesis reports an interim analysis. We could open only a truncated abstract, so its figures are unverified</td>
+    </tr>
+    <tr>
+    <td>NCT02718482 (OsteoREC2015)</td>
+    <td>Terminated 2019</td>
+    <td>7</td>
+    <td>Gemcitabine + docetaxel against prolonged ifosfamide in relapsed osteosarcoma, randomized</td>
+    <td>Stopped at 7 patients for poor accrual; nothing to report</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>That leaves 21 trials and about 810 patients with no results found (our calculation). Many are not anticancer treatment trials. They include supportive-care, imaging, exercise, analgesia and survivorship studies, and one cell-culture study registered as interventional. The full list is in <code>data/osteosarcoma_trials_publications.csv</code>. Older papers often omit registry numbers, so the list is limited to trials ending in 2010 or later, and it still has false positives.</p>
+    <p><strong>What remains genuinely unreported.</strong> Four large randomized trials have no public results, together planning about 1,080 patients: the PD-L1 maintenance phase 3, the lithium trial, the Endostar trial and the Brazilian metastatic trial (our calculation). Each needs a direct question to its sponsor. For the Chinese trials, that means searching Chinese-language journals and registries too.</p>
+    <p><strong>Results reporting for recent US trials is good.</strong> Of 45 US phase 2-and-later trials completed since 2018, 4 have no results posted (registry; our calculation).</p>
+    <h2 id="what-this-connects-to">What this connects to</h2>
+    <ul>
+    <li><strong>The pooled control dataset (gap 1 in the research report).</strong> In total, 147 studies in the registry file have posted results. 92 of them are marked completed, and 117 report efficacy outcomes in a standard arm-level format. Extracting these is the cheapest first version of the historical-control dataset that the European FOSTER consortium says is missing. That extraction is now done: <code>reports/Osteosarcoma pooled control dataset.md</code>.</li>
+    <li><strong>Low-cost maintenance strategies.</strong> Metronomic maintenance after standard therapy was tested in 296 randomized children and young adults in Latin America and did not help (paper, abstract only). DFMO is being tested now. The 400-patient lithium trial remains unreported.</li>
+    <li><strong>Recruitment is the bottleneck, not ideas.</strong> Poor recruitment ended five to six times as many trials as lack of efficacy. So platform designs and pooled controls matter more than any single new drug. The new FOSTER platform (NCT07871864, Gustave Roussy, recruiting since October 2026, 530 planned across the whole platform) is one such design (registry).</li>
+    <li><strong>The China shift.</strong> About a fifth of new trials now run in China, and none of them has posted results on ClinicalTrials.gov. Following them requires Chinese-language conference abstracts, journals and the Chinese trial registry, which this project has not yet searched.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>The scope tags, the stop-reason groups and the endpoint groups were assigned automatically from free text. They are approximate, though the scope tag was tightened on November 14, 2026 (see How the tags work).</li>
+    <li>"No paper found" means no Europe PMC record cites the trial's registry number. It is not proof of non-publication: three of nine trials checked by hand had been published.</li>
+    <li>ClinicalTrials.gov does not hold every trial. European-only trials registered elsewhere (EU CTR, ISRCTN) and Chinese trials registered only in China are missing.</li>
+    <li>Enrolment for suspended and unknown-status trials is the planned number, not the actual one.</li>
+    <li>The follow-up search could not reach several sources: Chinese databases, the EU trials register results pages, and a university thesis repository.</li>
+    </ul>
+    <h2 id="next-steps">Next steps</h2>
+    <ol>
+    <li>Contact the sponsors of the four unreported randomized trials (Lee's Pharmaceutical, Sun Yat-sen University, Simcere, GRAACC), and search CNKI, Wanfang and the Chinese trial registry for the three Chinese trials.</li>
+    <li>Read the GLU 1 thesis and the EU trials register results page for NCT02022358 when access allows.</li>
+    <li>Step 2 of the plan: extract claims from the osteosarcoma literature and link them to these trials and to the NIH grants.</li>
+    </ol>
+    <h2 id="change-log">Change log</h2>
+    <p><strong>November 19, 2026.</strong> Checked whether JCOG0905 (randomized, Japan) is in the trial file: it is not, because it is registered only in jRCT (jRCTs031180126), so it is outside ClinicalTrials.gov and not among the 27 randomized osteosarcoma-only trials. Its published result (JCO 2025, PMID 40138604; paper, abstract only) was added below the count. The count itself is unchanged.</p>
+    <p><strong>November 13–14, 2026.</strong> The report was consolidated into one current version after an independent audit (<code>research_notes/Audit/audit_B_trials_controls_pills.md</code>). Earlier "Update" sections were folded into the text.</p>
+    <ul>
+    <li><strong>Scope tag fixed.</strong> The old osteosarcoma-only tag also accepted any condition containing "recurrent", "refractory", "metastatic", "lung", "pulmonary" or "neoplasm". It counted Ewing sarcoma, rhabdomyosarcoma, multi-tumour paediatric baskets and one lung-cancer trial as osteosarcoma-only. The tag was rewritten, and a third tag ("bone sarcoma") was added. Effects:</li>
+    <li>Osteosarcoma-only randomized trials: 32 → 27.</li>
+    <li>Osteosarcoma-only phase 2/3 trials used for endpoints: 103 → 79.</li>
+    <li>Period table columns re-counted.</li>
+    <li>"The randomized counts are a floor" removed; the tag was leaky in both directions.</li>
+    <li><strong>Endpoint counting fixed.</strong> Each trial used to count only for its first matching endpoint type, so overall survival was checked after event-free survival and almost never counted. "Just one trial uses overall survival as its main measure" became "overall survival is a primary endpoint in 4 trials, and the only one in 2".</li>
+    <li><strong>Patients in stopped trials.</strong> "About 3,500 patients" became about 1,970 enrolled in terminated trials, reported separately from 1,521 planned in suspended trials (1,122 of them in AOST2032); withdrawn trials enrolled 0.</li>
+    <li><strong>Stop reasons.</strong> "Only 7 stopped because the treatment did not work" became "about 7 to 9", with the misgrouped trials named. "Six times" became "five to six times".</li>
+    <li><strong>Three trials first listed as unpublished were found published</strong>, all negative: GLATO 2006, high-dose thiotepa and intra-arterial cisplatin. They were removed from the "missing" lists, and the remaining unreported trials were restated.</li>
+    <li>"92 trials with posted results" became 147 with posted results (92 is the completed subset).</li>
+    <li>Endostar trial sponsor corrected from "Chinese hospital" to Shandong Simcere-Medgenn. Lithium trial sponsor named (Sun Yat-sen University).</li>
+    <li>"296 children" became "296 children and young adults up to age 30".</li>
+    <li>The claim that every large unknown-status trial "enrolled or planned hundreds" was changed to "planned", since all five numbers are estimates and two are about 160.</li>
+    <li>The thiotepa trial is now described as a trial in relapsed osteosarcoma. The intra-arterial cisplatin study is now described as a retrospective series.</li>
+    <li>Robatumumab is no longer described as leaving its question unanswered, since it posted results.</li>
+    <li>Socazolimab's approval for cervical cancer is now sourced, with the caveat that we did not find the regulator's own notice.</li>
+    <li>"China trials often without posted results" became a number: 0 of 64.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Osteosarcoma%20clinical%20trials%20landscape.md">reports/Osteosarcoma clinical trials landscape.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer>
+  <div class="docbar-in">
+    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+  });
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

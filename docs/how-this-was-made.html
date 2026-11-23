@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How this was made · For John</title>
+<meta name="description" content="For John is an open, independent project. This page explains who built it, how, from what, how claims were checked, and what its limits are, so that anyone can judge how much to trust it. Who…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/how-this-was-made.html">
+<meta name="theme-color" content="#0f2a44">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="How this was made · For John">
+<meta property="og:description" content="For John is an open, independent project. This page explains who built it, how, from what, how claims were checked, and what its limits are, so that anyone can judge how much to trust it. Who…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/how-this-was-made.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="docbar">
+  <div class="docbar-in">
+    <a class="home" href="index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="explorer.html">Evidence explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#who">Who</a></li><li class="l1"><a href="#from-what">From what</a></li><li class="l1"><a href="#how-claims-were-checked">How claims were checked</a></li><li class="l1"><a href="#what-the-ai-did-well-and-where-it-went-wrong">What the AI did well, and where it went wrong</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#re-running-the-analyses">Re-running the analyses</a></li><li class="l1"><a href="#contact-and-corrections">Contact and corrections</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb"><a href="index.html">Home</a> · Document</p>
+    <h1>How this was made</h1>
+    <p><em>For John is an open, independent project. This page explains who built it, how, from what, how claims were checked, and what its limits are, so that anyone can judge how much to trust it.</em></p>
+    <h2 id="who">Who</h2>
+    <p>For John was started in November 2026 by John Gegen's older brother, after John died of osteosarcoma. The research was carried out with frontier AI models working as research assistants. The AI searched databases, read papers, wrote and ran analysis code, and drafted the reports. A person directed the work, chose what to pursue, and decided what to publish.</p>
+    <p>No scientist has reviewed this work yet. Getting that review is the project's next step.</p>
+    <h2 id="from-what">From what</h2>
+    <p>Everything comes from public sources:</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Source</th>
+    <th>What we used</th>
+    <th>Size</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>PubMed, with NCBI PubTator3 annotations</td>
+    <td>Every paper with "osteosarcoma" in the title or abstract, with genes and chemicals tagged automatically</td>
+    <td>33,242 papers</td>
+    </tr>
+    <tr>
+    <td>ClinicalTrials.gov</td>
+    <td>Every study listing osteosarcoma as a condition, plus posted results</td>
+    <td>758 studies</td>
+    </tr>
+    <tr>
+    <td>Europe PMC and PubMed Central</td>
+    <td>Full texts of open-access papers, used to check claims</td>
+    <td>—</td>
+    </tr>
+    <tr>
+    <td>NIH RePORTER</td>
+    <td>NIH grants naming osteosarcoma or neuroblastoma, fiscal years 2015–2025</td>
+    <td>about 2,700 osteosarcoma grant records (most only mention osteosarcoma in passing)</td>
+    </tr>
+    <tr>
+    <td>NCI Genomic Data Commons (TARGET-OS)</td>
+    <td>Tumour RNA sequencing from 88 patients; open copy-number files (SNP-array gene-level and segment calls, with whole-genome calls as a check) from 81 patients</td>
+    <td>189 copy-number files</td>
+    </tr>
+    <tr>
+    <td>GTEx v8 and the Human Protein Atlas</td>
+    <td>Normal-tissue expression and protein location</td>
+    <td>54 tissues</td>
+    </tr>
+    <tr>
+    <td>NCBI Sequence Read Archive</td>
+    <td>Metadata on canine osteosarcoma genomes</td>
+    <td>747 runs</td>
+    </tr>
+    <tr>
+    <td>ChEMBL</td>
+    <td>Approved and phase 3 drugs and their protein targets, for the repurposing screen</td>
+    <td>2,400 drugs on 1,141 genes</td>
+    </tr>
+    <tr>
+    <td>bioRxiv, medRxiv and Research Square</td>
+    <td>Preprints from June 2025 to November 2026, for the new-evidence scan (labelled as preprints)</td>
+    <td>about 100 titles screened</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Nothing here uses private patient data.</p>
+    <h2 id="how-claims-were-checked">How claims were checked</h2>
+    <ol>
+    <li><strong>Primary sources first.</strong> Numbers were taken from the original paper, registry record or database wherever possible, not from reviews or press coverage.</li>
+    <li><strong>Separate audit passes.</strong> Before release, every headline claim in every report was re-checked by a separate review pass that did not see the original reasoning. The eleven earlier reports were audited on November 14, 2026; the three newest (approved drugs, copy number, what's new) on November 20, 2026, when a repo-wide consistency check was also run and both sets of findings were applied (<code>research_notes/Audit/</code>). The reviewers checked trial registries, PubMed and NIH records directly, and recomputed statistics from the data files. Of about 690 claims checked across both rounds, most were confirmed as written. The rest were wrong, overstated, out of date or unverifiable, and were corrected or labelled.</li>
+    </ol>
+    <p><strong>These audits were run by AI models working as independent reviewers, not by people.</strong> They were rigorous and caught real errors, but they are not a substitute for review by independent scientists. No person outside the project has yet checked this work. A third-party audit is welcome: start with <a href="audit-guide.html">AUDIT_GUIDE.md</a>.
+    3. <strong>Corrections are shown, not hidden.</strong> Each report ends with a change log listing what changed and why. Several early conclusions were overturned by later checking, and the reports say so.
+    4. <strong>Confidence labels.</strong> Key numbers carry a label for where they came from:
+       - <strong>(registry):</strong> posted on ClinicalTrials.gov.
+       - <strong>(paper, full text):</strong> read in the full published paper.
+       - <strong>(paper, abstract only):</strong> only the abstract could be read.
+       - <strong>(press release only):</strong> no peer-reviewed source found.
+       - <strong>(our calculation):</strong> computed by this project from the data files.
+       - <strong>(preprint, abstract only):</strong> only the abstract of a preprint, which has not been peer-reviewed, was read.</p>
+    <h2 id="what-the-ai-did-well-and-where-it-went-wrong">What the AI did well, and where it went wrong</h2>
+    <p>The AI was fast at reading and cross-referencing at a scale no single person could manage, and at writing code to count things exactly. It also made real mistakes, which checking caught:
+    - trial IDs that did not exist;
+    - a benchmark applied where it did not fit;
+    - a paper counted twice;
+    - "unpublished" trials that had in fact been published;
+    - genes mislabelled by automated text mining;
+    - drug results that turned out not to be osteosarcoma data.</p>
+    <p>The lesson built into this project is that every AI-generated claim needs checking against its source, and that some errors almost certainly remain. Please report any you find.</p>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li><strong>Not peer-reviewed.</strong> Findings are leads for researchers to test, not conclusions.</li>
+    <li><strong>Abstracts, not always full texts.</strong> Many papers could be read only as abstracts, because some publishers block automated access.</li>
+    <li><strong>Automated tagging is approximate.</strong> Paper types, gene names and trial scopes were assigned by software, with known error rates documented in each report.</li>
+    <li><strong>Registries are incomplete.</strong> ClinicalTrials.gov misses trials registered only in Europe or China, and many trials never post results.</li>
+    <li><strong>English-language sources.</strong> Chinese-language databases could not be searched, although about a fifth of new osteosarcoma trials now run in China.</li>
+    <li><strong>Not medical advice.</strong> Nothing here is a recommendation about any patient's care.</li>
+    </ul>
+    <h2 id="re-running-the-analyses">Re-running the analyses</h2>
+    <p>A frozen version of everything described here is tagged <code>v1.0</code> in git. <a href="data-manifest.html">DATA_MANIFEST.md</a> lists every data file with its checksum and retrieval date, and <code>requirements.txt</code> pins the software versions.</p>
+    <p>Most analyses can be rebuilt from public data with the scripts in <code>tools/</code>. A few counts (registry spot checks, some PubMed searches, and the new-evidence scan) were made with one-off database queries described in the report concerned.</p>
+    <p><strong>Requirements:</strong> Python 3.10 or newer, internet access, and <code>pandas</code> (only for <code>tools/pool_relapse_benchmarks.py</code>). Everything else uses the Python standard library. Run every script from the repository root.</p>
+    <p><code>bash
+    pip install pandas</code></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Script</th>
+    <th>What it builds</th>
+    <th>Network</th>
+    <th>Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>tools/nih_funding_tracker.py</code></td>
+    <td><code>data/nih_*_projects.csv</code> (NIH funding)</td>
+    <td>NIH RePORTER</td>
+    <td>a few minutes</td>
+    </tr>
+    <tr>
+    <td><code>tools/trial_miner.py</code></td>
+    <td><code>data/osteosarcoma_trials.csv</code> (all registered trials)</td>
+    <td>ClinicalTrials.gov</td>
+    <td>about a minute</td>
+    </tr>
+    <tr>
+    <td><code>tools/retag_trial_scope.py</code></td>
+    <td>re-tags trial scope in the trials CSV</td>
+    <td>none</td>
+    <td>seconds</td>
+    </tr>
+    <tr>
+    <td><code>tools/trial_analysis.py</code></td>
+    <td>stop reasons, design trends, <code>data/osteosarcoma_trials_flags.csv</code></td>
+    <td>none</td>
+    <td>seconds</td>
+    </tr>
+    <tr>
+    <td><code>tools/trial_publication_check.py</code></td>
+    <td><code>data/osteosarcoma_trials_publications.csv</code> (publication check)</td>
+    <td>Europe PMC</td>
+    <td>a few minutes</td>
+    </tr>
+    <tr>
+    <td><code>tools/pooled_controls.py</code></td>
+    <td><code>data/osteosarcoma_posted_outcomes.csv</code> (posted trial results)</td>
+    <td>ClinicalTrials.gov</td>
+    <td>a few minutes</td>
+    </tr>
+    <tr>
+    <td><code>tools/pool_relapse_benchmarks.py</code></td>
+    <td>the drug-class comparison table (prints it)</td>
+    <td>none</td>
+    <td>seconds</td>
+    </tr>
+    <tr>
+    <td><code>tools/literature_fetch.py</code></td>
+    <td><code>data/literature/</code> (33,000 PubMed records; large, not stored in git)</td>
+    <td>PubMed, PubTator3</td>
+    <td>about 30 minutes</td>
+    </tr>
+    <tr>
+    <td><code>tools/literature_map.py</code></td>
+    <td><code>data/osteosarcoma_gene_evidence.csv</code>, <code>data/osteosarcoma_paper_tags.csv</code></td>
+    <td>none (needs the fetch above)</td>
+    <td>about a minute</td>
+    </tr>
+    <tr>
+    <td><code>tools/paper_mill_flag.py</code></td>
+    <td><code>data/osteosarcoma_evidence_risk_*.csv</code></td>
+    <td>none (needs the map above)</td>
+    <td>seconds</td>
+    </tr>
+    <tr>
+    <td><code>tools/surface_targets.py</code></td>
+    <td><code>data/osteosarcoma_surface_target_candidates.csv</code></td>
+    <td>NCI GDC, GTEx, Human Protein Atlas</td>
+    <td>about 30 minutes (downloads 370 MB)</td>
+    </tr>
+    <tr>
+    <td><code>tools/lung_metastasis_map.py</code></td>
+    <td><code>data/lung_metastasis_*.csv</code></td>
+    <td>none (needs the literature fetch)</td>
+    <td>about a minute</td>
+    </tr>
+    <tr>
+    <td><code>tools/copy_number_map.py</code></td>
+    <td><code>data/osteosarcoma_copy_number_frequencies.csv</code> and the biomarker sample-size figures (<code>python3 tools/copy_number_map.py all</code>)</td>
+    <td>NCI GDC (downloads 189 open files, about 274 MB); reuses the RNA files from <code>tools/surface_targets.py</code></td>
+    <td>several minutes</td>
+    </tr>
+    <tr>
+    <td><code>tools/repurposing_screen.py</code></td>
+    <td><code>data/osteosarcoma_repurposing_candidates.csv</code> (stages <code>chembl</code>, <code>build</code>, <code>pubmed</code>, <code>ctgov</code>, <code>score</code>)</td>
+    <td>ChEMBL, PubMed, ClinicalTrials.gov; needs the RNA summary from <code>tools/surface_targets.py</code></td>
+    <td>about an hour (the PubMed stage takes about 40 minutes)</td>
+    </tr>
+    <tr>
+    <td><code>tools/survival_analysis.py</code></td>
+    <td><code>data/osteosarcoma_survival_results.csv</code> (lead markers against survival)</td>
+    <td>NCI GDC (open TARGET-OS clinical files, stored in <code>data/survival_raw/</code>); reuses copy-number and RNA files</td>
+    <td>a few minutes</td>
+    </tr>
+    <tr>
+    <td><code>tools/knowledge_graph.py</code></td>
+    <td><code>data/osteosarcoma_knowledge_graph_edges.csv</code>, <code>_contradictions.csv</code>, <code>_hidden_links.csv</code> (<code>fetch</code>, <code>build</code>, <code>abc</code>)</td>
+    <td>PubTator3, ChEMBL; needs the literature fetch</td>
+    <td>about an hour first time; under a minute from cache</td>
+    </tr>
+    <tr>
+    <td><code>tools/build_explorer_data.py</code></td>
+    <td><code>docs/data/explorer.json</code> (the evidence explorer)</td>
+    <td>none</td>
+    <td>seconds</td>
+    </tr>
+    <tr>
+    <td><code>tools/build_site.py</code></td>
+    <td>the website's report pages (<code>docs/reports/*.html</code> and the other document pages) from the Markdown sources</td>
+    <td>none</td>
+    <td>seconds</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Three hand-curated files are not produced by a script:
+    - <code>data/drug_targets_curated.json</code>, the drug-to-target map;
+    - the published and basket-trial benchmark tables, <code>data/osteosarcoma_relapse_benchmarks_published.csv</code> and <code>data/osteosarcoma_relapse_benchmarks_basket.csv</code>.</p>
+    <p>Each row in the two benchmark tables records its source.</p>
+    <p>Live databases change, so a re-run will give slightly different numbers from the dates stamped in each report.</p>
+    <h2 id="contact-and-corrections">Contact and corrections</h2>
+    <p>Please <a href="https://github.com/mgegen15-dev/For_John/issues">open an issue on GitHub</a>. Corrections are as valuable as confirmations.</p>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/HOW_THIS_WAS_MADE.md">HOW_THIS_WAS_MADE.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer>
+  <div class="docbar-in">
+    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+  });
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

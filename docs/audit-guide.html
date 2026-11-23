@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditor&#x27;s guide · For John</title>
+<meta name="description" content="For a third-party reviewer. Version 1.0, frozen on November 23, 2026 (git tag v1.0). Check against that tag, not the live main branch, so that your findings line up with what you are reading.…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/audit-guide.html">
+<meta name="theme-color" content="#0f2a44">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Auditor&#x27;s guide · For John">
+<meta property="og:description" content="For a third-party reviewer. Version 1.0, frozen on November 23, 2026 (git tag v1.0). Check against that tag, not the live main branch, so that your findings line up with what you are reading.…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/audit-guide.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="docbar">
+  <div class="docbar-in">
+    <a class="home" href="index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="explorer.html">Evidence explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#before-you-start">Before you start</a></li><li class="l1"><a href="#the-18-key-claims">The 18 key claims</a></li><li class="l1"><a href="#trials-and-benchmarks">Trials and benchmarks</a></li><li class="l1"><a href="#kinase-inhibitor-pills-and-the-biomarker">Kinase-inhibitor pills and the biomarker</a></li><li class="l1"><a href="#targets-and-leads">Targets and leads</a></li><li class="l1"><a href="#literature-and-funding">Literature and funding</a></li><li class="l1"><a href="#known-weak-points">Known weak points</a></li><li class="l1"><a href="#how-to-report-findings">How to report findings</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb"><a href="index.html">Home</a> · Document</p>
+    <h1>Auditor&#x27;s guide</h1>
+    <p><em>For a third-party reviewer. Version 1.0, frozen on November 23, 2026 (git tag <code>v1.0</code>). Check against that tag, not the live <code>main</code> branch, so that your findings line up with what you are reading.</em></p>
+    <p>This project makes many claims across 16 reports. This page lists the 18 that matter most: the ones the one-page summary, the website and the ranked leads depend on. For each one it gives where the claim is made, its primary source, and the fastest way to check it. If these hold, the project's main conclusions hold. If any fail, please tell us.</p>
+    <h2 id="before-you-start">Before you start</h2>
+    <ul>
+    <li><strong>Get the frozen version:</strong>
+      <code>bash
+      git clone https://github.com/mgegen15-dev/For_John</code>
+      <code>bash
+      cd For_John &amp;&amp; git checkout v1.0</code></li>
+    <li><strong>Set up:</strong> Python 3.10 or newer, plus <code>pip install -r requirements.txt</code> (only pandas).</li>
+    <li><strong>Check the data is unchanged:</strong> run <code>python3 tools/build_manifest.py</code> and compare its output with the checksums in <code>DATA_MANIFEST.md</code> as committed at <code>v1.0</code>. Raw downloads are not in git, so they must be re-downloaded. Live databases change, so expect small differences from the retrieval dates listed there.</li>
+    <li><strong>Read first:</strong> <code>HOW_THIS_WAS_MADE.md</code> (methods, limits, how AI was used) and <code>SUMMARY.md</code> (the claims in plain language).</li>
+    <li><strong>Earlier internal checks:</strong> <code>research_notes/Audit/</code> holds the AI-run audits and their findings. They are a record, not a substitute for your review.</li>
+    </ul>
+    <p><strong>Labels used in the reports:</strong>
+    - <strong>(registry):</strong> an official database record.
+    - <strong>(paper, full text):</strong> read in the full published paper.
+    - <strong>(paper, abstract only):</strong> read only in the abstract.
+    - <strong>(preprint, abstract only):</strong> an unreviewed preprint.
+    - <strong>(press release only):</strong> no peer-reviewed source.
+    - <strong>(our calculation):</strong> computed by this project.</p>
+    <p>Claims labelled abstract-only, preprint or press-release-only are the weakest, and the most worth checking.</p>
+    <h2 id="the-18-key-claims">The 18 key claims</h2>
+    <h3 id="trials-and-benchmarks">Trials and benchmarks</h3>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>#</th>
+    <th>Claim</th>
+    <th>Where</th>
+    <th>Primary source</th>
+    <th>How to check</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>Of 99 osteosarcoma trials that stopped early, 44 stopped mainly for poor recruitment and about 7–9 for lack of efficacy</td>
+    <td>Trials report, summary, website</td>
+    <td>ClinicalTrials.gov stop reasons (<code>data/osteosarcoma_trials.csv</code>)</td>
+    <td><code>python3 tools/trial_analysis.py</code>. Stop reasons were grouped by keyword; spot-check the free-text reasons in <code>data/osteosarcoma_trials_flags.csv</code></td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>27 randomized trials devoted to osteosarcoma alone on ClinicalTrials.gov</td>
+    <td>Trials report, summary</td>
+    <td>Same data, after the scope fix in <code>tools/retag_trial_scope.py</code></td>
+    <td>Same script. Judge whether the osteosarcoma-only rule in <code>tools/trial_miner.py</code> (<code>scope_for</code>) is reasonable</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>Drugs other than VEGFR2-blocking pills or IE chemotherapy keep about 14% of measurable-relapse patients progression-free at four months (271 patients)</td>
+    <td>Pooled control report, website chart</td>
+    <td>Registry results and papers, one row per arm in <code>data/osteosarcoma_relapse_benchmarks*.csv</code></td>
+    <td><code>python3 tools/pool_relapse_benchmarks.py</code>. Check that each arm in the <code>sel</code> list is the right one, and that the source in each row's <code>source_note</code> says what the row says</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>VEGFR2-blocking pills alone: 52.5% at four months (41.4% using CABONE's primary endpoint); IE chemotherapy alone: 56.1% (42–66%)</td>
+    <td>Pooled control and kinase reports, chart</td>
+    <td>As claim 3</td>
+    <td>As claim 3. CABONE's 12-month figure (9.5%) could not be verified by us (paywalled)</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>Resected lung-only relapse: about 20–22% event-free at 12 months</td>
+    <td>Pooled control, landscape and lung reports</td>
+    <td>AOST0221 (n = 42); COG pooled analysis (n = 99, medRxiv preprint, Chou et al., November 2026)</td>
+    <td>Search medRxiv for the COG preprint; check AOST0221 in Lagmay et al., <em>J Clin Oncol</em> 2016 (PMC5012712)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <h3 id="kinase-inhibitor-pills-and-the-biomarker">Kinase-inhibitor pills and the biomarker</h3>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>#</th>
+    <th>Claim</th>
+    <th>Where</th>
+    <th>Primary source</th>
+    <th>How to check</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>6</td>
+    <td>In both randomized pill + IE trials, survival was not improved: OLIE HR 1.28 at primary analysis and 0.93 at final; OAIE 18.1 months with apatinib + IE against 22.9 with IE alone (HR 1.48)</td>
+    <td>Kinase report, ranked leads</td>
+    <td>OLIE and OAIE papers (cited in the kinase report)</td>
+    <td>Read the papers' survival sections</td>
+    </tr>
+    <tr>
+    <td>7</td>
+    <td>In 81 TARGET-OS tumours at diagnosis, 23.5% carry an amplification of VEGFA, KDR, PDGFRA or KIT at twice the tumour's ploidy, and 46.9% at a looser 1.5× threshold</td>
+    <td>Copy-number report, summary, website</td>
+    <td>NCI GDC open TARGET-OS copy-number files</td>
+    <td><code>python3 tools/copy_number_map.py</code>. Judge the ploidy-relative threshold; compare with published cohorts (about 40%)</td>
+    </tr>
+    <tr>
+    <td>8</td>
+    <td>About 309 patients across past pill trials; enough for 80% power to detect HR ≤ 0.5 between amplified and non-amplified patients, but not for a drug × biomarker interaction test</td>
+    <td>Copy-number report, ranked leads lead 2</td>
+    <td>Trial enrolment from the registry and papers; Schoenfeld formula</td>
+    <td><code>power</code> stage of <code>tools/copy_number_map.py</code>. Check the assumptions, especially 60% usable DNA (our guess)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <h3 id="targets-and-leads">Targets and leads</h3>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>#</th>
+    <th>Claim</th>
+    <th>Where</th>
+    <th>Primary source</th>
+    <th>How to check</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>9</td>
+    <td>Defactinib reduced lung metastasis in an orthotopic mouse model (2 of 6 treated against 6 of 6 untreated, P = 0.03)</td>
+    <td>Brief, ranked leads, literature map</td>
+    <td>PMID 37013056 (<em>Genes &amp; Diseases</em> 2023)</td>
+    <td>Read the paper. Note the engineered (LOX-overexpressing) cells and the unusual printed dose</td>
+    </tr>
+    <tr>
+    <td>10</td>
+    <td>A DKK1-blocking morpholino reduced lung metastasis (2 of 10 treated against 7 of 9 untreated lungs)</td>
+    <td>Brief, ranked leads</td>
+    <td>PMID 39805917</td>
+    <td>Read the paper. Note the two DKK1 laboratories share one patient-derived model</td>
+    </tr>
+    <tr>
+    <td>11</td>
+    <td>Colorado State lists a study giving defactinib to dogs with metastatic osteosarcoma</td>
+    <td>Brief, literature map</td>
+    <td>Web listing only (press release only)</td>
+    <td>We could not open the page or find results; please confirm with the investigators</td>
+    </tr>
+    <tr>
+    <td>12</td>
+    <td>Approved IL-1 and IL-6 blockers have no registered efficacy trial in osteosarcoma on ClinicalTrials.gov</td>
+    <td>Lung report, summary, lead 1</td>
+    <td>ClinicalTrials.gov</td>
+    <td>Search the registry for anakinra, canakinumab, tocilizumab, sarilumab and siltuximab with "osteosarcoma". Tocilizumab appears only within a combination trial (NCT04616248)</td>
+    </tr>
+    <tr>
+    <td>13</td>
+    <td>A canine trial of inhaled IL-15 after amputation (NCI-COTC030) did worse than historical controls</td>
+    <td>Lung report, lead 1</td>
+    <td>PMID 41209004</td>
+    <td>Read the paper. Note it is a comparison with historical controls, and that IL-6 rose after treatment without being named as the cause</td>
+    </tr>
+    <tr>
+    <td>14</td>
+    <td>LRRC15 is present as protein in most patient osteosarcomas (e.g. 63 of 69 tumours stained) and has a recruiting trial in relapsed osteosarcoma</td>
+    <td>Surface-targets and what's-new reports, lead 5</td>
+    <td>Cui 2020 (abstract only); O'Reilly 2026 (full text); NCT07357519</td>
+    <td>Check the papers cited in the surface report and the registry record</td>
+    </tr>
+    <tr>
+    <td>15</td>
+    <td>The B7-H3 antibody-drug conjugate (ARTEMIS-011) beat gemcitabine–docetaxel: PFS 5.5 against 1.4 months, HR 0.33 (0.20–0.55)</td>
+    <td>Landscape and what's-new reports, summary</td>
+    <td>PMID 42933637 (<em>Ann Oncol</em> 2026; abstract only)</td>
+    <td>Read the abstract. Note it is open-label and run in China only</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <h3 id="literature-and-funding">Literature and funding</h3>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>#</th>
+    <th>Claim</th>
+    <th>Where</th>
+    <th>Primary source</th>
+    <th>How to check</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>16</td>
+    <td>Since 2010, 8.7% of microRNA-type osteosarcoma papers have been retracted, against 1.0% of others (8.4-fold)</td>
+    <td>Risk flags report, summary</td>
+    <td>PubMed retraction status; paper types tagged by keyword</td>
+    <td><code>python3 tools/paper_mill_flag.py</code> (needs the literature download). Sample papers in <code>data/osteosarcoma_paper_tags.csv</code> to judge the keyword tags; retraction count: search PubMed for <code>osteosarcoma[tiab] AND retracted publication[pt]</code> (418 as of retrieval)</td>
+    </tr>
+    <tr>
+    <td>17</td>
+    <td>NIH spent about $18.0 million on osteosarcoma-focused grants in FY2025 and $108 million over 2015–2025, against $212–227 million for neuroblastoma</td>
+    <td>Funding report, summary, website</td>
+    <td>NIH RePORTER</td>
+    <td><code>python3 tools/nih_funding_tracker.py</code>. Judge the "focused" rule (disease named in the grant title) and the de-duplication of multi-project grants</td>
+    </tr>
+    <tr>
+    <td>18</td>
+    <td>MDM2 inhibitors are a weak lead for high-grade osteosarcoma: MDM2 amplification is common in low-grade tumours but rare in high-grade ones (2.5% of 81 in TARGET-OS)</td>
+    <td>Ranked leads (dropped leads), copy-number report</td>
+    <td>TARGET-OS copy number; literature close reading</td>
+    <td>As claim 7, plus the close reading in <code>research_notes/Osteosarcoma literature map/orphan_targets_close_read.md</code></td>
+    </tr>
+    </tbody>
+    </table></div>
+    <h2 id="known-weak-points">Known weak points</h2>
+    <p>These are the places we already know the work is weakest:
+    - <strong>Abstracts, not full texts.</strong> Many papers could be read only as abstracts, because some publishers block automated access.
+    - <strong>Keyword tagging.</strong> Paper types and trial scope were assigned by keyword rules. The internal audit found roughly 1 in 4 to 1 in 3 tags wrong in a small hand sample.
+    - <strong>Gene mislabelling.</strong> Automated text mining mislabels some genes. A correction table is in <code>tools/literature_map.py</code>, but more errors likely remain.
+    - <strong>Narrow registry coverage.</strong> ClinicalTrials.gov only; European-only and China-only registries were not searched systematically.
+    - <strong>Unverified sources.</strong> Several leads rest on press releases or web listings: the Colorado State dog studies, and the OST-HER2 vaccine results.
+    - <strong>Not independent people.</strong> All internal checks were run by AI models, not by independent people. Your review is the first independent check.</p>
+    <h2 id="how-to-report-findings">How to report findings</h2>
+    <p>Please <a href="https://github.com/mgegen15-dev/For_John/issues">open an issue on GitHub</a>, quoting the claim number above, or the file and line, and what you found. Corrections will be logged in the affected report's change log, with credit if you want it.</p>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/AUDIT_GUIDE.md">AUDIT_GUIDE.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer>
+  <div class="docbar-in">
+    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+  });
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Approved drugs worth testing in osteosarcoma · For John</title>
+<meta name="description" content="Built November 19, 2026. A systematic screen of approved and late-stage drugs for targets that look relevant to osteosarcoma but have had no osteosarcoma trial on ClinicalTrials.gov. Data:…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/approved-drugs-worth-testing-in-osteosarcoma.html">
+<meta name="theme-color" content="#0f2a44">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Approved drugs worth testing in osteosarcoma · For John">
+<meta property="og:description" content="Built November 19, 2026. A systematic screen of approved and late-stage drugs for targets that look relevant to osteosarcoma but have had no osteosarcoma trial on ClinicalTrials.gov. Data:…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/approved-drugs-worth-testing-in-osteosarcoma.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="docbar">
+  <div class="docbar-in">
+    <a class="home" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html">Home</a>
+      <a href="../explorer.html">Evidence explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#the-shortlist">The shortlist</a></li><li class="l1"><a href="#the-eight-new-ideas-read-closely">The eight new ideas, read closely</a></li><li class="l1"><a href="#dead-ends-the-screen-turned-up">Dead ends the screen turned up</a></li><li class="l1"><a href="#where-this-agrees-with-the-projects-existing-leads">Where this agrees with the project's existing leads</a></li><li class="l1"><a href="#how-the-screen-works">How the screen works</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#reproducing-this">Reproducing this</a></li><li class="l1"><a href="#change-log">Change log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb"><a href="../index.html">Home</a> · Report</p>
+    <h1>Approved drugs worth testing in osteosarcoma</h1>
+    <p><em>Built November 19, 2026. A systematic screen of approved and late-stage drugs for targets that look relevant to osteosarcoma but have had no osteosarcoma trial on ClinicalTrials.gov. Data: <code>data/osteosarcoma_repurposing_candidates.csv</code> (one row per target gene, 1,141 genes). Script: <code>tools/repurposing_screen.py</code>. Working notes with every PubMed ID: <code>research_notes/Repurposing/notes.md</code>.</em></p>
+    <blockquote>
+    <p><strong>Not medical advice.</strong> Every drug named here is a hypothesis for laboratory or veterinary testing. None is a treatment recommendation, and none should be given to a patient outside a clinical trial on the strength of this page.</p>
+    </blockquote>
+    <h2 id="summary">Summary</h2>
+    <p>We matched 2,400 approved or phase 3 drugs to the 1,141 human proteins they act on, then asked of each protein: is it made in osteosarcoma tumours, does the osteosarcoma literature support it, how usable is the drug, and has anyone already tried a drug against it in osteosarcoma? After automatic filters and a hand review that wrote a note on 156 genes, only eight new drug ideas survive. The best supported are AKT blockers such as capivasertib (two other AKT inhibitors, MK-2206 and GSK690693, slowed every one of six osteosarcoma xenografts in the NCI paediatric testing programme; capivasertib itself has no osteosarcoma data) and CXCR4 blockers such as mavorixafor, which may stop tumour cells homing to the lung; both come with real contradictions. Reading the abstracts also showed that one top hit, mycophenolate, had already failed a phase II trial registered only in Thailand, and that several others act in the wrong direction, such as bone-building drugs that switch on the pathways osteosarcoma uses. The screen ranks the project's existing FAK, IL-6/IL-1 and platelet leads in the same band as its own best new candidates, which suggests the scoring is sensible.</p>
+    <p><strong>How to read the labels.</strong> After key numbers we say where they come from:</p>
+    <ul>
+    <li><strong>(registry)</strong>: an official database record: ClinicalTrials.gov, ChEMBL, NIH RePORTER, or another national trial registry.</li>
+    <li><strong>(paper, full text)</strong>: read in the full published paper.</li>
+    <li><strong>(paper, abstract only)</strong>: read only in the abstract.</li>
+    <li><strong>(press release only)</strong>: from a company or institution announcement, with no peer-reviewed paper.</li>
+    <li><strong>(our calculation)</strong>: counted or computed by this project.</li>
+    </ul>
+    <p>Every paper in this report was read as an abstract only; no full texts were read for this screen. A few background facts, such as the history of a drug class, are marked <strong>(general knowledge)</strong>: we did not re-check them against a source in this pass.</p>
+    <h2 id="the-shortlist">The shortlist</h2>
+    <p>The 20 highest-scoring targets that pass the automatic filters (below) and survive hand review. Nine rows, covering eight drug ideas (the two retinoid rows are one idea), are genuine new candidates. The other eleven are shown with their verdict because a reader scanning a drug database would otherwise reach for them: they score well on paper but act in the wrong direction, belong to a class that has already failed, or rest on weak evidence. All numbers are our calculation from registry data (ChEMBL, ClinicalTrials.gov, PubMed, TARGET-OS RNA-seq).</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>#</th>
+    <th>Target</th>
+    <th>Best drug (phase; first approval)</th>
+    <th>Score</th>
+    <th>Tumour RNA: median TPM (% of tumours ≥ 5 TPM)</th>
+    <th>Osteosarcoma papers on the gene (animal / patient)</th>
+    <th>Papers naming the drug</th>
+    <th>Verdict</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>AKT (AKT1; also AKT2)</td>
+    <td>capivasertib (approved; 2023)</td>
+    <td>84.4</td>
+    <td>42 (100%)</td>
+    <td>1030 (404 / 342)</td>
+    <td>2</td>
+    <td><strong>New candidate</strong></td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>KEAP1 / NRF2</td>
+    <td>dimethyl fumarate (approved; 2013)</td>
+    <td>83.8</td>
+    <td>84 (100%)</td>
+    <td>13 (8 / 6)</td>
+    <td>5</td>
+    <td>Wrong direction</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>CXCR4</td>
+    <td>mavorixafor (approved; 2024)</td>
+    <td>83.7</td>
+    <td>62 (100%)</td>
+    <td>115 (41 / 41)</td>
+    <td>17</td>
+    <td><strong>New candidate</strong></td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>HIF-2α (EPAS1)</td>
+    <td>belzutifan (approved; 2021)</td>
+    <td>79.5</td>
+    <td>68 (100%)</td>
+    <td>17 (7 / 8)</td>
+    <td>0</td>
+    <td><strong>New candidate</strong></td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>ROCK2 (also ROCK1)</td>
+    <td>belumosudil (approved; 2021)</td>
+    <td>77.2</td>
+    <td>28 (99%)</td>
+    <td>11 (4 / 7)</td>
+    <td>4</td>
+    <td><strong>New candidate</strong></td>
+    </tr>
+    <tr>
+    <td>6</td>
+    <td>MMP9 (also MMP2, MMP13)</td>
+    <td>andecaliximab (phase 3)</td>
+    <td>76.7</td>
+    <td>2418 (100%)</td>
+    <td>357 (115 / 119)</td>
+    <td>0</td>
+    <td>Dead end</td>
+    </tr>
+    <tr>
+    <td>7</td>
+    <td>CSF1R</td>
+    <td>pexidartinib (approved; 2019)</td>
+    <td>70.5</td>
+    <td>75 (97%)</td>
+    <td>21 (7 / 13)</td>
+    <td>4</td>
+    <td><strong>New candidate</strong></td>
+    </tr>
+    <tr>
+    <td>8</td>
+    <td>Protein kinase C-α</td>
+    <td>midostaurin (approved; 2017)</td>
+    <td>70.0</td>
+    <td>15 (97%)</td>
+    <td>11 (4 / 4)</td>
+    <td>0</td>
+    <td>Weak</td>
+    </tr>
+    <tr>
+    <td>9</td>
+    <td>Vitamin D receptor</td>
+    <td>cholecalciferol, calcitriol (approved; calcitriol 1978)</td>
+    <td>65.3</td>
+    <td>28 (94%)</td>
+    <td>106 (58 / 9)</td>
+    <td>208</td>
+    <td><strong>New candidate</strong></td>
+    </tr>
+    <tr>
+    <td>10</td>
+    <td>JAK2</td>
+    <td>peficitinib (approved; 2019)</td>
+    <td>65.3</td>
+    <td>7 (69%)</td>
+    <td>66 (41 / 17)</td>
+    <td>0</td>
+    <td>Weak</td>
+    </tr>
+    <tr>
+    <td>11</td>
+    <td>Retinoic acid receptors (RARG, RARA, RARB)</td>
+    <td>tretinoin (approved; 1971)</td>
+    <td>64.7</td>
+    <td>44 (100%)</td>
+    <td>RARA 13 (5 / 3); RARB 5 (1 / 3); RARG 0</td>
+    <td>39</td>
+    <td><strong>New candidate</strong></td>
+    </tr>
+    <tr>
+    <td>12</td>
+    <td>PTH1 receptor</td>
+    <td>teriparatide (approved; 1987)</td>
+    <td>63.5</td>
+    <td>198 (99%)</td>
+    <td>37 (24 / 4)</td>
+    <td>131</td>
+    <td>Wrong direction</td>
+    </tr>
+    <tr>
+    <td>13</td>
+    <td>CD86</td>
+    <td>abatacept (approved; 2005)</td>
+    <td>62.3</td>
+    <td>9 (83%)</td>
+    <td>12 (3 / 4)</td>
+    <td>0</td>
+    <td>Wrong direction</td>
+    </tr>
+    <tr>
+    <td>14</td>
+    <td>Tissue factor (F3)</td>
+    <td>tisotumab vedotin (approved; 2021)</td>
+    <td>60.2</td>
+    <td>13 (85%)</td>
+    <td>13 (6 / 4)</td>
+    <td>0</td>
+    <td><strong>New candidate</strong></td>
+    </tr>
+    <tr>
+    <td>15</td>
+    <td>Retinoid X receptors (RXRB, RXRA)</td>
+    <td>alitretinoin (approved; 1999)</td>
+    <td>59.9</td>
+    <td>48 (100%)</td>
+    <td>RXRA 17 (8 / 3); RXRB 0</td>
+    <td>18</td>
+    <td><strong>New candidate</strong></td>
+    </tr>
+    <tr>
+    <td>16</td>
+    <td>Sclerostin</td>
+    <td>romosozumab (approved; 2019)</td>
+    <td>56.4</td>
+    <td>8 (59%)</td>
+    <td>22 (12 / 3)</td>
+    <td>4</td>
+    <td>Wrong direction</td>
+    </tr>
+    <tr>
+    <td>17</td>
+    <td>BMP receptor 2</td>
+    <td>dibotermin alfa (approved; 2002)</td>
+    <td>53.3</td>
+    <td>26 (100%)</td>
+    <td>12 (4 / 5)</td>
+    <td>0</td>
+    <td>Wrong direction</td>
+    </tr>
+    <tr>
+    <td>18</td>
+    <td>PPAR-α</td>
+    <td>fenofibrate (approved; 1993)</td>
+    <td>47.1</td>
+    <td>6 (69%)</td>
+    <td>11 (4 / 2)</td>
+    <td>1</td>
+    <td>Weak</td>
+    </tr>
+    <tr>
+    <td>19</td>
+    <td>Prostaglandin F receptor</td>
+    <td>dinoprost (approved; 1982)</td>
+    <td>47.0</td>
+    <td>11 (72%)</td>
+    <td>0 (0 / 0)</td>
+    <td>9</td>
+    <td>Wrong direction</td>
+    </tr>
+    <tr>
+    <td>20</td>
+    <td>IL-11 receptor</td>
+    <td>oprelvekin (approved; 1997)</td>
+    <td>46.6</td>
+    <td>6 (59%)</td>
+    <td>12 (9 / 10)</td>
+    <td>0</td>
+    <td>Wrong direction</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><em>Score out of 100 (formula below). "Osteosarcoma papers on the gene" are papers tagged with the gene by PubTator3, with the animal and patient tags from the literature map. "Papers naming the drug" counts PubMed papers with osteosarcoma and the drug (or any of its non-trade names) in the title or abstract, for the best-documented selective drug against that target: plerixafor for CXCR4, fasudil for ROCK, afuresertib for AKT, ergocalciferol for the vitamin D receptor. The vitamin D count (208) is inflated by bone-biology studies that use osteosarcoma cell lines as stand-ins for normal bone cells. For the two retinoid rows, the score is that of the top-scoring gene (RARG, RXRB), whose own paper counts are 0; the paper counts shown are per gene, and the row's key citation (PMID 22485251) is about RARα. First-approval years are ChEMBL's except where corrected: calcitriol was approved in the US in 1978 (ChEMBL's 1999 is for cholecalciferol) and abatacept in December 2005 (ChEMBL gives 2006) (general knowledge). None of the 20 has had a drug against it named in the title of any osteosarcoma trial on ClinicalTrials.gov (registry); CXCR4 and CSF1R score 10 rather than 20 on "untested" because plerixafor appears in one trial for stem-cell collection and sunitinib and pazopanib, which hit CSF1R among many kinases, have been trialled. None of the 20 targets is named in the title of a focused NIH osteosarcoma grant (registry, via the literature map's grant matching).</em></p>
+    <h2 id="the-eight-new-ideas-read-closely">The eight new ideas, read closely</h2>
+    <p>For each we read the most-cited and most relevant osteosarcoma abstracts on the target and the drug. Paediatric experience is the number of interventional trials of the drug on ClinicalTrials.gov that enrol children (registry), which is not the same as a licence or a dose for children.</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Idea</th>
+    <th>Drug</th>
+    <th>What the evidence shows</th>
+    <th>Biggest problem</th>
+    <th>Children</th>
+    <th>Cheapest next experiment</th>
+    <th>Our view</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>AKT</strong></td>
+    <td>capivasertib (oral, approved 2023 for a breast cancer subtype; registry)</td>
+    <td>No osteosarcoma paper tests capivasertib itself: PubMed has none naming capivasertib or AZD5363 with osteosarcoma (registry, November 20, 2026). The lead rests on the AKT class. Two other AKT inhibitors, MK-2206 and GSK690693, prolonged event-free survival in 6 of 6 osteosarcoma xenografts in the NCI Pediatric Preclinical Testing Program, more consistently than in any other tumour type, but shrank none (paper, abstract only; PMIDs 22102563, 20740623). An AKT inhibitor with cisplatin was synergistic in a patient-derived model (paper, abstract only; PMID 39994220)</td>
+    <td>AKT inhibition boosted cisplatin only in p53-normal cells, and most osteosarcomas have lost p53 function (paper, abstract only; PMID 25482935). Drugs one step downstream (mTOR) have 21 osteosarcoma trials, largely negative (our calculation). The AKT1 literature carries an "elevated" paper-mill flag</td>
+    <td>2 trials (registry)</td>
+    <td>Check osteosarcoma cell lines' dependence on AKT1/AKT2 in the public DepMap CRISPR data (free), then capivasertib with cisplatin or doxorubicin in an existing patient-derived panel</td>
+    <td>Best single new lead: consistent slowing across models, an approved oral drug. Expect it to work, if at all, alongside chemotherapy</td>
+    </tr>
+    <tr>
+    <td><strong>CXCR4</strong></td>
+    <td>mavorixafor (oral, approved 2024; registry); plerixafor (injection, approved 2008; registry)</td>
+    <td>Lung tissue is rich in CXCR4's partner CXCL12. CXCR4 RNA in 63% of 47 high-grade tumours, linked to shorter survival (paper, abstract only; PMID 15814634); CXCR4-positive in 33% of primaries but 67% of matched lung metastases in 30 patients (paper, abstract only; PMID 16528367). Blocking peptides cut lung metastases in mice, by 50% in one study (paper, abstract only; PMIDs 18071913, 15701832)</td>
+    <td>That 50% held consistently only when cells were treated before injection (PMID 18071913). Blocking the pathway can increase primary growth (PMID 27300512) and can stop killer T cells entering the tumour (PMID 29735547); a second receptor, CXCR7, takes over (PMID 28468584) (all paper, abstract only)</td>
+    <td>Mavorixafor 4, plerixafor 36 trials (registry)</td>
+    <td>Oral mavorixafor after removal of the primary tumour in an immune-competent mouse model (K7M2), measuring lung metastases and tumour T cells</td>
+    <td>Strong rationale and the most immediately usable drug, but the immune question could make it harmful. Already flagged in the lung-metastasis report</td>
+    </tr>
+    <tr>
+    <td><strong>ROCK</strong></td>
+    <td>belumosudil (oral, approved 2021 for chronic graft-versus-host disease, general knowledge; ChEMBL lists immune system diseases, registry); fasudil (approved in Japan and China; ChEMBL lists phase 3)</td>
+    <td>Silencing ROCK2 abolished metastasis of a human osteosarcoma line in mice (paper, abstract only; PMID 31878963). Fasudil suppressed growth of chemotherapy-resistant mouse osteosarcoma cells by turning them into fat cells (paper, abstract only; PMID 30992323)</td>
+    <td>In cells of the highly metastatic LM8 line, a ROCK inhibitor (Y-27632) <em>increased</em> migration in a dish; it was not tested on metastasis in mice (paper, abstract only; PMID 20872237). Only 11 gene-tagged papers; ROCK1's carry a high paper-mill flag</td>
+    <td>Belumosudil 10 trials (registry)</td>
+    <td>Belumosudil in a spontaneous lung-metastasis model, including LM8, whose cells migrated more with ROCK inhibition in vitro</td>
+    <td>Plausible, thin, with one contrary cell-culture result</td>
+    </tr>
+    <tr>
+    <td><strong>Vitamin D</strong></td>
+    <td>calcitriol, calcipotriol, cholecalciferol (oral, approved for decades; registry)</td>
+    <td>Calcipotriol reduced metastasis and growth in a mouse metastasis model (paper, abstract only; PMID 37228489). One calcitriol dose shrank a mouse osteosarcoma (paper, abstract only; PMID 28643892). In 57 patients, tumour vitamin D receptor staining was linked to metastasis (P &lt; 0.001), read by the authors as receptor without enough vitamin D (paper, abstract only; PMID 41872253)</td>
+    <td>Effective doses of active vitamin D raise blood calcium (PMID 28643892); the effect was weaker in human than mouse cells. In 20 dogs with osteosarcoma, vitamin D levels were normal (paper, abstract only; PMID 27810204). Most of the 106 receptor papers are bone biology, not tumour biology</td>
+    <td>Cholecalciferol 572, calcitriol 36 trials (registry)</td>
+    <td>Measure vitamin D (25-hydroxyvitamin D) in banked diagnostic blood from a completed trial and relate it to metastasis-free survival</td>
+    <td>Cheapest idea on the list; worth a correlation study, not yet a drug study</td>
+    </tr>
+    <tr>
+    <td><strong>Retinoids</strong></td>
+    <td>tretinoin (ATRA; oral, approved; boxed warning in ChEMBL); alitretinoin</td>
+    <td>ATRA cut lung metastases in two mouse models by stopping macrophages switching to a tumour-helping state (paper, abstract only; PMID 28515123). ATRA pushed human osteosarcoma cells to mature in culture, and raising its receptor (RARα) slowed tumour growth in mice (paper, abstract only; PMID 22485251). A 2008 dog report combined ATRA with chemotherapy (PMID 18712486; no abstract)</td>
+    <td>A screen of 29 nuclear-receptor drugs found a retinoic acid receptor <em>blocker</em> inhibited osteosarcoma (paper, abstract only; PMID 36681687), the opposite direction. Resistance described (PMID 35810559)</td>
+    <td>Tretinoin 142 trials (registry); a close relative is standard in high-risk neuroblastoma (general knowledge, not checked here)</td>
+    <td>Repeat the lung-metastasis experiments with ATRA in an independent laboratory, adding a model in which the primary tumour is removed (the abstract describes intravenous and orthotopic models, not resection)</td>
+    <td>Promising because it reprogrammes macrophages rather than removing them, which fits the patient data better than CSF1R blockade does</td>
+    </tr>
+    <tr>
+    <td><strong>Tissue factor</strong></td>
+    <td>tisotumab vedotin (antibody-drug conjugate, approved 2021; boxed warning in ChEMBL)</td>
+    <td>Tissue factor high in 73.6% of 53 biopsies and linked to shorter disease-free survival; blocking antibodies reduced lung metastasis in mice (paper, abstract only; PMID 26763081). Platelets switch tissue factor on through TGF-β (paper, abstract only; PMID 29949655)</td>
+    <td>Healthy lung makes more tissue factor RNA (GTEx median 96.7 TPM) than tumours do (12.8 TPM) (our calculation), so a drug carrying a toxin could hit the lung harder than the cancer. No paediatric trials found</td>
+    <td>0 trials (registry)</td>
+    <td>Stain matched lung metastases and neighbouring normal lung for tissue factor</td>
+    <td>Interesting as part of the platelet circuit (lead 10); a plain blocking antibody would fit better than tisotumab</td>
+    </tr>
+    <tr>
+    <td><strong>CSF1R</strong></td>
+    <td>pexidartinib (oral, approved 2019; boxed warning for liver injury in ChEMBL)</td>
+    <td>Two groups found pexidartinib reduced primary growth and lung metastasis in mice (paper, abstract only; PMIDs 34088832, 32251854)</td>
+    <td>In patients, more tumour macrophages went with <em>fewer</em> metastases and better survival (paper, abstract only; PMID 21372215). Mifamurtide, a macrophage activator, is approved in Europe for osteosarcoma (general knowledge). One mouse study's senior author consults for the drug's maker</td>
+    <td>1 trial (registry)</td>
+    <td>Re-analyse the TARGET-OS RNA already in this repository for macrophage subtypes against outcome, before any animal work</td>
+    <td>Mouse and patient data disagree; do not test the drug until that is resolved</td>
+    </tr>
+    <tr>
+    <td><strong>HIF-2α</strong></td>
+    <td>belzutifan (oral, approved 2021; boxed warning in ChEMBL)</td>
+    <td>Scores high only on RNA (median 68 TPM) and on having a good drug</td>
+    <td>17 gene-tagged papers and none testing a HIF-2α drug (our calculation). Reports point both ways, including faster osteosarcoma growth when HIF was blocked in tumour vessels (paper, abstract only; PMID 18300418)</td>
+    <td>5 trials (registry)</td>
+    <td>Stain a tissue microarray for HIF-2α protein; stop if it is absent</td>
+    <td>Weakest of the eight</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><strong>Does the drug reach bone and lung?</strong> Our inference from how each drug works, not measured in osteosarcoma:</p>
+    <ul>
+    <li>Capivasertib, belumosudil, pexidartinib and belzutifan are oral small molecules that circulate through the whole body; we found no bone or lung concentration data for any of them.</li>
+    <li>CXCR4 blockers act in the bone marrow by design: they treat WHIM syndrome and collect stem cells by releasing cells held there (general knowledge). The lung, where CXCL12 is high, is reached through the circulation.</li>
+    <li>Vitamin D acts on bone physiologically; its limit is blood calcium, not reach.</li>
+    <li>CSF1R blockers also remove osteoclasts (general knowledge), which could change bone around the tumour; zoledronate, another osteoclast drug, trended toward harm in the OS2006 trial (literature map).</li>
+    <li>Tisotumab vedotin is a large antibody conjugate given into a vein; antibodies penetrate dense bone tumours poorly, and normal lung carries more of its target than the tumour.</li>
+    </ul>
+    <p>The ClinicalTrials.gov API v2 was searched on November 19, 2026 for every drug above together with "osteosarcoma": none has an osteosarcoma trial on ClinicalTrials.gov (registry). The only hits were an adult all-comer basket trial that includes capivasertib (NCI-MATCH, NCT02465060; osteosarcoma is not among its listed conditions), a withdrawn stem-cell-mobilisation study using plerixafor (NCT03612466) and a survivorship programme using cholecalciferol (NCT04671693) (registry, rechecked November 20, 2026). Other registries can hold trials ClinicalTrials.gov lacks, as the mycophenolate case below shows. PubMed searches for each drug with osteosarcoma found one clinical report touching two of the ideas: a retrospective series of 15 patients given the "Di Bella" multitherapy, a mixture including ATRA, vitamin D, melatonin and somatostatin analogues, written by the method's own proponents, with no control group and no way to attribute any effect to one agent (paper, abstract only; PMID 36179729). We do not count it as evidence either way.</p>
+    <h2 id="dead-ends-the-screen-turned-up">Dead ends the screen turned up</h2>
+    <p>These are worth writing down because each looks attractive in a drug database.</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Drug (target)</th>
+    <th>Why it looks good</th>
+    <th>Why it is a dead end</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>Mycophenolate mofetil</strong> (IMPDH)</td>
+    <td>Ranked 7th of 1,141 before review; slowed 143B xenografts by 57% and cut lung nodules in mice (paper, abstract only; PMID 31609477); "no osteosarcoma trial" on ClinicalTrials.gov</td>
+    <td>Already tested. The ESMMO phase II trial, registered only in the Thai Clinical Trials Registry (TCTR20190701001; registry), treated 15 patients; most could take only 3 g a day, and only 1 (6.7%) had stable disease as best response. The authors call it a negative trial (paper, abstract only; PMID 40938558). ClinicalTrials.gov alone would have missed this</td>
+    </tr>
+    <tr>
+    <td><strong>Dimethyl fumarate, bardoxolone</strong> (KEAP1, NRF2)</td>
+    <td>2nd on score; RNA in every tumour</td>
+    <td>They switch on NRF2, a pathway that protects cancer cells from chemotherapy</td>
+    </tr>
+    <tr>
+    <td><strong>MMP inhibitors</strong> (MMP9, MMP2, MMP13)</td>
+    <td>357 and 347 osteosarcoma papers (our calculation); MMP9 is among the most abundant RNAs in the tumours (median 2,418 TPM)</td>
+    <td>The class failed phase 3 trials across cancers around the turn of the century (general knowledge); none is available for this use</td>
+    </tr>
+    <tr>
+    <td><strong>Teriparatide, abaloparatide</strong> (PTH1 receptor); <strong>romosozumab</strong> (sclerostin); <strong>dibotermin alfa</strong> (BMP-2)</td>
+    <td>Huge bone literature; PTH1R RNA high (median 198 TPM)</td>
+    <td>Bone-building drugs that switch on growth pathways osteosarcoma uses. Teriparatide caused osteosarcoma in rats (general knowledge), and losing a natural Wnt brake speeds osteosarcoma in mice (paper, abstract only; PMID 19307728)</td>
+    </tr>
+    <tr>
+    <td><strong>JAK inhibitors, midostaurin</strong> (JAK2, protein kinase C)</td>
+    <td>Many papers</td>
+    <td>JAK2 papers are mostly natural-product cell-line studies; we found no osteosarcoma study of an approved JAK inhibitor; protein kinase C evidence is thin and midostaurin hits many kinases</td>
+    </tr>
+    <tr>
+    <td><strong>CD4 (ibalizumab)</strong></td>
+    <td>1st on raw score</td>
+    <td>Annotation artefact: the papers are about CD4 T cells and the RNA comes from immune cells; ibalizumab only blocks HIV entry</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <h2 id="where-this-agrees-with-the-projects-existing-leads">Where this agrees with the project's existing leads</h2>
+    <p>The existing leads were kept off the shortlist so that it adds new names, but they were scored the same way (our calculation):</p>
+    <ul>
+    <li><strong>FAK (defactinib)</strong> scores 75.4 and would sit 7th. Its evidence score (21.7 of 30) is among the best of any target.</li>
+    <li><strong>IL-6</strong> scores 45.9 to 73.0 depending on which gene of the pathway is scored: 45.9 for the IL-6 receptor (IL6R, the target of tocilizumab, the most obvious IL-6 drug), 62.4 for IL-6 itself (siltuximab) and 73.0 for IL6ST. The 73.0 rests on satralizumab, an anti-IL-6 receptor antibody that ChEMBL credits to IL6ST, so it is probably an annotation artefact (our calculation). IL-6 itself has a large, clean literature but almost no tumour RNA (median 0.3 TPM), which fits the lead's logic that IL-6 comes from the lung and the host after surgery, not from the tumour. <strong>IL-1</strong> receptor RNA is in almost every tumour (median 45.9 TPM; anakinra scores 67.4).</li>
+    <li><strong>Platelets</strong> (abciximab 69.3, vorapaxar 68.2, aspirin 61.7). Tissue factor, new here, belongs to the same platelet circuit.</li>
+    <li><strong>CXCR1/2</strong> scores only 33 to 38: tumours barely make these receptors (median 0.6 to 0.7 TPM; they are neutrophil receptors), and no drug is approved. This does not undercut the lead, which targets neutrophils and the lung, but it means a tumour-RNA screen cannot support it.</li>
+    <li><strong>DKK1 and LPAR1</strong> are invisible to this screen because no phase 3 or approved drug acts on them in ChEMBL.</li>
+    </ul>
+    <p>CXCR4 overlaps the lung-metastasis work: the report lists 0 anti-metastasis trials of CXCR4 blockers, and its working notes (<code>research_notes/Lung metastasis/notes.md</code>) describe CXCR4 as the most ready drug with the least settled biology. This screen reaches the same view from a different direction.</p>
+    <h2 id="how-the-screen-works">How the screen works</h2>
+    <ol>
+    <li><strong>Drugs and targets.</strong> From the ChEMBL REST API, every molecule with max_phase 4 (4,225 records) and max_phase 3 (1,892) and all 7,561 mechanism records (registry), kept where the target is a human protein. Vaccines, replacement and digestive enzymes, fusion-protein targets and imaging agents are dropped; drugs that act only on a mutant protein (sotorasib, vorasidenib) are not credited to the normal gene. That leaves 2,400 drugs on 1,141 genes (our calculation).</li>
+    <li><strong>Joins.</strong> Tumour RNA from 88 TARGET-OS tumours (median TPM, and the share of tumours at 5 TPM or more); the literature map's per-gene paper counts, animal, patient and dog tags, microRNA-type share and paper-mill risk flag; NIH grant counts; and a PubMed count of osteosarcoma papers naming each drug.</li>
+    <li><strong>Trials.</strong> Every drug name and synonym looked up in the titles and interventions of the 758 trials in <code>data/osteosarcoma_trials.csv</code>, plus ClinicalTrials.gov API v2 searches of drug name with osteosarcoma for the leading targets (registry).</li>
+    <li><strong>Score</strong> (0 to 100):
+       - <strong>Evidence, 0-30</strong>: 12 × f(animal papers, 40) + 10 × f(patient papers, 40) + 3 × f(dog papers, 5) + 5 × f(all papers, 100), multiplied by (1 − 0.5 × share of cell-line-only or microRNA-type papers) and by 0.5 for a high or 0.75 for an elevated paper-mill flag; or, if higher, 20 × f(papers naming the drug, 30). Here f(x, c) = min(1, ln(1 + x) / ln(1 + c)), a log scale that stops at c.
+       - <strong>Expression, 0-25</strong>: 25 × f(median TPM, 50) × share of tumours at 5 TPM or more.
+       - <strong>Druggability, 0-25</strong>, for the best drug: approved 10 or phase 3 only 6; oral 5; paediatric trials (5 or more: 5; 1 to 4: 3); no boxed warning 5, boxed warning 2.
+       - <strong>Untested, 0-20</strong>: 20 if no osteosarcoma trial has used a drug against the target; 10 if only indirectly (a drug with more than three targets, or listed but not named in the trial's title); 6 if named in the title of a basket trial that enrolled osteosarcoma; 0 if named in the title of an osteosarcoma or bone-sarcoma trial.
+       - The total is multiplied by 0.75 if the best drug activates rather than blocks its target.</li>
+    <li><strong>Filters.</strong> Targets of heavily trialled classes (VEGFR and other multi-kinase receptors, mTOR, PD-1/PD-L1, CTLA-4, CDK4/6, IGF1R, GD2, B7-H3, HER2, RANKL, FDPS, PARP, SRC, EGFR) and chemotherapy targets are excluded. The shortlist also needs an untested score of at least 10, RNA at 5 TPM or more in at least half of tumours, and at least 10 gene-tagged papers with 3 animal papers or at least 5 papers naming the drug. One row is kept per drug.</li>
+    <li><strong>Hand review.</strong> 156 genes carry a written review note; those judged annotation artefacts, unavailable drugs, already-trialled classes or overlaps with existing leads are removed, and those judged weak, wrong direction or dead ends stay on the list with that verdict. Every note is in the CSV's <code>review_note</code> column.</li>
+    </ol>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li><strong>RNA is not protein.</strong> Expression comes from bulk RNA-seq of 88 TARGET-OS tumours. It cannot say which cells make the RNA: CXCR4 and CSF1R are made by infiltrating immune cells as well as tumour cells, and CD4 ranked first in the raw screen only because of T cells and macrophages. Nor does RNA show whether the protein is present or active.</li>
+    <li><strong>Literature tags are approximate.</strong> Gene counts come from PubTator3 tagging of abstracts, with the keyword-based animal, patient and dog tags described in the literature map. They miss in both directions. The vitamin D receptor's 106 papers are mostly studies that used osteosarcoma cell lines as stand-ins for normal bone cells, not studies of the tumour. Drug-name counts catch papers that name only the drug but cannot tell an anti-tumour study from a pain or thrombosis study.</li>
+    <li><strong>ChEMBL target annotations are imperfect.</strong> ChEMBL credits luspatercept to TGF-beta1, abciximab to alphav integrin, lomitapide to P4HB and sulfasalazine to 5-lipoxygenase. Protein complexes spread one drug across many genes (metformin across 51 genes, most of them complex I subunits). We removed the cases we found by hand, and every removal is listed in the CSV. ChEMBL also lags approvals: defactinib (FDA accelerated approval, May 2025) still reads phase 3.</li>
+    <li><strong>Approvals are mostly adult.</strong> Paediatric experience is measured only as the number of ClinicalTrials.gov interventional trials of the drug that enrol children. That is not a paediatric licence or a dose. As far as we know (general knowledge, labels not checked), capivasertib, belzutifan, pexidartinib and tisotumab vedotin are licensed only for adults.</li>
+    <li><strong>ClinicalTrials.gov is not every registry.</strong> The screen checks ClinicalTrials.gov only. It missed the Thai ESMMO trial of mycophenolate mofetil, which we found only by reading abstracts. Other national registries were not searched.</li>
+    <li><strong>Labels were not checked.</strong> openFDA and DailyMed could not be reached from this environment, so boxed warnings come from ChEMBL's flag, and age limits and label wording are not verified.</li>
+    <li><strong>The direction penalty keys on ChEMBL's action type.</strong> Drugs annotated as "inhibitors" that in effect switch a pathway on escape it: dimethyl fumarate inhibits KEAP1, which activates NRF2, and still ranks 2nd. Several high raw scores are annotation artefacts (CD4, luspatercept on TGFB1, FN1, satralizumab on IL6ST). The hand review catches these; the formula does not.</li>
+    <li><strong>Not every citation is a primary paper.</strong> PMID 18300418 (HIF in tumour vessels) is a symposium chapter.</li>
+    <li><strong>The score is a ranking aid, not a measure of promise.</strong> The weights are our choice, and a different weighting would reorder the middle of the list. The hand review (156 written notes) is a judgement, and every note is in the CSV so it can be challenged.</li>
+    <li><strong>Hypotheses, not treatments.</strong> A drug that slows a mouse tumour often does nothing in patients. Nothing here supports giving any of these drugs to a patient outside a trial.</li>
+    </ul>
+    <h2 id="reproducing-this">Reproducing this</h2>
+    <p><code>python3 tools/repurposing_screen.py chembl   # ChEMBL molecules (phase 4 and 3), mechanisms, targets
+    python3 tools/repurposing_screen.py build    # gene table + matching against data/osteosarcoma_trials.csv
+    python3 tools/repurposing_screen.py pubmed   # PubMed counts of osteosarcoma + each drug (slow, ~40 min)
+    python3 tools/repurposing_screen.py ctgov    # ClinicalTrials.gov checks; run twice
+    python3 tools/repurposing_screen.py score    # writes data/osteosarcoma_repurposing_candidates.csv</code></p>
+    <p>Raw downloads are cached in <code>data/repurposing_raw/</code> (git-ignored). The tumour RNA summary must already exist from <code>python3 tools/surface_targets.py gdc</code>.</p>
+    <h2 id="change-log">Change log</h2>
+    <ul>
+    <li><strong>November 19, 2026.</strong> First version.</li>
+    <li><strong>November 20, 2026 (audit corrections).</strong> IL-6 score range corrected to 45.9 (IL6R, tocilizumab) to 73.0, with the IL6ST/satralizumab value flagged as a likely annotation artefact. The quotation attributed to the lung-metastasis report is now attributed to its working notes. Retinoid rows now show per-gene paper counts (RARA 13, RXRA 17) instead of the top gene's 0. ROCK: the LM8 result is described as an in vitro migration assay, not a metastasis experiment. AKT: it is now explicit that no osteosarcoma paper tests capivasertib; the xenograft result is for MK-2206 and GSK690693. Approval years corrected (calcitriol 1978, abatacept 2005). ATRA: "post-surgery" dropped, since the abstract describes no resection. The no-trial statement now says "on ClinicalTrials.gov" and lists the three non-osteosarcoma hits. Lead number for the platelet circuit updated after the re-ranking (was lead 9, now lead 10). Limits now note that the direction penalty misses KEAP1 inhibitors and that PMID 18300418 is a symposium chapter; "never had an osteosarcoma trial" in the header now reads "no osteosarcoma trial on ClinicalTrials.gov".</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Approved%20drugs%20worth%20testing%20in%20osteosarcoma.md">reports/Approved drugs worth testing in osteosarcoma.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer>
+  <div class="docbar-in">
+    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+  });
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

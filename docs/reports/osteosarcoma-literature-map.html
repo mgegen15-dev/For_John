@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The osteosarcoma literature map: what 33,000 papers say, and what they don&#x27;t · For John</title>
+<meta name="description" content="Step 2 of the For John dot-connecting plan. Built November 13–14, 2026 from every PubMed paper with &quot;osteosarcoma&quot; in its title or abstract (33,242 papers; 29,720 excluding reviews), with genes…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/osteosarcoma-literature-map.html">
+<meta name="theme-color" content="#0f2a44">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="The osteosarcoma literature map: what 33,000 papers say, and what they don&#x27;t · For John">
+<meta property="og:description" content="Step 2 of the For John dot-connecting plan. Built November 13–14, 2026 from every PubMed paper with &quot;osteosarcoma&quot; in its title or abstract (33,242 papers; 29,720 excluding reviews), with genes…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/osteosarcoma-literature-map.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="docbar">
+  <div class="docbar-in">
+    <a class="home" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html">Home</a>
+      <a href="../explorer.html">Evidence explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#three-findings">Three findings</a></li><li class="l1"><a href="#how-the-literature-has-changed">How the literature has changed</a></li><li class="l1"><a href="#trials-against-the-evidence-behind-them">Trials against the evidence behind them</a></li><li class="l1"><a href="#orphan-targets-strong-literature-a-drug-exists-no-trial">Orphan targets: strong literature, a drug exists, no trial</a></li><li class="l1"><a href="#close-reading-do-the-four-strongest-orphan-targets-hold-up">Close reading: do the four strongest orphan targets hold up?</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#reproducing-this">Reproducing this</a></li><li class="l1"><a href="#change-log">Change log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb"><a href="../index.html">Home</a> · Report</p>
+    <h1>The osteosarcoma literature map: what 33,000 papers say, and what they don&#x27;t</h1>
+    <p><em>Step 2 of the For John dot-connecting plan. Built November 13–14, 2026 from every PubMed paper with "osteosarcoma" in its title or abstract (33,242 papers; 29,720 excluding reviews), with genes tagged by NCBI's PubTator3 text-mining service and corrected where we found it wrong. Each gene is linked to the 603 interventional trials in the trials report and to the NIH grants in the funding report. Data: <code>data/osteosarcoma_gene_evidence.csv</code> (1,487 genes named in at least 5 non-review papers), <code>data/osteosarcoma_paper_tags.csv</code> (one row per paper), <code>data/osteosarcoma_literature_periods.csv</code> (the period table below), <code>data/drug_targets_curated.json</code> (drug-to-target map). Scripts: <code>tools/literature_fetch.py</code>, <code>tools/literature_map.py</code>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>We tagged every osteosarcoma paper in PubMed by the genes it names and the kind of evidence its abstract describes, then compared that with the trials and grants. The most-trialled targets are the blood-vessel receptors hit by multi-kinase pills, and those receptors are named in relatively few osteosarcoma papers. Several genes with large literatures and clinical drugs elsewhere, notably FAK, DKK1, MDM2 and cyclin E1, have no registered human osteosarcoma trial; on close reading FAK and DKK1 hold up best and MDM2 worst. About one in eleven microRNA-type osteosarcoma papers published since 2010 has been retracted, more than eight times the rate for other papers, so genes whose evidence rests mainly on such papers need checking before anyone builds on them. Everything here comes from automated tagging of abstracts and is a set of leads, not conclusions.</p>
+    <p><strong>How to read the labels.</strong> Key numbers carry one of these tags:
+    - <strong>(registry)</strong>: read directly from an official registry or database: ClinicalTrials.gov, PubMed's own listings (for example, which papers are retracted), NIH RePORTER, FDA approval notices.
+    - <strong>(paper, full text)</strong>: we read the full paper.
+    - <strong>(paper, abstract only)</strong>: we read only the abstract.
+    - <strong>(press release only)</strong>: the only source is a press release or an institution's web listing, not a paper or a registry.
+    - <strong>(our calculation)</strong>: we computed it from this repository's data files with the scripts named above.</p>
+    <h2 id="three-findings">Three findings</h2>
+    <ol>
+    <li><strong>Trials follow available drugs more than osteosarcoma biology.</strong> The most-trialled targets are blood-vessel receptors hit by multi-kinase pills: VEGFR2 in 57 trials, PDGFRB in 32 and KIT in 31 (our calculation). Relatively few osteosarcoma papers name these receptors themselves (42 to 68 each), although the drugs have a literature of their own that a gene count does not capture. Meanwhile FAK (PTK2), DKK1, MDM2 and cyclin E1 (CCNE1), each with a substantial literature that includes animal and patient data and a drug in clinical use or testing elsewhere, have <strong>no registered human osteosarcoma trial as of November 14, 2026</strong> (registry).</li>
+    <li><strong>A measurable share of the literature is unreliable.</strong> Since 2010, <strong>244 of 2,816 microRNA, lncRNA and circRNA papers (8.7%, 95% CI 7.7–9.8%) have been retracted, against 167 of 16,121 other papers (1.0%, 95% CI 0.9–1.2%)</strong>, an 8.4-fold difference (our calculation, retraction status from PubMed). These papers peaked in 2015–2019, when they were 20% of osteosarcoma research output.</li>
+    <li><strong>NIH funds work on two orphan targets that has not reached a human trial.</strong> NIH funds osteosarcoma grants on FAK inhibition (Colorado State, R37) and on DKK-1 (Albert Einstein College of Medicine, R01; Texas A&amp;M, R21) (registry). Drugs against both exist. Defactinib, a FAK inhibitor, received FDA accelerated approval on May 8, 2025, co-packaged with avutometinib, for KRAS-mutated recurrent low-grade serous ovarian cancer (registry). Colorado State lists a study giving defactinib to dogs with lung-metastatic osteosarcoma (press release only: web listing; status and results not found). We found no record of DKN-01 (sirexatamab), the anti-DKK1 antibody, being given to a dog.</li>
+    </ol>
+    <h2 id="how-the-literature-has-changed">How the literature has changed</h2>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Years</th>
+    <th>Research papers</th>
+    <th>microRNA-type papers</th>
+    <th>Retracted</th>
+    <th>Cell-line-only papers</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>2000–2004</td>
+    <td>2,026</td>
+    <td>3</td>
+    <td>1</td>
+    <td>386</td>
+    </tr>
+    <tr>
+    <td>2005–2009</td>
+    <td>2,416</td>
+    <td>8</td>
+    <td>3</td>
+    <td>493</td>
+    </tr>
+    <tr>
+    <td>2010–2014</td>
+    <td>3,627</td>
+    <td>180 (5%)</td>
+    <td>26</td>
+    <td>690</td>
+    </tr>
+    <tr>
+    <td>2015–2019</td>
+    <td>5,853</td>
+    <td>1,196 (20%)</td>
+    <td>244</td>
+    <td>1,271</td>
+    </tr>
+    <tr>
+    <td>2020–2024</td>
+    <td>7,251</td>
+    <td>1,282 (18%)</td>
+    <td>139</td>
+    <td>1,063</td>
+    </tr>
+    <tr>
+    <td>2025–2026</td>
+    <td>2,206</td>
+    <td>158 (7%)</td>
+    <td>2</td>
+    <td>289</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><em>Non-review papers (our calculation). The 2025–2026 row includes 2 papers dated 2027 (ahead of print). Papers from before 2000 (5,786) and 555 papers with no year in PubTator are in <code>data/osteosarcoma_literature_periods.csv</code>. Retractions lag publication by years, so recent periods will rise.</em></p>
+    <p>PubMed lists <strong>418 retracted osteosarcoma papers, and all 418 are in this dataset</strong> (registry). 244 of them are microRNA-type papers. Of the 418, 3 are reviews and 4 are research papers from before 2010, which leaves the 411 research papers since 2010 (244 microRNA-type plus 167 others) used in the comparison above and in the risk-flag report. The pattern fits what has been described as "paper mill" output, formulaic and often fabricated papers sold to authors: typically a microRNA or long non-coding RNA that "sponges" another and controls a familiar gene in the U2OS or MG-63 cell lines. A retraction rate cannot show which unretracted papers are of this kind.</p>
+    <p><strong>Genes whose evidence rests most on weak papers</strong> (at least 40 papers, and at least 60% of them cell-line-only, microRNA-type, or both; each paper counted once): BAX, ANXA5, CDH2, LC3 (MAP1LC3A), CCNB1, ZEB1, MIR34A, ROCK1, MALAT1 and HK2 (our calculation). BCL2 and p21 (CDKN1A) sit just below the line at 59%.</p>
+    <p><strong>Highest retraction share</strong> (at least 20 papers): DNMT1 (6 of 33) and SOX4 (4 of 22) are joint highest at 18%, followed by SIRT1 (5/37), ZEB1 (9/67), MIR21 (5/39), BMI1 (3/25), ROCK1 (6/50), MIR34A (7/59), TUG1 (3/27) and FASN (4/37) (our calculation). Among genes with fewer papers, several individual microRNAs have higher shares.</p>
+    <p>Two of these matter for trials. CDK6 is a target of palbociclib, abemaciclib and trilaciclib, which have 14 osteosarcoma trials between them (our calculation), and 37% of CDK6's osteosarcoma papers are microRNA-type (44% of those since 2010). DNMT1, the target of decitabine and azacitidine (4 osteosarcoma trials), has the joint-highest retraction share among genes with at least 20 papers.</p>
+    <h2 id="trials-against-the-evidence-behind-them">Trials against the evidence behind them</h2>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Target</th>
+    <th>Osteosarcoma trials</th>
+    <th>Osteosarcoma papers naming the gene</th>
+    <th>With animal data</th>
+    <th>With patient data</th>
+    <th>Note</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>VEGFR2 (KDR)</td>
+    <td>57</td>
+    <td>68</td>
+    <td>26</td>
+    <td>37</td>
+    <td>Hit by multi-kinase pills; VEGFA itself has 432 papers</td>
+    </tr>
+    <tr>
+    <td>PDGFRB</td>
+    <td>32</td>
+    <td>42</td>
+    <td>14</td>
+    <td>18</td>
+    <td>Multi-kinase pills</td>
+    </tr>
+    <tr>
+    <td>KIT</td>
+    <td>31</td>
+    <td>55</td>
+    <td>14</td>
+    <td>29</td>
+    <td>Multi-kinase pills</td>
+    </tr>
+    <tr>
+    <td>PD-1 (PDCD1)</td>
+    <td>at least 29</td>
+    <td>125</td>
+    <td>50</td>
+    <td>85</td>
+    <td>Checkpoint inhibitors; 1 of 22 osteosarcoma patients responded to pembrolizumab in SARC028 (paper, abstract only; PMID 28988646)</td>
+    </tr>
+    <tr>
+    <td>GD2</td>
+    <td>22</td>
+    <td>53</td>
+    <td>30</td>
+    <td>32</td>
+    <td>Antibodies and CAR-T, borrowed from neuroblastoma</td>
+    </tr>
+    <tr>
+    <td>mTOR</td>
+    <td>21</td>
+    <td>365</td>
+    <td>175</td>
+    <td>131</td>
+    <td>Large literature; trials largely negative</td>
+    </tr>
+    <tr>
+    <td>CDK4 / CDK6</td>
+    <td>14</td>
+    <td>175 / 51</td>
+    <td>42 / 20</td>
+    <td>88 / 22</td>
+    <td>CDK6 evidence 37% microRNA-type</td>
+    </tr>
+    <tr>
+    <td>IGF1R</td>
+    <td>13</td>
+    <td>130</td>
+    <td>45</td>
+    <td>55</td>
+    <td>Failed across sarcomas</td>
+    </tr>
+    <tr>
+    <td>B7-H3 (CD276)</td>
+    <td>13</td>
+    <td>34</td>
+    <td>15</td>
+    <td>24</td>
+    <td>Newest class, small literature</td>
+    </tr>
+    <tr>
+    <td>PARP1</td>
+    <td>10</td>
+    <td>186</td>
+    <td>55</td>
+    <td>40</td>
+    <td>47% of papers cell-line-only</td>
+    </tr>
+    <tr>
+    <td>Zoledronate target (FDPS)</td>
+    <td>8</td>
+    <td>6</td>
+    <td>2</td>
+    <td>2</td>
+    <td>Phase 3 OS2006 did not improve event-free survival and trended toward harm (paper, abstract only)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><em>All counts are our calculation. Trial counts include basket trials and count a trial once per target, so multi-kinase pills appear under several targets. A trial is linked to a target only if its drug is in the hand-curated drug map; several PD-1 antibodies common in Chinese osteosarcoma trials (toripalimab, sintilimab, tislelizumab, penpulimab, serplulimab) are not yet mapped, so the PD-1 count is a floor. Paper counts are papers that name the gene, not papers about the drug.</em></p>
+    <p>The pattern suggests that drugs reach osteosarcoma trials largely because they exist and are approved for something else. Zoledronate reached a phase 3 trial with only six osteosarcoma papers naming its molecular target, FDPS (our calculation). Papers about zoledronate itself are more numerous and are not counted here.</p>
+    <h2 id="orphan-targets-strong-literature-a-drug-exists-no-trial">Orphan targets: strong literature, a drug exists, no trial</h2>
+    <p>Genes with at least 30 osteosarcoma papers, at least 10 with animal data and 10 with patient data, no more than 20% microRNA-type and 35% cell-line-only papers, and no registered osteosarcoma trial in the drug map: <strong>73 genes</strong> (our calculation). Most are markers or biology without a drug (TP53, osteocalcin, vimentin). These have clinical-stage drugs in other diseases:</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Target</th>
+    <th>Osteosarcoma papers (animal / patient / dog)</th>
+    <th>Clinical-stage drugs elsewhere</th>
+    <th>Osteosarcoma or sarcoma trials (registry)</th>
+    <th>NIH osteosarcoma grants (registry)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>MDM2</td>
+    <td>249 (63 / 109 / 4)</td>
+    <td>Milademetan, brigimadlin, idasanutlin, navtemadlin</td>
+    <td>None in osteosarcoma; about 10 in other sarcomas, mostly dedifferentiated liposarcoma</td>
+    <td>None naming MDM2; the close reading below finds a weak rationale</td>
+    </tr>
+    <tr>
+    <td>FAK (PTK2)</td>
+    <td>105 (46 / 27 / 0)</td>
+    <td>Defactinib (FDA accelerated approval 2025, with avutometinib, KRAS-mutated low-grade serous ovarian cancer)</td>
+    <td>No human osteosarcoma trial; 1 sarcoma trial (MPNST, NCT07743554) not yet recruiting; a canine osteosarcoma study at Colorado State (press release only)</td>
+    <td>1: R37, Colorado State</td>
+    </tr>
+    <tr>
+    <td>DKK1</td>
+    <td>36 (16 / 12 / 0)</td>
+    <td>DKN-01 (sirexatamab)</td>
+    <td>None</td>
+    <td>2: R01, Albert Einstein College of Medicine; R21, Texas A&amp;M</td>
+    </tr>
+    <tr>
+    <td>Cyclin E1 (CCNE1)</td>
+    <td>34 (11 / 20 / 0)</td>
+    <td>CDK2 inhibitors (BLU-222, INX-315)</td>
+    <td>None in osteosarcoma; the one sarcoma-eligible trial (BLU-222, NCT05252416) was terminated</td>
+    <td>None</td>
+    </tr>
+    <tr>
+    <td>STAT3</td>
+    <td>308 (137 / 97 / 14)</td>
+    <td>Napabucasin, TTI-101</td>
+    <td>None</td>
+    <td>1: a P01 subproject, 2015–2017, ended</td>
+    </tr>
+    <tr>
+    <td>IL-6</td>
+    <td>270 (95 / 71 / 8)</td>
+    <td>Tocilizumab, siltuximab</td>
+    <td>No trial tests IL-6 blockade as therapy. One immunotherapy combination trial (NCT04616248) lists tocilizumab, apparently to manage side effects</td>
+    <td>1: K08, Nationwide Children's, 2016–2020, ended (shared with IL-8)</td>
+    </tr>
+    <tr>
+    <td>CXCR4 / CXCL12</td>
+    <td>115 / 64</td>
+    <td>Motixafortide, mavorixafor, plerixafor</td>
+    <td>None as anti-tumour therapy; plerixafor's sarcoma registrations are for stem-cell collection</td>
+    <td>None</td>
+    </tr>
+    <tr>
+    <td>IL-8 (CXCL8)</td>
+    <td>85 (22 / 32 / 6)</td>
+    <td>Reparixin, SX-682</td>
+    <td>None</td>
+    <td>1: the same K08 as IL-6</td>
+    </tr>
+    <tr>
+    <td>IGF2</td>
+    <td>76 (31 / 12 / 1)</td>
+    <td>Xentuzumab, dusigitumab</td>
+    <td>None</td>
+    <td>None</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><em>Paper counts are our calculation. Trial searches were run on ClinicalTrials.gov API v2 by drug name and condition on November 14, 2026. Grant counts are focused or substantial osteosarcoma grants whose title names the gene, allowing for hyphenated or spelled-out forms such as "IL-6", "DKK-1" and "focal adhesion kinase".</em></p>
+    <p>IL-6 and IL-8 match a gap the research report already named: the IL-1, IL-6 and IL-8 axis that drives lung metastasis in mouse models. We found no registered osteosarcoma trial that blocks it (registry).</p>
+    <h2 id="close-reading-do-the-four-strongest-orphan-targets-hold-up">Close reading: do the four strongest orphan targets hold up?</h2>
+    <p>A second pass read every abstract for MDM2, FAK, DKK1 and cyclin E1 (424 papers) and judged consistency, strength, retractions and whether a patient group could be selected. A later pass read the full text of every FAK and DKK1 paper the pet-dog brief relies on. Notes with PubMed IDs: <code>research_notes/Osteosarcoma literature map/orphan_targets_close_read.md</code> and <code>research_notes/Osteosarcoma literature map/fak_dkk1_full_text_check.md</code>.</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Target</th>
+    <th>Verdict</th>
+    <th>Best evidence</th>
+    <th>Biggest problem</th>
+    <th>Key missing experiment</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>DKK1</strong></td>
+    <td>Moderate; anti-metastatic mouse data</td>
+    <td>A DKK1-blocking morpholino reduced lung metastasis in a patient-derived model: 2 of 10 treated against 7 of 9 control lungs positive for human tumour DNA (paper, full text; PMID 39805917). An independent group reported the same direction with an oral compound that lowers DKK1 (paper, full text; PMID 39280613). The antibody BHQ880, a different antibody from DKN-01, gave 4 of 27 against 6 of 18; that difference was not significant as randomised (P = 0.17), and reached P = 0.03 only after three treated mice were excluded (paper, full text; PMID 27049730)</td>
+    <td>The decisive work comes from two laboratories that share one patient-derived model; one older paper points the other way (PMID 24859848); no cut-off for "high DKK1" patients</td>
+    <td>Independent replication in a model neither laboratory owns, ideally with DKN-01 itself and in dogs</td>
+    </tr>
+    <tr>
+    <td><strong>FAK (PTK2)</strong></td>
+    <td>Moderate; most immediately actionable</td>
+    <td>Defactinib itself reduced lung metastasis in mice: in an orthotopic model (143B cells engineered to overexpress LOX, injected into the shin bone), 2 of 6 treated mice developed lung metastases against 6 of 6 untreated (P = 0.03), with no change in primary tumour weight; the paper prints the dose as 50 μg/kg twice daily, which is unusually low (paper, full text; Genes &amp; Diseases 2023, PMID 37013056). Separately, PF-562271, an oral FAK inhibitor that reached phase 1, halved growth of subcutaneous 143B xenografts (n = 6 per group), without a metastasis endpoint (paper, full text; PMID 28406574). Colorado State lists a study giving defactinib to dogs with lung-metastatic osteosarcoma (press release only: web listing; status and results not found). Activated FAK is high in 62% of tumours (33 of 53), and it predicted outcome only in the 33 patients with metastases (paper, full text; PMID 28846700)</td>
+    <td>The defactinib mouse result is small (6 mice per group), uses one engineered cell line and an unusual dose. Only about 12 of 105 papers actually block FAK. The close reading listed eight papers that seemed to contradict FAK's role; full-text reading of five found them narrow or off-topic, and none tests a FAK inhibitor and reports failure</td>
+    <td>Independent replication of the defactinib metastasis result in an unengineered model, at a standard dose and after removal of the primary tumour; the status and results of the Colorado State dog study</td>
+    </tr>
+    <tr>
+    <td><strong>Cyclin E1 (CCNE1)</strong></td>
+    <td>Weak</td>
+    <td>High protein in 61% of tumours, the largest patient genomic base of the four (paper, abstract only)</td>
+    <td>No abstract reports a CDK2 inhibitor in an osteosarcoma model; no abstract gives the amplification frequency a trial would need</td>
+    <td>Test a CDK2 inhibitor in cyclin-E1-high osteosarcoma models</td>
+    </tr>
+    <tr>
+    <td><strong>MDM2</strong></td>
+    <td>Contradictory</td>
+    <td>One oral dose of an MDM2 inhibitor (SAR405838) caused complete regression in an SJSA-1 xenograft (paper, abstract only)</td>
+    <td>Almost all of the work uses one cell line (SJSA-1). MDM2 amplification is common in low-grade osteosarcoma, which surgery usually cures, but uncommon in the aggressive form: about 7% of 83 tumours in one study (paper, abstract only), 14% of 66 patients in the MSK sequencing cohort, which includes adults and relapse samples (paper, full text; PMID 31175097), and 2.5% of 81 TARGET-OS tumours at diagnosis (our calculation, copy-number report), and the drugs need intact TP53, which most patients lack. The NCI Pediatric Preclinical Testing Program excluded its osteosarcoma models from the TP53-wild-type analysis because they expressed very little TP53 (paper, abstract only; PMID 27238606)</td>
+    <td>Find the share of high-grade osteosarcoma with MDM2 amplification and intact TP53</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><strong>What this changes.</strong> MDM2, which looked like the strongest orphan by paper count, is the weakest case for a trial in the patients who need one most. FAK and DKK1, the two targets NIH already funds, have the best evidence, and they have opposite strengths. For FAK, defactinib itself reduced lung metastasis in one small mouse study (2 of 6 against 6 of 6; PMID 37013056), and Colorado State lists a study giving it to dogs, though its status and results are unconfirmed. For DKK1, there is mouse evidence against metastasis in the same implant, amputate and watch design a dog study would copy, but we found no record of a dog receiving DKN-01. The cheapest high-value steps this map points to are finding out whether the listed Colorado State defactinib study ran and what it showed, and testing DKN-01 in dogs. The pet-dog brief (<code>briefs/Brief - pet dog trial of FAK or DKK1 blockade.md</code>) sets this out.</p>
+    <p><strong>Across all four</strong>: for FAK and DKK1, the only published study we found of the clinical drug itself in an osteosarcoma model is the small defactinib study above (PMID 37013056); we found none for DKN-01, whose mouse data use a different antibody, BHQ880, and a morpholino. MDM2 inhibitors, including clinical-stage ones, have been tested, but almost only in the SJSA-1 cell line. For cyclin E1, we found no report of any CDK2 inhibitor being tested. Studies of whether blocking a target prevents metastasis, the thing that kills patients, are rare for all four.</p>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li><strong>Gene tagging is automated and imperfect.</strong> PubTator3 maps some common abbreviations to the wrong gene, and before correction these reached headline lists. We now correct the cases we found, by the mention text PubTator recorded: "protein kinase B"/"PKB" (tagged PTK2B) to AKT1; "p21" (tagged H3P16, a histone pseudogene) to CDKN1A; "MET" (tagged SLTM) to MET; "COX-2" (tagged mitochondrial COX2) to PTGS2; "P-gp" (tagged PGP) to ABCB1; "p53" (tagged the mouse pseudogene TRP53-PS) to TP53. We drop "tyrosine kinase" (tagged TXK), "TNM" staging (tagged TENM1), the microRNA prefix "hsa" (tagged ALB) and generic "BMP" (tagged BMP1). The correction table is in <code>tools/literature_map.py</code>. It is not exhaustive. Mouse and rat genes are merged with human ones by symbol.</li>
+    <li><strong>Paper tags are keyword-based and miss in both directions.</strong> "Animal data" means the abstract mentions mice, rats, xenografts or similar, not that the target was tested in them. It also fires on rat cell lines and on letters. The gene name "murine double minute" (MDM2) is now excluded. "Patient data" is triggered by any mention of "patients", including "survival of osteosarcoma patients is poor". It misses phrases such as "osteosarcoma tissues" or "clinical samples", so some papers tagged cell-line-only did use patient tissue. In the audit's 21-paper hand check, 5 of 7 cell-line-only tags and 4 of 7 animal tags were correct by their own definitions, and all 7 microRNA-type tags were correct.</li>
+    <li><strong>The corpus is "papers mentioning osteosarcoma", not "osteosarcoma research".</strong> About a quarter of non-review papers (7,360 of 29,720) do not mention osteosarcoma, OS, sarcoma or bone in the title, often because they use the U2OS cell line as a general lab tool (our calculation). This inflates paper counts and the cell-line-only share.</li>
+    <li><strong>A microRNA-type paper is not automatically unreliable.</strong> The 8.7% figure counts only retractions so far. Retraction is a lagging outcome, so recent papers look cleaner than they will. Restricted to 2010–2019, the rates are 12.6% against 1.2% (our calculation).</li>
+    <li><strong>Gene-name counts are not drug literature.</strong> The comparison of trials with papers counts papers naming the target gene, not papers about the drug.</li>
+    <li><strong>Trial links depend on the hand-curated drug map</strong>, so a trial of a drug missing from the map is not counted.</li>
+    <li><strong>Abstracts only</strong>, except in the close reading and the full-text check.</li>
+    </ul>
+    <h2 id="reproducing-this">Reproducing this</h2>
+    <p><code>python3 tools/literature_fetch.py   # PubMed + PubTator3 download (slow; JSONL is git-ignored)
+    python3 tools/literature_map.py     # gene table, paper tags, period table, headline figures
+    python3 tools/paper_mill_flag.py    # evidence risk flags (see the risk-flag report)</code></p>
+    <h2 id="change-log">Change log</h2>
+    <ul>
+    <li><strong>November 13, 2026.</strong> First version.</li>
+    <li><strong>November 14, 2026.</strong> Revised after an independent audit (<code>research_notes/Audit/audit_C_literature_risk_surface.md</code>):</li>
+    <li>The retracted-paper list had duplicate PMIDs. PubMed lists 418 retracted papers, not 455, and all are in the dataset. The fetch script now de-duplicates.</li>
+    <li>Added the PubTator correction map. The gene table now has 1,487 genes, down from 1,494, and the orphan list has 73 genes, down from 79. The artefacts TRP53-PS, SLTM, TXK, PGP, COX2 and BMP1 are gone.</li>
+    <li>The animal-data tag no longer fires on "murine double minute", so MDM2 has 63 papers with animal data, down from 75.</li>
+    <li>Recomputed the period table from the de-duplicated data. The 2005–09, 2010–14 and 2025–26 rows had come from an earlier run.</li>
+    <li>The ratio is now given as 8.4-fold, with confidence intervals, in place of "ninefold".</li>
+    <li>The weak-evidence list now counts each paper once (cell-line-only or microRNA-type), not the two shares added together. It has 10 genes, down from 20.</li>
+    <li>The retraction-share list now has the correct order. SOX2 is out, and DNMT1 is "joint highest among genes with at least 20 papers".</li>
+    <li>Grant matching now catches "IL-6", "DKK-1" and "focal adhesion kinase", which adds the IL-6/IL-8 K08 grant.</li>
+    <li>The defactinib approval is now worded as an accelerated approval of the avutometinib co-pack.</li>
+    <li>The statement that nobody had tested the actual drugs was out of date and has been rewritten to match the full-text check, including the Colorado State canine defactinib study.</li>
+    <li>The PPTP MDM2 wording is corrected. The zoledronate and PD-1 counts are labelled as gene-name counts and as a floor.</li>
+    <li>Unsupported claims about paper mills and citation of unretracted papers are removed.</li>
+    <li><strong>November 20, 2026.</strong> Aligned with the ranked leads and the pet-dog brief after a repo-wide consistency check (<code>research_notes/Audit/consistency_check.md</code>):</li>
+    <li>FAK: the defactinib orthotopic mouse result (PMID 37013056; lung metastasis in 2 of 6 treated against 6 of 6 untreated mice, P = 0.03; 143B cells engineered to overexpress LOX, injected into the shin bone; dose printed as 50 μg/kg twice daily, flagged as unusual) is now the best FAK evidence. The statements that there was "no mouse evidence against metastasis" and "no published study of defactinib in an osteosarcoma model" were wrong and are removed.</li>
+    <li>Colorado State's canine defactinib study is now described as a web listing whose status and results are unconfirmed, not as a study that has already treated dogs.</li>
+    <li>MDM2: the 7% of 83 figure now sits beside MSK's 14% of 66 and TARGET-OS's 2.5% of 81, with their sources.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Osteosarcoma%20literature%20map.md">reports/Osteosarcoma literature map.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer>
+  <div class="docbar-in">
+    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+  });
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

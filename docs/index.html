@@ -295,10 +295,10 @@ header.hero :focus-visible { outline-color: #cfe2f5; }
     <li><b>Who</b> Built by John Gegen’s brother, leveraging frontier AI models to gather, analyse and cross-check the public research.</li>
     <li><b>From what</b> 33,242 PubMed papers mentioning osteosarcoma, 758 studies on ClinicalTrials.gov, NIH grant records (2015–2025), Europe PMC full texts, and open genomic and tissue-expression data.</li>
     <li><b>Checked how</b> Every headline claim was audited against its original source in two separate review passes run by AI models, plus a repo-wide consistency check, and the reports were corrected where these found errors. Each report ends with a change log.</li>
-    <li><b>Not yet</b> Checked by any independent person or peer-reviewed. That is the next step, and we are asking for it. Auditors can start with the <a href="https://github.com/mgegen15-dev/For_John/blob/main/AUDIT_GUIDE.md">auditor's guide</a>.</li>
+    <li><b>Not yet</b> Checked by any independent person or peer-reviewed. That is the next step, and we are asking for it. Auditors can start with the <a href="audit-guide.html">auditor's guide</a>.</li>
     <li><b>Open</b> Most analyses can be rebuilt with the scripts in the repository; a few counts came from one-off database queries described in each report. Reports and data are licensed CC BY 4.0, code is MIT.</li>
   </ul>
-  <p style="margin-top:22px"><a href="https://github.com/mgegen15-dev/For_John/blob/main/HOW_THIS_WAS_MADE.md">Read the full methods and limitations</a></p>
+  <p style="margin-top:22px"><a href="how-this-was-made.html">Read the full methods and limitations</a></p>
  </div>
 </section>
 
@@ -354,25 +354,25 @@ const ASKS = [
 ];
 const REPORTS = [
   { title: "Evidence explorer", href: "explorer.html", local: true, text: "search any gene, drug or target and see the papers, risk flags, trials, tumour expression and drugs behind it." , group: "Start here" },
-  { title: "One-page summary", href: "SUMMARY.md" , group: "Start here" },
-  { title: "Ranked leads and research partners", href: "reports/Ranked leads and research partners.md", text: "the fourteen leads, scored." , group: "Start here" },
-  { title: "Osteosarcoma research landscape and gaps", href: "reports/Osteosarcoma research landscape and gaps.md" , group: "Literature and funding" },
-  { title: "Clinical trials landscape", href: "reports/Osteosarcoma clinical trials landscape.md" , group: "Trials and evidence" },
-  { title: "Pooled control dataset", href: "reports/Osteosarcoma pooled control dataset.md" , group: "Trials and evidence" },
-  { title: "Why kinase-inhibitor pills work", href: "reports/Why kinase-inhibitor pills work in osteosarcoma.md" , group: "Trials and evidence" },
-  { title: "Do the leads predict survival?", href: "reports/Do the leads predict survival.md" , group: "Trials and evidence" },
-  { title: "Contradictions and hidden links", href: "reports/Contradictions and hidden links in the osteosarcoma literature.md", text: "where papers disagree, and untested drug-to-outcome chains." , group: "Trials and evidence" },
-  { title: "Copy-number changes and the kinase-pill biomarker", href: "reports/Copy-number changes and the kinase-pill biomarker.md", text: "how often tumours carry extra copies of the pills’ target genes, and how many trial patients a test would need." , group: "Leads and targets" },
-  { title: "Stopping lung metastasis", href: "reports/Stopping lung metastasis in osteosarcoma.md" , group: "Leads and targets" },
-  { title: "New surface targets", href: "reports/New surface targets for osteosarcoma.md" , group: "Leads and targets" },
-  { title: "Approved drugs worth testing", href: "reports/Approved drugs worth testing in osteosarcoma.md", text: "a screen of 2,400 approved and late-stage drugs, including the dead ends." , group: "Leads and targets" },
-  { title: "What's new in osteosarcoma research", href: "reports/Whats new in osteosarcoma research.md", text: "June 2025 to November 2026, checked against the leads." , group: "Trials and evidence" },
-  { title: "Literature map", href: "reports/Osteosarcoma literature map.md" , group: "Literature and funding" },
-  { title: "Evidence risk flags", href: "reports/Evidence risk flags for osteosarcoma genes.md" , group: "Literature and funding" },
-  { title: "NIH funding", href: "reports/NIH funding for osteosarcoma.md" , group: "Literature and funding" },
-  { title: "Dog genome re-analysis scope", href: "reports/Dog genome re-analysis scope.md" , group: "Literature and funding" },
-  { title: "Research brief: FAK or DKK1 in pet dogs", href: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md" , group: "Leads and targets" },
-  { title: "How this was made", href: "HOW_THIS_WAS_MADE.md", text: "methods, limits and how to re-run the analyses." , group: "Start here" }
+  { title: "One-page summary", href: "summary.html", local: true , group: "Start here" },
+  { title: "Ranked leads and research partners", href: "reports/ranked-leads-and-research-partners.html", local: true, text: "the fourteen leads, scored." , group: "Start here" },
+  { title: "Osteosarcoma research landscape and gaps", href: "reports/osteosarcoma-research-landscape-and-gaps.html", local: true , group: "Literature and funding" },
+  { title: "Clinical trials landscape", href: "reports/osteosarcoma-clinical-trials-landscape.html", local: true , group: "Trials and evidence" },
+  { title: "Pooled control dataset", href: "reports/osteosarcoma-pooled-control-dataset.html", local: true , group: "Trials and evidence" },
+  { title: "Why kinase-inhibitor pills work", href: "reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html", local: true , group: "Trials and evidence" },
+  { title: "Do the leads predict survival?", href: "reports/do-the-leads-predict-survival.html", local: true , group: "Trials and evidence" },
+  { title: "Contradictions and hidden links", href: "reports/contradictions-and-hidden-links-in-the-osteosarcoma-literature.html", local: true, text: "where papers disagree, and untested drug-to-outcome chains." , group: "Trials and evidence" },
+  { title: "Copy-number changes and the kinase-pill biomarker", href: "reports/copy-number-changes-and-the-kinase-pill-biomarker.html", local: true, text: "how often tumours carry extra copies of the pills’ target genes, and how many trial patients a test would need." , group: "Leads and targets" },
+  { title: "Stopping lung metastasis", href: "reports/stopping-lung-metastasis-in-osteosarcoma.html", local: true , group: "Leads and targets" },
+  { title: "New surface targets", href: "reports/new-surface-targets-for-osteosarcoma.html", local: true , group: "Leads and targets" },
+  { title: "Approved drugs worth testing", href: "reports/approved-drugs-worth-testing-in-osteosarcoma.html", local: true, text: "a screen of 2,400 approved and late-stage drugs, including the dead ends." , group: "Leads and targets" },
+  { title: "What's new in osteosarcoma research", href: "reports/whats-new-in-osteosarcoma-research.html", local: true, text: "June 2025 to November 2026, checked against the leads." , group: "Trials and evidence" },
+  { title: "Literature map", href: "reports/osteosarcoma-literature-map.html", local: true , group: "Literature and funding" },
+  { title: "Evidence risk flags", href: "reports/evidence-risk-flags-for-osteosarcoma-genes.html", local: true , group: "Literature and funding" },
+  { title: "NIH funding", href: "reports/nih-funding-for-osteosarcoma.html", local: true , group: "Literature and funding" },
+  { title: "Dog genome re-analysis scope", href: "reports/dog-genome-re-analysis-scope.html", local: true , group: "Literature and funding" },
+  { title: "Research brief: FAK or DKK1 in pet dogs", href: "briefs/brief-pet-dog-trial-of-fak-or-dkk1-blockade.html", local: true , group: "Leads and targets" },
+  { title: "How this was made", href: "how-this-was-made.html", local: true, text: "methods, limits and how to re-run the analyses." , group: "Start here" }
 ];
 const CHART = {
   benchmark: 12,
@@ -388,6 +388,7 @@ const CHART = {
 
 // ---------- Rendering ----------
 const repo = "https://github.com/mgegen15-dev/For_John/blob/main/";
+const PAGES = { "SUMMARY.md": "summary.html", "HOW_THIS_WAS_MADE.md": "how-this-was-made.html", "AUDIT_GUIDE.md": "audit-guide.html", "PREDICTIONS.md": "predictions.html", "DATA_MANIFEST.md": "data-manifest.html", "reports/Approved drugs worth testing in osteosarcoma.md": "reports/approved-drugs-worth-testing-in-osteosarcoma.html", "reports/Contradictions and hidden links in the osteosarcoma literature.md": "reports/contradictions-and-hidden-links-in-the-osteosarcoma-literature.html", "reports/Copy-number changes and the kinase-pill biomarker.md": "reports/copy-number-changes-and-the-kinase-pill-biomarker.html", "reports/Do the leads predict survival.md": "reports/do-the-leads-predict-survival.html", "reports/Dog genome re-analysis scope.md": "reports/dog-genome-re-analysis-scope.html", "reports/Evidence risk flags for osteosarcoma genes.md": "reports/evidence-risk-flags-for-osteosarcoma-genes.html", "reports/NIH funding for osteosarcoma.md": "reports/nih-funding-for-osteosarcoma.html", "reports/New surface targets for osteosarcoma.md": "reports/new-surface-targets-for-osteosarcoma.html", "reports/Osteosarcoma clinical trials landscape.md": "reports/osteosarcoma-clinical-trials-landscape.html", "reports/Osteosarcoma literature map.md": "reports/osteosarcoma-literature-map.html", "reports/Osteosarcoma pooled control dataset.md": "reports/osteosarcoma-pooled-control-dataset.html", "reports/Osteosarcoma research landscape and gaps.md": "reports/osteosarcoma-research-landscape-and-gaps.html", "reports/Ranked leads and research partners.md": "reports/ranked-leads-and-research-partners.html", "reports/Stopping lung metastasis in osteosarcoma.md": "reports/stopping-lung-metastasis-in-osteosarcoma.html", "reports/Whats new in osteosarcoma research.md": "reports/whats-new-in-osteosarcoma-research.html", "reports/Why kinase-inhibitor pills work in osteosarcoma.md": "reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html", "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md": "briefs/brief-pet-dog-trial-of-fak-or-dkk1-blockade.html" };
 function el(tag, attrs, text) {
   const e = document.createElement(tag);
   if (attrs) for (const k in attrs) e.setAttribute(k, attrs[k]);
@@ -404,7 +405,7 @@ function renderFindings() {
     c.appendChild(el("p", null, f.body));
     const p = el("p", { class: "src" });
     p.appendChild(document.createTextNode("Details: "));
-    const a = el("a", { href: repo + encodeURI(f.report) }, f.reportName);
+    const a = el("a", { href: PAGES[f.report] || repo + encodeURI(f.report) }, f.reportName);
     p.appendChild(a);
     c.appendChild(p);
     box.appendChild(c);

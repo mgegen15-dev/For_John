@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence risk flags for osteosarcoma genes · For John</title>
+<meta name="description" content="Built November 13–14, 2026 from the literature map: 18,937 non-review osteosarcoma papers published since 2010. Data: data/osteosarcoma_evidence_risk_genes.csv (362 genes with at least 15 papers…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/evidence-risk-flags-for-osteosarcoma-genes.html">
+<meta name="theme-color" content="#0f2a44">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Evidence risk flags for osteosarcoma genes · For John">
+<meta property="og:description" content="Built November 13–14, 2026 from the literature map: 18,937 non-review osteosarcoma papers published since 2010. Data: data/osteosarcoma_evidence_risk_genes.csv (362 genes with at least 15 papers…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/evidence-risk-flags-for-osteosarcoma-genes.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="docbar">
+  <div class="docbar-in">
+    <a class="home" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html">Home</a>
+      <a href="../explorer.html">Evidence explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John/blob/main/">Source and data</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On this page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-this-is-and-what-it-is-not">What this is, and what it is not</a></li><li class="l1"><a href="#the-comparison-that-carries-the-signal">The comparison that carries the signal</a></li><li class="l1"><a href="#how-genes-are-flagged">How genes are flagged</a></li><li class="l1"><a href="#the-targets-that-matter-for-trials-and-leads">The targets that matter for trials and leads</a></li><li class="l1"><a href="#journals">Journals</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#change-log">Change log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb"><a href="../index.html">Home</a> · Report</p>
+    <h1>Evidence risk flags for osteosarcoma genes</h1>
+    <p><em>Built November 13–14, 2026 from the literature map: 18,937 non-review osteosarcoma papers published since 2010. Data: <code>data/osteosarcoma_evidence_risk_genes.csv</code> (362 genes with at least 15 papers since 2010) and <code>data/osteosarcoma_evidence_risk_journals.csv</code>. Script: <code>tools/paper_mill_flag.py</code>, which reads the paper tags written by <code>tools/literature_map.py</code>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>Some genes' osteosarcoma literature leans heavily on a kind of paper, the microRNA, lncRNA or circRNA study, that has been retracted far more often than the rest. This flag shows, for each gene, how much of its literature is of that kind and how much has already been retracted, so a researcher can decide how hard to check before building on it. Since 2010, 8.7% of microRNA-type osteosarcoma papers have been retracted, against 1.0% of other papers, an 8.4-fold difference. A flag is a prompt to look for independent animal, patient or dog evidence. It is not a finding of misconduct. Many genes are flagged on only two or three retractions, so a single paper can change a flag.</p>
+    <p><strong>How to read the labels.</strong> Key numbers carry one of these tags:
+    - <strong>(registry)</strong>: read directly from an official registry or database: PubMed's own listings (for example, which papers are retracted), ClinicalTrials.gov, NIH RePORTER.
+    - <strong>(paper, full text)</strong>: we read the full paper.
+    - <strong>(paper, abstract only)</strong>: we read only the abstract.
+    - <strong>(press release only)</strong>: the only source is a press release or an institution's web listing.
+    - <strong>(our calculation)</strong>: we computed it from this repository's data files.</p>
+    <h2 id="what-this-is-and-what-it-is-not">What this is, and what it is not</h2>
+    <p>Osteosarcoma's literature is heavily affected by formulaic papers of the kind associated with "paper mills", businesses that sell often fabricated research papers. This flag helps a researcher judge, before relying on a gene, how much of its osteosarcoma literature is of the type most often retracted.</p>
+    <p><strong>It flags a pattern, not misconduct.</strong> Many microRNA-type papers are genuine. A "high" flag means "check the independent evidence before relying on this gene". It does not mean "this research is fake".</p>
+    <h2 id="the-comparison-that-carries-the-signal">The comparison that carries the signal</h2>
+    <p>A paper is <strong>microRNA-type</strong> when its title or abstract is about a microRNA, long non-coding RNA or circular RNA (for example "miR-", "lncRNA", "circRNA", "sponge"). Retraction status comes from PubMed (registry).</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Non-review papers since 2010</th>
+    <th>Papers</th>
+    <th>Retracted</th>
+    <th>Share retracted (95% CI)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>microRNA-type</td>
+    <td>2,816 (14.9%)</td>
+    <td>244</td>
+    <td><strong>8.7%</strong> (7.7–9.8%)</td>
+    </tr>
+    <tr>
+    <td>All other papers</td>
+    <td>16,121</td>
+    <td>167</td>
+    <td>1.0% (0.9–1.2%)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><em>Our calculation. Ratio 8.4-fold. These 411 retracted research papers are part of the 418 retracted osteosarcoma papers PubMed lists. The other seven are 3 reviews and 4 papers from before 2010.</em></p>
+    <p>Retractions lag publication by years, so these rates will rise, most of all for recent papers. Restricted to 2010–2019, the rates are 12.6% against 1.2%, a 10.5-fold difference (our calculation).</p>
+    <p><strong>Why we no longer use a narrower "template".</strong> An earlier version flagged only microRNA-type papers whose abstract did not mention animals, patients or dogs. That narrowing did not help. Since 2010 those papers were retracted at 8.6% (96 of 1,115) and the other microRNA-type papers at 8.7% (148 of 1,701) (our calculation). Its "patients" test was also unreliable in both directions. Any abstract that says "osteosarcoma patients" escaped it, and papers reporting "osteosarcoma tissues" did not count as having patient data. Restricted to 2010–2019 the narrow group was retracted somewhat more often (14.7% against 11.4%), but most of the signal is "microRNA-type or not". The flag now uses that simpler definition.</p>
+    <h2 id="how-genes-are-flagged">How genes are flagged</h2>
+    <p>For each gene with at least 15 non-review papers since 2010:</p>
+    <ul>
+    <li><strong>High:</strong> at least 35% of its papers are microRNA-type, or at least 8% are retracted.</li>
+    <li><strong>Elevated:</strong> at least 20% are microRNA-type, or at least 4% are retracted.</li>
+    <li><strong>Typical:</strong> neither.</li>
+    </ul>
+    <p>Counts: <strong>75 genes high, 100 elevated, 187 typical</strong> (our calculation). For <strong>52 of these genes the flag would change with one retraction fewer</strong>, which is flagged in the data file (<code>flag_changes_with_one_retraction_fewer</code>), together with a 95% interval for each gene's retracted share. The thresholds are judgement calls, chosen to be easy to explain.</p>
+    <p><strong>High-risk genes with at least three retractions</strong> include TUG1, MIR34A, MIR21, MALAT1, SOX4, ZEB1, ZEB2, ROCK1, TIMP2, SIRT1, EZH2, PTEN (10 retracted of 157), DNMT1 (6 of 33), BMI1, NOTCH1, CDH2, SMAD2, SOX2 (8 of 83), FASN, BECN1, PROM1 (7 of 73), RAC1, CCNB1, CDK1 and ANXA5 (14 of 132), plus many individual microRNAs (our calculation). The full list is in the data file.</p>
+    <h2 id="the-targets-that-matter-for-trials-and-leads">The targets that matter for trials and leads</h2>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Target</th>
+    <th>Papers since 2010</th>
+    <th>microRNA-type share</th>
+    <th>Retracted</th>
+    <th>With animal, patient or dog data</th>
+    <th>Flag</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>FAK (PTK2)</td>
+    <td>95</td>
+    <td>7%</td>
+    <td>1</td>
+    <td>56</td>
+    <td>Typical</td>
+    </tr>
+    <tr>
+    <td>IL-6</td>
+    <td>178</td>
+    <td>8%</td>
+    <td>6</td>
+    <td>106</td>
+    <td>Typical</td>
+    </tr>
+    <tr>
+    <td>IL-8 (CXCL8)</td>
+    <td>55</td>
+    <td>11%</td>
+    <td>0</td>
+    <td>34</td>
+    <td>Typical</td>
+    </tr>
+    <tr>
+    <td>GD2</td>
+    <td>39</td>
+    <td>0%</td>
+    <td>0</td>
+    <td>32</td>
+    <td>Typical</td>
+    </tr>
+    <tr>
+    <td>B7-H3 (CD276)</td>
+    <td>32</td>
+    <td>9%</td>
+    <td>0</td>
+    <td>29</td>
+    <td>Typical</td>
+    </tr>
+    <tr>
+    <td>HER2 (ERBB2)</td>
+    <td>76</td>
+    <td>5%</td>
+    <td>1</td>
+    <td>67</td>
+    <td>Typical</td>
+    </tr>
+    <tr>
+    <td>PD-L1 (CD274)</td>
+    <td>169</td>
+    <td>5%</td>
+    <td>1</td>
+    <td>144</td>
+    <td>Typical</td>
+    </tr>
+    <tr>
+    <td>MDM2</td>
+    <td>180</td>
+    <td>6%</td>
+    <td>3</td>
+    <td>125</td>
+    <td>Typical</td>
+    </tr>
+    <tr>
+    <td>DKK1</td>
+    <td>28</td>
+    <td>14%</td>
+    <td>2</td>
+    <td>18</td>
+    <td>Elevated (2 retractions; would be typical with one fewer)</td>
+    </tr>
+    <tr>
+    <td>mTOR</td>
+    <td>346</td>
+    <td>15%</td>
+    <td>16</td>
+    <td>232</td>
+    <td>Elevated</td>
+    </tr>
+    <tr>
+    <td>IGF1R</td>
+    <td>89</td>
+    <td>26%</td>
+    <td>5</td>
+    <td>67</td>
+    <td>Elevated</td>
+    </tr>
+    <tr>
+    <td>CDK6</td>
+    <td>43</td>
+    <td>44%</td>
+    <td>2</td>
+    <td>27</td>
+    <td><strong>High</strong> (microRNA-type share)</td>
+    </tr>
+    <tr>
+    <td>Cyclin E1 (CCNE1)</td>
+    <td>33</td>
+    <td>15%</td>
+    <td>3</td>
+    <td>25</td>
+    <td><strong>High</strong> (3 retractions; would be elevated with one fewer)</td>
+    </tr>
+    <tr>
+    <td>IL-6 receptor (IL6R)</td>
+    <td>16</td>
+    <td>69%</td>
+    <td>3</td>
+    <td>5</td>
+    <td><strong>High</strong></td>
+    </tr>
+    <tr>
+    <td>DNMT1</td>
+    <td>33</td>
+    <td>39%</td>
+    <td>6</td>
+    <td>21</td>
+    <td><strong>High</strong></td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><em>All values are our calculation from PubMed retraction status (registry). "Papers" means papers whose abstract PubTator tags with the gene, after the gene-name corrections described in the literature map.</em></p>
+    <p><strong>What the retractions behind these flags actually are.</strong> A gene "has" a retraction when a retracted paper mentions it. The paper need not be about that gene, so we checked titles (registry):
+    - <strong>DKK1:</strong> the two retracted papers are a study of convallatoxin in osteosarcoma cells (PMID 35635031) and a signalling "network map" for CKAP4 across cancers (PMID 36944905). Neither is a DKK1 study, and neither comes from the laboratories behind the DKK1 metastasis work. The DKK1 flag says nothing about that evidence base. Its real weakness, two laboratories sharing one model, is described in the literature map and the pet-dog brief.
+    - <strong>Cyclin E1:</strong> the three retracted papers are about nimotuzumab and EGFR (PMID 31001861), DDX5 and TCF12 (PMID 30733679) and PAK4 (PMID 35005025). Each uses cyclin E1 only as a downstream read-out. The high flag rests on these three, and with one fewer it would be elevated. It is not independent support for the close reading's "weak" verdict, which rests on the absence of any CDK2-inhibitor experiment in osteosarcoma.
+    - <strong>FAK:</strong> the single retracted paper is a proteomics study of AURKB (PMID 31122179), not a FAK study.
+    - <strong>IL-6:</strong> of the six, two are not osteosarcoma papers (a pancreatic-cancer gene analysis, PMID 25409614, and a spinal-cord-injury microarray study, PMID 25063577). The share, 3.4%, is just under the 4% "elevated" line.
+    - <strong>IL-6 receptor:</strong> the three are one retracted paper on LINC01116 (PMID 30098545) and two corrections to it, all listed by PubMed as retracted.</p>
+    <p><strong>What this means for the leads:</strong>
+    - <strong>FAK and IL-6 have low retraction and low microRNA-type shares.</strong> That is not the same as strong evidence. For FAK, the close reading found that only about 12 of 105 papers actually block FAK. For IL-6, 34% of all its osteosarcoma papers are cell-line-only (our calculation). IL-6 work should build on IL-6 itself, not on IL-6 receptor papers, 69% of which are microRNA-type.
+    - <strong>DKK1's elevated flag should not count against it</strong>, for the reasons above.
+    - <strong>Cyclin E1's high flag is fragile.</strong> The case against a cyclin E1 trial rests on the close reading, not on this flag.
+    - <strong>CDK6</strong> is now flagged high because 44% of its papers since 2010 are microRNA-type. CDK4/6 inhibitors have 14 osteosarcoma trials, so the CDK6 rationale in those trials deserves a second look.
+    - <strong>DNMT1</strong>, the target of decitabine and azacitidine (4 osteosarcoma trials), has six retractions among 33 papers (18%).</p>
+    <h2 id="journals">Journals</h2>
+    <p>Among journals with at least 30 osteosarcoma papers since 2010, the most retractions were in <em>Oncology Letters</em> (22 of 389), <em>BioMed Research International</em> (19 of 83), <em>Oncology Research</em> (16 of 77), <em>European Review for Medical and Pharmacological Sciences</em> (15 of 156), <em>Molecular Medicine Reports</em> (15 of 226), <em>OncoTargets and Therapy</em> (15 of 136), <em>PLoS One</em> (15 of 284) and <em>Tumor Biology</em> (14 of 182) (our calculation). High counts can partly reflect publishers' clean-up efforts, which is a good thing. Some of these journals are reported to have had large publisher-led retraction rounds, but we have not checked those reports.</p>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>Paper types come from keywords in the title and abstract, so some papers are misclassified, though a hand check found all 7 sampled microRNA-type tags correct.</li>
+    <li>Gene tags come from automated text mining, corrected for the mis-normalisations we found (listed in the literature map and in <code>tools/literature_map.py</code>). An earlier version listed PTK2B among the high-risk genes. Its retracted papers were really about AKT ("protein kinase B"), which is now counted under AKT1 (elevated: 59 of 963 papers retracted, 6.1%).</li>
+    <li>A retracted paper counts against every gene it mentions, whether or not the gene is its subject (see the examples above).</li>
+    <li>Retraction status is as of November 14, 2026, from PubMed (registry), and retractions lag publication.</li>
+    <li>With 15–40 papers a gene, one retraction can move a flag. Use the interval and the fragility column in the data file.</li>
+    <li>The thresholds are judgement calls. The raw percentages are in the data file for anyone who prefers their own.</li>
+    </ul>
+    <h2 id="change-log">Change log</h2>
+    <ul>
+    <li><strong>November 13, 2026.</strong> First version.</li>
+    <li><strong>November 14, 2026.</strong> Revised after an independent audit (<code>research_notes/Audit/audit_C_literature_risk_surface.md</code>):</li>
+    <li>The earlier "template" (microRNA-type with no mention of animals, patients or dogs) is replaced by the microRNA-type share alone. The audit showed that the narrower definition did not change the retraction rate (8.6% against 8.7%), and the earlier text had described it inaccurately as "only cell-line work".</li>
+    <li>The headline comparison now matches the literature map: 8.7% against 1.0%, 8.4-fold.</li>
+    <li>Gene-name corrections removed PTK2B from the high-risk list. Its retractions belong to AKT1.</li>
+    <li>Gene counts changed from 371 genes (52 high, 96 elevated, 223 typical) to 362 (75 high, 100 elevated, 187 typical). Most of this comes from the broader definition and the corrections.</li>
+    <li>CDK6 moves from elevated to high.</li>
+    <li>Confidence intervals and a one-retraction fragility flag were added.</li>
+    <li>The statements that DKK1's retractions "reinforce" caution and that cyclin E1's flag is "consistent with" its verdict were wrong, because those retracted papers are not about those genes. They have been rewritten.</li>
+    <li>"FAK and IL-6 rest on clean literatures" is softened to low retraction and microRNA-type shares.</li>
+    <li>Stale references to numbered leads are removed.</li>
+    <li>The unsupported claim about publisher retraction rounds is softened.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Evidence%20risk%20flags%20for%20osteosarcoma%20genes.md">reports/Evidence risk flags for osteosarcoma genes.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer>
+  <div class="docbar-in">
+    <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
+    <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("fj-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("fj-theme", next); } catch (e) {}
+  });
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
