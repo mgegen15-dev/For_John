@@ -95,7 +95,7 @@ TEMPLATE = """<!doctype html>
 <title>{title} · For John</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{site}{out}">
-<meta name="theme-color" content="#0f2a44">
+<meta name="theme-color" content="#ffd84a">
 <link rel="icon" href="{up}icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{up}icon-180.png">
 <meta property="og:type" content="article">
@@ -110,7 +110,7 @@ TEMPLATE = """<!doctype html>
 <meta name="twitter:image" content="{site}og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{up}doc.css">
 </head>
 <body>

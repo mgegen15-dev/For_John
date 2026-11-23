@@ -6,7 +6,7 @@
 <title>Evidence explorer · For John</title>
 <meta name="description" content="Type a gene, drug or target and see everything the For John osteosarcoma project knows about it: papers, evidence quality, trials, tumour expression, copy number, approved drugs and reports.">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/explorer.html">
-<meta name="theme-color" content="#0f2a44">
+<meta name="theme-color" content="#ffd84a">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta property="og:type" content="website">
@@ -21,11 +21,11 @@
 <meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   color-scheme: light;
-  --page: #f9f9f7;
+  --page: #fbfbf9;
   --surface: #fcfcfb;
   --ink: #0b0b0b;
   --ink-2: #52514e;
@@ -37,7 +37,7 @@
   --accent-soft: rgba(42,120,214,0.10);
   --warn: #b4540f;
   --bench: #d03b3b;
-  --link: #1c5cab;
+  --link: #111111;
   --row-hover: rgba(11,11,11,0.035);
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
@@ -57,7 +57,7 @@
     --accent-soft: rgba(57,135,229,0.16);
     --warn: #e08a4a;
     --bench: #e66767;
-    --link: #86b6ef;
+    --link: #f0efec;
     --row-hover: rgba(255,255,255,0.04);
   }
 }
@@ -65,7 +65,7 @@
   color-scheme: dark;
   --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
   --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10); --accent: #3987e5;
-  --accent-soft: rgba(57,135,229,0.16); --warn: #e08a4a; --bench: #e66767; --link: #86b6ef;
+  --accent-soft: rgba(57,135,229,0.16); --warn: #e08a4a; --bench: #e66767; --link: #f0efec;
   --row-hover: rgba(255,255,255,0.04);
 }
 * { box-sizing: border-box; }
@@ -179,6 +179,11 @@ footer { padding: 24px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
   dialog#detail { width: 100vw; max-width: 100vw; max-height: 100vh; height: 100%; margin: 0; border-radius: 0; border: none; }
   .dhead, .dbody { padding-left: 16px; padding-right: 16px; }
 }
+body { border-top: 10px solid #ffd84a; }
+a { color: var(--ink); text-decoration: underline; text-decoration-color: #ffd84a; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { background: #ffd84a; color: #111; }
+.chip, .theme-toggle { border-radius: 2px !important; }
+.hero h1 { font-size: clamp(44px, 8vw, 84px) !important; letter-spacing: -0.035em !important; line-height: 0.98 !important; }
 </style>
 </head>
 <body>

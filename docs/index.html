@@ -6,7 +6,7 @@
 <title>For John · Open osteosarcoma research</title>
 <meta name="description" content="An open, independent effort to tie together osteosarcoma research and find what has been overlooked. In memory of John.">
 <link rel="canonical" href="https://mgegen15-dev.github.io/For_John/">
-<meta name="theme-color" content="#0f2a44">
+<meta name="theme-color" content="#ffd84a">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta property="og:type" content="website">
@@ -24,206 +24,155 @@
 <meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   color-scheme: light;
-  --page: #f7f7f4;
-  --surface: #ffffff;
-  --band: #eeeee9;
-  --ink: #0b0b0b;
-  --ink-2: #52514e;
-  --muted: #6f6e69;
-  --grid: #e1e0d9;
-  --axis: #c3c2b7;
-  --border: rgba(11,11,11,0.10);
-  --accent: #2a78d6;
-  --series-1: #2a78d6;
-  --series-2: #eb6834;
-  --bench: #d03b3b;
-  --link: #1c5cab;
-  --navy: #0f2a44;
-  --navy-2: #1d4367;
-  --on-navy: #f3f7fb;
-  --on-navy-2: #adc3d8;
-  --on-navy-link: #cfe2f5;
-  --c-confirmed: #1baf7a;
-  --c-lead: #2a78d6;
-  --c-hypothesis: #eb6834;
-  --tint-confirmed: #e4f5ee;
-  --ink-confirmed: #0e6b4a;
-  --tint-lead: #e6f0fb;
-  --ink-lead: #1a5494;
-  --tint-hypothesis: #fdeee7;
-  --ink-hypothesis: #a3401a;
+  --page: #fbfbf9; --surface: #ffffff; --band: #f1f0ec;
+  --ink: #111111; --ink-2: #4a4a47; --muted: #6b6b66;
+  --grid: #dcdbd4; --axis: #c3c2b7; --border: rgba(17,17,17,0.12); --rule: #111111;
+  --hl: #ffd84a;
+  --accent: #2a78d6; --series-1: #2a78d6; --series-2: #eb6834; --bench: #d03b3b; --link: #111111;
+  --ink-confirmed: #0e6b4a; --ink-lead: #1a5494; --ink-hypothesis: #a3401a;
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --page: #0d0d0d;
-    --surface: #1a1a19;
-    --band: #141413;
-    --ink: #f0efec;
-    --ink-2: #c3c2b7;
-    --muted: #a3a29b;
-    --grid: #2c2c2a;
-    --axis: #383835;
-    --border: rgba(255,255,255,0.10);
-    --accent: #3987e5;
-    --series-1: #3987e5;
-    --series-2: #d95926;
-    --bench: #e66767;
-    --link: #86b6ef;
-    --navy: #0a1c2e;
-    --navy-2: #13304c;
-    --on-navy: #eaf1f8;
-    --on-navy-2: #9db4ca;
-    --on-navy-link: #a9cdf0;
-    --c-confirmed: #199e70;
-    --c-lead: #3987e5;
-    --c-hypothesis: #d95926;
-    --tint-confirmed: #10261f;
-    --ink-confirmed: #6fd9b2;
-    --tint-lead: #10203a;
-    --ink-lead: #8cbcf2;
-    --tint-hypothesis: #2b1710;
-    --ink-hypothesis: #f09570;
+    --page: #0e0e0d; --surface: #171716; --band: #1a1a18;
+    --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
+    --grid: #2e2e2b; --axis: #3a3a36; --border: rgba(255,255,255,0.12); --rule: #f0efec;
+    --hl: #f2c230;
+    --accent: #3987e5; --series-1: #3987e5; --series-2: #d95926; --bench: #e66767; --link: #f0efec;
+    --ink-confirmed: #6fd9b2; --ink-lead: #8cbcf2; --ink-hypothesis: #f09570;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --page: #0d0d0d; --surface: #1a1a19; --band: #141413; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
-  --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10); --accent: #3987e5;
-  --series-1: #3987e5; --series-2: #d95926; --bench: #e66767; --link: #86b6ef;
-  --navy: #0a1c2e; --navy-2: #13304c; --on-navy: #eaf1f8; --on-navy-2: #9db4ca; --on-navy-link: #a9cdf0;
-  --c-confirmed: #199e70; --c-lead: #3987e5; --c-hypothesis: #d95926;
-  --tint-confirmed: #10261f; --ink-confirmed: #6fd9b2; --tint-lead: #10203a; --ink-lead: #8cbcf2;
-  --tint-hypothesis: #2b1710; --ink-hypothesis: #f09570;
+  --page: #0e0e0d; --surface: #171716; --band: #1a1a18;
+  --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
+  --grid: #2e2e2b; --axis: #3a3a36; --border: rgba(255,255,255,0.12); --rule: #f0efec;
+  --hl: #f2c230;
+  --accent: #3987e5; --series-1: #3987e5; --series-2: #d95926; --bench: #e66767; --link: #f0efec;
+  --ink-confirmed: #6fd9b2; --ink-lead: #8cbcf2; --ink-hypothesis: #f09570;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0; background: var(--page); color: var(--ink);
-  font: 400 17px/1.6 var(--sans);
-  -webkit-font-smoothing: antialiased;
-}
-a { color: var(--link); }
-.wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
-.prose { max-width: 68ch; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; border-top: 10px solid var(--hl); }
+a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hl); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { background: var(--hl); color: #111; }
+mark { background: var(--hl); color: #111; padding: 0 4px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.mono { font-family: var(--mono); font-size: 13px; letter-spacing: 0.01em; color: var(--ink-2); }
 
-/* ---- hero ---- */
-header.hero { background: linear-gradient(165deg, var(--navy) 0%, var(--navy-2) 100%); color: var(--on-navy); padding: 76px 0 0; }
-header.hero a { color: var(--on-navy-link); }
-.hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(46px, 9vw, 72px); line-height: 1.0; margin: 0 0 12px; letter-spacing: -0.03em; }
-.dedication { font-family: var(--serif); font-weight: 400; color: var(--on-navy-2); margin: 0 0 30px; font-size: clamp(18px, 2.3vw, 21px); line-height: 1.45; }
-.lede { font-size: clamp(17px, 1.9vw, 20px); margin: 0; max-width: 62ch; color: var(--on-navy); }
-.note { font-size: 15px; color: var(--on-navy-2); border-left: 3px solid rgba(255,255,255,0.28); padding: 4px 0 4px 14px; margin: 26px 0 0; max-width: 62ch; }
-nav.top { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; font-size: 15px; margin-top: 30px; }
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.16); border-bottom: 0; border-radius: 14px 14px 0 0; overflow: hidden; margin-top: 52px; }
-.stat { background: var(--navy-2); padding: 18px 20px 20px; }
-.stat b { display: block; font-size: clamp(24px, 3.6vw, 38px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; font-variant-numeric: tabular-nums; }
-.stat span { display: block; font-size: 13.5px; color: var(--on-navy-2); margin-top: 3px; }
+/* ---- masthead ---- */
+.mast { padding: 22px 0 56px; }
+.mast-top { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: baseline; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid var(--grid); }
+nav.top { display: flex; flex-wrap: wrap; gap: 6px 20px; align-items: center; font-size: 14.5px; }
+.mast h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(72px, 15.5vw, 196px); line-height: 0.92; letter-spacing: -0.045em; margin: 44px 0 0 -0.04em; }
+.dedication { font-family: var(--serif); font-size: clamp(19px, 2.4vw, 26px); line-height: 1.4; margin: 22px 0 0; color: var(--ink-2); }
+.mast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 56px; margin-top: 52px; padding-top: 24px; border-top: 2px solid var(--rule); }
+.lede { margin: 0; font-size: 18.5px; line-height: 1.6; }
+.facts { margin: 0; font-family: var(--serif); font-size: clamp(21px, 2.3vw, 27px); line-height: 1.5; letter-spacing: -0.01em; }
+.note { font-size: 14.5px; color: var(--ink-2); margin: 28px 0 0; max-width: 70ch; }
 
-/* ---- sections ---- */
-section { padding: 48px 0; }
-section.alt { background: var(--band); }
-h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(27px, 3.4vw, 40px); line-height: 1.15; margin: 0 0 14px; letter-spacing: -0.02em; }
-h3 { font-size: 19px; font-weight: 600; margin: 0 0 10px; letter-spacing: -0.01em; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; margin-top: 24px; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin: 18px 0; }
-.grid .card { margin: 0; }
-.finding { display: flex; flex-direction: column; }
-.tag { display: inline-block; font-size: 13px; font-weight: 600; line-height: 1.4; padding: 3px 10px; border-radius: 6px; background: var(--grid); color: var(--ink-2); margin: 0 0 14px; }
-.confirmed .tag { background: var(--tint-confirmed); color: var(--ink-confirmed); }
-.lead .tag { background: var(--tint-lead); color: var(--ink-lead); }
-.hypothesis .tag { background: var(--tint-hypothesis); color: var(--ink-hypothesis); }
-.finding p { margin: 8px 0; }
-.finding .src { font-size: 14px; color: var(--muted); margin-top: auto; padding-top: 10px; }
-ol.asks li, ul.list li { margin: 10px 0; }
-ol.asks { list-style: none; counter-reset: ask; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 12px; padding: 0; margin: 22px 0 0; }
-ol.asks li { counter-increment: ask; margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 14px 16px 14px 46px; position: relative; font-size: 15.5px; line-height: 1.5; }
-ol.asks li::before { content: counter(ask); position: absolute; left: 16px; top: 14px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* ---- sections: a heading column and a content column ---- */
+section { padding: 0 0 64px; }
+.sec { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 9fr); gap: 20px 56px; border-top: 2px solid var(--rule); padding-top: 22px; }
+.sec-head { position: sticky; top: 18px; align-self: start; }
+h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 2.9vw, 36px); line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 14px; }
+.sec-head p { margin: 0 0 12px; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.key { list-style: none; margin: 14px 0 0; padding: 0; font-size: 14.5px; line-height: 1.5; color: var(--ink-2); }
+.key li { margin: 6px 0; }
+.key b { font-weight: 600; }
+.t-confirmed { color: var(--ink-confirmed); } .t-lead { color: var(--ink-lead); } .t-hypothesis { color: var(--ink-hypothesis); }
+
+/* ---- findings: ruled rows, not cards ---- */
+.finding { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 6px 24px; padding: 20px 0 22px; border-bottom: 1px solid var(--grid); }
+.finding:first-child { padding-top: 2px; }
+.tag { margin: 5px 0 0; font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--ink-2); }
+.confirmed .tag { color: var(--ink-confirmed); } .lead .tag { color: var(--ink-lead); } .hypothesis .tag { color: var(--ink-hypothesis); }
+h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(20px, 2vw, 24px); line-height: 1.22; letter-spacing: -0.015em; margin: 0 0 6px; }
+.finding p { margin: 0; }
+.finding .src { font-size: 14.5px; margin-top: 8px; color: var(--muted); }
 .more { margin: 22px 0 0; font-size: 15.5px; }
-.linkrow { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 20px 0 0; }
-.linkrow li { margin: 0; }
-.linkrow a { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 9px 16px; font-weight: 600; font-size: 15.5px; text-decoration: none; }
-.linkrow a:hover { text-decoration: underline; }
-.finding .card, .grid .card { padding: 20px; }
-.finding p { font-size: 15.5px; line-height: 1.55; }
-.how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 18px; margin: 26px 0 0; padding: 0; list-style: none; }
-.how-grid li { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; font-size: 16px; }
-.how-grid b { display: block; margin-bottom: 4px; }
-.rep-group { margin-top: 28px; }
-.rep-group > h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 12px; }
-.rep-group ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
-.rep-group li { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 13px 16px; font-size: 15.5px; }
-.rep-group li a { font-weight: 600; text-decoration: none; }
-.rep-group li a:hover { text-decoration: underline; }
-.rep-group li span { display: block; color: var(--ink-2); font-size: 14px; margin-top: 2px; }
 
-/* ---- left-margin rail ---- */
-.rail { display: none; }
-@media (min-width: 1180px) {
-  .rail {
-    display: block; position: fixed; left: 28px; top: 50%; transform: translateY(-50%);
-    width: 178px; z-index: 5;
-    opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease;
-  }
-  .rail.show { opacity: 1; visibility: visible; }
-  .rail ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--grid); }
-  .rail li { margin: 0; }
-  .rail a {
-    display: block; padding: 7px 0 7px 14px; margin-left: -1px;
-    border-left: 2px solid transparent;
-    font-size: 14px; line-height: 1.35; color: var(--muted); text-decoration: none;
-    transition: color .15s ease, border-color .15s ease;
-  }
-  .rail a:hover { color: var(--ink); }
-  .rail a.active { color: var(--ink); font-weight: 600; border-left-color: var(--accent); }
-  .rail .rail-end { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--grid); }
-  .rail .rail-end a { padding-left: 16px; border-left: 0; color: var(--link); }
-  .wrap { margin-left: 236px; margin-right: 24px; }
-}
-@media (min-width: 1560px) { .wrap { margin-left: auto; margin-right: auto; } }
+/* ---- chart ---- */
 .chart-wrap { position: relative; }
-.chart-title { font-weight: 600; font-size: 18px; margin: 0 0 4px; }
-.chart-sub { color: var(--ink-2); font-size: 15px; margin: 0 0 12px; }
+.chart-title { font-weight: 600; font-size: 17px; margin: 0 0 2px; }
+.chart-sub { color: var(--ink-2); font-size: 14.5px; margin: 0 0 12px; }
 svg text { font-family: var(--sans); }
-.legend { display:flex; flex-wrap:wrap; gap:16px; font-size:14px; color:var(--ink-2); margin:0 0 8px; }
-.legend i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
-.legend i.bench { width:2px; height:14px; border-radius:0; background:var(--bench); margin-right:8px; }
-.tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); opacity: 0; transition: opacity .1s; max-width: 260px; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--ink-2); margin: 0 0 8px; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.legend i.bench { width: 2px; height: 14px; border-radius: 0; background: var(--bench); margin-right: 8px; }
+.tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--rule); padding: 8px 10px; font-size: 14px; opacity: 0; transition: opacity .1s; max-width: 260px; }
 .tip strong { display: block; font-size: 16px; }
 details { margin-top: 12px; font-size: 15px; }
-table { border-collapse: collapse; width: 100%; font-size: 15px; }
+summary { cursor: pointer; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; margin-top: 8px; }
 th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
 th { color: var(--ink-2); font-weight: 600; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
-footer { background: var(--navy); color: var(--on-navy-2); padding: 40px 0 56px; font-size: 14px; }
-footer a { color: var(--on-navy-link); }
-.theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.35); color: var(--on-navy); border-radius: 999px; padding: 5px 14px; font: inherit; font-size: 14px; cursor: pointer; }
-.theme-toggle:hover { background: rgba(255,255,255,0.1); }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
-header.hero :focus-visible { outline-color: #cfe2f5; }
-.skip { position: absolute; left: -9999px; top: 0; z-index: 20; background: var(--surface); color: var(--ink); padding: 12px 18px; border-radius: 0 0 10px 0; font-weight: 600; }
+#chartCaption { font-size: 15.5px; color: var(--ink-2); margin: 16px 0 0; max-width: 68ch; }
+
+/* ---- asks ---- */
+ol.asks { list-style: none; counter-reset: ask; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 44px; }
+ol.asks li { counter-increment: ask; position: relative; margin: 0; padding: 14px 0 16px 46px; border-bottom: 1px solid var(--grid); font-size: 16px; line-height: 1.5; }
+ol.asks li::before { content: counter(ask); position: absolute; left: 0; top: 8px; font-family: var(--serif); font-weight: 600; font-size: 28px; line-height: 1.2; font-variant-numeric: lining-nums; }
+
+/* ---- methods and report index ---- */
+.linkrow { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 26px; padding: 0; margin: 18px 0 0; font-weight: 600; font-size: 16px; }
+.linkrow li { margin: 0; }
+#reportList { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 44px; }
+.rep-group > h3 { font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: 0.01em; color: var(--ink-2); margin: 0 0 6px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+.rep-group ul { list-style: none; margin: 0; padding: 0; }
+.rep-group li { margin: 0; padding: 9px 0; border-bottom: 1px solid var(--grid); font-size: 16px; line-height: 1.4; }
+.rep-group li a { font-weight: 600; }
+.rep-group li span { display: block; color: var(--ink-2); font-size: 14px; margin-top: 3px; }
+
+footer { border-top: 2px solid var(--rule); padding: 20px 0 56px; font-size: 14px; color: var(--ink-2); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 40px; justify-content: space-between; }
+footer p { margin: 0; }
+.theme-toggle { background: none; border: 1px solid var(--rule); color: var(--ink); border-radius: 2px; padding: 3px 12px; font: inherit; font-size: 14px; cursor: pointer; }
+.theme-toggle:hover { background: var(--hl); color: #111; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.skip { position: absolute; left: -9999px; top: 0; z-index: 20; background: var(--hl); color: #111; padding: 12px 18px; font-weight: 600; }
 .skip:focus { left: 0; }
-@media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+
+/* ---- left-margin rail ---- */
+.rail { display: none; }
+@media (min-width: 1240px) {
+  .rail { display: block; position: fixed; left: 26px; top: 50%; transform: translateY(-50%); width: 170px; z-index: 5; opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
+  .rail.show { opacity: 1; visibility: visible; }
+  .rail ol { list-style: none; margin: 0; padding: 0; }
+  .rail a { display: block; padding: 6px 0 6px 12px; border-left: 3px solid var(--grid); font-size: 14px; line-height: 1.35; color: var(--muted); text-decoration: none; }
+  .rail a:hover { color: var(--ink); background: none; }
+  .rail a.active { color: var(--ink); font-weight: 600; border-left-color: var(--hl); }
+  .rail .rail-end { margin-top: 12px; }
+  .wrap { margin-left: 222px; margin-right: 28px; }
 }
-@media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); border-radius: 14px 14px 0 0; } }
+@media (min-width: 1600px) { .wrap { margin-left: auto; margin-right: auto; } }
+
+@media (max-width: 860px) {
+  .mast-grid, .sec, ol.asks, #reportList { grid-template-columns: 1fr; }
+  .sec-head { position: static; }
+  section { padding-bottom: 48px; }
+}
 @media (max-width: 520px) {
   body { font-size: 16px; }
-  .wrap { padding: 0 16px; }
-  header.hero { padding-top: 44px; }
-  section { padding: 44px 0; }
-  .card { padding: 20px; }
+  .wrap { padding: 0 18px; }
+  .mast h1 { margin-top: 30px; }
+  .finding { grid-template-columns: 1fr; gap: 2px; }
+  .tag { margin: 0; order: 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 </style>
 </head>
 <body>
-
 <a class="skip" href="#main">Skip to Content</a>
 
 <nav class="rail" id="rail" aria-label="On This Page">
@@ -237,86 +186,111 @@ header.hero :focus-visible { outline-color: #cfe2f5; }
   <div class="rail-end"><a href="explorer.html">Evidence Explorer</a></div>
 </nav>
 
-<header class="hero">
+<header class="mast hero">
  <div class="wrap">
+  <div class="mast-top">
+    <span class="mono">Open osteosarcoma research · Version 1.0 · November 2026</span>
+    <nav class="top" aria-label="Sections">
+      <a href="#findings">What We Found</a>
+      <a href="#ask">What We're Asking</a>
+      <a href="#reports">The Reports</a>
+      <a href="explorer.html">Evidence Explorer</a>
+      <a href="https://github.com/mgegen15-dev/For_John">Source and Data</a>
+      <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
+    </nav>
+  </div>
   <h1>For John</h1>
   <p class="dedication">In memory of my little brother and best friend, John.</p>
-  <p class="lede">For John was created in honor of John Gegen. Researchers have spent decades building knowledge about osteosarcoma, often in separate labs, trials and journals. I’m leveraging frontier AI models to bring that work together, connect the dots between studies, and carry the connections to the people who can test them.</p>
-  <p class="note"><strong>Not medical advice.</strong> Nothing here is a recommendation about any patient's care. Findings are leads for researchers to check, not conclusions.</p>
-  <nav class="top" aria-label="Sections">
-    <a href="#findings">What We Found</a>
-    <a href="#pills">Kinase-Inhibitor Pills</a>
-    <a href="#ask">What We're Asking</a>
-    <a href="#how">How This Was Made</a>
-    <a href="explorer.html">Evidence Explorer</a>
-    <a href="https://github.com/mgegen15-dev/For_John">All Reports and Data</a>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
-  </nav>
-  <div class="stats">
-    <div class="stat"><b>33,242</b><span>Papers Read</span></div>
-    <div class="stat"><b>758</b><span>Clinical Trials</span></div>
-    <div class="stat"><b>14</b><span>Ranked Leads</span></div>
-    <div class="stat"><b>16</b><span>Reports, All Sourced</span></div>
+  <div class="mast-grid">
+    <p class="lede">For John was created in honor of John Gegen. Researchers have spent decades building knowledge about osteosarcoma, often in separate labs, trials and journals. I’m leveraging frontier AI models to bring that work together, connect the dots between studies, and carry the connections to the people who can test them.</p>
+    <p class="facts">Built from <mark>33,242 papers</mark>, <mark>758 clinical trials</mark>, NIH grant records and open tumour data. The result is <mark>14 ranked leads</mark> across <mark>16 reports</mark>, with every claim traced to its source.</p>
   </div>
+  <p class="note"><strong>Not medical advice.</strong> Nothing here is a recommendation about any patient's care. Findings are leads for researchers to check, not conclusions.</p>
  </div>
 </header>
 
 <main id="main">
 
 <section id="findings">
- <div class="wrap">
-  <h2>What We Found</h2>
-  <p class="prose">Seven findings, each labelled for how solid it is: <strong>Confirmed</strong> (checked against the original source), <strong>Lead</strong> (supported, but needs a scientist to test it), or <strong>Hypothesis</strong> (a reasoned idea, not yet tested).</p>
-  <div class="grid" id="findingsList"><!-- filled from findings data below --></div>
-  <p class="more"><a href="summary.html">Read the One-Page Summary</a> · <a href="reports/ranked-leads-and-research-partners.html">See All Fourteen Ranked Leads</a></p>
- </div>
+ <div class="wrap"><div class="sec">
+  <div class="sec-head">
+    <h2>What We Found</h2>
+    <p>Seven findings, each labelled for how solid it is.</p>
+    <ul class="key">
+      <li><b class="t-confirmed">Confirmed</b>: checked against the original source.</li>
+      <li><b class="t-lead">Lead</b>: supported, but needs a scientist to test it.</li>
+      <li><b class="t-hypothesis">Hypothesis</b>: a reasoned idea, not yet tested.</li>
+    </ul>
+  </div>
+  <div>
+    <div id="findingsList"><!-- filled from findings data below --></div>
+    <p class="more"><a href="summary.html">Read the One-Page Summary</a> &nbsp; <a href="reports/ranked-leads-and-research-partners.html">See All Fourteen Ranked Leads</a></p>
+  </div>
+ </div></div>
 </section>
 
-<section id="pills" class="alt">
- <div class="wrap">
-  <h2>Kinase-Inhibitor Pills: Active, but Briefly</h2>
-  <div class="card chart-wrap" id="chartCard">
-    <p class="chart-title">Patients free of progression about four months into treatment, relapsed osteosarcoma</p>
-    <p class="chart-sub">Pooled from published trials and registry results, weighted by patients. The red line is the historical benchmark of about 12%.</p>
-    <div class="legend" aria-hidden="true"><span><i style="background:var(--series-1)"></i>Includes a kinase-inhibitor pill</span><span><i style="background:var(--series-2)"></i>No kinase-inhibitor pill</span><span><i class="bench"></i>Historical benchmark</span></div>
-    <div id="chart" role="img" aria-label="Bar chart of four-month progression-free rates by drug class"></div>
-    <div class="tip" id="tip" role="status" aria-live="polite"></div>
-    <details>
-      <summary>Show as a Table</summary>
-      <table id="chartTable"><thead><tr><th>Treatment</th><th class="num">Patients</th><th class="num">4-month rate</th></tr></thead><tbody></tbody></table>
-    </details>
+<section id="pills">
+ <div class="wrap"><div class="sec">
+  <div class="sec-head">
+    <h2>Kinase-Inhibitor Pills: Active, but Briefly</h2>
+    <p>The one drug class that clearly beats older single drugs in relapse, and the open question of who it works for.</p>
+    <p><a href="reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html">Read the Full Analysis</a></p>
   </div>
-  <p id="chartCaption" class="prose"></p>
-  <p class="more"><a href="reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html">Read the Full Analysis</a></p>
- </div>
+  <div>
+    <div class="chart-wrap" id="chartCard">
+      <p class="chart-title">Patients free of progression about four months into treatment, relapsed osteosarcoma</p>
+      <p class="chart-sub">Pooled from published trials and registry results, weighted by patients. The red line is the historical benchmark of about 12%.</p>
+      <div class="legend" aria-hidden="true"><span><i style="background:var(--series-1)"></i>Includes a kinase-inhibitor pill</span><span><i style="background:var(--series-2)"></i>No kinase-inhibitor pill</span><span><i class="bench"></i>Historical benchmark</span></div>
+      <div id="chart" role="img" aria-label="Bar chart of four-month progression-free rates by drug class"></div>
+      <div class="tip" id="tip" role="status" aria-live="polite"></div>
+      <details>
+        <summary>Show as a Table</summary>
+        <table id="chartTable"><thead><tr><th>Treatment</th><th class="num">Patients</th><th class="num">4-month rate</th></tr></thead><tbody></tbody></table>
+      </details>
+    </div>
+    <p id="chartCaption"></p>
+  </div>
+ </div></div>
 </section>
 
 <section id="ask">
- <div class="wrap">
-  <h2>What We're Asking</h2>
-  <ol class="asks" id="askList"></ol>
-  <p class="more">Something here wrong or useful? <a href="https://github.com/mgegen15-dev/For_John/issues">Open an issue on GitHub</a>. Corrections are as valuable as confirmations. Details of each ask are in the <a href="summary.html">summary</a>.</p>
- </div>
+ <div class="wrap"><div class="sec">
+  <div class="sec-head">
+    <h2>What We're Asking</h2>
+    <p>Six requests, in order of priority. Something here wrong or useful? <a href="https://github.com/mgegen15-dev/For_John/issues">Open an issue on GitHub</a>. Corrections are as valuable as confirmations.</p>
+  </div>
+  <div>
+    <ol class="asks" id="askList"></ol>
+    <p class="more">Details of each ask are in the <a href="summary.html">summary</a>.</p>
+  </div>
+ </div></div>
 </section>
 
-<section id="how" class="alt">
- <div class="wrap">
-  <h2>How This Was Made</h2>
-  <p class="prose">Built by John Gegen’s brother, leveraging frontier AI models, from 33,242 papers, 758 registered trials, NIH grant records and open tumour data. Every headline claim was audited against its original source in review passes run by AI models, and each report ends with a change log of what was corrected. No independent person has checked the work yet. That is the next step, and we are asking for it.</p>
-  <ul class="linkrow">
-    <li><a href="how-this-was-made.html">Methods and Limits</a></li>
-    <li><a href="audit-guide.html">Auditor's Guide</a></li>
-    <li><a href="predictions.html">Predictions Log</a></li>
-    <li><a href="data-manifest.html">Data Manifest</a></li>
-  </ul>
- </div>
+<section id="how">
+ <div class="wrap"><div class="sec">
+  <div class="sec-head">
+    <h2>How This Was Made</h2>
+  </div>
+  <div>
+    <p style="margin:0;max-width:68ch">Built by John Gegen’s brother, leveraging frontier AI models, from 33,242 papers, 758 registered trials, NIH grant records and open tumour data. Every headline claim was audited against its original source in review passes run by AI models, and each report ends with a change log of what was corrected. No independent person has checked the work yet. That is the next step, and we are asking for it.</p>
+    <ul class="linkrow">
+      <li><a href="how-this-was-made.html">Methods and Limits</a></li>
+      <li><a href="audit-guide.html">Auditor's Guide</a></li>
+      <li><a href="predictions.html">Predictions Log</a></li>
+      <li><a href="data-manifest.html">Data Manifest</a></li>
+    </ul>
+  </div>
+ </div></div>
 </section>
 
 <section id="reports">
- <div class="wrap">
-  <h2>The Reports</h2>
+ <div class="wrap"><div class="sec">
+  <div class="sec-head">
+    <h2>The Reports</h2>
+    <p>Every claim traces to a source, and each report ends with a log of what we got wrong and fixed.</p>
+  </div>
   <div id="reportList"></div>
- </div>
+ </div></div>
 </section>
 
 </main>
@@ -408,15 +382,16 @@ function renderFindings() {
   const box = document.getElementById("findingsList");
   for (const f of FINDINGS) {
     const kind = (f.label || "").toLowerCase().split(/[^a-z]/)[0];
-    const c = el("article", { class: "card finding " + kind });
-    c.appendChild(el("h3", null, f.title));
+    const c = el("article", { class: "finding " + kind });
     c.appendChild(el("p", { class: "tag" }, f.label));
-    c.appendChild(el("p", null, f.body));
+    const d = el("div");
+    d.appendChild(el("h3", null, f.title));
+    d.appendChild(el("p", null, f.body));
     const p = el("p", { class: "src" });
-    p.appendChild(document.createTextNode("Details: "));
     const a = el("a", { href: PAGES[f.report] || repo + encodeURI(f.report) }, f.reportName);
     p.appendChild(a);
-    c.appendChild(p);
+    d.appendChild(p);
+    c.appendChild(d);
     box.appendChild(c);
   }
 }
