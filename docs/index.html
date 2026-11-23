@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>For John · Open osteosarcoma research</title>
 <meta name="description" content="An open, independent effort to tie together osteosarcoma research and find what has been overlooked. In memory of John.">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/">
+<meta name="theme-color" content="#0f2a44">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="For John · Open osteosarcoma research">
+<meta property="og:description" content="An open, independent effort to tie together osteosarcoma research and find what has been overlooked. 33,242 papers, 758 trials, 14 ranked leads. In memory of John.">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="For John: open osteosarcoma research, in memory of my little brother and best friend, John.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="For John · Open osteosarcoma research">
+<meta name="twitter:description" content="33,242 papers, 758 trials, 14 ranked leads. Open, sourced, and asking for review.">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
@@ -114,7 +131,7 @@ section { padding: 60px 0; }
 section.alt { background: var(--band); }
 h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(27px, 3.4vw, 40px); line-height: 1.15; margin: 0 0 14px; letter-spacing: -0.02em; }
 h3 { font-size: 19px; font-weight: 600; margin: 0 0 10px; letter-spacing: -0.01em; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 18px; margin-top: 26px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr)); gap: 18px; margin-top: 26px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin: 18px 0; }
 .grid .card { margin: 0; }
 .finding { display: flex; flex-direction: column; }
@@ -126,16 +143,41 @@ h3 { font-size: 19px; font-weight: 600; margin: 0 0 10px; letter-spacing: -0.01e
 .finding .src { font-size: 14px; color: var(--muted); margin-top: auto; padding-top: 10px; }
 ol.asks li, ul.list li { margin: 10px 0; }
 ol.asks { max-width: 68ch; padding-left: 22px; }
-.how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin: 26px 0 0; padding: 0; list-style: none; }
+.how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 18px; margin: 26px 0 0; padding: 0; list-style: none; }
 .how-grid li { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; font-size: 16px; }
 .how-grid b { display: block; margin-bottom: 4px; }
 .rep-group { margin-top: 28px; }
 .rep-group > h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 12px; }
-.rep-group ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.rep-group ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
 .rep-group li { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 13px 16px; font-size: 15.5px; }
 .rep-group li a { font-weight: 600; text-decoration: none; }
 .rep-group li a:hover { text-decoration: underline; }
 .rep-group li span { display: block; color: var(--ink-2); font-size: 14px; margin-top: 2px; }
+
+/* ---- left-margin rail ---- */
+.rail { display: none; }
+@media (min-width: 1180px) {
+  .rail {
+    display: block; position: fixed; left: 28px; top: 50%; transform: translateY(-50%);
+    width: 178px; z-index: 5;
+    opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease;
+  }
+  .rail.show { opacity: 1; visibility: visible; }
+  .rail ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--grid); }
+  .rail li { margin: 0; }
+  .rail a {
+    display: block; padding: 7px 0 7px 14px; margin-left: -1px;
+    border-left: 2px solid transparent;
+    font-size: 14px; line-height: 1.35; color: var(--muted); text-decoration: none;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .rail a:hover { color: var(--ink); }
+  .rail a.active { color: var(--ink); font-weight: 600; border-left-color: var(--accent); }
+  .rail .rail-end { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--grid); }
+  .rail .rail-end a { padding-left: 16px; border-left: 0; color: var(--link); }
+  .wrap { margin-left: 236px; margin-right: 24px; }
+}
+@media (min-width: 1560px) { .wrap { margin-left: auto; margin-right: auto; } }
 .chart-wrap { position: relative; }
 .chart-title { font-weight: 600; font-size: 18px; margin: 0 0 4px; }
 .chart-sub { color: var(--ink-2); font-size: 15px; margin: 0 0 12px; }
@@ -154,6 +196,13 @@ footer { background: var(--navy); color: var(--on-navy-2); padding: 40px 0 56px;
 footer a { color: var(--on-navy-link); }
 .theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.35); color: var(--on-navy); border-radius: 999px; padding: 5px 14px; font: inherit; font-size: 14px; cursor: pointer; }
 .theme-toggle:hover { background: rgba(255,255,255,0.1); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+header.hero :focus-visible { outline-color: #cfe2f5; }
+.skip { position: absolute; left: -9999px; top: 0; z-index: 20; background: var(--surface); color: var(--ink); padding: 12px 18px; border-radius: 0 0 10px 0; font-weight: 600; }
+.skip:focus { left: 0; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
 @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); border-radius: 14px 14px 0 0; } }
 @media (max-width: 520px) {
   body { font-size: 16px; }
@@ -165,6 +214,19 @@ footer a { color: var(--on-navy-link); }
 </style>
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="rail" id="rail" aria-label="On this page">
+  <ol>
+    <li><a href="#findings">What we found</a></li>
+    <li><a href="#pills">Kinase-inhibitor pills</a></li>
+    <li><a href="#ask">What we're asking</a></li>
+    <li><a href="#how">How this was made</a></li>
+    <li><a href="#reports">The reports</a></li>
+  </ol>
+  <div class="rail-end"><a href="explorer.html">Evidence explorer</a></div>
+</nav>
 
 <header class="hero">
  <div class="wrap">
@@ -189,6 +251,8 @@ footer a { color: var(--on-navy-link); }
   </div>
  </div>
 </header>
+
+<main id="main">
 
 <section id="findings">
  <div class="wrap">
@@ -245,6 +309,8 @@ footer a { color: var(--on-navy-link); }
   <div id="reportList"></div>
  </div>
 </section>
+
+</main>
 
 <footer>
  <div class="wrap">
@@ -481,6 +547,35 @@ renderReports(REPORTS);
 renderTable();
 renderChart();
 addEventListener("resize", () => renderChart());
+
+// Left rail: appear once the hero is out of view, highlight the section in view.
+(function railNav() {
+  const rail = document.getElementById("rail");
+  if (!rail || !("IntersectionObserver" in window)) return;
+  const links = Array.from(rail.querySelectorAll("ol a"));
+  const sections = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+
+  const hero = document.querySelector("header.hero");
+  if (hero) {
+    new IntersectionObserver(
+      es => es.forEach(e => rail.classList.toggle("show", !e.isIntersecting)),
+      { rootMargin: "-80px 0px 0px 0px" }
+    ).observe(hero);
+  }
+
+  let current = null;
+  const setActive = id => {
+    if (id === current) return;
+    current = id;
+    links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
+  };
+  const io = new IntersectionObserver(entries => {
+    const visible = entries.filter(e => e.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    if (visible.length) setActive(visible[0].target.id);
+  }, { rootMargin: "-25% 0px -60% 0px", threshold: 0 });
+  sections.forEach(s => io.observe(s));
+})();
 </script>
 </body>
 </html>
