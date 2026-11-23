@@ -82,6 +82,8 @@ footer.site a { color: var(--on-navy); }
   .wrap, .bar-in { padding-left: 20px; padding-right: 20px; }
   .bar-in { padding-top: 12px; padding-bottom: 12px; }
   .bar nav { order: 3; width: 100%; font-size: 14.5px; gap: 4px 20px; }
+  .bar { position: static; }
+  html { scroll-padding-top: 16px; }
   .bar .theme-toggle { display: none; }
   .bar .btn { padding: 8px 12px; font-size: 14.5px; }
   html { scroll-padding-top: 120px; }
