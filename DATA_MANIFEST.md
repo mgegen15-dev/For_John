@@ -1,6 +1,6 @@
 # Data manifest
 
-*Generated 2026-11-20 by `tools/build_manifest.py`. Re-run it on your copy and compare the SHA-256 checksums to confirm you have the same files.*
+*Generated 2026-11-23 by `tools/build_manifest.py`. Re-run it on your copy and compare the SHA-256 checksums to confirm you have the same files.*
 
 Files in git are the analysed outputs. The large raw downloads are not stored in git; their checksums are listed so a re-download can be compared. Live databases change, so a fresh download will usually differ slightly: the retrieval dates below say when each was taken.
 
@@ -14,10 +14,13 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/lung_metastasis_trials.csv` | 224 | 160 | 2026-11-14 | `159cc88ffd2bf7e58a05414efde3da56eda17975d08937c1d9044a33549520b9` |
 | `data/nih_neuroblastoma_projects.csv` | 2919 | 684 | 2026-11-14 | `fa477a2d793ae682cd36f876b1ae06b1444359dc1dcad5efebb8b0ef037f1a98` |
 | `data/nih_osteosarcoma_projects.csv` | 2697 | 642 | 2026-11-14 | `d2d6f5dbcc4cca47a949e2a0be44be61a625bb3f9e32ecd607f5e8446c5f2b6f` |
+| `data/osteosarcoma_contradictions.csv` | 172 | 196 | 2026-11-22 | `a64b3afa518ac8fa172aaaf7b7cdf91a2fabff998c4751d117bd588597bd933a` |
 | `data/osteosarcoma_copy_number_frequencies.csv` | 71 | 9 | 2026-11-19 | `72b9a5c1cced2e5d26fd5b15abd97a460507ee89419c23826a7399a93cfe4473` |
 | `data/osteosarcoma_evidence_risk_genes.csv` | 362 | 15 | 2026-11-14 | `4dfb669ff8e0c2ca1af709eeee70bd1455e16d62b63df53a8cfad30bba94cfa9` |
 | `data/osteosarcoma_evidence_risk_journals.csv` | 130 | 3 | 2026-11-14 | `f6464e695923d68931eb08a761074ee1901c6254cfb09e4957c527e0a7fac581` |
 | `data/osteosarcoma_gene_evidence.csv` | 1487 | 63 | 2026-11-14 | `63a9a165cb0ae0634b23493fd242fb3db10abb920c134e5f44ff8aa8dec91fcf` |
+| `data/osteosarcoma_hidden_links.csv` | 400 | 146 | 2026-11-22 | `fb21a6eefc7ae4462e0b6aea1ca1e6d04c4ac1896a23bae816c4dbddd44eabe7` |
+| `data/osteosarcoma_knowledge_graph_edges.csv` | 66329 | 7961 | 2026-11-22 | `f8a3f3987b01c63768ab1beab6b89f8a78500328cbad9c0a421da186aa8d7cf9` |
 | `data/osteosarcoma_literature_periods.csv` | 8 | 0 | 2026-11-14 | `c44be9dfe3aff62bc95f4a3838170cba750fb9fae7c09efc2bf1a9d6f01fc072` |
 | `data/osteosarcoma_paper_tags.csv` | 33242 | 2101 | 2026-11-14 | `8df6752a5da98ced48a2985d683a484512a8fa0d68721739eee9d3962f39312f` |
 | `data/osteosarcoma_posted_outcomes.csv` | 5254 | 1958 | 2026-11-14 | `4808a2bf4bb5ca018a63fe0c362c25c77853c0736c25b87bccd8ef3b3ac0ee32` |
@@ -26,12 +29,19 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/osteosarcoma_relapse_benchmarks_published.csv` | 60 | 13 | 2026-11-14 | `07e2a99516d7b0df60466bea950f8479bb6c9c27068c3b77b77f0b9c3c0d0dd8` |
 | `data/osteosarcoma_repurposing_candidates.csv` | 1141 | 375 | 2026-11-19 | `64d7d945c5ffe051c5f7052c1eba594f7b3d77713c21ee1b4741c3ddda57659c` |
 | `data/osteosarcoma_surface_target_candidates.csv` | 2434 | 781 | 2026-11-14 | `e520ce548bbab89695caab028200f10586fefa2e1fc82494563b21957c57f6b6` |
+| `data/osteosarcoma_survival_results.csv` | 146 | 34 | 2026-11-22 | `f683c2eaa22390000ffc80679f57ce1b437e00356334a939de6af11c78132019` |
 | `data/osteosarcoma_trials.csv` | 758 | 489 | 2026-11-14 | `9211e126d7639ce788846226754b1efe2083dd68a28f155b5358297c2b2790ff` |
 | `data/osteosarcoma_trials_flags.csv` | 168 | 34 | 2026-11-14 | `d3c5fb8cf09d19e7b4a2061a74dd0522e41563cc0eff3ce59cef4c2b4bebf90b` |
 | `data/osteosarcoma_trials_publications.csv` | 387 | 88 | 2026-11-14 | `12890fc385cb3b8f682a81df1d465bc70a45450bbb4776c8b682625a3a539205` |
-| `data/raw_checksums.txt` | 325 | 43 | not in git | `3ff56672730aa0c663e021bcac0b9ae24207017e8501999cfd8debf59a8ee3cd` |
+| `data/raw_checksums.txt` | 325 | 43 | 2026-11-20 | `3ff56672730aa0c663e021bcac0b9ae24207017e8501999cfd8debf59a8ee3cd` |
 | `data/literature/osteosarcoma_retracted_pmids.txt` | 418 | 3 | 2026-11-14 | `62bddf36921d30de8c1be3c69fd14ef10352a2819a17cc4026ef057c260ee2ec` |
 | `data/literature/osteosarcoma_reviews_pmids.txt` | 3533 | 30 | 2026-11-14 | `155b2b30719c789a8718476cccc456c6cf94b4a382feaa6511c54a149595adaf` |
+| `data/survival_raw/TARGET_OS_ClinicalData_Discovery_20230709.xlsx` |  | 22 | 2026-11-22 | `dad44fabfd3fff5bb3cec67c01984390e6d7258e3e183136816f75930521f2a9` |
+| `data/survival_raw/TARGET_OS_ClinicalData_Validation_20230329.xlsx` |  | 41 | 2026-11-22 | `6b7eb414be4bf3fd7c6f02556b4aed4258963da37816f73273b70437a3995113` |
+| `data/survival_raw/clinical_files.json` |  | 0 | 2026-11-22 | `969fc4f3878fde8ddbfa000d0b12c560cb9786961896e9ee0669bb2f1fe426aa` |
+| `data/survival_raw/gdc_cases.json` |  | 1001 | 2026-11-22 | `909cc0eb46fc3e75f7894cd4d8ccf1e81553b94e35bf1c7efe47580fef68f319` |
+| `data/survival_raw/patients.csv` | 89 | 108 | 2026-11-22 | `450aa235870e058a2692e892cf857901642187aafa4e20f4136c682129bbb1ab` |
+| `data/survival_raw/summary.json` |  | 2 | 2026-11-22 | `c8f205df66ba2ec6c1fb6e6e8e3b1cb23037773c5828d8c617eb9ac1e82d57a8` |
 
 ## Raw downloads kept out of git
 

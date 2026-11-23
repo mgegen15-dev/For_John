@@ -1,8 +1,8 @@
 # Auditor's guide
 
-*For a third-party reviewer. Version 1.0, frozen on November 20, 2026 (git tag `v1.0`). Check against that tag, not the live `main` branch, so that your findings line up with what you are reading.*
+*For a third-party reviewer. Version 1.0, frozen on November 23, 2026 (git tag `v1.0`). Check against that tag, not the live `main` branch, so that your findings line up with what you are reading.*
 
-This project makes many claims across 14 reports. This page lists the 18 that matter most: the ones the one-page summary, the website and the ranked leads depend on. For each one it gives where the claim is made, its primary source, and the fastest way to check it. If these hold, the project's main conclusions hold. If any fail, please tell us.
+This project makes many claims across 16 reports. This page lists the 18 that matter most: the ones the one-page summary, the website and the ranked leads depend on. For each one it gives where the claim is made, its primary source, and the fastest way to check it. If these hold, the project's main conclusions hold. If any fail, please tell us.
 
 ## Before you start
 
