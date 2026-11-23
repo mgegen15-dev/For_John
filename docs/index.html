@@ -127,11 +127,11 @@ nav.top { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; font-s
 .stat span { display: block; font-size: 13.5px; color: var(--on-navy-2); margin-top: 3px; }
 
 /* ---- sections ---- */
-section { padding: 60px 0; }
+section { padding: 48px 0; }
 section.alt { background: var(--band); }
 h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(27px, 3.4vw, 40px); line-height: 1.15; margin: 0 0 14px; letter-spacing: -0.02em; }
 h3 { font-size: 19px; font-weight: 600; margin: 0 0 10px; letter-spacing: -0.01em; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr)); gap: 18px; margin-top: 26px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; margin-top: 24px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin: 18px 0; }
 .grid .card { margin: 0; }
 .finding { display: flex; flex-direction: column; }
@@ -142,7 +142,16 @@ h3 { font-size: 19px; font-weight: 600; margin: 0 0 10px; letter-spacing: -0.01e
 .finding p { margin: 8px 0; }
 .finding .src { font-size: 14px; color: var(--muted); margin-top: auto; padding-top: 10px; }
 ol.asks li, ul.list li { margin: 10px 0; }
-ol.asks { max-width: 68ch; padding-left: 22px; }
+ol.asks { list-style: none; counter-reset: ask; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 12px; padding: 0; margin: 22px 0 0; }
+ol.asks li { counter-increment: ask; margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 14px 16px 14px 46px; position: relative; font-size: 15.5px; line-height: 1.5; }
+ol.asks li::before { content: counter(ask); position: absolute; left: 16px; top: 14px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.more { margin: 22px 0 0; font-size: 15.5px; }
+.linkrow { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 20px 0 0; }
+.linkrow li { margin: 0; }
+.linkrow a { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 9px 16px; font-weight: 600; font-size: 15.5px; text-decoration: none; }
+.linkrow a:hover { text-decoration: underline; }
+.finding .card, .grid .card { padding: 20px; }
+.finding p { font-size: 15.5px; line-height: 1.55; }
 .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 18px; margin: 26px 0 0; padding: 0; list-style: none; }
 .how-grid li { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; font-size: 16px; }
 .how-grid b { display: block; margin-bottom: 4px; }
@@ -257,8 +266,9 @@ header.hero :focus-visible { outline-color: #cfe2f5; }
 <section id="findings">
  <div class="wrap">
   <h2>What we found</h2>
-  <p class="prose">Each finding carries a label for how solid it is: <strong>Confirmed</strong> (checked against the original source), <strong>Lead</strong> (supported, but needs a scientist to test it), or <strong>Hypothesis</strong> (a reasoned idea, not yet tested).</p>
+  <p class="prose">Seven findings, each labelled for how solid it is: <strong>Confirmed</strong> (checked against the original source), <strong>Lead</strong> (supported, but needs a scientist to test it), or <strong>Hypothesis</strong> (a reasoned idea, not yet tested).</p>
   <div class="grid" id="findingsList"><!-- filled from findings data below --></div>
+  <p class="more"><a href="summary.html">Read the one-page summary</a> · <a href="reports/ranked-leads-and-research-partners.html">See all fourteen ranked leads</a></p>
  </div>
 </section>
 
@@ -277,6 +287,7 @@ header.hero :focus-visible { outline-color: #cfe2f5; }
     </details>
   </div>
   <p id="chartCaption" class="prose"></p>
+  <p class="more"><a href="reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html">Read the full analysis</a></p>
  </div>
 </section>
 
@@ -284,28 +295,26 @@ header.hero :focus-visible { outline-color: #cfe2f5; }
  <div class="wrap">
   <h2>What we're asking</h2>
   <ol class="asks" id="askList"></ol>
-  <p class="prose">If you work on osteosarcoma, or on any of the targets above, and something here is wrong or useful, please <a href="https://github.com/mgegen15-dev/For_John/issues">open an issue on GitHub</a>. Corrections are as valuable as confirmations.</p>
+  <p class="more">Something here wrong or useful? <a href="https://github.com/mgegen15-dev/For_John/issues">Open an issue on GitHub</a>. Corrections are as valuable as confirmations. Details of each ask are in the <a href="summary.html">summary</a>.</p>
  </div>
 </section>
 
 <section id="how" class="alt">
  <div class="wrap">
   <h2>How this was made</h2>
-  <ul class="how-grid">
-    <li><b>Who</b> Built by John Gegen’s brother, leveraging frontier AI models to gather, analyse and cross-check the public research.</li>
-    <li><b>From what</b> 33,242 PubMed papers mentioning osteosarcoma, 758 studies on ClinicalTrials.gov, NIH grant records (2015–2025), Europe PMC full texts, and open genomic and tissue-expression data.</li>
-    <li><b>Checked how</b> Every headline claim was audited against its original source in two separate review passes run by AI models, plus a repo-wide consistency check, and the reports were corrected where these found errors. Each report ends with a change log.</li>
-    <li><b>Not yet</b> Checked by any independent person or peer-reviewed. That is the next step, and we are asking for it. Auditors can start with the <a href="audit-guide.html">auditor's guide</a>.</li>
-    <li><b>Open</b> Most analyses can be rebuilt with the scripts in the repository; a few counts came from one-off database queries described in each report. Reports and data are licensed CC BY 4.0, code is MIT.</li>
+  <p class="prose">Built by John Gegen’s brother, leveraging frontier AI models, from 33,242 papers, 758 registered trials, NIH grant records and open tumour data. Every headline claim was audited against its original source in review passes run by AI models, and each report ends with a change log of what was corrected. No independent person has checked the work yet. That is the next step, and we are asking for it.</p>
+  <ul class="linkrow">
+    <li><a href="how-this-was-made.html">Methods and limits</a></li>
+    <li><a href="audit-guide.html">Auditor's guide</a></li>
+    <li><a href="predictions.html">Predictions log</a></li>
+    <li><a href="data-manifest.html">Data manifest</a></li>
   </ul>
-  <p style="margin-top:22px"><a href="how-this-was-made.html">Read the full methods and limitations</a></p>
  </div>
 </section>
 
 <section id="reports">
  <div class="wrap">
   <h2>The reports</h2>
-  <p class="prose">Every claim traces to a source. Each report ends with a change log showing what we got wrong and fixed.</p>
   <div id="reportList"></div>
  </div>
 </section>
@@ -323,34 +332,34 @@ header.hero :focus-visible { outline-color: #cfe2f5; }
 // ---------- Content (edit here) ----------
 const FINDINGS = [
   { title: "Trials struggle to finish", label: "Confirmed",
-    body: "Of 99 osteosarcoma trials that stopped early, 44 stopped mainly because they couldn’t recruit enough patients. Only about 7 to 9 stopped because the treatment didn’t work. Across four decades, ClinicalTrials.gov lists just 27 randomized trials focused on osteosarcoma alone. A Children’s Oncology Group preprint of 99 patients finds that only about 1 in 5 stays relapse-free a year after lung metastases are removed, and that modest gains will need randomized trials.",
+    body: "Of 99 osteosarcoma trials that stopped early, 44 stopped mainly because they couldn’t recruit enough patients. Only about 7 to 9 stopped because the treatment didn’t work.",
     report: "reports/Osteosarcoma clinical trials landscape.md", reportName: "Trials report" },
   { title: "Kinase-inhibitor pills: active, but briefly", label: "Confirmed · who benefits is a Lead",
-    body: "For osteosarcoma that has come back, pills that block the tumour’s blood-vessel signal (VEGFR2) keep roughly 40 to 50% of patients free of progression at four months, compared with about 14% for other single drugs. The effect fades within months, and standard relapse chemotherapy also does well early on. In open data from 81 tumours, about a quarter carry extra copies of the genes these pills target by a strict definition, and nearly half by a looser one. Nobody has checked whether those are the patients who benefit. Past trials treated about 309 patients with these pills, so researchers can test this using stored samples.",
+    body: "In relapse, these pills keep roughly 40 to 50% of patients free of progression at four months, against about 14% for other single drugs, but the effect fades. Nobody has checked which patients benefit.",
     report: "reports/Copy-number changes and the kinase-pill biomarker.md", reportName: "Copy-number report" },
   { title: "Block inflammation after surgery?", label: "Hypothesis",
-    body: "In mice, lung tissue sends inflammatory signals (IL-1, IL-6 and IL-8) that help osteosarcoma settle in the lung. Blocking those signals reduced spread. A dog trial took the opposite approach, boosting immunity after amputation. Those dogs did worse than dogs given standard treatment in the past. Approved drugs that block IL-1 and IL-6 exist, but neither has a registered efficacy trial in osteosarcoma.",
+    body: "In mice, blocking the inflammatory signals that lung tissue sends (IL-1, IL-6 and IL-8) reduced spread. Approved blockers exist, with no registered efficacy trial in osteosarcoma.",
     report: "reports/Stopping lung metastasis in osteosarcoma.md", reportName: "Lung metastasis report" },
   { title: "FAK and DKK1: strong targets not yet tried in people", label: "Lead",
-    body: "Blocking either protein reduced lung spread in small mouse studies, and drugs exist for both. Studies in pet dogs with osteosarcoma are listed or planned, but their results are not yet public. Dogs get this cancer far more often than people, by one common estimate about ten times as often, and the disease is very similar. A screen of 2,400 approved drugs adds two weaker ideas: AKT blockers and CXCR4 blockers.",
+    body: "Blocking either protein reduced lung spread in small mouse studies. Dog studies are listed or planned, but their results are not yet public.",
     report: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md", reportName: "Research brief" },
   { title: "Antibody-drug conjugates, and a confirmed new target", label: "Lead",
-    body: "A drug that carries chemotherapy to the tumour marker B7-H3 beat standard chemotherapy in a randomized trial in relapse, though with heavier side effects. Our comparison of 88 patient tumours with 54 healthy tissues ranked LRRC15 top; three studies have now found the LRRC15 protein in patient tumours, and four registered trials target it, one in relapsed osteosarcoma. PTK7 also ranked high, but no series of patient tumours has been stained for it yet.",
+    body: "A B7-H3 drug conjugate beat chemotherapy in a randomized relapse trial. Our tumour screen ranked LRRC15 top, and it now has a trial in relapsed osteosarcoma.",
     report: "reports/New surface targets for osteosarcoma.md", reportName: "Surface targets report" },
   { title: "Some research is unreliable", label: "Confirmed",
-    body: "Since 2010, 8.7% of one formulaic type of osteosarcoma paper (microRNA studies) have been retracted, compared with 1.0% of other papers. We flag genes whose evidence relies on this type of paper, so researchers know where to double-check.",
+    body: "Since 2010, 8.7% of microRNA-type osteosarcoma papers have been retracted, against 1.0% of other papers. We flag the genes whose evidence leans on them.",
     report: "reports/Evidence risk flags for osteosarcoma genes.md", reportName: "Risk flags report" },
   { title: "Research gaps get little funding", label: "Confirmed",
-    body: "NIH spent about $18 million on grants focused on osteosarcoma in 2025. Over 2015 to 2025, it spent about half as much on osteosarcoma ($108 million) as on neuroblastoma ($212 to 227 million). The research gaps highlighted above, such as blood-test monitoring, receive the least funding.",
+    body: "Over 2015 to 2025, NIH spent about half as much on osteosarcoma ($108 million) as on neuroblastoma ($212 to 227 million).",
     report: "reports/NIH funding for osteosarcoma.md", reportName: "Funding report" }
 ];
 const ASKS = [
   { title: "A sarcoma scientist to review this work.", text: "Tell us what is wrong and what is useful." },
-  { title: "Groups holding stored samples from kinase-inhibitor trials", text: "(SARC024, REGOBONE, OLIE, OAIE, CABONE, ADVL1622, ITCC-050), to test whether tumour gene copies predict who benefits." },
-  { title: "Comparative oncology groups,", text: "to discuss a pet-dog study blocking IL-1 or IL-6 after amputation, and to share what the listed dog studies of FAK blockers have shown." },
-  { title: "Groups with osteosarcoma tissue arrays,", text: "to stain primary tumours, lung metastases and relapses for LRRC15 and PTK7, and LRRC15 trial sponsors, to publish their screening data." },
-  { title: "Trial sponsors with unreported osteosarcoma trials,", text: "to make their results public." },
-  { title: "Consortia such as FOSTER and the Children's Oncology Group,", text: "to use, correct and extend the pooled control dataset." }
+  { title: "Stored samples from kinase-inhibitor trials,", text: "to test whether tumour gene copies predict who benefits." },
+  { title: "Comparative oncology groups,", text: "to discuss a pet-dog study of IL-1 or IL-6 blockade after amputation." },
+  { title: "Osteosarcoma tissue arrays,", text: "to stain tumours for LRRC15 and PTK7." },
+  { title: "Sponsors of unreported trials,", text: "to make their results public." },
+  { title: "Consortia such as FOSTER and the Children's Oncology Group,", text: "to use and correct the pooled control dataset." }
 ];
 const REPORTS = [
   { title: "Evidence explorer", href: "explorer.html", local: true, text: "search any gene, drug or target and see the papers, risk flags, trials, tumour expression and drugs behind it." , group: "Start here" },
@@ -383,7 +392,7 @@ const CHART = {
     { label: "Pill + chemotherapy (IE)", n: 128, value: 65.0, pill: true, note: "Three trials" },
     { label: "Pill + PD-1 antibody", n: 43, value: 66.3, pill: true, note: "One trial (apatinib + camrelizumab)" }
   ],
-  caption: "Taken alone, VEGFR2-blocking pills keep far more patients free of progression at four months than other single drugs, but the effect fades within months, and standard relapse chemotherapy (ifosfamide and etoposide) does about as well over this period, so combinations must be judged against chemotherapy, not the 12% line. In both randomized pill-plus-chemotherapy trials, overall survival was not improved. The chart does not include the B7-H3 antibody-drug conjugate, which beat a different chemotherapy (gemcitabine and docetaxel) in a randomized trial reported in 2026. These rates are pooled across trials that measured progression slightly differently; treat them as approximate."
+  caption: "Taken alone, the pills beat other single drugs at four months, but standard relapse chemotherapy does about as well, and in both randomized pill-plus-chemotherapy trials survival was not improved. Rates are pooled across trials that measured progression slightly differently, so treat them as approximate."
 };
 
 // ---------- Rendering ----------
@@ -424,7 +433,7 @@ function renderReports(items) {
       const li = el("li");
       const href = it.local || it.href.startsWith("http") ? it.href : repo + encodeURI(it.href);
       li.appendChild(el("a", { href: href }, it.title));
-      if (it.text) li.appendChild(el("span", null, it.text));
+      if (it.text && g === "Start here") li.appendChild(el("span", null, it.text));
       ul.appendChild(li);
     }
     sec.appendChild(ul);
