@@ -8,8 +8,9 @@
 <style>
 :root {
   color-scheme: light;
-  --page: #f9f9f7;
-  --surface: #fcfcfb;
+  --page: #f7f7f4;
+  --surface: #ffffff;
+  --band: #eeeee9;
   --ink: #0b0b0b;
   --ink-2: #52514e;
   --muted: #6f6e69;
@@ -21,12 +22,21 @@
   --series-2: #eb6834;
   --bench: #d03b3b;
   --link: #1c5cab;
+  --navy: #0f2a44;
+  --navy-2: #1d4367;
+  --on-navy: #f3f7fb;
+  --on-navy-2: #adc3d8;
+  --on-navy-link: #cfe2f5;
+  --c-confirmed: #1baf7a;
+  --c-lead: #2a78d6;
+  --c-hypothesis: #eb6834;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
     --page: #0d0d0d;
     --surface: #1a1a19;
+    --band: #141413;
     --ink: #f0efec;
     --ink-2: #c3c2b7;
     --muted: #a3a29b;
@@ -38,13 +48,23 @@
     --series-2: #d95926;
     --bench: #e66767;
     --link: #86b6ef;
+    --navy: #0a1c2e;
+    --navy-2: #13304c;
+    --on-navy: #eaf1f8;
+    --on-navy-2: #9db4ca;
+    --on-navy-link: #a9cdf0;
+    --c-confirmed: #199e70;
+    --c-lead: #3987e5;
+    --c-hypothesis: #d95926;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
+  --page: #0d0d0d; --surface: #1a1a19; --band: #141413; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #a3a29b;
   --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10); --accent: #3987e5;
   --series-1: #3987e5; --series-2: #d95926; --bench: #e66767; --link: #86b6ef;
+  --navy: #0a1c2e; --navy-2: #13304c; --on-navy: #eaf1f8; --on-navy-2: #9db4ca; --on-navy-link: #a9cdf0;
+  --c-confirmed: #199e70; --c-lead: #3987e5; --c-hypothesis: #d95926;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -53,22 +73,53 @@ body {
   font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 a { color: var(--link); }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
-header.hero { padding: 64px 0 32px; }
-.hero h1 { font-size: clamp(40px, 8vw, 60px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em; }
-.dedication { font-style: italic; color: var(--ink-2); margin: 0 0 24px; font-size: 18px; }
-.lede { font-size: 20px; margin: 0 0 16px; }
-.note { font-size: 15px; color: var(--ink-2); border-left: 3px solid var(--axis); padding: 4px 0 4px 12px; margin: 24px 0 0; }
-nav.top { display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; margin-top: 24px; }
-section { padding: 32px 0; border-top: 1px solid var(--grid); }
-h2 { font-size: 26px; margin: 0 0 16px; letter-spacing: -0.01em; }
-h3 { font-size: 19px; margin: 24px 0 6px; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 16px 0; }
-.finding h3 { margin-top: 0; }
-.tag { display: inline-block; font-size: 13px; font-weight: 600; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); margin-left: 6px; vertical-align: 2px; }
-.finding p { margin: 6px 0; }
-.finding .src { font-size: 14px; color: var(--muted); }
-ol.asks li, ul.list li { margin: 8px 0; }
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+.prose { max-width: 68ch; }
+
+/* ---- hero ---- */
+header.hero { background: linear-gradient(165deg, var(--navy) 0%, var(--navy-2) 100%); color: var(--on-navy); padding: 76px 0 0; }
+header.hero a { color: var(--on-navy-link); }
+.hero h1 { font-size: clamp(46px, 9vw, 78px); line-height: 1.0; margin: 0 0 14px; letter-spacing: -0.03em; }
+.dedication { font-style: italic; color: var(--on-navy-2); margin: 0 0 30px; font-size: clamp(17px, 2.3vw, 21px); }
+.lede { font-size: clamp(17px, 1.9vw, 20px); margin: 0; max-width: 62ch; color: var(--on-navy); }
+.note { font-size: 15px; color: var(--on-navy-2); border-left: 3px solid rgba(255,255,255,0.28); padding: 4px 0 4px 14px; margin: 26px 0 0; max-width: 62ch; }
+nav.top { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; font-size: 15px; margin-top: 30px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.16); border-bottom: 0; border-radius: 14px 14px 0 0; overflow: hidden; margin-top: 52px; }
+.stat { background: var(--navy-2); padding: 18px 20px 20px; }
+.stat b { display: block; font-size: clamp(22px, 3.6vw, 34px); line-height: 1.1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stat span { display: block; font-size: 13.5px; color: var(--on-navy-2); margin-top: 3px; }
+
+/* ---- sections ---- */
+section { padding: 60px 0; }
+section.alt { background: var(--band); }
+h2 { font-size: clamp(25px, 3.2vw, 33px); margin: 0 0 14px; letter-spacing: -0.02em; }
+h3 { font-size: 19px; margin: 0 0 8px; letter-spacing: -0.01em; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 18px; margin-top: 26px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin: 18px 0; }
+.grid .card { margin: 0; }
+.finding { border-top: 4px solid var(--axis); display: flex; flex-direction: column; }
+.finding.confirmed { border-top-color: var(--c-confirmed); }
+.finding.lead { border-top-color: var(--c-lead); }
+.finding.hypothesis { border-top-color: var(--c-hypothesis); }
+.tag { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 650; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 10px; }
+.tag::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--axis); flex: none; }
+.confirmed .tag::before { background: var(--c-confirmed); }
+.lead .tag::before { background: var(--c-lead); }
+.hypothesis .tag::before { background: var(--c-hypothesis); }
+.finding p { margin: 8px 0; }
+.finding .src { font-size: 14px; color: var(--muted); margin-top: auto; padding-top: 10px; }
+ol.asks li, ul.list li { margin: 10px 0; }
+ol.asks { max-width: 68ch; padding-left: 22px; }
+.how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin: 26px 0 0; padding: 0; list-style: none; }
+.how-grid li { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; font-size: 16px; }
+.how-grid b { display: block; margin-bottom: 4px; }
+.rep-group { margin-top: 28px; }
+.rep-group > h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 12px; }
+.rep-group ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.rep-group li { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 13px 16px; font-size: 15.5px; }
+.rep-group li a { font-weight: 600; text-decoration: none; }
+.rep-group li a:hover { text-decoration: underline; }
+.rep-group li span { display: block; color: var(--ink-2); font-size: 14px; margin-top: 2px; }
 .chart-wrap { position: relative; }
 .chart-title { font-weight: 600; margin: 0 0 2px; }
 .chart-sub { color: var(--ink-2); font-size: 15px; margin: 0 0 12px; }
@@ -83,15 +134,24 @@ table { border-collapse: collapse; width: 100%; font-size: 15px; }
 th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
 th { color: var(--ink-2); font-weight: 600; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
-footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14px; color: var(--ink-2); }
-.theme-toggle { background: none; border: 1px solid var(--axis); color: var(--ink-2); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 14px; cursor: pointer; }
-@media (max-width: 520px) { body { font-size: 16px; } .lede { font-size: 18px; } header.hero { padding-top: 40px; } }
+footer { background: var(--navy); color: var(--on-navy-2); padding: 40px 0 56px; font-size: 14px; }
+footer a { color: var(--on-navy-link); }
+.theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.35); color: var(--on-navy); border-radius: 999px; padding: 5px 14px; font: inherit; font-size: 14px; cursor: pointer; }
+.theme-toggle:hover { background: rgba(255,255,255,0.1); }
+@media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); border-radius: 14px 14px 0 0; } }
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 16px; }
+  header.hero { padding-top: 44px; }
+  section { padding: 44px 0; }
+  .card { padding: 20px; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
 
 <header class="hero">
+ <div class="wrap">
   <h1>For John</h1>
   <p class="dedication">In memory of my little brother and best friend, John.</p>
   <p class="lede">For John was created in honor of John Gegen. Researchers have spent decades building knowledge about osteosarcoma, often in separate labs, trials and journals. I’m leveraging frontier AI models to bring that work together, connect the dots between studies, and carry the connections to the people who can test them.</p>
@@ -105,15 +165,25 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
     <a href="https://github.com/mgegen15-dev/For_John">All reports and data</a>
     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
   </nav>
+  <div class="stats">
+    <div class="stat"><b>33,242</b><span>papers read</span></div>
+    <div class="stat"><b>758</b><span>clinical trials</span></div>
+    <div class="stat"><b>14</b><span>ranked leads</span></div>
+    <div class="stat"><b>16</b><span>reports, all sourced</span></div>
+  </div>
+ </div>
 </header>
 
 <section id="findings">
+ <div class="wrap">
   <h2>What we found</h2>
-  <p>Each finding carries a label for how solid it is: <strong>Confirmed</strong> (checked against the original source), <strong>Lead</strong> (supported, but needs a scientist to test it), or <strong>Hypothesis</strong> (a reasoned idea, not yet tested).</p>
-  <div id="findingsList"><!-- filled from findings data below --></div>
+  <p class="prose">Each finding carries a label for how solid it is: <strong>Confirmed</strong> (checked against the original source), <strong>Lead</strong> (supported, but needs a scientist to test it), or <strong>Hypothesis</strong> (a reasoned idea, not yet tested).</p>
+  <div class="grid" id="findingsList"><!-- filled from findings data below --></div>
+ </div>
 </section>
 
-<section id="pills">
+<section id="pills" class="alt">
+ <div class="wrap">
   <h2>Kinase-inhibitor pills: active, but briefly</h2>
   <div class="card chart-wrap" id="chartCard">
     <p class="chart-title">Patients free of progression about four months into treatment, relapsed osteosarcoma</p>
@@ -126,37 +196,46 @@ footer { padding: 32px 0 64px; border-top: 1px solid var(--grid); font-size: 14p
       <table id="chartTable"><thead><tr><th>Treatment</th><th class="num">Patients</th><th class="num">4-month rate</th></tr></thead><tbody></tbody></table>
     </details>
   </div>
-  <p id="chartCaption"></p>
+  <p id="chartCaption" class="prose"></p>
+ </div>
 </section>
 
 <section id="ask">
+ <div class="wrap">
   <h2>What we're asking</h2>
   <ol class="asks" id="askList"></ol>
-  <p>If you work on osteosarcoma, or on any of the targets above, and something here is wrong or useful, please <a href="https://github.com/mgegen15-dev/For_John/issues">open an issue on GitHub</a>. Corrections are as valuable as confirmations.</p>
+  <p class="prose">If you work on osteosarcoma, or on any of the targets above, and something here is wrong or useful, please <a href="https://github.com/mgegen15-dev/For_John/issues">open an issue on GitHub</a>. Corrections are as valuable as confirmations.</p>
+ </div>
 </section>
 
-<section id="how">
+<section id="how" class="alt">
+ <div class="wrap">
   <h2>How this was made</h2>
-  <ul class="list">
-    <li><strong>Who:</strong> built by John Gegen’s brother, leveraging frontier AI models to gather, analyse and cross-check the public research.</li>
-    <li><strong>From what:</strong> 33,242 PubMed papers mentioning osteosarcoma, 758 studies on ClinicalTrials.gov, NIH grant records (2015–2025), Europe PMC full texts, and open genomic and tissue-expression data.</li>
-    <li><strong>Checked how:</strong> every headline claim was audited against its original source in two separate review passes run by AI models, plus a repo-wide consistency check, and the reports were corrected where these found errors. Each report ends with a change log.</li>
-    <li><strong>Not yet:</strong> checked by any independent person or peer-reviewed. That is the next step, and we are asking for it. Auditors can start with the <a href="https://github.com/mgegen15-dev/For_John/blob/main/AUDIT_GUIDE.md">auditor's guide</a>.</li>
-    <li><strong>Open:</strong> most analyses can be rebuilt with the scripts in the repository; a few counts came from one-off database queries described in each report. Reports and data are licensed CC BY 4.0, code is MIT.</li>
+  <ul class="how-grid">
+    <li><b>Who</b> Built by John Gegen’s brother, leveraging frontier AI models to gather, analyse and cross-check the public research.</li>
+    <li><b>From what</b> 33,242 PubMed papers mentioning osteosarcoma, 758 studies on ClinicalTrials.gov, NIH grant records (2015–2025), Europe PMC full texts, and open genomic and tissue-expression data.</li>
+    <li><b>Checked how</b> Every headline claim was audited against its original source in two separate review passes run by AI models, plus a repo-wide consistency check, and the reports were corrected where these found errors. Each report ends with a change log.</li>
+    <li><b>Not yet</b> Checked by any independent person or peer-reviewed. That is the next step, and we are asking for it. Auditors can start with the <a href="https://github.com/mgegen15-dev/For_John/blob/main/AUDIT_GUIDE.md">auditor's guide</a>.</li>
+    <li><b>Open</b> Most analyses can be rebuilt with the scripts in the repository; a few counts came from one-off database queries described in each report. Reports and data are licensed CC BY 4.0, code is MIT.</li>
   </ul>
-  <p><a href="https://github.com/mgegen15-dev/For_John/blob/main/HOW_THIS_WAS_MADE.md">Read the full methods and limitations</a></p>
+  <p style="margin-top:22px"><a href="https://github.com/mgegen15-dev/For_John/blob/main/HOW_THIS_WAS_MADE.md">Read the full methods and limitations</a></p>
+ </div>
 </section>
 
 <section id="reports">
+ <div class="wrap">
   <h2>The reports</h2>
-  <ul class="list" id="reportList"></ul>
+  <p class="prose">Every claim traces to a source. Each report ends with a change log showing what we got wrong and fixed.</p>
+  <div id="reportList"></div>
+ </div>
 </section>
 
 <footer>
+ <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">github.com/mgegen15-dev/For_John</a></p>
   <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+ </div>
 </footer>
-</div>
 
 <script>
 // ---------- Content (edit here) ----------
@@ -192,26 +271,26 @@ const ASKS = [
   { title: "Consortia such as FOSTER and the Children's Oncology Group,", text: "to use, correct and extend the pooled control dataset." }
 ];
 const REPORTS = [
-  { title: "Evidence explorer", href: "explorer.html", local: true, text: "search any gene, drug or target and see the papers, risk flags, trials, tumour expression and drugs behind it." },
-  { title: "One-page summary", href: "SUMMARY.md" },
-  { title: "Ranked leads and research partners", href: "reports/Ranked leads and research partners.md", text: "the fourteen leads, scored." },
-  { title: "Osteosarcoma research landscape and gaps", href: "reports/Osteosarcoma research landscape and gaps.md" },
-  { title: "Clinical trials landscape", href: "reports/Osteosarcoma clinical trials landscape.md" },
-  { title: "Pooled control dataset", href: "reports/Osteosarcoma pooled control dataset.md" },
-  { title: "Why kinase-inhibitor pills work", href: "reports/Why kinase-inhibitor pills work in osteosarcoma.md" },
-  { title: "Do the leads predict survival?", href: "reports/Do the leads predict survival.md" },
-  { title: "Contradictions and hidden links", href: "reports/Contradictions and hidden links in the osteosarcoma literature.md", text: "where papers disagree, and untested drug-to-outcome chains." },
-  { title: "Copy-number changes and the kinase-pill biomarker", href: "reports/Copy-number changes and the kinase-pill biomarker.md", text: "how often tumours carry extra copies of the pills’ target genes, and how many trial patients a test would need." },
-  { title: "Stopping lung metastasis", href: "reports/Stopping lung metastasis in osteosarcoma.md" },
-  { title: "New surface targets", href: "reports/New surface targets for osteosarcoma.md" },
-  { title: "Approved drugs worth testing", href: "reports/Approved drugs worth testing in osteosarcoma.md", text: "a screen of 2,400 approved and late-stage drugs, including the dead ends." },
-  { title: "What's new in osteosarcoma research", href: "reports/Whats new in osteosarcoma research.md", text: "June 2025 to November 2026, checked against the leads." },
-  { title: "Literature map", href: "reports/Osteosarcoma literature map.md" },
-  { title: "Evidence risk flags", href: "reports/Evidence risk flags for osteosarcoma genes.md" },
-  { title: "NIH funding", href: "reports/NIH funding for osteosarcoma.md" },
-  { title: "Dog genome re-analysis scope", href: "reports/Dog genome re-analysis scope.md" },
-  { title: "Research brief: FAK or DKK1 in pet dogs", href: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md" },
-  { title: "How this was made", href: "HOW_THIS_WAS_MADE.md", text: "methods, limits and how to re-run the analyses." }
+  { title: "Evidence explorer", href: "explorer.html", local: true, text: "search any gene, drug or target and see the papers, risk flags, trials, tumour expression and drugs behind it." , group: "Start here" },
+  { title: "One-page summary", href: "SUMMARY.md" , group: "Start here" },
+  { title: "Ranked leads and research partners", href: "reports/Ranked leads and research partners.md", text: "the fourteen leads, scored." , group: "Start here" },
+  { title: "Osteosarcoma research landscape and gaps", href: "reports/Osteosarcoma research landscape and gaps.md" , group: "Literature and funding" },
+  { title: "Clinical trials landscape", href: "reports/Osteosarcoma clinical trials landscape.md" , group: "Trials and evidence" },
+  { title: "Pooled control dataset", href: "reports/Osteosarcoma pooled control dataset.md" , group: "Trials and evidence" },
+  { title: "Why kinase-inhibitor pills work", href: "reports/Why kinase-inhibitor pills work in osteosarcoma.md" , group: "Trials and evidence" },
+  { title: "Do the leads predict survival?", href: "reports/Do the leads predict survival.md" , group: "Trials and evidence" },
+  { title: "Contradictions and hidden links", href: "reports/Contradictions and hidden links in the osteosarcoma literature.md", text: "where papers disagree, and untested drug-to-outcome chains." , group: "Trials and evidence" },
+  { title: "Copy-number changes and the kinase-pill biomarker", href: "reports/Copy-number changes and the kinase-pill biomarker.md", text: "how often tumours carry extra copies of the pills’ target genes, and how many trial patients a test would need." , group: "Leads and targets" },
+  { title: "Stopping lung metastasis", href: "reports/Stopping lung metastasis in osteosarcoma.md" , group: "Leads and targets" },
+  { title: "New surface targets", href: "reports/New surface targets for osteosarcoma.md" , group: "Leads and targets" },
+  { title: "Approved drugs worth testing", href: "reports/Approved drugs worth testing in osteosarcoma.md", text: "a screen of 2,400 approved and late-stage drugs, including the dead ends." , group: "Leads and targets" },
+  { title: "What's new in osteosarcoma research", href: "reports/Whats new in osteosarcoma research.md", text: "June 2025 to November 2026, checked against the leads." , group: "Trials and evidence" },
+  { title: "Literature map", href: "reports/Osteosarcoma literature map.md" , group: "Literature and funding" },
+  { title: "Evidence risk flags", href: "reports/Evidence risk flags for osteosarcoma genes.md" , group: "Literature and funding" },
+  { title: "NIH funding", href: "reports/NIH funding for osteosarcoma.md" , group: "Literature and funding" },
+  { title: "Dog genome re-analysis scope", href: "reports/Dog genome re-analysis scope.md" , group: "Literature and funding" },
+  { title: "Research brief: FAK or DKK1 in pet dogs", href: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md" , group: "Leads and targets" },
+  { title: "How this was made", href: "HOW_THIS_WAS_MADE.md", text: "methods, limits and how to re-run the analyses." , group: "Start here" }
 ];
 const CHART = {
   benchmark: 12,
@@ -236,10 +315,10 @@ function el(tag, attrs, text) {
 function renderFindings() {
   const box = document.getElementById("findingsList");
   for (const f of FINDINGS) {
-    const c = el("article", { class: "card finding" });
-    const h = el("h3", null, f.title);
-    h.appendChild(el("span", { class: "tag" }, f.label));
-    c.appendChild(h);
+    const kind = (f.label || "").toLowerCase().split(/[^a-z]/)[0];
+    const c = el("article", { class: "card finding " + kind });
+    c.appendChild(el("p", { class: "tag" }, f.label));
+    c.appendChild(el("h3", null, f.title));
     c.appendChild(el("p", null, f.body));
     const p = el("p", { class: "src" });
     p.appendChild(document.createTextNode("Details: "));
@@ -247,6 +326,26 @@ function renderFindings() {
     p.appendChild(a);
     c.appendChild(p);
     box.appendChild(c);
+  }
+}
+function renderReports(items) {
+  const box = document.getElementById("reportList");
+  const order = ["Start here", "Leads and targets", "Trials and evidence", "Literature and funding"];
+  for (const g of order) {
+    const inGroup = items.filter(it => it.group === g);
+    if (!inGroup.length) continue;
+    const sec = el("div", { class: "rep-group" });
+    sec.appendChild(el("h3", null, g));
+    const ul = el("ul");
+    for (const it of inGroup) {
+      const li = el("li");
+      const href = it.local || it.href.startsWith("http") ? it.href : repo + encodeURI(it.href);
+      li.appendChild(el("a", { href: href }, it.title));
+      if (it.text) li.appendChild(el("span", null, it.text));
+      ul.appendChild(li);
+    }
+    sec.appendChild(ul);
+    box.appendChild(sec);
   }
 }
 function renderList(id, items) {
@@ -362,7 +461,7 @@ function renderTable() {
 })();
 renderFindings();
 renderList("askList", ASKS);
-renderList("reportList", REPORTS);
+renderReports(REPORTS);
 renderTable();
 renderChart();
 addEventListener("resize", () => renderChart());
