@@ -1,0 +1,22 @@
+analysis,study,gene,relapse_deleted,relapse_n,primary_deleted,primary_n,odds_ratio,ci_low,ci_high
+primary,MSK-IMPACT (New York),CDKN2A,21,107,19,90,0.912,0.455,1.829
+primary,OrigiMed (China),CDKN2A,3,23,7,121,2.443,0.583,10.244
+primary,pooled (fixed),CDKN2A,24,130,26,211,1.101,0.589,2.058
+secondary,MSK-IMPACT (New York),CDKN2B,20,107,18,90,0.920,0.452,1.869
+secondary,OrigiMed (China),CDKN2B,3,23,6,121,2.875,0.664,12.442
+secondary,pooled (fixed),CDKN2B,23,130,24,211,1.142,0.603,2.162
+secondary,MSK-IMPACT (New York),MTAP,2,15,1,9,1.231,0.095,15.872
+secondary,OrigiMed (China),MTAP,0,0,0,0,,,
+secondary,pooled (fixed),MTAP,2,15,1,9,1.231,0.095,15.872
+secondary: distant metastasis v primary,MSK-IMPACT (New York),CDKN2A,20,101,19,90,0.923,0.456,1.866
+secondary: distant metastasis v primary,OrigiMed (China),CDKN2A,2,14,7,121,2.714,0.506,14.568
+secondary: distant metastasis v primary,pooled (fixed),CDKN2A,22,115,26,211,1.084,0.566,2.075
+secondary: local recurrence v primary,MSK-IMPACT (New York),CDKN2A,1,6,19,90,0.747,0.082,6.785
+secondary: local recurrence v primary,OrigiMed (China),CDKN2A,1,9,7,121,2.036,0.222,18.641
+secondary: local recurrence v primary,pooled (fixed),CDKN2A,2,15,26,211,1.231,0.258,5.875
+secondary: lung metastasis v primary,MSK-IMPACT (New York),CDKN2A,11,66,19,90,0.747,0.329,1.700
+secondary: lung metastasis v primary,OrigiMed (China),CDKN2A,0,0,7,121,,,
+secondary: lung metastasis v primary,pooled (fixed),CDKN2A,11,66,26,211,0.747,0.329,1.700
+secondary: every sample,MSK-IMPACT (New York),CDKN2A,26,128,27,130,0.972,0.531,1.779
+secondary: every sample,OrigiMed (China),CDKN2A,3,23,7,121,2.443,0.583,10.244
+secondary: every sample,pooled (fixed),CDKN2A,29,151,34,251,1.117,0.640,1.950

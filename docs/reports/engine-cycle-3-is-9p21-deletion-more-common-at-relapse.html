@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 3: Is 9p21 Deletion More Common at Relapse? · For John</title>
+<meta name="description" content="Run November 24, 2026. The third cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-03-9p21/PREREGISTRATION.md, committed at 20:00 UTC (commit 35e2b8e) before…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-3-is-9p21-deletion-more-common-at-relapse.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 3: Is 9p21 Deletion More Common at Relapse? · For John">
+<meta property="og:description" content="Run November 24, 2026. The third cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-03-9p21/PREREGISTRATION.md, committed at 20:00 UTC (commit 35e2b8e) before…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-3-is-9p21-deletion-more-common-at-relapse.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html#findings">Findings</a>
+      <a href="../index.html#reports">Reports</a>
+      <a href="../research-queue.html">Research Queue</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#checks">Checks</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 24, 2026 · 6 min read</p>
+    <h1>Engine Cycle 3: Is 9p21 Deletion More Common at Relapse?</h1>
+    <p><em>Run November 24, 2026. The third cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-03-9p21/PREREGISTRATION.md"><code>research_notes/Engine/cycle-03-9p21/PREREGISTRATION.md</code></a>, committed at 20:00 UTC (commit <code>35e2b8e</code>) before any study was listed, with the study choices and a prediction committed at 20:03 UTC (<code>e0348e4</code>) before any copy-number call was read. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle03_9p21.py"><code>tools/engine_cycle03_9p21.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/results.csv"><code>data/engine/cycle03/results.csv</code></a>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>Some tumours delete both copies of a stretch of chromosome 9 called 9p21, which holds the genes CDKN2A and MTAP. Tumours that have lost MTAP are the target of a new class of drugs (PRMT5 inhibitors) now in adult trials. We asked whether this deletion is more common in osteosarcoma that has spread or come back than in primary tumours, using two hospital sequencing cohorts with 341 patients. It was not clearly more common: the pooled odds ratio was 1.10, with a range of uncertainty from 0.59 to 2.06, so the pre-registered verdict is <strong>inconclusive</strong>. Two things came out that are useful anyway. First, about one in five relapsed or metastatic osteosarcomas carries the CDKN2A deletion (35 of 179, 20%). Second, in 30 patients tested twice, the primary tumour and the later sample agreed in 28: the deletion is set early and stays, so a stored sample of the primary tumour can show who has it. The gap is MTAP itself. Only 24 of the 341 patients had a test that looks at MTAP, so how many relapsed patients could enter an MTAP-selected trial is still an estimate, about one in seven.</p>
+    <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from open data unless marked otherwise.</p>
+    <h2 id="what-was-tested">What Was Tested</h2>
+    <ul>
+    <li><strong>H1:</strong> deep (two-copy) deletion of CDKN2A is more frequent in osteosarcoma samples from a metastasis or relapse than in samples from a primary tumour.</li>
+    <li><strong>Descriptive aim:</strong> the share of metastatic or relapsed osteosarcomas with deep deletion of MTAP.</li>
+    <li><strong>Why CDKN2A stands in for MTAP:</strong> the two genes sit side by side and are usually lost together, and every gene-panel test covers CDKN2A while few cover MTAP.</li>
+    <li><strong>Cohorts,</strong> from the public cBioPortal database, each patient counted once:</li>
+    </ul>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Cohort</th>
+    <th>Test</th>
+    <th>Patients in the metastasis or relapse group</th>
+    <th>Patients in the primary group</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>MSK-IMPACT, New York</td>
+    <td>Hospital gene panel</td>
+    <td>107 (101 metastases, 6 local recurrences)</td>
+    <td class="num">90</td>
+    </tr>
+    <tr>
+    <td>OrigiMed, China</td>
+    <td>Commercial gene panel</td>
+    <td>23 (14 metastases, 9 recurrences)</td>
+    <td class="num">121</td>
+    </tr>
+    <tr>
+    <td><strong>Total</strong></td>
+    <td></td>
+    <td class="num"><strong>130</strong></td>
+    <td class="num"><strong>211</strong></td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>A patient with any metastasis or relapse sample was placed in that group; patients with only primary samples formed the other. A European trial for relapsed childhood cancers (MAPPYACTS, 49 osteosarcoma patients with copy-number results) records no sample type, so it adds to the relapse-stage frequency but not to the comparison.</p>
+    <h2 id="results">Results</h2>
+    <p><img src="../figures/engine03_9p21.svg" alt="Share of osteosarcoma patients with deep deletion at 9p21, by sample origin" /></p>
+    <p><strong>CDKN2A deep deletion, metastasis or relapse against primary:</strong></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Cohort</th>
+    <th>Metastasis or relapse</th>
+    <th>Primary</th>
+    <th>Odds ratio (95% CI)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>MSK-IMPACT</td>
+    <td>21 of 107 (19.6%)</td>
+    <td>19 of 90 (21.1%)</td>
+    <td>0.91 (0.46–1.83)</td>
+    </tr>
+    <tr>
+    <td>OrigiMed</td>
+    <td>3 of 23 (13.0%)</td>
+    <td>7 of 121 (5.8%)</td>
+    <td>2.44 (0.58–10.24)</td>
+    </tr>
+    <tr>
+    <td><strong>Pooled</strong></td>
+    <td></td>
+    <td></td>
+    <td><strong>1.10 (0.59–2.06), p = 0.76</strong></td>
+    </tr>
+    <tr>
+    <td>Pooled, adjusted for tumour purity</td>
+    <td></td>
+    <td></td>
+    <td>1.16 (0.61–2.22)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <ul>
+    <li><strong>Verdict for H1: Inconclusive.</strong> &quot;Supported&quot; needed a lower bound above 1.0 and an odds ratio of at least 1.5. &quot;Refuted&quot; needed the upper bound below 1.5; it is 2.06. The larger cohort shows no difference at all, and the smaller one leans higher on three patients.</li>
+    <li><strong>Do not read the raw totals.</strong> Added together, the groups show 18.5% against 12.3%, but that gap comes from mixing two cohorts with different rates and different shares of relapse samples. The comparison that counts is within each cohort, as planned.</li>
+    <li><strong>Not underpowered by the rule set in advance</strong> (the smaller group has 130 patients, above the 100 required), but still too small to settle a modest difference. About 500 patients per group would be needed to detect an odds ratio of 1.5.</li>
+    </ul>
+    <p><strong>How common the deletion is at relapse</strong> (descriptive, three cohorts):</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Gene</th>
+    <th>Metastatic or relapsed patients with deep deletion</th>
+    <th>Share (95% CI)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>CDKN2A</td>
+    <td>35 of 179 (21 of 107 MSK-IMPACT, 3 of 23 OrigiMed, 11 of 49 MAPPYACTS)</td>
+    <td>19.6% (14.4–26.0%)</td>
+    </tr>
+    <tr>
+    <td>MTAP, measured directly</td>
+    <td>2 of 15 (MSK-IMPACT patients on the newest test only)</td>
+    <td>13% (4–38%)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <ul>
+    <li><strong>MTAP is hardly measured.</strong> OrigiMed and MAPPYACTS do not report MTAP, and at Memorial Sloan Kettering only the newest version of the test covers it: 24 patients, 15 of them in the relapse group.</li>
+    <li><strong>How often MTAP goes with CDKN2A.</strong> Where both were measured, MTAP was deleted in 14 of 19 tumours with CDKN2A deletion (74%): 3 of 5 at Memorial Sloan Kettering, 8 of 10 in TARGET-OS and 3 of 4 in the PCAWG whole-genome set. No tumour had lost MTAP without CDKN2A.</li>
+    <li><strong>A rough estimate, not a measurement:</strong> 20% with CDKN2A deletion, times 74% of those also missing MTAP, gives about 14% of relapsed patients, or one in seven, with a plausible range of 7% to 23%.</li>
+    </ul>
+    <h2 id="checks">Checks</h2>
+    <ul>
+    <li><strong>Same patient, two samples.</strong> Thirty Memorial Sloan Kettering patients had both a primary tumour and a later metastasis or recurrence tested. Twenty-three had no deletion in either, five had it in both, one gained it and one lost it. Agreement was 28 of 30.</li>
+    <li><strong>Tumour purity</strong> did not differ between groups (median 50% against 50% at Memorial Sloan Kettering, 65% against 60% at OrigiMed), and adjusting for it changed nothing.</li>
+    <li><strong>Is CDKN2A special?</strong> Deep deletions in general were not called more often in relapse samples. At Memorial Sloan Kettering 40% of relapse-group patients had any deep deletion against 54% of the primary group. Among the other genes deleted in more than 3% of patients, none differed between groups: RB1 0.73 (0.33–1.65), TP53 0.64 (0.26–1.54), PTEN 0.88 (0.29–2.66).</li>
+    <li><strong>Distant metastases only:</strong> 1.08 (0.57–2.08). <strong>Lung metastases only</strong> (Memorial Sloan Kettering): 11 of 66 against 19 of 90, 0.75 (0.33–1.70). <strong>Local recurrences only:</strong> 2 of 15, too few to say.</li>
+    <li><strong>Counting every sample</strong> instead of one per patient: 1.12 (0.64–1.95).</li>
+    <li><strong>CDKN2B,</strong> the neighbouring gene: 1.14 (0.60–2.16), the same as CDKN2A.</li>
+    <li><strong>Primary tumours in two research cohorts, for reference:</strong> CDKN2A deleted in 10 of 81 in TARGET-OS (12.3%) and 4 of 42 in PCAWG (9.5%). This project's own analysis of TARGET-OS, with a different calling method, found 11 of 81 (<a href="../reports/copy-number-changes-and-the-kinase-pill-biomarker.html"><code>reports/Copy-number changes and the kinase-pill biomarker.md</code></a>).</li>
+    </ul>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>The idea that relapse enriches for 9p21 deletion is not supported, and not ruled out.</strong> The best single comparison, within one hospital, shows the same rate in both groups.</li>
+    <li><strong>About one in five relapsed osteosarcomas has lost CDKN2A,</strong> in three cohorts from three continents. That is a real group of patients.</li>
+    <li><strong>The deletion is an early, lasting event.</strong> Because primary and later samples agree, a patient's status can be read from the biopsy taken at diagnosis. A trial would not need a fresh biopsy at relapse to screen for it.</li>
+    <li><strong>The number a trial needs is missing.</strong> Whether about one in seven relapsed patients truly lack MTAP has been measured in 15 people. Closing that gap needs either the newer gene panel on stored samples or a simple MTAP stain on tissue, which is a routine pathology test (general knowledge).</li>
+    <li><strong>Not a lead yet.</strong> No one has shown that osteosarcoma cells without MTAP respond to PRMT5 inhibitors. That is a laboratory question and the next step is to look for it, not to assume it.</li>
+    <li><strong>Prediction P18</strong> is unresolved by its own rule and recorded as such.</li>
+    </ul>
+    <p><strong>Added to the Research Queue:</strong> which MTAP-selected drug trials accept osteosarcoma and at what ages (a registry search this project can do); and MTAP staining of stored relapse samples (needs a pathology partner).</p>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>Hospital sequencing is offered mostly to patients with advanced disease. The &quot;primary&quot; group here is not a sample of all patients at diagnosis; many of those patients already had, or later developed, metastases.</li>
+    <li>Deep-deletion calls from gene panels are less certain than from whole genomes, and each cohort uses its own calling method. A deletion in a sample with little tumour in it can be missed.</li>
+    <li>The two cohorts disagree in direction (I² = 32%), and the OrigiMed relapse group has 23 patients.</li>
+    <li>MAPPYACTS reports only a selected list of altered genes and no sample type; it is used for the frequency only.</li>
+    <li>The MTAP estimate multiplies two uncertain numbers and is not a measurement.</li>
+    <li>Losing the gene is not the same as losing the protein, and neither shows that a drug would work.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li><code>python3 tools/engine_cycle03_9p21.py fetch</code> downloads the data from the public cBioPortal API into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/cycle03/raw"><code>data/engine/cycle03/raw/</code></a> (a few megabytes, not stored in git). <code>python3 tools/engine_cycle03_9p21.py</code> runs the analysis in seconds.</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/results.csv"><code>data/engine/cycle03/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/summary.json"><code>data/engine/cycle03/summary.json</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/patients.csv"><code>data/engine/cycle03/patients.csv</code></a> (one row per patient, with the sample used), <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine03_9p21.svg"><code>docs/figures/engine03_9p21.svg</code></a>.</li>
+    <li>Studies: <code>msk_impact_50k_2026</code>, <code>pan_origimed_2020</code>, <code>pancan_mappyacts_2022</code>, <code>os_target_gdc</code>, <code>pancan_pcawg_2020</code>, as on cBioPortal on November 24, 2026.</li>
+    </ul>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules. After the first run, the script was corrected to treat MTAP as unmeasured in the two studies that do not report it (it had counted them as &quot;not deleted&quot;); this changed the MTAP figures only, not the verdict.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%203%20-%20is%209p21%20deletion%20more%20common%20at%20relapse.md">reports/Engine cycle 3 - is 9p21 deletion more common at relapse.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

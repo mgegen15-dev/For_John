@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#how-a-question-moves-through-the-queue">How a Question Moves Through the Queue</a></li><li class="l1"><a href="#tested">Tested</a></li><li class="l1"><a href="#next">Next</a></li><li class="l1"><a href="#needs-a-partner">Needs a Partner</a></li><li class="l1"><a href="#rules-the-engine-follows">Rules the Engine Follows</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 24, 2026 · 3 min read</p>
+    <p class="crumb">Project document · Updated November 24, 2026 · 4 min read</p>
     <h1>Research Queue</h1>
     <p><em>The For John research engine, in public. Each question is something public data or a partner laboratory can answer. Each is written down with its success and failure rules before the data are examined, then tested on patients it was not built from. Results are posted whatever they show. Last updated November 24, 2026.</em></p>
     <h2 id="how-a-question-moves-through-the-queue">How a Question Moves Through the Queue</h2>
@@ -107,6 +107,12 @@
     <td><strong>Inconclusive, both.</strong> Across six datasets (29 lung metastases, 51 primaries) CXCR4 leaned higher in lung metastases, +0.43 standard deviations (−0.05 to +0.91), but the lean disappeared once immune cells were accounted for (+0.06). CXCL12 was not lower (−0.08, −0.55 to +0.39). Lead 14 gains no support. <a href="reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html">Full result</a></td>
     <td>Nov 24, 2026</td>
     </tr>
+    <tr>
+    <td class="num">3</td>
+    <td>Are deletions of the 9p21 region (CDKN2A and MTAP) more common at relapse than in primary tumours?</td>
+    <td><strong>Inconclusive.</strong> In two hospital cohorts (130 relapse-stage patients, 211 with primary samples) the odds ratio was 1.10 (0.59–2.06). About one in five relapsed osteosarcomas carries the CDKN2A deletion (35 of 179), and in 30 patients tested twice it matched between primary and later sample in 28. MTAP itself was measured in only 24 patients. <a href="reports/engine-cycle-3-is-9p21-deletion-more-common-at-relapse.html">Full result</a></td>
+    <td>Nov 24, 2026</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="next">Next</h2>
@@ -122,17 +128,24 @@
     </thead>
     <tbody>
     <tr>
-    <td class="num">3</td>
-    <td>Are deletions of the 9p21 region (MTAP and CDKN2A) more common at relapse than at diagnosis?</td>
-    <td>If so, a drug class that targets cells missing MTAP would apply to more relapsed patients than diagnosis data suggest.</td>
-    <td>Public relapse and metastasis genomes (MSK cohorts on cBioPortal) against TARGET-OS at diagnosis</td>
-    <td>Proposed; needs access to cBioPortal</td>
-    </tr>
-    <tr>
     <td class="num">4</td>
     <td>Do osteosarcoma cells with extra copies of CCNE1 depend on PKMYT1?</td>
     <td>A tested link in other cancers that has not been checked in osteosarcoma cell lines by copy number.</td>
     <td>DepMap CRISPR screens of osteosarcoma cell lines</td>
+    <td>Proposed; DepMap blocks automated access, needs a download route</td>
+    </tr>
+    <tr>
+    <td class="num">9</td>
+    <td>Which drug trials that select patients by MTAP loss accept osteosarcoma, and from what age? (Follows cycle 3.)</td>
+    <td>If about one in seven relapsed patients lack MTAP, open trials they could join matter now.</td>
+    <td>ClinicalTrials.gov search, read against each trial's entry rules</td>
+    <td>Proposed, next to run</td>
+    </tr>
+    <tr>
+    <td class="num">10</td>
+    <td>Do osteosarcoma cell lines without MTAP depend on PRMT5 more than those with it?</td>
+    <td>The drug idea rests on this and nobody has shown it in osteosarcoma.</td>
+    <td>DepMap screens, split by MTAP status</td>
     <td>Proposed; DepMap blocks automated access, needs a download route</td>
     </tr>
     </tbody>
@@ -167,6 +180,11 @@
     <td>Is CXCR4 protein on tumour cells, not immune cells, higher in lung metastases than in the same patient's primary tumour? (Follows cycle 2, where whole-tissue RNA could not separate the two.)</td>
     <td>Stained sections of matched primary tumours and lung metastases, scored on tumour cells only, from a bone-tumour pathology archive</td>
     </tr>
+    <tr>
+    <td class="num">11</td>
+    <td>What share of relapsed osteosarcomas have lost MTAP protein? (Follows cycle 3, where the gene was measured in only 24 patients.)</td>
+    <td>MTAP staining of stored relapse or primary samples, or the newer gene panel run on them, at a sarcoma centre</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="rules-the-engine-follows">Rules the Engine Follows</h2>
@@ -181,6 +199,7 @@
     <ul>
     <li>2026-11-24: queue started. Cycle 1 (RAMP1) tested and reported inconclusive.</li>
     <li>2026-11-24: cycle 2 (CXCR4 and CXCL12 in lung metastases) tested and reported inconclusive. Question 8 added from its result. Questions 3 and 4 still wait on data access.</li>
+    <li>2026-11-24: cycle 3 (9p21 deletion at relapse) tested through cBioPortal and reported inconclusive. Questions 9, 10 and 11 added from its result.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/RESEARCH_QUEUE.md">RESEARCH_QUEUE.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>

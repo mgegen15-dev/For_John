@@ -95,6 +95,7 @@ pip install pandas
 | `tools/build_explorer_data.py` | `docs/data/explorer.json` (the evidence explorer) | none | seconds |
 | `tools/engine_cycle01_ramp1.py` | engine cycle 1: `data/engine/cycle01/results.csv`, `summary.json` and the forest plot | NCBI GEO (three series matrices and platform tables, about 200 MB); reuses the TARGET-OS files | a few minutes |
 | `tools/engine_cycle02_fetch.sh`, then `tools/engine_cycle02_cxcr4.py` | engine cycle 2: `data/engine/cycle02/results.csv`, `summary.json`, `sample_values.csv` and two forest plots | NCBI GEO (nine datasets, about 1.5 GB) | about ten minutes to download, one minute to run |
+| `tools/engine_cycle03_9p21.py` (`fetch`, then no argument) | engine cycle 3: `data/engine/cycle03/results.csv`, `summary.json`, `patients.csv` and one figure | cBioPortal public API (five studies, a few megabytes) | a minute |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:
