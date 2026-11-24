@@ -66,4 +66,35 @@ Let OR be the pooled odds ratio with its 95% confidence interval.
 
 ## Deviations
 
-*None yet.*
+Recorded November 24, 2026, after listing the 553 public studies on cBioPortal and reading only their sample descriptions (tumour type, sample type, patient identifiers, which gene panel was used). No copy-number call had been read.
+
+### 1. Studies found
+
+**Used for the verdict (sample type recorded, copy-number calls present):**
+
+| Study | Where | Osteosarcoma patients | Samples by type |
+|---|---|---|---|
+| `msk_impact_50k_2026` | Memorial Sloan Kettering, New York; hospital gene-panel test | 197 | 130 primary, 122 metastasis, 6 local recurrence |
+| `pan_origimed_2020` | OrigiMed, China; commercial gene-panel test | 144 | 121 primary, 14 metastasis, 9 recurrent |
+
+**Used for the descriptive aim only:** `pancan_mappyacts_2022` (European trial for children and young adults whose cancer had relapsed or resisted treatment; 79 osteosarcoma patients, 49 with copy-number calls). It records no sample type, so it cannot enter the comparison, but every patient had relapsed or refractory disease, so it adds to the estimate of how common the deletion is at that stage.
+
+**Shown for reference (primary tumours only):** `os_target_gdc` and `pancan_pcawg_2020`.
+
+**Not used:** five smaller Memorial Sloan Kettering studies (`msk_impact_2017`, `sarcoma_mskcc_2022`, `mixed_kunga_msk_2022`, `mycf_msk_2026`, `sarcoma_msk_2023`). Of their 220 distinct patient identifiers, 197 are in the large study above. The 23 others are spread over strata of two to eleven patients, too few for a within-study comparison, and eleven of them carry a different style of identifier, so they may be patients already counted. `pediatric_dkfz_2017`, `sarcoma_msk_2022`, `msk_ch_ped_2021`, `mixed_pipseq_2017`, `sarcoma_ucla_2024` and `metastatic_solid_tumors_mich_2017` have no copy-number calls. `pog570_bcgsc_2020` has five osteosarcoma samples and no primaries.
+
+### 2. Choosing one sample per patient
+
+Neither study gives sample dates. Memorial Sloan Kettering numbers a patient's samples in the order they were tested (T01, T02 and so on), so the highest-numbered metastasis or recurrence sample is taken as the most recent. "Local recurrence" and "recurrent" samples count as relapse.
+
+### 3. MTAP coverage
+
+At Memorial Sloan Kettering only the newest version of the test (505 genes) covers MTAP; the three earlier versions do not. The MTAP figures therefore use only samples run on that version, or on any test that reports MTAP. CDKN2A and CDKN2B are on every version.
+
+### 4. Tumour purity
+
+Both studies record the pathologist's estimate of tumour content (`TUMOR_PURITY`; spelled `TUMOR_PURTITY` in the OrigiMed study). That field is used for the purity adjustment. Samples without it are left out of the adjusted analysis only.
+
+### 5. Prediction recorded before the data
+
+P18 in `PREDICTIONS.md`: 30% that H1 is supported.
