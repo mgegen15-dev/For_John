@@ -74,4 +74,45 @@ For **H2 (CXCL12 lower in metastases)** the same rules apply with the sign rever
 
 ## Deviations
 
-*None yet.*
+Recorded November 24, 2026, after the dataset search and after reading only sample descriptions, series designs and the papers' methods. No expression value had been read and no model had been run.
+
+### 1. Datasets found
+
+Two GEO searches were run (osteosarcoma with metastasis or lung terms, 186 series; osteosarcoma with single-cell terms, 52 series).
+
+**Primary analysis: lung metastasis confirmed per sample.**
+
+| Dataset | Type | Primary tumours | Lung metastases | Notes |
+|---|---|---|---|---|
+| GSE14359 | Affymetrix U133A array | 5 patients | 4 patients | Each tumour run on two arrays; the two are averaged. Different patients. |
+| GSE220538 | Bulk RNA sequencing | 19 patients | 9 patients | See point 2. |
+| GSE140131 | Bulk RNA sequencing | 7 patients | 2 patients | A scapula metastasis and the circulating-tumour-cell samples are excluded. |
+| GSE293065 | Spatial transcriptomics (Visium) | 9 sections | 12 sections | See point 3. Local relapses, a lymph-node and a heart metastasis are excluded. |
+| GSE152048 | Single-cell RNA sequencing | 7 lesions (BC2, BC3, BC5, BC6, BC16, BC21, BC22) | 2 lesions (BC10, BC17) | Lesion types from the paper (PMID 33303760); the two recurrent lesions (BC11, BC20) are excluded. |
+| GSE318840 | Single-cell RNA sequencing | 4 bone tumours (2 untreated, 2 after chemotherapy) | 2 | The two soft-tissue recurrences are excluded. |
+
+Expected lung-metastasis patients in the primary analysis: about 29 to 31, above the 20 set for adequate power.
+
+**Sensitivity analysis only: metastasis site not recorded per sample.** The hypothesis is about the lung, and these public records label samples "metastasis" without the site. They are reported separately and do not enter the verdicts.
+
+- GSE32981 (array; 12 primaries, 11 metastases). The paper (PMID 22518090) says most were pulmonary but at least one was skeletal and two patients had both.
+- GSE237033 (bulk RNA sequencing; 7 patients with primary, recurrence and metastasis samples).
+- GSE87624 (bulk RNA sequencing; 24 primaries, 9 metastases).
+
+**Excluded:** GSE73166 (its three non-metastatic osteosarcoma samples are one patient's recurrences, so there is no primary group); GSE85537, GSE179681, GSE234998, GSE36001 and GSE74230 RNA (cultured cells, cell lines or xenografts); GSE74230 tumour samples (chromatin data, not RNA); GSE198896 (sorted immune cells only); GSE9508, GSE162454, GSE299023 and GSE342958 (primary tumours only); GSE270231 and GSE234187 (lung metastases only); GSE237070 (primary tumours, lymph nodes and adjacent tissue).
+
+### 2. GSE220538: repeated samples and the four matched patients
+
+Several patients have more than one sample (biopsy, resection, and for one patient two lung metastases), and four patients (06, 07, 23, 29) have both a primary tumour and a lung metastasis. Fixed now: samples are averaged within patient and tissue type so each patient counts once per group. For the primary analysis the four matched patients contribute their lung metastasis only, so the two groups are independent people (9 lung metastases, 19 primaries). The four matched pairs are reported as a paired comparison in the secondary analyses. One sample (OS-06-R(M)) carries the tissue label "metastatic tumor, lung" but a resection code used for primary tumours, and the series design counts 28 primaries and 10 metastases, which only fits if it is a primary; it is treated as patient 06's primary tumour.
+
+### 3. Spatial transcriptomics added as a data type
+
+The plan listed arrays, bulk and single-cell RNA sequencing. GSE293065 is spatial transcriptomics from patient tumour sections, which is RNA from the same kind of tissue, so it is included as pseudobulk (all tissue spots per section summed), like the single-cell datasets. Sections labelled A and B from the same lesion (MR10, MR11) are averaged. It gets no tumour-only analysis: a spot holds several cells, so tumour and surrounding cells cannot be separated cleanly.
+
+### 4. How single-cell tumour cells are identified
+
+Fixed now, before the data are read. A cell is called immune if it has any PTPRC count; endothelial if PECAM1 or VWF; lung epithelial if EPCAM, SFTPC, SFTPB or AGER; osteoclast if both ACP5 and CTSK with PTPRC or CD68. A cell is called an osteosarcoma cell if it is none of these and has counts for at least two of COL1A1, COL1A2, RUNX2, SPP1, IBSP, ALPL, SOX9, COL2A1 and ACAN (the last three so that chondroblastic tumours are not lost). This cannot tell tumour cells from normal fibroblasts or osteoblasts, which is stated as a limit. Per sample, a gene's value is its total count in those cells per million total counts in those cells, log2(x+1). Samples with fewer than 50 such cells are dropped from the tumour-cell analysis.
+
+### 5. Predictions recorded before the data
+
+P16 and P17 in `PREDICTIONS.md`: 40% that H1 (CXCR4 higher) is supported, 45% that H2 (CXCL12 lower) is supported.

@@ -25,6 +25,8 @@
 | P13 | More papers in the high paper-mill-risk group of genes will be retracted over the next three years than in the typical-risk group, relative to their size | Over 2027–2029, retraction rates in the two groups are similar | PubMed retraction status, re-run of `tools/paper_mill_flag.py` in 2029 | 80% | Open |
 | P14 | In dogs from NCI's COTC021/022 trials, the genome-shattering pattern described in human osteosarcoma (loss-translocation-amplification chromothripsis) is present in a substantial share of tumours | Re-analysis of the deep tumour–normal genomes finds the pattern in fewer than 10% of dogs | Re-analysis (lead 12) | 55% | Open |
 | P15 | In patients outside TARGET-OS, higher tumour RAMP1 RNA at diagnosis predicts shorter time to relapse or metastasis (pooled hazard ratio of at least 1.3 per SD, lower 95% bound above 1) | The pooled hazard ratio's upper 95% bound falls below 1.3 | Public GEO osteosarcoma cohorts; engine cycle 1, pre-registered in `research_notes/Engine/cycle-01-ramp1/PREREGISTRATION.md`; result due within days | 35% | Unresolved (see Outcomes) |
+| P16 | Osteosarcoma lung metastases carry more CXCR4 RNA than primary tumours (pooled difference of at least half a standard deviation, lower 95% bound above 0, direction holding after adjusting for lung and immune tissue) | The pooled difference's upper 95% bound falls below half a standard deviation | Public GEO datasets with primary tumours and lung metastases; engine cycle 2, pre-registered in `research_notes/Engine/cycle-02-cxcr4/PREREGISTRATION.md`; result due within days | 40% | Open |
+| P17 | Osteosarcoma lung metastases carry less CXCL12 RNA than primary tumours (same thresholds, opposite sign) | The pooled difference's lower 95% bound is above minus half a standard deviation | Same as P16 | 45% | Open |
 
 ## Outcomes
 
@@ -38,4 +40,4 @@
 |---|---|---|---|
 | 0 | 0 | 0 | 15 |
 
-*Change log:* 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day.
+*Change log:* 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened.
