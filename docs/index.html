@@ -32,7 +32,7 @@ section { padding: 96px 0; }
 section.paper { background: var(--paper); }
 section.pale { background: var(--band); }
 h2 { font-size: 36px; line-height: 44px; }
-.sec-intro { max-width: 680px; margin: 16px 0 0; color: var(--ink-2); }
+.sec-intro { max-width: 580px; margin: 16px 0 0; color: var(--ink-2); }
 .more { margin: 32px 0 0; font-size: 16px; }
 .more a { margin-right: 24px; font-weight: 500; }
 
@@ -44,6 +44,7 @@ h2 { font-size: 36px; line-height: 44px; }
 .dedication { font-family: var(--serif); font-weight: 300; font-size: 22px; line-height: 30px; color: var(--gold); margin: 24px 0 0; }
 .lede { font-size: 20px; line-height: 31px; color: var(--on-navy-2); margin: 24px 0 0; max-width: 620px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+.status { color: var(--on-navy-2); margin: 24px 0 0; max-width: 620px; }
 .hero-figure { margin: 0; }
 .hero-figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
 .hero-figure figcaption { font-size: 14.5px; line-height: 22px; color: var(--on-navy-2); margin-top: 12px; }
@@ -62,7 +63,7 @@ h2 { font-size: 36px; line-height: 44px; }
 .tag { margin: 6px 0 0; font-family: var(--mono); font-size: 13px; line-height: 18px; color: var(--ink-2); }
 .confirmed .tag { color: var(--ink-confirmed); } .lead .tag { color: var(--ink-lead); } .hypothesis .tag { color: var(--ink-hypothesis); }
 h3 { font: 500 22px/30px var(--sans); margin: 0; letter-spacing: -0.005em; }
-.finding p { margin: 8px 0 0; max-width: 720px; }
+.finding p { margin: 8px 0 0; max-width: 560px; }
 .finding .src { font-size: 15px; line-height: 22px; }
 .key { display: flex; flex-wrap: wrap; gap: 8px 32px; list-style: none; margin: 24px 0 0; padding: 0; font-size: 15px; line-height: 22px; color: var(--ink-2); }
 .key b { font-family: var(--mono); font-weight: 500; font-size: 13px; }
@@ -147,7 +148,6 @@ ol.asks strong { font-weight: 500; }
       <a href="explorer.html">Evidence Explorer</a>
       <a href="how-this-was-made.html">Methods</a>
     </nav>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
     <a class="btn btn-gold" href="audit-guide.html">Review This Work</a>
   </div>
 </header>
@@ -172,6 +172,7 @@ ol.asks strong { font-weight: 500; }
       <a class="btn btn-gold" href="summary.html">Read the Summary</a>
       <a class="btn btn-line" href="reports/ranked-leads-and-research-partners.html">See the Ranked Leads</a>
     </div>
+    <p class="status mono">Version 1.0 · Updated November 23, 2026 · Open data and code · Not yet peer-reviewed · Not medical advice</p>
   </div>
   <!-- First-screen image. To use a photograph, save it as docs/john.jpg and set HERO_PHOTO in the script below. -->
   <figure class="hero-figure" id="heroFigure"></figure>
@@ -264,7 +265,7 @@ ol.asks strong { font-weight: 500; }
 <footer class="site">
  <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
-  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 
@@ -487,12 +488,19 @@ function renderTable() {
   let saved = null;
   try { saved = localStorage.getItem("forjohn-theme"); } catch (e) {}
   if (saved) document.documentElement.setAttribute("data-theme", saved);
+  function setLabel() {
+    const dark = (document.documentElement.getAttribute("data-theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  setLabel();
   btn.addEventListener("click", () => {
     const cur = document.documentElement.getAttribute("data-theme") ||
       (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     const next = cur === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    setLabel();
     renderChart();
   });
 })();
@@ -512,7 +520,7 @@ renderTable();
   panel.appendChild(document.getElementById("chartCard"));
   fig.appendChild(panel);
   const cap = el("figcaption");
-  cap.appendChild(document.createTextNode("One finding from the pooled trial record. "));
+  cap.appendChild(document.createTextNode("In relapse, these pills keep roughly 40 to 50% of patients free of progression at four months, against about 14% for other single drugs, but the effect fades. "));
   cap.appendChild(el("a", { href: "reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html", style: "color:inherit" }, "Read the full analysis"));
   fig.appendChild(cap);
   document.getElementById("pills").hidden = true;

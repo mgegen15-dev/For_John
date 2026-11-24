@@ -37,7 +37,6 @@
       <a href="../explorer.html">Evidence Explorer</a>
       <a href="../how-this-was-made.html">Methods</a>
     </nav>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
     <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
   </div>
 </header>
@@ -45,11 +44,11 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-the-sra-holds">What the SRA Holds</a></li><li class="l1"><a href="#project-by-project">Project by Project</a></li><li class="l1"><a href="#why-it-cant-be-done-in-this-workspace">Why It Can't Be Done in This Workspace</a></li><li class="l1"><a href="#what-it-would-take">What It Would Take</a></li><li class="l1"><a href="#recommended-next-step">Recommended Next Step</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Dog%20genome%20re-analysis%20scope.md">reports/Dog genome re-analysis scope.md</a></p>
+    <p class="crumb">Report · Updated November 20, 2026 · 6 min read</p>
     <h1>Dog Genome Re-Analysis: What&#x27;s Available and What It Would Take</h1>
-    <p><em>Lead 12 of <code>reports/Ranked leads and research partners.md</code>. Scoped on November 14, 2026 from NCBI's Sequence Read Archive (SRA) and BioProject databases through E-utilities. No genomes have been analysed yet.</em></p>
+    <p><em>Lead 12 of <a href="../reports/ranked-leads-and-research-partners.html"><code>reports/Ranked leads and research partners.md</code></a>. Scoped on November 14, 2026 from NCBI's Sequence Read Archive (SRA) and BioProject databases through E-utilities. No genomes have been analysed yet.</em></p>
     <h2 id="summary">Summary</h2>
-    <p>Far more open genome data from pet dogs with osteosarcoma exists than the project first assumed (24 genomes). By our count, about <strong>91 dogs have deep whole-genome sequencing of both tumour and normal tissue</strong> in the SRA, and about 230 more dogs (about 227 by the table below) have shallow tumour-only genomes, mostly from trials. The most valuable set is new: deep tumour–normal genomes from 55 dogs enrolled in the <strong>NCI Comparative Oncology Trials Consortium studies COTC021 and COTC022</strong>, a randomized trial with recorded outcomes, so their genomes could in principle be linked to how long each dog lived. That turns the lead from "is the genome-shattering pattern recently described in human osteosarcoma present in dogs?" into a better question: <strong>does it predict outcome in dogs, as genome-wide loss of heterozygosity does in people?</strong> If it does, dogs become a validated model for testing drugs aimed at that biology.</p>
+    <p>Far more open genome data from pet dogs with osteosarcoma exists than the project first assumed (24 genomes). By our count, about <strong>91 dogs have deep whole-genome sequencing of both tumour and normal tissue</strong> in the SRA, and about 230 more dogs (about 227 by the table below) have shallow tumour-only genomes, mostly from trials. The most valuable set is new: deep tumour–normal genomes from 55 dogs enrolled in the <strong>NCI Comparative Oncology Trials Consortium studies COTC021 and COTC022</strong>, a randomized trial with recorded outcomes, so their genomes could in principle be linked to how long each dog lived. That turns the lead from &quot;is the genome-shattering pattern recently described in human osteosarcoma present in dogs?&quot; into a better question: <strong>does it predict outcome in dogs, as genome-wide loss of heterozygosity does in people?</strong> If it does, dogs become a validated model for testing drugs aimed at that biology.</p>
     <p><strong>How to read the labels.</strong> <strong>(registry)</strong> means taken directly from a public database record, here NCBI SRA or BioProject; <strong>(our calculation)</strong> means we derived it from those records, for example by counting distinct dogs from sample names; <strong>(paper, full text)</strong>, <strong>(paper, abstract only)</strong> and <strong>(press release only)</strong> mark figures from publications.</p>
     <h2 id="what-the-sra-holds">What the SRA Holds</h2>
     <p>A search for dog (<em>Canis lupus familiaris</em>) records mentioning osteosarcoma with whole-genome sequencing as the strategy returns <strong>743 sequencing experiments (747 runs, 39.4 trillion bases)</strong> across ten projects (registry). These are runs, not dogs, and they mix very different kinds of data:</p>
@@ -66,29 +65,29 @@
     <tbody>
     <tr>
     <td>Deep tumour + matched normal WGS</td>
-    <td>220</td>
+    <td class="num">220</td>
     <td>~91</td>
     <td>~33.7 Tbases</td>
     <td>Structural variants, chromothripsis, LOH</td>
     </tr>
     <tr>
     <td>Shallow tumour-only WGS (~2–7x)</td>
-    <td>227</td>
+    <td class="num">227</td>
     <td>~227</td>
     <td>~3.4 Tbases</td>
     <td>Copy number only</td>
     </tr>
     <tr>
     <td>Ultra-low-pass plasma cell-free DNA and blood</td>
-    <td>289</td>
+    <td class="num">289</td>
     <td>not counted</td>
     <td>0.3 Tbases</td>
     <td>Liquid biopsy</td>
     </tr>
     <tr>
     <td>Cell lines</td>
-    <td>11</td>
-    <td>n/a</td>
+    <td class="num">11</td>
+    <td class="num">n/a</td>
     <td>~2.0 Tbases</td>
     <td>Laboratory models</td>
     </tr>
@@ -108,25 +107,25 @@
     <tbody>
     <tr>
     <td>PRJNA1374203</td>
-    <td>110</td>
+    <td class="num">110</td>
     <td>17.5 Tbases</td>
     <td><strong>55 tumour–normal pairs</strong> from COTC021/022 trial dogs, sampled at amputation; about 66x per run; registered December 2025</td>
     </tr>
     <tr>
     <td>PRJNA525883</td>
-    <td>90</td>
+    <td class="num">90</td>
     <td>11.5 Tbases</td>
     <td>Tumour–normal WGS (and exome and RNA data) from a 2019 cohort, probably Gardner et al., <em>Commun Biol</em> 2019 (NCBI does not link the paper). <strong>24 dogs</strong> have deep tumour and normal genomes plus a lower-depth tumour replicate; 18 further runs are shallow tumour-only</td>
     </tr>
     <tr>
     <td>PRJNA1367604</td>
-    <td>209</td>
+    <td class="num">209</td>
     <td>3.4 Tbases</td>
     <td><strong>Tumour-only</strong> WGS from 209 dogs in COTC021, 022, 026 and 030, about 16 Gbases per run (roughly 6–7x). Good for copy number, weak for structural-variant calling without normals. None of these dogs is in PRJNA1374203</td>
     </tr>
     <tr>
     <td>PRJNA1154710</td>
-    <td>16</td>
+    <td class="num">16</td>
     <td>3.5 Tbases</td>
     <td>Tumour–normal pairs from <strong>8 dogs with mandibular (jaw) osteosarcoma</strong></td>
     </tr>
@@ -138,19 +137,19 @@
     </tr>
     <tr>
     <td>PRJNA680382</td>
-    <td>6</td>
+    <td class="num">6</td>
     <td>0.6 Tbases</td>
     <td>Primary tumour, lung metastasis and normal from <strong>2 dogs</strong> (project also has exome and RNA-seq)</td>
     </tr>
     <tr>
     <td>PRJNA777126</td>
-    <td>8</td>
+    <td class="num">8</td>
     <td>1.2 Tbases</td>
     <td>Canine osteosarcoma cell lines</td>
     </tr>
     <tr>
     <td>PRJNA1469753</td>
-    <td>3</td>
+    <td class="num">3</td>
     <td>0.8 Tbases</td>
     <td>Cell lines, from a 2026 palbociclib study</td>
     </tr>
@@ -180,15 +179,18 @@
     <h2 id="change-log">Change Log</h2>
     <ul>
     <li><strong>November 13–14, 2026:</strong> first version.</li>
-    <li><strong>November 14, 2026, after an independent audit, with a fresh NCBI E-utilities query:</strong></li>
-    <li>The headline "743 whole-genome sequencing runs ... instead of 24 genomes" compared runs with dogs. It now separates deep tumour–normal, shallow tumour-only, cell-free DNA and cell-line data, and counts dogs: about 91 dogs have deep tumour–normal genomes.</li>
+    <li><strong>November 14, 2026, after an independent audit, with a fresh NCBI E-utilities query:</strong>
+    <ul>
+    <li>The headline &quot;743 whole-genome sequencing runs ... instead of 24 genomes&quot; compared runs with dogs. It now separates deep tumour–normal, shallow tumour-only, cell-free DNA and cell-line data, and counts dogs: about 91 dogs have deep tumour–normal genomes.</li>
     <li>The 743 figure is SRA experiments (747 runs). Three runs from a 2026 cell-line project (PRJNA1469753) were missing from the table and are now listed.</li>
-    <li>PRJNA1154710 is mandibular (jaw) osteosarcoma, not "spine and skull".</li>
+    <li>PRJNA1154710 is mandibular (jaw) osteosarcoma, not &quot;spine and skull&quot;.</li>
     <li>PRJNA247491 is 16 runs and 0.74 Tbases from 2 dogs, not 12 runs and 0.6 Tbases.</li>
-    <li>PRJNA1367604 is tumour-only at about 6–7x; the earlier note that run counts "include both tumour and matched normal samples" held only for some projects.</li>
-    <li>The deep tumour–normal data volume is about 33 Tbases, not "almost 40" (39.4 is all runs).</li>
+    <li>PRJNA1367604 is tumour-only at about 6–7x; the earlier note that run counts &quot;include both tumour and matched normal samples&quot; held only for some projects.</li>
+    <li>The deep tumour–normal data volume is about 33 Tbases, not &quot;almost 40&quot; (39.4 is all runs).</li>
     <li>Lead numbers updated: dog genomes are lead 11 (was 7) and ctDNA is lead 7 (was 6, then briefly 8).</li>
     <li>The loss-of-heterozygosity claim now cites its source (PMID 39814020) and says it was a paediatric and adult cohort.</li>
+    </ul>
+    </li>
     <li><strong>November 20, 2026.</strong> Lead numbers updated after the ranked leads were re-ranked (lead 5 split into LRRC15 and PTK7): dog genomes are now lead 12 (was 11) and ctDNA is lead 8 (was 7). The ctDNA reference in the liquid-biopsy paragraph had said lead 8 while ctDNA was lead 7; under the new numbering it is correct. Summary counts now match the table: about 91 deep tumour–normal dogs and about 230 (table: ~227) shallow tumour-only dogs.</li>
     </ul>
     <hr>
@@ -199,7 +201,7 @@
 <footer class="site">
  <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
-  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 
@@ -213,7 +215,14 @@
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
   });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {
     var links = Array.prototype.slice.call(toc.querySelectorAll("a"));

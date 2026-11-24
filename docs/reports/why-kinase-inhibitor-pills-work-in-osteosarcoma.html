@@ -37,7 +37,6 @@
       <a href="../explorer.html">Evidence Explorer</a>
       <a href="../how-this-was-made.html">Methods</a>
     </nav>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
     <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
   </div>
 </header>
@@ -45,9 +44,9 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#the-evidence-in-one-table">The Evidence in One Table</a></li><li class="l1"><a href="#1-why-they-work-which-kinase-matters">1. Why They Work: Which Kinase Matters</a></li><li class="l1"><a href="#2-who-responds">2. Who Responds</a></li><li class="l1"><a href="#3-why-the-benefit-does-not-last">3. Why the Benefit Does Not Last</a></li><li class="l1"><a href="#4-combinations">4. Combinations</a></li><li class="l1"><a href="#5-why-they-are-not-standard-care">5. Why They Are Not Standard Care</a></li><li class="l1"><a href="#6-the-best-testable-idea">6. The Best Testable Idea</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#next-steps">Next Steps</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Why%20kinase-inhibitor%20pills%20work%20in%20osteosarcoma.md">reports/Why kinase-inhibitor pills work in osteosarcoma.md</a></p>
+    <p class="crumb">Report · Updated November 20, 2026 · 22 min read</p>
     <h1>Why VEGFR2-Blocking Kinase-Inhibitor Pills Work in Osteosarcoma, and Why They Are Not Yet Standard</h1>
-    <p><em>Built from trial papers (full text where open access), ClinicalTrials.gov records and preclinical studies. Last revised November 14, 2026, after an independent audit; updated November 19, 2026 (MYC, CabOSTar results, new resected-relapse benchmark; see the change log). Working notes with every source: <code>research_notes/Kinase inhibitors/notes.md</code>. Uses the same figures as the pooled control dataset (<code>reports/Osteosarcoma pooled control dataset.md</code>) and the trials landscape report.</em></p>
+    <p><em>Built from trial papers (full text where open access), ClinicalTrials.gov records and preclinical studies. Last revised November 14, 2026, after an independent audit; updated November 19, 2026 (MYC, CabOSTar results, new resected-relapse benchmark; see the change log). Working notes with every source: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Kinase%20inhibitors/notes.md"><code>research_notes/Kinase inhibitors/notes.md</code></a>. Uses the same figures as the pooled control dataset (<a href="../reports/osteosarcoma-pooled-control-dataset.html"><code>reports/Osteosarcoma pooled control dataset.md</code></a>) and the trials landscape report.</em></p>
     <h2 id="summary">Summary</h2>
     <p>Oral kinase inhibitors that block VEGFR2, the main receptor for the blood-vessel growth signal VEGF, are the most consistently active drugs in relapsed osteosarcoma, with the best evidence for regorafenib, cabozantinib, sorafenib, apatinib and lenvatinib; kinase inhibitors that do not block VEGFR2, such as imatinib, dasatinib and alisertib, have not worked. The effect looks mainly anti-vascular: lung metastases turn necrotic and hollow out, and PET scans dim within four weeks. The benefit is real but brief: in the cabozantinib trial CABONE, 33% of patients were free of progression at 6 months by the trial's own primary endpoint, and only 9.5% at 12 months by Kaplan–Meier estimate. No randomized trial has shown longer survival, and no test can yet say who will benefit. Between about one tumour in four (23.5%) and nearly half (46.9%) carry extra copies of VEGF-pathway genes, depending on the definition (81 TARGET-OS tumours at diagnosis; our calculation), and a US cancer-centre cohort reports at least 40%; but no clinical study we found has checked whether those patients respond better. That check can be done with samples that already exist, and it is the single most useful next step.</p>
     <p><strong>How to read the labels.</strong> After each key number we say where it comes from:</p>
@@ -60,7 +59,7 @@
     <li><strong>(preprint, abstract only)</strong>: read only in the abstract of a preprint, which has not been peer-reviewed.</li>
     </ul>
     <h2 id="the-evidence-in-one-table">The Evidence in One Table</h2>
-    <p>Relapsed, measurable osteosarcoma. "PFS" means progression-free survival; "OS" means overall survival; "IE" means ifosfamide plus etoposide, the usual relapse chemotherapy.</p>
+    <p>Relapsed, measurable osteosarcoma. &quot;PFS&quot; means progression-free survival; &quot;OS&quot; means overall survival; &quot;IE&quot; means ifosfamide plus etoposide, the usual relapse chemotherapy.</p>
     <p><strong>VEGFR2-blocking pills:</strong></p>
     <div class="tablewrap"><table>
     <thead>
@@ -76,70 +75,70 @@
     <tr>
     <td>Regorafenib vs placebo</td>
     <td>SARC024 (randomized)</td>
-    <td>42</td>
+    <td class="num">42</td>
     <td>Median PFS 3.6 vs 1.7 months, HR 0.42 (paper, abstract only); no OS difference shown, with crossover allowed</td>
     <td>PMID 31013172</td>
     </tr>
     <tr>
     <td>Regorafenib vs placebo</td>
     <td>REGOBONE (randomized 2:1)</td>
-    <td>38</td>
+    <td class="num">38</td>
     <td>Non-progressive at 8 weeks: 65% (17 of 26) vs 0% (0 of 12) (paper, abstract only)</td>
     <td>PMID 30477937</td>
     </tr>
     <tr>
     <td>Cabozantinib</td>
     <td>CABONE</td>
-    <td>42</td>
+    <td class="num">42</td>
     <td>Primary endpoint: 33% (14 of 42) free of progression at 6 months (paper, abstract only; same in registry). Kaplan–Meier PFS 71% at 4 months, 52% at 6 and <strong>9.5% at 12</strong>. Median OS 10.6 months; 12% (5 of 42) partial responses (paper, full text)</td>
     <td>PMID 32078813; PMC8763616</td>
     </tr>
     <tr>
     <td>Cabozantinib, ages 2–30</td>
     <td>COG ADVL1622</td>
-    <td>29</td>
+    <td class="num">29</td>
     <td>Response or disease control over six cycles 35%; PFS at 1 year 14.7%; OS at 1 year 35.9% (registry). We found no peer-reviewed paper</td>
     <td>NCT02867592</td>
     </tr>
     <tr>
     <td>Apatinib</td>
     <td>Peking University phase 2, ages 16 and older, one centre</td>
-    <td>37</td>
+    <td class="num">37</td>
     <td>4-month PFS 57%; response rate 43%, investigator-assessed and including unconfirmed responses; median PFS 4.5 months (paper, abstract only)</td>
     <td>PMID 30559126</td>
     </tr>
     <tr>
     <td>Sorafenib</td>
     <td>Italian Sarcoma Group</td>
-    <td>35</td>
+    <td class="num">35</td>
     <td>4-month PFS 46%; median PFS 4 months (paper, abstract only)</td>
     <td>PMID 21527590</td>
     </tr>
     <tr>
     <td>Lenvatinib</td>
     <td>ITCC-050</td>
-    <td>31</td>
+    <td class="num">31</td>
     <td>4-month PFS 29% by simple count, 38% by Kaplan–Meier (paper, full text); 32% in 28 patients in the registry; median PFS 3.0 months</td>
     <td>PMID 34562750</td>
     </tr>
     <tr>
     <td>Anlotinib</td>
     <td>Chinese bone-tumour trial, osteosarcoma subgroup</td>
-    <td>29</td>
+    <td class="num">29</td>
     <td>3-month PFS 76%; median PFS 4.8 months (paper, full text)</td>
     <td>PMID 35692789</td>
     </tr>
     <tr>
     <td>Lenvatinib + IE vs IE</td>
     <td>OLIE (randomized)</td>
-    <td>81</td>
+    <td class="num">81</td>
     <td>PFS 6.5 vs 5.5 months, HR 0.54, not significant. OS 11.9 vs 17.4 months (HR 1.28) at the primary analysis; HR 0.93 at the final analysis (paper, full text)</td>
     <td>PMC11581622</td>
     </tr>
     <tr>
     <td>Apatinib + IE vs IE</td>
     <td>OAIE (randomized 2:1, China)</td>
-    <td>81</td>
+    <td class="num">81</td>
     <td>PFS 5.5 vs 3.4 months, HR 0.60; OS 18.1 vs 22.9 months, HR 1.48 (paper, full text). The control arm received more chemotherapy (see below)</td>
     <td>PMC12647724</td>
     </tr>
@@ -160,21 +159,21 @@
     <tr>
     <td>Pazopanib</td>
     <td>City of Hope lung-metastasis phase 2</td>
-    <td>8</td>
+    <td class="num">8</td>
     <td>3 of 8 met a composite 4-month endpoint; stopped early (paper, abstract only)</td>
     <td>PMID 35075361</td>
     </tr>
     <tr>
     <td>Pazopanib + oral topotecan</td>
     <td>PAZOTOP</td>
-    <td>28</td>
+    <td class="num">28</td>
     <td>69.6% progression-free at 12 weeks (paper, abstract only); includes chemotherapy</td>
     <td>PMID 34050255</td>
     </tr>
     <tr>
     <td>Sunitinib + nivolumab</td>
     <td>IMMUNOSARC bone cohort</td>
-    <td>17</td>
+    <td class="num">17</td>
     <td>Median PFS 3.5 months; 1 of 17 partial response (paper, full text). No sunitinib-alone osteosarcoma cohort found</td>
     <td>PMID 39540661</td>
     </tr>
@@ -188,14 +187,14 @@
     <tr>
     <td>Dasatinib (does not block VEGFR2)</td>
     <td>SARC009</td>
-    <td>46</td>
+    <td class="num">46</td>
     <td>10.9% progression-free at 6 months (registry)</td>
     <td>NCT00464620</td>
     </tr>
     <tr>
     <td>Alisertib (aurora kinase inhibitor)</td>
     <td>COG ADVL0921</td>
-    <td>10</td>
+    <td class="num">10</td>
     <td>0 of 10 responses (registry; paper, full text)</td>
     <td>NCT01154816</td>
     </tr>
@@ -245,7 +244,7 @@
     </tr>
     </tbody>
     </table></div>
-    <p>Together, at least 40% of patients have VEGFA or PDGFRA amplification in that cohort (paper, full text; PMID 31175097). In open TARGET-OS data from 81 patients at diagnosis, 23.5% carry a clear amplification of VEGFA, KDR, PDGFRA or KIT, and 47% by a looser threshold (our calculation; <code>reports/Copy-number changes and the kinase-pill biomarker.md</code>). In 8 patients followed through treatment, MYC gain was enriched in the drug-resistant clones that came back at relapse (6 of 7), and VEGFA amplification was also seen in such clones; relapse is the setting where the pills are tested (paper, abstract only; PMID 37812025).</p>
+    <p>Together, at least 40% of patients have VEGFA or PDGFRA amplification in that cohort (paper, full text; PMID 31175097). In open TARGET-OS data from 81 patients at diagnosis, 23.5% carry a clear amplification of VEGFA, KDR, PDGFRA or KIT, and 47% by a looser threshold (our calculation; <a href="../reports/copy-number-changes-and-the-kinase-pill-biomarker.html"><code>reports/Copy-number changes and the kinase-pill biomarker.md</code></a>). In 8 patients followed through treatment, MYC gain was enriched in the drug-resistant clones that came back at relapse (6 of 7), and VEGFA amplification was also seen in such clones; relapse is the setting where the pills are tested (paper, abstract only; PMID 37812025).</p>
     <p><strong>What the lab studies show.</strong> Most of these were read as abstracts only and were not re-checked by the audit.</p>
     <ul>
     <li><strong>Matched tumour models.</strong> A VEGFA-amplified patient-derived tumour shrank on sorafenib, twice; an unamplified one did not (Sayles 2019, PMC7134333). The authors note that VEGFR2 protein, not VEGFA protein, may be the better marker.</li>
@@ -261,7 +260,7 @@
     </ul>
     <p><strong>Immune effect: unproven.</strong> Adding a PD-1 antibody to apatinib (APFAO) did not reach its 6-month target (paper, full text; PMC7223462). A retrospective series of cabozantinib with or without checkpoint inhibitors, across all sarcomas, found no difference (PMID 43020951, abstract only). Lab work shows apatinib lowers PD-L1 on osteosarcoma cells (PMID 29225166), but no clinical immune benefit has been shown.</p>
     <h2 id="2-who-responds">2. Who Responds</h2>
-    <p>No marker has been validated. A 2024 European paper on tissue sampling states it plainly: "despite responses in up to 40% of patients, there are as yet no validated predicted biomarkers and the TKI mechanism of action remains obscure" (paper, full text; PMC11334773). The leads all come from small exploratory analyses:</p>
+    <p>No marker has been validated. A 2024 European paper on tissue sampling states it plainly: &quot;despite responses in up to 40% of patients, there are as yet no validated predicted biomarkers and the TKI mechanism of action remains obscure&quot; (paper, full text; PMC11334773). The leads all come from small exploratory analyses:</p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -318,7 +317,7 @@
     <td>Tumour VEGFA, KDR, PDGFRA, FGFR1 or MET amplification</td>
     <td><strong>Not tested in patients in any study we found.</strong> Only lab and liver-cancer evidence</td>
     <td>None in patients</td>
-    <td>—</td>
+    <td class="num">—</td>
     </tr>
     </tbody>
     </table></div>
@@ -443,21 +442,35 @@
     </ul>
     <p><strong>Rational combinations not yet tried in patients.</strong> Based on ClinicalTrials.gov searches on 14 November 2026; other registries were not searched.</p>
     <ul>
-    <li><strong>Pill + selective FGFR blocker.</strong> No trial found. Supported by the FGFR–ERK escape preprint and by FGFR1 amplification in 18.5% of poor chemotherapy responders.</li>
-    <li><strong>Pill + selective MET blocker</strong> (capmatinib, tepotinib, savolitinib). No trial found. Pazopanib + crizotinib was synergistic in cell and mouse models (PMID 38423639).</li>
-    <li><strong>Pill + FAK blocker</strong> (defactinib). No osteosarcoma trial found outside a basket study.</li>
-    <li><strong>Pill + PI3K or IL-6 receptor blockers</strong>, from the anlotinib-resistance work. No trial found.</li>
-    <li><strong>Biomarker-selected pill trial</strong> (VEGFA- or 4q12-amplified tumours). None found.</li>
-    <li><strong>Pill maintenance after complete surgical removal of a relapse.</strong> No randomized trial found. This is the setting where cures still happen, and the pooled control dataset gives ready comparators:</li>
+    <li>
+    <p><strong>Pill + selective FGFR blocker.</strong> No trial found. Supported by the FGFR–ERK escape preprint and by FGFR1 amplification in 18.5% of poor chemotherapy responders.</p>
+    </li>
+    <li>
+    <p><strong>Pill + selective MET blocker</strong> (capmatinib, tepotinib, savolitinib). No trial found. Pazopanib + crizotinib was synergistic in cell and mouse models (PMID 38423639).</p>
+    </li>
+    <li>
+    <p><strong>Pill + FAK blocker</strong> (defactinib). No osteosarcoma trial found outside a basket study.</p>
+    </li>
+    <li>
+    <p><strong>Pill + PI3K or IL-6 receptor blockers</strong>, from the anlotinib-resistance work. No trial found.</p>
+    </li>
+    <li>
+    <p><strong>Biomarker-selected pill trial</strong> (VEGFA- or 4q12-amplified tumours). None found.</p>
+    </li>
+    <li>
+    <p><strong>Pill maintenance after complete surgical removal of a relapse.</strong> No randomized trial found. This is the setting where cures still happen, and the pooled control dataset gives ready comparators:</p>
+    <ul>
     <li>the COG AOST0221 benchmark: 20% event-free at 12 months, 95% CI 10–34%, from one 42-patient trial (paper, full text);</li>
     <li>26–28% with dinutuximab or denosumab (registry);</li>
     <li>a November 2026 COG update of the AOST0221 benchmark: 22% event-free at 12 months (95% CI 15–31%) in 99 patients from three COG phase 2 trials (preprint, abstract only; doi 10.64898/2026.11.13.26368045).</li>
     </ul>
     <p>The nearest trials test maintenance after <em>first-line</em> treatment instead: FOSTER-CabOS, CabOSTar, and a French trial (NCT04055220) that randomizes regorafenib maintenance against observation.</p>
+    </li>
+    </ul>
     <h2 id="5-why-they-are-not-standard-care">5. Why They Are Not Standard Care</h2>
     <p><strong>Guidelines and labels.</strong></p>
     <ul>
-    <li><strong>US NCCN guidelines</strong> list regorafenib and sorafenib among second-line options for osteosarcoma, with cabozantinib and sorafenib + everolimus as "additional" options. This comes secondhand, from version 3.2023 as quoted in a trial protocol. We could not read the current NCCN document, and the audit could not verify it. The apatinib trial paper also says the class entered NCCN guidelines as second-line therapy (PMID 30559126).</li>
+    <li><strong>US NCCN guidelines</strong> list regorafenib and sorafenib among second-line options for osteosarcoma, with cabozantinib and sorafenib + everolimus as &quot;additional&quot; options. This comes secondhand, from version 3.2023 as quoted in a trial protocol. We could not read the current NCCN document, and the audit could not verify it. The apatinib trial paper also says the class entered NCCN guidelines as second-line therapy (PMID 30559126).</li>
     <li><strong>The 2021 European guideline</strong> (ESMO and partners, PMID 34500044) discusses cabozantinib and regorafenib. We could not read its exact recommendation grades (not verified).</li>
     <li><strong>Approvals.</strong> We found no regulatory approval of any of these drugs for osteosarcoma. Cabozantinib is FDA-approved from age 12 for thyroid and neuroendocrine cancers, so a paediatric dose exists: 40 mg under 40 kg, 60 mg above (FDA label; <a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-cabozantinib-adults-and-pediatric-patients-12-years-age-and-older-pnet-and-epnet">FDA</a>). Apatinib and anlotinib are sold mainly in China.</li>
     </ul>
@@ -495,7 +508,7 @@
     <tr>
     <td>Formulation</td>
     <td>Cabozantinib comes only as tablets (no liquid found); lenvatinib capsules can be dispersed in water or apple juice (<a href="https://drugs.com/dosage/lenvima.html">label summary</a>)</td>
-    <td>—</td>
+    <td class="num">—</td>
     </tr>
     </tbody>
     </table></div>
@@ -512,12 +525,12 @@
     <tr>
     <td>COG AOST2032 (NCT05691478)</td>
     <td>Cabozantinib added to MAP chemotherapy, then 6 months of cabozantinib alone, in newly diagnosed patients; 1,122 planned</td>
-    <td><strong>Suspended.</strong> Reason given: "Extend the observation period for current patients" (updated 27 October 2026). The dose-finding part closed in May 2025. We found no public explanation; some hospital pages still list it as recruiting</td>
+    <td><strong>Suspended.</strong> Reason given: &quot;Extend the observation period for current patients&quot; (updated 27 October 2026). The dose-finding part closed in May 2025. We found no public explanation; some hospital pages still list it as recruiting</td>
     </tr>
     <tr>
     <td>Ipsen CabOSTar (NCT06341712)</td>
     <td>Cabozantinib vs supportive care for residual disease after first-line treatment</td>
-    <td><strong>Terminated</strong> after 10 patients (November 2024 – February 2026) for recruitment problems. Results posted 29 October 2026 contain <strong>no efficacy data</strong>: every efficacy outcome says the planned analyses "were not performed as the study was terminated early"; only adverse events are reported, for 5 patients on cabozantinib and 3 on supportive care alone (registry, 19 November 2026)</td>
+    <td><strong>Terminated</strong> after 10 patients (November 2024 – February 2026) for recruitment problems. Results posted 29 October 2026 contain <strong>no efficacy data</strong>: every efficacy outcome says the planned analyses &quot;were not performed as the study was terminated early&quot;; only adverse events are reported, for 5 patients on cabozantinib and 3 on supportive care alone (registry, 19 November 2026)</td>
     </tr>
     <tr>
     <td>FOSTER-CabOS, part of the FOSTER platform (NCT07871864)</td>
@@ -561,7 +574,7 @@
     <li><strong>Use centres that routinely sequence tumours</strong> to look back at their patients who later received regorafenib or cabozantinib. For example, MSK reported the two subsets.</li>
     <li><strong>Stratify new trials</strong> by amplicon status from diagnostic tissue.</li>
     </ol>
-    <p><strong>Record MYC status as well.</strong> Any amplification test should record MYC copy number as a variable alongside VEGFA and 4q12, for three reasons. MYC (8q24) is amplified in 26 of 81 TARGET-OS tumours (32.1%; our calculation, <code>reports/Copy-number changes and the kinase-pill biomarker.md</code>). In 105 children and young adults, MYC amplification (more than 7 copies, 16% of patients) went with 3-year overall survival of 27% against 74% (adjusted HR 3.4), independent of metastatic status (paper, abstract only; <em>Cancer</em> 2025, PMID 41199591). And MYC-driven mouse osteosarcoma cells resisted cabozantinib in the laboratory (preprint, abstract only; see the resistance table). If MYC-amplified tumours do worse on a pill, or MYC amplification co-occurs with VEGFA or 4q12 amplification in some tumours, leaving it out could hide or fake a VEGFA or 4q12 effect (our inference).</p>
+    <p><strong>Record MYC status as well.</strong> Any amplification test should record MYC copy number as a variable alongside VEGFA and 4q12, for three reasons. MYC (8q24) is amplified in 26 of 81 TARGET-OS tumours (32.1%; our calculation, <a href="../reports/copy-number-changes-and-the-kinase-pill-biomarker.html"><code>reports/Copy-number changes and the kinase-pill biomarker.md</code></a>). In 105 children and young adults, MYC amplification (more than 7 copies, 16% of patients) went with 3-year overall survival of 27% against 74% (adjusted HR 3.4), independent of metastatic status (paper, abstract only; <em>Cancer</em> 2025, PMID 41199591). And MYC-driven mouse osteosarcoma cells resisted cabozantinib in the laboratory (preprint, abstract only; see the resistance table). If MYC-amplified tumours do worse on a pill, or MYC amplification co-occurs with VEGFA or 4q12 amplification in some tumours, leaving it out could hide or fake a VEGFA or 4q12 effect (our inference).</p>
     <p><strong>What would disprove it.</strong> Either of these:</p>
     <ul>
     <li>among 100 or more pooled patients treated with a pill, a hazard ratio of 0.8 or above for amplified against non-amplified tumours;</li>
@@ -579,47 +592,47 @@
     <li><strong>Several sources were read only as abstracts.</strong> These include REGOBONE, SARC024, the sorafenib trials and most lab studies, and each is labelled above. Most preclinical papers were not re-checked by the audit. The Europe PMC full-text service returned errors this session; full texts came from PMC where open.</li>
     <li><strong>Guideline wording is secondhand.</strong> The NCCN and ESMO wording came from a trial-protocol quote found by web search. Protocol PDFs on cdn.clinicaltrials.gov could not be reached from this workspace.</li>
     <li><strong>AOST2032.</strong> The reason it was suspended is only the one-line registry entry; we found no public statement.</li>
-    <li><strong>Searches not done.</strong> Chinese trial registries and Chinese-language journals were not searched, so front-line apatinib or anlotinib work registered only in China may be missing. "No trial found" statements cover ClinicalTrials.gov only.</li>
+    <li><strong>Searches not done.</strong> Chinese trial registries and Chinese-language journals were not searched, so front-line apatinib or anlotinib work registered only in China may be missing. &quot;No trial found&quot; statements cover ClinicalTrials.gov only.</li>
     <li><strong>Comparisons are rough.</strong> Cross-trial comparisons mix drugs, doses, ages, endpoints and lines of therapy. Prices are cash or list prices.</li>
     <li><strong>ADVL1622.</strong> The osteosarcoma results come from registry postings; we found no peer-reviewed paper.</li>
     </ul>
     <h2 id="next-steps">Next Steps</h2>
     <ol>
     <li><strong>Ask the CABONE, REGOBONE, SARC024 and OLIE teams</strong> whether baseline tumour or plasma samples exist with copy-number data. These are Institut Bergonié, the French Sarcoma Group, SARC, and Eisai/ITCC. A pooled amplicon-versus-outcome analysis is the cheapest decisive test.</li>
-    <li><strong>Ask COG</strong> what "extend the observation period" means for AOST2032, and whether its circulating tumour DNA samples could be used for the amplicon question.</li>
-    <li><strong>Ask COG for the ADVL1622 definition of "disease control"</strong>, so the cohort can enter the pooled 4-month table.</li>
+    <li><strong>Ask COG</strong> what &quot;extend the observation period&quot; means for AOST2032, and whether its circulating tumour DNA samples could be used for the amplicon question.</li>
+    <li><strong>Ask COG for the ADVL1622 definition of &quot;disease control&quot;</strong>, so the cohort can enter the pooled 4-month table.</li>
     <li><strong>Re-read the SARC024 and REGOBONE full texts</strong> when access allows, for subgroup data.</li>
     </ol>
     <h2 id="change-log">Change Log</h2>
-    <p><strong>November 20, 2026.</strong> Audit corrections (<code>research_notes/Audit/consistency_check.md</code>, <code>research_notes/Audit/audit_E_new_reports.md</code>).</p>
+    <p><strong>November 20, 2026.</strong> Audit corrections (<a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Audit/consistency_check.md"><code>research_notes/Audit/consistency_check.md</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Audit/audit_E_new_reports.md"><code>research_notes/Audit/audit_E_new_reports.md</code></a>).</p>
     <ul>
-    <li><strong>Amplification share:</strong> "about 40%" replaced with the copy-number report's framing: 23.5% by our main definition and 46.9% by a looser one (81 TARGET-OS tumours at diagnosis), with MSK's "at least 40%" quoted as one cohort's figure (summary and section 6).</li>
-    <li><strong>Overlap:</strong> "they rarely occur together" replaced; TARGET-OS found more overlap than chance, though weakly (4 of 81, p = 0.0496).</li>
+    <li><strong>Amplification share:</strong> &quot;about 40%&quot; replaced with the copy-number report's framing: 23.5% by our main definition and 46.9% by a looser one (81 TARGET-OS tumours at diagnosis), with MSK's &quot;at least 40%&quot; quoted as one cohort's figure (summary and section 6).</li>
+    <li><strong>Overlap:</strong> &quot;they rarely occur together&quot; replaced; TARGET-OS found more overlap than chance, though weakly (4 of 81, p = 0.0496).</li>
     <li><strong>MSK (Suehara 2019) labels:</strong> now (paper, full text), PMC6825534; VEGFA given as 24% of 59 evaluable patients.</li>
     <li><strong>Relapse clones (PMID 37812025):</strong> MYC, not VEGFA, was enriched in resistant clones; VEGFA amplification was also seen.</li>
     <li><strong>Naming:</strong> title and tables now say VEGFR2-blocking throughout.</li>
     <li><strong>Trial pool for the test:</strong> ITCC-050's lenvatinib-plus-IE osteosarcoma cohorts named; about 309 pill-treated patients in all.</li>
     </ul>
-    <p><strong>November 19, 2026.</strong> Updated from the new-evidence scan (<code>reports/Whats new in osteosarcoma research.md</code>).</p>
+    <p><strong>November 19, 2026.</strong> Updated from the new-evidence scan (<a href="../reports/whats-new-in-osteosarcoma-research.html"><code>reports/Whats new in osteosarcoma research.md</code></a>).</p>
     <ul>
     <li><strong>MYC added to the amplification test (section 6) and to the resistance table:</strong> 32.1% of TARGET-OS tumours amplified (our calculation, copy-number report); MYC amplification predicts poor survival (Cancer 2025, PMID 41199591; paper, abstract only); MYC-driven mouse osteosarcoma lines resisted cabozantinib in vitro (bioRxiv 2026; preprint, abstract only).</li>
     <li><strong>CabOSTar:</strong> its posted results (29 October 2026) contain no efficacy data (registry).</li>
     <li><strong>Resected-relapse comparators:</strong> the COG 99-patient update (22%, 95% CI 15–31%) added beside the AOST0221 benchmark, which is kept.</li>
     <li><strong>New label (preprint, abstract only):</strong> read only in a preprint's abstract; preprints are not peer-reviewed.</li>
     </ul>
-    <p><strong>November 13–14, 2026.</strong> The report was revised after an independent audit (<code>research_notes/Audit/audit_B_trials_controls_pills.md</code>).</p>
+    <p><strong>November 13–14, 2026.</strong> The report was revised after an independent audit (<a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Audit/audit_B_trials_controls_pills.md"><code>research_notes/Audit/audit_B_trials_controls_pills.md</code></a>).</p>
     <ul>
-    <li><strong>Title and summary narrowed</strong> from "kinase-inhibitor pills" to VEGFR2-blocking kinase inhibitors. Imatinib, dasatinib and alisertib, which do not block VEGFR2, did not work. The evidence for sunitinib (only with nivolumab) and pazopanib (8 patients, or with topotecan) is thin. Both points are now in a separate table, and the claim that eight drugs form "the only class that clearly works" was removed.</li>
+    <li><strong>Title and summary narrowed</strong> from &quot;kinase-inhibitor pills&quot; to VEGFR2-blocking kinase inhibitors. Imatinib, dasatinib and alisertib, which do not block VEGFR2, did not work. The evidence for sunitinib (only with nivolumab) and pazopanib (8 patients, or with topotecan) is thin. Both points are now in a separate table, and the claim that eight drugs form &quot;the only class that clearly works&quot; was removed.</li>
     <li><strong>CABONE framing unified with the pooled report.</strong> The trial's primary endpoint (33% free of progression at 6 months) is now stated alongside the Kaplan–Meier 71% at 4 months. The pooled pill-alone rate is given as 52.5% (Kaplan–Meier) and 41.4% (primary endpoint).</li>
-    <li><strong>Survival in the randomized trials.</strong> "Overall survival was numerically shorter in both pill arms" was corrected: OLIE's final analysis gave HR 0.93 (no difference), after HR 1.28 at the primary analysis.</li>
-    <li><strong>OAIE dosing difference corrected.</strong> The control arm received IE on days 1–5, the apatinib arm on days 1–3. The earlier text said "lower ifosfamide dose given for longer".</li>
-    <li><strong>"Range 10–34%" corrected</strong> to the 95% confidence interval of one 42-patient trial (AOST0221).</li>
-    <li><strong>Apatinib's 43% response rate</strong> is now flagged as single-centre, investigator-assessed and including unconfirmed responses, and no longer called "the highest".</li>
+    <li><strong>Survival in the randomized trials.</strong> &quot;Overall survival was numerically shorter in both pill arms&quot; was corrected: OLIE's final analysis gave HR 0.93 (no difference), after HR 1.28 at the primary analysis.</li>
+    <li><strong>OAIE dosing difference corrected.</strong> The control arm received IE on days 1–5, the apatinib arm on days 1–3. The earlier text said &quot;lower ifosfamide dose given for longer&quot;.</li>
+    <li><strong>&quot;Range 10–34%&quot; corrected</strong> to the 95% confidence interval of one 42-patient trial (AOST0221).</li>
+    <li><strong>Apatinib's 43% response rate</strong> is now flagged as single-centre, investigator-assessed and including unconfirmed responses, and no longer called &quot;the highest&quot;.</li>
     <li><strong>CABONE collapsed lung.</strong> The 12 of 90 patients are now split by disease (4 osteosarcoma, 8 Ewing sarcoma). The collapsed-lung row now separates grade 3–4 from any grade.</li>
     <li><strong>FOSTER-CabOS.</strong> The 530 planned patients are now attributed to the whole FOSTER platform.</li>
     <li><strong>Unverified claims marked:</strong> NCCN and ESMO guideline wording, prices, Sayles 2019 figures and preclinical papers. The FGFR–ERK source is labelled a preprint indexed in PubMed.</li>
-    <li><strong>Absolute statements softened</strong> to "we found no…" where they rest on our own searches.</li>
-    <li><strong>Next step "add ADVL1622 and OLIE/OAIE survival to the pooled dataset"</strong> replaced; that has been done.</li>
+    <li><strong>Absolute statements softened</strong> to &quot;we found no…&quot; where they rest on our own searches.</li>
+    <li><strong>Next step &quot;add ADVL1622 and OLIE/OAIE survival to the pooled dataset&quot;</strong> replaced; that has been done.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Why%20kinase-inhibitor%20pills%20work%20in%20osteosarcoma.md">reports/Why kinase-inhibitor pills work in osteosarcoma.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
@@ -629,7 +642,7 @@
 <footer class="site">
  <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
-  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 
@@ -643,7 +656,14 @@
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
   });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {
     var links = Array.prototype.slice.call(toc.querySelectorAll("a"));

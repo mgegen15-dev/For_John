@@ -147,7 +147,7 @@ For John is an open research project with a personal reason behind it. It sits b
 - Source Serif 4 at light weight is the free face closest to the Tiempos Headline used by Arc and Simons. IBM Plex Sans is what Arc uses for body text.
 - Headings are light, not bold. No capitals for headings. No italic or coloured word inside a headline.
 - Title case for headings, titles, menus and buttons. Sentence case for everything else.
-- Body lines are 560–720px long.
+- Body text runs about 65–75 characters a line: 18px in a 600px column on report pages, 17px in 560–580px on the home page. Measure it; the `ch` unit overstates the width in this typeface.
 
 ### Spacing and layout
 
@@ -185,7 +185,7 @@ For John is an open research project with a personal reason behind it. It sits b
 2. Only navy, gold and the neutrals appear, apart from charts and the three evidence labels.
 3. Headings are Source Serif 4 at weight 300; everything else is Plex.
 4. Every gap is a value from the spacing scale.
-5. Body lines are no longer than 720px.
+5. Body text is 65–75 characters a line (measure it).
 6. Works at 320, 390, 768 and 1,440px wide with no sideways scrolling.
 7. Light and dark versions both checked, text contrast 4.5:1 or better.
 8. No item on the "Do not" list is present.
@@ -195,6 +195,8 @@ For John is an open research project with a personal reason behind it. It sits b
 - `docs/site.css` holds the shared colours, type, top bar, buttons and footer. Every page loads it.
 - `docs/index.html` (home), `docs/doc.css` with `tools/build_site.py` (report pages) and `docs/explorer.html` add only what is particular to them.
 - A left-margin section list appears on the home page on very wide screens (1,680px and up). It is an addition to the references, kept because it helps on a long page.
+
+*A research-backed review of the rebuilt site, with what was fixed and what is left, is in `design/REVIEW.md`.*
 
 ## Pending
 
@@ -207,3 +209,5 @@ These are waiting on a decision or on something only the family can supply. The 
 | A short web address (for example forjohn.org) | Not bought | The site stays at mgegen15-dev.github.io/For_John. |
 | An outside review of the design | Not run | An AI usability test (TheySaid) is connected and can be run on the live site once approved. |
 | Dark-mode check of every report page | Home, one report and the explorer checked | The rest share the same stylesheet. |
+| A contact email on the site | Waiting for a decision on which address | Contact is a GitHub issue only. An address at the new domain would avoid publishing a personal one. |
+| Tighter homepage introduction | Proposed in `design/REVIEW.md`, waiting for approval | The current text stays. |

@@ -37,7 +37,6 @@
       <a href="../explorer.html">Evidence Explorer</a>
       <a href="../how-this-was-made.html">Methods</a>
     </nav>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
     <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
   </div>
 </header>
@@ -45,11 +44,11 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-we-used">What We Used</a></li><li class="l1"><a href="#1-the-pill-target-genes-how-often-and-do-they-overlap">1. The Pill-Target Genes: How Often, and Do They Overlap?</a></li><li class="l1"><a href="#2-other-actionable-copy-number-changes">2. Other Actionable Copy-Number Changes</a></li><li class="l1"><a href="#3-does-extra-dna-mean-more-rna">3. Does Extra DNA Mean More RNA?</a></li><li class="l1"><a href="#4-design-note-for-lead-2-how-many-patients-from-which-trials">4. Design Note for Lead 2: How Many Patients, from Which Trials?</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#reproduce">Reproduce</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Copy-number%20changes%20and%20the%20kinase-pill%20biomarker.md">reports/Copy-number changes and the kinase-pill biomarker.md</a></p>
+    <p class="crumb">Report · Updated November 20, 2026 · 14 min read</p>
     <h1>Copy-Number Changes in Osteosarcoma, and How to Test Them as a Kinase-Pill Biomarker</h1>
-    <p><em>Built from open-access NCI GDC copy-number and RNA data for the TARGET-OS project, published genomic studies and ClinicalTrials.gov records. Written November 19, 2026. Script: <code>tools/copy_number_map.py</code>. Table: <code>data/osteosarcoma_copy_number_frequencies.csv</code>. Working notes with quotes and every number: <code>research_notes/Copy number/notes.md</code>. This is groundwork for lead 2 in <code>reports/Ranked leads and research partners.md</code>.</em></p>
+    <p><em>Built from open-access NCI GDC copy-number and RNA data for the TARGET-OS project, published genomic studies and ClinicalTrials.gov records. Written November 19, 2026. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/copy_number_map.py"><code>tools/copy_number_map.py</code></a>. Table: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_copy_number_frequencies.csv"><code>data/osteosarcoma_copy_number_frequencies.csv</code></a>. Working notes with quotes and every number: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Copy%20number/notes.md"><code>research_notes/Copy number/notes.md</code></a>. This is groundwork for lead 2 in <a href="../reports/ranked-leads-and-research-partners.html"><code>reports/Ranked leads and research partners.md</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
-    <p>We measured extra and missing gene copies in diagnostic tumours from 81 young patients in the US TARGET osteosarcoma project, using free public data. Extra copies of the genes behind VEGFR2-blocking pills (VEGFA, or the KDR/PDGFRA/KIT region) were found in about one patient in four (23.5%) by our main definition, and in nearly half (46.9%) by a lenient one. The figure of "at least 40%" quoted from a US cancer centre study sits between the two, so the answer depends on how "amplified" is defined, and any trial test must fix the definition in advance. Unlike that study, we did not find that the two gene regions exclude each other: 4 patients carried both, mostly high VEGFA with a modest 4q12 gain. Using the trials already done, about 100 pill-treated patients with tumour data would be enough to show whether amplified tumours stay controlled for twice as long, and the existing trials hold about 309 such patients. Proving that the amplification predicts benefit <em>from the pill</em> rather than just a better outlook needs roughly 400 or more patients in randomized trials, more than the four existing randomized trials have together (242 efficacy-evaluable; 247 counting all of REGOBONE's randomized patients).</p>
+    <p>We measured extra and missing gene copies in diagnostic tumours from 81 young patients in the US TARGET osteosarcoma project, using free public data. Extra copies of the genes behind VEGFR2-blocking pills (VEGFA, or the KDR/PDGFRA/KIT region) were found in about one patient in four (23.5%) by our main definition, and in nearly half (46.9%) by a lenient one. The figure of &quot;at least 40%&quot; quoted from a US cancer centre study sits between the two, so the answer depends on how &quot;amplified&quot; is defined, and any trial test must fix the definition in advance. Unlike that study, we did not find that the two gene regions exclude each other: 4 patients carried both, mostly high VEGFA with a modest 4q12 gain. Using the trials already done, about 100 pill-treated patients with tumour data would be enough to show whether amplified tumours stay controlled for twice as long, and the existing trials hold about 309 such patients. Proving that the amplification predicts benefit <em>from the pill</em> rather than just a better outlook needs roughly 400 or more patients in randomized trials, more than the four existing randomized trials have together (242 efficacy-evaluable; 247 counting all of REGOBONE's randomized patients).</p>
     <p><strong>How to read the labels.</strong> After key numbers we say where they come from:</p>
     <ul>
     <li><strong>(registry)</strong>: an official database record, such as ClinicalTrials.gov or the NCI Genomic Data Commons.</li>
@@ -62,12 +61,12 @@
     <h2 id="what-we-used">What We Used</h2>
     <ul>
     <li><strong>Tumours.</strong> 81 patients from TARGET-OS, one diagnostic primary tumour each, before treatment, with a matched blood sample (registry). Median age at diagnosis 14.5 years, range 3.6–32.4; 18 were 18 or older (our calculation).</li>
-    <li><strong>Copy number.</strong> GDC "Gene Level Copy Number" files from SNP arrays (ASCAT2 method), which give whole-number copy counts already corrected for normal cells in the sample. They are <strong>open access</strong>; only the raw array files are controlled (registry). Whole-genome copy number for 24 of the same patients was used as a check.</li>
+    <li><strong>Copy number.</strong> GDC &quot;Gene Level Copy Number&quot; files from SNP arrays (ASCAT2 method), which give whole-number copy counts already corrected for normal cells in the sample. They are <strong>open access</strong>; only the raw array files are controlled (registry). Whole-genome copy number for 24 of the same patients was used as a check.</li>
     <li><strong>RNA.</strong> The TARGET-OS RNA files this project had already downloaded for the surface-target report; 80 patients had both RNA and copy number.</li>
     </ul>
-    <p><strong>Why the definition matters.</strong> Osteosarcoma cells often carry three or four copies of every chromosome instead of two. In these tumours the median was 3.3 copies, and 55 of 81 had three or more (our calculation). A fixed cut-off such as "more than 4 copies" then labels whole-chromosome gains as amplifications. As a check, ERBB2 (HER2), which no tumour here amplifies by our main call, passes "more than 4 copies" in 7.4% of tumours. So our main call is <strong>at least twice the tumour's own average copy number</strong>, close to what clinical sequencing panels call amplification. We also report a lenient call (1.5 times) and a strict one (8 copies or more).</p>
+    <p><strong>Why the definition matters.</strong> Osteosarcoma cells often carry three or four copies of every chromosome instead of two. In these tumours the median was 3.3 copies, and 55 of 81 had three or more (our calculation). A fixed cut-off such as &quot;more than 4 copies&quot; then labels whole-chromosome gains as amplifications. As a check, ERBB2 (HER2), which no tumour here amplifies by our main call, passes &quot;more than 4 copies&quot; in 7.4% of tumours. So our main call is <strong>at least twice the tumour's own average copy number</strong>, close to what clinical sequencing panels call amplification. We also report a lenient call (1.5 times) and a strict one (8 copies or more).</p>
     <h2 id="1-the-pill-target-genes-how-often-and-do-they-overlap">1. The Pill-Target Genes: How Often, and Do They Overlap?</h2>
-    <p>TARGET-OS, 81 patients (our calculation). "CI" is the 95% confidence interval.</p>
+    <p>TARGET-OS, 81 patients (our calculation). &quot;CI&quot; is the 95% confidence interval.</p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -133,7 +132,7 @@
     <td><strong>15.6–33.8%</strong></td>
     <td><strong>38 (46.9%)</strong></td>
     <td>17 (21.0%)</td>
-    <td>"at least 40%" (MSK) (paper, full text)</td>
+    <td>&quot;at least 40%&quot; (MSK) (paper, full text)</td>
     </tr>
     <tr>
     <td>Adding FGFR1 or MET</td>
@@ -146,9 +145,9 @@
     </tr>
     </tbody>
     </table></div>
-    <p>"MSK" is the Memorial Sloan Kettering study of 66 patients sequenced with the MSK-IMPACT panel (Suehara 2019, PMC6825534); children and adults, with 37 of its 71 samples from metastases or relapses.</p>
+    <p>&quot;MSK&quot; is the Memorial Sloan Kettering study of 66 patients sequenced with the MSK-IMPACT panel (Suehara 2019, PMC6825534); children and adults, with 37 of its 71 samples from metastases or relapses.</p>
     <p><strong>The 4q12 genes travel together.</strong> KDR was never amplified without PDGFRA; all three genes were amplified together in 7 of the 10 (our calculation). Most 4q12 gains here are modest: in 8 of the 10, the highest gene was 2 to 3 times the tumour average (our calculation).</p>
-    <p><strong>6p21 and 4q12 are not mutually exclusive in TARGET-OS.</strong> MSK reported that its VEGFA-amplified and 4q12-amplified tumours did not overlap, "with one exception" (paper, full text). We found:</p>
+    <p><strong>6p21 and 4q12 are not mutually exclusive in TARGET-OS.</strong> MSK reported that its VEGFA-amplified and 4q12-amplified tumours did not overlap, &quot;with one exception&quot; (paper, full text). We found:</p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -160,21 +159,21 @@
     <tbody>
     <tr>
     <td><strong>VEGFA amplified</strong></td>
-    <td>4</td>
-    <td>9</td>
+    <td class="num">4</td>
+    <td class="num">9</td>
     </tr>
     <tr>
     <td><strong>VEGFA not amplified</strong></td>
-    <td>6</td>
-    <td>62</td>
+    <td class="num">6</td>
+    <td class="num">62</td>
     </tr>
     </tbody>
     </table></div>
     <p>Odds ratio 4.55 (conditional maximum-likelihood estimate; the simple cross-product ratio is 4.59), Fisher p = 0.0496 (our calculation): if anything, they occur together <em>more</em> often than chance. At a stricter cut-off (3 times the average), only 2 tumours had 4q12 amplification, one of them with VEGFA as well, and no pattern either way can be shown (p = 0.23; our calculation). In three of the four overlapping tumours, VEGFA was high (4.3–5.2 times the average) and 4q12 was modest (2.2–3.0 times).</p>
-    <p><strong>What this means for lead 2.</strong> The amplified group is about 24% by our main call and 47% by the lenient one. A trial analysis should fix the definition before seeing outcomes and report both. Because the two regions can overlap, the analysis should also count "VEGFA or 4q12" once per patient, not add the two percentages.</p>
+    <p><strong>What this means for lead 2.</strong> The amplified group is about 24% by our main call and 47% by the lenient one. A trial analysis should fix the definition before seeing outcomes and report both. Because the two regions can overlap, the analysis should also count &quot;VEGFA or 4q12&quot; once per patient, not add the two percentages.</p>
     <p><strong>Cross-check.</strong> For the 24 patients with whole-genome data, VEGFA calls agreed in all 24 (4 amplified on both platforms), with a correlation of 0.98 between the two copy-number measures (our calculation). The 4q12 genes also agreed (23 or 24 of 24), but none of these 24 had a 4q12 amplification, so this check says little about 4q12.</p>
     <h2 id="2-other-actionable-copy-number-changes">2. Other Actionable Copy-Number Changes</h2>
-    <p>TARGET-OS, 81 patients, main call (our calculation). "Published" is the closest figure we read.</p>
+    <p>TARGET-OS, 81 patients, main call (our calculation). &quot;Published&quot; is the closest figure we read.</p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -249,21 +248,21 @@
     <td>0.7–8.6%</td>
     <td>5 (6.2%)</td>
     <td>none found</td>
-    <td>—</td>
+    <td class="num">—</td>
     </tr>
     <tr>
     <td>MET (7q31)</td>
     <td>cabozantinib; MET blockers</td>
-    <td>0</td>
+    <td class="num">0</td>
     <td>0–4.5%</td>
     <td>3 (3.7%)</td>
     <td>no frequency read</td>
-    <td>—</td>
+    <td class="num">—</td>
     </tr>
     <tr>
     <td>CD276 / B7-H3 (15q24)</td>
     <td>ADCs, CAR-T</td>
-    <td>0</td>
+    <td class="num">0</td>
     <td>0–4.5%</td>
     <td>4 (4.9%)</td>
     <td>none found</td>
@@ -272,11 +271,11 @@
     <tr>
     <td>ERBB2 / HER2 (17q12)</td>
     <td>HER2 ADCs</td>
-    <td>0</td>
+    <td class="num">0</td>
     <td>0–4.5%</td>
-    <td>0</td>
+    <td class="num">0</td>
     <td>none found</td>
-    <td>—</td>
+    <td class="num">—</td>
     </tr>
     </tbody>
     </table></div>
@@ -318,13 +317,13 @@
     </tr>
     <tr>
     <td>DKK1</td>
-    <td>0</td>
+    <td class="num">0</td>
     <td>37 (45.7%; 35.3–56.5%)</td>
-    <td>—</td>
+    <td class="num">—</td>
     </tr>
     </tbody>
     </table></div>
-    <p>All percentages in both tables are (our calculation) unless labelled otherwise. "Relative loss" means fewer than 0.65 times the tumour's average copy number.</p>
+    <p>All percentages in both tables are (our calculation) unless labelled otherwise. &quot;Relative loss&quot; means fewer than 0.65 times the tumour's average copy number.</p>
     <h2 id="3-does-extra-dna-mean-more-rna">3. Does Extra DNA Mean More RNA?</h2>
     <p>80 patients with both measures; Spearman correlation between copy number (relative to the tumour average) and RNA level (our calculation).</p>
     <div class="tablewrap"><table>
@@ -340,49 +339,49 @@
     <tbody>
     <tr>
     <td>VEGFA</td>
-    <td>0.22</td>
+    <td class="num">0.22</td>
     <td>−0.01 to 0.42</td>
-    <td>0.051</td>
+    <td class="num">0.051</td>
     <td>51.8 (13 tumours) vs 28.1</td>
     </tr>
     <tr>
     <td>KDR</td>
-    <td>0.20</td>
+    <td class="num">0.20</td>
     <td>−0.03 to 0.41</td>
-    <td>0.077</td>
+    <td class="num">0.077</td>
     <td>19.2 (7) vs 22.1</td>
     </tr>
     <tr>
     <td>PDGFRA</td>
-    <td>0.55</td>
+    <td class="num">0.55</td>
     <td>0.37 to 0.69</td>
     <td>&lt;0.001</td>
     <td>91.5 (10) vs 44.8</td>
     </tr>
     <tr>
     <td>KIT</td>
-    <td>0.16</td>
+    <td class="num">0.16</td>
     <td>−0.07 to 0.37</td>
-    <td>0.17</td>
+    <td class="num">0.17</td>
     <td>4.3 (9) vs 3.8</td>
     </tr>
     <tr>
     <td>FGFR1</td>
-    <td>0.57</td>
+    <td class="num">0.57</td>
     <td>0.40 to 0.71</td>
     <td>&lt;0.001</td>
     <td>239.8 (5) vs 90.8</td>
     </tr>
     <tr>
     <td>CCNE1</td>
-    <td>0.51</td>
+    <td class="num">0.51</td>
     <td>0.32 to 0.66</td>
     <td>&lt;0.001</td>
     <td>103.2 (15) vs 19.1</td>
     </tr>
     <tr>
     <td>MYC</td>
-    <td>0.41</td>
+    <td class="num">0.41</td>
     <td>0.21 to 0.59</td>
     <td>&lt;0.001</td>
     <td>81.4 (25) vs 46.5</td>
@@ -419,36 +418,36 @@
     <td>SARC024</td>
     <td>regorafenib</td>
     <td>randomized vs placebo</td>
-    <td>22</td>
-    <td>20</td>
-    <td>11</td>
+    <td class="num">22</td>
+    <td class="num">20</td>
+    <td class="num">11</td>
     <td>NCT02048371 (registry)</td>
     </tr>
     <tr>
     <td>REGOBONE</td>
     <td>regorafenib</td>
     <td>randomized 2:1 vs placebo</td>
-    <td>26</td>
-    <td>12</td>
-    <td>10</td>
+    <td class="num">26</td>
+    <td class="num">12</td>
+    <td class="num">10</td>
     <td>PMID 30477937 (paper, abstract only): 43 randomized (29 and 14); 26 and 12 were efficacy-evaluable and are used here</td>
     </tr>
     <tr>
     <td>OLIE</td>
     <td>lenvatinib + IE</td>
     <td>randomized vs IE</td>
-    <td>40</td>
-    <td>41</td>
-    <td>—</td>
+    <td class="num">40</td>
+    <td class="num">41</td>
+    <td class="num">—</td>
     <td>NCT04154189 (registry)</td>
     </tr>
     <tr>
     <td>OAIE</td>
     <td>apatinib + IE</td>
     <td>randomized 2:1 vs IE</td>
-    <td>53</td>
-    <td>28</td>
-    <td>—</td>
+    <td class="num">53</td>
+    <td class="num">28</td>
+    <td class="num">—</td>
     <td>PMC12647724 (paper, full text)</td>
     </tr>
     <tr>
@@ -456,35 +455,35 @@
     <td>cabozantinib</td>
     <td>single arm</td>
     <td>45 enrolled, 42 evaluable</td>
-    <td>—</td>
-    <td>—</td>
+    <td class="num">—</td>
+    <td class="num">—</td>
     <td>NCT02243605 (registry); paper</td>
     </tr>
     <tr>
     <td>COG ADVL1622</td>
     <td>cabozantinib</td>
     <td>single arm, osteosarcoma group</td>
-    <td>29</td>
-    <td>—</td>
-    <td>—</td>
+    <td class="num">29</td>
+    <td class="num">—</td>
+    <td class="num">—</td>
     <td>NCT02867592 (registry)</td>
     </tr>
     <tr>
     <td>ITCC-050</td>
     <td>lenvatinib</td>
     <td>single arm, osteosarcoma group (cohort 2B)</td>
-    <td>31</td>
-    <td>—</td>
-    <td>—</td>
+    <td class="num">31</td>
+    <td class="num">—</td>
+    <td class="num">—</td>
     <td>NCT02432274 (registry)</td>
     </tr>
     <tr>
     <td>ITCC-050</td>
     <td>lenvatinib + IE</td>
     <td>single arm, osteosarcoma (cohorts 3A and 3B)</td>
-    <td>42</td>
-    <td>—</td>
-    <td>—</td>
+    <td class="num">42</td>
+    <td class="num">—</td>
+    <td class="num">—</td>
     <td>NCT02432274 participant flow: 7 + 15 + 20 (registry)</td>
     </tr>
     </tbody>
@@ -509,28 +508,28 @@
     </thead>
     <tbody>
     <tr>
-    <td>40%</td>
-    <td>69</td>
-    <td>76</td>
-    <td>127</td>
+    <td class="num">40%</td>
+    <td class="num">69</td>
+    <td class="num">76</td>
+    <td class="num">127</td>
     </tr>
     <tr>
     <td><strong>23.5% (our main call)</strong></td>
-    <td><strong>91</strong></td>
-    <td><strong>101</strong></td>
-    <td><strong>169</strong></td>
+    <td class="num"><strong>91</strong></td>
+    <td class="num"><strong>101</strong></td>
+    <td class="num"><strong>169</strong></td>
     </tr>
     <tr>
-    <td>20%</td>
-    <td>103</td>
-    <td>114</td>
-    <td>190</td>
+    <td class="num">20%</td>
+    <td class="num">103</td>
+    <td class="num">114</td>
+    <td class="num">190</td>
     </tr>
     <tr>
     <td>16% (VEGFA alone)</td>
-    <td>122</td>
-    <td>136</td>
-    <td>226</td>
+    <td class="num">122</td>
+    <td class="num">136</td>
+    <td class="num">226</td>
     </tr>
     </tbody>
     </table></div>
@@ -550,24 +549,24 @@
     <tbody>
     <tr>
     <td>Everyone who got a pill</td>
-    <td>309</td>
-    <td>99.8%</td>
-    <td>97%</td>
-    <td>91%</td>
+    <td class="num">309</td>
+    <td class="num">99.8%</td>
+    <td class="num">97%</td>
+    <td class="num">91%</td>
     </tr>
     <tr>
     <td>Pill alone only (no IE)</td>
-    <td>174</td>
-    <td>96%</td>
-    <td>81%</td>
-    <td>69%</td>
+    <td class="num">174</td>
+    <td class="num">96%</td>
+    <td class="num">81%</td>
+    <td class="num">69%</td>
     </tr>
     <tr>
     <td>Randomized trials, Question B</td>
-    <td>242</td>
-    <td>57%</td>
-    <td>38%</td>
-    <td>30%</td>
+    <td class="num">242</td>
+    <td class="num">57%</td>
+    <td class="num">38%</td>
+    <td class="num">30%</td>
     </tr>
     </tbody>
     </table></div>
@@ -576,7 +575,7 @@
     <li><strong>Question A first, with all pill-treated patients.</strong> Pool the pill arms of SARC024, REGOBONE, OLIE and OAIE with CABONE, ADVL1622 and both ITCC-050 osteosarcoma groups (lenvatinib alone, and with IE), plus crossover patients from the start of their pill treatment. Analyse progression-free survival with a Cox model stratified by trial, because drugs, doses, IE backbones and ages differ. If 60% of patients have usable DNA, this has about 97% power for a hazard ratio of 0.5.</li>
     <li><strong>If funds allow only part of this, start with the single-agent trials</strong> (SARC024, REGOBONE, CABONE, ADVL1622, ITCC-050; 174 patients). This keeps chemotherapy out of the comparison, with about 81% power at 60% DNA yield.</li>
     <li><strong>Question B as a pre-planned, hypothesis-generating interaction test</strong> in the four randomized trials. The power is too low to settle it (30–57%), so report it as an estimate with its confidence interval, and plan to add FOSTER-CabOS and any restarted AOST2032 to a later pooled analysis.</li>
-    <li><strong>Fix the definition in advance</strong>: main call at twice the tumour's average copy number, lenient call at 1.5 times as a sensitivity analysis, VEGFA and 4q12 also analysed separately. Ploidy-aware copy-number calling is needed; a fixed "more than 4 copies" rule would misclassify many tumours.</li>
+    <li><strong>Fix the definition in advance</strong>: main call at twice the tumour's average copy number, lenient call at 1.5 times as a sensitivity analysis, VEGFA and 4q12 also analysed separately. Ploidy-aware copy-number calling is needed; a fixed &quot;more than 4 copies&quot; rule would misclassify many tumours.</li>
     <li><strong>Measure the right sample.</strong> Trial patients have relapsed, but most stored tissue is from diagnosis. In 8 patients followed through treatment, MYC gain was enriched in the clones that dominated at relapse (6 of 7), and VEGFA amplification was among the changes also seen in those clones (paper, abstract only; PMID 37812025). Where both exist, test the relapse sample or the blood taken at trial entry.</li>
     <li><strong>Record MYC status as a variable.</strong> MYC (8q24) is amplified in 26 of 81 TARGET-OS tumours here (32.1%, 95% CI 22.9–42.9%; our calculation, table above). In 105 children and young adults, MYC amplification (more than 7 copies, 16%) went with 3-year overall survival of 27% against 74%, adjusted HR 3.4 (paper, abstract only; <em>Cancer</em> 2025, PMID 41199591). Cell lines from MYC-driven mouse osteosarcomas were about 8 times less sensitive to cabozantinib than p53-driven lines (mean IC50 5.51 against 0.65 µM; preprint, abstract only; Kappa et al., bioRxiv 2026, doi 10.64898/2026.09.21.753033; fold change our calculation). So MYC should be measured with the same ploidy-aware call and entered in the Cox model, both as a possible confounder of a VEGFA or 4q12 effect and as a candidate marker of pill resistance in its own right (our inference).</li>
     </ol>
@@ -585,14 +584,14 @@
     <li><strong>One cohort, diagnostic samples.</strong> All 81 tumours are TARGET-OS primary tumours taken at diagnosis, mostly from children and teenagers in US cooperative-group care. Relapsed tumours, the setting where the pills are used, may differ, and adults are under-represented (18 of 81 aged 18 or older).</li>
     <li><strong>Small numbers.</strong> With 81 patients, confidence intervals are wide: the VEGFA-or-4q12 figure could plausibly lie anywhere from 16% to 34%.</li>
     <li><strong>The 4q12 cross-check is weak.</strong> No 4q12-amplified tumour had whole-genome data, so the 4q12 calls rest on one platform.</li>
-    <li><strong>Thresholds are choices.</strong> Published studies use different rules (fold change on panels, absolute copies on whole genomes, any alteration in registries), so the comparisons are rough. Our "relative loss" call for tumour-suppressor genes is a copy-number measure only; it misses mutations and rearrangements and includes some broad losses of no clear meaning.</li>
+    <li><strong>Thresholds are choices.</strong> Published studies use different rules (fold change on panels, absolute copies on whole genomes, any alteration in registries), so the comparisons are rough. Our &quot;relative loss&quot; call for tumour-suppressor genes is a copy-number measure only; it misses mutations and rearrangements and includes some broad losses of no clear meaning.</li>
     <li><strong>Published sources.</strong> cBioPortal could not be reached from this workspace, so MSK figures come from the paper, not its data portal. The Foundation Medicine and Marinoff studies were read as abstracts only. Some published percentages count samples, not patients.</li>
     <li><strong>RNA comparison.</strong> Bulk RNA mixes tumour and normal cells; this matters most for KDR, which is expressed in blood vessels.</li>
     <li><strong>Power figures are approximate.</strong> They assume most patients progress, that the 60% DNA yield is realistic, and that trials can be pooled. Drugs differ (regorafenib, cabozantinib, lenvatinib, apatinib), and two trials add chemotherapy. Patient counts were read from registries and papers; we have not checked which trials actually banked tumour or blood.</li>
     <li><strong>No outcomes.</strong> We did not link copy number to survival or treatment in TARGET-OS, which used front-line chemotherapy, not pills.</li>
     </ul>
     <h2 id="reproduce">Reproduce</h2>
-    <p>From the repository root: <code>python3 tools/copy_number_map.py all</code>. It downloads 189 open files (about 274 MB) into <code>data/copy_number_raw/</code> (git-ignored), reuses the RNA files in <code>data/surface_targets_raw/</code>, and writes <code>data/osteosarcoma_copy_number_frequencies.csv</code>. It uses only the Python standard library.</p>
+    <p>From the repository root: <code>python3 tools/copy_number_map.py all</code>. It downloads 189 open files (about 274 MB) into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/copy_number_raw"><code>data/copy_number_raw/</code></a> (git-ignored), reuses the RNA files in <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/surface_targets_raw"><code>data/surface_targets_raw/</code></a>, and writes <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_copy_number_frequencies.csv"><code>data/osteosarcoma_copy_number_frequencies.csv</code></a>. It uses only the Python standard library.</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
     <li><strong>19 November 2026.</strong> First version. Open TARGET-OS copy number (81 patients) mapped for 18 genes; compared with five published studies; RNA correlation for 12 genes; sample-size note for lead 2.</li>
@@ -607,7 +606,7 @@
 <footer class="site">
  <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
-  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 
@@ -621,7 +620,14 @@
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
   });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {
     var links = Array.prototype.slice.call(toc.querySelectorAll("a"));

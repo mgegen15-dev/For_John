@@ -37,7 +37,6 @@
       <a href="../explorer.html">Evidence Explorer</a>
       <a href="../how-this-was-made.html">Methods</a>
     </nav>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
     <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
   </div>
 </header>
@@ -45,14 +44,14 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#how-grants-were-counted">How Grants Were Counted</a></li><li class="l1"><a href="#osteosarcoma-against-neuroblastoma-by-year">Osteosarcoma Against Neuroblastoma, by Year</a></li><li class="l1"><a href="#where-the-osteosarcoma-money-goes">Where the Osteosarcoma Money Goes</a></li><li class="l1"><a href="#what-this-means-for-the-research-gaps">What This Means for the Research Gaps</a></li><li class="l1"><a href="#what-this-tracker-cannot-see">What This Tracker Cannot See</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/NIH%20funding%20for%20osteosarcoma.md">reports/NIH funding for osteosarcoma.md</a></p>
+    <p class="crumb">Report · Updated November 14, 2026 · 7 min read</p>
     <h1>NIH Funding for Osteosarcoma, 2015–2025</h1>
-    <p><em>Built from the NIH RePORTER API on November 14, 2026 with <code>tools/nih_funding_tracker.py</code>. Every grant is listed in <code>data/nih_osteosarcoma_projects.csv</code> and, for comparison, <code>data/nih_neuroblastoma_projects.csv</code>. The topic table is rebuilt with <code>python3 tools/nih_funding_tracker.py --topics</code>. Re-run the script to refresh everything.</em></p>
+    <p><em>Built from the NIH RePORTER API on November 14, 2026 with <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/nih_funding_tracker.py"><code>tools/nih_funding_tracker.py</code></a>. Every grant is listed in <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/nih_osteosarcoma_projects.csv"><code>data/nih_osteosarcoma_projects.csv</code></a> and, for comparison, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/nih_neuroblastoma_projects.csv"><code>data/nih_neuroblastoma_projects.csv</code></a>. The topic table is rebuilt with <code>python3 tools/nih_funding_tracker.py --topics</code>. Re-run the script to refresh everything.</em></p>
     <h2 id="summary">Summary</h2>
     <p>In fiscal 2025 NIH spent <strong>about $18.0 million on 30 grants that name osteosarcoma in their title</strong>, four times the 2015 level but still only about a quarter of one percent of the National Cancer Institute's budget. Neuroblastoma, a childhood cancer of broadly similar size, received $28–30 million on the same basis, and roughly twice as much as osteosarcoma over the decade ($212–227 million against $108 million). A third of the osteosarcoma money went to NCI's own in-house laboratories, and one long-running genome project accounts for $20.4 million of it. The areas this project's other reports flag as the biggest gaps get the least: ctDNA and liquid-biopsy work received $3.3 million, all since 2020 and all at one institution, and clinical-trial and outcomes research $4.7 million. NIH money for osteosarcoma trials through the Children's Oncology Group is not visible here, so trial funding is undercounted.</p>
     <p><strong>How to read the labels.</strong> Each key number carries one of these tags: <strong>(registry)</strong> means taken directly from a public record, here NIH RePORTER; <strong>(our calculation)</strong> means we added up or derived the figure from those records; <strong>(paper, full text)</strong>, <strong>(paper, abstract only)</strong> and <strong>(press release only)</strong> mark figures taken from publications. Most numbers in this report are our sums of RePORTER records.</p>
     <h2 id="how-grants-were-counted">How Grants Were Counted</h2>
-    <p>A plain text search overcounts badly, because U2OS, an osteosarcoma cell line, is used throughout general cell biology. The tool searches RePORTER for "osteosarcoma" and for "osteogenic sarcoma" (the second search added no grants that the first had missed) and sorts each grant into a tier:</p>
+    <p>A plain text search overcounts badly, because U2OS, an osteosarcoma cell line, is used throughout general cell biology. The tool searches RePORTER for &quot;osteosarcoma&quot; and for &quot;osteogenic sarcoma&quot; (the second search added no grants that the first had missed) and sorts each grant into a tier:</p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -64,7 +63,7 @@
     <tbody>
     <tr>
     <td><strong>Focused</strong></td>
-    <td>"Osteosarcoma" or "osteogenic sarcoma" in the project title</td>
+    <td>&quot;Osteosarcoma&quot; or &quot;osteogenic sarcoma&quot; in the project title</td>
     <td>30 projects, $18.0M (our calculation)</td>
     </tr>
     <tr>
@@ -80,7 +79,7 @@
     </tbody>
     </table></div>
     <p><strong>Multi-project grants.</strong> In RePORTER, each component of a programme grant (P01, P50, U54 and similar) has its own record and award amount, and the parent record's amount already includes them. Records are grouped by core project number, fiscal year and full award number. If any component of that award matched the search, only the matching components are counted; otherwise the parent award is counted. Administrative supplements have their own award numbers and are counted separately.</p>
-    <p><strong>The "substantial" tier is an upper bound, not osteosarcoma money.</strong> Of its $58.3M over the decade, about $55.3M (95%) comes from programmes that cover many cancers (our calculation): NCI's Genetic Modifiers of Cancer Risk ($13.7M), the Comparative Oncology Program laboratory ($15.3M across three in-house records), Functional Genomics of Sarcoma ($12.0M), the Childhood Cancer Data Initiative ($3.4M), a co-clinical macrophage-imaging resource ($3.2M), and several smaller in-house and paediatric-tumour programmes. The "focused + substantial" column below is therefore the most that could be attributed to osteosarcoma, and the real figure is much closer to the focused column.</p>
+    <p><strong>The &quot;substantial&quot; tier is an upper bound, not osteosarcoma money.</strong> Of its $58.3M over the decade, about $55.3M (95%) comes from programmes that cover many cancers (our calculation): NCI's Genetic Modifiers of Cancer Risk ($13.7M), the Comparative Oncology Program laboratory ($15.3M across three in-house records), Functional Genomics of Sarcoma ($12.0M), the Childhood Cancer Data Initiative ($3.4M), a co-clinical macrophage-imaging resource ($3.2M), and several smaller in-house and paediatric-tumour programmes. The &quot;focused + substantial&quot; column below is therefore the most that could be attributed to osteosarcoma, and the real figure is much closer to the focused column.</p>
     <h2 id="osteosarcoma-against-neuroblastoma-by-year">Osteosarcoma Against Neuroblastoma, by Year</h2>
     <div class="tablewrap"><table>
     <thead>
@@ -93,67 +92,67 @@
     </thead>
     <tbody>
     <tr>
-    <td>2015</td>
+    <td class="num">2015</td>
     <td>$4.5M (12)</td>
     <td>$8.1M</td>
     <td>$10.0M (31)</td>
     </tr>
     <tr>
-    <td>2016</td>
+    <td class="num">2016</td>
     <td>$5.0M (16)</td>
     <td>$8.5M</td>
     <td>$12.1M (32)</td>
     </tr>
     <tr>
-    <td>2017</td>
+    <td class="num">2017</td>
     <td>$7.9M (20)</td>
     <td>$11.3M</td>
     <td>$12.8M (32)</td>
     </tr>
     <tr>
-    <td>2018</td>
+    <td class="num">2018</td>
     <td>$6.1M (19)</td>
     <td>$9.5M</td>
     <td>$15.3M (41)</td>
     </tr>
     <tr>
-    <td>2019</td>
+    <td class="num">2019</td>
     <td>$6.4M (16)</td>
     <td>$10.3M</td>
     <td>$13.8M (38)</td>
     </tr>
     <tr>
-    <td>2020</td>
+    <td class="num">2020</td>
     <td>$7.9M (20)</td>
     <td>$10.8M</td>
     <td>$21.3M (40)</td>
     </tr>
     <tr>
-    <td>2021</td>
+    <td class="num">2021</td>
     <td>$11.3M (27)</td>
     <td>$17.5M</td>
     <td>$22.6M (47)</td>
     </tr>
     <tr>
-    <td>2022</td>
+    <td class="num">2022</td>
     <td>$12.7M (27)</td>
     <td>$18.6M</td>
     <td>$27.0M (49)</td>
     </tr>
     <tr>
-    <td>2023</td>
+    <td class="num">2023</td>
     <td>$13.9M (28)</td>
     <td>$23.8M</td>
     <td>$22.7M (51)</td>
     </tr>
     <tr>
-    <td>2024</td>
+    <td class="num">2024</td>
     <td>$14.5M (29)</td>
     <td>$22.9M</td>
     <td>$25.8M (53)</td>
     </tr>
     <tr>
-    <td>2025</td>
+    <td class="num">2025</td>
     <td>$18.0M (30)</td>
     <td>$25.5M</td>
     <td>$28.4M (50)</td>
@@ -173,7 +172,7 @@
     <p>All figures in this section are focused-tier totals for 2015–2025 unless stated (our calculation).</p>
     <p><strong>By funder:</strong> NCI provided $101.3M of the $108.3M (94%). The rest came in small amounts from NIGMS ($3.2M), the NIH Director's office ($2.9M), NIBIB, NICHD and NCATS.</p>
     <p><strong>By grant type:</strong> standard investigator grants (R01) $37.2M; NCI in-house research (ZIA) $36.6M; cooperative agreements (U01) $10.8M; exploratory grants (R21) $4.7M; small-business grants (R44) $4.1M; R37 merit awards $3.4M. Career-development and training awards (K and F grants) total <strong>$4.8M</strong>: K01 $2.3M, K08 $1.1M, F30 $0.6M, F31 $0.6M and F32 $0.3M. That is a small share of the total; whether it means too few osteosarcoma scientists are being trained is a judgement these data cannot settle.</p>
-    <p><strong>By topic</strong>, classified from grant titles (focused and substantial tiers, 2015–2025; one grant can fall in several topics; regexes are in <code>tools/nih_funding_tracker.py</code>):</p>
+    <p><strong>By topic</strong>, classified from grant titles (focused and substantial tiers, 2015–2025; one grant can fall in several topics; regexes are in <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/nih_funding_tracker.py"><code>tools/nih_funding_tracker.py</code></a>):</p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -186,55 +185,55 @@
     <tbody>
     <tr>
     <td>Drugs and targets</td>
-    <td>133</td>
+    <td class="num">133</td>
     <td>$47.9M</td>
     <td>DKK-1 metastasis R01, $3.3M (7%)</td>
     </tr>
     <tr>
     <td>Genomics and epigenetics</td>
-    <td>43</td>
+    <td class="num">43</td>
     <td>$37.5M</td>
     <td>NCI in-house genome project, $20.4M (54%)</td>
     </tr>
     <tr>
     <td>Dogs and comparative oncology</td>
-    <td>31</td>
+    <td class="num">31</td>
     <td>$28.5M</td>
     <td>NCI Comparative Oncology Program laboratory, $13.6M (48%)</td>
     </tr>
     <tr>
     <td>Immunotherapy and the immune system</td>
-    <td>51</td>
+    <td class="num">51</td>
     <td>$26.5M</td>
     <td>NCI in-house immune-evasion project, $4.9M (19%)</td>
     </tr>
     <tr>
     <td>Metastasis and the lung</td>
-    <td>83</td>
+    <td class="num">83</td>
     <td>$23.2M</td>
     <td>DKK-1 metastasis R01, $3.3M (14%)</td>
     </tr>
     <tr>
     <td>Germline and inherited risk</td>
-    <td>18</td>
+    <td class="num">18</td>
     <td>$14.8M</td>
     <td>Genetic Modifiers of Cancer Risk (multi-cancer, in-house), $13.7M (93%)</td>
     </tr>
     <tr>
     <td>Laboratory models (PDX, 3D, mouse)</td>
-    <td>35</td>
+    <td class="num">35</td>
     <td>$9.9M</td>
     <td>MD Anderson PDX U01, $2.0M (20%)</td>
     </tr>
     <tr>
     <td>Clinical trials and outcomes</td>
-    <td>12</td>
+    <td class="num">12</td>
     <td>$4.7M</td>
     <td>Testicular effects of chemotherapy R01, $3.2M (68%)</td>
     </tr>
     <tr>
     <td>ctDNA and liquid biopsy</td>
-    <td>8</td>
+    <td class="num">8</td>
     <td>$3.3M</td>
     <td>Dana-Farber liquid-biopsy R37, $2.8M (85%)</td>
     </tr>
@@ -258,11 +257,14 @@
     <h2 id="change-log">Change Log</h2>
     <ul>
     <li><strong>November 13–14, 2026:</strong> first version, built with the original tracker.</li>
-    <li><strong>November 14, 2026, after an independent audit:</strong></li>
-    <li><strong>De-duplication fixed in the tool.</strong> The original code grouped records by application ID, but every component of a programme grant has its own ID, so parent awards and their components were both kept (26 osteosarcoma and 28 neuroblastoma parent-years). The tool now groups by core project number, fiscal year and award number, and the CSVs were regenerated. Osteosarcoma focused totals are unchanged. Neuroblastoma focused FY2025 changed from $30.8M (51 projects) to $28.4M (50), or $30.4M if programme-grant components inherit the parent's tier; the decade total changed from $227.9M to $211.8M (or $226.8M). Osteosarcoma "focused + substantial" changed from $183.2M to $166.6M, mainly because the Count Me In parent award is no longer counted, and is now labelled an upper bound with its multi-cancer programmes named.</li>
-    <li><strong>Search widened</strong> to "osteogenic sarcoma" as well as "osteosarcoma" (no new grants found).</li>
+    <li><strong>November 14, 2026, after an independent audit:</strong>
+    <ul>
+    <li><strong>De-duplication fixed in the tool.</strong> The original code grouped records by application ID, but every component of a programme grant has its own ID, so parent awards and their components were both kept (26 osteosarcoma and 28 neuroblastoma parent-years). The tool now groups by core project number, fiscal year and award number, and the CSVs were regenerated. Osteosarcoma focused totals are unchanged. Neuroblastoma focused FY2025 changed from $30.8M (51 projects) to $28.4M (50), or $30.4M if programme-grant components inherit the parent's tier; the decade total changed from $227.9M to $211.8M (or $226.8M). Osteosarcoma &quot;focused + substantial&quot; changed from $183.2M to $166.6M, mainly because the Count Me In parent award is no longer counted, and is now labelled an upper bound with its multi-cancer programmes named.</li>
+    <li><strong>Search widened</strong> to &quot;osteogenic sarcoma&quot; as well as &quot;osteosarcoma&quot; (no new grants found).</li>
     <li><strong>Topic classifier added to the tool</strong> so the topic table can be rebuilt. Topic figures changed slightly with the new regexes and de-duplication; genomics fell from $53.2M to $37.5M because Count Me In left the substantial tier.</li>
-    <li><strong>Corrections:</strong> K and F training grants total $4.8M, not "under $4M"; the dog total is about half NCI's in-house Comparative Oncology Program laboratory, not "mainly two U01s"; ctDNA has two current grants, not one, and all its funding is since 2020; the Sarcoma SPORE is partly counted, not wholly excluded. The opinion that few scientists are being trained, and an unsupported cross-report claim that "the big genome re-analysis has already been done", were removed. FY2018 and FY2024 upper-bound figures were re-rounded.</li>
+    <li><strong>Corrections:</strong> K and F training grants total $4.8M, not &quot;under $4M&quot;; the dog total is about half NCI's in-house Comparative Oncology Program laboratory, not &quot;mainly two U01s&quot;; ctDNA has two current grants, not one, and all its funding is since 2020; the Sarcoma SPORE is partly counted, not wholly excluded. The opinion that few scientists are being trained, and an unsupported cross-report claim that &quot;the big genome re-analysis has already been done&quot;, were removed. FY2018 and FY2024 upper-bound figures were re-rounded.</li>
+    </ul>
+    </li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/NIH%20funding%20for%20osteosarcoma.md">reports/NIH funding for osteosarcoma.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
@@ -272,7 +274,7 @@
 <footer class="site">
  <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
-  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 
@@ -286,7 +288,14 @@
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
   });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {
     var links = Array.prototype.slice.call(toc.querySelectorAll("a"));

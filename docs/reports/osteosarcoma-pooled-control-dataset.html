@@ -37,7 +37,6 @@
       <a href="../explorer.html">Evidence Explorer</a>
       <a href="../how-this-was-made.html">Methods</a>
     </nav>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
     <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
   </div>
 </header>
@@ -45,15 +44,15 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-is-in-the-dataset">What Is in the Dataset</a></li><li class="l1"><a href="#measurable-relapsed-disease">Measurable Relapsed Disease</a></li><li class="l1"><a href="#pooled-4-month-rate-in-measurable-relapse-by-drug-class">Pooled 4-Month Rate in Measurable Relapse, by Drug Class</a></li><li class="l1"><a href="#resected-relapse">Resected Relapse</a></li><li class="l1"><a href="#newly-diagnosed-disease">Newly Diagnosed Disease</a></li><li class="l1"><a href="#findings-from-papers-and-basket-trials">Findings from Papers and Basket Trials</a></li><li class="l1"><a href="#what-this-connects-to">What This Connects To</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#next-steps">Next Steps</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Osteosarcoma%20pooled%20control%20dataset.md">reports/Osteosarcoma pooled control dataset.md</a></p>
+    <p class="crumb">Report · Updated November 20, 2026 · 13 min read</p>
     <h1>A First Pooled Control Dataset for Osteosarcoma Trials</h1>
-    <p><em>Built from arm-level results that sponsors posted to ClinicalTrials.gov, then extended with published papers and with osteosarcoma cohorts pulled out of basket trials. Last revised November 14, 2026, after an independent audit; updated November 19, 2026 with a new COG benchmark (see the change log). Scripts: <code>tools/pooled_controls.py</code> (registry extract), <code>tools/pool_relapse_benchmarks.py</code> (class pooling). Raw extract: <code>data/osteosarcoma_posted_outcomes.csv</code>, with 2,783 efficacy rows from 117 trials. Curated tables:</em></p>
+    <p><em>Built from arm-level results that sponsors posted to ClinicalTrials.gov, then extended with published papers and with osteosarcoma cohorts pulled out of basket trials. Last revised November 14, 2026, after an independent audit; updated November 19, 2026 with a new COG benchmark (see the change log). Scripts: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/pooled_controls.py"><code>tools/pooled_controls.py</code></a> (registry extract), <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/pool_relapse_benchmarks.py"><code>tools/pool_relapse_benchmarks.py</code></a> (class pooling). Raw extract: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_posted_outcomes.csv"><code>data/osteosarcoma_posted_outcomes.csv</code></a>, with 2,783 efficacy rows from 117 trials. Curated tables:</em></p>
     <ul>
-    <li><em><code>data/osteosarcoma_relapse_benchmarks.csv</code>: registry results.</em></li>
-    <li><em><code>data/osteosarcoma_relapse_benchmarks_published.csv</code>: 60 rows from published papers.</em></li>
-    <li><em><code>data/osteosarcoma_relapse_benchmarks_basket.csv</code>: 33 rows from basket trials.</em></li>
+    <li><em><a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_relapse_benchmarks.csv"><code>data/osteosarcoma_relapse_benchmarks.csv</code></a>: registry results.</em></li>
+    <li><em><a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_relapse_benchmarks_published.csv"><code>data/osteosarcoma_relapse_benchmarks_published.csv</code></a>: 60 rows from published papers.</em></li>
+    <li><em><a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_relapse_benchmarks_basket.csv"><code>data/osteosarcoma_relapse_benchmarks_basket.csv</code></a>: 33 rows from basket trials.</em></li>
     </ul>
-    <p><em>Each row records its source and whether the full text or only the abstract was read. Notes: <code>research_notes/Pooled controls/published_results_notes.md</code>, <code>research_notes/Pooled controls/basket_trials_notes.md</code>.</em></p>
+    <p><em>Each row records its source and whether the full text or only the abstract was read. Notes: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Pooled%20controls/published_results_notes.md"><code>research_notes/Pooled controls/published_results_notes.md</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Pooled%20controls/basket_trials_notes.md"><code>research_notes/Pooled controls/basket_trials_notes.md</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
     <p>Osteosarcoma has no shared, standardized set of control outcomes against which to judge small single-arm trials, a gap the European FOSTER consortium names. This dataset is a first public version, built from registry results, published papers and basket trials. In measurable relapsed disease, drugs without a VEGFR2-blocking kinase inhibitor leave about <strong>14% of patients event-free at four months</strong>, close to the historical benchmark of 12%. VEGFR2-blocking kinase-inhibitor pills given alone reach roughly <strong>40–50%</strong>, depending on how the cabozantinib trial is counted. But ifosfamide plus etoposide (IE) chemotherapy alone also reaches <strong>42–66%</strong>, so combinations with IE must be judged against IE, not against 12%. In the two randomized pill-plus-IE trials, adding the pill delayed progression but did not improve overall survival.</p>
     <p><strong>How to read the labels.</strong> After each key number we say where it comes from:</p>
@@ -87,49 +86,49 @@
     <tr>
     <td>Eribulin</td>
     <td>NCT02097238 (COG AOST1322)</td>
-    <td>19</td>
+    <td class="num">19</td>
     <td>0% (registry)</td>
     </tr>
     <tr>
     <td>Denosumab</td>
     <td>NCT02470091 (COG AOST1321), cohort 1</td>
-    <td>15</td>
+    <td class="num">15</td>
     <td>7%, 1 patient (registry)</td>
     </tr>
     <tr>
     <td>Glembatumumab vedotin</td>
     <td>NCT02487979 (COG AOST1521)</td>
-    <td>22</td>
+    <td class="num">22</td>
     <td>14%, 3 patients, over the first six cycles (registry)</td>
     </tr>
     <tr>
     <td>Olaparib + ceralasertib</td>
     <td>NCT04417062</td>
-    <td>34</td>
+    <td class="num">34</td>
     <td>15%, 5 patients (registry). The same record gives a Kaplan–Meier estimate of 15.8% in 38 patients</td>
     </tr>
     <tr>
     <td>Lenvatinib alone</td>
     <td>NCT02432274 (ITCC-050)</td>
-    <td>28</td>
+    <td class="num">28</td>
     <td>32% (95% CI 16–52%) (registry). The paper gives 29% in 31 patients by simple count and 38% by Kaplan–Meier (paper, full text)</td>
     </tr>
     <tr>
     <td>Lenvatinib + IE</td>
     <td>NCT02432274 (ITCC-050), cohort 3B</td>
-    <td>15</td>
+    <td class="num">15</td>
     <td>67% (95% CI 38–88%) (registry). The paper gives 51% across 35 patients at the recommended dose (paper, abstract only)</td>
     </tr>
     <tr>
     <td>Cabozantinib</td>
     <td>NCT02243605 (CABONE)</td>
-    <td>42</td>
+    <td class="num">42</td>
     <td>Primary endpoint: 33% (14 of 42) free of progression at <strong>6 months</strong> (95% CI 20–50%) (registry; same figure in the paper, abstract only). Kaplan–Meier progression-free survival: 71% at 4 months and 52% at 6 months (paper, full text)</td>
     </tr>
     </tbody>
     </table></div>
     <p><strong>Historical benchmark:</strong> Lagmay 2016 pooled seven COG phase 2 trials, 96 patients, and found about 12% event-free at four months (95% CI 6–19%) (paper, full text).</p>
-    <p><strong>About CABONE's two figures.</strong> These measure different things; they are not a conflict between registry and paper. The trial's own primary endpoint is a simple count at 6 months, 33%, and it is the same in the registry and the paper. The 71% and 52% figures are Kaplan–Meier estimates from the same paper. Using the 71% figure raises the pooled "pill alone" rate (see the class table below).</p>
+    <p><strong>About CABONE's two figures.</strong> These measure different things; they are not a conflict between registry and paper. The trial's own primary endpoint is a simple count at 6 months, 33%, and it is the same in the registry and the paper. The 71% and 52% figures are Kaplan–Meier estimates from the same paper. Using the 71% figure raises the pooled &quot;pill alone&quot; rate (see the class table below).</p>
     <p><strong>Randomized and median-based results:</strong></p>
     <div class="tablewrap"><table>
     <thead>
@@ -163,7 +162,7 @@
     <td>Avelumab, single arm</td>
     <td>NCT03006848</td>
     <td>8.0 weeks (n=18), no responses (registry)</td>
-    <td>—</td>
+    <td class="num">—</td>
     </tr>
     </tbody>
     </table></div>
@@ -175,7 +174,7 @@
     <li><strong>Exploratory.</strong> The authors call the results exploratory.</li>
     </ul>
     <h2 id="pooled-4-month-rate-in-measurable-relapse-by-drug-class">Pooled 4-Month Rate in Measurable Relapse, by Drug Class</h2>
-    <p>One row per trial arm, weighted by patients. Paper values replace registry values where both exist. The table mixes Kaplan–Meier estimates and simple counts, so treat it as approximate. The ranges are rough normal approximations and ignore differences between trials (our calculation; <code>tools/pool_relapse_benchmarks.py</code>).</p>
+    <p>One row per trial arm, weighted by patients. Paper values replace registry values where both exist. The table mixes Kaplan–Meier estimates and simple counts, so treat it as approximate. The ranges are rough normal approximations and ignore differences between trials (our calculation; <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/pool_relapse_benchmarks.py"><code>tools/pool_relapse_benchmarks.py</code></a>).</p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -189,58 +188,58 @@
     <tbody>
     <tr>
     <td>Older chemotherapy: COG pooled single agents (which include imatinib), eribulin, gemcitabine + nab-paclitaxel</td>
-    <td>3</td>
-    <td>133</td>
-    <td>12.5%</td>
+    <td class="num">3</td>
+    <td class="num">133</td>
+    <td class="num">12.5%</td>
     <td>0–28%</td>
     </tr>
     <tr>
     <td>Antibodies, drug conjugates, DNA-repair drugs (denosumab, glembatumumab, olaparib + ceralasertib)</td>
-    <td>3</td>
-    <td>71</td>
-    <td>12.7%</td>
+    <td class="num">3</td>
+    <td class="num">71</td>
+    <td class="num">12.7%</td>
     <td>7–15%</td>
     </tr>
     <tr>
     <td>IGF-1R antibody (R1507, basket trial)</td>
-    <td>1</td>
-    <td>40</td>
-    <td>19.7%</td>
-    <td>—</td>
+    <td class="num">1</td>
+    <td class="num">40</td>
+    <td class="num">19.7%</td>
+    <td class="num">—</td>
     </tr>
     <tr>
     <td>Kinase inhibitor that does not target VEGFR2 (imatinib, adult basket trial)</td>
-    <td>1</td>
-    <td>27</td>
-    <td>18.5%</td>
-    <td>—</td>
+    <td class="num">1</td>
+    <td class="num">27</td>
+    <td class="num">18.5%</td>
+    <td class="num">—</td>
     </tr>
     <tr>
     <td><strong>VEGFR2-blocking kinase inhibitor alone</strong> (sorafenib, apatinib, lenvatinib, cabozantinib)</td>
-    <td>4</td>
-    <td>145</td>
-    <td><strong>52.5%</strong></td>
+    <td class="num">4</td>
+    <td class="num">145</td>
+    <td class="num"><strong>52.5%</strong></td>
     <td>29–71%</td>
     </tr>
     <tr>
     <td>VEGFR2-blocking kinase inhibitor + IE (ITCC-050, OLIE, OAIE)</td>
-    <td>3</td>
-    <td>128</td>
-    <td>65.0%</td>
+    <td class="num">3</td>
+    <td class="num">128</td>
+    <td class="num">65.0%</td>
     <td>51–76%</td>
     </tr>
     <tr>
     <td>VEGFR2-blocking kinase inhibitor + PD-1 antibody (APFAO)</td>
-    <td>1</td>
-    <td>43</td>
-    <td>66.3%</td>
-    <td>—</td>
+    <td class="num">1</td>
+    <td class="num">43</td>
+    <td class="num">66.3%</td>
+    <td class="num">—</td>
     </tr>
     <tr>
     <td>IE alone (OLIE and OAIE randomized control arms)</td>
-    <td>2</td>
-    <td>69</td>
-    <td>56.1%</td>
+    <td class="num">2</td>
+    <td class="num">69</td>
+    <td class="num">56.1%</td>
     <td>42–66%</td>
     </tr>
     </tbody>
@@ -248,7 +247,7 @@
     <p><strong>Sensitivity checks</strong> (our calculation):</p>
     <ul>
     <li><strong>CABONE primary endpoint.</strong> Using CABONE's primary endpoint (33% at 6 months) instead of its 4-month Kaplan–Meier estimate (71%) lowers the pill-alone rate from 52.5% to <strong>41.4%</strong>. The true 4-month figure for the class therefore lies roughly between 40% and 50%.</li>
-    <li><strong>Adding ADVL1622.</strong> Adding the second cabozantinib cohort, COG ADVL1622, gives 49.6% across 174 patients. Its 35% is a "response or disease control over six cycles" rate, not a 4-month progression-free rate, so it is left out of the main table.</li>
+    <li><strong>Adding ADVL1622.</strong> Adding the second cabozantinib cohort, COG ADVL1622, gives 49.6% across 174 patients. Its 35% is a &quot;response or disease control over six cycles&quot; rate, not a 4-month progression-free rate, so it is left out of the main table.</li>
     <li><strong>All arms without a VEGFR2 inhibitor or IE.</strong> Pooling the 8 arms that contain neither a VEGFR2-blocking pill nor IE (271 patients) gives <strong>14.2%</strong>, close to the 12% benchmark.</li>
     </ul>
     <p><strong>What this shows.</strong></p>
@@ -272,25 +271,25 @@
     <tr>
     <td>Dinutuximab + GM-CSF</td>
     <td>NCT02484443 (COG AOST1421)</td>
-    <td>39</td>
+    <td class="num">39</td>
     <td>28%, 11 patients (registry)</td>
     </tr>
     <tr>
     <td>Denosumab</td>
     <td>NCT02470091 (COG AOST1321), cohort 2</td>
-    <td>38</td>
+    <td class="num">38</td>
     <td>26%, 10 patients (registry)</td>
     </tr>
     <tr>
     <td>Olaparib + ceralasertib</td>
     <td>NCT04417062, cohort 2</td>
-    <td>10</td>
+    <td class="num">10</td>
     <td>40%, 4 patients (registry)</td>
     </tr>
     </tbody>
     </table></div>
     <p><strong>Historical benchmark:</strong> in COG AOST0221, 42 patients with a first, completely resected lung relapse, 20% were event-free at 12 months. The 95% confidence interval was 10–34% (paper, full text). That interval is the uncertainty around one trial's estimate, not a range across trials.</p>
-    <p><strong>Updated benchmark (preprint):</strong> a November 2026 COG analysis pooled 99 patients with lung-only relapse after complete resection, enrolled on three COG single-arm phase 2 trials. Twelve-month event-free survival was 22% (95% CI 15–31%), ranging from 14% to 29% across the three trials, and median event-free survival 4.8 months; patients whose first relapse came within two years of diagnosis did worse (p = 0.009). The authors note that nearly doubling the cohort left the confidence interval about as wide as before, and conclude that smaller effects "will require randomization" (preprint, abstract only; Chou et al., medRxiv, November 16, 2026, <a href="https://doi.org/10.64898/2026.11.13.26368045">doi 10.64898/2026.11.13.26368045</a>). The abstract does not name the three trials, so we cannot tell how far they overlap with the arms in the table above. The AOST0221 figure is kept as the published benchmark, and this preprint is not yet a row in <code>data/osteosarcoma_relapse_benchmarks_published.csv</code>.</p>
+    <p><strong>Updated benchmark (preprint):</strong> a November 2026 COG analysis pooled 99 patients with lung-only relapse after complete resection, enrolled on three COG single-arm phase 2 trials. Twelve-month event-free survival was 22% (95% CI 15–31%), ranging from 14% to 29% across the three trials, and median event-free survival 4.8 months; patients whose first relapse came within two years of diagnosis did worse (p = 0.009). The authors note that nearly doubling the cohort left the confidence interval about as wide as before, and conclude that smaller effects &quot;will require randomization&quot; (preprint, abstract only; Chou et al., medRxiv, November 16, 2026, <a href="https://doi.org/10.64898/2026.11.13.26368045">doi 10.64898/2026.11.13.26368045</a>). The abstract does not name the three trials, so we cannot tell how far they overlap with the arms in the table above. The AOST0221 figure is kept as the published benchmark, and this preprint is not yet a row in <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_relapse_benchmarks_published.csv"><code>data/osteosarcoma_relapse_benchmarks_published.csv</code></a>.</p>
     <p>The only randomized comparison found is a small one. In the SARC saracatinib trial after lung metastasis surgery, median progression-free survival was 19.4 months with saracatinib (n=18) and 8.6 months with placebo (n=19), P = 0.47 (paper, full text); the registry lists 38 enrolled, 37 analysed (registry).</p>
     <p>Two drugs with very different mechanisms, an anti-GD2 antibody and a bone-targeted RANKL antibody, gave similar 12-month results in the two larger arms (26–28%). One possible explanation is that the 12-month figure depends more on which patients are enrolled after surgery than on the drug. <em>This is a hypothesis.</em> There are only two comparable arms, and the small olaparib + ceralasertib cohort reached 40%. Either way, a randomized trial in this setting (gap 2 in the research report) is the only way to tell drug effect from patient selection.</p>
     <h2 id="newly-diagnosed-disease">Newly Diagnosed Disease</h2>
@@ -307,31 +306,31 @@
     <tr>
     <td>Good responders, MAP</td>
     <td>NCT00134030 (EURAMOS-1)</td>
-    <td>359</td>
+    <td class="num">359</td>
     <td>74% (69–79%) (registry)</td>
     </tr>
     <tr>
     <td>Good responders, MAP + pegylated interferon</td>
     <td>NCT00134030</td>
-    <td>357</td>
+    <td class="num">357</td>
     <td>77% (72–81%) (registry)</td>
     </tr>
     <tr>
     <td>Poor responders, MAP</td>
     <td>NCT00134030</td>
-    <td>310</td>
+    <td class="num">310</td>
     <td>55% (49–60%) (registry)</td>
     </tr>
     <tr>
     <td>Poor responders, MAP + ifosfamide/etoposide</td>
     <td>NCT00134030</td>
-    <td>308</td>
+    <td class="num">308</td>
     <td>53% (47–59%) (registry)</td>
     </tr>
     <tr>
     <td>MAP + bevacizumab, localized disease</td>
     <td>NCT00667342 (St Jude)</td>
-    <td>31</td>
+    <td class="num">31</td>
     <td>57.5% (registry)</td>
     </tr>
     </tbody>
@@ -339,58 +338,77 @@
     <p>The four EURAMOS-1 arms are the best available controls for any new first-line trial.</p>
     <h2 id="findings-from-papers-and-basket-trials">Findings from Papers and Basket Trials</h2>
     <ul>
-    <li><strong>The 12% benchmark hides large differences between drugs.</strong> Lagmay 2016, Table 2, gives per-trial 4-month rates: docetaxel 23%, oxaliplatin 31%, ixabepilone 9%, rebeccamycin analogue 6%, and 0% for topotecan, irinotecan and imatinib (paper, full text; the audit could not re-open this table).</li>
-    <li><strong>Pazopanib + oral topotecan (PAZOTOP, NCT02357810).</strong> 69.6% progression-free at 12 weeks in 28 osteosarcoma patients (paper, abstract only); median progression-free survival 4.5 months (registry). The regimen includes chemotherapy, and 12 weeks is earlier than 4 months. So it compares with the IE arms, not with 12%.</li>
-    <li><strong>Cabozantinib in children and young adults (COG ADVL1622, NCT02867592).</strong> About 35% had a response or disease control over the first six cycles. Only 14.7% were progression-free at one year (registry). This is the same short-lived pattern as CABONE.</li>
-    <li><strong>Cixutumumab + temsirolimus.</strong> 3 of 24 adults with osteosarcoma responded (paper, full text), against 0 of 10 children in a separate COG trial (registry). The trials differed in design and in IGF-1R selection, so this is not a like-for-like age comparison.</li>
-    <li><strong>Checkpoint inhibitors showed minimal activity in small cohorts.</strong> These cohorts are too small to rule activity out:</li>
+    <li>
+    <p><strong>The 12% benchmark hides large differences between drugs.</strong> Lagmay 2016, Table 2, gives per-trial 4-month rates: docetaxel 23%, oxaliplatin 31%, ixabepilone 9%, rebeccamycin analogue 6%, and 0% for topotecan, irinotecan and imatinib (paper, full text; the audit could not re-open this table).</p>
+    </li>
+    <li>
+    <p><strong>Pazopanib + oral topotecan (PAZOTOP, NCT02357810).</strong> 69.6% progression-free at 12 weeks in 28 osteosarcoma patients (paper, abstract only); median progression-free survival 4.5 months (registry). The regimen includes chemotherapy, and 12 weeks is earlier than 4 months. So it compares with the IE arms, not with 12%.</p>
+    </li>
+    <li>
+    <p><strong>Cabozantinib in children and young adults (COG ADVL1622, NCT02867592).</strong> About 35% had a response or disease control over the first six cycles. Only 14.7% were progression-free at one year (registry). This is the same short-lived pattern as CABONE.</p>
+    </li>
+    <li>
+    <p><strong>Cixutumumab + temsirolimus.</strong> 3 of 24 adults with osteosarcoma responded (paper, full text), against 0 of 10 children in a separate COG trial (registry). The trials differed in design and in IGF-1R selection, so this is not a like-for-like age comparison.</p>
+    </li>
+    <li>
+    <p><strong>Checkpoint inhibitors showed minimal activity in small cohorts.</strong> These cohorts are too small to rule activity out:</p>
+    <ul>
     <li>nivolumab: 0 of 10 responded;</li>
     <li>nivolumab + ipilimumab: 0 of 10;</li>
     <li>pembrolizumab + cyclophosphamide: 1 of 15 (registry);</li>
     <li>pembrolizumab in SARC028: 1 of 22 (paper, abstract only);</li>
     <li>pembrolizumab in a Norway/Italy trial: 0 of 12 had clinical benefit at 18 weeks (paper, abstract only).</li>
     </ul>
-    <p>The one immunotherapy combination with clear activity so far pairs a VEGFR2-blocking pill with a PD-1 antibody (APFAO, 66% at 4 months), and it missed its own 6-month target.
-    - <strong>The ATR/PARP evidence in osteosarcoma is a single combination.</strong> Olaparib + ceralasertib sits at the benchmark (15% at 4 months). No single-agent ATR or PARP inhibitor cohort in osteosarcoma has reported. This tempers the DNA-repair transfer ideas in the research report: if these drugs work, it may only be in a biomarker-selected group, which has not been tested.
-    - <strong>No newer peer-reviewed COG pooled benchmark.</strong> We found no newer peer-reviewed COG pooled benchmark for osteosarcoma; the one update, for resected lung-only relapse (99 patients, 22% at 12 months), is so far a preprint (preprint, abstract only; see above). COG has published such benchmarks for rhabdomyosarcoma and for non-rhabdomyosarcoma soft-tissue sarcoma.</p>
+    <p>The one immunotherapy combination with clear activity so far pairs a VEGFR2-blocking pill with a PD-1 antibody (APFAO, 66% at 4 months), and it missed its own 6-month target.</p>
+    </li>
+    <li>
+    <p><strong>The ATR/PARP evidence in osteosarcoma is a single combination.</strong> Olaparib + ceralasertib sits at the benchmark (15% at 4 months). No single-agent ATR or PARP inhibitor cohort in osteosarcoma has reported. This tempers the DNA-repair transfer ideas in the research report: if these drugs work, it may only be in a biomarker-selected group, which has not been tested.</p>
+    </li>
+    <li>
+    <p><strong>No newer peer-reviewed COG pooled benchmark.</strong> We found no newer peer-reviewed COG pooled benchmark for osteosarcoma; the one update, for resected lung-only relapse (99 patients, 22% at 12 months), is so far a preprint (preprint, abstract only; see above). COG has published such benchmarks for rhabdomyosarcoma and for non-rhabdomyosarcoma soft-tissue sarcoma.</p>
+    </li>
+    </ul>
     <h2 id="what-this-connects-to">What This Connects To</h2>
     <ul>
     <li><strong>Front-line testing of the pills has stalled in the US.</strong> COG's front-line cabozantinib trial, AOST2032, is suspended (registry). Ipsen's maintenance trial CabOSTar closed after 10 patients (registry). We found no randomized kinase-inhibitor trial currently enrolling at a US site (registry; our calculation). In Europe, FOSTER-CabOS (part of NCT07871864) and a French regorafenib maintenance trial (NCT04055220) are recruiting (registry).</li>
     <li><strong>Resected relapse.</strong> Any new claim in this setting should be compared with these arms and with the AOST0221 benchmark (20%, 95% CI 10–34%, n = 42) and its larger COG update (22%, 95% CI 15–31%, n = 99; preprint, abstract only) before it is believed. That includes the OST-HER2 vaccine's reported results (press release only).</li>
-    <li><strong>The kinase-inhibitor report</strong> (<code>reports/Why kinase-inhibitor pills work in osteosarcoma.md</code>) uses these same figures.</li>
+    <li><strong>The kinase-inhibitor report</strong> (<a href="../reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html"><code>reports/Why kinase-inhibitor pills work in osteosarcoma.md</code></a>) uses these same figures.</li>
     </ul>
     <h2 id="limits">Limits</h2>
     <ul>
     <li><strong>Selection.</strong> The registry part includes only trials that posted results; many trials, including the large unknown-status trials in the trials report, never did. Papers and basket trials were added where we could find and read them. The dataset is therefore still a biased subset of all osteosarcoma trials.</li>
     <li><strong>Basket trials.</strong> Basket-trial arms were included only where results were reported for osteosarcoma patients specifically. Many such arms have 10 or fewer osteosarcoma patients, and adult basket trials enrolled more heavily pretreated patients than COG trials.</li>
-    <li><strong>Endpoints differ.</strong> "Disease control", "event-free", "progression-free" and "non-progression" are close but not identical. Time points range from 12 weeks to 6 months. Kaplan–Meier estimates and simple counts are mixed. Treat cross-trial comparisons as rough.</li>
-    <li><strong>Abstract-only sources.</strong> 27 of the 60 published-paper rows are marked "abstract only", because some publisher sites were unreachable from this workspace.</li>
+    <li><strong>Endpoints differ.</strong> &quot;Disease control&quot;, &quot;event-free&quot;, &quot;progression-free&quot; and &quot;non-progression&quot; are close but not identical. Time points range from 12 weeks to 6 months. Kaplan–Meier estimates and simple counts are mixed. Treat cross-trial comparisons as rough.</li>
+    <li><strong>Abstract-only sources.</strong> 27 of the 60 published-paper rows are marked &quot;abstract only&quot;, because some publisher sites were unreachable from this workspace.</li>
     <li><strong>Benchmark source.</strong> The historical benchmarks (Lagmay 2016 and AOST0221) are now rows in the published-paper file.</li>
     </ul>
     <h2 id="next-steps">Next Steps</h2>
     <ol>
     <li>Add the per-trial efficacy table from the FOSTER phase 2 review (van Ewijk et al., <em>Cancer Treat Rev</em> 2023, PMID 37738712; 58 trials, 1,361 osteosarcoma patients). It is the largest source still missing.</li>
     <li>Re-read abstract-only rows in full text when publisher access allows, starting with REGOBONE, SARC024 and the sorafenib trials.</li>
-    <li>Ask COG for the ADVL1622 definition of "disease control", so it can enter the 4-month table.</li>
+    <li>Ask COG for the ADVL1622 definition of &quot;disease control&quot;, so it can enter the 4-month table.</li>
     </ol>
     <h2 id="change-log">Change Log</h2>
-    <p><strong>November 20, 2026.</strong> Naming made consistent with the other reports: the pill class is now called "VEGFR2-blocking" throughout the text (the November 14 entry below records the earlier name). The saracatinib result now notes the registry's 38 enrolled and 37 analysed. Data files unchanged.</p>
-    <p><strong>November 19, 2026.</strong> Added the COG update for resected lung-only relapse (Chou et al., medRxiv 2026; 99 patients; 12-month event-free survival 22%, 95% CI 15–31%), labelled (preprint, abstract only), alongside the AOST0221 benchmark, which is kept. "No newer COG pooled benchmark" now reads "no newer peer-reviewed" benchmark. New label <strong>(preprint, abstract only)</strong>: read only in a preprint's abstract; preprints are not peer-reviewed. The data files were not changed.</p>
-    <p><strong>November 13–14, 2026.</strong> The report was consolidated into one current version after an independent audit (<code>research_notes/Audit/audit_B_trials_controls_pills.md</code>). Earlier "Update" sections were folded into the text.</p>
+    <p><strong>November 20, 2026.</strong> Naming made consistent with the other reports: the pill class is now called &quot;VEGFR2-blocking&quot; throughout the text (the November 14 entry below records the earlier name). The saracatinib result now notes the registry's 38 enrolled and 37 analysed. Data files unchanged.</p>
+    <p><strong>November 19, 2026.</strong> Added the COG update for resected lung-only relapse (Chou et al., medRxiv 2026; 99 patients; 12-month event-free survival 22%, 95% CI 15–31%), labelled (preprint, abstract only), alongside the AOST0221 benchmark, which is kept. &quot;No newer COG pooled benchmark&quot; now reads &quot;no newer peer-reviewed&quot; benchmark. New label <strong>(preprint, abstract only)</strong>: read only in a preprint's abstract; preprints are not peer-reviewed. The data files were not changed.</p>
+    <p><strong>November 13–14, 2026.</strong> The report was consolidated into one current version after an independent audit (<a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Audit/audit_B_trials_controls_pills.md"><code>research_notes/Audit/audit_B_trials_controls_pills.md</code></a>). Earlier &quot;Update&quot; sections were folded into the text.</p>
     <ul>
     <li><strong>Elimusertib removed: not osteosarcoma patients.</strong> NCT05071209's 22 phase 2 patients had Ewing sarcoma, alveolar rhabdomyosarcoma or DNA-repair-altered solid tumours. It had been mis-tagged as osteosarcoma-only. The ATR/PARP statement now rests on one combination.</li>
     <li><strong>Osteosarcoma-specific registry trials: 41 → 34.</strong> This follows the scope-tag fix described in the trials report. Seven trials, including elimusertib, a lung-cancer trial and paediatric multi-tumour baskets, no longer count.</li>
-    <li><strong>"Only the kinase-inhibitor pills sit above the line" corrected.</strong> IE chemotherapy alone also sits far above 12%, and imatinib, a kinase-inhibitor pill, does not. The class is now named "VEGFR-blocking kinase inhibitors".</li>
+    <li><strong>&quot;Only the kinase-inhibitor pills sit above the line&quot; corrected.</strong> IE chemotherapy alone also sits far above 12%, and imatinib, a kinase-inhibitor pill, does not. The class is now named &quot;VEGFR-blocking kinase inhibitors&quot;.</li>
     <li><strong>CABONE framing unified.</strong> Its 33% (registry) and 71% (paper) are a primary endpoint and a Kaplan–Meier estimate from the same trial, not a registry-paper conflict. Added the sensitivity result: 41.4% for the pill-alone class using CABONE's primary endpoint.</li>
-    <li><strong>"Range 10–34%" corrected.</strong> It is the 95% confidence interval of one 42-patient trial (AOST0221), not a range across trials.</li>
-    <li><strong>Resected relapse.</strong> "Results cluster tightly" softened to a hypothesis. Olaparib + ceralasertib cohort 2 (4 of 10 event-free at 12 months) and the saracatinib randomized result added.</li>
+    <li><strong>&quot;Range 10–34%&quot; corrected.</strong> It is the 95% confidence interval of one 42-patient trial (AOST0221), not a range across trials.</li>
+    <li><strong>Resected relapse.</strong> &quot;Results cluster tightly&quot; softened to a hypothesis. Olaparib + ceralasertib cohort 2 (4 of 10 event-free at 12 months) and the saracatinib randomized result added.</li>
     <li><strong>OLIE and OAIE.</strong> Overall survival added (OLIE HR 1.28 at the primary analysis, 0.93 at the final analysis; OAIE HR 1.48), along with OAIE's dosing difference (IE on days 1–5 in the control arm, days 1–3 with apatinib).</li>
-    <li><strong>"Checkpoint inhibitors are confirmed inactive"</strong> became "showed minimal activity in small cohorts".</li>
-    <li><strong>"No newer COG pooled benchmark exists"</strong> became "we found no newer…".</li>
-    <li><strong>Patient counts.</strong></li>
+    <li><strong>&quot;Checkpoint inhibitors are confirmed inactive&quot;</strong> became &quot;showed minimal activity in small cohorts&quot;.</li>
+    <li><strong>&quot;No newer COG pooled benchmark exists&quot;</strong> became &quot;we found no newer…&quot;.</li>
+    <li><strong>Patient counts.</strong>
+    <ul>
     <li>Published-paper additions: about 740 patients. The audit suspected double counting of Lagmay 2016; a recount found the 96 patients counted once.</li>
     <li>Basket additions: about 400 osteosarcoma patients across separate arms (332 measurable, 68 resected).</li>
-    <li><strong>Stale limits and next steps removed:</strong> "only registry results included", "basket arms excluded", "benchmarks not from this dataset" and "add Lagmay 2016", which had already been done.</li>
+    </ul>
+    </li>
+    <li><strong>Stale limits and next steps removed:</strong> &quot;only registry results included&quot;, &quot;basket arms excluded&quot;, &quot;benchmarks not from this dataset&quot; and &quot;add Lagmay 2016&quot;, which had already been done.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Osteosarcoma%20pooled%20control%20dataset.md">reports/Osteosarcoma pooled control dataset.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
@@ -400,7 +418,7 @@
 <footer class="site">
  <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
-  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 
@@ -414,7 +432,14 @@
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
   });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {
     var links = Array.prototype.slice.call(toc.querySelectorAll("a"));

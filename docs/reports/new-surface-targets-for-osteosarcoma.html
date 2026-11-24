@@ -37,22 +37,21 @@
       <a href="../explorer.html">Evidence Explorer</a>
       <a href="../how-this-was-made.html">Methods</a>
     </nav>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
     <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
   </div>
 </header>
 
 <div class="doclayout">
-  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#why-this-screen">Why This Screen</a></li><li class="l1"><a href="#method">Method</a></li><li class="l1"><a href="#how-the-comparison-genes-ranked">How the Comparison Genes Ranked</a></li><li class="l1"><a href="#results-top-25-surface-candidates-outside-the-comparison-set">Results: Top 25 Surface Candidates Outside the Comparison Set</a></li><li class="l1"><a href="#how-much-the-ranking-depends-on-our-choices">How Much the Ranking Depends on Our Choices</a></li><li class="l1"><a href="#the-five-leads-in-plain-terms">The Five Leads, in Plain Terms</a></li><li class="l1"><a href="#1-lrrc15-the-top-hit-and-already-in-osteosarcoma-trials">1. LRRC15: The Top Hit, and Already in Osteosarcoma Trials</a></li><li class="l1"><a href="#2-ifitm5-the-most-interesting-new-hit-with-a-built-in-caveat">2. IFITM5: The Most Interesting New Hit, with a Built-In Caveat</a></li><li class="l1"><a href="#3-adam12-modest-expression-good-specificity-on-our-main-measure">3. ADAM12: Modest Expression, Good Specificity on Our Main Measure</a></li><li class="l1"><a href="#4-ptk7-the-one-you-could-test-fastest">4. PTK7: The One You Could Test Fastest</a></li><li class="l1"><a href="#5-cd248-endosialin-tem1-an-antibody-already-tested-and-it-did-not-help-in-sarcoma">5. CD248 / Endosialin (TEM1): An Antibody Already Tested, and It Did Not Help in Sarcoma</a></li><li class="l1"><a href="#also-worth-a-look">Also Worth a Look</a></li><li class="l1"><a href="#candidates-that-are-probably-artefacts">Candidates That Are Probably Artefacts</a></li><li class="l1"><a href="#caveats">Caveats</a></li><li class="l1"><a href="#reproducing-this">Reproducing This</a></li><li class="l1"><a href="#what-would-make-this-real">What Would Make This Real</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#why-this-screen">Why This Screen</a></li><li class="l1"><a href="#method">Method</a></li><li class="l1"><a href="#how-the-comparison-genes-ranked">How the Comparison Genes Ranked</a></li><li class="l1"><a href="#results-top-25-surface-candidates-outside-the-comparison-set">Results: Top 25 Surface Candidates Outside the Comparison Set</a></li><li class="l1"><a href="#how-much-the-ranking-depends-on-our-choices">How Much the Ranking Depends on Our Choices</a></li><li class="l1"><a href="#the-five-leads-in-plain-terms">The Five Leads, in Plain Terms</a></li><li class="l1"><a href="#1-lrrc15-the-top-hit-and-already-in-osteosarcoma-trials">1. LRRC15: The Top Hit, and Already in Osteosarcoma Trials</a></li><li class="l1"><a href="#2-ifitm5-the-most-interesting-new-hit-with-a-built-in-caveat">2. IFITM5: The Most Interesting New Hit, with a Built-In Caveat</a></li><li class="l1"><a href="#3-adam12-modest-expression-good-specificity-on-our-main-measure">3. ADAM12: Modest Expression, Good Specificity on Our Main Measure</a></li><li class="l1"><a href="#4-ptk7-the-one-you-could-test-fastest">4. PTK7: The One You Could Test Fastest</a></li><li class="l1"><a href="#5-cd248--endosialin-tem1-an-antibody-already-tested-and-it-did-not-help-in-sarcoma">5. CD248 / Endosialin (TEM1): An Antibody Already Tested, and It Did Not Help in Sarcoma</a></li><li class="l1"><a href="#also-worth-a-look">Also Worth a Look</a></li><li class="l1"><a href="#candidates-that-are-probably-artefacts">Candidates That Are Probably Artefacts</a></li><li class="l1"><a href="#caveats">Caveats</a></li><li class="l1"><a href="#reproducing-this">Reproducing This</a></li><li class="l1"><a href="#what-would-make-this-real">What Would Make This Real</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/New%20surface%20targets%20for%20osteosarcoma.md">reports/New surface targets for osteosarcoma.md</a></p>
+    <p class="crumb">Report · Updated November 20, 2026 · 26 min read</p>
     <h1>New Surface Targets for Osteosarcoma</h1>
     <p><em>Built November 13–14, 2026 from open data: 88 TARGET-OS tumour RNA-seq samples (NCI GDC), GTEx v8
     normal-tissue medians, Human Protein Atlas surface annotation, ClinicalTrials.gov API v2 (trial
-    statuses re-checked November 14, 2026). Script: <code>tools/surface_targets.py</code>. Full table:
-    <code>data/osteosarcoma_surface_target_candidates.csv</code> (2,434 genes). Working notes:
-    <code>research_notes/Surface targets/notes.md</code>. Updated November 19, 2026 with a protein-level check of the leads
-    (<code>research_notes/Surface targets/protein_check.md</code>) and new trial records; see the change log.</em></p>
+    statuses re-checked November 14, 2026). Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/surface_targets.py"><code>tools/surface_targets.py</code></a>. Full table:
+    <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_surface_target_candidates.csv"><code>data/osteosarcoma_surface_target_candidates.csv</code></a> (2,434 genes). Working notes:
+    <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Surface%20targets/notes.md"><code>research_notes/Surface targets/notes.md</code></a>. Updated November 19, 2026 with a protein-level check of the leads
+    (<a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Surface%20targets/protein_check.md"><code>research_notes/Surface targets/protein_check.md</code></a>) and new trial records; see the change log.</em></p>
     <h2 id="summary">Summary</h2>
     <p>Antibodies, antibody-drug conjugates (ADCs) and CAR-T cells need a protein that sits on the
     tumour cell surface and is scarce in vital organs. We scored every surface protein expressed in
@@ -69,17 +68,19 @@
     Moquin-Beaudry 2026) plus one of patient-derived xenografts (Mooney 2026); PTK7 has been stained only in two
     xenografts and two cell lines, IFITM5 and ADAM12 have no human osteosarcoma protein data at all, and TMEM119, which our
     surface filter excluded, has surface staining in patient tumours.</p>
-    <p><strong>How to read the labels.</strong> Key numbers carry one of these tags:
-    - <strong>(registry)</strong>: read directly from an official registry or public database: ClinicalTrials.gov,
-      PubMed, GTEx, Human Protein Atlas, EMA/FDA approval records.
-    - <strong>(paper, full text)</strong>: we read the full paper.
-    - <strong>(paper, abstract only)</strong>: we read only the abstract.
-    - <strong>(press release only)</strong>: the only source is a press release or a company or institution web
-      page.
-    - <strong>(our calculation)</strong>: we computed it from this repository's data files with the script named
-      above.
-    - <strong>(preprint, abstract only)</strong>: we read only the abstract of a preprint, which has not been
-      peer-reviewed.</p>
+    <p><strong>How to read the labels.</strong> Key numbers carry one of these tags:</p>
+    <ul>
+    <li><strong>(registry)</strong>: read directly from an official registry or public database: ClinicalTrials.gov,
+    PubMed, GTEx, Human Protein Atlas, EMA/FDA approval records.</li>
+    <li><strong>(paper, full text)</strong>: we read the full paper.</li>
+    <li><strong>(paper, abstract only)</strong>: we read only the abstract.</li>
+    <li><strong>(press release only)</strong>: the only source is a press release or a company or institution web
+    page.</li>
+    <li><strong>(our calculation)</strong>: we computed it from this repository's data files with the script named
+    above.</li>
+    <li><strong>(preprint, abstract only)</strong>: we read only the abstract of a preprint, which has not been
+    peer-reviewed.</li>
+    </ul>
     <h2 id="why-this-screen">Why This Screen</h2>
     <p>No new agent has become standard treatment for osteosarcoma in the US since the 1980s;
     mifamurtide was approved in the EU in 2009 for non-metastatic disease (registry). Most of the
@@ -97,33 +98,32 @@
     <p>The screen is a therapeutic-window calculation over three public datasets.</p>
     <ol>
     <li><strong>Tumour expression.</strong> All 88 open-access RNA-seq samples in the NCI GDC project TARGET-OS
-       (STAR gene counts, <code>tpm_unstranded</code>, protein-coding genes only; every one a primary tumour).
-       For each gene: median TPM across tumours, quartiles, and the share of tumours above 5 TPM.
-       A gene had to reach median 10 TPM to be considered.</li>
+    (STAR gene counts, <code>tpm_unstranded</code>, protein-coding genes only; every one a primary tumour).
+    For each gene: median TPM across tumours, quartiles, and the share of tumours above 5 TPM.
+    A gene had to reach median 10 TPM to be considered.</li>
     <li><strong>Surface filter.</strong> Human Protein Atlas annotation. A gene is kept if it is a predicted
-       membrane protein. It is graded <em>high</em> confidence if the plasma membrane is one of its main
-       HPA locations or it is a curated CD marker, <em>medium</em> if the plasma membrane appears only as a
-       secondary location, and <em>low</em> otherwise. The headline list uses high plus medium.</li>
+    membrane protein. It is graded <em>high</em> confidence if the plasma membrane is one of its main
+    HPA locations or it is a curated CD marker, <em>medium</em> if the plasma membrane appears only as a
+    secondary location, and <em>low</em> otherwise. The headline list uses high plus medium.</li>
     <li><strong>Normal tissue.</strong> GTEx v8 median TPM in each of 54 tissues. The window denominator is the
-       <strong>highest median among 32 "vital" tissue entries</strong>: heart, lung, liver, kidney, 12 brain
-       regions and the cervical spinal cord, tibial nerve, colon and small intestine, arteries,
-       whole blood, oesophageal mucosa, stomach, pancreas, adrenal and skeletal muscle. The worst
-       tissue across all 54 is reported separately, as is GTEx's cultured-fibroblast sample. For a
-       mesenchymal tumour the fibroblast value is a useful comparator: an antigen that is also high
-       in fibroblasts is probably a lineage marker rather than a tumour marker.</li>
-    <li><strong>Score.</strong> <code>window_score = log2((tumour median + 1) / (worst vital normal + 1)) ×
-       (fraction of tumours expressing)</code>. The log ratio is the window; the multiplier penalises a
-       gene that is high in a third of tumours and absent in the rest, which is of little use for a
-       single-antigen agent.</li>
+    <strong>highest median among 32 &quot;vital&quot; tissue entries</strong>: heart, lung, liver, kidney, 12 brain
+    regions and the cervical spinal cord, tibial nerve, colon and small intestine, arteries,
+    whole blood, oesophageal mucosa, stomach, pancreas, adrenal and skeletal muscle. The worst
+    tissue across all 54 is reported separately, as is GTEx's cultured-fibroblast sample. For a
+    mesenchymal tumour the fibroblast value is a useful comparator: an antigen that is also high
+    in fibroblasts is probably a lineage marker rather than a tumour marker.</li>
+    <li><strong>Score.</strong> <code>window_score = log2((tumour median + 1) / (worst vital normal + 1)) × (fraction of tumours expressing)</code>. The log ratio is the window; the multiplier penalises a
+    gene that is high in a third of tumours and absent in the rest, which is of little use for a
+    single-antigen agent.</li>
     <li><strong>Context.</strong> For the leading candidates, ClinicalTrials.gov API v2 was searched for antibody,
-       ADC, bispecific or CAR programmes naming the target in any cancer. Osteosarcoma literature
-       depth was taken from this repository's evidence tables, which inherit their limitations (see
-       the literature map).</li>
+    ADC, bispecific or CAR programmes naming the target in any cancer. Osteosarcoma literature
+    depth was taken from this repository's evidence tables, which inherit their limitations (see
+    the literature map).</li>
     <li><strong>Comparison set.</strong> <strong>We chose these comparison genes ourselves; they were not pre-specified
-       positives.</strong> They are the eight antigens with osteosarcoma programmes or proposals (B7-H3,
-       GD2 via its synthase B4GALNT1, HER2, GPNMB, EGFR, IL11RA, EPHA2, ALPL) plus LRRC15, MMP14 and
-       CDH11, which we added because they are known mesenchymal or sarcoma antigens. They are scored
-       alongside the candidates and flagged in the output table.</li>
+    positives.</strong> They are the eight antigens with osteosarcoma programmes or proposals (B7-H3,
+    GD2 via its synthase B4GALNT1, HER2, GPNMB, EGFR, IL11RA, EPHA2, ALPL) plus LRRC15, MMP14 and
+    CDH11, which we added because they are known mesenchymal or sarcoma antigens. They are scored
+    alongside the candidates and flagged in the output table.</li>
     </ol>
     <h2 id="how-the-comparison-genes-ranked">How the Comparison Genes Ranked</h2>
     <p>These numbers come from the same pipeline as the candidate list (our calculation).</p>
@@ -143,107 +143,107 @@
     <tr>
     <td><strong>LRRC15</strong></td>
     <td>4 registered trials: 2 recruiting (one in relapsed osteosarcoma), 2 not yet recruiting</td>
-    <td>220</td>
-    <td>97.7%</td>
+    <td class="num">220</td>
+    <td class="num">97.7%</td>
     <td>0.8 (stomach)</td>
-    <td><strong>6.77</strong></td>
-    <td><strong>1</strong></td>
+    <td class="num"><strong>6.77</strong></td>
+    <td class="num"><strong>1</strong></td>
     </tr>
     <tr>
     <td><strong>MMP14</strong></td>
     <td>No osteosarcoma trial found</td>
-    <td>1,629</td>
-    <td>100%</td>
+    <td class="num">1,629</td>
+    <td class="num">100%</td>
     <td>237.5 (tibial artery)</td>
-    <td>2.77</td>
-    <td>7</td>
+    <td class="num">2.77</td>
+    <td class="num">7</td>
     </tr>
     <tr>
     <td><strong>CD276 / B7-H3</strong></td>
     <td>ADC, CAR-T and imaging trials in osteosarcoma (13 in the drug map)</td>
-    <td>196</td>
-    <td>100%</td>
+    <td class="num">196</td>
+    <td class="num">100%</td>
     <td>41.8 (aorta)</td>
-    <td>2.20</td>
-    <td>15</td>
+    <td class="num">2.20</td>
+    <td class="num">15</td>
     </tr>
     <tr>
     <td><strong>CDH11</strong></td>
     <td>No osteosarcoma trial found</td>
-    <td>97</td>
-    <td>98.9%</td>
+    <td class="num">97</td>
+    <td class="num">98.9%</td>
     <td>27.2 (lung)</td>
-    <td>1.78</td>
-    <td>21</td>
+    <td class="num">1.78</td>
+    <td class="num">21</td>
     </tr>
     <tr>
     <td><strong>ALPL</strong></td>
     <td>No osteosarcoma trial found</td>
-    <td>1,315</td>
-    <td>100%</td>
+    <td class="num">1,315</td>
+    <td class="num">100%</td>
     <td>597.6 (whole blood)</td>
-    <td>1.14</td>
-    <td>70</td>
+    <td class="num">1.14</td>
+    <td class="num">70</td>
     </tr>
     <tr>
     <td><strong>GPNMB</strong></td>
     <td>ADC phase 2 in osteosarcoma (NCT02487979) completed; 1 of 22 responded, did not proceed to stage 2 (paper, abstract only; PMID 31586757)</td>
-    <td>155</td>
-    <td>100%</td>
+    <td class="num">155</td>
+    <td class="num">100%</td>
     <td>177.0 (aorta)</td>
-    <td>−0.19</td>
-    <td>617</td>
+    <td class="num">−0.19</td>
+    <td class="num">617</td>
     </tr>
     <tr>
     <td><strong>EPHA2</strong></td>
     <td>No osteosarcoma trial found; an EphA2-targeted liposome (MM-310, NCT03076372) in other solid tumours, status unknown</td>
-    <td>102</td>
-    <td>98.9%</td>
+    <td class="num">102</td>
+    <td class="num">98.9%</td>
     <td>197.6 (oesophageal mucosa)</td>
-    <td>−0.94</td>
-    <td>1,263</td>
+    <td class="num">−0.94</td>
+    <td class="num">1,263</td>
     </tr>
     <tr>
     <td><strong>EGFR</strong></td>
     <td>CAR-T and other trials (5 in the drug map)</td>
-    <td>10.5</td>
-    <td>68.2%</td>
+    <td class="num">10.5</td>
+    <td class="num">68.2%</td>
     <td>43.1 (tibial nerve)</td>
-    <td>−1.32</td>
-    <td>1,554</td>
+    <td class="num">−1.32</td>
+    <td class="num">1,554</td>
     </tr>
     <tr>
     <td><strong>IL11RA</strong></td>
     <td>No osteosarcoma trial found</td>
-    <td>6.0</td>
-    <td>59.1%</td>
+    <td class="num">6.0</td>
+    <td class="num">59.1%</td>
     <td>80.6 (aorta)</td>
-    <td>−2.10</td>
-    <td>1,998</td>
+    <td class="num">−2.10</td>
+    <td class="num">1,998</td>
     </tr>
     <tr>
     <td><strong>B4GALNT1 (GD2 synthase)</strong></td>
     <td>Antibody and CAR-T trials (22 in the drug map)</td>
-    <td>6.3</td>
-    <td>61.4%</td>
+    <td class="num">6.3</td>
+    <td class="num">61.4%</td>
     <td>93.6 (cerebellum)</td>
-    <td>−2.26</td>
-    <td>2,062</td>
+    <td class="num">−2.26</td>
+    <td class="num">2,062</td>
     </tr>
     <tr>
     <td><strong>ERBB2 / HER2</strong></td>
     <td>ADC and CAR-T trials (7 in the drug map)</td>
-    <td>15.3</td>
-    <td>87.5%</td>
+    <td class="num">15.3</td>
+    <td class="num">87.5%</td>
     <td>130.1 (tibial nerve)</td>
-    <td>−2.63</td>
-    <td>2,178</td>
+    <td class="num">−2.63</td>
+    <td class="num">2,178</td>
     </tr>
     </tbody>
     </table></div>
     <p><em>Expression, score and rank are our calculation. GTEx values are GTEx v8 (registry). Trial counts
-    "in the drug map" are from <code>data/osteosarcoma_gene_evidence.csv</code>. "No osteosarcoma trial found"
-    means a ClinicalTrials.gov search by target and drug names with condition "osteosarcoma"
+    &quot;in the drug map&quot; are from <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_gene_evidence.csv"><code>data/osteosarcoma_gene_evidence.csv</code></a>. &quot;No osteosarcoma trial found&quot;
+    means a ClinicalTrials.gov search by target and drug names with condition &quot;osteosarcoma&quot;
     returned nothing relevant.</em></p>
     <p>Three things follow from this table.</p>
     <p><strong>The genes we expected to score well did.</strong> LRRC15, MMP14, B7-H3 and CDH11 come out at ranks 1,
@@ -271,7 +271,7 @@
     lysosomal and cytochrome-P450 proteins that a membrane-prediction filter lets through. It also
     removes two genuine surface proteins, CD320 (the transcobalamin receptor) and MPZL1. All of them
     are still in the CSV (<code>rank_novel_surface</code> ignores the housekeeping filter), so the choice can be
-    reversed. "Outside the comparison set" does not mean untested in osteosarcoma: see the notes on
+    reversed. &quot;Outside the comparison set&quot; does not mean untested in osteosarcoma: see the notes on
     SMO and ITGA4 below the table.</p>
     <div class="tablewrap"><table>
     <thead>
@@ -291,327 +291,327 @@
     </thead>
     <tbody>
     <tr>
-    <td>1</td>
-    <td><strong>LRRC15</strong></td>
-    <td>220</td>
-    <td>97.7%</td>
+    <td class="num">1</td>
+    <td><a href="#1-lrrc15-the-top-hit-and-already-in-osteosarcoma-trials"><strong>LRRC15</strong></a></td>
+    <td class="num">220</td>
+    <td class="num">97.7%</td>
     <td>0.8 (Stomach)</td>
     <td>3 (Skin Not Sun Exposed Suprapubic)</td>
-    <td>3.14</td>
-    <td>6.93</td>
-    <td>6.772</td>
+    <td class="num">3.14</td>
+    <td class="num">6.93</td>
+    <td class="num">6.772</td>
     <td>IHC n/a, IF Approved</td>
     <td>medium</td>
     </tr>
     <tr>
-    <td>2</td>
-    <td><strong>IFITM5</strong></td>
-    <td>657</td>
-    <td>88.6%</td>
+    <td class="num">2</td>
+    <td><a href="#2-ifitm5-the-most-interesting-new-hit-with-a-built-in-caveat"><strong>IFITM5</strong></a></td>
+    <td class="num">657</td>
+    <td class="num">88.6%</td>
     <td>2.6 (Pancreas)</td>
     <td>3 (Pancreas)</td>
-    <td>0.0</td>
-    <td>7.5</td>
-    <td>6.641</td>
+    <td class="num">0.0</td>
+    <td class="num">7.5</td>
+    <td class="num">6.641</td>
     <td>IHC n/a, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>3</td>
-    <td><strong>ADAM12</strong></td>
-    <td>35</td>
-    <td>98.9%</td>
+    <td class="num">3</td>
+    <td><a href="#3-adam12-modest-expression-good-specificity-on-our-main-measure"><strong>ADAM12</strong></a></td>
+    <td class="num">35</td>
+    <td class="num">98.9%</td>
     <td>1.8 (Brain Caudate basal ganglia)</td>
     <td>9 (Ovary)</td>
-    <td>31.65</td>
-    <td>3.68</td>
-    <td>3.638</td>
+    <td class="num">31.65</td>
+    <td class="num">3.68</td>
+    <td class="num">3.638</td>
     <td>IHC Enhanced, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>4</td>
-    <td><strong>MRC2</strong></td>
-    <td>436</td>
-    <td>100.0%</td>
+    <td class="num">4</td>
+    <td><a href="#4-ptk7-the-one-you-could-test-fastest"><strong>MRC2</strong></a></td>
+    <td class="num">436</td>
+    <td class="num">100.0%</td>
     <td>153.4 (Artery Aorta)</td>
     <td>153 (Artery Aorta)</td>
-    <td>259.09</td>
-    <td>1.5</td>
-    <td>1.5</td>
+    <td class="num">259.09</td>
+    <td class="num">1.5</td>
+    <td class="num">1.5</td>
     <td>IHC Enhanced, IF n/a</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>5</td>
-    <td><strong>PTK7</strong></td>
-    <td>93</td>
-    <td>98.9%</td>
+    <td class="num">5</td>
+    <td><a href="#5-cd248--endosialin-tem1-an-antibody-already-tested-and-it-did-not-help-in-sarcoma"><strong>PTK7</strong></a></td>
+    <td class="num">93</td>
+    <td class="num">98.9%</td>
     <td>38.9 (Lung)</td>
     <td>116 (Uterus)</td>
-    <td>71.61</td>
-    <td>1.23</td>
-    <td>1.216</td>
+    <td class="num">71.61</td>
+    <td class="num">1.23</td>
+    <td class="num">1.216</td>
     <td>IHC Approved, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>6</td>
+    <td class="num">6</td>
     <td><strong>ULBP2</strong></td>
-    <td>17</td>
-    <td>93.2%</td>
+    <td class="num">17</td>
+    <td class="num">93.2%</td>
     <td>6.7 (Esophagus Mucosa)</td>
     <td>7 (Esophagus Mucosa)</td>
-    <td>9.97</td>
-    <td>1.21</td>
-    <td>1.128</td>
+    <td class="num">9.97</td>
+    <td class="num">1.21</td>
+    <td class="num">1.128</td>
     <td>IHC Approved, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>7</td>
+    <td class="num">7</td>
     <td><strong>CD109</strong></td>
-    <td>38</td>
-    <td>96.6%</td>
+    <td class="num">38</td>
+    <td class="num">96.6%</td>
     <td>16.3 (Esophagus Mucosa)</td>
     <td>21 (Skin Not Sun Exposed Suprapubic)</td>
-    <td>117.69</td>
-    <td>1.16</td>
-    <td>1.125</td>
+    <td class="num">117.69</td>
+    <td class="num">1.16</td>
+    <td class="num">1.125</td>
     <td>IHC Enhanced, IF Approved</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>8</td>
+    <td class="num">8</td>
     <td><strong>EPHB2</strong></td>
-    <td>19</td>
-    <td>78.4%</td>
+    <td class="num">19</td>
+    <td class="num">78.4%</td>
     <td>7.0 (Colon Transverse)</td>
     <td>7 (Colon Transverse)</td>
-    <td>2.65</td>
-    <td>1.33</td>
-    <td>1.046</td>
+    <td class="num">2.65</td>
+    <td class="num">1.33</td>
+    <td class="num">1.046</td>
     <td>IHC Approved, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>9</td>
+    <td class="num">9</td>
     <td><strong>CD248</strong></td>
-    <td>164</td>
-    <td>100.0%</td>
+    <td class="num">164</td>
+    <td class="num">100.0%</td>
     <td>80.4 (Artery Coronary)</td>
     <td>365 (Adipose Subcutaneous)</td>
-    <td>578.09</td>
-    <td>1.02</td>
-    <td>1.02</td>
+    <td class="num">578.09</td>
+    <td class="num">1.02</td>
+    <td class="num">1.02</td>
     <td>IHC Enhanced, IF Approved</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>10</td>
+    <td class="num">10</td>
     <td><strong>CD84</strong></td>
-    <td>18</td>
-    <td>81.8%</td>
+    <td class="num">18</td>
+    <td class="num">81.8%</td>
     <td>7.8 (Lung)</td>
     <td>18 (Spleen)</td>
-    <td>0.01</td>
-    <td>1.13</td>
-    <td>0.928</td>
+    <td class="num">0.01</td>
+    <td class="num">1.13</td>
+    <td class="num">0.928</td>
     <td>IHC Enhanced, IF Enhanced</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>11</td>
+    <td class="num">11</td>
     <td><strong>SDC2</strong></td>
-    <td>359</td>
-    <td>100.0%</td>
+    <td class="num">359</td>
+    <td class="num">100.0%</td>
     <td>190.3 (Artery Tibial)</td>
     <td>231 (Thyroid)</td>
-    <td>62.14</td>
-    <td>0.91</td>
-    <td>0.912</td>
+    <td class="num">62.14</td>
+    <td class="num">0.91</td>
+    <td class="num">0.912</td>
     <td>IHC Uncertain, IF Enhanced</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>12</td>
+    <td class="num">12</td>
     <td><strong>ROBO1</strong></td>
-    <td>27</td>
-    <td>96.6%</td>
+    <td class="num">27</td>
+    <td class="num">96.6%</td>
     <td>13.7 (Artery Tibial)</td>
     <td>22 (Vagina)</td>
-    <td>25.01</td>
-    <td>0.92</td>
-    <td>0.885</td>
+    <td class="num">25.01</td>
+    <td class="num">0.92</td>
+    <td class="num">0.885</td>
     <td>IHC Uncertain, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>13</td>
+    <td class="num">13</td>
     <td><strong>SLC16A1</strong></td>
-    <td>65</td>
-    <td>100.0%</td>
+    <td class="num">65</td>
+    <td class="num">100.0%</td>
     <td>36.8 (Colon Sigmoid)</td>
     <td>38 (Testis)</td>
-    <td>63.16</td>
-    <td>0.82</td>
-    <td>0.815</td>
+    <td class="num">63.16</td>
+    <td class="num">0.82</td>
+    <td class="num">0.815</td>
     <td>IHC Enhanced, IF Enhanced</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>14</td>
+    <td class="num">14</td>
     <td><strong>EPHA3</strong></td>
-    <td>26</td>
-    <td>84.1%</td>
+    <td class="num">26</td>
+    <td class="num">84.1%</td>
     <td>14.1 (Artery Coronary)</td>
     <td>19 (Prostate)</td>
-    <td>0.5</td>
-    <td>0.87</td>
-    <td>0.728</td>
+    <td class="num">0.5</td>
+    <td class="num">0.87</td>
+    <td class="num">0.728</td>
     <td>IHC Approved, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>15</td>
+    <td class="num">15</td>
     <td><strong>SMO</strong> †</td>
-    <td>58</td>
-    <td>100.0%</td>
+    <td class="num">58</td>
+    <td class="num">100.0%</td>
     <td>35.0 (Nerve Tibial)</td>
     <td>63 (Cervix Endocervix)</td>
-    <td>8.83</td>
-    <td>0.71</td>
-    <td>0.709</td>
+    <td class="num">8.83</td>
+    <td class="num">0.71</td>
+    <td class="num">0.709</td>
     <td>IHC Approved, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>16</td>
+    <td class="num">16</td>
     <td><strong>VANGL1</strong></td>
-    <td>16</td>
-    <td>97.7%</td>
+    <td class="num">16</td>
+    <td class="num">97.7%</td>
     <td>9.5 (Esophagus Mucosa)</td>
     <td>9 (Esophagus Mucosa)</td>
-    <td>13.27</td>
-    <td>0.72</td>
-    <td>0.704</td>
+    <td class="num">13.27</td>
+    <td class="num">0.72</td>
+    <td class="num">0.704</td>
     <td>IHC Approved, IF Approved</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>17</td>
+    <td class="num">17</td>
     <td><strong>LHFPL2</strong></td>
-    <td>36</td>
-    <td>100.0%</td>
+    <td class="num">36</td>
+    <td class="num">100.0%</td>
     <td>21.9 (Artery Tibial)</td>
     <td>24 (Cervix Endocervix)</td>
-    <td>14.09</td>
-    <td>0.69</td>
-    <td>0.687</td>
+    <td class="num">14.09</td>
+    <td class="num">0.69</td>
+    <td class="num">0.687</td>
     <td>IHC Uncertain, IF Approved</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>18</td>
+    <td class="num">18</td>
     <td><strong>RELL1</strong></td>
-    <td>23</td>
-    <td>97.7%</td>
+    <td class="num">23</td>
+    <td class="num">97.7%</td>
     <td>14.2 (Brain Spinal cord cervical c-1)</td>
     <td>15 (Adipose Subcutaneous)</td>
-    <td>6.76</td>
-    <td>0.67</td>
-    <td>0.651</td>
+    <td class="num">6.76</td>
+    <td class="num">0.67</td>
+    <td class="num">0.651</td>
     <td>IHC Approved, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>19</td>
+    <td class="num">19</td>
     <td><strong>ITGA4</strong> †</td>
-    <td>17</td>
-    <td>93.2%</td>
+    <td class="num">17</td>
+    <td class="num">93.2%</td>
     <td>10.3 (Lung)</td>
     <td>23 (Spleen)</td>
-    <td>35.0</td>
-    <td>0.68</td>
-    <td>0.635</td>
+    <td class="num">35.0</td>
+    <td class="num">0.68</td>
+    <td class="num">0.635</td>
     <td>IHC n/a, IF Approved</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>20</td>
+    <td class="num">20</td>
     <td><strong>CSF1R</strong></td>
-    <td>75</td>
-    <td>96.6%</td>
+    <td class="num">75</td>
+    <td class="num">96.6%</td>
     <td>49.7 (Nerve Tibial)</td>
     <td>207 (Spleen)</td>
-    <td>0.45</td>
-    <td>0.59</td>
-    <td>0.57</td>
+    <td class="num">0.45</td>
+    <td class="num">0.59</td>
+    <td class="num">0.57</td>
     <td>IHC Approved, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>21</td>
+    <td class="num">21</td>
     <td><strong>EMP3</strong></td>
-    <td>353</td>
-    <td>100.0%</td>
+    <td class="num">353</td>
+    <td class="num">100.0%</td>
     <td>241.9 (Whole Blood)</td>
     <td>242 (Whole Blood)</td>
-    <td>344.26</td>
-    <td>0.54</td>
-    <td>0.542</td>
+    <td class="num">344.26</td>
+    <td class="num">0.54</td>
+    <td class="num">0.542</td>
     <td>IHC n/a, IF Approved</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>22</td>
+    <td class="num">22</td>
     <td><strong>ADGRA2</strong></td>
-    <td>53</td>
-    <td>98.9%</td>
+    <td class="num">53</td>
+    <td class="num">98.9%</td>
     <td>36.1 (Nerve Tibial)</td>
     <td>113 (Cervix Endocervix)</td>
-    <td>94.05</td>
-    <td>0.55</td>
-    <td>0.539</td>
+    <td class="num">94.05</td>
+    <td class="num">0.55</td>
+    <td class="num">0.539</td>
     <td>IHC n/a, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>23</td>
+    <td class="num">23</td>
     <td><strong>SLC1A5</strong></td>
-    <td>144</td>
-    <td>100.0%</td>
+    <td class="num">144</td>
+    <td class="num">100.0%</td>
     <td>106.4 (Esophagus Mucosa)</td>
     <td>163 (Bladder)</td>
-    <td>282.64</td>
-    <td>0.43</td>
-    <td>0.428</td>
+    <td class="num">282.64</td>
+    <td class="num">0.43</td>
+    <td class="num">0.428</td>
     <td>IHC Enhanced, IF Supported</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>24</td>
+    <td class="num">24</td>
     <td><strong>TMEM101</strong></td>
-    <td>52</td>
-    <td>100.0%</td>
+    <td class="num">52</td>
+    <td class="num">100.0%</td>
     <td>39.0 (Kidney Cortex)</td>
     <td>39 (Kidney Cortex)</td>
-    <td>26.86</td>
-    <td>0.41</td>
-    <td>0.406</td>
+    <td class="num">26.86</td>
+    <td class="num">0.41</td>
+    <td class="num">0.406</td>
     <td>IHC n/a, IF Approved</td>
     <td>high</td>
     </tr>
     <tr>
-    <td>25</td>
+    <td class="num">25</td>
     <td><strong>PIGW</strong></td>
-    <td>14</td>
-    <td>97.7%</td>
+    <td class="num">14</td>
+    <td class="num">97.7%</td>
     <td>10.1 (Esophagus Mucosa)</td>
     <td>10 (Esophagus Mucosa)</td>
-    <td>12.72</td>
-    <td>0.39</td>
-    <td>0.386</td>
+    <td class="num">12.72</td>
+    <td class="num">0.39</td>
+    <td class="num">0.386</td>
     <td>IHC n/a, IF Approved</td>
     <td>high</td>
     </tr>
@@ -621,8 +621,8 @@
     antibody antigen, was targeted by vismodegib in a completed NCI sarcoma trial that included
     extraskeletal osteosarcoma (NCT01154452). ITGA4 was the target of a planned natalizumab trial in
     pulmonary-metastatic osteosarcoma (NCT03811886), withdrawn (registry).</em></p>
-    <p>All 25 have "evidence at protein level" in HPA, meaning the protein itself has been observed,
-    not merely predicted from the transcript (registry). "IHC" and "IF" are HPA's own reliability
+    <p>All 25 have &quot;evidence at protein level&quot; in HPA, meaning the protein itself has been observed,
+    not merely predicted from the transcript (registry). &quot;IHC&quot; and &quot;IF&quot; are HPA's own reliability
     grades for its antibody staining and immunofluorescence. <code>Enhanced</code> and <code>Supported</code> are the
     strong grades; <code>Uncertain</code> means HPA itself does not trust the staining. The IF grades come from
     a per-gene HPA download that is not in the published CSV (its <code>hpa_reliability_if</code> column is
@@ -632,8 +632,8 @@
     list because HPA gives them only low surface confidence.</p>
     <p><strong>TMEM119 should be considered despite the filter.</strong> A 2026 mass-spectrometry study of 22
     osteosarcoma patient-derived xenografts ranked TMEM119 4th of 190 surface candidates, and on a
-    tissue microarray of patient osteosarcomas found "robust staining" with "distinct surface
-    staining", with limited staining in 21 of 22 normal paediatric tissues (tonsil the exception)
+    tissue microarray of patient osteosarcomas found &quot;robust staining&quot; with &quot;distinct surface
+    staining&quot;, with limited staining in 21 of 22 normal paediatric tissues (tonsil the exception)
     (paper, full text; Mooney et al., <em>Cell Rep</em> 2026, PMID 42647168). In our screen it has 565 TPM
     in 98.9% of tumours (our calculation). So the HPA-based surface call was wrong for TMEM119, and
     the shortlist should be re-run with it admitted.</p>
@@ -655,59 +655,59 @@
     <tbody>
     <tr>
     <td>LRRC15</td>
-    <td>1</td>
-    <td>3</td>
-    <td>3</td>
+    <td class="num">1</td>
+    <td class="num">3</td>
+    <td class="num">3</td>
     <td>2 / 2</td>
-    <td>3</td>
+    <td class="num">3</td>
     </tr>
     <tr>
     <td>IFITM5</td>
-    <td>2</td>
-    <td>1</td>
-    <td>1</td>
+    <td class="num">2</td>
+    <td class="num">1</td>
+    <td class="num">1</td>
     <td>3 / 1</td>
-    <td>1</td>
+    <td class="num">1</td>
     </tr>
     <tr>
     <td>ADAM12</td>
-    <td>4</td>
-    <td>16</td>
-    <td>213</td>
+    <td class="num">4</td>
+    <td class="num">16</td>
+    <td class="num">213</td>
     <td>4 / 7</td>
-    <td>4</td>
+    <td class="num">4</td>
     </tr>
     <tr>
     <td>MRC2</td>
-    <td>38</td>
-    <td>22</td>
-    <td>49</td>
+    <td class="num">38</td>
+    <td class="num">22</td>
+    <td class="num">49</td>
     <td>39 / 30</td>
-    <td>39</td>
+    <td class="num">39</td>
     </tr>
     <tr>
     <td>PTK7</td>
-    <td>64</td>
-    <td>551</td>
-    <td>474</td>
+    <td class="num">64</td>
+    <td class="num">551</td>
+    <td class="num">474</td>
     <td>68 / 57</td>
-    <td>69</td>
+    <td class="num">69</td>
     </tr>
     <tr>
     <td>CD248</td>
-    <td>98</td>
-    <td>1,230</td>
-    <td>1,741</td>
+    <td class="num">98</td>
+    <td class="num">1,230</td>
+    <td class="num">1,741</td>
     <td>102 / 86</td>
-    <td>101</td>
+    <td class="num">101</td>
     </tr>
     <tr>
     <td>CDH11</td>
-    <td>21</td>
-    <td>189</td>
-    <td>119</td>
+    <td class="num">21</td>
+    <td class="num">189</td>
+    <td class="num">119</td>
     <td>23 / 18</td>
-    <td>23</td>
+    <td class="num">23</td>
     </tr>
     </tbody>
     </table></div>
@@ -725,43 +725,45 @@
     LRRC15 programmes (registry, November 14, 2026):</p>
     <ul>
     <li><strong>LNTH-2403</strong> (Lantheus), a lutetium-177-labelled anti-LRRC15 antibody, in a phase 1/2 trial
-      in <strong>relapsed or refractory osteosarcoma</strong> (NCT07357519): <strong>recruiting</strong> since February 2026.</li>
+    in <strong>relapsed or refractory osteosarcoma</strong> (NCT07357519): <strong>recruiting</strong> since February 2026.</li>
     <li><strong>ZL-6201</strong> (Zai Lab), an LRRC15 ADC, phase 1a/b in sarcoma and selected solid tumours
-      (NCT07374848): <strong>recruiting</strong> since March 2026.</li>
+    (NCT07374848): <strong>recruiting</strong> since March 2026.</li>
     <li><strong>SOT106</strong> (SOTIO), an LRRC15 ADC, phase 1/2 in LRRC15-positive osteosarcoma and soft-tissue
-      sarcoma (NCT07801222): <strong>not yet recruiting</strong> (planned start September 2026, not yet updated).</li>
+    sarcoma (NCT07801222): <strong>not yet recruiting</strong> (planned start September 2026, not yet updated).</li>
     <li><strong>LNTH-2403</strong> (Radiopharm Theranostics), an imaging and safety study in colorectal, head and
-      neck, lung and triple-negative breast cancer (NCT07272642): <strong>not yet recruiting</strong>; it does not
-      list sarcoma. The record names its drug "LNTH-2403 (177Lu-DOTA-DUNP19)", so it is the same
-      lutetium-177 anti-LRRC15 antibody as in Lu-TARGO (registry, November 19, 2026). An earlier
-      version of this report called it "NTH-2403" and could not confirm the match.</li>
+    neck, lung and triple-negative breast cancer (NCT07272642): <strong>not yet recruiting</strong>; it does not
+    list sarcoma. The record names its drug &quot;LNTH-2403 (177Lu-DOTA-DUNP19)&quot;, so it is the same
+    lutetium-177 anti-LRRC15 antibody as in Lu-TARGO (registry, November 19, 2026). An earlier
+    version of this report called it &quot;NTH-2403&quot; and could not confirm the match.</li>
     </ul>
     <p>Status on November 19, 2026 (registry): Lu-TARGO and ZL-6201 are recruiting; SOT106 is still not
     yet recruiting; none has posted results. A completed one-patient LRRC15 SPECT imaging study in
     Wuhan (NCT07651020) adds nothing.</p>
     <p>So this is not a new idea, and industry is ahead of the published osteosarcoma literature. The
     repository's evidence tables held 6 papers naming LRRC15 when this report was built (our
-    calculation); a PubMed search for "LRRC15 AND osteosarcoma" now returns 11, 7 of them from
+    calculation); a PubMed search for &quot;LRRC15 AND osteosarcoma&quot; now returns 11, 7 of them from
     2025–26 (registry, November 19, 2026). Anyone working on osteosarcoma should know these trials.</p>
     <p><strong>Protein evidence (added November 19, 2026).</strong> Among the five leads, LRRC15 is the only one measured as protein in
-    patient osteosarcomas:
-    - <strong>Cui et al., <em>J Orthop Res</em> 2020 (PMID 32902907; paper, abstract only).</strong> On a tissue
-      microarray, 63 of 69 osteosarcomas (91.3%) stained, 51 (74%) at 2+ or 3+ (percentage our
-      calculation). Higher LRRC15 went with more metastasis, chemoresistance and shorter survival. The
-      abstract does not give the antibody or the primary/metastasis split.
-    - <strong>O'Reilly et al., <em>Clin Cancer Res</em> 2026 (PMID 41627173; paper, full text).</strong> 18 archived
-      paediatric primary tumours stained with clone EPR8188(2): median H-score 113.5, range 0–236. In
-      mice, LRRC15 RNA was limited to hair follicles, marrow mesenchymal stem cells and osteoblasts,
-      and LRRC15 CAR-T cells were active without detectable toxicity; tumours escaped by losing the
-      antigen.
-    - <strong>Moquin-Beaudry et al., <em>Nat Commun</em> 2026 (PMID 42399228; paper, full text).</strong> Spatial
-      transcriptomics of 26 samples from 19 patients, including metastases and relapses: LRRC15 is
-      part of a 9-gene osteosarcoma surface signature that holds at relapse, and its staining matched
-      its RNA. The authors stress that no single target is expressed throughout a tumour, and give no
-      per-gene positivity rates.
-    - <strong>Mooney et al., <em>Cell Rep</em> 2026 (PMID 42647168; paper, full text).</strong> Mass-spectrometry
-      surfaceome and global proteome of 22 osteosarcoma patient-derived xenografts: LRRC15 enriched by
-      both methods and among the top hits.</p>
+    patient osteosarcomas:</p>
+    <ul>
+    <li><strong>Cui et al., <em>J Orthop Res</em> 2020 (PMID 32902907; paper, abstract only).</strong> On a tissue
+    microarray, 63 of 69 osteosarcomas (91.3%) stained, 51 (74%) at 2+ or 3+ (percentage our
+    calculation). Higher LRRC15 went with more metastasis, chemoresistance and shorter survival. The
+    abstract does not give the antibody or the primary/metastasis split.</li>
+    <li><strong>O'Reilly et al., <em>Clin Cancer Res</em> 2026 (PMID 41627173; paper, full text).</strong> 18 archived
+    paediatric primary tumours stained with clone EPR8188(2): median H-score 113.5, range 0–236. In
+    mice, LRRC15 RNA was limited to hair follicles, marrow mesenchymal stem cells and osteoblasts,
+    and LRRC15 CAR-T cells were active without detectable toxicity; tumours escaped by losing the
+    antigen.</li>
+    <li><strong>Moquin-Beaudry et al., <em>Nat Commun</em> 2026 (PMID 42399228; paper, full text).</strong> Spatial
+    transcriptomics of 26 samples from 19 patients, including metastases and relapses: LRRC15 is
+    part of a 9-gene osteosarcoma surface signature that holds at relapse, and its staining matched
+    its RNA. The authors stress that no single target is expressed throughout a tumour, and give no
+    per-gene positivity rates.</li>
+    <li><strong>Mooney et al., <em>Cell Rep</em> 2026 (PMID 42647168; paper, full text).</strong> Mass-spectrometry
+    surfaceome and global proteome of 22 osteosarcoma patient-derived xenografts: LRRC15 enriched by
+    both methods and among the top hits.</li>
+    </ul>
     <p>What is still missing: positivity rates in paired primary, lung-metastasis and relapse tissue,
     and protein in human osteoblasts, growth plate and marrow, which matters most for a lutetium-177
     antibody (our inference). <strong>Cheapest next step:</strong> stain a tissue microarray of paired primary,
@@ -811,7 +813,7 @@
     (NCT06752681), all recruiting (registry). They follow Pfizer's earlier PTK7 ADC, PF-06647020,
     whose trials are completed (NCT02222922; NCT03243331, with gedatolisib); the later
     AbbVie trial of the same drug, cofetuzumab pelidotin, in PTK7-expressing lung cancer
-    (NCT04189614) was <strong>terminated</strong> for "strategic considerations" (registry). KIVU-107 lists sarcoma
+    (NCT04189614) was <strong>terminated</strong> for &quot;strategic considerations&quot; (registry). KIVU-107 lists sarcoma
     among eligible tumours. We have no evidence that any sarcoma patient has been dosed. Two more
     PTK7 programmes were found on November 19, 2026 (registry): <strong>IDE034</strong> (IDEAYA, NCT07503808), a
     B7-H3 × PTK7 bispecific ADC in carcinomas whose tumours express both antigens, recruiting; and
@@ -825,26 +827,28 @@
     stained for PTK7.</strong> Cheapest next step: stain an osteosarcoma tissue array with the clinical-trial
     PTK7 assay and cut-off. Fewer than
     five osteosarcoma papers in our PubTator-tagged set name PTK7 (our calculation), and a PubMed search for
-    "PTK7 AND osteosarcoma" returns one record, from 2008 (registry, November 20, 2026). Testing an existing drug is a cheaper
+    &quot;PTK7 AND osteosarcoma&quot; returns one record, from 2008 (registry, November 20, 2026). Testing an existing drug is a cheaper
     experiment than building one for a new antigen.</p>
-    <h3 id="5-cd248-endosialin-tem1-an-antibody-already-tested-and-it-did-not-help-in-sarcoma">5. CD248 / Endosialin (TEM1): An Antibody Already Tested, and It Did Not Help in Sarcoma</h3>
+    <h3 id="5-cd248--endosialin-tem1-an-antibody-already-tested-and-it-did-not-help-in-sarcoma">5. CD248 / Endosialin (TEM1): An Antibody Already Tested, and It Did Not Help in Sarcoma</h3>
     <p>164 TPM, 100% of tumours, 80 TPM in coronary artery (our calculation). The window is the weakest
     of the five, and the fibroblast value of 578 TPM is a warning: CD248 is a pericyte and
     activated-fibroblast antigen, so an antibody may hit stroma as much as tumour. Its rank also
     collapses when all 54 tissues are used (98 to 1,230).</p>
     <p>The anti-CD248 antibody ontuxizumab (MORAb-004) has already been tested, and the results are
-    published:
-    - <strong>Children:</strong> a Children's Oncology Group phase 1 trial (NCT01748721) treated 27 patients aged
-      3–21 with relapsed or refractory solid tumours. 12 mg/kg weekly was tolerated, with
-      dose-limiting bacteraemia and hyponatraemia in 2 of 10 patients at that dose, and drug levels
-      similar to adults' (paper, abstract only; Norris et al., <em>Pediatr Blood Cancer</em> 2018, PMID
-      29292843). The abstract reports no responses and does not say how many patients had
-      osteosarcoma.
-    - <strong>Adult soft-tissue sarcoma:</strong> a randomised phase 2 trial in 209 patients found no benefit
-      from adding ontuxizumab to gemcitabine and docetaxel: progression-free survival 4.3 against 5.6
-      months, hazard ratio 1.07 (paper, abstract only; Jones et al., <em>Cancer</em> 2019, PMID 31034598).
-      Phase 2 trials in melanoma (PMID 29127533) and colorectal cancer (PMID 29084918) were also
-      published.</p>
+    published:</p>
+    <ul>
+    <li><strong>Children:</strong> a Children's Oncology Group phase 1 trial (NCT01748721) treated 27 patients aged
+    3–21 with relapsed or refractory solid tumours. 12 mg/kg weekly was tolerated, with
+    dose-limiting bacteraemia and hyponatraemia in 2 of 10 patients at that dose, and drug levels
+    similar to adults' (paper, abstract only; Norris et al., <em>Pediatr Blood Cancer</em> 2018, PMID
+    29292843). The abstract reports no responses and does not say how many patients had
+    osteosarcoma.</li>
+    <li><strong>Adult soft-tissue sarcoma:</strong> a randomised phase 2 trial in 209 patients found no benefit
+    from adding ontuxizumab to gemcitabine and docetaxel: progression-free survival 4.3 against 5.6
+    months, hazard ratio 1.07 (paper, abstract only; Jones et al., <em>Cancer</em> 2019, PMID 31034598).
+    Phase 2 trials in melanoma (PMID 29127533) and colorectal cancer (PMID 29084918) were also
+    published.</li>
+    </ul>
     <p>So a plain anti-CD248 antibody was safe in children and did not work in a randomised sarcoma
     trial. CD248 stays on the list only as an expression observation. Any new attempt would need a
     different kind of agent, such as an ADC, and a reason to expect a different result.</p>
@@ -867,8 +871,8 @@
     <h3 id="candidates-that-are-probably-artefacts">Candidates That Are Probably Artefacts</h3>
     <p><strong>CD84</strong>, <strong>CSF1R</strong> and <strong>ITGA4</strong> are immune-cell receptors. Osteosarcoma biopsies contain many
     macrophages and other immune cells, so these signals may come from those cells, not tumour. HPA
-    classes CSF1R as "immune cell enhanced" (registry). CD84 is classed as "low immune cell
-    specificity", so the argument for CD84 rests on its known biology as a leukocyte SLAM-family
+    classes CSF1R as &quot;immune cell enhanced&quot; (registry). CD84 is classed as &quot;low immune cell
+    specificity&quot;, so the argument for CD84 rests on its known biology as a leukocyte SLAM-family
     receptor, not on HPA. CSF1R is a macrophage marker; targeting it is a tumour-microenvironment
     strategy, not an antigen strategy. <strong>SDC2</strong>, <strong>EMP3</strong>, <strong>SLC1A5</strong> and <strong>SLC16A1</strong> are broadly
     expressed and their windows are under 2-fold.</p>
@@ -882,8 +886,8 @@
     <p><strong>RNA is not protein.</strong> Everything here is transcript abundance. Antigen density on the cell
     surface, which is what an ADC or CAR actually sees, can differ greatly from mRNA levels and
     depends on trafficking, shedding and turnover. The HPA columns are the only protein-level
-    evidence in this report. They say "this protein has been detected somewhere", not "this protein
-    is on the surface of osteosarcoma cells at a given density". No candidate here is actionable
+    evidence in this report. They say &quot;this protein has been detected somewhere&quot;, not &quot;this protein
+    is on the surface of osteosarcoma cells at a given density&quot;. No candidate here is actionable
     without immunohistochemistry or flow cytometry on osteosarcoma tissue.</p>
     <p><strong>The normal-tissue reference contains no bone.</strong> GTEx's 54 tissues include no bone, cartilage,
     periosteum or growth plate. For a tumour of the osteoblast lineage this is the biggest gap: the
@@ -896,7 +900,7 @@
     Osteosarcoma kills mainly through lung metastases that appear after chemotherapy, and antigen
     expression can change under treatment and at metastatic sites. Nothing here shows whether these
     targets are still expressed in relapsed, metastatic disease. With n = 88, the 95% confidence
-    interval on a "% of tumours expressing" figure is about ±6 points near 90% and ±10 points near
+    interval on a &quot;% of tumours expressing&quot; figure is about ±6 points near 90% and ±10 points near
     50% (our calculation).</p>
     <p><strong>Bulk RNA-seq cannot separate tumour from stroma or immune cells.</strong> A high bulk TPM can come
     from tumour cells, fibroblasts, pericytes or macrophages, and the therapeutic consequences are
@@ -921,17 +925,18 @@
     environment, and the Sanger Cell Model Passports API was blocked by the proxy. This step was not
     done.</p>
     <p><strong>Literature counts are incomplete by construction.</strong> The repository's gene table includes only
-    genes named in at least five osteosarcoma papers, so "fewer than five" is the most we can say for
+    genes named in at least five osteosarcoma papers, so &quot;fewer than five&quot; is the most we can say for
     some genes. The counts also inherit the text-mining limits described in the literature map.</p>
     <p><strong>The trial search matches text, not curated target fields.</strong> ClinicalTrials.gov has no
-    structured "target" field, so a target is counted when its name appears in a study's text. That
+    structured &quot;target&quot; field, so a target is counted when its name appears in a study's text. That
     misses programmes that never name the target and can over-count studies that mention a gene only
     as a biomarker. The specific NCT numbers quoted above were read individually on November 14,
     2026.</p>
     <h2 id="reproducing-this">Reproducing This</h2>
-    <p><code>python3 tools/surface_targets.py all          # or: gdc hpa gtex rank hpadetail context sensitivity
-    python3 tools/surface_targets.py sensitivity  # re-rank the published CSV under other choices</code></p>
-    <p>Stages cache into <code>data/surface_targets_raw/</code> (git-ignored, about 350 MB of GDC files), so re-runs
+    <pre><code>python3 tools/surface_targets.py all          # or: gdc hpa gtex rank hpadetail context sensitivity
+    python3 tools/surface_targets.py sensitivity  # re-rank the published CSV under other choices
+    </code></pre>
+    <p>Stages cache into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/surface_targets_raw"><code>data/surface_targets_raw/</code></a> (git-ignored, about 350 MB of GDC files), so re-runs
     are cheap. GTEx's bulk median-TPM files returned 403/404 here, so normals come through the API gene
     by gene. The GTEx API defaults to v10, but its gene-lookup endpoint returns only GENCODE v26
     identifiers, so everything is pinned to <strong>GTEx v8</strong>.</p>
@@ -939,67 +944,73 @@
     <p>In rough order of value per unit effort:</p>
     <ol>
     <li><strong>Immunohistochemistry on an osteosarcoma tissue microarray</strong> for IFITM5, MRC2, CD109 and
-       ADAM12. This is the step that would turn these hypotheses into evidence. <em>Update, November 19,
-       2026:</em> one array of primaries with paired lung metastases and relapses, plus paediatric growth
-       plate, stained for LRRC15, PTK7, TMEM119 and CD109, with IFITM5 by RNA in-situ staining (no
-       validated antibody exists) and ADAM12 with two HPA antibodies side by side, would settle most of
-       the open protein questions. COG's and St. Jude's osteosarcoma arrays already exist. For MRC2, start from
-       the published sarcoma staining (PMID 36399638).</li>
+    ADAM12. This is the step that would turn these hypotheses into evidence. <em>Update, November 19,
+    2026:</em> one array of primaries with paired lung metastases and relapses, plus paediatric growth
+    plate, stained for LRRC15, PTK7, TMEM119 and CD109, with IFITM5 by RNA in-situ staining (no
+    validated antibody exists) and ADAM12 with two HPA antibodies side by side, would settle most of
+    the open protein questions. COG's and St. Jude's osteosarcoma arrays already exist. For MRC2, start from
+    the published sarcoma staining (PMID 36399638).</li>
     <li><strong>Normal paediatric bone and growth-plate expression</strong> for IFITM5 and any other
-       bone-restricted candidate. Without it, the top of this list cannot be assessed for safety.</li>
+    bone-restricted candidate. Without it, the top of this list cannot be assessed for safety.</li>
     <li><strong>Follow the LRRC15 trials</strong>, especially the recruiting osteosarcoma trial of LNTH-2403
-       (NCT07357519).</li>
+    (NCT07357519).</li>
     <li><strong>Ask whether PTK7 ADCs can be tested in osteosarcoma.</strong> Three are in phase 1, plus the
-       B7-H3 × PTK7 conjugate IDE034, and KIVU-107 already lists sarcoma. This needs no new molecule.</li>
+    B7-H3 × PTK7 conjugate IDE034, and KIVU-107 already lists sarcoma. This needs no new molecule.</li>
     <li><strong>Single-cell or spatial data</strong> to settle which signals are tumour and which are stroma or
-       macrophage.</li>
+    macrophage.</li>
     <li><strong>Relapsed and metastatic samples</strong>, since that is the disease that needs treating.</li>
     </ol>
     <h2 id="change-log">Change Log</h2>
     <ul>
-    <li><strong>November 20, 2026.</strong> Consistency fixes: the protein summary now says "among the five leads" (TMEM119, which also has patient staining, is not one of the five); the LRRC15 protein evidence is counted the same way as in the ranked leads (three studies of patient tumours plus one of PDXs); PTK7 staining is described as two xenografts and two cell lines; the PTK7 paper count now gives both bases (fewer than five in our tagged set; one PubMed record for "PTK7 AND osteosarcoma").</li>
+    <li><strong>November 20, 2026.</strong> Consistency fixes: the protein summary now says &quot;among the five leads&quot; (TMEM119, which also has patient staining, is not one of the five); the LRRC15 protein evidence is counted the same way as in the ranked leads (three studies of patient tumours plus one of PDXs); PTK7 staining is described as two xenografts and two cell lines; the PTK7 paper count now gives both bases (fewer than five in our tagged set; one PubMed record for &quot;PTK7 AND osteosarcoma&quot;).</li>
     <li><strong>November 13, 2026.</strong> First version.</li>
     <li><strong>November 14, 2026.</strong> Revised after an independent audit
-      (<code>research_notes/Audit/audit_C_literature_risk_surface.md</code>) and a live re-check of
-      ClinicalTrials.gov:</li>
-    <li><strong>LRRC15 trial status.</strong> The earlier text said the LRRC15 trials "are recruiting now". SOT106
-        and the NCT07272642 imaging study are not yet recruiting, and ZL-6201 is recruiting. The
-        re-check also found a recruiting LNTH-2403 trial in relapsed osteosarcoma (NCT07357519),
-        which the earlier search had missed.</li>
+    (<a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Audit/audit_C_literature_risk_surface.md"><code>research_notes/Audit/audit_C_literature_risk_surface.md</code></a>) and a live re-check of
+    ClinicalTrials.gov:
+    <ul>
+    <li><strong>LRRC15 trial status.</strong> The earlier text said the LRRC15 trials &quot;are recruiting now&quot;. SOT106
+    and the NCT07272642 imaging study are not yet recruiting, and ZL-6201 is recruiting. The
+    re-check also found a recruiting LNTH-2403 trial in relapsed osteosarcoma (NCT07357519),
+    which the earlier search had missed.</li>
     <li><strong>PTK7.</strong> Three PTK7 ADCs are active, not four. NCT03243331 is completed.</li>
     <li><strong>CD248.</strong> The MORAb-004 results were described as still to be retrieved. They are
-        published: safe in children, and no benefit in a randomised sarcoma trial.</li>
-    <li><strong>MRC2.</strong> "No drug programme anywhere" was wrong. A preclinical sarcoma ADC is published.</li>
+    published: safe in children, and no benefit in a randomised sarcoma trial.</li>
+    <li><strong>MRC2.</strong> &quot;No drug programme anywhere&quot; was wrong. A preclinical sarcoma ADC is published.</li>
     <li><strong>Framing.</strong> The claim that almost every new osteosarcoma drug is an antibody, ADC or CAR-T
-        aimed at eight antigens contradicted the trial data, which are dominated by kinase
-        inhibitors and PD-1. It has been rewritten, and the comparison antigens now have registry
-        statuses; ALPL, EPHA2 and IL11RA have no osteosarcoma trial.</li>
+    aimed at eight antigens contradicted the trial data, which are dominated by kinase
+    inhibitors and PD-1. It has been rewritten, and the comparison antigens now have registry
+    statuses; ALPL, EPHA2 and IL11RA have no osteosarcoma trial.</li>
     <li><strong>Comparison set.</strong> It is now described plainly as chosen by us, not as a validation.</li>
     <li><strong>Sensitivity.</strong> We added a sensitivity table and script stage. The earlier text said other
-        choices "do not change the top few"; in fact PTK7, CD248 and ADAM12 move a long way.</li>
+    choices &quot;do not change the top few&quot;; in fact PTK7, CD248 and ADAM12 move a long way.</li>
     <li><strong>SMO, ITGA4, CD84 and the housekeeping filter.</strong> SMO and ITGA4 are marked as previously
-        tested or proposed in osteosarcoma. CD84's HPA class is corrected. The housekeeping filter
-        is described accurately.</li>
-    <li><strong>Wording.</strong> "No new standard of care since the 1980s" is qualified for mifamurtide (EU,
-        2009), and "osteosarcoma-specific" and "already being given to sarcoma patients" are
-        softened.</li>
+    tested or proposed in osteosarcoma. CD84's HPA class is corrected. The housekeeping filter
+    is described accurately.</li>
+    <li><strong>Wording.</strong> &quot;No new standard of care since the 1980s&quot; is qualified for mifamurtide (EU,
+    2009), and &quot;osteosarcoma-specific&quot; and &quot;already being given to sarcoma patients&quot; are
+    softened.</li>
+    </ul>
+    </li>
     <li><strong>November 19, 2026.</strong> Updated from the protein check
-      (<code>research_notes/Surface targets/protein_check.md</code>) and a ClinicalTrials.gov and PubMed re-check:</li>
-    <li><strong>NCT07272642 resolved.</strong> The record names its drug "LNTH-2403 (177Lu-DOTA-DUNP19)", the same
-        antibody as Lu-TARGO; "NTH-2403 … not confirmed" removed. Lu-TARGO and ZL-6201 recruiting;
-        SOT106 still not yet recruiting (registry).</li>
+    (<a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Surface%20targets/protein_check.md"><code>research_notes/Surface targets/protein_check.md</code></a>) and a ClinicalTrials.gov and PubMed re-check:
+    <ul>
+    <li><strong>NCT07272642 resolved.</strong> The record names its drug &quot;LNTH-2403 (177Lu-DOTA-DUNP19)&quot;, the same
+    antibody as Lu-TARGO; &quot;NTH-2403 … not confirmed&quot; removed. Lu-TARGO and ZL-6201 recruiting;
+    SOT106 still not yet recruiting (registry).</li>
     <li><strong>LRRC15 protein evidence added</strong> (Cui 2020, abstract only; O'Reilly 2026, Moquin-Beaudry 2026
-        and Mooney 2026, full text), with the cheapest next step. Paper count updated: PubMed returns
-        11 for "LRRC15 AND osteosarcoma" (registry); the earlier 6 is kept as the evidence-table count.</li>
+    and Mooney 2026, full text), with the cheapest next step. Paper count updated: PubMed returns
+    11 for &quot;LRRC15 AND osteosarcoma&quot; (registry); the earlier 6 is kept as the evidence-table count.</li>
     <li><strong>IFITM5 and ADAM12:</strong> stated that neither has human osteosarcoma protein data; ADAM12's
-        <code>Enhanced</code> HPA grade rests on antibodies that disagree.</li>
+    <code>Enhanced</code> HPA grade rests on antibodies that disagree.</li>
     <li><strong>PTK7:</strong> IDE034 (NCT07503808) added; LY4175408 (NCT07046923) added as possibly
-        PTK7-directed (inferred); cofetuzumab's NCT04189614 terminated; protein evidence partial, no
-        patient tumour series.</li>
+    PTK7-directed (inferred); cofetuzumab's NCT04189614 terminated; protein evidence partial, no
+    patient tumour series.</li>
     <li><strong>TMEM119:</strong> excluded by the HPA surface filter but shows surface staining in patient tumours
-        (Mooney 2026, full text), so it should be considered.</li>
+    (Mooney 2026, full text), so it should be considered.</li>
     <li><strong>New label (preprint, abstract only):</strong> read only in a preprint's abstract; preprints are not
-        peer-reviewed.</li>
+    peer-reviewed.</li>
+    </ul>
+    </li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/New%20surface%20targets%20for%20osteosarcoma.md">reports/New surface targets for osteosarcoma.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
@@ -1009,7 +1020,7 @@
 <footer class="site">
  <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
-  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 
@@ -1023,7 +1034,14 @@
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
   });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {
     var links = Array.prototype.slice.call(toc.querySelectorAll("a"));

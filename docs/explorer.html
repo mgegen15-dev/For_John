@@ -136,9 +136,10 @@ section.about h2 { font-size: 22px; margin: 0 0 10px; }
 /* explorer header follows DESIGN.md */
 .wrap { max-width: 1264px; padding: 0 32px; }
 .wide { max-width: 1264px; padding: 0 32px; }
-header.hero { padding: 64px 0 24px; }
+header.hero { padding: 48px 0 8px; }
+.note-short { color: var(--ink-2); margin: 12px 0 0; }
 .hero h1 { font-family: var(--serif); font-weight: 300; font-size: 44px; line-height: 52px; letter-spacing: -0.015em; margin: 0 0 16px; }
-.hero .lede { max-width: 720px; font-size: 20px; line-height: 31px; color: var(--ink-2); }
+.hero .lede { max-width: 66ch; font-size: 18px; line-height: 28px; color: var(--ink-2); margin: 0; }
 .hero .note { max-width: 720px; }
 .chip { border-radius: 4px !important; }
 h2 { font-family: var(--serif); font-weight: 300; }
@@ -156,7 +157,6 @@ h2 { font-family: var(--serif); font-weight: 300; }
       <a href="explorer.html" aria-current="page">Evidence Explorer</a>
       <a href="how-this-was-made.html">Methods</a>
     </nav>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
     <a class="btn btn-gold" href="audit-guide.html">Review This Work</a>
   </div>
 </header>
@@ -164,8 +164,7 @@ h2 { font-family: var(--serif); font-weight: 300; }
 <header class="hero">
   <h1>Evidence Explorer</h1>
   <p class="lede">Type a gene, drug or target to see everything this project has gathered about it in one place: how much osteosarcoma research exists and of what kind, paper-mill risk, trials, how strongly tumours make it, copy-number changes, approved drugs, and the reports that discuss it.</p>
-  <p class="note"><strong>Not medical advice.</strong> These are research tables for scientists to check, not guidance about anyone's care. Data are current as of the retrieval dates in the <a href="https://github.com/mgegen15-dev/For_John/blob/main/DATA_MANIFEST.md">data manifest</a><span id="asof"></span>.</p>
-  <p><a href="#about">How to Read This</a></p>
+  <p class="note-short mono">Not medical advice · <a href="#about">How to read this</a> · <a href="data-manifest.html">Data dates</a><span id="asof"></span></p>
 </header>
 </div>
 
@@ -208,6 +207,7 @@ h2 { font-family: var(--serif); font-weight: 300; }
 
 <div class="wrap">
 <section class="about" id="about">
+  <p class="note"><strong>Not medical advice.</strong> These are research tables for scientists to check, not guidance about anyone's care. Data are current as of the retrieval dates in the <a href="data-manifest.html">data manifest</a>.</p>
   <h2>How to Read This</h2>
   <ul class="legend-list" id="legendPage"></ul>
   <p class="small">The table is built by <code>tools/build_explorer_data.py</code> from the project's data files and can be rebuilt by anyone. Counts come from automated tagging of 33,242 PubMed papers and 758 ClinicalTrials.gov studies, so they are approximate; gene names in papers are sometimes mis-tagged. Check the original sources before relying on any number.</p>
@@ -215,7 +215,7 @@ h2 { font-family: var(--serif); font-weight: 300; }
 <footer class="site">
  <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
-  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 </div>
@@ -595,12 +595,19 @@ function setup() {
   let saved = null;
   try { saved = localStorage.getItem("forjohn-theme"); } catch (e) {}
   if (saved) document.documentElement.setAttribute("data-theme", saved);
+  function setLabel() {
+    const dark = (document.documentElement.getAttribute("data-theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  setLabel();
   btn.addEventListener("click", () => {
     const cur = document.documentElement.getAttribute("data-theme") ||
       (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     const next = cur === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    setLabel();
   });
 })();
 
@@ -622,7 +629,7 @@ fetch("data/explorer.json", { cache: "no-cache" })
   .then(d => {
     META = d.meta || {}; DATA = d.genes || [];
     DATA.forEach(prep);
-    if (META.manifest_date) document.getElementById("asof").textContent = " (manifest dated " + META.manifest_date + "; table built " + META.built + ")";
+    if (META.manifest_date) document.getElementById("asof").textContent = " · Table built " + META.built;
     const h = decodeURIComponent((location.hash || "").slice(1));
     if (h && !["about"].includes(h)) {
       const g = DATA.find(x => x.gene === h);

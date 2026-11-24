@@ -1,7 +1,10 @@
 /* For John — document pages (reports, summary, methods). Loads after site.css. See DESIGN.md. */
 .doclayout { max-width: 1264px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 64px; }
 @media (min-width: 1040px) { .doclayout { grid-template-columns: 224px minmax(0, 1fr); } }
-.doc { max-width: 720px; padding: 64px 0 96px; min-width: 0; overflow-wrap: break-word; }
+.doc { max-width: 960px; padding: 64px 0 96px; min-width: 0; overflow-wrap: break-word; }
+/* prose holds to about 66 characters a line (Bringhurst 45–75, Baymard 50–75); tables and figures may run wider */
+.doc { font-size: 18px; line-height: 30px; }
+.doc > p, .doc > ul, .doc > ol, .doc > blockquote, .doc > h1, .doc > h2, .doc > h3, .doc > h4, .doc > pre, .doc > hr { max-width: 600px; }
 .crumb { font-family: var(--mono); font-size: 13px; line-height: 18px; color: var(--ink-2); margin: 0 0 16px; }
 .crumb a { color: var(--ink-2); }
 
@@ -23,7 +26,7 @@
 .doc h3 { font: 500 22px/30px var(--sans); margin: 48px 0 12px; letter-spacing: -0.005em; }
 .doc h4 { font: 600 17px/27px var(--sans); margin: 32px 0 8px; }
 .doc p { margin: 0 0 16px; }
-.doc > h1 + p { color: var(--ink-2); font-size: 15px; line-height: 24px; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 32px; }
+.doc > h1 + p { max-width: 600px; color: var(--ink-2); font-size: 15px; line-height: 24px; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 32px; }
 .doc > h1 + p em { font-style: normal; }
 .doc ul, .doc ol { margin: 0 0 16px; padding-left: 24px; }
 .doc li { margin: 8px 0; }
@@ -44,6 +47,10 @@
 .doc thead th { background: var(--band); color: var(--ink-2); font-weight: 500; font-size: 14px; white-space: nowrap; }
 .doc tbody tr:last-child td { border-bottom: 0; }
 .doc td { font-variant-numeric: tabular-nums; }
+.doc td.num { width: 1%; white-space: nowrap; text-align: right; }
+.doc td a { text-decoration: none; font-weight: 500; }
+.doc td a:hover { text-decoration: underline; }
+.doc a code { color: var(--link); background: none; padding: 0; text-decoration: underline; text-underline-offset: 3px; }
 .srcnote { font-size: 14.5px; line-height: 22px; color: var(--ink-2); }
 
 @media (max-width: 760px) {
@@ -51,6 +58,7 @@
   .doc { padding: 48px 0 56px; }
   .doc h1 { font-size: 32px; line-height: 40px; }
   .doc h2 { font-size: 25px; line-height: 32px; margin-top: 48px; }
+  .doc { font-size: 17px; line-height: 28px; }
 }
 @media print {
   .toc, .crumb { display: none !important; }

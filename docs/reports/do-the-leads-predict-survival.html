@@ -37,7 +37,6 @@
       <a href="../explorer.html">Evidence Explorer</a>
       <a href="../how-this-was-made.html">Methods</a>
     </nav>
-    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Theme</button>
     <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
   </div>
 </header>
@@ -45,11 +44,11 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-we-did">What We Did</a></li><li class="l1"><a href="#first-check-does-the-method-find-what-it-should">First Check: Does the Method Find What It Should?</a></li><li class="l1"><a href="#results-the-20-pre-specified-markers">Results: The 20 Pre-Specified Markers</a></li><li class="l1"><a href="#the-myc-result-in-more-detail">The MYC Result, in More Detail</a></li><li class="l1"><a href="#what-this-means-for-each-lead">What This Means for Each Lead</a></li><li class="l1"><a href="#exploratory-screen-not-pre-specified">Exploratory Screen (Not Pre-Specified)</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Do%20the%20leads%20predict%20survival.md">reports/Do the leads predict survival.md</a></p>
+    <p class="crumb">Report · Updated November 22, 2026 · 13 min read</p>
     <h1>Do the Leads Predict Survival? A Test in Open Patient Data</h1>
-    <p><em>Built November 22, 2026 from open NCI Genomic Data Commons (GDC) data for the TARGET osteosarcoma project: clinical records, tumour RNA and tumour copy number for up to 89 children and young adults. Script: <code>tools/survival_analysis.py</code>. Results table: <code>data/osteosarcoma_survival_results.csv</code> (one row per test). Figures: <code>docs/figures/survival_*.svg</code>. Working notes, including the analysis plan written before any marker was compared with outcome: <code>research_notes/Survival/notes.md</code>. This is new evidence produced by this project, not a literature summary.</em></p>
+    <p><em>Built November 22, 2026 from open NCI Genomic Data Commons (GDC) data for the TARGET osteosarcoma project: clinical records, tumour RNA and tumour copy number for up to 89 children and young adults. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/survival_analysis.py"><code>tools/survival_analysis.py</code></a>. Results table: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_survival_results.csv"><code>data/osteosarcoma_survival_results.csv</code></a> (one row per test). Figures: <code>docs/figures/survival_*.svg</code>. Working notes, including the analysis plan written before any marker was compared with outcome: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Survival/notes.md"><code>research_notes/Survival/notes.md</code></a>. This is new evidence produced by this project, not a literature summary.</em></p>
     <h2 id="summary">Summary</h2>
-    <p>We asked whether the tumour features behind this project's leads (gene amplifications, gene activity and genome damage) go with shorter survival in 89 young patients from the US TARGET osteosarcoma study. The method works: metastasis at diagnosis, the best-known risk factor, came out exactly as expected, with about five times the risk of death. None of the 20 lead-related markers we chose in advance showed a convincing link with survival or with metastasis at diagnosis once we allowed for the number of tests. Most notably, MYC amplification, reported in 2025 to triple the risk of death, made no visible difference here, and even the upper end of our confidence range falls below the reported effect. With only 30 deaths, the study could reliably detect only large effects (roughly a tripling of risk), so for most leads the honest answer is "no association detected, too small a study to rule out a moderate one", which neither strengthens nor weakens them much.</p>
+    <p>We asked whether the tumour features behind this project's leads (gene amplifications, gene activity and genome damage) go with shorter survival in 89 young patients from the US TARGET osteosarcoma study. The method works: metastasis at diagnosis, the best-known risk factor, came out exactly as expected, with about five times the risk of death. None of the 20 lead-related markers we chose in advance showed a convincing link with survival or with metastasis at diagnosis once we allowed for the number of tests. Most notably, MYC amplification, reported in 2025 to triple the risk of death, made no visible difference here, and even the upper end of our confidence range falls below the reported effect. With only 30 deaths, the study could reliably detect only large effects (roughly a tripling of risk), so for most leads the honest answer is &quot;no association detected, too small a study to rule out a moderate one&quot;, which neither strengthens nor weakens them much.</p>
     <p><strong>How to read the labels.</strong> After key numbers we say where they come from:</p>
     <ul>
     <li><strong>(our calculation)</strong>: computed by this project from the open data files named above. Every number in the tables of this report is (our calculation) unless it carries another label.</li>
@@ -69,13 +68,13 @@
     <p><strong>Clinical data.</strong> The GDC case records hold vital status, days to death or last follow-up, first event (relapse, death, second cancer) with its timing, metastasis at diagnosis, age and sex for nearly every patient. Histologic response (tumour kill by pre-surgery chemotherapy) exists for only 35 of the 89, from the open clinical spreadsheet, so it was used only as an extra check. The two sources agree except for three patients' follow-up times, which we tested both ways (registry; our calculation). Field-by-field counts are in the notes, section 1.</p>
     <p><strong>Plan fixed in advance.</strong> Before comparing any marker with any outcome, we wrote down 20 markers, the tests and the correction for multiple testing (notes, section 2):</p>
     <ul>
-    <li><strong>Copy number</strong> (calls as in <code>reports/Copy-number changes and the kinase-pill biomarker.md</code>: amplified = at least twice the tumour's average copy number): MYC; any of VEGFA, KDR, PDGFRA or KIT; CCNE1; PTK2 (FAK); and deep deletion of CDKN2A.</li>
+    <li><strong>Copy number</strong> (calls as in <a href="../reports/copy-number-changes-and-the-kinase-pill-biomarker.html"><code>reports/Copy-number changes and the kinase-pill biomarker.md</code></a>: amplified = at least twice the tumour's average copy number): MYC; any of VEGFA, KDR, PDGFRA or KIT; CCNE1; PTK2 (FAK); and deep deletion of CDKN2A.</li>
     <li><strong>Genome damage:</strong> fraction of the genome with changed copy number, and fraction with loss of heterozygosity (LOH, one parental copy lost), the measure a 2025 <em>Cell</em> paper found prognostic (paper, abstract only; PMID 39814020). Ours comes from SNP arrays, not whole genomes.</li>
     <li><strong>RNA:</strong> PTK2, DKK1, LRRC15, PTK7, IL6, IL1A, IL1B, CXCL8, IL6R, CXCR4, AKT1, AKT2 and AKT3.</li>
     </ul>
     <p>For each marker: (A, the main test) a Cox model of OS with the marker as a continuous value, adjusted for metastasis at diagnosis; (B) Kaplan–Meier curves and a log-rank test for OS, splitting at amplified/not or at the median RNA level; (C, D) the same for EFS; (E) whether the marker differs between patients with and without metastasis at diagnosis. Each group of 20 tests was corrected separately; we also corrected across all 100. Sensitivity checks: adding age, using the alternative follow-up times, and a check that the HR is stable over time. The statistics were coded with numpy and scipy and agree with the standard <code>lifelines</code> package to four decimal places (our calculation).</p>
     <h2 id="first-check-does-the-method-find-what-it-should">First Check: Does the Method Find What It Should?</h2>
-    <p>Yes. Patients with metastasis at diagnosis had 4.8 times the risk of death (95% CI 2.3–10.0; p = 0.000003), with 25% alive at five years against 76% (our calculation; <code>docs/figures/survival_metastasis_os.svg</code>). This matches the long-known gap in osteosarcoma. Good histologic response also went with longer survival, in the expected direction (HR 0.25, 0.05–1.18, p = 0.059; 35 patients) (our calculation).</p>
+    <p>Yes. Patients with metastasis at diagnosis had 4.8 times the risk of death (95% CI 2.3–10.0; p = 0.000003), with 25% alive at five years against 76% (our calculation; <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/survival_metastasis_os.svg"><code>docs/figures/survival_metastasis_os.svg</code></a>). This matches the long-known gap in osteosarcoma. Good histologic response also went with longer survival, in the expected direction (HR 0.25, 0.05–1.18, p = 0.059; 35 patients) (our calculation).</p>
     <p><strong>How big an effect could we see?</strong> With about 29 deaths and a median split, the study had 80% power to detect an HR of about 2.8 or more; for amplifications present in 11–33% of patients, about 3.1–5.3 (our calculation, Schoenfeld's formula). Smaller effects, such as an HR of 1.5, could easily be missed.</p>
     <h2 id="results-the-20-pre-specified-markers">Results: The 20 Pre-Specified Markers</h2>
     <p>Overall survival. The main test (A) is the continuous marker, adjusted for metastasis at diagnosis. The split test (B) compares amplified with not amplified, or above with at-or-below the median RNA level, without adjustment. All values (our calculation).</p>
@@ -99,21 +98,21 @@
     <td>2 (MYC as a variable)</td>
     <td>79 (28)</td>
     <td>1.04 (0.92–1.17)</td>
-    <td>0.55</td>
-    <td>0.64</td>
+    <td class="num">0.55</td>
+    <td class="num">0.64</td>
     <td>1.18 (0.54–2.56)</td>
-    <td>0.68</td>
+    <td class="num">0.68</td>
     <td>60% vs 61%</td>
     </tr>
     <tr>
     <td>VEGFA or 4q12 (KDR/PDGFRA/KIT) amplification (per +1× ploidy)</td>
-    <td>2</td>
+    <td class="num">2</td>
     <td>79 (28)</td>
     <td>1.13 (0.82–1.57)</td>
-    <td>0.45</td>
-    <td>0.62</td>
+    <td class="num">0.45</td>
+    <td class="num">0.62</td>
     <td>0.56 (0.20–1.63)</td>
-    <td>0.28</td>
+    <td class="num">0.28</td>
     <td>70% vs 58%</td>
     </tr>
     <tr>
@@ -121,10 +120,10 @@
     <td>dropped (CDK2)</td>
     <td>79 (28)</td>
     <td>0.92 (0.78–1.07)</td>
-    <td>0.28</td>
-    <td>0.62</td>
+    <td class="num">0.28</td>
+    <td class="num">0.62</td>
     <td>0.65 (0.22–1.86)</td>
-    <td>0.42</td>
+    <td class="num">0.42</td>
     <td>68% vs 59%</td>
     </tr>
     <tr>
@@ -132,21 +131,21 @@
     <td>4 (FAK)</td>
     <td>79 (28)</td>
     <td>1.50 (0.74–3.04)</td>
-    <td>0.26</td>
-    <td>0.62</td>
+    <td class="num">0.26</td>
+    <td class="num">0.62</td>
     <td>1.13 (0.39–3.30)</td>
-    <td>0.82</td>
+    <td class="num">0.82</td>
     <td>62% vs 61%</td>
     </tr>
     <tr>
     <td>CDKN2A deep deletion (A: lowest copy number) (per +1× ploidy)</td>
-    <td>—</td>
+    <td class="num">—</td>
     <td>79 (28)</td>
     <td>1.76 (0.58–5.36)</td>
-    <td>0.32</td>
-    <td>0.62</td>
+    <td class="num">0.32</td>
+    <td class="num">0.62</td>
     <td>1.02 (0.35–2.96)</td>
-    <td>0.97</td>
+    <td class="num">0.97</td>
     <td>55% vs 62%</td>
     </tr>
     <tr>
@@ -154,10 +153,10 @@
     <td>12 (genome damage)</td>
     <td>79 (28)</td>
     <td>0.90 (0.67–1.20)</td>
-    <td>0.46</td>
-    <td>0.62</td>
+    <td class="num">0.46</td>
+    <td class="num">0.62</td>
     <td>0.75 (0.36–1.59)</td>
-    <td>0.46</td>
+    <td class="num">0.46</td>
     <td>66% vs 55%</td>
     </tr>
     <tr>
@@ -165,10 +164,10 @@
     <td>12 (genome damage)</td>
     <td>79 (28)</td>
     <td>0.89 (0.67–1.18)</td>
-    <td>0.41</td>
-    <td>0.62</td>
+    <td class="num">0.41</td>
+    <td class="num">0.62</td>
     <td>0.81 (0.38–1.70)</td>
-    <td>0.57</td>
+    <td class="num">0.57</td>
     <td>65% vs 57%</td>
     </tr>
     <tr>
@@ -176,10 +175,10 @@
     <td>4 (FAK)</td>
     <td>85 (29)</td>
     <td>1.56 (0.82–2.95)</td>
-    <td>0.17</td>
-    <td>0.62</td>
+    <td class="num">0.17</td>
+    <td class="num">0.62</td>
     <td>1.23 (0.59–2.56)</td>
-    <td>0.58</td>
+    <td class="num">0.58</td>
     <td>61% vs 68%</td>
     </tr>
     <tr>
@@ -187,65 +186,65 @@
     <td>4 (DKK1)</td>
     <td>85 (29)</td>
     <td>1.14 (0.96–1.35)</td>
-    <td>0.13</td>
-    <td>0.62</td>
+    <td class="num">0.13</td>
+    <td class="num">0.62</td>
     <td>1.72 (0.82–3.61)</td>
-    <td>0.15</td>
+    <td class="num">0.15</td>
     <td>55% vs 73%</td>
     </tr>
     <tr>
     <td>LRRC15 RNA (per doubling)</td>
-    <td>5</td>
+    <td class="num">5</td>
     <td>85 (29)</td>
     <td>0.97 (0.81–1.16)</td>
-    <td>0.73</td>
-    <td>0.80</td>
+    <td class="num">0.73</td>
+    <td class="num">0.80</td>
     <td>1.14 (0.55–2.37)</td>
-    <td>0.73</td>
+    <td class="num">0.73</td>
     <td>62% vs 66%</td>
     </tr>
     <tr>
     <td>PTK7 RNA (per doubling)</td>
-    <td>6</td>
+    <td class="num">6</td>
     <td>85 (29)</td>
     <td>0.87 (0.64–1.18)</td>
-    <td>0.37</td>
-    <td>0.62</td>
+    <td class="num">0.37</td>
+    <td class="num">0.62</td>
     <td>0.88 (0.42–1.84)</td>
-    <td>0.73</td>
+    <td class="num">0.73</td>
     <td>63% vs 65%</td>
     </tr>
     <tr>
     <td>IL6 RNA (per doubling)</td>
-    <td>1</td>
+    <td class="num">1</td>
     <td>85 (29)</td>
     <td>0.75 (0.51–1.12)</td>
-    <td>0.16</td>
-    <td>0.62</td>
+    <td class="num">0.16</td>
+    <td class="num">0.62</td>
     <td>0.92 (0.44–1.95)</td>
-    <td>0.83</td>
+    <td class="num">0.83</td>
     <td>65% vs 62%</td>
     </tr>
     <tr>
     <td>IL1A RNA (per doubling)</td>
-    <td>1</td>
+    <td class="num">1</td>
     <td>85 (29)</td>
     <td>1.89 (0.57–6.29)</td>
-    <td>0.30</td>
-    <td>0.62</td>
+    <td class="num">0.30</td>
+    <td class="num">0.62</td>
     <td>1.05 (0.50–2.19)</td>
-    <td>0.90</td>
+    <td class="num">0.90</td>
     <td>64% vs 65%</td>
     </tr>
     <tr>
     <td>IL1B RNA (per doubling)</td>
-    <td>1</td>
+    <td class="num">1</td>
     <td>85 (29)</td>
     <td>0.78 (0.47–1.30)</td>
-    <td>0.34</td>
-    <td>0.62</td>
+    <td class="num">0.34</td>
+    <td class="num">0.62</td>
     <td>0.83 (0.40–1.74)</td>
-    <td>0.63</td>
+    <td class="num">0.63</td>
     <td>66% vs 63%</td>
     </tr>
     <tr>
@@ -253,71 +252,71 @@
     <td>1, 9</td>
     <td>85 (29)</td>
     <td>0.89 (0.71–1.12)</td>
-    <td>0.34</td>
-    <td>0.62</td>
+    <td class="num">0.34</td>
+    <td class="num">0.62</td>
     <td>0.79 (0.37–1.67)</td>
-    <td>0.53</td>
+    <td class="num">0.53</td>
     <td>70% vs 58%</td>
     </tr>
     <tr>
     <td>IL6R RNA (per doubling)</td>
-    <td>1</td>
+    <td class="num">1</td>
     <td>85 (29)</td>
     <td>0.87 (0.57–1.33)</td>
-    <td>0.53</td>
-    <td>0.64</td>
+    <td class="num">0.53</td>
+    <td class="num">0.64</td>
     <td>0.93 (0.44–1.96)</td>
-    <td>0.85</td>
+    <td class="num">0.85</td>
     <td>67% vs 61%</td>
     </tr>
     <tr>
     <td>CXCR4 RNA (per doubling)</td>
-    <td>14</td>
+    <td class="num">14</td>
     <td>85 (29)</td>
     <td>1.21 (0.79–1.87)</td>
-    <td>0.38</td>
-    <td>0.62</td>
+    <td class="num">0.38</td>
+    <td class="num">0.62</td>
     <td>1.48 (0.70–3.14)</td>
-    <td>0.30</td>
+    <td class="num">0.30</td>
     <td>59% vs 69%</td>
     </tr>
     <tr>
     <td>AKT1 RNA (per doubling)</td>
-    <td>13</td>
+    <td class="num">13</td>
     <td>85 (29)</td>
     <td>1.08 (0.67–1.73)</td>
-    <td>0.76</td>
-    <td>0.80</td>
+    <td class="num">0.76</td>
+    <td class="num">0.80</td>
     <td>1.05 (0.51–2.20)</td>
-    <td>0.89</td>
+    <td class="num">0.89</td>
     <td>64% vs 65%</td>
     </tr>
     <tr>
     <td>AKT2 RNA (per doubling)</td>
-    <td>13</td>
+    <td class="num">13</td>
     <td>85 (29)</td>
     <td>0.42 (0.21–0.81)</td>
-    <td>0.01</td>
-    <td>0.20</td>
+    <td class="num">0.01</td>
+    <td class="num">0.20</td>
     <td>0.85 (0.40–1.78)</td>
-    <td>0.66</td>
+    <td class="num">0.66</td>
     <td>65% vs 63%</td>
     </tr>
     <tr>
     <td>AKT3 RNA (per doubling)</td>
-    <td>13</td>
+    <td class="num">13</td>
     <td>85 (29)</td>
     <td>0.99 (0.71–1.37)</td>
-    <td>0.94</td>
-    <td>0.94</td>
+    <td class="num">0.94</td>
+    <td class="num">0.94</td>
     <td>0.64 (0.31–1.35)</td>
-    <td>0.24</td>
+    <td class="num">0.24</td>
     <td>67% vs 61%</td>
     </tr>
     </tbody>
     </table></div>
-    <p>"Per +1× ploidy" means per extra copy-number unit equal to the tumour's average copy number; "per doubling" means per twofold rise in RNA. For copy-number markers the split is amplified (or deep-deleted) against not; for the others it is the median. The B-test q-values were all 0.95 or higher.</p>
-    <p><img alt="Forest plot of hazard ratios for the 20 pre-specified markers" src="../figures/survival_forest_os.svg" /></p>
+    <p>&quot;Per +1× ploidy&quot; means per extra copy-number unit equal to the tumour's average copy number; &quot;per doubling&quot; means per twofold rise in RNA. For copy-number markers the split is amplified (or deep-deleted) against not; for the others it is the median. The B-test q-values were all 0.95 or higher.</p>
+    <p><img src="../figures/survival_forest_os.svg" alt="Forest plot of hazard ratios for the 20 pre-specified markers" /></p>
     <p><strong>Event-free survival and metastasis at diagnosis</strong> (tests C, D and E; all values our calculation). No marker passed. The strongest raw results:</p>
     <div class="tablewrap"><table>
     <thead>
@@ -334,50 +333,50 @@
     <td>AKT2 RNA</td>
     <td>C: EFS, continuous, adjusted</td>
     <td>HR 0.44 (0.23–0.84)</td>
-    <td>0.01</td>
-    <td>0.26</td>
+    <td class="num">0.01</td>
+    <td class="num">0.26</td>
     </tr>
     <tr>
     <td>IL6 RNA</td>
     <td>C: EFS, continuous, adjusted</td>
     <td>HR 0.68 (0.46–1.00)</td>
-    <td>0.05</td>
-    <td>0.48</td>
+    <td class="num">0.05</td>
+    <td class="num">0.48</td>
     </tr>
     <tr>
     <td>DKK1 RNA</td>
     <td>C: EFS, continuous, adjusted</td>
     <td>HR 1.14 (0.99–1.31)</td>
-    <td>0.07</td>
-    <td>0.48</td>
+    <td class="num">0.07</td>
+    <td class="num">0.48</td>
     </tr>
     <tr>
     <td>Fraction of genome with LOH</td>
     <td>D: EFS, above vs at-or-below median</td>
     <td>HR 0.55 (0.28–1.05)</td>
-    <td>0.06</td>
-    <td>0.83</td>
+    <td class="num">0.06</td>
+    <td class="num">0.83</td>
     </tr>
     <tr>
     <td>DKK1 RNA</td>
     <td>D: EFS, above vs at-or-below median</td>
     <td>HR 1.72 (0.92–3.21)</td>
-    <td>0.09</td>
-    <td>0.83</td>
+    <td class="num">0.09</td>
+    <td class="num">0.83</td>
     </tr>
     <tr>
     <td>Fraction of genome altered</td>
     <td>E: metastatic vs not</td>
     <td>lower in metastatic tumours (median 56% vs 69%; rank-biserial r = -0.38)</td>
-    <td>0.008</td>
-    <td>0.16</td>
+    <td class="num">0.008</td>
+    <td class="num">0.16</td>
     </tr>
     <tr>
     <td>VEGFA or 4q12 amplification</td>
     <td>E: metastatic vs not</td>
     <td>2 of 19 amplified vs 21 of 62 not amplified were metastatic; odds ratio 0.23 (0.023–1.14)</td>
-    <td>0.08</td>
-    <td>0.70</td>
+    <td class="num">0.08</td>
+    <td class="num">0.70</td>
     </tr>
     </tbody>
     </table></div>
@@ -385,12 +384,12 @@
     <h2 id="the-myc-result-in-more-detail">The MYC Result, in More Detail</h2>
     <p>A 2025 study of 105 children and young adults reported 3-year survival of 27% with MYC amplification against 74% without, an adjusted HR of 3.4 (paper, abstract only; <em>Cancer</em> 2025, PMID 41199591). The leads report cites it to argue that MYC status should be recorded in any kinase-pill biomarker study. Here:</p>
     <ul>
-    <li>By our pre-specified call (at least twice the tumour average), 26 of 79 patients were MYC-amplified; 5-year OS was 60% against 61%, HR 1.18 (0.54–2.56) (our calculation; <code>docs/figures/survival_myc_amp_os.svg</code>).</li>
-    <li>That study counted "more than 7 copies" as amplified, so after seeing the result we also tried 8 or more copies. This was <strong>not pre-specified</strong> and is labelled post hoc in the results table. 23 of 79 were positive; HR adjusted for metastasis 1.45 (0.65–3.23), log-rank p = 0.63, 5-year OS 60% against 61% (our calculation).</li>
+    <li>By our pre-specified call (at least twice the tumour average), 26 of 79 patients were MYC-amplified; 5-year OS was 60% against 61%, HR 1.18 (0.54–2.56) (our calculation; <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/survival_myc_amp_os.svg"><code>docs/figures/survival_myc_amp_os.svg</code></a>).</li>
+    <li>That study counted &quot;more than 7 copies&quot; as amplified, so after seeing the result we also tried 8 or more copies. This was <strong>not pre-specified</strong> and is labelled post hoc in the results table. 23 of 79 were positive; HR adjusted for metastasis 1.45 (0.65–3.23), log-rank p = 0.63, 5-year OS 60% against 61% (our calculation).</li>
     <li>Both upper confidence limits (2.56 and 3.23) fall below the published 3.4. Our data therefore argue against an effect that large in TARGET-OS, though a moderate effect remains possible. The two cohorts may differ in how copies were counted (29% positive here against 16% there), and we could not tell from the abstract whether the published cohort includes TARGET patients.</li>
     </ul>
     <h2 id="what-this-means-for-each-lead">What This Means for Each Lead</h2>
-    <p>Lead numbers follow <code>reports/Ranked leads and research partners.md</code>. <strong>Strengthen</strong>, <strong>weaken</strong> or <strong>no information</strong> is our judgement of what these data add, not a re-scoring of the lead.</p>
+    <p>Lead numbers follow <a href="../reports/ranked-leads-and-research-partners.html"><code>reports/Ranked leads and research partners.md</code></a>. <strong>Strengthen</strong>, <strong>weaken</strong> or <strong>no information</strong> is our judgement of what these data add, not a re-scoring of the lead.</p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -466,13 +465,13 @@
     <h2 id="exploratory-screen-not-pre-specified">Exploratory Screen (Not Pre-Specified)</h2>
     <p>We also tested every gene in the surface-target top 25 and the repurposing shortlist (40 genes after removing duplicates) against OS, with their own multiple-testing correction. Two passed q &lt; 0.10 (our calculation):</p>
     <ul>
-    <li><strong>SOST</strong> (sclerostin; a repurposing-screen gene marked "wrong direction"): HR 1.21 per doubling (1.08–1.36), p = 0.0015, q = 0.06.</li>
+    <li><strong>SOST</strong> (sclerostin; a repurposing-screen gene marked &quot;wrong direction&quot;): HR 1.21 per doubling (1.08–1.36), p = 0.0015, q = 0.06.</li>
     <li><strong>ROBO1</strong> (surface top 25): HR 1.80 (1.21–2.68), p = 0.004, q = 0.08.</li>
     </ul>
     <p>IFITM5, the surface screen's second-ranked gene, came next (HR 1.23, 1.04–1.47, q = 0.15). Because these genes were not chosen in advance, they are leads for checking in another cohort, nothing more.</p>
     <h2 id="limits">Limits</h2>
     <ul>
-    <li><strong>Small study.</strong> 89 patients and 30 deaths. Only large effects (an HR of about 3) could be detected reliably, so "no association" here means "no large association". Confidence intervals are wide; read them, not just the p-values.</li>
+    <li><strong>Small study.</strong> 89 patients and 30 deaths. Only large effects (an HR of about 3) could be detected reliably, so &quot;no association&quot; here means &quot;no large association&quot;. Confidence intervals are wide; read them, not just the p-values.</li>
     <li><strong>Diagnostic samples.</strong> Every tumour sample was taken at diagnosis, before treatment. Relapsed and metastatic tumours, where most of the leads would be used, may differ.</li>
     <li><strong>Treatment era.</strong> Patients were diagnosed in 2000–2012 and given standard chemotherapy, with no kinase pills, FAK, DKK1, IL-6 or AKT blockers. A marker that predicts benefit from a new drug need not predict outcome under chemotherapy, and the reverse.</li>
     <li><strong>Multiple testing.</strong> We ran 100 pre-specified tests plus 40 exploratory ones. At p &lt; 0.05 about five false positives are expected by chance among 100, which is why we report corrected q-values. Our one nominal hit in the main family (AKT2) does not survive correction.</li>
@@ -484,11 +483,11 @@
     </ul>
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
-    <li><code>tools/survival_analysis.py</code>: run <code>python3 tools/survival_analysis.py all</code> from the repository root. It downloads the GDC clinical records and spreadsheets to <code>data/survival_raw/</code> and reuses the RNA and copy-number caches from <code>tools/surface_targets.py</code> and <code>tools/copy_number_map.py</code>. Needs numpy, scipy and matplotlib (<code>requirements.txt</code>). Two full runs gave identical results.</li>
-    <li><code>data/osteosarcoma_survival_results.csv</code>: 146 rows, one per test, with n, events, HR and 95% CI, raw p, q within its family (<code>q_family</code>) and across all pre-specified tests (<code>q_all_prespecified</code>), 5-year Kaplan–Meier estimates, and the sensitivity results (age-adjusted, alternative follow-up times, proportional-hazards check).</li>
-    <li><code>data/survival_raw/patients.csv</code>: the per-patient analysis table (open, de-identified TARGET data).</li>
-    <li><code>docs/figures/</code>: Kaplan–Meier plots with numbers at risk for metastasis (the positive control), MYC, VEGFA/4q12, PTK2 amplification, LOH, and DKK1, IL6, CXCR4 and LRRC15 RNA; plus the forest plot of all 20 markers.</li>
-    <li><code>research_notes/Survival/notes.md</code>: data inventory, the pre-specified plan, full results and the log of post hoc changes.</li>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/survival_analysis.py"><code>tools/survival_analysis.py</code></a>: run <code>python3 tools/survival_analysis.py all</code> from the repository root. It downloads the GDC clinical records and spreadsheets to <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/survival_raw"><code>data/survival_raw/</code></a> and reuses the RNA and copy-number caches from <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/surface_targets.py"><code>tools/surface_targets.py</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/copy_number_map.py"><code>tools/copy_number_map.py</code></a>. Needs numpy, scipy and matplotlib (<a href="https://github.com/mgegen15-dev/For_John/blob/main/requirements.txt"><code>requirements.txt</code></a>). Two full runs gave identical results.</li>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_survival_results.csv"><code>data/osteosarcoma_survival_results.csv</code></a>: 146 rows, one per test, with n, events, HR and 95% CI, raw p, q within its family (<code>q_family</code>) and across all pre-specified tests (<code>q_all_prespecified</code>), 5-year Kaplan–Meier estimates, and the sensitivity results (age-adjusted, alternative follow-up times, proportional-hazards check).</li>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/data/survival_raw/patients.csv"><code>data/survival_raw/patients.csv</code></a>: the per-patient analysis table (open, de-identified TARGET data).</li>
+    <li><a href="https://github.com/mgegen15-dev/For_John/tree/main/docs/figures"><code>docs/figures/</code></a>: Kaplan–Meier plots with numbers at risk for metastasis (the positive control), MYC, VEGFA/4q12, PTK2 amplification, LOH, and DKK1, IL6, CXCR4 and LRRC15 RNA; plus the forest plot of all 20 markers.</li>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Survival/notes.md"><code>research_notes/Survival/notes.md</code></a>: data inventory, the pre-specified plan, full results and the log of post hoc changes.</li>
     </ul>
     <h2 id="change-log">Change Log</h2>
     <ul>
@@ -502,7 +501,7 @@
 <footer class="site">
  <div class="wrap">
   <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
-  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice.</p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 
@@ -516,7 +515,14 @@
     var next = dark ? "light" : "dark";
     root.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
   });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
   var toc = document.getElementById("toc");
   if (toc && "IntersectionObserver" in window) {
     var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
