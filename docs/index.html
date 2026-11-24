@@ -39,6 +39,11 @@ h2 { font-size: 36px; line-height: 44px; }
 /* ---- first screen ---- */
 .navyband { background: var(--navy); color: var(--on-navy); }
 .hero { padding: 96px 0; }
+.about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: center; }
+.about-grid figure { margin: 0; max-width: 440px; }
+.about-grid img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.about-grid figcaption { font-size: 14.5px; line-height: 22px; color: var(--ink-2); margin-top: 12px; }
+.about-grid .sec-intro { font-size: 20px; line-height: 32px; color: var(--ink); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; align-items: center; }
 .hero h1 { font-size: 52px; line-height: 60px; }
 .dedication { font-family: var(--serif); font-weight: 300; font-size: 22px; line-height: 30px; color: var(--gold); margin: 20px 0 0; }
@@ -118,7 +123,7 @@ ol.asks strong { font-weight: 500; }
 }
 
 @media (max-width: 960px) {
-  .hero-grid, .pills-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .hero-grid, .pills-grid, .about-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
   .figs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   ol.asks, #reportList { grid-template-columns: 1fr; }
 }
@@ -161,6 +166,7 @@ ol.asks strong { font-weight: 500; }
     <li><a href="#ask">What We're Asking</a></li>
     <li><a href="#engine">Research Engine</a></li>
     <li><a href="#how">How This Was Made</a></li>
+    <li><a href="#john">About John</a></li>
     <li><a href="#reports">The Reports</a></li>
   </ol>
 </nav>
@@ -270,6 +276,19 @@ ol.asks strong { font-weight: 500; }
     <li><a href="predictions.html">Predictions Log</a></li>
     <li><a href="data-manifest.html">Data Manifest</a></li>
   </ul>
+ </div>
+</section>
+
+<section id="john" class="pale">
+ <div class="wrap about-grid">
+  <figure>
+    <img src="john.jpg" alt="John smiling in a green hooded sweatshirt and cap, on a lake at sunset" width="900" height="1125" loading="lazy">
+    <figcaption>John.</figcaption>
+  </figure>
+  <div>
+    <h2>About John</h2>
+    <p class="sec-intro">John was my little brother and my best friend. Osteosarcoma took him. This project carries his name.</p>
+  </div>
  </div>
 </section>
 

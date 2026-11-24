@@ -204,10 +204,10 @@ These are waiting on a decision or on something only the family can supply. The 
 
 | Item | Status | What happens meanwhile |
 |---|---|---|
-| A photograph of John, or of John and Michael, on the first screen | Waiting for the photo | The project's chart sits in that place. To switch, save the photo in `docs/` and set `HERO_PHOTO` in `docs/index.html`; the chart then returns to its own section. |
+| A photograph on the first screen | Still open. The portrait of John is in the About John section (added November 24, 2026); the car photo was tried and dropped | The project's chart sits in that place. To switch, save the photo in `docs/` and set `HERO_PHOTO` in `docs/index.html`; the chart then returns to its own section. |
 | The headline sentence | Settled November 24, 2026: "Turning decades of osteosarcoma research into new ideas, tested and published." | — |
 | A short web address (for example forjohn.org) | Not bought | The site stays at mgegen15-dev.github.io/For_John. |
 | An outside review of the design | Not run | An AI usability test (TheySaid) is connected and can be run on the live site once approved. |
 | Dark-mode check of every report page | Home, one report and the explorer checked | The rest share the same stylesheet. |
 | A contact email on the site | Waiting for a decision on which address | Contact is a GitHub issue only. An address at the new domain would avoid publishing a personal one. |
-| Tighter homepage introduction | Proposed in `design/REVIEW.md`, waiting for approval | The current text stays. |
+| Tighter homepage introduction | Done November 24, 2026 | — |
