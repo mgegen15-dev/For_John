@@ -55,4 +55,8 @@ As cycle 8: cell lines are not tumours, a knockout is not a drug, these are rela
 
 ## Deviations
 
-*None yet.*
+Recorded November 24, 2026.
+
+1. **Exploratory microsatellite check, after the scan.** Half the ATRX-lost lines were microsatellite-unstable, a known cause of WRN dependence. The ATRX pairs were re-run without those lines (`OmicsSignatures.csv`, MSI score above 20 excluded). Reported as exploratory.
+2. **Patient mutations.** For the patient frequency, "truncating" means nonsense, frameshift, splice-site, nonstop or start-loss mutations; for TP53, missense mutations were also counted, as most TP53 missense mutations in cancer disable it (general knowledge).
+3. **P28.** The only unlisted, replicated pair with a drug in the project's table is RB1 with TP53, which the report explains as an artefact of how the screen scores TP53. P28 is recorded as ambiguous and not scored, as P25 was.

@@ -1,0 +1,5 @@
+lost_gene,control_dependency,effect,ci_low,ci_high,passes
+RB1,CDK4,0.448,0.342,0.555,True
+RB1,CDK6,0.364,0.270,0.458,True
+RB1,CCND1,0.813,0.662,0.964,True
+TP53,MDM2,0.654,0.608,0.700,True

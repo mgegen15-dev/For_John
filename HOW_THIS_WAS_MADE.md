@@ -100,6 +100,7 @@ pip install pandas
 | `tools/engine_cycle05_06_depmap.py` (`fetch`, then no argument) | engine cycles 5 and 6: `data/engine/cycle05/` and `cycle06/` results, line tables and two figures | DepMap public releases on Figshare (six files, about 2.5 GB) | several minutes to download, under a minute to run |
 | `tools/engine_cycle07_ccne1.py` (`fetch`, then no argument) | engine cycle 7: `data/engine/cycle07/` results, patient table, trial tables and one figure | cBioPortal and ClinicalTrials.gov; needs cycle 3's fetch | a minute |
 | `tools/engine_cycle08_scan.py` | engine cycle 8: `data/engine/cycle08/alterations.csv`, `hits.csv`, `summary.json` and one figure | none new; needs the downloads of cycles 3, 5 and 7 | about two minutes |
+| `tools/engine_cycle09_suppressor_scan.py` (`fetch`, then no argument) | engine cycle 9: `data/engine/cycle09/` loss calls, checks, hits, patient frequencies and one figure | DepMap Figshare (three files, about 150 MB) and cBioPortal; needs the downloads of cycles 3, 5 and 8 | about a minute |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:

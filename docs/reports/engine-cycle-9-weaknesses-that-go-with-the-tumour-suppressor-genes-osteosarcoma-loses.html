@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 9: Weaknesses That Go with the Tumour-Suppressor Genes Osteosarcoma Loses · For John</title>
+<meta name="description" content="Run November 24, 2026. The ninth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-09-suppressor-scan/PREREGISTRATION.md, committed at 22:54 UTC (commit…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-9-weaknesses-that-go-with-the-tumour-suppressor-genes-osteosarcoma-loses.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 9: Weaknesses That Go with the Tumour-Suppressor Genes Osteosarcoma Loses · For John">
+<meta property="og:description" content="Run November 24, 2026. The ninth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-09-suppressor-scan/PREREGISTRATION.md, committed at 22:54 UTC (commit…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-9-weaknesses-that-go-with-the-tumour-suppressor-genes-osteosarcoma-loses.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html#findings">Findings</a>
+      <a href="../index.html#reports">Reports</a>
+      <a href="../research-queue.html">Research Queue</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#how-often-osteosarcoma-loses-these-genes">How Often Osteosarcoma Loses These Genes</a></li><li class="l1"><a href="#what-was-done">What Was Done</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#the-limit-that-matters-for-osteosarcoma">The Limit That Matters for Osteosarcoma</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 24, 2026 · 6 min read</p>
+    <h1>Engine Cycle 9: Weaknesses That Go with the Tumour-Suppressor Genes Osteosarcoma Loses</h1>
+    <p><em>Run November 24, 2026. The ninth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-09-suppressor-scan/PREREGISTRATION.md"><code>research_notes/Engine/cycle-09-suppressor-scan/PREREGISTRATION.md</code></a>, committed at 22:54 UTC (commit <code>18b31b0</code>) before the mutation files were downloaded or any comparison run. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle09_suppressor_scan.py"><code>tools/engine_cycle09_suppressor_scan.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle09/hits.csv"><code>data/engine/cycle09/hits.csv</code></a>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>Cycle 8 scanned osteosarcoma's gene gains and losses but could not include RB1, TP53 and ATRX, the brakes on cell growth that this cancer most often breaks, because cell lines usually lose them through mutations rather than whole-gene deletions. This scan used mutation data as well, for five such genes. Both built-in checks passed, so the method for calling a gene lost works. It found ten pairs and seven replicated in a second kind of screen. The three strongest are known biology: cells without RB1 depend on SKP2, E2F3 and CDK2. The others are explained by how the screen scores TP53, or, for ATRX with WRN, by a confounder: half the ATRX-lost cell lines are a type of cancer that already depends on WRN. With those lines removed, an exploratory check showed what ATRX-lost cells are known to need: FANCM, SMARCAL1 and ATR, the machinery of the back-up way of maintaining chromosome ends that ATRX-lost tumours use. Nothing new and druggable turned up. The most useful lesson is about osteosarcoma itself: it breaks TP53 and ATRX mostly by large rearrangements that public cell-line data do not capture, so these genes are under-counted in the very cancer that loses them most.</p>
+    <p><strong>How to read the labels.</strong> Numbers are <strong>(our calculation)</strong> from DepMap public data (24Q4 release, DEMETER2 knockdown scores) and cBioPortal, unless marked otherwise. A scan hit is a candidate, not a finding.</p>
+    <h2 id="how-often-osteosarcoma-loses-these-genes">How Often Osteosarcoma Loses These Genes</h2>
+    <p>From 197 osteosarcoma patients tested at Memorial Sloan Kettering, one sample each, counting a deep deletion or a truncating mutation (for TP53, also a missense mutation):</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Gene</th>
+    <th>Patients</th>
+    <th>Share</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>TP53</td>
+    <td>70 (20 deletion, 50 mutation)</td>
+    <td class="num">36%</td>
+    </tr>
+    <tr>
+    <td>RB1</td>
+    <td>36 (19 deletion, 17 mutation)</td>
+    <td class="num">18%</td>
+    </tr>
+    <tr>
+    <td>ATRX</td>
+    <td>19 (7 deletion, 12 mutation)</td>
+    <td class="num">10%</td>
+    </tr>
+    <tr>
+    <td>PTEN</td>
+    <td class="num">11</td>
+    <td class="num">6%</td>
+    </tr>
+    <tr>
+    <td>NF1</td>
+    <td class="num">6</td>
+    <td class="num">3%</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Gene-panel tests miss large rearrangements, which is how osteosarcoma often breaks TP53 and ATRX (general knowledge), so these are lower limits.</p>
+    <h2 id="what-was-done">What Was Done</h2>
+    <ul>
+    <li><strong>Calling a gene lost in a cell line.</strong> For RB1, ATRX, PTEN and NF1: a damaging mutation, a deep deletion or near-absent RNA. For TP53: a damaging or hotspot mutation or a deep deletion. Lost lines: RB1 86, TP53 773, ATRX 25, PTEN 146, NF1 74, out of about 1,100.</li>
+    <li><strong>The scan,</strong> as in cycle 8: every gene in the knockout screen compared between lost and intact lines, adjusting for tissue type; 86,020 comparisons; a hit needed a difference of at least 0.2 at a false-discovery rate below 5%, then had to replicate in the knockdown screen.</li>
+    <li><strong>Two built-in checks,</strong> fixed in advance. Lines with broken TP53 should need MDM2 less (it matters only when TP53 works): difference +0.65 (+0.61 to +0.70), <strong>passed</strong>. Lines without RB1 should need CDK4, CDK6 and CCND1 less (they act through RB1): +0.45, +0.36 and +0.81, all with intervals excluding zero, <strong>passed</strong>.</li>
+    </ul>
+    <h2 id="results">Results</h2>
+    <p><img src="../figures/engine09_scan.svg" alt="Replicated hits: effect in the knockout and knockdown screens" /></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Gene lost</th>
+    <th>Depends on</th>
+    <th>Knockout effect</th>
+    <th>Knockdown effect (95% CI)</th>
+    <th>Replicated</th>
+    <th>What it is</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>RB1</td>
+    <td>SKP2</td>
+    <td class="num">−0.50</td>
+    <td>−0.34 (−0.42 to −0.26)</td>
+    <td>yes</td>
+    <td><strong>Known.</strong> SKP2 breaks down a brake that RB1-lost cells rely on</td>
+    </tr>
+    <tr>
+    <td>RB1</td>
+    <td>E2F3</td>
+    <td class="num">−0.40</td>
+    <td>−0.25 (−0.30 to −0.19)</td>
+    <td>yes</td>
+    <td><strong>Known.</strong> The growth signal RB1 normally holds in check</td>
+    </tr>
+    <tr>
+    <td>RB1</td>
+    <td>CDK2</td>
+    <td class="num">−0.23</td>
+    <td>−0.22 (−0.32 to −0.12)</td>
+    <td>yes</td>
+    <td><strong>Known.</strong> The same CDK2 that cycle 7's trials target</td>
+    </tr>
+    <tr>
+    <td>ATRX</td>
+    <td>WRN</td>
+    <td class="num">−0.38</td>
+    <td>−0.26 (−0.44 to −0.07)</td>
+    <td>yes</td>
+    <td>Confounded (see below)</td>
+    </tr>
+    <tr>
+    <td>RB1</td>
+    <td>TP53</td>
+    <td class="num">−0.22</td>
+    <td>−0.14 (−0.26 to −0.01)</td>
+    <td>yes</td>
+    <td>Artefact of scoring (see below)</td>
+    </tr>
+    <tr>
+    <td>TP53</td>
+    <td>CDKN1A</td>
+    <td class="num">−0.21</td>
+    <td>−0.14 (−0.18 to −0.11)</td>
+    <td>yes</td>
+    <td>Artefact of scoring</td>
+    </tr>
+    <tr>
+    <td>TP53</td>
+    <td>TP53BP1</td>
+    <td class="num">−0.21</td>
+    <td>−0.19 (−0.22 to −0.16)</td>
+    <td>yes</td>
+    <td>Artefact of scoring</td>
+    </tr>
+    <tr>
+    <td>ATRX</td>
+    <td>FANCM</td>
+    <td class="num">−0.24</td>
+    <td>−0.02 (−0.14 to +0.09)</td>
+    <td>no</td>
+    <td><strong>Known</strong></td>
+    </tr>
+    <tr>
+    <td>ATRX</td>
+    <td>SMARCAL1</td>
+    <td class="num">−0.22</td>
+    <td>+0.01 (−0.07 to +0.10)</td>
+    <td>no</td>
+    <td><strong>Known</strong></td>
+    </tr>
+    <tr>
+    <td>ATRX</td>
+    <td>PELO</td>
+    <td class="num">−0.32</td>
+    <td>+0.07 (−0.03 to +0.17)</td>
+    <td>no</td>
+    <td></td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><strong>The three TP53 artefacts.</strong> Knocking out TP53, or the genes that help it work (CDKN1A, TP53BP1), makes cells with working TP53 grow faster, which the screen records as a positive score. In cells where TP53 is already broken that advantage disappears, so the difference comes out negative. That is the mirror image of the MDM2 check, not a weakness. RB1-lost lines show the same effect because they often have broken TP53 as well.</p>
+    <p><strong>ATRX and WRN: a confounder.</strong> WRN is the best-known weakness of cancers with faulty DNA mismatch repair (microsatellite-unstable cancers). Those cancers pick up ATRX mutations along with thousands of others, and 48% of the ATRX-lost lines were microsatellite-unstable, against 6% of the rest. Osteosarcomas are almost never microsatellite-unstable (general knowledge), so this pair says nothing about them.</p>
+    <p><strong>Exploratory, after the scan: ATRX without the unstable lines.</strong> Re-running five ATRX pairs on the 13 ATRX-lost lines that are not microsatellite-unstable:</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Depends on</th>
+    <th>Difference (95% CI)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>FANCM</td>
+    <td>−0.38 (−0.52 to −0.24)</td>
+    </tr>
+    <tr>
+    <td>SMARCAL1</td>
+    <td>−0.25 (−0.34 to −0.17)</td>
+    </tr>
+    <tr>
+    <td>ATR</td>
+    <td>−0.23 (−0.37 to −0.08)</td>
+    </tr>
+    <tr>
+    <td>WRN</td>
+    <td>−0.17 (−0.26 to −0.08)</td>
+    </tr>
+    <tr>
+    <td>PELO</td>
+    <td>−0.13 (−0.36 to +0.11)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>FANCM, SMARCAL1 and ATR are what cells without ATRX are known to need when they keep their chromosome ends long by the back-up route called ALT (general knowledge). Most osteosarcomas use ALT. ATR inhibitors exist and are in late-stage trials in other cancers (general knowledge); whether ALT osteosarcoma responds to them has been argued over in published laboratory work and is not settled. This is a check on known biology, not a new lead.</p>
+    <h2 id="the-limit-that-matters-for-osteosarcoma">The Limit That Matters for Osteosarcoma</h2>
+    <p>The rule for calling a gene lost works across cancers, as the checks show, but it misses osteosarcoma's usual route.</p>
+    <ul>
+    <li><strong>TP53.</strong> Osteosarcoma often breaks TP53 by a rearrangement inside the gene. Three osteosarcoma lines with almost no TP53 RNA (OS384, CAL72, OS252) were called intact for TP53 by the mutation-based rule, and only 5 of 17 osteosarcoma lines were called altered.</li>
+    <li><strong>ATRX.</strong> U2OS, a widely used osteosarcoma line known to have lost ATRX through a large deletion (general knowledge), still shows ATRX RNA, presumably from the remaining fragment, and was called intact. Only 2 of 17 osteosarcoma lines were called ATRX-lost.</li>
+    <li><strong>What fixes it:</strong> structural-variant calls from whole-genome sequencing of the cell lines, or ATRX protein staining. Neither is in the public DepMap release used here.</li>
+    </ul>
+    <p>For laboratories: in the knockout screen, the osteosarcoma lines that depend most on FANCM are SAOS2 (−1.75), CAL72 (−1.42), OS384 (−1.14), U2OS (−1.08), HUO9 (−1.08), NOS1 (−1.07) and OS052 (−1.05). SAOS2 and U2OS are well-known ALT lines.</p>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>The method is sound.</strong> It passed both checks and rediscovered the RB1 pairs.</li>
+    <li><strong>No new, druggable weakness</strong> goes with loss of these five genes in the public screens.</li>
+    <li><strong>Osteosarcoma needs its own data here.</strong> Its main ways of breaking TP53 and ATRX are invisible to mutation and RNA calls, so a cancer-wide scan cannot speak for it. The question is added to the Research Queue: rerun this with structural-variant calls once a source is found.</li>
+    <li><strong>Predictions.</strong> P26 (both checks pass) is right. P27 (a known pair for RB1, PTEN, NF1 or ATRX replicates) is right. P28 is met only on its wording: the one unlisted replicated pair with a drug in the project's table is RB1 with TP53, an artefact of scoring, with an MDM2 inhibitor listed against TP53. As with P25, it is recorded as ambiguous and not scored.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>Cell lines are not tumours, a gene knockout is not a drug, and these are relationships across all cancers.</li>
+    <li>A damaging mutation in one copy does not always mean the gene is lost; near-absent RNA can reflect cell type.</li>
+    <li>Adjusting for tissue type does not remove all confounding, as WRN showed. Microsatellite status was not part of the plan and was checked afterwards.</li>
+    <li>PTEN and NF1 gave no hits; NF1 has no osteosarcoma line called lost, and PTEN one.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li><code>python3 tools/engine_cycle09_suppressor_scan.py fetch</code> (three DepMap files and patient mutations from cBioPortal; needs the downloads of cycles 3, 5 and 8), then <code>python3 tools/engine_cycle09_suppressor_scan.py</code> (about a minute).</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle09/loss_calls.csv"><code>data/engine/cycle09/loss_calls.csv</code></a> (every line's call and the route), <code>controls.csv</code>, <code>hits.csv</code>, <code>patients.csv</code>, <code>summary.json</code> (includes the exploratory ATRX check); <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine09_scan.svg"><code>docs/figures/engine09_scan.svg</code></a>.</li>
+    </ul>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-24: scan run and reported. The microsatellite check on the ATRX pairs was added after the scan and is marked exploratory.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%209%20-%20weaknesses%20that%20go%20with%20the%20tumour-suppressor%20genes%20osteosarcoma%20loses.md">reports/Engine cycle 9 - weaknesses that go with the tumour-suppressor genes osteosarcoma loses.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

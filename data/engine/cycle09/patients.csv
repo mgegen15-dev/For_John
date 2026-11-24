@@ -1,0 +1,6 @@
+gene,patients_tested,deep_deletion,truncating_or_TP53_missense_mutation,either,share
+RB1,197,19,17,36,0.183
+TP53,197,20,50,70,0.355
+ATRX,197,7,12,19,0.096
+PTEN,197,10,1,11,0.056
+NF1,197,5,1,6,0.03

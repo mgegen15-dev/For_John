@@ -1,0 +1,252 @@
+{
+ "genes": {
+  "RB1": {
+   "lines_lost": 86,
+   "lines_intact": 1022,
+   "routes": {
+    "mutation": 68,
+    "low RNA": 7,
+    "deletion+low RNA": 5,
+    "mutation+low RNA": 3,
+    "deletion": 2,
+    "mutation+deletion": 1
+   },
+   "osteosarcoma_lines_lost": 4,
+   "osteosarcoma_lines_with_call": 17,
+   "scanned": true
+  },
+  "TP53": {
+   "lines_lost": 773,
+   "lines_intact": 405,
+   "routes": {
+    "mutation+hotspot": 576,
+    "mutation": 179,
+    "hotspot": 10,
+    "deletion": 8
+   },
+   "osteosarcoma_lines_lost": 5,
+   "osteosarcoma_lines_with_call": 17,
+   "scanned": true
+  },
+  "ATRX": {
+   "lines_lost": 25,
+   "lines_intact": 1078,
+   "routes": {
+    "mutation": 23,
+    "deletion": 2
+   },
+   "osteosarcoma_lines_lost": 2,
+   "osteosarcoma_lines_with_call": 17,
+   "scanned": true
+  },
+  "PTEN": {
+   "lines_lost": 146,
+   "lines_intact": 965,
+   "routes": {
+    "mutation": 120,
+    "deletion+low RNA": 11,
+    "low RNA": 8,
+    "deletion": 7
+   },
+   "osteosarcoma_lines_lost": 1,
+   "osteosarcoma_lines_with_call": 17,
+   "scanned": true
+  },
+  "NF1": {
+   "lines_lost": 74,
+   "lines_intact": 1035,
+   "routes": {
+    "mutation": 69,
+    "deletion": 2,
+    "low RNA": 2,
+    "deletion+low RNA": 1
+   },
+   "osteosarcoma_lines_lost": 0,
+   "osteosarcoma_lines_with_call": 17,
+   "scanned": true
+  }
+ },
+ "controls": {
+  "RB1": {
+   "CDK4": {
+    "effect": 0.44844255537839084,
+    "lo": 0.34195533353292445,
+    "hi": 0.5549297772238573,
+    "passes": true
+   },
+   "CDK6": {
+    "effect": 0.3642757156157481,
+    "lo": 0.2704881017963064,
+    "hi": 0.45806332943518985,
+    "passes": true
+   },
+   "CCND1": {
+    "effect": 0.8131359397725082,
+    "lo": 0.6621095330843332,
+    "hi": 0.9641623464606832,
+    "passes": true
+   }
+  },
+  "TP53": {
+   "MDM2": {
+    "effect": 0.6542055659444485,
+    "lo": 0.6084669785165236,
+    "hi": 0.6999441533723733,
+    "passes": true
+   }
+  }
+ },
+ "controls_passed": {
+  "TP53": true,
+  "RB1": true
+ },
+ "exploratory_atrx_without_msi_high": {
+  "WRN": {
+   "lost_lines": 13,
+   "effect": -0.16959508612728172,
+   "lo": -0.2614558363728269,
+   "hi": -0.07773433588173657
+  },
+  "FANCM": {
+   "lost_lines": 13,
+   "effect": -0.37931241978501956,
+   "lo": -0.5189270447197564,
+   "hi": -0.23969779485028275
+  },
+  "SMARCAL1": {
+   "lost_lines": 13,
+   "effect": -0.25436943688526736,
+   "lo": -0.3419094713253699,
+   "hi": -0.1668294024451648
+  },
+  "PELO": {
+   "lost_lines": 13,
+   "effect": -0.1284450573429658,
+   "lo": -0.36260647242566046,
+   "hi": 0.1057163577397289
+  },
+  "ATR": {
+   "lost_lines": 13,
+   "effect": -0.2272043963747393,
+   "lo": -0.3727226942287748,
+   "hi": -0.08168609852070377
+  }
+ },
+ "atrx_msi_high_share": {
+  "lost": 0.48,
+  "intact": 0.055658627087198514
+ },
+ "patients": {
+  "RB1": {
+   "patients": 197,
+   "deep_deletion": 19,
+   "truncating_or_hotspot_mutation": 17,
+   "either": 36,
+   "share": 0.18274111675126903
+  },
+  "TP53": {
+   "patients": 197,
+   "deep_deletion": 20,
+   "truncating_or_hotspot_mutation": 50,
+   "either": 70,
+   "share": 0.3553299492385787
+  },
+  "ATRX": {
+   "patients": 197,
+   "deep_deletion": 7,
+   "truncating_or_hotspot_mutation": 12,
+   "either": 19,
+   "share": 0.09644670050761421
+  },
+  "PTEN": {
+   "patients": 197,
+   "deep_deletion": 10,
+   "truncating_or_hotspot_mutation": 1,
+   "either": 11,
+   "share": 0.05583756345177665
+  },
+  "NF1": {
+   "patients": 197,
+   "deep_deletion": 5,
+   "truncating_or_hotspot_mutation": 1,
+   "either": 6,
+   "share": 0.030456852791878174
+  }
+ },
+ "cell_lines": 1178,
+ "dependency_genes": 17205,
+ "pairs_tested": 86020,
+ "hits": 10,
+ "hits_by_replication": {
+  "yes": 7,
+  "no": 3
+ },
+ "replicated": [
+  {
+   "lost_gene": "RB1",
+   "dependency": "SKP2",
+   "effect": -0.499,
+   "rnai_effect": -0.338,
+   "known_pair": "yes",
+   "drug": "",
+   "drug_phase": ""
+  },
+  {
+   "lost_gene": "RB1",
+   "dependency": "E2F3",
+   "effect": -0.396,
+   "rnai_effect": -0.248,
+   "known_pair": "yes",
+   "drug": "edifoligide sodium",
+   "drug_phase": "3"
+  },
+  {
+   "lost_gene": "ATRX",
+   "dependency": "WRN",
+   "effect": -0.379,
+   "rnai_effect": -0.255,
+   "known_pair": "",
+   "drug": "",
+   "drug_phase": ""
+  },
+  {
+   "lost_gene": "RB1",
+   "dependency": "CDK2",
+   "effect": -0.232,
+   "rnai_effect": -0.224,
+   "known_pair": "yes",
+   "drug": "dinaciclib",
+   "drug_phase": "3"
+  },
+  {
+   "lost_gene": "RB1",
+   "dependency": "TP53",
+   "effect": -0.215,
+   "rnai_effect": -0.137,
+   "known_pair": "",
+   "drug": "navtemadlin",
+   "drug_phase": "3"
+  },
+  {
+   "lost_gene": "TP53",
+   "dependency": "CDKN1A",
+   "effect": -0.208,
+   "rnai_effect": -0.142,
+   "known_pair": "",
+   "drug": "",
+   "drug_phase": ""
+  },
+  {
+   "lost_gene": "TP53",
+   "dependency": "TP53BP1",
+   "effect": -0.205,
+   "rnai_effect": -0.188,
+   "known_pair": "",
+   "drug": "",
+   "drug_phase": ""
+  }
+ ],
+ "P26_controls_pass": true,
+ "P27_known_replicated": true,
+ "P28_unlisted_with_drug": true
+}
