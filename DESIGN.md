@@ -205,7 +205,7 @@ These are waiting on a decision or on something only the family can supply. The 
 | Item | Status | What happens meanwhile |
 |---|---|---|
 | A photograph of John, or of John and Michael, on the first screen | Waiting for the photo | The project's chart sits in that place. To switch, save the photo in `docs/` and set `HERO_PHOTO` in `docs/index.html`; the chart then returns to its own section. |
-| The headline sentence | Draft in use: "Connecting decades of osteosarcoma research to find what has been overlooked." | Change the `<h1>` in `docs/index.html` and the text in the link-preview image. |
+| The headline sentence | Settled November 24, 2026: "Turning decades of osteosarcoma research into new ideas, tested and published." | — |
 | A short web address (for example forjohn.org) | Not bought | The site stays at mgegen15-dev.github.io/For_John. |
 | An outside review of the design | Not run | An AI usability test (TheySaid) is connected and can be run on the live site once approved. |
 | Dark-mode check of every report page | Home, one report and the explorer checked | The rest share the same stylesheet. |
