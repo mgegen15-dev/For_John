@@ -42,4 +42,9 @@ Registry records can lag behind what a trial actually does, entry criteria are o
 
 ## Deviations
 
-*None yet.*
+Recorded November 24, 2026, after the search.
+
+1. **Drugs added.** As the plan allowed, drugs of the same two classes found through the general terms were included: GH56, BAY 3713372, HRS-6719, HSK41959, CTS3497, PEP08, DC50292A, GS-5319, GS-2426, ABSK131, SY-9453, HS-10587, CS08399, IDE892 and JBI-778.
+2. **One false match removed.** A dental study in which "MTAP" stands for an antibiotic paste met the text rule and was classed "not relevant".
+3. **A trial of an older chemotherapy counted.** One trial gives pemetrexed, not a PRMT5 or MAT2A inhibitor, but requires MTAP loss in one group, so it meets the rule as written and is counted, with a note.
+4. **One reader.** Each record was classified once, by reading its conditions, entry criteria and study groups. The classification file is public.

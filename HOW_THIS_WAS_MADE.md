@@ -96,6 +96,8 @@ pip install pandas
 | `tools/engine_cycle01_ramp1.py` | engine cycle 1: `data/engine/cycle01/results.csv`, `summary.json` and the forest plot | NCBI GEO (three series matrices and platform tables, about 200 MB); reuses the TARGET-OS files | a few minutes |
 | `tools/engine_cycle02_fetch.sh`, then `tools/engine_cycle02_cxcr4.py` | engine cycle 2: `data/engine/cycle02/results.csv`, `summary.json`, `sample_values.csv` and two forest plots | NCBI GEO (nine datasets, about 1.5 GB) | about ten minutes to download, one minute to run |
 | `tools/engine_cycle03_9p21.py` (`fetch`, then no argument) | engine cycle 3: `data/engine/cycle03/results.csv`, `summary.json`, `patients.csv` and one figure | cBioPortal public API (five studies, a few megabytes) | a minute |
+| `tools/engine_cycle04_mtap_trials.py` (`fetch`, then no argument) | engine cycle 4: `data/engine/cycle04/trials.csv`, `trials_classified.csv`, `summary.json`; the hand classification is `classification.csv` | ClinicalTrials.gov (results change as the registry changes) | a minute |
+| `tools/engine_cycle05_06_depmap.py` (`fetch`, then no argument) | engine cycles 5 and 6: `data/engine/cycle05/` and `cycle06/` results, line tables and two figures | DepMap public releases on Figshare (six files, about 2.5 GB) | several minutes to download, under a minute to run |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:

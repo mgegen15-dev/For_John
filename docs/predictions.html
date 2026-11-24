@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#predictions">Predictions</a></li><li class="l1"><a href="#outcomes">Outcomes</a></li><li class="l1"><a href="#scorecard">Scorecard</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 24, 2026 · 6 min read</p>
+    <p class="crumb">Project document · Updated November 24, 2026 · 7 min read</p>
     <h1>Predictions Log</h1>
     <p><em>Started November 22, 2026. This is a public, dated record of what For John predicts, written before the answers are known. When trials, studies or reviewers report, each prediction will be marked right, wrong or unresolved. Entries are never edited after the fact; corrections and outcomes are added below each one with a date.</em></p>
     <p><strong>Why keep this.</strong> Anyone can explain results after they arrive. Committing to predictions in advance is the honest test of whether connecting the published evidence, as this project does, finds real signals. If our hit rate is poor, that is worth knowing too.</p>
@@ -207,6 +207,30 @@
     <td class="num">30%</td>
     <td>Unresolved (see Outcomes)</td>
     </tr>
+    <tr>
+    <td>P19</td>
+    <td>At least one currently recruiting trial of an MTAP-selected drug that an osteosarcoma patient could join accepts patients under 18</td>
+    <td>No such trial accepts under-18s</td>
+    <td>ClinicalTrials.gov; engine cycle 4, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-04-mtap-trials/PREREGISTRATION.md"><code>research_notes/Engine/cycle-04-mtap-trials/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">35%</td>
+    <td><strong>Right</strong> (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P20</td>
+    <td>Osteosarcoma cell lines that have lost MTAP are more dependent on PRMT5 than those that keep it (difference with a 95% interval excluding zero)</td>
+    <td>The whole interval shows an effect at most half the size seen across all cancers</td>
+    <td>DepMap public screens; engine cycle 5, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md"><code>research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">25%</td>
+    <td>Unresolved (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P21</td>
+    <td>Across osteosarcoma cell lines, more CCNE1 goes with stronger dependence on PKMYT1 (slope with a 95% interval excluding zero)</td>
+    <td>The whole interval shows a relationship at most half as steep as across all cancers</td>
+    <td>DepMap public screens; engine cycle 6, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-06-ccne1-pkmyt1/PREREGISTRATION.md"><code>research_notes/Engine/cycle-06-ccne1-pkmyt1/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">20%</td>
+    <td>Unresolved (see Outcomes)</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="outcomes">Outcomes</h2>
@@ -216,6 +240,9 @@
     <li><strong>P16, 2026-11-24: unresolved by its own rule.</strong> CXCR4 RNA in lung metastases against primary tumours, six datasets, 29 against 51: +0.43 standard deviations (95% CI −0.05 to +0.91). Not right (the lower bound is below 0); not wrong by the stated rule (the upper bound is above 0.5). The lean disappeared after adjusting for immune cells (+0.06). Source: <a href="reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html"><code>reports/Engine cycle 2 - do lung metastases carry more CXCR4.md</code></a> (our calculation).</li>
     <li><strong>P17, 2026-11-24: unresolved by its own rule.</strong> CXCL12 RNA, same comparison: −0.08 standard deviations (−0.55 to +0.39). No decrease seen; not wrong by the stated rule, because the lower bound is −0.55, not above −0.5. Same source.</li>
     <li><strong>P18, 2026-11-24: unresolved by its own rule.</strong> CDKN2A deep deletion, metastasis or relapse against primary, two cohorts, 130 against 211 patients: pooled odds ratio 1.10 (95% CI 0.59–2.06). Not right (the lower bound is below 1); not wrong by the stated rule (the upper bound is above 1.5). Source: <a href="reports/engine-cycle-3-is-9p21-deletion-more-common-at-relapse.html"><code>reports/Engine cycle 3 - is 9p21 deletion more common at relapse.md</code></a> (our calculation).</li>
+    <li><strong>P19, 2026-11-24: right.</strong> Of 25 recruiting or soon-to-recruit trials an osteosarcoma patient with MTAP loss could join on paper, one accepts patients from age 12 (NCT06796699, sites in China only). The other 24 start at 18. Source: <a href="reports/engine-cycle-4-mtap-selected-trials-open-to-osteosarcoma.html"><code>reports/Engine cycle 4 - MTAP-selected trials open to osteosarcoma.md</code></a> (our calculation from registry records).</li>
+    <li><strong>P20, 2026-11-24: unresolved by its own rule, and underpowered.</strong> Only two MTAP-lost osteosarcoma lines had knockout data. Primary measure (MAT2A knockout): difference +0.11 (95% CI −0.14 to +0.37), against −0.11 across all cancers. Source: <a href="reports/engine-cycle-5-do-osteosarcoma-cells-without-mtap-depend-on-prmt5.html"><code>reports/Engine cycle 5 - do osteosarcoma cells without MTAP depend on PRMT5.md</code></a> (our calculation).</li>
+    <li><strong>P21, 2026-11-24: unresolved by its own rule.</strong> Slope of PKMYT1 knockout score on CCNE1 RNA across 17 osteosarcoma lines: −0.059 (95% CI −0.151 to +0.033), against −0.031 across all cancers. Source: <a href="reports/engine-cycle-6-do-osteosarcoma-cells-with-more-ccne1-depend-on-pkmyt1.html"><code>reports/Engine cycle 6 - do osteosarcoma cells with more CCNE1 depend on PKMYT1.md</code></a> (our calculation).</li>
     </ul>
     <h2 id="scorecard">Scorecard</h2>
     <div class="tablewrap"><table>
@@ -229,14 +256,14 @@
     </thead>
     <tbody>
     <tr>
+    <td class="num">1</td>
+    <td class="num">1</td>
     <td class="num">0</td>
-    <td class="num">0</td>
-    <td class="num">0</td>
-    <td class="num">18</td>
+    <td class="num">20</td>
     </tr>
     </tbody>
     </table></div>
-    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day.</p>
+    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve.</p>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
   </main>

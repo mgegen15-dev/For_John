@@ -1,0 +1,71 @@
+{
+ "searched": "2026-11-24",
+ "trials_found": 97,
+ "meeting_rules": 60,
+ "not_relevant": [
+  "NCT06854744"
+ ],
+ "open_to_osteosarcoma_any_status": 28,
+ "A_recruiting_or_about_to": 25,
+ "A_named": [
+  "NCT05732831"
+ ],
+ "A_requiring_mtap_loss": 24,
+ "B_under_18": [
+  [
+   "NCT06796699",
+   "12 Years",
+   "China"
+  ]
+ ],
+ "C_us_site": [
+  "NCT05245500",
+  "NCT05732831",
+  "NCT06130553",
+  "NCT06414460",
+  "NCT06589596",
+  "NCT06630416",
+  "NCT06810544",
+  "NCT06914128",
+  "NCT07128303",
+  "NCT07382544",
+  "NCT07492680",
+  "NCT07601243"
+ ],
+ "unclear": [
+  "NCT07699757"
+ ],
+ "closed_to_new_patients": [
+  "NCT04794699",
+  "NCT05094336",
+  "NCT06188702"
+ ],
+ "A_by_country": {
+  "United States": 12,
+  "China": 15,
+  "France": 4,
+  "Spain": 8,
+  "Australia": 4,
+  "Japan": 4,
+  "Netherlands": 2,
+  "South Korea": 4,
+  "Brazil": 1,
+  "Denmark": 2,
+  "Malaysia": 1,
+  "Moldova": 1,
+  "Thailand": 1,
+  "Hungary": 1,
+  "Belgium": 2,
+  "Czechia": 1,
+  "Italy": 2,
+  "Singapore": 1,
+  "Sweden": 1,
+  "United Kingdom": 1,
+  "Taiwan": 1,
+  "Canada": 1,
+  "Germany": 1,
+  "Hong Kong": 1,
+  "Ireland": 1,
+  "Norway": 1
+ }
+}

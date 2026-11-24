@@ -56,4 +56,7 @@ P20 in `PREDICTIONS.md`: 25% that H is supported.
 
 ## Deviations
 
-*None yet.*
+Recorded November 24, 2026.
+
+1. **Release used.** The plan said "the latest public release". The analysis uses DepMap 24Q4 Public, the most recent release whose official Figshare record could be located from this environment. DepMap's own site, which would list any later release, is behind a human-verification check that was not bypassed.
+2. **Primary measure.** Only one MTAP-lost osteosarcoma line has knockdown data, so the fallback written into the plan applied: MAT2A knockout became the primary measure. This is the plan working as written, recorded here for clarity.

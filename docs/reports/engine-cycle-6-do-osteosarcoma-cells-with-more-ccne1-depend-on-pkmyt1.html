@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 6: Do Osteosarcoma Cells with More CCNE1 Depend More on PKMYT1? · For John</title>
+<meta name="description" content="Run November 24, 2026. The sixth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-06-ccne1-pkmyt1/PREREGISTRATION.md, committed at 20:11 UTC (commit 2676040)…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-6-do-osteosarcoma-cells-with-more-ccne1-depend-on-pkmyt1.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 6: Do Osteosarcoma Cells with More CCNE1 Depend More on PKMYT1? · For John">
+<meta property="og:description" content="Run November 24, 2026. The sixth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-06-ccne1-pkmyt1/PREREGISTRATION.md, committed at 20:11 UTC (commit 2676040)…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-6-do-osteosarcoma-cells-with-more-ccne1-depend-on-pkmyt1.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html#findings">Findings</a>
+      <a href="../index.html#reports">Reports</a>
+      <a href="../research-queue.html">Research Queue</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#checks">Checks</a></li><li class="l1"><a href="#a-resource-for-laboratories">A Resource for Laboratories</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 24, 2026 · 4 min read</p>
+    <h1>Engine Cycle 6: Do Osteosarcoma Cells with More CCNE1 Depend More on PKMYT1?</h1>
+    <p><em>Run November 24, 2026. The sixth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-06-ccne1-pkmyt1/PREREGISTRATION.md"><code>research_notes/Engine/cycle-06-ccne1-pkmyt1/PREREGISTRATION.md</code></a>, committed at 20:11 UTC (commit <code>2676040</code>) before any DepMap file was downloaded. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle05_06_depmap.py"><code>tools/engine_cycle05_06_depmap.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle06/results.csv"><code>data/engine/cycle06/results.csv</code></a>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>Tumours with extra copies of the gene CCNE1 have been shown to rely on an enzyme called PKMYT1, and a PKMYT1-blocking drug, lunresertib, is in trials for such cancers (general knowledge). About one in five osteosarcomas has extra CCNE1 (<a href="../reports/copy-number-changes-and-the-kinase-pill-biomarker.html"><code>reports/Copy-number changes and the kinase-pill biomarker.md</code></a>). We asked whether osteosarcoma cell lines with more CCNE1 depend more on PKMYT1, in the public DepMap gene-knockout screen. The trend ran in the expected direction, and was nominally steeper than across all cancers, but with 17 lines it could be chance: the slope was −0.06 with a range of uncertainty from −0.15 to +0.03. The pre-registered verdict is <strong>inconclusive</strong>. The cycle identifies four osteosarcoma lines with CCNE1 amplification that a laboratory could use to test the drug directly.</p>
+    <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from DepMap public data (24Q4 release) unless marked otherwise. The PKMYT1 score is a gene-effect score: more negative means the cells suffer more when PKMYT1 is knocked out.</p>
+    <h2 id="what-was-tested">What Was Tested</h2>
+    <ul>
+    <li><strong>Hypothesis:</strong> across osteosarcoma cell lines, more CCNE1 goes with stronger dependence on PKMYT1.</li>
+    <li><strong>Measure:</strong> the slope of a straight-line fit of the PKMYT1 knockout score on CCNE1 RNA (log2 scale). A negative slope means more CCNE1, more dependence. A continuous measure was chosen in advance because few lines were expected to be amplified.</li>
+    </ul>
+    <h2 id="results">Results</h2>
+    <p><strong>Step 0, the positive control across all cancer types</strong> (1,103 lines): slope −0.031 per doubling of CCNE1 RNA (−0.054 to −0.008, p = 0.009). The known relationship is there, though weak in this screen. Lines with CCNE1 amplification (32) scored 0.18 lower than the rest (−0.39 to +0.03). The control passes on the first measure, so the test goes ahead.</p>
+    <p><strong>Osteosarcoma lines</strong> (17 with both measurements):</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Analysis</th>
+    <th>Lines</th>
+    <th>Result (95% CI)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>Slope on CCNE1 RNA, the primary measure</strong></td>
+    <td class="num"><strong>17</strong></td>
+    <td><strong>−0.059 (−0.151 to +0.033), p = 0.19</strong></td>
+    </tr>
+    <tr>
+    <td>Rank correlation</td>
+    <td class="num">17</td>
+    <td>−0.29, p = 0.25</td>
+    </tr>
+    <tr>
+    <td>Slope on CCNE1 copy number</td>
+    <td class="num">17</td>
+    <td>−0.009 (−0.042 to +0.025)</td>
+    </tr>
+    <tr>
+    <td>Amplified against not amplified</td>
+    <td>3 v 14</td>
+    <td>−0.31 (−0.81 to +0.20)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><img src="../figures/engine06_ccne1_pkmyt1.svg" alt="CCNE1 level against PKMYT1 dependence in osteosarcoma cell lines" /></p>
+    <ul>
+    <li><strong>Verdict: Inconclusive.</strong> &quot;Supported&quot; needed a negative slope with an interval excluding zero. &quot;Refuted&quot; needed the whole interval above half the all-cancer slope (above −0.015); the lower end is −0.151. Seventeen lines met the minimum of ten set in advance, so the result is not flagged as underpowered, but the interval is wide.</li>
+    <li><strong>Direction and size.</strong> The osteosarcoma slope is negative and about twice the all-cancer slope. The three amplified lines with screen data averaged −1.15 against −0.85 for the rest.</li>
+    </ul>
+    <h2 id="checks">Checks</h2>
+    <ul>
+    <li><strong>Bone and soft-tissue sarcoma lines together</strong> (80 lines): slope −0.048 (−0.102 to +0.006), rank correlation −0.22 (p = 0.05). The same direction, and close to conventional significance.</li>
+    <li><strong>CDK2,</strong> the partner cyclin E1 works through: across all cancers more CCNE1 goes with clearly stronger CDK2 dependence (slope −0.079, −0.096 to −0.061); in osteosarcoma −0.016 (−0.122 to +0.090).</li>
+    <li><strong>WEE1,</strong> a related enzyme: no relationship with CCNE1, in all cancers or in osteosarcoma.</li>
+    </ul>
+    <h2 id="a-resource-for-laboratories">A Resource for Laboratories</h2>
+    <p>Osteosarcoma lines with CCNE1 amplification in DepMap (relative copy number of 2 or more; full table: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle06/lines.csv"><code>data/engine/cycle06/lines.csv</code></a>):</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Line</th>
+    <th>CCNE1 relative copy number</th>
+    <th>CCNE1 RNA</th>
+    <th>PKMYT1 score</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>OS526</td>
+    <td class="num">23.8</td>
+    <td class="num">6.7</td>
+    <td class="num">−0.95</td>
+    </tr>
+    <tr>
+    <td>OS457</td>
+    <td class="num">9.8</td>
+    <td class="num">7.0</td>
+    <td>not screened</td>
+    </tr>
+    <tr>
+    <td>OS186</td>
+    <td class="num">6.4</td>
+    <td class="num">6.4</td>
+    <td class="num">−1.45</td>
+    </tr>
+    <tr>
+    <td>NOS1</td>
+    <td class="num">3.8</td>
+    <td class="num">9.8</td>
+    <td class="num">−1.06</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Four of the 27 osteosarcoma lines (15%) are amplified, close to the 18.5% this project found in patients' tumours. U2OS has high CCNE1 RNA without amplification. Lines with low CCNE1 and weak PKMYT1 dependence, for comparison: SJSA1, G292, OS384.</p>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>The public screen leans the right way and cannot confirm it.</strong> Seventeen lines are too few for a relationship this modest.</li>
+    <li><strong>A direct drug test is the next step,</strong> and it is cheap: lunresertib or another PKMYT1 inhibitor in the four amplified lines against low-CCNE1 lines. It is added to the Research Queue as a partner question.</li>
+    <li><strong>Worth doing from public data next:</strong> how often CCNE1 is amplified in relapsed osteosarcoma, in the same hospital cohorts as cycle 3, and whether the open lunresertib trials would take an osteosarcoma patient, as in cycle 4.</li>
+    <li><strong>Prediction P21</strong> is unresolved by its own rule.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>PKMYT1 knockout harms most cell lines to some degree in this screen, which leaves little room to see differences.</li>
+    <li>Seventeen lines, one screen. A single line can move the slope.</li>
+    <li>A gene knockout is not the drug, and cell lines are not patients' tumours.</li>
+    <li>CCNE1 RNA and copy number disagree for some lines (U2OS high RNA, normal copy number), and the trials select patients by copy number, the measure that showed the weaker trend here.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li>As for cycle 5: <code>python3 tools/engine_cycle05_06_depmap.py fetch</code>, then <code>python3 tools/engine_cycle05_06_depmap.py</code>.</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle06/results.csv"><code>data/engine/cycle06/results.csv</code></a>, <code>summary.json</code>, <code>lines.csv</code>; <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine06_ccne1_pkmyt1.svg"><code>docs/figures/engine06_ccne1_pkmyt1.svg</code></a>.</li>
+    </ul>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%206%20-%20do%20osteosarcoma%20cells%20with%20more%20CCNE1%20depend%20on%20PKMYT1.md">reports/Engine cycle 6 - do osteosarcoma cells with more CCNE1 depend on PKMYT1.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

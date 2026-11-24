@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 5: Do Osteosarcoma Cells Without MTAP Depend More on PRMT5? · For John</title>
+<meta name="description" content="Run November 24, 2026. The fifth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md, committed at 20:11 UTC (commit 2676040)…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-5-do-osteosarcoma-cells-without-mtap-depend-on-prmt5.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 5: Do Osteosarcoma Cells Without MTAP Depend More on PRMT5? · For John">
+<meta property="og:description" content="Run November 24, 2026. The fifth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md, committed at 20:11 UTC (commit 2676040)…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-5-do-osteosarcoma-cells-without-mtap-depend-on-prmt5.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html#findings">Findings</a>
+      <a href="../index.html#reports">Reports</a>
+      <a href="../research-queue.html">Research Queue</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#checks">Checks</a></li><li class="l1"><a href="#a-resource-for-laboratories">A Resource for Laboratories</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 24, 2026 · 4 min read</p>
+    <h1>Engine Cycle 5: Do Osteosarcoma Cells Without MTAP Depend More on PRMT5?</h1>
+    <p><em>Run November 24, 2026. The fifth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md"><code>research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md</code></a>, committed at 20:11 UTC (commit <code>2676040</code>) before any DepMap file was downloaded. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle05_06_depmap.py"><code>tools/engine_cycle05_06_depmap.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle05/results.csv"><code>data/engine/cycle05/results.csv</code></a>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>The drug trials in cycle 4 rest on a finding from cancer cell lines: cells that have lost the gene MTAP are hurt more when PRMT5 is turned down. We checked whether that holds in osteosarcoma lines, using the public DepMap screens. Across all cancers the finding reproduced clearly. In osteosarcoma it could not be tested properly, because only 3 of the 27 osteosarcoma lines have lost MTAP, and only one or two of those were in each screen. By the rules set in advance the verdict is <strong>inconclusive and underpowered</strong>. What little there is points the expected way: the one MTAP-lost osteosarcoma line in the knockdown screen was the most PRMT5-dependent of five, and across 30 bone and soft-tissue sarcoma lines the difference was as large as in other cancers. The useful output is the list of which osteosarcoma lines a laboratory would need for a direct drug test.</p>
+    <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from DepMap public data (24Q4 release and the DEMETER2 knockdown scores) unless marked otherwise. Scores are dependency scores: more negative means the cells suffer more when the gene is turned down or knocked out.</p>
+    <h2 id="what-was-tested">What Was Tested</h2>
+    <ul>
+    <li><strong>Hypothesis:</strong> among osteosarcoma cell lines, those that have lost MTAP are more dependent on PRMT5 than those that keep it.</li>
+    <li><strong>MTAP-lost,</strong> by the rule fixed in advance: MTAP RNA below 1 on the log2(TPM+1) scale.</li>
+    <li><strong>Two kinds of screen:</strong> gene knockdown (RNAi), which turns a gene down and is where this relationship was first found; and gene knockout (CRISPR), which removes it. Knocking out PRMT5 harms almost every cell line, so the knockout screen separates the groups less well.</li>
+    </ul>
+    <h2 id="results">Results</h2>
+    <p><strong>Step 0, the positive control across all cancer types.</strong> MTAP-lost lines minus MTAP-intact lines:</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Measure</th>
+    <th>MTAP-lost lines</th>
+    <th>MTAP-intact lines</th>
+    <th>Difference (95% CI)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>PRMT5 knockdown (RNAi)</td>
+    <td class="num">113</td>
+    <td class="num">553</td>
+    <td>−0.46 (−0.53 to −0.40)</td>
+    </tr>
+    <tr>
+    <td>MAT2A knockdown (RNAi)</td>
+    <td class="num">114</td>
+    <td class="num">552</td>
+    <td>−0.20 (−0.26 to −0.13)</td>
+    </tr>
+    <tr>
+    <td>PRMT5 knockout (CRISPR)</td>
+    <td class="num">213</td>
+    <td class="num">965</td>
+    <td>−0.21 (−0.26 to −0.15)</td>
+    </tr>
+    <tr>
+    <td>MAT2A knockout (CRISPR)</td>
+    <td class="num">213</td>
+    <td class="num">965</td>
+    <td>−0.11 (−0.18 to −0.04)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>All four show the known relationship, so the data can test the question.</p>
+    <p><strong>Osteosarcoma lines:</strong></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Measure</th>
+    <th>MTAP-lost lines</th>
+    <th>MTAP-intact lines</th>
+    <th>Difference (95% CI)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>PRMT5 knockdown (RNAi)</td>
+    <td class="num">1</td>
+    <td class="num">4</td>
+    <td>−0.45 (one line; no interval possible)</td>
+    </tr>
+    <tr>
+    <td>MAT2A knockdown (RNAi)</td>
+    <td class="num">1</td>
+    <td class="num">4</td>
+    <td>−0.09 (one line)</td>
+    </tr>
+    <tr>
+    <td>PRMT5 knockout (CRISPR)</td>
+    <td class="num">2</td>
+    <td class="num">15</td>
+    <td>−0.46 (−4.54 to +3.63)</td>
+    </tr>
+    <tr>
+    <td><strong>MAT2A knockout (CRISPR), the primary measure</strong></td>
+    <td class="num"><strong>2</strong></td>
+    <td class="num"><strong>15</strong></td>
+    <td><strong>+0.11 (−0.14 to +0.37)</strong></td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><img src="../figures/engine05_mtap_primary.svg" alt="MAT2A knockout scores in osteosarcoma cell lines by MTAP status" /></p>
+    <ul>
+    <li><strong>Which measure was primary.</strong> The plan named PRMT5 knockdown, falling back to MAT2A knockout if fewer than three lines per group had knockdown data. Only one MTAP-lost osteosarcoma line did, so the fallback applied.</li>
+    <li><strong>Verdict: Inconclusive, and underpowered.</strong> &quot;Supported&quot; needed a negative difference with an interval excluding zero. &quot;Refuted&quot; needed the whole interval above half the all-cancer effect (above −0.05); the lower end is −0.14. With two lines in one group, no result here could have been convincing.</li>
+    <li><strong>The single knockdown data point.</strong> The MTAP-lost line 143B scored −0.78 for PRMT5 knockdown, against −0.24 to −0.42 for the four MTAP-intact osteosarcoma lines. That is one cell line and proves nothing, but it is where the all-cancer pattern says it should be.</li>
+    </ul>
+    <h2 id="checks">Checks</h2>
+    <ul>
+    <li><strong>Bone and soft-tissue sarcoma lines together</strong> (5 MTAP-lost, 25 intact in the knockdown screen): PRMT5 knockdown −0.59 (−0.76 to −0.43). The relationship holds in sarcomas as a group, at least as strongly as across all cancers. In the knockout screen (14 lost, 77 intact): −0.13 (−0.42 to +0.16).</li>
+    <li><strong>PRMT5's partner WDR77,</strong> knockout: −0.37 across all cancers (−0.43 to −0.30); in osteosarcoma −0.52 (−2.13 to +1.09), two lines.</li>
+    <li><strong>Defining MTAP loss by copy number</strong> instead of RNA picks the same three lines and gives the same figures.</li>
+    </ul>
+    <h2 id="a-resource-for-laboratories">A Resource for Laboratories</h2>
+    <p>Osteosarcoma lines in DepMap by 9p21 status (full table with scores: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle05/lines.csv"><code>data/engine/cycle05/lines.csv</code></a>):</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Status</th>
+    <th>Lines</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>MTAP lost, CDKN2A deleted</td>
+    <td>143B, HOS, HSOS1</td>
+    </tr>
+    <tr>
+    <td>CDKN2A deleted, MTAP kept</td>
+    <td>MG63, CAL72, OS384</td>
+    </tr>
+    <tr>
+    <td>Both intact (examples in common use)</td>
+    <td>U2OS, SAOS2, SJSA1, HUO9, G292, NOS1</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <ul>
+    <li><strong>143B was derived from HOS</strong> (general knowledge), so those two are one patient's tumour. There are in effect two independent MTAP-lost osteosarcoma models in the collection.</li>
+    <li><strong>CDKN2A loss does not guarantee MTAP loss.</strong> Three of the six CDKN2A-deleted lines kept MTAP. Cycle 3 saw the same in patients (MTAP lost in 14 of 19 CDKN2A-deleted tumours). A patient's CDKN2A result is a pointer, not a substitute for testing MTAP.</li>
+    </ul>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>The gene-screen data cannot settle this for osteosarcoma.</strong> There are too few MTAP-lost osteosarcoma lines in public collections, which is itself worth knowing.</li>
+    <li><strong>The experiment that would settle it is small.</strong> Treat the MTAP-lost lines (143B or HOS, and HSOS1) and a matched set of MTAP-intact lines with one of the MTAP-selective PRMT5 inhibitors now in trials, and compare. That is a few weeks' work for a laboratory that already grows these lines. It is added to the Research Queue as a partner question.</li>
+    <li><strong>Prediction P20</strong> is unresolved by its own rule.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>Two or three cell lines. Every osteosarcoma figure above could move a long way with one more line.</li>
+    <li>A gene screen is not the drug. The trial drugs act only in cells without MTAP by a mechanism that knockdown and knockout do not reproduce.</li>
+    <li>Cell lines grown for decades differ from patients' tumours.</li>
+    <li>The knockdown data are from an older release (DEMETER2) with fewer osteosarcoma lines than the knockout screen.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li><code>python3 tools/engine_cycle05_06_depmap.py fetch</code> downloads six files (about 2.5 GB) from DepMap's official Figshare releases into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/depmap/raw"><code>data/engine/depmap/raw/</code></a> (not stored in git); <code>python3 tools/engine_cycle05_06_depmap.py</code> runs cycles 5 and 6 in under a minute.</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle05/results.csv"><code>data/engine/cycle05/results.csv</code></a>, <code>summary.json</code>, <code>lines.csv</code>; <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine05_mtap_primary.svg"><code>docs/figures/engine05_mtap_primary.svg</code></a>.</li>
+    </ul>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-24: cycle run and reported. Verdict inconclusive and underpowered under the pre-registered rules.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%205%20-%20do%20osteosarcoma%20cells%20without%20MTAP%20depend%20on%20PRMT5.md">reports/Engine cycle 5 - do osteosarcoma cells without MTAP depend on PRMT5.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

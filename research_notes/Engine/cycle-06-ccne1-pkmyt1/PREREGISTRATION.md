@@ -50,4 +50,6 @@ P21 in `PREDICTIONS.md`: 20% that H is supported.
 
 ## Deviations
 
-*None yet.*
+Recorded November 24, 2026.
+
+1. **Release used.** DepMap 24Q4 Public, for the reason given in cycle 5's deviations.

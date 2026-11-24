@@ -1,0 +1,13 @@
+set,measure,mtap_lost_lines,mtap_intact_lines,mean_lost,mean_intact,difference,ci_low,ci_high,p
+positive_control,PRMT5 knockdown (RNAi),113,553,-0.761,-0.299,-0.462,-0.525,-0.400,0.000
+positive_control,MAT2A knockdown (RNAi),114,552,-0.470,-0.272,-0.197,-0.262,-0.133,0.000
+positive_control,PRMT5 knockout (CRISPR),213,965,-1.172,-0.966,-0.206,-0.259,-0.153,0.000
+positive_control,MAT2A knockout (CRISPR),213,965,-1.822,-1.714,-0.108,-0.178,-0.037,0.003
+osteosarcoma,PRMT5 knockdown (RNAi),1,4,,,-0.448,,,
+osteosarcoma,MAT2A knockdown (RNAi),1,4,,,-0.085,,,
+osteosarcoma,PRMT5 knockout (CRISPR),2,15,-1.393,-0.938,-0.456,-4.537,3.626,0.427
+osteosarcoma,MAT2A knockout (CRISPR),2,15,-1.277,-1.391,0.114,-0.139,0.368,0.345
+sarcoma,PRMT5 knockdown (RNAi),5,25,-0.875,-0.281,-0.594,-0.761,-0.428,0.000
+sarcoma,MAT2A knockdown (RNAi),5,25,-0.368,-0.225,-0.142,-0.337,0.052,0.124
+sarcoma,PRMT5 knockout (CRISPR),14,77,-1.126,-0.995,-0.130,-0.416,0.155,0.345
+sarcoma,MAT2A knockout (CRISPR),14,77,-1.459,-1.473,0.014,-0.266,0.294,0.918

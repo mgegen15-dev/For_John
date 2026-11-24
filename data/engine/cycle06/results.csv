@@ -1,0 +1,5 @@
+set,analysis,lines,slope,ci_low,ci_high,p,spearman_rho,spearman_p
+all cell lines,PKMYT1 knockout score on CCNE1,1103,-0.0308,-0.0539,-0.0078,0.0088,-0.0874,0.0037
+osteosarcoma,PKMYT1 knockout score on CCNE1,17,-0.0591,-0.1509,0.0328,0.1905,-0.2941,0.2518
+"osteosarcoma, copy number",PKMYT1 knockout score on CCNE1,17,-0.0086,-0.0423,0.0251,0.5938,-0.1618,0.5351
+bone and soft-tissue lines,PKMYT1 knockout score on CCNE1,80,-0.0482,-0.1020,0.0056,0.0783,-0.2201,0.0498
