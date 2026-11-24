@@ -41,10 +41,11 @@ h2 { font-size: 36px; line-height: 44px; }
 .hero { padding: 96px 0; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; align-items: center; }
 .hero h1 { font-size: 52px; line-height: 60px; }
-.dedication { font-family: var(--serif); font-weight: 300; font-size: 22px; line-height: 30px; color: var(--gold); margin: 24px 0 0; }
+.dedication { font-family: var(--serif); font-weight: 300; font-size: 22px; line-height: 30px; color: var(--gold); margin: 20px 0 0; }
 .lede { font-size: 20px; line-height: 31px; color: var(--on-navy-2); margin: 24px 0 0; max-width: 620px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
 .status { color: var(--on-navy-2); margin: 24px 0 0; max-width: 620px; }
+.nw { white-space: nowrap; }
 .hero-figure { margin: 0; }
 .hero-figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
 .hero-figure figcaption { font-size: 14.5px; line-height: 22px; color: var(--on-navy-2); margin-top: 12px; }
@@ -166,13 +167,13 @@ ol.asks strong { font-weight: 500; }
  <div class="wrap hero-grid">
   <div>
     <h1>Connecting decades of osteosarcoma research to find what has been overlooked.</h1>
+    <p class="lede">I’m leveraging frontier AI models to examine osteosarcoma studies and share findings with people who can test them.</p>
     <p class="dedication">In memory of my little brother and best friend, John.</p>
-    <p class="lede">For John was created in honor of John Gegen. Researchers have spent decades building knowledge about osteosarcoma, often in separate labs, trials and journals. I’m leveraging frontier AI models to bring that work together, connect the dots between studies, and carry the connections to the people who can test them.</p>
     <div class="hero-actions">
       <a class="btn btn-gold" href="summary.html">Read the Summary</a>
       <a class="btn btn-line" href="reports/ranked-leads-and-research-partners.html">See the Ranked Leads</a>
     </div>
-    <p class="status mono">Version 1.0 · Updated November 23, 2026 · Open data and code · Not yet peer-reviewed · Not medical advice</p>
+    <p class="status mono"><span class="nw">Version 1.0</span> · <span class="nw">Updated November 23, 2026</span> · <span class="nw">Open data and code</span> · <span class="nw">Not yet peer-reviewed</span> · <span class="nw">Not medical advice</span></p>
   </div>
   <!-- First-screen image. To use a photograph, save it as docs/john.jpg and set HERO_PHOTO in the script below. -->
   <figure class="hero-figure" id="heroFigure"></figure>
