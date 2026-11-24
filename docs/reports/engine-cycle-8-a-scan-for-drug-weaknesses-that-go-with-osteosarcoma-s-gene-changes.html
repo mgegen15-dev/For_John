@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 8: A Scan for Drug Weaknesses That Go with Osteosarcoma&#x27;s Gene Changes · For John</title>
+<meta name="description" content="Run November 24, 2026. The eighth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md, committed at 21:09 UTC (commit…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-8-a-scan-for-drug-weaknesses-that-go-with-osteosarcoma-s-gene-changes.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 8: A Scan for Drug Weaknesses That Go with Osteosarcoma&#x27;s Gene Changes · For John">
+<meta property="og:description" content="Run November 24, 2026. The eighth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md, committed at 21:09 UTC (commit…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-8-a-scan-for-drug-weaknesses-that-go-with-osteosarcoma-s-gene-changes.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html#findings">Findings</a>
+      <a href="../index.html#reports">Reports</a>
+      <a href="../research-queue.html">Research Queue</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-done">What Was Done</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#the-three-worth-following">The Three Worth Following</a></li><li class="l1"><a href="#what-could-not-be-scanned">What Could Not Be Scanned</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 24, 2026 · 7 min read</p>
+    <h1>Engine Cycle 8: A Scan for Drug Weaknesses That Go with Osteosarcoma&#x27;s Gene Changes</h1>
+    <p><em>Run November 24, 2026. The eighth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md"><code>research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md</code></a>, committed at 21:09 UTC (commit <code>940146d</code>) before the scan was run. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle08_scan.py"><code>tools/engine_cycle08_scan.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle08/hits.csv"><code>data/engine/cycle08/hits.csv</code></a>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>Cycles 5 and 6 each tested one hand-picked pair: a gene an osteosarcoma has lost or gained, and a second gene the cell then cannot do without. This cycle looked for such pairs systematically. It took the gene losses and gains seen in osteosarcoma patients and, for each, compared every one of 17,205 genes across 1,178 cancer cell lines: about 1.2 million comparisons. It is a discovery scan, so the method and thresholds were fixed in advance and every hit had to show up again in a second, different kind of screen. Fifty-four pairs passed the first screen and fourteen of those replicated. Seven of the fourteen are pairs already known to science, including the two this project tested by hand, which shows the scan works. The other seven held no hidden drug target: four are a tumour depending on its own amplified gene or a likely artefact, two turned out on checking to be recently published, and one (cells without PTEN depending on FERMT2) has no paper we could find and rests on few cell lines. The most useful output is a pointer to work that already has a drug behind it: tumours whose 9p21 deletion reaches a gene called FOCAD depend on HBS1L, a company has a drug for that in development, and about 4% of osteosarcomas carry the deletion.</p>
+    <p><strong>How to read the labels.</strong> Numbers are <strong>(our calculation)</strong> from DepMap public data (24Q4 knockout scores, DEMETER2 knockdown scores) and the patient cohorts of cycles 3 and 7, unless marked otherwise. A scan hit is a candidate, not a finding.</p>
+    <h2 id="what-was-done">What Was Done</h2>
+    <ol>
+    <li><strong>Gene changes seen in patients.</strong> Thirty-three &quot;anchor&quot; genes deep-deleted in at least 3%, or amplified in at least 5%, of 197 osteosarcoma patients tested at Memorial Sloan Kettering. To these were added 61 &quot;passenger&quot; genes that are deleted alongside an anchor in TARGET-OS, which is how bystander genes like MTAP get in. Ninety-four gene changes in all (<a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle08/alterations.csv"><code>data/engine/cycle08/alterations.csv</code></a>).</li>
+    <li><strong>The scan.</strong> Seventy-two of the 94 are carried by at least ten cell lines and were scanned. For each, every gene in the knockout screen was compared between lines with and without the change, adjusting for tissue type. A hit needed a difference of at least 0.2 in the dependency score with a false-discovery rate below 5% across all 1,238,742 comparisons.</li>
+    <li><strong>Replication.</strong> Each hit was re-tested in the knockdown screens, a separate technology. It replicated if the same difference appeared there with a 95% interval excluding zero.</li>
+    <li><strong>Grouping.</strong> Gene changes that travel together (for example CDK4 and MDM2, amplified side by side) were grouped into 12 blocks so that each dependency is reported once per block.</li>
+    </ol>
+    <h2 id="results">Results</h2>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th></th>
+    <th>Pairs</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Compared</td>
+    <td class="num">1,238,742</td>
+    </tr>
+    <tr>
+    <td>Hits in the knockout screen</td>
+    <td class="num">54</td>
+    </tr>
+    <tr>
+    <td>… replicated in the knockdown screen</td>
+    <td class="num"><strong>14</strong></td>
+    </tr>
+    <tr>
+    <td>… did not replicate</td>
+    <td class="num">31</td>
+    </tr>
+    <tr>
+    <td>… could not be re-tested (too few lines)</td>
+    <td class="num">9</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><img src="../figures/engine08_scan.svg" alt="Replicated hits: effect in the knockout and knockdown screens" /></p>
+    <p><strong>The fourteen replicated hits.</strong> Effect is the lineage-adjusted difference in dependency score, altered lines minus the rest; more negative means the altered lines need the gene more.</p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Gene change (share of osteosarcoma patients)</th>
+    <th>Depends on</th>
+    <th>Knockout effect</th>
+    <th>Knockdown effect (95% CI)</th>
+    <th>What it is</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>9p21 loss (20%)</td>
+    <td>PRMT5</td>
+    <td class="num">−0.22</td>
+    <td>−0.39 (−0.43 to −0.34)</td>
+    <td><strong>Known.</strong> The pair behind the trials in cycle 4</td>
+    </tr>
+    <tr>
+    <td>9p21 loss</td>
+    <td>WDR77</td>
+    <td class="num">−0.37</td>
+    <td>−0.29 (−0.33 to −0.24)</td>
+    <td><strong>Known.</strong> PRMT5's partner</td>
+    </tr>
+    <tr>
+    <td>9p21 loss reaching FOCAD (about 4%)</td>
+    <td>HBS1L</td>
+    <td class="num">−0.27</td>
+    <td>−0.51 (−0.60 to −0.42)</td>
+    <td>Not on our list; <strong>published in 2025</strong>, drug in development (see below)</td>
+    </tr>
+    <tr>
+    <td>CCNE1 gain (11%)</td>
+    <td>CDK2</td>
+    <td class="num">−0.38</td>
+    <td>−0.49 (−0.62 to −0.36)</td>
+    <td><strong>Known.</strong> The basis of the CDK2 trials in cycle 7</td>
+    </tr>
+    <tr>
+    <td>CCNE1 gain</td>
+    <td>CCNE1 itself</td>
+    <td class="num">−0.46</td>
+    <td>−0.44 (−0.55 to −0.33)</td>
+    <td><strong>Known.</strong> Self-dependence</td>
+    </tr>
+    <tr>
+    <td>CCNE1 gain</td>
+    <td>PAX8</td>
+    <td class="num">−0.24</td>
+    <td>−0.12 (−0.21 to −0.04)</td>
+    <td>Likely an artefact: CCNE1-amplified lines are mostly ovarian, and ovarian cells need PAX8</td>
+    </tr>
+    <tr>
+    <td>CDK4 gain (11%)</td>
+    <td>CDK4 itself</td>
+    <td class="num">−0.67</td>
+    <td>−0.68 (−0.86 to −0.51)</td>
+    <td><strong>Known.</strong> Self-dependence; approved CDK4/6 inhibitors exist</td>
+    </tr>
+    <tr>
+    <td>CDK4 gain</td>
+    <td>CCND1</td>
+    <td class="num">−0.47</td>
+    <td>−0.21 (−0.41 to 0.00)</td>
+    <td><strong>Known.</strong> CDK4's partner</td>
+    </tr>
+    <tr>
+    <td>MDM2 gain (9%)</td>
+    <td>MDM2 itself</td>
+    <td class="num">−0.45</td>
+    <td>−0.22 (−0.36 to −0.08)</td>
+    <td><strong>Known.</strong> Self-dependence; MDM2 inhibitors are in trials</td>
+    </tr>
+    <tr>
+    <td>GLI1 gain (6%)</td>
+    <td>GLI1 itself</td>
+    <td class="num">−0.32</td>
+    <td>−0.20 (−0.32 to −0.07)</td>
+    <td>Self-dependence; GLI1 sits beside CDK4 and is amplified with it</td>
+    </tr>
+    <tr>
+    <td>CCND3 gain (14%)</td>
+    <td>CCND3 itself</td>
+    <td class="num">−0.43</td>
+    <td>−0.14 (−0.28 to −0.01)</td>
+    <td>Self-dependence</td>
+    </tr>
+    <tr>
+    <td>MCL1 gain (7%)</td>
+    <td>MCL1 itself</td>
+    <td class="num">−0.32</td>
+    <td>−0.20 (−0.34 to −0.06)</td>
+    <td>Self-dependence; <strong>published for osteosarcoma in 2025</strong> (see below)</td>
+    </tr>
+    <tr>
+    <td>MCL1 gain</td>
+    <td>PDE4DIP</td>
+    <td class="num">−0.24</td>
+    <td>−0.07 (−0.13 to −0.01)</td>
+    <td>Probably an artefact: PDE4DIP sits near MCL1 and the knockdown effect is tiny</td>
+    </tr>
+    <tr>
+    <td>PTEN loss (5%)</td>
+    <td>FERMT2</td>
+    <td class="num">−0.41</td>
+    <td>−0.34 (−0.52 to −0.15)</td>
+    <td><strong>No paper found.</strong> Rests on 18 lines in one screen and 8 in the other</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><strong>The scan recovered most of what it should.</strong> Of the six pre-listed groups that could be scanned, four appear: 9p21 with PRMT5 and WDR77, CCNE1 with CDK2, CDK4 with CCND1, and MDM2 with itself. Two did not: MYC gain with MYC passed the knockout screen but not the knockdown screen, and PTEN loss did not show its expected partners. RB1 could not be scanned (see below). Cycles 5 and 6 could not confirm the 9p21 and CCNE1 pairs in osteosarcoma lines alone; across all cancers they are plain.</p>
+    <h2 id="the-three-worth-following">The Three Worth Following</h2>
+    <p><strong>1. FOCAD loss and HBS1L (or PELO).</strong> FOCAD lies at the far edge of the 9p21 region. Tumours whose deletion reaches it lose a piece of the cell's machinery for clearing stalled protein synthesis, and then depend on a back-up system made of HBS1L and PELO.</p>
+    <ul>
+    <li>The scan found this through a neighbouring passenger gene (HACD4), without being told about FOCAD. PELO was the single strongest hit in the knockout screen (−0.89) but had too few altered lines in the knockdown screen to replicate there; HBS1L replicated.</li>
+    <li>It was not on this project's list of known pairs, but it is published: two papers in 2025 reported that cancers with this deletion depend on PELO (paper, title only; PMIDs 39910293, 39910291), and a 2026 paper describes an oral drug that destroys HBS1L, built for FOCAD-deleted cancers (paper, title only; PMID 42001523).</li>
+    <li>In osteosarcoma patients, FOCAD was deep-deleted in 3 of 81 TARGET-OS tumours (3.7%) and 1 of 42 in PCAWG, in each case alongside CDKN2A. That is roughly one in three of the tumours with a 9p21 deletion.</li>
+    <li>One osteosarcoma cell line in DepMap, HSOS1, has lost FOCAD and could be used to test the idea.</li>
+    </ul>
+    <p><strong>2. MCL1 gain and MCL1.</strong> Cell lines with extra MCL1 depend on it. A 2025 paper reports the same for osteosarcoma specifically (paper, title only; PMID 39663392), and cycle 7 saw, as an unplanned observation, more MCL1 amplification in relapsed patients. In the three MCL1-gained osteosarcoma lines with screen data the dependency did not show (difference +0.16), which with three lines says little either way. Drugs against MCL1 exist but have been held back by heart side effects (general knowledge).</p>
+    <p><strong>3. PTEN loss and FERMT2.</strong> The only replicated pair that is neither self-dependence, nor an obvious artefact, nor in a paper we could find. FERMT2 (kindlin-2) helps cells grip their surroundings through integrins. About 5% of osteosarcomas have lost PTEN. It rests on few cell lines, has no drug, and needs testing in an independent dataset before anyone treats it as real.</p>
+    <p><strong>Exploratory look-ups, made after the scan.</strong> CCND3 is amplified in 14% of patients and its usual partners are the targets of approved CDK4/6 inhibitors, so two named pairs were checked: CCND3 gain against CDK6 (−0.14, not significant) and against CDK4 (+0.12). The scan gives no support for CDK4/6 inhibitors in CCND3-amplified tumours.</p>
+    <h2 id="what-could-not-be-scanned">What Could Not Be Scanned</h2>
+    <ul>
+    <li><strong>RB1 and TP53</strong>, the two tumour-suppressor genes most often lost in osteosarcoma, and <strong>ATRX</strong>. Each is deep-deleted in fewer than ten cell lines by the copy-number rule used here, because cell lines mostly lose these genes through mutations or small deletions that the rule misses. A second scan that defines loss by missing RNA or by mutation is the obvious next step, and is added to the Research Queue.</li>
+    <li>Twenty-two of the 94 gene changes in all had too few cell lines.</li>
+    </ul>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>The method works and is reusable.</strong> It rediscovered seven established pairs and two published in the last two years without being told about them.</li>
+    <li><strong>No unknown, druggable weakness turned up</strong> among osteosarcoma's copy-number changes. That is a real, if unexciting, result: the copy-number changes that are common in this disease have been well searched by others.</li>
+    <li><strong>One concrete pointer for patients with 9p21 deletion:</strong> a tumour report showing the deletion reaching FOCAD is worth knowing about as HBS1L-directed drugs enter trials.</li>
+    <li><strong>Predictions.</strong> P24 (the scan recovers a known 9p21 pair) is right. P25 (a replicated, unlisted hit with a late-stage drug) is met only by MCL1 depending on itself, with a non-selective drug in the project's table; that is the letter of the prediction and not its point, so it is recorded as ambiguous and not scored.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>Cell lines are not tumours, a gene knockout is not a drug, and these are relationships across all cancers. Osteosarcoma lines are too few to confirm any of them (the table in <code>hits.csv</code> gives the osteosarcoma and sarcoma figures for each).</li>
+    <li>Adjusting for tissue type reduces confounding but does not remove it, as the PAX8 hit shows.</li>
+    <li>Copy number alone defined each gene change.</li>
+    <li>The rule for passenger genes let in a few deletions that are common in TARGET-OS on their own (at 3q13.31) and listed them under an unrelated anchor. None of their hits replicated.</li>
+    <li>The literature check was a title search, not a review. &quot;No paper found&quot; is not proof of novelty.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li>Needs the downloads of cycles 3, 5 and 7. Then <code>python3 tools/engine_cycle08_scan.py</code> (about two minutes).</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle08/alterations.csv"><code>data/engine/cycle08/alterations.csv</code></a> (the 94 gene changes), <code>hits.csv</code> (all 54 hits with replication, osteosarcoma and sarcoma figures, drugs), <code>exploratory_lookups.csv</code>, <code>summary.json</code>; <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine08_scan.svg"><code>docs/figures/engine08_scan.svg</code></a>.</li>
+    </ul>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-24: scan run and reported. After the first run, six named pairs were looked up (<code>exploratory_lookups.csv</code>) and FOCAD's frequency in patients was checked; both are marked exploratory.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%208%20-%20a%20scan%20for%20drug%20weaknesses%20that%20go%20with%20osteosarcoma%27s%20gene%20changes.md">reports/Engine cycle 8 - a scan for drug weaknesses that go with osteosarcoma&#x27;s gene changes.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

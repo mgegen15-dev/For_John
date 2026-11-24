@@ -1,0 +1,48 @@
+analysis,study,gene,relapse_amplified,relapse_n,primary_amplified,primary_n,odds_ratio,ci_low,ci_high
+primary,MSK-IMPACT (New York),CCNE1,13,107,9,90,1.245,0.506,3.062
+primary,OrigiMed (China),CCNE1,2,23,12,121,0.865,0.180,4.150
+primary,pooled (fixed),CCNE1,15,130,21,211,1.137,0.521,2.483
+every sample,MSK-IMPACT (New York),CCNE1,16,128,12,130,1.405,0.636,3.101
+every sample,OrigiMed (China),CCNE1,2,23,12,121,0.865,0.180,4.150
+every sample,pooled (fixed),CCNE1,18,151,24,251,1.273,0.628,2.581
+distant metastasis v primary,MSK-IMPACT (New York),CCNE1,12,101,9,90,1.213,0.486,3.030
+distant metastasis v primary,OrigiMed (China),CCNE1,2,14,12,121,1.514,0.302,7.583
+distant metastasis v primary,pooled (fixed),CCNE1,14,115,21,211,1.281,0.578,2.838
+every gene amplified in >3%,pooled (fixed),MCL1,15,130,6,211,5.236,1.934,14.179
+every gene amplified in >3%,pooled (fixed),BCL2L2,2,23,3,121,3.746,0.590,23.787
+every gene amplified in >3%,pooled (fixed),PRKACA,2,23,3,121,3.746,0.590,23.787
+every gene amplified in >3%,pooled (fixed),FRS2,3,23,5,121,3.480,0.770,15.721
+every gene amplified in >3%,pooled (fixed),SDHA,7,130,5,211,2.762,0.802,9.514
+every gene amplified in >3%,pooled (fixed),TERT,10,130,8,211,2.291,0.792,6.625
+every gene amplified in >3%,pooled (fixed),MDM2,14,130,14,211,1.769,0.767,4.078
+every gene amplified in >3%,pooled (fixed),RICTOR,4,130,9,211,1.565,0.379,6.461
+every gene amplified in >3%,pooled (fixed),FGF10,1,23,4,121,1.330,0.142,12.466
+every gene amplified in >3%,pooled (fixed),FGF23,1,23,4,121,1.330,0.142,12.466
+every gene amplified in >3%,pooled (fixed),GNA13,1,23,4,121,1.330,0.142,12.466
+every gene amplified in >3%,pooled (fixed),HDAC9,1,23,4,121,1.330,0.142,12.466
+every gene amplified in >3%,pooled (fixed),AURKB,10,130,14,211,1.324,0.549,3.196
+every gene amplified in >3%,pooled (fixed),BRD4,5,130,6,211,1.296,0.363,4.622
+every gene amplified in >3%,pooled (fixed),RAD21,7,126,5,204,1.290,0.414,4.015
+every gene amplified in >3%,pooled (fixed),CCNE1,15,130,21,211,1.137,0.521,2.483
+every gene amplified in >3%,pooled (fixed),ETV1,2,130,9,211,1.131,0.238,5.367
+every gene amplified in >3%,pooled (fixed),PRKDC,1,23,5,121,1.055,0.117,9.469
+every gene amplified in >3%,pooled (fixed),KDM5A,3,130,8,211,1.045,0.267,4.094
+every gene amplified in >3%,pooled (fixed),PIM1,10,130,9,211,1.019,0.406,2.561
+every gene amplified in >3%,pooled (fixed),MYC,11,130,15,211,0.994,0.409,2.415
+every gene amplified in >3%,pooled (fixed),CDK4,14,130,25,211,0.973,0.443,2.136
+every gene amplified in >3%,pooled (fixed),GID4,4,23,22,121,0.947,0.293,3.062
+every gene amplified in >3%,pooled (fixed),ALOX12B,7,130,7,211,0.944,0.331,2.694
+every gene amplified in >3%,pooled (fixed),MAP2K4,9,130,21,211,0.925,0.401,2.135
+every gene amplified in >3%,pooled (fixed),NCOR1,19,130,35,211,0.917,0.489,1.722
+every gene amplified in >3%,pooled (fixed),FLCN,15,130,15,211,0.874,0.407,1.874
+every gene amplified in >3%,pooled (fixed),KIT,7,130,13,211,0.847,0.296,2.425
+every gene amplified in >3%,pooled (fixed),GLI1,7,126,17,204,0.777,0.270,2.234
+every gene amplified in >3%,pooled (fixed),RAC1,4,130,11,211,0.768,0.237,2.494
+every gene amplified in >3%,pooled (fixed),PDGFRA,7,130,14,211,0.739,0.267,2.046
+every gene amplified in >3%,pooled (fixed),CCND3,16,130,34,211,0.729,0.359,1.481
+every gene amplified in >3%,pooled (fixed),VEGFA,17,126,38,204,0.710,0.352,1.435
+every gene amplified in >3%,pooled (fixed),CARD11,4,130,11,211,0.535,0.163,1.759
+every gene amplified in >3%,pooled (fixed),CALR,5,126,9,204,0.508,0.171,1.511
+every gene amplified in >3%,pooled (fixed),KDR,4,130,12,211,0.459,0.144,1.462
+every gene amplified in >3%,pooled (fixed),FOS,0,23,5,121,0.451,0.024,8.430
+every gene amplified in >3%,pooled (fixed),IGF1R,1,130,12,211,0.265,0.044,1.584

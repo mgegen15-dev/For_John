@@ -1,0 +1,22 @@
+nct,counts,open_to_osteosarcoma,ccne1_required,drug_class,note
+NCT03304080,no,no,no,other,"breast cancer; cyclin E1 is measured, not required"
+NCT04855656,yes,"yes, by tumour-agnostic entry",yes,PKMYT1 inhibitor,"lunresertib, a PKMYT1 inhibitor; any advanced solid tumour with CCNE1 amplification (or an FBXW7 or PPP2R1A mutation); accepts ages 12 and up, weighing at least 40 kg"
+NCT05128825,yes,no,yes,WEE1 inhibitor,ovarian cancer only
+NCT05238922,no,no,no,CDK2 inhibitor,"CCNE1 is a keyword, not an entry rule; its 'other tumours' group excludes bone cancers; closed to new patients"
+NCT05601440,yes,no,no,PKMYT1 inhibitor (groups closed),breast cancer only; the PKMYT1-inhibitor groups are permanently closed
+NCT05735080,yes,"yes, by tumour-agnostic entry",yes,CDK2 inhibitor,"INX-315, a CDK2 inhibitor; one part takes any advanced solid tumour with known CCNE1 amplification"
+NCT05867251,yes,unclear,yes,CDK2 inhibitor,"AVZO-021, a CDK2 inhibitor; named tumour types, with other CCNE1-amplified tumours only by case-by-case approval"
+NCT06107868,yes,no,no,PKMYT1 inhibitor,ovarian and uterine cancer only; closed to new patients
+NCT06188520,no,no,no,CDK2 inhibitor,breast and ovarian cancer; PKMYT1 appears only as an excluded prior treatment
+NCT06586957,yes,"yes, by tumour-agnostic entry",yes,CDK2 degrader,"NKT3964, a CDK2 degrader; dose-finding part includes 'other solid tumours with CCNE1 amplification'"
+NCT06667141,yes,unclear,no,WEE1 and PKMYT1 inhibitor,"ACR-2316, a WEE1 and PKMYT1 inhibitor; 'selected solid tumours', not listed in the record"
+NCT06726148,yes,"yes, by tumour-agnostic entry",yes,type not stated in the record,ECI830; any advanced cancer with CCNE1 amplification
+NCT06953323,yes,"yes, by tumour-agnostic entry",yes,WEE1 inhibitor,"WJB001, a WEE1 inhibitor, with other drugs; advanced solid tumours with CCNE1 overexpression by tissue stain; China"
+NCT07023627,yes,no,yes,CDK2 inhibitor,ovarian cancer only
+NCT07029399,yes,"yes, by tumour-agnostic entry",no,CDK2 and CDK4 degrader,"NKT5097, a CDK2 and CDK4 degrader; dose-finding part takes any advanced solid tumour, with an emphasis on CCNE1-amplified ones"
+NCT07214779,yes,no,yes,CDK2 inhibitor,ovarian cancer only; closed to new patients
+NCT07288359,yes,"yes, by tumour-agnostic entry",yes,type not stated in the record,GVV858; any advanced cancer with CCNE1 amplification
+NCT07524140,yes,"yes, by tumour-agnostic entry",yes,CDK2 inhibitor,"ZE94-0605, a CDK2 inhibitor; any advanced solid tumour, with CCNE1 amplification required in the second part; Australia and Uzbekistan"
+NCT07546500,yes,no,yes,WEE1 inhibitor,ovarian cancer only
+NCT07797283,yes,no,yes,CDK2 inhibitor,ovarian cancer only
+NCT07933666,yes,"yes, by tumour-agnostic entry",no,PKMYT1 inhibitor,"FXS0260, a PKMYT1 inhibitor; any advanced solid tumour, with priority to five named cancers; China; not yet recruiting"

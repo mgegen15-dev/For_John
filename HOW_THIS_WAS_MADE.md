@@ -98,6 +98,8 @@ pip install pandas
 | `tools/engine_cycle03_9p21.py` (`fetch`, then no argument) | engine cycle 3: `data/engine/cycle03/results.csv`, `summary.json`, `patients.csv` and one figure | cBioPortal public API (five studies, a few megabytes) | a minute |
 | `tools/engine_cycle04_mtap_trials.py` (`fetch`, then no argument) | engine cycle 4: `data/engine/cycle04/trials.csv`, `trials_classified.csv`, `summary.json`; the hand classification is `classification.csv` | ClinicalTrials.gov (results change as the registry changes) | a minute |
 | `tools/engine_cycle05_06_depmap.py` (`fetch`, then no argument) | engine cycles 5 and 6: `data/engine/cycle05/` and `cycle06/` results, line tables and two figures | DepMap public releases on Figshare (six files, about 2.5 GB) | several minutes to download, under a minute to run |
+| `tools/engine_cycle07_ccne1.py` (`fetch`, then no argument) | engine cycle 7: `data/engine/cycle07/` results, patient table, trial tables and one figure | cBioPortal and ClinicalTrials.gov; needs cycle 3's fetch | a minute |
+| `tools/engine_cycle08_scan.py` | engine cycle 8: `data/engine/cycle08/alterations.csv`, `hits.csv`, `summary.json` and one figure | none new; needs the downloads of cycles 3, 5 and 7 | about two minutes |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:

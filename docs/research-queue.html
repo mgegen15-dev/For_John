@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#how-a-question-moves-through-the-queue">How a Question Moves Through the Queue</a></li><li class="l1"><a href="#tested">Tested</a></li><li class="l1"><a href="#next">Next</a></li><li class="l1"><a href="#needs-a-partner">Needs a Partner</a></li><li class="l1"><a href="#rules-the-engine-follows">Rules the Engine Follows</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 24, 2026 · 5 min read</p>
+    <p class="crumb">Project document · Updated November 24, 2026 · 6 min read</p>
     <h1>Research Queue</h1>
     <p><em>The For John research engine, in public. Each question is something public data or a partner laboratory can answer. Each is written down with its success and failure rules before the data are examined, then tested on patients it was not built from. Results are posted whatever they show. Last updated November 24, 2026.</em></p>
     <h2 id="how-a-question-moves-through-the-queue">How a Question Moves Through the Queue</h2>
@@ -131,6 +131,18 @@
     <td><strong>Inconclusive.</strong> Across 17 lines the trend ran the expected way (slope −0.06, −0.15 to +0.03) but could be chance. Four amplified lines identified for a direct drug test. <a href="reports/engine-cycle-6-do-osteosarcoma-cells-with-more-ccne1-depend-on-pkmyt1.html">Full result</a></td>
     <td>Nov 24, 2026</td>
     </tr>
+    <tr>
+    <td class="num">12</td>
+    <td>How often is CCNE1 amplified in relapsed osteosarcoma, and would the trials take such a patient?</td>
+    <td><strong>Frequency: about one in ten</strong> (17 of 179 on hospital tests); not clearly more common than in primaries (odds ratio 1.14, 0.52–2.48, inconclusive). <strong>Trials: nine</strong> would take such a patient on paper, six with a United States site, and one, of the PKMYT1 inhibitor lunresertib, from age 12. <a href="reports/engine-cycle-7-ccne1-amplification-at-relapse-and-the-trials-open-to-it.html">Full result</a></td>
+    <td>Nov 24, 2026</td>
+    </tr>
+    <tr>
+    <td class="num">13</td>
+    <td>Which other gene changes in osteosarcoma have a matching dependency across all cancer cell lines?</td>
+    <td><strong>Scan done (discovery, not a test).</strong> 1.2 million comparisons, 14 replicated hits. Seven are established pairs, which shows the method works; no unknown druggable weakness turned up. Pointers: tumours whose 9p21 deletion reaches FOCAD depend on HBS1L (published 2025, drug in development; about 4% of osteosarcomas), and PTEN loss with FERMT2 needs an independent test. <a href="reports/engine-cycle-8-a-scan-for-drug-weaknesses-that-go-with-osteosarcoma-s-gene-changes.html">Full result</a></td>
+    <td>Nov 24, 2026</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="next">Next</h2>
@@ -146,18 +158,25 @@
     </thead>
     <tbody>
     <tr>
-    <td class="num">12</td>
-    <td>How often is CCNE1 amplified in relapsed osteosarcoma, and would the open PKMYT1-inhibitor trials take an osteosarcoma patient?</td>
-    <td>Cycle 6 leaned towards a CCNE1 and PKMYT1 link; the size of the patient group and the trials open to them are the next facts needed.</td>
-    <td>cBioPortal hospital cohorts as in cycle 3; ClinicalTrials.gov as in cycle 4</td>
+    <td class="num">16</td>
+    <td>A second scan that defines gene loss by missing RNA or by mutation, so that RB1, TP53 and ATRX can be included</td>
+    <td>These are the genes osteosarcoma loses most often, and cycle 8's copy-number rule could not scan them.</td>
+    <td>DepMap screens with expression and mutation data</td>
     <td>Proposed, next to run</td>
     </tr>
     <tr>
-    <td class="num">13</td>
-    <td>Which other gene deletions or gains in osteosarcoma have a matching dependency across all DepMap cell lines?</td>
-    <td>Cycles 5 and 6 tested two pairs chosen by hand. A systematic scan could find pairs nobody has proposed, to be tested in a later pre-registered cycle.</td>
-    <td>DepMap screens against the copy-number changes seen in patients (TARGET-OS and hospital cohorts)</td>
-    <td>Proposed</td>
+    <td class="num">17</td>
+    <td>Is MCL1 amplification more common in relapsed osteosarcoma than in primary tumours?</td>
+    <td>Cycle 7 saw this as an unplanned observation (15 of 130 against 6 of 211), with some evidence against it. It needs a planned test on patients not used there.</td>
+    <td>A hospital cohort with primary and relapse samples that was not part of cycle 7</td>
+    <td>Proposed; needs an independent cohort</td>
+    </tr>
+    <tr>
+    <td class="num">18</td>
+    <td>Do cells without PTEN depend on FERMT2 in an independent screen?</td>
+    <td>The one replicated pair from cycle 8 with no paper behind it.</td>
+    <td>The Sanger Institute's independent CRISPR screens</td>
+    <td>Proposed; needs access to that dataset</td>
     </tr>
     </tbody>
     </table></div>
@@ -202,6 +221,11 @@
     <td>A laboratory that grows osteosarcoma cell lines, and access to one of the trial drugs or a research-grade equivalent</td>
     </tr>
     <tr>
+    <td class="num">19</td>
+    <td>Do osteosarcoma cells that have lost FOCAD (the line HSOS1) die when HBS1L or PELO is removed? (Follows cycle 8.)</td>
+    <td>A laboratory that grows osteosarcoma cell lines and can knock genes down</td>
+    </tr>
+    <tr>
     <td class="num">15</td>
     <td>Does a PKMYT1 inhibitor kill CCNE1-amplified osteosarcoma cells (OS526, OS457, OS186, NOS1) more than low-CCNE1 ones? (Follows cycle 6.)</td>
     <td>The same kind of laboratory; lunresertib or a research-grade PKMYT1 inhibitor</td>
@@ -222,6 +246,7 @@
     <li>2026-11-24: cycle 2 (CXCR4 and CXCL12 in lung metastases) tested and reported inconclusive. Question 8 added from its result. Questions 3 and 4 still wait on data access.</li>
     <li>2026-11-24: cycle 3 (9p21 deletion at relapse) tested through cBioPortal and reported inconclusive. Questions 9, 10 and 11 added from its result.</li>
     <li>2026-11-24: cycles 4 (MTAP trial count), 5 (MTAP and PRMT5 in cell lines) and 6 (CCNE1 and PKMYT1 in cell lines) run. Questions 12 to 15 added from their results.</li>
+    <li>2026-11-24: cycles 7 (CCNE1 at relapse and its trials) and 8 (systematic dependency scan) run. Questions 16 to 19 added from their results.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/RESEARCH_QUEUE.md">RESEARCH_QUEUE.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>

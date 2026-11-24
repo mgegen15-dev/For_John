@@ -43,4 +43,9 @@ Those of cycles 3 and 4: hospital sequencing favours advanced disease; panel amp
 
 ## Deviations
 
-*None yet.*
+Recorded November 24, 2026.
+
+1. **MAPPYACTS.** It reports CCNE1 amplifications, so it was added to the relapse-stage frequency as the plan allowed (2 of 49).
+2. **Drug type recorded by hand.** The script's text match wrongly flagged one WEE1 inhibitor as a PKMYT1 inhibitor. Each counted trial's drug type was therefore written into the classification file from the record itself; two records do not state the type and say so.
+3. **Further drugs found through the general terms and included:** WJB001, NKT5097, GVV858, ZE94-0605, FXS0260.
+4. **An unplanned observation is reported.** The planned check on every amplified gene showed MCL1 amplification more often in the relapse group. It is described in the report as unplanned, with the evidence against it, and is not treated as a result.

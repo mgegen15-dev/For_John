@@ -1,0 +1,94 @@
+{
+ "gene_changes_listed": 94,
+ "anchors": 33,
+ "passengers": 61,
+ "gene_changes_scanned": 72,
+ "blocks": 12,
+ "cell_lines": 1178,
+ "dependency_genes": 17205,
+ "pairs_tested": 1238742,
+ "hits": 54,
+ "hits_by_replication": {
+  "no": 31,
+  "yes": 14,
+  "not testable": 9
+ },
+ "replicated_hits": 14,
+ "replicated_self_or_coamplified": 6,
+ "replicated_known": [
+  "9p21 loss -> PRMT5",
+  "9p21 loss -> WDR77",
+  "CCNE1 gain -> CCNE1",
+  "CCNE1 gain -> CDK2",
+  "CDK4/GLI1/MDM2 gain -> CCND1",
+  "CDK4/GLI1/MDM2 gain -> CDK4",
+  "CDK4/GLI1/MDM2 gain -> MDM2"
+ ],
+ "P24_9p21_known_pair_replicated": true,
+ "replicated_not_on_known_list": [
+  {
+   "block": "CCND3/PIM1/VEGFA gain",
+   "dependency": "CCND3",
+   "effect": -0.4331301831560759,
+   "rnai_effect": -0.14194223875335804,
+   "drug": "",
+   "drug_phase": "",
+   "label": "self"
+  },
+  {
+   "block": "PTEN loss",
+   "dependency": "FERMT2",
+   "effect": -0.4048308300389114,
+   "rnai_effect": -0.33726991789478056,
+   "drug": "",
+   "drug_phase": "",
+   "label": ""
+  },
+  {
+   "block": "CDK4/GLI1/MDM2 gain",
+   "dependency": "GLI1",
+   "effect": -0.32081504471358124,
+   "rnai_effect": -0.19575247712576294,
+   "drug": "",
+   "drug_phase": "",
+   "label": "self"
+  },
+  {
+   "block": "MCL1/SETDB1 gain",
+   "dependency": "MCL1",
+   "effect": -0.32035914985025654,
+   "rnai_effect": -0.1990533871255895,
+   "drug": "obatoclax",
+   "drug_phase": "3",
+   "label": "self"
+  },
+  {
+   "block": "9p21 loss",
+   "dependency": "HBS1L",
+   "effect": -0.27325388462605477,
+   "rnai_effect": -0.5075577493195397,
+   "drug": "",
+   "drug_phase": "",
+   "label": ""
+  },
+  {
+   "block": "MCL1/SETDB1 gain",
+   "dependency": "PDE4DIP",
+   "effect": -0.24037013260205067,
+   "rnai_effect": -0.06951970963104241,
+   "drug": "",
+   "drug_phase": "",
+   "label": ""
+  },
+  {
+   "block": "CCNE1 gain",
+   "dependency": "PAX8",
+   "effect": -0.23689926549141957,
+   "rnai_effect": -0.12286580249180984,
+   "drug": "",
+   "drug_phase": "",
+   "label": ""
+  }
+ ],
+ "P25_replicated_unlisted_with_drug": false
+}

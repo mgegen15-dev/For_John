@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 388" font-family="IBM Plex Sans, Helvetica, Arial, sans-serif" font-size="14">
+<rect width="900" height="388" fill="#ffffff"/>
+<text x="16" y="28" font-size="16" font-weight="600" fill="#14181f">CCNE1 amplification in osteosarcoma, by where the sample came from</text>
+<text x="16" y="50" font-size="13" fill="#525b6b">Share of patients with the gene amplified, 95% CI. One sample per patient.</text>
+<text x="16" y="68" font-size="13" fill="#525b6b">Blue: metastasis or relapse. Grey: primary tumour. Pale: reference cohorts of primary tumours.</text>
+<line x1="440.0" y1="86" x2="440.0" y2="348" stroke="#e2e5ea"/>
+<text x="440.0" y="368" text-anchor="middle" fill="#525b6b" font-size="12">0%</text>
+<line x1="550.0" y1="86" x2="550.0" y2="348" stroke="#e2e5ea"/>
+<text x="550.0" y="368" text-anchor="middle" fill="#525b6b" font-size="12">20%</text>
+<line x1="660.0" y1="86" x2="660.0" y2="348" stroke="#e2e5ea"/>
+<text x="660.0" y="368" text-anchor="middle" fill="#525b6b" font-size="12">40%</text>
+<line x1="770.0" y1="86" x2="770.0" y2="348" stroke="#e2e5ea"/>
+<text x="770.0" y="368" text-anchor="middle" fill="#525b6b" font-size="12">60%</text>
+<text x="16" y="113.0" fill="#14181f" font-weight="600">CCNE1 amplification</text>
+<text x="28" y="145.0" fill="#14181f">MSK-IMPACT (New York), primary (9/90)</text>
+<rect x="440.0" y="132.0" width="55.0" height="16" fill="#6a7384"/>
+<line x1="469.4" y1="140.0" x2="538.6" y2="140.0" stroke="#14181f" stroke-width="1.5"/>
+<text x="892" y="145.0" text-anchor="end" fill="#525b6b" font-size="12">10% (5-18%)</text>
+<text x="28" y="177.0" fill="#14181f">MSK-IMPACT (New York), metastasis or relapse (13/107)</text>
+<rect x="440.0" y="164.0" width="66.8" height="16" fill="#1c5cab"/>
+<line x1="479.8" y1="172.0" x2="548.3" y2="172.0" stroke="#14181f" stroke-width="1.5"/>
+<text x="892" y="177.0" text-anchor="end" fill="#525b6b" font-size="12">12% (7-20%)</text>
+<text x="28" y="209.0" fill="#14181f">OrigiMed (China), primary (12/121)</text>
+<rect x="440.0" y="196.0" width="54.5" height="16" fill="#6a7384"/>
+<line x1="471.7" y1="204.0" x2="531.0" y2="204.0" stroke="#14181f" stroke-width="1.5"/>
+<text x="892" y="209.0" text-anchor="end" fill="#525b6b" font-size="12">10% (6-17%)</text>
+<text x="28" y="241.0" fill="#14181f">OrigiMed (China), metastasis or relapse (2/23)</text>
+<rect x="440.0" y="228.0" width="47.8" height="16" fill="#1c5cab"/>
+<line x1="453.3" y1="236.0" x2="587.4" y2="236.0" stroke="#14181f" stroke-width="1.5"/>
+<text x="892" y="241.0" text-anchor="end" fill="#525b6b" font-size="12">9% (2-27%)</text>
+<text x="28" y="273.0" fill="#14181f">MAPPYACTS (Europe, relapse trial) (2/49)</text>
+<rect x="440.0" y="260.0" width="22.4" height="16" fill="#1c5cab"/>
+<line x1="446.2" y1="268.0" x2="515.4" y2="268.0" stroke="#14181f" stroke-width="1.5"/>
+<text x="892" y="273.0" text-anchor="end" fill="#525b6b" font-size="12">4% (1-14%)</text>
+<text x="28" y="305.0" fill="#14181f">TARGET-OS (diagnosis) (16/81)</text>
+<rect x="440.0" y="292.0" width="108.6" height="16" fill="#a8b0bd"/>
+<line x1="509.0" y1="300.0" x2="603.4" y2="300.0" stroke="#14181f" stroke-width="1.5"/>
+<text x="892" y="305.0" text-anchor="end" fill="#525b6b" font-size="12">20% (13-30%)</text>
+<text x="28" y="337.0" fill="#14181f">PCAWG (primary tumours) (8/42)</text>
+<rect x="440.0" y="324.0" width="104.8" height="16" fill="#a8b0bd"/>
+<line x1="494.9" y1="332.0" x2="623.2" y2="332.0" stroke="#14181f" stroke-width="1.5"/>
+<text x="892" y="337.0" text-anchor="end" fill="#525b6b" font-size="12">19% (10-33%)</text>
+</svg>

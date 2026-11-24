@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#predictions">Predictions</a></li><li class="l1"><a href="#outcomes">Outcomes</a></li><li class="l1"><a href="#scorecard">Scorecard</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 24, 2026 · 7 min read</p>
+    <p class="crumb">Project document · Updated November 24, 2026 · 9 min read</p>
     <h1>Predictions Log</h1>
     <p><em>Started November 22, 2026. This is a public, dated record of what For John predicts, written before the answers are known. When trials, studies or reviewers report, each prediction will be marked right, wrong or unresolved. Entries are never edited after the fact; corrections and outcomes are added below each one with a date.</em></p>
     <p><strong>Why keep this.</strong> Anyone can explain results after they arrive. Committing to predictions in advance is the honest test of whether connecting the published evidence, as this project does, finds real signals. If our hit rate is poor, that is worth knowing too.</p>
@@ -231,6 +231,38 @@
     <td class="num">20%</td>
     <td>Unresolved (see Outcomes)</td>
     </tr>
+    <tr>
+    <td>P22</td>
+    <td>CCNE1 amplification is more common in osteosarcoma samples from metastases or relapses than in primary-tumour samples (pooled odds ratio of at least 1.5, lower 95% bound above 1)</td>
+    <td>The pooled odds ratio's upper 95% bound falls below 1.5</td>
+    <td>cBioPortal hospital cohorts; engine cycle 7, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-07-ccne1-relapse-trials/PREREGISTRATION.md"><code>research_notes/Engine/cycle-07-ccne1-relapse-trials/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">15%</td>
+    <td>Unresolved (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P23</td>
+    <td>At least one recruiting trial that selects patients by CCNE1 amplification, or tests a PKMYT1 inhibitor, and that an osteosarcoma patient could join, accepts patients under 18</td>
+    <td>No such trial accepts under-18s</td>
+    <td>ClinicalTrials.gov; engine cycle 7</td>
+    <td class="num">10%</td>
+    <td><strong>Right</strong> (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P24</td>
+    <td>A systematic scan of DepMap for dependencies that go with osteosarcoma's gene losses and gains recovers a known 9p21 pair (PRMT5, MAT2A, WDR77 or RIOK1) as a replicated hit</td>
+    <td>None of the four is a replicated hit</td>
+    <td>DepMap public screens; engine cycle 8, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md"><code>research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">90%</td>
+    <td><strong>Right</strong> (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P25</td>
+    <td>The same scan yields at least one replicated hit, not on the list of known pairs fixed in advance, whose dependency gene has an approved or late-stage drug</td>
+    <td>No such hit</td>
+    <td>Same as P24</td>
+    <td class="num">35%</td>
+    <td>Ambiguous, not scored (see Outcomes)</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="outcomes">Outcomes</h2>
@@ -243,6 +275,10 @@
     <li><strong>P19, 2026-11-24: right.</strong> Of 25 recruiting or soon-to-recruit trials an osteosarcoma patient with MTAP loss could join on paper, one accepts patients from age 12 (NCT06796699, sites in China only). The other 24 start at 18. Source: <a href="reports/engine-cycle-4-mtap-selected-trials-open-to-osteosarcoma.html"><code>reports/Engine cycle 4 - MTAP-selected trials open to osteosarcoma.md</code></a> (our calculation from registry records).</li>
     <li><strong>P20, 2026-11-24: unresolved by its own rule, and underpowered.</strong> Only two MTAP-lost osteosarcoma lines had knockout data. Primary measure (MAT2A knockout): difference +0.11 (95% CI −0.14 to +0.37), against −0.11 across all cancers. Source: <a href="reports/engine-cycle-5-do-osteosarcoma-cells-without-mtap-depend-on-prmt5.html"><code>reports/Engine cycle 5 - do osteosarcoma cells without MTAP depend on PRMT5.md</code></a> (our calculation).</li>
     <li><strong>P21, 2026-11-24: unresolved by its own rule.</strong> Slope of PKMYT1 knockout score on CCNE1 RNA across 17 osteosarcoma lines: −0.059 (95% CI −0.151 to +0.033), against −0.031 across all cancers. Source: <a href="reports/engine-cycle-6-do-osteosarcoma-cells-with-more-ccne1-depend-on-pkmyt1.html"><code>reports/Engine cycle 6 - do osteosarcoma cells with more CCNE1 depend on PKMYT1.md</code></a> (our calculation).</li>
+    <li><strong>P22, 2026-11-24: unresolved by its own rule.</strong> CCNE1 amplification, metastasis or relapse against primary, 130 against 211 patients: pooled odds ratio 1.14 (95% CI 0.52–2.48). Source: <a href="reports/engine-cycle-7-ccne1-amplification-at-relapse-and-the-trials-open-to-it.html"><code>reports/Engine cycle 7 - CCNE1 amplification at relapse and the trials open to it.md</code></a> (our calculation).</li>
+    <li><strong>P23, 2026-11-24: right.</strong> Of nine recruiting or soon-to-recruit trials an osteosarcoma patient with CCNE1 amplification could join on paper, one accepts patients from age 12 (lunresertib, NCT04855656; sites in five countries including the United States). Given a 10% chance in advance. Same source.</li>
+    <li><strong>P24, 2026-11-24: right.</strong> The scan recovered 9p21 loss with PRMT5 and with WDR77 as replicated hits. Source: <a href="reports/engine-cycle-8-a-scan-for-drug-weaknesses-that-go-with-osteosarcoma-s-gene-changes.html"><code>reports/Engine cycle 8 - a scan for drug weaknesses that go with osteosarcoma's gene changes.md</code></a> (our calculation).</li>
+    <li><strong>P25, 2026-11-24: ambiguous, not scored.</strong> The only replicated hit off the known list whose dependency gene has a late-stage drug in the project's table is MCL1 gain with MCL1 itself. That meets the wording, but the prediction was about finding an unanticipated druggable pair, and this is a tumour depending on its own amplified gene, already published for osteosarcoma. Same source.</li>
     </ul>
     <h2 id="scorecard">Scorecard</h2>
     <div class="tablewrap"><table>
@@ -256,14 +292,14 @@
     </thead>
     <tbody>
     <tr>
-    <td class="num">1</td>
-    <td class="num">1</td>
+    <td class="num">3</td>
+    <td class="num">3</td>
     <td class="num">0</td>
-    <td class="num">20</td>
+    <td class="num">22</td>
     </tr>
     </tbody>
     </table></div>
-    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve.</p>
+    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day.</p>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
   </main>

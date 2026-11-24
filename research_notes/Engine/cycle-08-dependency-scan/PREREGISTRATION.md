@@ -45,4 +45,12 @@ Each hit is checked in the gene-knockdown screens (RNAi, DEMETER2), a separate t
 
 ## Deviations
 
-*None yet.*
+Recorded November 24, 2026.
+
+1. **"Same chromosome" became "co-amplified".** The DepMap files give no gene positions. A dependency gene is labelled instead when it is itself amplified in at least half of the lines that carry the amplification in question, which is the artefact the label was meant to catch.
+2. **Missing scores.** Genes with more than 5% of knockout scores missing were dropped; the few remaining gaps took their lineage's average.
+3. **Blocks.** Gene changes were grouped when their presence across cell lines correlated above 0.5. The block holding CDKN2A, CDKN2B or MTAP is called 9p21.
+4. **Anchor frequencies** were computed among patients whose test covers the gene. MTAP, covered only by the newest test, qualifies on 3 of 24 patients.
+5. **Passenger rule too loose in one place.** A few deletions that are common in TARGET-OS on their own (at 3q13.31) met the "lost alongside an anchor" rule by frequency alone. They were scanned; none of their hits replicated. They are named in the report's limits.
+6. **Exploratory additions after the first run:** six named pairs looked up, FOCAD's frequency in patients, and a title search of PubMed for the unlisted replicated pairs. All are marked exploratory in the report.
+7. **P25.** The only unlisted, replicated hit whose dependency gene has a late-stage drug in the project's table is MCL1 depending on itself. That meets the wording but not the intent, so P25 is recorded as ambiguous and not scored.

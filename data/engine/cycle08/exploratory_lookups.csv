@@ -1,0 +1,7 @@
+altered_gene,kind,anchor,dependency,effect,se,p,q
+CCND3,amplification,CCND3,CDK4,0.11909,0.10169,0.24178,0.90317
+CCND3,amplification,CCND3,CDK6,-0.14275,0.09059,0.11536,0.83441
+CDK4,amplification,CDK4,CDK6,0.34741,0.06978,0.0,0.00081
+MCL1,amplification,MCL1,BCL2L1,0.32165,0.08291,0.00011,0.06046
+MYC,amplification,MYC,MAX,-0.06609,0.02115,0.00183,0.3161
+VEGFA,amplification,VEGFA,CCND3,-0.43076,0.08036,0.0,0.00012
