@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 2: Do Lung Metastases Carry More CXCR4? · For John</title>
+<meta name="description" content="Run November 24, 2026. The second cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-02-cxcr4/PREREGISTRATION.md, committed at 18:53 UTC (commit 5fd3cad) before…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 2: Do Lung Metastases Carry More CXCR4? · For John">
+<meta property="og:description" content="Run November 24, 2026. The second cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-02-cxcr4/PREREGISTRATION.md, committed at 18:53 UTC (commit 5fd3cad) before…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html#findings">Findings</a>
+      <a href="../index.html#reports">Reports</a>
+      <a href="../research-queue.html">Research Queue</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#checks">Checks</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 24, 2026 · 6 min read</p>
+    <h1>Engine Cycle 2: Do Lung Metastases Carry More CXCR4?</h1>
+    <p><em>Run November 24, 2026. The second cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-02-cxcr4/PREREGISTRATION.md"><code>research_notes/Engine/cycle-02-cxcr4/PREREGISTRATION.md</code></a>, committed at 18:53 UTC (commit <code>5fd3cad</code>) before any dataset was searched for, with the dataset choices and two predictions committed at 18:59 UTC (<code>b324482</code>) before any expression value was read. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle02_cxcr4.py"><code>tools/engine_cycle02_cxcr4.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle02/results.csv"><code>data/engine/cycle02/results.csv</code></a>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>Lead 14 proposes blocking CXCR4, a receptor that mouse studies say guides osteosarcoma cells to the lung, where its signal CXCL12 is plentiful. If that happens in patients, tumour that has reached the lung should carry more CXCR4 than tumour in the bone. We compared 29 lung metastases with 51 primary tumours across six public datasets. CXCR4 RNA leaned higher in the lung metastases, by 0.43 standard deviations, but the range of uncertainty runs from just below zero to 0.91, so by the rules written down in advance the verdict is <strong>inconclusive</strong>. The lean also looks like it comes from immune cells, not tumour cells: lung metastases held more immune cells, immune cells make a lot of CXCR4, and once immune content was accounted for the difference was 0.06. In four patients with both a primary tumour and a lung metastasis, there was no difference. CXCL12 was not lower in lung metastases (−0.08), also <strong>inconclusive</strong> by the rules. Lead 14 gains no support from this test and is not promoted.</p>
+    <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from open data unless marked otherwise.</p>
+    <h2 id="what-was-tested">What Was Tested</h2>
+    <ul>
+    <li><strong>H1:</strong> CXCR4 RNA is higher in osteosarcoma lung metastases than in primary tumours.</li>
+    <li><strong>H2:</strong> CXCL12 RNA is lower in lung metastases than in primary tumours.</li>
+    <li><strong>Measure:</strong> the difference between the two groups in standard deviations (Hedges' g), one value per patient or lesion, pooled across datasets. Half a standard deviation was set in advance as the smallest difference that would matter.</li>
+    <li><strong>The known trap, stated in advance:</strong> a piece of lung metastasis contains lung tissue and immune cells as well as tumour. So the plan also adjusted for a lung score (three genes made by lung air-sac cells) and an immune score (PTPRC, found on all white blood cells), and looked at tumour cells alone in single-cell data.</li>
+    </ul>
+    <p><strong>Datasets with lung metastases confirmed per sample (used for the verdicts):</strong></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Dataset</th>
+    <th>Type</th>
+    <th>Lung metastases</th>
+    <th>Primary tumours</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>GSE14359</td>
+    <td>Microarray</td>
+    <td>4 patients</td>
+    <td>5 patients</td>
+    </tr>
+    <tr>
+    <td>GSE220538</td>
+    <td>Bulk RNA sequencing</td>
+    <td>9 patients</td>
+    <td>19 patients</td>
+    </tr>
+    <tr>
+    <td>GSE140131</td>
+    <td>Bulk RNA sequencing</td>
+    <td>2 patients</td>
+    <td>7 patients</td>
+    </tr>
+    <tr>
+    <td>GSE293065</td>
+    <td>Spatial transcriptomics, summed per section</td>
+    <td>10 lesions</td>
+    <td>9 tumours</td>
+    </tr>
+    <tr>
+    <td>GSE152048</td>
+    <td>Single-cell RNA sequencing, summed per lesion</td>
+    <td>2 lesions</td>
+    <td>7 lesions</td>
+    </tr>
+    <tr>
+    <td>GSE318840</td>
+    <td>Single-cell RNA sequencing, summed per tumour</td>
+    <td>2 patients</td>
+    <td>4 patients</td>
+    </tr>
+    <tr>
+    <td><strong>Total</strong></td>
+    <td></td>
+    <td class="num"><strong>29</strong></td>
+    <td class="num"><strong>51</strong></td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Three more datasets label samples &quot;metastasis&quot; without saying where in the body. They are shown separately and do not count towards the verdicts. The full list of datasets found, used and excluded, with reasons, is in the pre-registration.</p>
+    <h2 id="results">Results</h2>
+    <p><img src="../figures/engine02_cxcr4_forest.svg" alt="Forest plot of the CXCR4 difference between lung metastases and primary tumours" /></p>
+    <p><strong>CXCR4, lung metastases minus primary tumours:</strong></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Analysis</th>
+    <th>Lung metastases v primaries</th>
+    <th>Difference in SD (95% CI)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>GSE14359</td>
+    <td>4 v 5</td>
+    <td>+0.53 (−0.81 to +1.87)</td>
+    </tr>
+    <tr>
+    <td>GSE220538</td>
+    <td>9 v 19</td>
+    <td>+0.28 (−0.52 to +1.08)</td>
+    </tr>
+    <tr>
+    <td>GSE140131</td>
+    <td>2 v 7</td>
+    <td>+1.26 (−0.41 to +2.94)</td>
+    </tr>
+    <tr>
+    <td>GSE293065</td>
+    <td>10 v 9</td>
+    <td>+0.46 (−0.45 to +1.37)</td>
+    </tr>
+    <tr>
+    <td>GSE152048</td>
+    <td>2 v 7</td>
+    <td>−0.81 (−2.43 to +0.80)</td>
+    </tr>
+    <tr>
+    <td>GSE318840</td>
+    <td>2 v 4</td>
+    <td>+1.60 (−0.32 to +3.53)</td>
+    </tr>
+    <tr>
+    <td><strong>Pooled</strong></td>
+    <td><strong>29 v 51</strong></td>
+    <td><strong>+0.43 (−0.05 to +0.91), p = 0.08</strong></td>
+    </tr>
+    <tr>
+    <td>Pooled, adjusted for immune score</td>
+    <td>29 v 51</td>
+    <td>+0.06 (−0.36 to +0.47)</td>
+    </tr>
+    <tr>
+    <td>Pooled, adjusted for lung and immune scores</td>
+    <td>29 v 51</td>
+    <td>+0.60 (−0.20 to +1.40)</td>
+    </tr>
+    <tr>
+    <td>Tumour cells only, two single-cell datasets</td>
+    <td>4 v 11</td>
+    <td>+0.27 (−0.94 to +1.49)</td>
+    </tr>
+    <tr>
+    <td>Four matched patients (GSE220538), paired</td>
+    <td>4 pairs</td>
+    <td>+0.05 (−1.06 to +1.17)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <ul>
+    <li><strong>Verdict for H1: Inconclusive.</strong> &quot;Supported&quot; needed a lower bound above 0 and a difference of at least 0.5; the lower bound is −0.05 and the estimate 0.43. &quot;Refuted&quot; needed the upper bound below 0.5; it is 0.91. The six datasets agree with each other (I² = 0%).</li>
+    <li><strong>The lean follows immune cells.</strong> The immune score was higher in lung metastases (+0.68, 0.19 to 1.17). Adjusting for it took the CXCR4 difference from 0.43 to 0.06.</li>
+    <li><strong>Adjusting for lung tissue is not reliable here.</strong> The lung score was 3.2 standard deviations higher in metastases, as it should be, which shows the samples are labelled correctly. But a score that separates the groups that well cannot be told apart from the group itself, so the lung-adjusted figures swing widely between datasets and should not be leaned on.</li>
+    <li><strong>Tumour cells alone gave no clear answer.</strong> With only four lung metastases in the single-cell data, the range covers everything from a large decrease to a large increase. Between 2% and 15% of tumour-classed cells in primary tumours carried any CXCR4 RNA, against 3%, 10%, 17% and 34% in the four lung metastases.</li>
+    </ul>
+    <p><img src="../figures/engine02_cxcl12_forest.svg" alt="Forest plot of the CXCL12 difference between lung metastases and primary tumours" /></p>
+    <p><strong>CXCL12:</strong></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Analysis</th>
+    <th>Lung metastases v primaries</th>
+    <th>Difference in SD (95% CI)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>Pooled, six datasets</strong></td>
+    <td><strong>29 v 51</strong></td>
+    <td><strong>−0.08 (−0.55 to +0.39), p = 0.73</strong></td>
+    </tr>
+    <tr>
+    <td>Pooled, adjusted for immune score</td>
+    <td>29 v 51</td>
+    <td>−0.44 (−0.93 to +0.05)</td>
+    </tr>
+    <tr>
+    <td>Tumour cells only, two single-cell datasets</td>
+    <td>4 v 11</td>
+    <td>−0.19 (−1.36 to +0.98)</td>
+    </tr>
+    <tr>
+    <td>Four matched patients, paired</td>
+    <td>4 pairs</td>
+    <td>+0.27 (−1.07 to +1.60)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <ul>
+    <li><strong>Verdict for H2: Inconclusive.</strong> No decrease was seen. &quot;Refuted&quot; needed the lower bound above −0.5; it is −0.55.</li>
+    </ul>
+    <h2 id="checks">Checks</h2>
+    <ul>
+    <li><strong>Datasets where the metastasis site is not recorded</strong> (not used for the verdicts). CXCR4: GSE32981 +0.73 (−0.11 to +1.58), GSE237033 paired −0.45 (−1.16 to +0.26), GSE87624 +0.01 (−0.76 to +0.77). All nine datasets pooled: CXCR4 +0.21 (−0.11 to +0.54), CXCL12 −0.26 (−0.59 to +0.08). Adding them weakens the CXCR4 lean.</li>
+    <li><strong>Arrays and bulk sequencing only</strong>, leaving out the summed single-cell and spatial data: CXCR4 +0.48 (−0.16 to +1.11), CXCL12 −0.22 (−0.85 to +0.40). The same picture.</li>
+    <li><strong>The second receptor, ACKR3 (CXCR7):</strong> no difference, −0.09 (−0.57 to +0.39).</li>
+    <li><strong>Random-effects pooling</strong> gave the same figures as fixed-effect for CXCR4 and CXCL12.</li>
+    </ul>
+    <p><strong>Exploratory, not pre-registered.</strong> Two further looks, made after the results were seen, to understand the immune finding. They generate ideas and prove nothing.</p>
+    <ul>
+    <li>In the single-cell data, immune cells held 24%, 45%, 53% and 67% of all CXCR4 RNA in the four lung metastases, and a median of 21% in the eleven primary tumours (range 5% to 86%).</li>
+    <li>Within each group, CXCR4 rose with the immune marker in five of six datasets (correlations of 0.16 to 0.82, and −0.39 in the smallest dataset).</li>
+    </ul>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>Lead 14 gains no support and stays at the bottom of the list.</strong> Whole-tissue CXCR4 leans higher in lung metastases, but the lean is what more immune cells would produce, and the matched patients show nothing.</li>
+    <li><strong>It is not ruled out either.</strong> With 29 lung metastases, a real difference of half a standard deviation could be missed. RNA is not protein: an earlier study that stained tissue found CXCR4 protein in 33% of primary tumours and 67% of matched lung metastases (paper, abstract only; PMID 16528367), and nothing here contradicts it.</li>
+    <li><strong>The deciding experiment is staining, not more RNA.</strong> CXCR4 protein scored on tumour cells only, in matched primary tumours and lung metastases from the same patients, would answer what whole-tissue RNA cannot. That needs a pathology partner and is added to the Research Queue.</li>
+    <li><strong>A caution for anyone using CXCR4 RNA in osteosarcoma.</strong> Whole-tumour CXCR4 partly measures how many immune cells are in the sample. Studies linking CXCR4 RNA to outcome, in either direction, should account for that.</li>
+    <li><strong>Predictions P16 and P17</strong> are unresolved by their own rules and recorded as such.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>Small numbers. About 64 tumours per group, or 34 matched pairs, would be needed to detect half a standard deviation reliably. Three datasets have only two lung metastases each.</li>
+    <li>Lung metastases are usually removed after chemotherapy and later in the illness than primary biopsies. Differences in treatment and timing cannot be separated from differences in site.</li>
+    <li>Six datasets on four technologies. Standardising within each dataset helps but does not remove this.</li>
+    <li>The tumour-cell rule for single-cell data cannot tell tumour cells from normal bone-forming cells or fibroblasts, and stray RNA floating in a single-cell sample can make a tumour cell look like a lung cell and be discarded.</li>
+    <li>The spatial dataset was added as a data type after the plan was written (recorded as a deviation before its values were read).</li>
+    <li>This concerns RNA in tissue. It says nothing about CXCR4 protein on the cell surface or about the effect of blocking the receptor.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle02_fetch.sh"><code>tools/engine_cycle02_fetch.sh</code></a> downloads and unpacks the GEO files (about 1.5 GB) into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/cycle02/raw"><code>data/engine/cycle02/raw/</code></a> (not stored in git). <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle02_cxcr4.py"><code>tools/engine_cycle02_cxcr4.py</code></a> runs the analysis in about a minute.</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle02/results.csv"><code>data/engine/cycle02/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle02/summary.json"><code>data/engine/cycle02/summary.json</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle02/sample_values.csv"><code>data/engine/cycle02/sample_values.csv</code></a> (the value used for every patient or lesion), <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine02_cxcr4_forest.svg"><code>docs/figures/engine02_cxcr4_forest.svg</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine02_cxcl12_forest.svg"><code>docs/figures/engine02_cxcl12_forest.svg</code></a>.</li>
+    </ul>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-24: cycle run and reported. Both verdicts inconclusive under the pre-registered rules. The gene-name lookup was widened to older names for ACKR3 (CXCR7, CMKOR1) after the first run so that two sensitivity datasets were not dropped for that gene; no verdict depends on it.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%202%20-%20do%20lung%20metastases%20carry%20more%20CXCR4.md">reports/Engine cycle 2 - do lung metastases carry more CXCR4.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

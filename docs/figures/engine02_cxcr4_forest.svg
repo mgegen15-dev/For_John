@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 612" font-family="IBM Plex Sans, Helvetica, Arial, sans-serif" font-size="14">
+<rect width="820" height="612" fill="#ffffff"/>
+<text x="16" y="28" font-size="16" font-weight="600" fill="#14181f">CXCR4 RNA: lung metastases against primary tumours</text>
+<text x="16" y="50" font-size="13" fill="#525b6b">Difference in standard deviations (Hedges' g), 95% CI. Right of 0 = higher in lung metastases.</text>
+<text x="16" y="68" font-size="13" fill="#525b6b">Dashed lines: the pre-registered bar, half a standard deviation.</text>
+<line x1="330.0" y1="86" x2="330.0" y2="572" stroke="#e2e5ea" stroke-width="1"/>
+<text x="330.0" y="592" text-anchor="middle" fill="#525b6b" font-size="12">-4</text>
+<line x1="422.5" y1="86" x2="422.5" y2="572" stroke="#e2e5ea" stroke-width="1"/>
+<text x="422.5" y="592" text-anchor="middle" fill="#525b6b" font-size="12">-2</text>
+<line x1="515.0" y1="86" x2="515.0" y2="572" stroke="#525b6b" stroke-width="1.5"/>
+<text x="515.0" y="592" text-anchor="middle" fill="#525b6b" font-size="12">0</text>
+<line x1="607.5" y1="86" x2="607.5" y2="572" stroke="#e2e5ea" stroke-width="1"/>
+<text x="607.5" y="592" text-anchor="middle" fill="#525b6b" font-size="12">2</text>
+<line x1="700.0" y1="86" x2="700.0" y2="572" stroke="#e2e5ea" stroke-width="1"/>
+<text x="700.0" y="592" text-anchor="middle" fill="#525b6b" font-size="12">4</text>
+<line x1="538.1" y1="86" x2="538.1" y2="572" stroke="#a3401a" stroke-dasharray="4 4"/>
+<line x1="491.9" y1="86" x2="491.9" y2="572" stroke="#a3401a" stroke-dasharray="4 4"/>
+<text x="16" y="113.0" fill="#14181f" font-weight="600">Lung metastasis confirmed (verdict)</text>
+<text x="28" y="145.0" fill="#14181f" font-weight="400">GSE14359, array (4 v 5)</text>
+<line x1="477.6" y1="140.0" x2="601.3" y2="140.0" stroke="#1c5cab" stroke-width="2"/>
+<rect x="534.4" y="135.0" width="10" height="10" fill="#1c5cab"/>
+<text x="812" y="145.0" text-anchor="end" fill="#525b6b" font-size="12">+0.53 (-0.81 to +1.87)</text>
+<text x="28" y="177.0" fill="#14181f" font-weight="400">GSE220538, bulk RNA-seq (9 v 19)</text>
+<line x1="491.2" y1="172.0" x2="564.9" y2="172.0" stroke="#1c5cab" stroke-width="2"/>
+<rect x="523.0" y="167.0" width="10" height="10" fill="#1c5cab"/>
+<text x="812" y="177.0" text-anchor="end" fill="#525b6b" font-size="12">+0.28 (-0.52 to +1.08)</text>
+<text x="28" y="209.0" fill="#14181f" font-weight="400">GSE140131, bulk RNA-seq (2 v 7)</text>
+<line x1="495.8" y1="204.0" x2="650.8" y2="204.0" stroke="#1c5cab" stroke-width="2"/>
+<rect x="568.3" y="199.0" width="10" height="10" fill="#1c5cab"/>
+<text x="812" y="209.0" text-anchor="end" fill="#525b6b" font-size="12">+1.26 (-0.41 to +2.94)</text>
+<text x="28" y="241.0" fill="#14181f" font-weight="400">GSE293065, spatial, pseudobulk (10 v 9)</text>
+<line x1="494.2" y1="236.0" x2="578.6" y2="236.0" stroke="#1c5cab" stroke-width="2"/>
+<rect x="531.4" y="231.0" width="10" height="10" fill="#1c5cab"/>
+<text x="812" y="241.0" text-anchor="end" fill="#525b6b" font-size="12">+0.46 (-0.45 to +1.37)</text>
+<text x="28" y="273.0" fill="#14181f" font-weight="400">GSE152048, single-cell, pseudobulk (2 v 7)</text>
+<line x1="402.7" y1="268.0" x2="552.1" y2="268.0" stroke="#1c5cab" stroke-width="2"/>
+<rect x="472.4" y="263.0" width="10" height="10" fill="#1c5cab"/>
+<text x="812" y="273.0" text-anchor="end" fill="#525b6b" font-size="12">-0.81 (-2.43 to +0.80)</text>
+<text x="28" y="305.0" fill="#14181f" font-weight="400">GSE318840, single-cell, pseudobulk (2 v 4)</text>
+<line x1="500.1" y1="300.0" x2="678.1" y2="300.0" stroke="#1c5cab" stroke-width="2"/>
+<rect x="584.1" y="295.0" width="10" height="10" fill="#1c5cab"/>
+<text x="812" y="305.0" text-anchor="end" fill="#525b6b" font-size="12">+1.60 (-0.32 to +3.53)</text>
+<text x="28" y="337.0" fill="#14181f" font-weight="600">Pooled (29 metastases v 51 primaries)</text>
+<line x1="512.7" y1="332.0" x2="557.0" y2="332.0" stroke="#14264a" stroke-width="2"/>
+<path d="M525.8,332.0 L534.8,324.0 L543.8,332.0 L534.8,340.0 Z" fill="#14264a"/>
+<text x="812" y="337.0" text-anchor="end" fill="#525b6b" font-size="12">+0.43 (-0.05 to +0.91)</text>
+<text x="28" y="369.0" fill="#14181f" font-weight="600">Pooled, adjusted for immune tissue</text>
+<line x1="498.5" y1="364.0" x2="536.9" y2="364.0" stroke="#14264a" stroke-width="2"/>
+<path d="M508.7,364.0 L517.7,356.0 L526.7,364.0 L517.7,372.0 Z" fill="#14264a"/>
+<text x="812" y="369.0" text-anchor="end" fill="#525b6b" font-size="12">+0.06 (-0.36 to +0.47)</text>
+<text x="28" y="401.0" fill="#14181f" font-weight="600">Pooled, adjusted for lung and immune tissue</text>
+<line x1="505.7" y1="396.0" x2="579.7" y2="396.0" stroke="#14264a" stroke-width="2"/>
+<path d="M533.7,396.0 L542.7,388.0 L551.7,396.0 L542.7,404.0 Z" fill="#14264a"/>
+<text x="812" y="401.0" text-anchor="end" fill="#525b6b" font-size="12">+0.60 (-0.20 to +1.40)</text>
+<text x="28" y="433.0" fill="#14181f" font-weight="600">Tumour cells only (two single-cell datasets)</text>
+<line x1="471.5" y1="428.0" x2="583.8" y2="428.0" stroke="#14264a" stroke-width="2"/>
+<path d="M518.7,428.0 L527.7,420.0 L536.7,428.0 L527.7,436.0 Z" fill="#14264a"/>
+<text x="812" y="433.0" text-anchor="end" fill="#525b6b" font-size="12">+0.27 (-0.94 to +1.49)</text>
+<text x="16" y="465.0" fill="#14181f" font-weight="600">Metastasis site not recorded (sensitivity)</text>
+<text x="28" y="497.0" fill="#14181f" font-weight="400">GSE32981 (11 v 12)</text>
+<line x1="509.9" y1="492.0" x2="588.1" y2="492.0" stroke="#6a7384" stroke-width="2"/>
+<rect x="544.0" y="487.0" width="10" height="10" fill="#6a7384"/>
+<text x="812" y="497.0" text-anchor="end" fill="#525b6b" font-size="12">+0.73 (-0.11 to +1.58)</text>
+<text x="28" y="529.0" fill="#14181f" font-weight="400">GSE237033 (6 v 6)</text>
+<line x1="461.2" y1="524.0" x2="527.1" y2="524.0" stroke="#6a7384" stroke-width="2"/>
+<rect x="489.2" y="519.0" width="10" height="10" fill="#6a7384"/>
+<text x="812" y="529.0" text-anchor="end" fill="#525b6b" font-size="12">-0.45 (-1.16 to +0.26)</text>
+<text x="28" y="561.0" fill="#14181f" font-weight="400">GSE87624 (9 v 24)</text>
+<line x1="479.8" y1="556.0" x2="550.7" y2="556.0" stroke="#6a7384" stroke-width="2"/>
+<rect x="510.2" y="551.0" width="10" height="10" fill="#6a7384"/>
+<text x="812" y="561.0" text-anchor="end" fill="#525b6b" font-size="12">+0.01 (-0.76 to +0.77)</text>
+</svg>

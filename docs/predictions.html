@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#predictions">Predictions</a></li><li class="l1"><a href="#outcomes">Outcomes</a></li><li class="l1"><a href="#scorecard">Scorecard</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 24, 2026 · 4 min read</p>
+    <p class="crumb">Project document · Updated November 24, 2026 · 5 min read</p>
     <h1>Predictions Log</h1>
     <p><em>Started November 22, 2026. This is a public, dated record of what For John predicts, written before the answers are known. When trials, studies or reviewers report, each prediction will be marked right, wrong or unresolved. Entries are never edited after the fact; corrections and outcomes are added below each one with a date.</em></p>
     <p><strong>Why keep this.</strong> Anyone can explain results after they arrive. Committing to predictions in advance is the honest test of whether connecting the published evidence, as this project does, finds real signals. If our hit rate is poor, that is worth knowing too.</p>
@@ -183,12 +183,30 @@
     <td class="num">35%</td>
     <td>Unresolved (see Outcomes)</td>
     </tr>
+    <tr>
+    <td>P16</td>
+    <td>Osteosarcoma lung metastases carry more CXCR4 RNA than primary tumours (pooled difference of at least half a standard deviation, lower 95% bound above 0, direction holding after adjusting for lung and immune tissue)</td>
+    <td>The pooled difference's upper 95% bound falls below half a standard deviation</td>
+    <td>Public GEO datasets with primary tumours and lung metastases; engine cycle 2, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-02-cxcr4/PREREGISTRATION.md"><code>research_notes/Engine/cycle-02-cxcr4/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">40%</td>
+    <td>Unresolved (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P17</td>
+    <td>Osteosarcoma lung metastases carry less CXCL12 RNA than primary tumours (same thresholds, opposite sign)</td>
+    <td>The pooled difference's lower 95% bound is above minus half a standard deviation</td>
+    <td>Same as P16</td>
+    <td class="num">45%</td>
+    <td>Unresolved (see Outcomes)</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="outcomes">Outcomes</h2>
     <p><em>Each outcome is added here with its date, source and verdict (right, wrong or unresolved), without changing the prediction above.</em></p>
     <ul>
     <li><strong>P15, 2026-11-24: unresolved by its own rule.</strong> Pooled hazard ratio per SD 0.99 (95% CI 0.74–1.32) across three independent cohorts (110 patients, 53 events), against 2.30 in the discovery cohort. Not right (no association seen); not wrong by the stated rule, because the upper bound is 1.32, not below 1.3. The discovery-size effect is ruled out. Source: <a href="reports/engine-cycle-1-does-ramp1-predict-relapse.html"><code>reports/Engine cycle 1 - does RAMP1 predict relapse.md</code></a> (our calculation).</li>
+    <li><strong>P16, 2026-11-24: unresolved by its own rule.</strong> CXCR4 RNA in lung metastases against primary tumours, six datasets, 29 against 51: +0.43 standard deviations (95% CI −0.05 to +0.91). Not right (the lower bound is below 0); not wrong by the stated rule (the upper bound is above 0.5). The lean disappeared after adjusting for immune cells (+0.06). Source: <a href="reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html"><code>reports/Engine cycle 2 - do lung metastases carry more CXCR4.md</code></a> (our calculation).</li>
+    <li><strong>P17, 2026-11-24: unresolved by its own rule.</strong> CXCL12 RNA, same comparison: −0.08 standard deviations (−0.55 to +0.39). No decrease seen; not wrong by the stated rule, because the lower bound is −0.55, not above −0.5. Same source.</li>
     </ul>
     <h2 id="scorecard">Scorecard</h2>
     <div class="tablewrap"><table>
@@ -205,11 +223,11 @@
     <td class="num">0</td>
     <td class="num">0</td>
     <td class="num">0</td>
-    <td class="num">15</td>
+    <td class="num">17</td>
     </tr>
     </tbody>
     </table></div>
-    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day.</p>
+    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day.</p>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
   </main>

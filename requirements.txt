@@ -12,3 +12,4 @@ scipy==1.18.1
 matplotlib==3.11.2
 markdown-it-py==4.3.0
 mdit-py-plugins==0.7.0
+h5py==3.16.0   # tools/engine_cycle02_cxcr4.py reads spatial transcriptomics files

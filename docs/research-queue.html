@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#how-a-question-moves-through-the-queue">How a Question Moves Through the Queue</a></li><li class="l1"><a href="#tested">Tested</a></li><li class="l1"><a href="#next">Next</a></li><li class="l1"><a href="#needs-a-partner">Needs a Partner</a></li><li class="l1"><a href="#rules-the-engine-follows">Rules the Engine Follows</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 24, 2026 · 2 min read</p>
+    <p class="crumb">Project document · Updated November 24, 2026 · 3 min read</p>
     <h1>Research Queue</h1>
     <p><em>The For John research engine, in public. Each question is something public data or a partner laboratory can answer. Each is written down with its success and failure rules before the data are examined, then tested on patients it was not built from. Results are posted whatever they show. Last updated November 24, 2026.</em></p>
     <h2 id="how-a-question-moves-through-the-queue">How a Question Moves Through the Queue</h2>
@@ -101,6 +101,12 @@
     <td><strong>Inconclusive.</strong> Pooled hazard ratio 0.99 (0.74–1.32) across three independent cohorts, 53 events, against 2.30 in the discovery cohort. The large effect is ruled out; a small one is not. <a href="reports/engine-cycle-1-does-ramp1-predict-relapse.html">Full result</a></td>
     <td>Nov 24, 2026</td>
     </tr>
+    <tr>
+    <td class="num">2</td>
+    <td>Do lung metastases carry more CXCR4 and less CXCL12 than primary tumours?</td>
+    <td><strong>Inconclusive, both.</strong> Across six datasets (29 lung metastases, 51 primaries) CXCR4 leaned higher in lung metastases, +0.43 standard deviations (−0.05 to +0.91), but the lean disappeared once immune cells were accounted for (+0.06). CXCL12 was not lower (−0.08, −0.55 to +0.39). Lead 14 gains no support. <a href="reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html">Full result</a></td>
+    <td>Nov 24, 2026</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="next">Next</h2>
@@ -115,13 +121,6 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-    <td class="num">2</td>
-    <td>Do lung metastases carry more CXCR4 and less CXCL12 than their primary tumours?</td>
-    <td>Mouse studies say CXCR4 drives lung spread; a 223-patient study found the opposite. The answer decides whether lead 14 is worth a mouse experiment.</td>
-    <td>Public RNA from paired primary tumours and lung metastases, then tissue staining with a pathology partner</td>
-    <td>Proposed, next to run</td>
-    </tr>
     <tr>
     <td class="num">3</td>
     <td>Are deletions of the 9p21 region (MTAP and CDKN2A) more common at relapse than at diagnosis?</td>
@@ -163,6 +162,11 @@
     <td>Did the inhaled IL-15 dog trial fail because it delayed chemotherapy?</td>
     <td>Individual records from NCI's Comparative Oncology Program</td>
     </tr>
+    <tr>
+    <td class="num">8</td>
+    <td>Is CXCR4 protein on tumour cells, not immune cells, higher in lung metastases than in the same patient's primary tumour? (Follows cycle 2, where whole-tissue RNA could not separate the two.)</td>
+    <td>Stained sections of matched primary tumours and lung metastases, scored on tumour cells only, from a bone-tumour pathology archive</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="rules-the-engine-follows">Rules the Engine Follows</h2>
@@ -176,6 +180,7 @@
     <h2 id="change-log">Change Log</h2>
     <ul>
     <li>2026-11-24: queue started. Cycle 1 (RAMP1) tested and reported inconclusive.</li>
+    <li>2026-11-24: cycle 2 (CXCR4 and CXCL12 in lung metastases) tested and reported inconclusive. Question 8 added from its result. Questions 3 and 4 still wait on data access.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/RESEARCH_QUEUE.md">RESEARCH_QUEUE.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>

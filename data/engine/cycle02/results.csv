@@ -1,0 +1,78 @@
+analysis,dataset,measure,n_lung_metastases,n_primaries,hedges_g,ci_low,ci_high,mean_difference_log2
+primary,GSE14359,CXCR4,4,5,0.528,-0.809,1.865,0.545
+primary,GSE14359,CXCL12,4,5,-0.498,-1.833,0.837,-0.659
+primary,GSE14359,ACKR3,4,5,0.517,-0.819,1.853,0.348
+primary,GSE14359,lung_score,4,5,5.868,2.855,8.881,1.790
+primary,GSE14359,immune_score,4,5,0.824,-0.544,2.193,0.879
+primary,GSE220538,CXCR4,9,19,0.281,-0.515,1.078,0.326
+primary,GSE220538,CXCL12,9,19,-0.196,-0.991,0.598,-0.269
+primary,GSE220538,ACKR3,9,19,-0.669,-1.481,0.143,-0.747
+primary,GSE220538,lung_score,9,19,4.888,3.382,6.394,1.745
+primary,GSE220538,immune_score,9,19,0.881,0.055,1.707,0.847
+primary,GSE140131,CXCR4,2,7,1.261,-0.415,2.937,1.561
+primary,GSE140131,CXCL12,2,7,0.062,-1.510,1.634,0.076
+primary,GSE140131,ACKR3,2,7,0.859,-0.762,2.480,1.159
+primary,GSE140131,lung_score,2,7,19.872,10.558,29.185,2.238
+primary,GSE140131,immune_score,2,7,1.193,-0.472,2.858,1.212
+primary,GSE293065,CXCR4,10,9,0.462,-0.450,1.375,0.512
+primary,GSE293065,CXCL12,10,9,0.281,-0.624,1.186,0.369
+primary,GSE293065,ACKR3,10,9,0.398,-0.511,1.308,0.511
+primary,GSE293065,lung_score,10,9,3.123,1.783,4.464,1.642
+primary,GSE293065,immune_score,10,9,0.622,-0.300,1.544,0.633
+primary,GSE152048,CXCR4,2,7,-0.813,-2.429,0.802,-1.044
+primary,GSE152048,CXCL12,2,7,-0.475,-2.062,1.111,-0.735
+primary,GSE152048,ACKR3,2,7,-0.323,-1.902,1.255,-0.568
+primary,GSE152048,lung_score,2,7,1.253,-0.421,2.928,1.041
+primary,GSE152048,immune_score,2,7,-1.321,-3.007,0.365,-1.301
+primary,GSE318840,CXCR4,2,4,1.603,-0.322,3.527,1.333
+primary,GSE318840,CXCL12,2,4,0.095,-1.603,1.794,0.205
+primary,GSE318840,ACKR3,2,4,-1.218,-3.049,0.614,-0.545
+primary,GSE318840,lung_score,2,4,1.556,-0.356,3.467,1.254
+primary,GSE318840,immune_score,2,4,1.473,-0.418,3.363,1.410
+primary pooled (fixed),all six,CXCR4,29,51,0.429,-0.051,0.909,
+primary pooled (fixed),all six,CXCL12,29,51,-0.084,-0.554,0.387,
+primary pooled (fixed),all six,ACKR3,29,51,-0.094,-0.572,0.385,
+primary pooled (fixed),all six,lung_score,29,51,3.225,2.469,3.981,
+primary pooled (fixed),all six,immune_score,29,51,0.681,0.192,1.171,
+"adjusted for lung, pooled",all usable,CXCR4,29,51,0.670,-0.259,1.599,
+"adjusted for immune, pooled",all usable,CXCR4,29,51,0.058,-0.356,0.473,
+"adjusted for lung+immune, pooled",all usable,CXCR4,29,51,0.599,-0.200,1.399,
+tumour cells only,GSE152048,CXCR4,2,7,-0.551,-2.143,1.041,-0.978
+tumour cells only,GSE318840,CXCR4,2,4,1.421,-0.457,3.299,1.397
+"tumour cells only, pooled",single-cell,CXCR4,4,11,0.274,-0.941,1.488,
+"adjusted for lung, pooled",all usable,CXCL12,29,51,-0.764,-1.720,0.192,
+"adjusted for immune, pooled",all usable,CXCL12,29,51,-0.443,-0.931,0.046,
+"adjusted for lung+immune, pooled",all usable,CXCL12,29,51,-0.920,-1.933,0.092,
+tumour cells only,GSE152048,CXCL12,2,7,-0.620,-2.218,0.977,-1.260
+tumour cells only,GSE318840,CXCL12,2,4,0.302,-1.404,2.008,0.635
+"tumour cells only, pooled",single-cell,CXCL12,4,11,-0.189,-1.355,0.977,
+"adjusted for lung, pooled",all usable,ACKR3,29,51,0.274,-0.380,0.927,
+"adjusted for immune, pooled",all usable,ACKR3,29,51,-0.053,-0.593,0.486,
+"adjusted for lung+immune, pooled",all usable,ACKR3,29,51,0.274,-0.213,0.760,
+tumour cells only,GSE152048,ACKR3,2,7,-0.452,-2.037,1.133,-0.972
+tumour cells only,GSE318840,ACKR3,2,4,-1.434,-3.315,0.448,-0.844
+"tumour cells only, pooled",single-cell,ACKR3,4,11,-0.860,-2.072,0.353,
+secondary: matched pairs,GSE220538 (4 matched pairs),CXCR4,4,4,0.052,-1.061,1.166,0.063
+"secondary: arrays and bulk only, pooled",3 datasets,CXCR4,15,31,0.477,-0.157,1.110,
+"secondary: without single-cell pseudobulk, pooled",4 datasets,CXCR4,25,40,0.472,-0.048,0.992,
+secondary: matched pairs,GSE220538 (4 matched pairs),CXCL12,4,4,0.265,-1.065,1.596,0.374
+"secondary: arrays and bulk only, pooled",3 datasets,CXCL12,15,31,-0.222,-0.848,0.405,
+"secondary: without single-cell pseudobulk, pooled",4 datasets,CXCL12,25,40,-0.059,-0.574,0.456,
+secondary: matched pairs,GSE220538 (4 matched pairs),ACKR3,4,4,-0.522,-1.542,0.499,-1.253
+"secondary: arrays and bulk only, pooled",3 datasets,ACKR3,15,31,-0.162,-0.800,0.476,
+"secondary: without single-cell pseudobulk, pooled",4 datasets,ACKR3,25,40,0.023,-0.499,0.545,
+sensitivity,GSE32981 (site not recorded),CXCR4,11,12,0.734,-0.111,1.580,0.708
+sensitivity,GSE237033 (paired; site not recorded),CXCR4,6,6,-0.450,-1.163,0.262,-0.345
+sensitivity,GSE87624 (site not recorded),CXCR4,9,24,0.005,-0.761,0.771,0.005
+sensitivity: site-unknown datasets pooled,3 datasets,CXCR4,26,42,0.030,-0.414,0.474,
+sensitivity: all nine pooled,9 datasets,CXCR4,55,93,0.214,-0.112,0.540,
+sensitivity,GSE32981 (site not recorded),CXCL12,11,12,-0.275,-1.097,0.547,-0.403
+sensitivity,GSE237033 (paired; site not recorded),CXCL12,6,6,-0.422,-1.303,0.459,-0.769
+sensitivity,GSE87624 (site not recorded),CXCL12,9,24,-0.601,-1.381,0.179,-1.031
+sensitivity: site-unknown datasets pooled,3 datasets,CXCL12,26,42,-0.440,-0.916,0.036,
+sensitivity: all nine pooled,9 datasets,CXCL12,55,93,-0.260,-0.594,0.075,
+sensitivity,GSE32981 (site not recorded),ACKR3,11,12,0.125,-0.694,0.944,0.158
+sensitivity,GSE237033 (paired; site not recorded),ACKR3,6,6,-1.012,-1.810,-0.214,-1.170
+sensitivity,GSE87624 (site not recorded),ACKR3,9,24,-0.171,-0.938,0.597,-0.162
+sensitivity: site-unknown datasets pooled,3 datasets,ACKR3,26,42,-0.355,-0.814,0.103,
+sensitivity: all nine pooled,9 datasets,ACKR3,55,93,-0.230,-0.561,0.101,
