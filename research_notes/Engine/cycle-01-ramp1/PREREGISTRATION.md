@@ -59,4 +59,9 @@ Let HR be the pooled hazard ratio per SD from the primary analysis, with its 95%
 
 ## Deviations
 
-*None yet.*
+Recorded November 24, 2026, after the cohort search and after reading only the clinical annotations, before any gene expression value was read or any model was run.
+
+1. **Cohorts found.** The GEO search returned 200 series. Three meet all inclusion rules: GSE21257 (53 pre-chemotherapy biopsies, Leiden; metastasis-free and overall survival), GSE16091 (34 tumours; overall survival only) and GSE39055 (37 biopsies; recurrence-free survival). GSE33382 and GSE42352 contain the same Leiden patients as GSE21257 with only a 5-year yes/no metastasis label, so GSE21257 is used. GSE14827, GSE32981 and GSE9508 record metastasis only as yes/no without time, and GSE87624, GSE45275, GSE19276 and the other series have no outcome, so they are excluded. No ArrayExpress-only cohort with outcome was found.
+2. **GSE21257 end point.** For metastasis-free survival, the 14 patients already metastatic at diagnosis are excluded rather than adjusted for, because metastasis at diagnosis cannot be a covariate for an outcome defined as time to metastasis. Overall survival in all 53, adjusted for metastasis at diagnosis, is reported as a secondary analysis.
+3. **GSE39055 in the primary analysis.** The inclusion rule excludes only TARGET-OS patients, so GSE39055 is part of the primary pooled analysis. The result without it is reported alongside, as planned.
+4. **Expected events.** 20 (GSE21257) + 15 (GSE16091) + 18 (GSE39055) = 53, above the 48 set for adequate power. Without GSE39055: 35, below it.
