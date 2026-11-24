@@ -8,3 +8,6 @@ data/literature/kg_abc_cache.json
 
 # Reference screenshots of other organisations' sites are kept locally only
 design/references/*.png
+
+# Engine raw downloads (large; re-fetched by each cycle's script instructions)
+data/engine/*/raw/

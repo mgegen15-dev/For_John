@@ -146,6 +146,7 @@ ol.asks strong { font-weight: 500; }
     <nav aria-label="Site">
       <a href="#findings">Findings</a>
       <a href="#reports">Reports</a>
+      <a href="research-queue.html">Research Queue</a>
       <a href="explorer.html">Evidence Explorer</a>
       <a href="how-this-was-made.html">Methods</a>
     </nav>
@@ -158,6 +159,7 @@ ol.asks strong { font-weight: 500; }
     <li><a href="#findings">What We Found</a></li>
     <li><a href="#pills">Kinase-Inhibitor Pills</a></li>
     <li><a href="#ask">What We're Asking</a></li>
+    <li><a href="#engine">Research Engine</a></li>
     <li><a href="#how">How This Was Made</a></li>
     <li><a href="#reports">The Reports</a></li>
   </ol>
@@ -204,6 +206,24 @@ ol.asks strong { font-weight: 500; }
   </ul>
   <div class="rows" id="findingsList"><!-- filled from findings data below --></div>
   <p class="more"><a href="summary.html">Read the One-Page Summary</a><a href="reports/ranked-leads-and-research-partners.html">See All Fourteen Ranked Leads</a></p>
+ </div>
+</section>
+
+<section id="engine">
+ <div class="wrap">
+  <h2>The Research Engine</h2>
+  <p class="sec-intro">Beyond gathering what is known, the project now tests new ideas. Each one is written down with the result that would count against it, committed before the data are opened, then tested on patients it was not built from. Every result is published, including the ones that fail.</p>
+  <div class="rows">
+    <article class="finding">
+      <p class="tag mono">Cycle 1 · Nov 24, 2026 · Inconclusive</p>
+      <div>
+        <h3>Does Tumour RAMP1 Predict Relapse?</h3>
+        <p>The strongest relapse signal among 12,753 genes in one US study (hazard ratio 2.30) did not reappear in three independent cohorts (0.99, 53 events). The large effect is ruled out, so it is not promoted to a lead.</p>
+        <p class="src"><a href="reports/engine-cycle-1-does-ramp1-predict-relapse.html">Read the Result</a></p>
+      </div>
+    </article>
+  </div>
+  <p class="more"><a href="research-queue.html">See the Research Queue</a></p>
  </div>
 </section>
 
@@ -312,6 +332,8 @@ const REPORTS = [
   { title: "Pooled Control Dataset", href: "reports/osteosarcoma-pooled-control-dataset.html", local: true , group: "Trials and Evidence" },
   { title: "Why Kinase-Inhibitor Pills Work", href: "reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html", local: true , group: "Trials and Evidence" },
   { title: "Do the Leads Predict Survival?", href: "reports/do-the-leads-predict-survival.html", local: true , group: "Trials and Evidence" },
+  { title: "Research Queue", href: "research-queue.html", local: true, text: "every question the research engine has taken on, and where each stands.", group: "Start Here" },
+  { title: "Engine Cycle 1: Does RAMP1 Predict Relapse?", href: "reports/engine-cycle-1-does-ramp1-predict-relapse.html", local: true, group: "Trials and Evidence" },
   { title: "Contradictions and Hidden Links", href: "reports/contradictions-and-hidden-links-in-the-osteosarcoma-literature.html", local: true, text: "where papers disagree, and untested drug-to-outcome chains." , group: "Trials and Evidence" },
   { title: "Copy-Number Changes and the Kinase-Pill Biomarker", href: "reports/copy-number-changes-and-the-kinase-pill-biomarker.html", local: true, text: "how often tumours carry extra copies of the pills’ target genes, and how many trial patients a test would need." , group: "Leads and Targets" },
   { title: "Stopping Lung Metastasis", href: "reports/stopping-lung-metastasis-in-osteosarcoma.html", local: true , group: "Leads and Targets" },

@@ -37,6 +37,7 @@
 .doc code { font-family: var(--mono); font-size: 0.86em; background: var(--band); padding: 1px 4px; border-radius: 4px; overflow-wrap: anywhere; }
 .doc pre { background: var(--band); border-radius: 4px; padding: 16px; overflow-x: auto; font-size: 14px; line-height: 22px; }
 .doc pre code { background: none; padding: 0; font-size: inherit; }
+.doc > p:has(> img) { max-width: none; }
 .doc img { max-width: 100%; height: auto; display: block; margin: 24px 0; background: #fff; border: 1px solid var(--line); border-radius: 4px; }
 .doc :target { background: color-mix(in srgb, var(--gold) 30%, transparent); }
 

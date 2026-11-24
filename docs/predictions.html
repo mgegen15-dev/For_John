@@ -34,6 +34,7 @@
     <nav aria-label="Site">
       <a href="index.html#findings">Findings</a>
       <a href="index.html#reports">Reports</a>
+      <a href="research-queue.html">Research Queue</a>
       <a href="explorer.html">Evidence Explorer</a>
       <a href="how-this-was-made.html">Methods</a>
     </nav>
@@ -44,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#predictions">Predictions</a></li><li class="l1"><a href="#outcomes">Outcomes</a></li><li class="l1"><a href="#scorecard">Scorecard</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 22, 2026 · 4 min read</p>
+    <p class="crumb">Project document · Updated November 24, 2026 · 4 min read</p>
     <h1>Predictions Log</h1>
     <p><em>Started November 22, 2026. This is a public, dated record of what For John predicts, written before the answers are known. When trials, studies or reviewers report, each prediction will be marked right, wrong or unresolved. Entries are never edited after the fact; corrections and outcomes are added below each one with a date.</em></p>
     <p><strong>Why keep this.</strong> Anyone can explain results after they arrive. Committing to predictions in advance is the honest test of whether connecting the published evidence, as this project does, finds real signals. If our hit rate is poor, that is worth knowing too.</p>
@@ -174,10 +175,21 @@
     <td class="num">55%</td>
     <td>Open</td>
     </tr>
+    <tr>
+    <td>P15</td>
+    <td>In patients outside TARGET-OS, higher tumour RAMP1 RNA at diagnosis predicts shorter time to relapse or metastasis (pooled hazard ratio of at least 1.3 per SD, lower 95% bound above 1)</td>
+    <td>The pooled hazard ratio's upper 95% bound falls below 1.3</td>
+    <td>Public GEO osteosarcoma cohorts; engine cycle 1, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-01-ramp1/PREREGISTRATION.md"><code>research_notes/Engine/cycle-01-ramp1/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">35%</td>
+    <td>Unresolved (see Outcomes)</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="outcomes">Outcomes</h2>
-    <p><em>None recorded yet. Each outcome will be added here with its date, source and verdict (right, wrong or unresolved), without changing the prediction above.</em></p>
+    <p><em>Each outcome is added here with its date, source and verdict (right, wrong or unresolved), without changing the prediction above.</em></p>
+    <ul>
+    <li><strong>P15, 2026-11-24: unresolved by its own rule.</strong> Pooled hazard ratio per SD 0.99 (95% CI 0.74–1.32) across three independent cohorts (110 patients, 53 events), against 2.30 in the discovery cohort. Not right (no association seen); not wrong by the stated rule, because the upper bound is 1.32, not below 1.3. The discovery-size effect is ruled out. Source: <a href="reports/engine-cycle-1-does-ramp1-predict-relapse.html"><code>reports/Engine cycle 1 - does RAMP1 predict relapse.md</code></a> (our calculation).</li>
+    </ul>
     <h2 id="scorecard">Scorecard</h2>
     <div class="tablewrap"><table>
     <thead>
@@ -193,11 +205,11 @@
     <td class="num">0</td>
     <td class="num">0</td>
     <td class="num">0</td>
-    <td class="num">14</td>
+    <td class="num">15</td>
     </tr>
     </tbody>
     </table></div>
-    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0.</p>
+    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day.</p>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
   </main>

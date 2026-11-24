@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 1: Does RAMP1 Predict Relapse? · For John</title>
+<meta name="description" content="Run November 24, 2026. The first cycle of the For John research engine: an idea generated from our own data, written down with its success and failure rules before new data were examined, then…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-1-does-ramp1-predict-relapse.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 1: Does RAMP1 Predict Relapse? · For John">
+<meta property="og:description" content="Run November 24, 2026. The first cycle of the For John research engine: an idea generated from our own data, written down with its success and failure rules before new data were examined, then…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-1-does-ramp1-predict-relapse.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../index.html#findings">Findings</a>
+      <a href="../index.html#reports">Reports</a>
+      <a href="../research-queue.html">Research Queue</a>
+      <a href="../explorer.html">Evidence Explorer</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#checks">Checks</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 24, 2026 · 5 min read</p>
+    <h1>Engine Cycle 1: Does RAMP1 Predict Relapse?</h1>
+    <p><em>Run November 24, 2026. The first cycle of the For John research engine: an idea generated from our own data, written down with its success and failure rules before new data were examined, then tested on patients it had never seen. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-01-ramp1/PREREGISTRATION.md"><code>research_notes/Engine/cycle-01-ramp1/PREREGISTRATION.md</code></a>, committed at 06:17 UTC (commit <code>ca12d5c</code>), with cohort choices recorded at 06:26 UTC (<code>2a24d3d</code>), both before any expression value was read. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle01_ramp1.py"><code>tools/engine_cycle01_ramp1.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle01/results.csv"><code>data/engine/cycle01/results.csv</code></a>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>In the US TARGET-OS study, tumours with more RAMP1, part of the receptor that migraine drugs called gepants block, went with much earlier relapse. Among 12,753 genes it was the strongest such signal, which made it look like a new risk marker with an approved drug class attached. We tested it in three independent groups of patients, 110 in all with 53 relapses, metastases or deaths. The signal did not appear in any of them: the combined hazard ratio was 0.99, where the original study gave 2.30. By the rules written down in advance, the verdict is <strong>inconclusive</strong>, because the upper end of the confidence range, 1.32, sits just above the 1.3 needed to rule out a meaningful effect. But the large effect seen in TARGET-OS is ruled out. The most likely explanation is the one the plan anticipated: the top hit of a 12,753-gene scan in 84 patients is often a fluke. RAMP1 is not promoted to a lead.</p>
+    <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from open data unless marked otherwise.</p>
+    <h2 id="what-was-tested">What Was Tested</h2>
+    <ul>
+    <li><strong>Hypothesis:</strong> higher tumour RAMP1 RNA at diagnosis is associated with shorter time to relapse or metastasis, independently of metastasis at diagnosis.</li>
+    <li><strong>Discovery (source of the idea, not evidence for it):</strong> TARGET-OS, 84 patients with tumour RNA, 41 events. Re-run here from the open GDC files: hazard ratio <strong>2.30 per standard deviation (95% CI 1.65–3.20), p = 7.4 × 10⁻⁷</strong>, adjusted for metastasis at diagnosis. This matches the tournament's original figure exactly.</li>
+    <li><strong>Independent cohorts:</strong> all public cohorts meeting the pre-registered rules (tumour RNA before treatment, time-to-event outcome, no TARGET-OS patients), found by a systematic GEO search of 200 series:</li>
+    </ul>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Cohort</th>
+    <th>Platform</th>
+    <th>Patients</th>
+    <th>End point</th>
+    <th>Events</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>GSE21257 (Leiden, pre-chemotherapy biopsies)</td>
+    <td>Illumina array</td>
+    <td>39 without metastasis at diagnosis</td>
+    <td>Metastasis-free survival</td>
+    <td class="num">20</td>
+    </tr>
+    <tr>
+    <td>GSE16091</td>
+    <td>Affymetrix U133A</td>
+    <td class="num">34</td>
+    <td>Overall survival (the only outcome recorded)</td>
+    <td class="num">15</td>
+    </tr>
+    <tr>
+    <td>GSE39055</td>
+    <td>Illumina DASL</td>
+    <td class="num">37</td>
+    <td>Recurrence-free survival</td>
+    <td class="num">18</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>GSE39055 is one of the cohorts used by a 2023 paper reporting RAMP1 as a poor-prognosis marker (paper, abstract only; PMID 37796823). It is independent of TARGET-OS, so the plan includes it, and results are shown with and without it.</p>
+    <h2 id="results">Results</h2>
+    <p><img src="../figures/engine01_ramp1_forest.svg" alt="Forest plot of RAMP1 hazard ratios in the discovery cohort and three independent cohorts" /></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Analysis</th>
+    <th>Patients</th>
+    <th>Events</th>
+    <th>Hazard ratio per SD (95% CI)</th>
+    <th>p</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>TARGET-OS, discovery</td>
+    <td class="num">84</td>
+    <td class="num">41</td>
+    <td>2.30 (1.65–3.20)</td>
+    <td>7.4 × 10⁻⁷</td>
+    </tr>
+    <tr>
+    <td>GSE21257</td>
+    <td class="num">39</td>
+    <td class="num">20</td>
+    <td>1.03 (0.60–1.77)</td>
+    <td class="num">0.92</td>
+    </tr>
+    <tr>
+    <td>GSE16091</td>
+    <td class="num">34</td>
+    <td class="num">15</td>
+    <td>1.06 (0.65–1.73)</td>
+    <td class="num">0.83</td>
+    </tr>
+    <tr>
+    <td>GSE39055</td>
+    <td class="num">37</td>
+    <td class="num">18</td>
+    <td>0.89 (0.55–1.45)</td>
+    <td class="num">0.64</td>
+    </tr>
+    <tr>
+    <td><strong>Independent cohorts pooled</strong></td>
+    <td class="num"><strong>110</strong></td>
+    <td class="num"><strong>53</strong></td>
+    <td><strong>0.99 (0.74–1.32)</strong></td>
+    <td class="num"><strong>0.93</strong></td>
+    </tr>
+    <tr>
+    <td>Pooled without GSE39055</td>
+    <td class="num">73</td>
+    <td class="num">35</td>
+    <td>1.04 (0.73–1.50)</td>
+    <td class="num">—</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <ul>
+    <li>The three cohorts agree with each other (I² = 0%); random-effects pooling gives the same 0.99 (0.74–1.32).</li>
+    <li><strong>Verdict under the pre-registered rules: Inconclusive.</strong> &quot;Replicated&quot; needed a lower bound above 1.0 and an estimate of at least 1.3. &quot;Refuted&quot; needed the upper bound below 1.3; it is 1.32. Without GSE39055 the result is also inconclusive, and underpowered (35 events, below the 48 set in advance).</li>
+    <li><strong>What is excluded:</strong> any effect as large as the discovery estimate. The pooled upper bound, 1.32, is far below the discovery's 2.30 and below the discovery's own lower bound, 1.65.</li>
+    </ul>
+    <h2 id="checks">Checks</h2>
+    <ul>
+    <li><strong>Is RAMP1 measured?</strong> Yes. On each array its chosen probe sits in the upper half of all probes by mean signal (57th to 78th percentile), with a spread of 0.65–1.06 log₂ units between patients. In TARGET-OS RNA sequencing its median is about 20 transcripts per million. The null result is not a probe failure.</li>
+    <li><strong>Overall survival in GSE21257</strong> (secondary), all 53 patients adjusted for metastasis at diagnosis: 1.25 (0.78–2.01), p = 0.36.</li>
+    <li><strong>Receptor partner.</strong> CALCRL, which RAMP1 needs to form the CGRP receptor, showed no association in the discovery cohort (1.06, p = 0.75) or the pooled independent cohorts (0.89, 0.68–1.18). A CGRP-signalling explanation was already weak before the replication test.</li>
+    <li><strong>Differentiation genes.</strong> In TARGET-OS, SP7, a marker of bone-forming differentiation, also predicted events (2.25, p = 0.006). This supports the idea, raised by the tournament's reviewers, that RAMP1 was riding on a differentiation pattern in that cohort rather than acting on its own. Pooled across the independent cohorts, SP7 was 1.26 (0.88–1.79) and SOST 0.95 (0.65–1.39); neither reached significance.</li>
+    </ul>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>RAMP1 is not a lead.</strong> It goes on the Research Queue as tested and inconclusive, with the discovery-size effect ruled out.</li>
+    <li><strong>Prediction P15</strong> is unresolved by its own rule (the upper bound missed 1.3 by 0.02) and is recorded as such, without rounding in either direction.</li>
+    <li><strong>The 2023 paper.</strong> We did not see the association in GSE39055's recurrence data. That paper may have used a different end point or a high/low cut-off rather than a continuous measure; we read only its abstract, so we do not claim it is wrong.</li>
+    <li><strong>The engine worked as intended.</strong> Without the advance rules, a p-value of 7 × 10⁻⁷ and an approved drug class would have made RAMP1 one of the project's most exciting leads. Testing it on new patients first cost a day and avoided sending a fluke to a laboratory.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>Three small cohorts, two microarray platforms and three different end points. Arrays measure expression with less range than RNA sequencing, which can weaken a real association. Standardising each cohort helps but does not remove this.</li>
+    <li>GSE16091 records only overall survival and none of the three records treatment in detail.</li>
+    <li>An effect of hazard ratio about 1.3 per SD or smaller, which would be modest but not trivial, cannot be ruled out with 53 events. About 114 events would be needed.</li>
+    <li>This concerns tumour RNA at diagnosis. It says nothing about RAMP1 protein, about nerve-derived CGRP in the tumour's surroundings, or about the effect of blocking the receptor.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle01_ramp1.py"><code>tools/engine_cycle01_ramp1.py</code></a> (uses the Cox and survival code in <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/survival_analysis.py"><code>tools/survival_analysis.py</code></a>).</li>
+    <li>Inputs: TARGET-OS files as for <a href="../reports/do-the-leads-predict-survival.html"><code>reports/Do the leads predict survival.md</code></a>; GEO series matrices and platform tables for GSE21257, GSE16091 and GSE39055 in <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/cycle01/raw"><code>data/engine/cycle01/raw/</code></a> (downloaded November 24, 2026; large, not stored in git).</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle01/results.csv"><code>data/engine/cycle01/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle01/summary.json"><code>data/engine/cycle01/summary.json</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine01_ramp1_forest.svg"><code>docs/figures/engine01_ramp1_forest.svg</code></a>.</li>
+    </ul>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules; discovery-size effect excluded.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%201%20-%20does%20RAMP1%20predict%20relapse.md">reports/Engine cycle 1 - does RAMP1 predict relapse.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

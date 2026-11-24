@@ -47,6 +47,7 @@ SOURCES = (
      ("HOW_THIS_WAS_MADE.md", "how-this-was-made.html"),
      ("AUDIT_GUIDE.md", "audit-guide.html"),
      ("PREDICTIONS.md", "predictions.html"),
+     ("RESEARCH_QUEUE.md", "research-queue.html"),
      ("DATA_MANIFEST.md", "data-manifest.html")]
 )
 
@@ -130,6 +131,7 @@ TEMPLATE = """<!doctype html>
     <nav aria-label="Site">
       <a href="{up}index.html#findings">Findings</a>
       <a href="{up}index.html#reports">Reports</a>
+      <a href="{up}research-queue.html">Research Queue</a>
       <a href="{up}explorer.html">Evidence Explorer</a>
       <a href="{up}how-this-was-made.html">Methods</a>
     </nav>
@@ -205,6 +207,9 @@ def last_updated(src):
     try:
         iso = subprocess.run(["git", "log", "-1", "--format=%cs", "--", src], cwd=ROOT,
                              capture_output=True, text=True, timeout=20).stdout.strip()
+        if not iso:                          # not committed yet: it is being updated now
+            import datetime
+            iso = datetime.date.today().isoformat()
         y, m, d = iso.split("-")
         return f"{MONTHS[int(m) - 1]} {int(d)}, {y}"
     except Exception:

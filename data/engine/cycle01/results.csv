@@ -1,0 +1,19 @@
+analysis,cohort,gene,endpoint,population,n,events,hr_per_sd,ci_low,ci_high,p,probe
+discovery,TARGET-OS,RAMP1,event-free survival,"all with RNA, adjusted for metastasis at diagnosis",84,41,2.298,1.653,3.195,7.42e-07,STAR TPM
+discovery,TARGET-OS,CALCRL,event-free survival,"all with RNA, adjusted for metastasis at diagnosis",84,41,1.055,0.762,1.462,7.46e-01,STAR TPM
+discovery,TARGET-OS,SP7,event-free survival,"all with RNA, adjusted for metastasis at diagnosis",84,41,2.246,1.256,4.019,6.39e-03,STAR TPM
+discovery,TARGET-OS,SOST,event-free survival,"all with RNA, adjusted for metastasis at diagnosis",84,41,1.745,1.295,2.350,2.51e-04,STAR TPM
+independent,GSE21257,RAMP1,metastasis-free survival,patients without metastasis at diagnosis (restriction in place of adjustment; see Deviations),39,20,1.029,0.600,1.765,9.16e-01,ci1Islines8F6CVV6c
+independent,GSE21257,CALCRL,metastasis-free survival,patients without metastasis at diagnosis (restriction in place of adjustment; see Deviations),39,20,0.762,0.473,1.227,2.63e-01,0X7QXfXt8UBLqKg9ck
+independent,GSE21257,SP7,metastasis-free survival,patients without metastasis at diagnosis (restriction in place of adjustment; see Deviations),39,20,1.494,0.925,2.412,1.01e-01,EFVFeof6OdU3UXUuH8
+independent,GSE21257,SOST,metastasis-free survival,patients without metastasis at diagnosis (restriction in place of adjustment; see Deviations),39,20,1.095,0.702,1.709,6.89e-01,0X.iEWX3lRR0aET95c
+secondary,GSE21257,RAMP1,overall survival,"all patients, adjusted for metastasis at diagnosis",53,23,1.251,0.778,2.012,3.55e-01,ci1Islines8F6CVV6c
+independent,GSE16091,RAMP1,overall survival,"all patients; metastasis at diagnosis not recorded, unadjusted",34,15,1.056,0.646,1.727,8.28e-01,204916_at
+independent,GSE16091,CALCRL,overall survival,"all patients; metastasis at diagnosis not recorded, unadjusted",34,15,1.054,0.682,1.629,8.13e-01,206331_at
+independent,GSE39055,RAMP1,recurrence-free survival,"all patients; metastasis at diagnosis not recorded, unadjusted",37,18,0.890,0.545,1.454,6.42e-01,ILMN_1764754
+independent,GSE39055,CALCRL,recurrence-free survival,"all patients; metastasis at diagnosis not recorded, unadjusted",37,18,0.854,0.496,1.470,5.68e-01,ILMN_1758281
+independent,GSE39055,SP7,recurrence-free survival,"all patients; metastasis at diagnosis not recorded, unadjusted",37,18,1.026,0.611,1.723,9.22e-01,ILMN_1689461
+independent,GSE39055,SOST,recurrence-free survival,"all patients; metastasis at diagnosis not recorded, unadjusted",37,18,0.672,0.334,1.354,2.66e-01,ILMN_1781242
+meta,pooled (fixed),RAMP1,primary end points,,,,0.987,0.737,1.321,9.28e-01,
+meta,pooled (random),RAMP1,primary end points,,,,0.987,0.737,1.321,9.28e-01,
+meta,pooled without GSE39055 (fixed),RAMP1,primary end points,,,,1.044,0.726,1.501,8.17e-01,

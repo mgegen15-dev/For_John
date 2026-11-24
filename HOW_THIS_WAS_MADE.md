@@ -93,6 +93,7 @@ pip install pandas
 | `tools/survival_analysis.py` | `data/osteosarcoma_survival_results.csv` (lead markers against survival) | NCI GDC (open TARGET-OS clinical files, stored in `data/survival_raw/`); reuses copy-number and RNA files | a few minutes |
 | `tools/knowledge_graph.py` | `data/osteosarcoma_knowledge_graph_edges.csv`, `_contradictions.csv`, `_hidden_links.csv` (`fetch`, `build`, `abc`) | PubTator3, ChEMBL; needs the literature fetch | about an hour first time; under a minute from cache |
 | `tools/build_explorer_data.py` | `docs/data/explorer.json` (the evidence explorer) | none | seconds |
+| `tools/engine_cycle01_ramp1.py` | engine cycle 1: `data/engine/cycle01/results.csv`, `summary.json` and the forest plot | NCBI GEO (three series matrices and platform tables, about 200 MB); reuses the TARGET-OS files | a few minutes |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:

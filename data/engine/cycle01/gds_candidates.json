@@ -1,0 +1,1202 @@
+[
+[
+"GSE314261",
+5013,
+"Methylation profiling by genome tiling a",
+"Epigenome-wide DNA Methylation Profiling in the Investigation of Treatment and Life-Course Expo"
+],
+[
+"GSE2109",
+2158,
+"Expression profiling by array",
+"Expression Project for Oncology (expO)"
+],
+[
+"GSE36138",
+947,
+"Genome variation profiling by SNP array",
+"SNP array data from the Cancer Cell Line Encyclopedia (CCLE)"
+],
+[
+"GSE36133",
+917,
+"Expression profiling by array",
+"Expression data from the Cancer Cell Line Encyclopedia (CCLE)"
+],
+[
+"GSE66729",
+376,
+"Expression profiling by high throughput ",
+"The Landscape of Antisense Gene Expression in Human Cancer"
+],
+[
+"GSE66728",
+353,
+"Expression profiling by high throughput ",
+"The Landscape of Antisense Gene Expression in Human Cancers [II]"
+],
+[
+"GSE270506",
+279,
+"Expression profiling by high throughput ",
+"Epigenetic heterogeneity and state-specific transcriptional programs determine differential dru"
+],
+[
+"GSE12630",
+276,
+"Expression profiling by array",
+"Gene expression profiles of poorly differentiated, undifferentiated and metastatic cancers"
+],
+[
+"GSE42050",
+226,
+"Expression profiling by array",
+"Blocking TWEAK inhibits tumor growth through inhibition of tumor cell proliferation and surviva"
+],
+[
+"GSE279021",
+160,
+"Genome binding/occupancy profiling by hi",
+"Transcriptional programs of cell identity and p53-induced stress responses are associated with "
+],
+[
+"GSE87686",
+155,
+"Expression profiling by high throughput ",
+"Cross species transcriptome analysis of osteosarcoma"
+],
+[
+"GSE45275",
+144,
+"Other",
+"Digital expression profiling identifies CDC5L, RECQL4, and CDK4 as potential oncogenes in a coh"
+],
+[
+"GSE33383",
+131,
+"Expression profiling by array; Genome va",
+"Identification of osteosarcoma driver genes by integrative analysis of copy number and gene exp"
+],
+[
+"GSE42352",
+118,
+"Expression profiling by array",
+"Genome-wide gene expression profiling of mesenchymal stem cells, osteosarcoma cells, and osteos"
+],
+[
+"GSE310120",
+108,
+"Non-coding RNA profiling by array",
+"MicroRNA Profiling Identifies Diagnostic and Prognostic Markers in Pediatric Sarcoma"
+],
+[
+"GSE30699",
+107,
+"Expression profiling by array",
+"Genome-wide mRNA analysis substantiates high-grade central osteosarcoma cell lines and xenograf"
+],
+[
+"GSE74230",
+91,
+"Expression profiling by high throughput ",
+"Positively selected enhancer elements endow tumor cells with metastatic competence"
+],
+[
+"GSE33382",
+87,
+"Expression profiling by array",
+"Genome-wide gene expression analysis of high-grade osteosarcoma"
+],
+[
+"GSE278977",
+80,
+"Genome binding/occupancy profiling by hi",
+"Transcriptional programs of cell identity and p53-induced stress responses are associated with "
+],
+[
+"GSE16102",
+80,
+"Expression profiling by array",
+"Gene expression profiles of canine and human osteosarcoma"
+],
+[
+"GSE283593",
+77,
+"Expression profiling by array",
+"DEAH-BOX HELICASE 8 IS A REGULATOR OF HEAT SHOCK FACTOR 1 [DHX8-HSF1 KD]"
+],
+[
+"GSE294344",
+76,
+"Expression profiling by high throughput ",
+"DEAH-BOX HELICASE 8 IS A REGULATOR OF HEAT SHOCK FACTOR 1"
+],
+[
+"GSE36004",
+69,
+"Expression profiling by array; Methylati",
+"Integrative analysis reveals relationships of genetic and epigenetic alterations in osteosarcom"
+],
+[
+"GSE149679",
+68,
+"Methylation profiling by high throughput",
+"Comparative analysis of genome-wide DNA methylation identifies patterns that associate with con"
+],
+[
+"GSE32964",
+68,
+"Genome variation profiling by SNP array;",
+"Identification of novel candidate oncogenes in chromosomal region 17p11.2-p12 in human osteosar"
+],
+[
+"GSE125645",
+66,
+"Methylation profiling by genome tiling a",
+"Genome-wide methylation analysis of osteosarcoma and Ewing sarcoma using Infinium HumanMethylat"
+],
+[
+"GSE39040",
+65,
+"Non-coding RNA profiling by array",
+"microRNA profiling and clinical outcomes in human osteosarcoma (biopsies)"
+],
+[
+"GSE260644",
+64,
+"Expression profiling by high throughput ",
+"Development of a LRRC15-Targeted Radio-immunotheranostic Approach to Deplete Pro-tumorigenic Me"
+],
+[
+"GSE240355",
+64,
+"Expression profiling by high throughput ",
+"Derepressing nuclear pyruvate dehydrogenase induces therapeutic cancer cell reprogramming"
+],
+[
+"GSE173732",
+64,
+"Genome binding/occupancy profiling by hi",
+"The g-tubulin meshwork assists to the transport of cytosolic PCNA to chromatin in mammalian cel"
+],
+[
+"GSE41445",
+63,
+"Expression profiling by array",
+"Basal gene expression data of 21 cell lines (18 cancer and 3 non-tumorigenic)"
+],
+[
+"GSE38698",
+63,
+"Expression profiling by RT-PCR",
+"microRNA expression patterns of lung metastasis samples distinguish patients with high vs. low "
+],
+[
+"GSE107612",
+59,
+"Genome binding/occupancy profiling by hi",
+"Genomic location of PRMT6-dependent H3R2 methylation is decisive for the transcriptional outcom"
+],
+[
+"GSE299759",
+54,
+"Expression profiling by high throughput ",
+"An integrated clinical genomic and transcriptomic subgrouping of central chondrosarcoma"
+],
+[
+"GSE21257",
+53,
+"Expression profiling by array",
+"Genome-wide gene expression profiling on pre-chemotherapy biopsies of osteosarcoma patients who"
+],
+[
+"GSE87624",
+52,
+"Expression profiling by high throughput ",
+"Next-gen RNA sequencing of human osteosarcoma tumors"
+],
+[
+"GSE39052",
+52,
+"Non-coding RNA profiling by array",
+"microRNA profiling and clinical outcomes in human osteosarcoma (biopsy/resection pairs)"
+],
+[
+"GSE234999",
+50,
+"Genome binding/occupancy profiling by hi",
+"Intrinsic epigenetic state of primary osteosarcoma drives metastasis."
+],
+[
+"GSE41828",
+50,
+"Expression profiling by array",
+"TWEAK-treated time course in U2OS cells."
+],
+[
+"GSE19276",
+49,
+"Expression profiling by array",
+"Osteosarcoma is characterized by impaired osteoclastogenesis and antigen presentation compared "
+],
+[
+"GSE153820",
+48,
+"Methylation profiling by high throughput",
+"Epigenetic Suppression of Transgenic T-cell Receptor Expression via Gamma-Retroviral Vector Met"
+],
+[
+"GSE229906",
+45,
+"Expression profiling by high throughput ",
+"Chimeric protein EWS::FLI1 drives cell proliferation in Ewing Sarcoma via aberrant expression o"
+],
+[
+"GSE278979",
+40,
+"Expression profiling by high throughput ",
+"Transcriptional programs of cell identity and p53-induced stress responses are associated with "
+],
+[
+"GSE278978",
+40,
+"Other",
+"Transcriptional programs of cell identity and p53-induced stress responses are associated with "
+],
+[
+"GSE158736",
+39,
+"Genome binding/occupancy profiling by hi",
+"Complex-dependent histone acetyltransferase activity of KAT8 determines its role in transcripti"
+],
+[
+"GSE9508",
+39,
+"Expression profiling by array",
+"Gene expression profiling of metastatic and non-metastatic osteosarcoma biopsies"
+],
+[
+"GSE220538",
+38,
+"Expression profiling by high throughput ",
+"RNA-Sequencing Predicts a Role of Androgen Receptor and Aldehyde Dehydrogenase 1A1 in Osteosarc"
+],
+[
+"GSE193000",
+37,
+"Methylation profiling by genome tiling a",
+"Genetic and epigenetic instability suggest a regulated mechanism for osteosarcoma tumorigenesis"
+],
+[
+"GSE39055",
+37,
+"Expression profiling by array",
+"mRNA profiling and clinical outcomes in human osteosarcoma (biopsies)"
+],
+[
+"GSE42482",
+35,
+"SNP genotyping by SNP array; Genome vari",
+"Copy number analysis in de novo and therapy-related myeloproliferative neoplasms"
+],
+[
+"GSE16091",
+34,
+"Expression profiling by array",
+"Gene expression profiles of human osteosarcoma, set2"
+],
+[
+"GSE215765",
+33,
+"Expression profiling by high throughput ",
+"Temporal chromatin accessibility changes define transcriptional states essential for osteosarco"
+],
+[
+"GSE279218",
+32,
+"Genome binding/occupancy profiling by hi",
+"Profiling linkage-specific ubiquitin chain functions reveals a key role of K29-linked ubiquityl"
+],
+[
+"GSE30934",
+32,
+"Non-coding RNA profiling by array",
+"miRNA gene expression profiles from osteosarcoma samples and cell lines"
+],
+[
+"GSE275335",
+31,
+"Expression profiling by high throughput ",
+"Myeloid-driven rapid tumor necrosis defines the therapeutic response to STING agonism in osteos"
+],
+[
+"GSE59200",
+30,
+"Methylation profiling by high throughput",
+"Cytosine methylation data generated by HELP-tagging from human osteosarcoma biopsy samples"
+],
+[
+"GSE232592",
+28,
+"Expression profiling by high throughput ",
+"Whole-genome CRISPR screen of etoposide-treated U2OS and U2OS p53KO cells, and RNAseq of U2OS c"
+],
+[
+"GSE14827",
+27,
+"Expression profiling by array",
+"Gene expression profiles from osteosarcpma samples"
+],
+[
+"GSE293065",
+26,
+"Other",
+"Spatial transcriptomic atlas of aggressive osteosarcomas reveals shared gene surface expression"
+],
+[
+"GSE234997",
+26,
+"Genome binding/occupancy profiling by hi",
+"Intrinsic epigenetic state of primary osteosarcoma drives metastasis [ChIP-seq]"
+],
+[
+"GSE79181",
+25,
+"Other",
+"In silico analyses  of survival-associated microRNA signatures in pediatric osteosarcoma"
+],
+[
+"GSE36002",
+25,
+"Methylation profiling by array",
+"Integrative analysis reveals relationships of genetic and epigenetic alterations in osteosarcom"
+],
+[
+"GSE36001",
+25,
+"Expression profiling by array",
+"Integrative analysis reveals relationships of genetic and epigenetic alterations in osteosarcom"
+],
+[
+"GSE240351",
+24,
+"Expression profiling by high throughput ",
+"Derepressing nuclear pyruvate dehydrogenase induces therapeutic cancer cell reprogramming (RNA-"
+],
+[
+"GSE225515",
+24,
+"Expression profiling by high throughput ",
+"METTL1/WDR4-mediated tRNA m7G modification and mRNA translation control promotes oncogenesis an"
+],
+[
+"GSE243759",
+24,
+"Expression profiling by array",
+"Antitumor effects of PRMT5 inhibition in sarcomas"
+],
+[
+"GSE95024",
+24,
+"Expression profiling by high throughput ",
+"p53-induced apoptosis is specified by a translation program regulated by PCBP2 and DHX30."
+],
+[
+"GSE58770",
+24,
+"Methylation profiling by genome tiling a",
+"A Sleeping Beauty Forward Genetic Screen Identifies Genes Promoting Osteosarcoma Development an"
+],
+[
+"GSE12864",
+24,
+"Methylation profiling by genome tiling a",
+"Me-DIP-chip data from osteosarcoma tumours"
+],
+[
+"GSE237033",
+23,
+"Expression profiling by high throughput ",
+"MAGEA antigens as immunotherapeutic targets for advanced osteosarcoma"
+],
+[
+"GSE188894",
+23,
+"Expression profiling by array; Methylati",
+"A synergistic interaction between HDAC- and PARP inhibitors in childhood tumors with chromothri"
+],
+[
+"GSE32981",
+23,
+"Expression profiling by array",
+"Global gene expression profiling of human osteosarcomas of primary and metastatic origin reveal"
+],
+[
+"GSE16088",
+23,
+"Expression profiling by array",
+"Gene expression profiles of human osteosarcoma"
+],
+[
+"GSE179681",
+22,
+"Expression profiling by high throughput ",
+"Osteosarcoma tumors maintain intratumoral heterogeneity, even while adapting to environmental p"
+],
+[
+"GSE148798",
+22,
+"Genome binding/occupancy profiling by hi",
+"The g-tubulin meshwork assists to the transport of cytosolic PCNA to chromatin in mammalian cel"
+],
+[
+"GSE5045",
+22,
+"Expression profiling by array",
+"Effects of THBS3, SPARC and SPP1 expression on biological behavior and survival in patients wit"
+],
+[
+"GSE117200",
+21,
+"Genome binding/occupancy profiling by hi",
+"Genomic location of PRMT6-dependent H3R2 methylation is decisive for the transcriptional outcom"
+],
+[
+"GSE14359",
+20,
+"Expression profiling by array",
+"Expression data from conventional osteosarcoma compared to primary non-neoplastic osteoblast ce"
+],
+[
+"GSE11127",
+20,
+"Expression profiling by array",
+"HSD17B10, RPL8, IFITM2 and IFITM3 as predictive markers of response to chemotherapy in conventi"
+],
+[
+"GSE270505",
+19,
+"Expression profiling by high throughput ",
+"Epigenetic heterogeneity and state-specific transcriptional programs determine differential dru"
+],
+[
+"GSE36003",
+19,
+"Genome variation profiling by SNP array",
+"Integrative analysis reveals relationships of genetic and epigenetic alterations in osteosarcom"
+],
+[
+"GSE333484",
+18,
+"Expression profiling by high throughput ",
+"MDM2 binds and suppresses RNA polymerase III to restrain the innate immune response to cytosoli"
+],
+[
+"GSE198896",
+18,
+"Expression profiling by high throughput ",
+"Adolescent bone sarcomas have distinct immune signatures and intercellular communication networ"
+],
+[
+"GSE33458",
+18,
+"Expression profiling by array",
+"Gene expression analysis of osteosarcoma tumor-initiating cells (High) vs bulk tumor cells (Low"
+],
+[
+"GSE267150",
+16,
+"Expression profiling by high throughput ",
+"Cancer-associated MDM2 W329G mutant attenuates ribosomal stress-mediated p53 responses to promo"
+],
+[
+"GSE249702",
+16,
+"Expression profiling by high throughput ",
+"NAB2-STAT6 drives an EGR1-dependent neuroendocrine program in Solitary Fibrous Tumors (RNA-Seq)"
+],
+[
+"GSE162826",
+16,
+"Expression profiling by high throughput ",
+"STL427944 suppresses FOXM1 via nuclear export and subsequent autophagic degradation"
+],
+[
+"GSE218526",
+15,
+"Expression profiling by high throughput ",
+"Long non-coding RNA and circular RNA and coding RNA profiling of plasma exosomes of osteosarcom"
+],
+[
+"GSE167546",
+15,
+"Expression profiling by high throughput ",
+"Loss of the chromatin remodeler, ATRX, promotes aggressive features of osteosarcomas and activa"
+],
+[
+"GSE191215",
+15,
+"Expression profiling by array",
+"IL11RA signaling and EZH2 activity in osteosarcoma"
+],
+[
+"GSE15780",
+15,
+"Genome binding/occupancy profiling by hi",
+"Interplay between c-Jun and TAp73\u03b1/\u03b2 contributes to the apoptosis-survival balance"
+],
+[
+"GSE300902",
+14,
+"Methylation profiling by genome tiling a",
+"Rewriting nuclear epigenetic scripts in mitochondrial diseases as a strategy for heteroplasmy c"
+],
+[
+"GSE246405",
+14,
+"Expression profiling by high throughput ",
+"Systematic analyses of RNA-binding proteins uncover therapeutically promising vulnerabilities i"
+],
+[
+"GSE58123",
+14,
+"Expression profiling by high throughput ",
+"Modeling Familial Cancer with iPSC Approaches"
+],
+[
+"GSE12865",
+14,
+"Expression profiling by array",
+"Gene expression of human paediatric osteosarcoma tumour samples relative to normal human osteob"
+],
+[
+"GSE234998",
+13,
+"Expression profiling by high throughput ",
+"Intrinsic epigenetic state of primary osteosarcoma drives metastasis [RNA-seq]"
+],
+[
+"GSE292011",
+12,
+"Expression profiling by high throughput ",
+"Adaptor protein CIN85 potentiates migration of osteosarcoma cells"
+],
+[
+"GSE283602",
+12,
+"Expression profiling by high throughput ",
+"Activating GCN2 and subsequently the Unfolded Protein Response with the small oral molecule NXP"
+],
+[
+"GSE290255",
+12,
+"Expression profiling by high throughput ",
+"Key Regulatory Elements of the TGF\u03b2-LRRC15 Axis Predict Disease Progression and Immunotherapy R"
+],
+[
+"GSE263410",
+12,
+"Expression profiling by high throughput ",
+"KPNA2 promotes osteosarcoma by regulating the alternative splicing of DDX3X mediated by YBX1"
+],
+[
+"GSE296631",
+12,
+"Genome binding/occupancy profiling by hi",
+"Derepressing nuclear pyruvate dehydrogenase induces therapeutic cancer cell reprogramming [CUT&"
+],
+[
+"GSE278302",
+12,
+"Expression profiling by high throughput ",
+"Enhanced combination treatment on osteosarcoma by mitigating drug-induced oncogenic signaling p"
+],
+[
+"GSE268415",
+12,
+"Expression profiling by high throughput ",
+"PRKDC Induces Chemoresistance in Osteosarcoma by Recruiting GDE2 to Stabilize GNAS and Activate"
+],
+[
+"GSE207333",
+12,
+"Expression profiling by high throughput ",
+"Analysis of lncRNA-mRNA co-expression profiles in CD133 positive cancer stem-like cells from os"
+],
+[
+"GSE222467",
+12,
+"Expression profiling by high throughput ",
+"The RNA binding proteins LARP4A and LARP4B promote tumour growth and metastasis in prostate can"
+],
+[
+"GSE158976",
+12,
+"Expression profiling by high throughput ",
+"Datasets for the effects of RUNX2 silencing on transcriptomic and metabolomic profiles in SJSA-"
+],
+[
+"GSE214899",
+12,
+"Expression profiling by high throughput ",
+"PRRX1-TOP2A interaction is a malignancy-promoting factor in human malignant peripheral nerve tu"
+],
+[
+"GSE201511",
+12,
+"Expression profiling by array",
+"Development of an osteosarcoma model with MYCN amplification and TP53 mutation in hiPS cell-der"
+],
+[
+"GSE225588",
+12,
+"Non-coding RNA profiling by array",
+"Microarray profiling analysis of whole transcriptome expression in osteosarcoma"
+],
+[
+"GSE205432",
+12,
+"Expression profiling by high throughput ",
+"RNF4-RGMb axis  is required for osteogenic differentiation and cancer cell survival"
+],
+[
+"GSE134604",
+12,
+"Genome binding/occupancy profiling by hi",
+"Super-enhancer-associated oncogenes as novel therapeutic targets in osteosarcoma (ChIP-seq)"
+],
+[
+"GSE90554",
+12,
+"Genome binding/occupancy profiling by hi",
+"p38-MK2 regulate RNA metabolism after UV light-induced DNA damage"
+],
+[
+"GSE54820",
+12,
+"Expression profiling by array",
+"Strigolactone analogs induce apoptosis through activation of p38 and the stress response pathwa"
+],
+[
+"GSE48330",
+12,
+"Expression profiling by array",
+"SUMOylation Regulates the Anti-Proliferative Gene Signature Programs of Glucocorticoid Receptor"
+],
+[
+"GSE11413",
+12,
+"Methylation profiling by genome tiling a",
+"Me-DIP-chip data from osteosarcoma cell lines"
+],
+[
+"GSE234996",
+11,
+"Genome binding/occupancy profiling by hi",
+"Intrinsic epigenetic state of primary osteosarcoma drives metastasis [ATAC-seq]"
+],
+[
+"GSE215763",
+11,
+"Genome binding/occupancy profiling by hi",
+"Temporal chromatin accessibility changes define transcriptional states essential for osteosarco"
+],
+[
+"GSE215757",
+11,
+"Expression profiling by high throughput ",
+"Temporal chromatin accessibility changes define transcriptional states essential for osteosarco"
+],
+[
+"GSE210136",
+11,
+"Other",
+"Direct transposition of native DNA for sensitive multimodal single-molecule sequencing I"
+],
+[
+"GSE283592",
+10,
+"Expression profiling by array",
+"DEAH-BOX HELICASE 8 IS A REGULATOR OF HEAT SHOCK FACTOR 1 [DHX8-RIP]"
+],
+[
+"GSE309091",
+10,
+"Non-coding RNA profiling by high through",
+"Exploring differentially expressed lncRNAs between the osteosarcoma and adjacent normal tissues"
+],
+[
+"GSE255956",
+10,
+"Expression profiling by high throughput ",
+"BRD4 Regulates Gemcitabine Efficacy by Modulating Autophagy Activity in Osteosarcoma Cells [Cel"
+],
+[
+"GSE215764",
+10,
+"Genome binding/occupancy profiling by hi",
+"Temporal chromatin accessibility changes define transcriptional states essential for osteosarco"
+],
+[
+"GSE221532",
+10,
+"Expression profiling by high throughput ",
+"Unravelling HRDness and therapeutic opportunities in soft tissue and bone sarcoma"
+],
+[
+"GSE56255",
+10,
+"Expression profiling by array; Methylati",
+"Epigenetic screen of  metastasis-driving genes in osteosarcoma"
+],
+[
+"GSE39057",
+10,
+"Expression profiling by array",
+"mRNA profiling and clinical outcomes in human osteosarcoma (biopsy/resection pairs)"
+],
+[
+"GSE19180",
+10,
+"Genome variation profiling by array",
+"Deletion of the WWOX gene and frequent loss of its protein expression 3 in human osteosarcoma"
+],
+[
+"GSE342958",
+9,
+"Expression profiling by high throughput ",
+"Transcriptomic profiling of osteosarcoma patients with good and poor response to MAP regimen"
+],
+[
+"GSE334227",
+9,
+"Non-coding RNA profiling by high through",
+"MDM2 binds and suppresses RNA polymerase III to restrain the innate immune response to cytosoli"
+],
+[
+"GSE309660",
+9,
+"Other",
+"The 7SK small nuclear ribonucleoprotein links the cell responses to transcription and replicati"
+],
+[
+"GSE262143",
+9,
+"Expression profiling by high throughput ",
+"Identification of XD23 as a potent inhibitor of osteosarcoma via downregulation of DKK1 and act"
+],
+[
+"GSE184003",
+9,
+"Expression profiling by high throughput ",
+"RNAseq analysis of osteosarcoma cell line with overexpression of YAP-S94A and YAP-S127A"
+],
+[
+"GSE78192",
+9,
+"Protein profiling by protein array",
+"Protoarray based identificatoin of dysregulated proteins in metastatic osteosarcoma"
+],
+[
+"GSE318840",
+8,
+"Expression profiling by high throughput ",
+"Single-Cell Fixed RNA Profiling of Osteosarcoma Evolution Reveals a Coordinated Multi-cellular "
+],
+[
+"GSE240352",
+8,
+"Genome binding/occupancy profiling by hi",
+"Derepressing nuclear pyruvate dehydrogenase induces therapeutic cancer cell reprogramming  (ATA"
+],
+[
+"GSE237840",
+8,
+"Other",
+"Function and Mechanism of NAT10-mediated N4-acetylcytidine modification in osteosarcoma [RIP-se"
+],
+[
+"GSE237541",
+8,
+"Expression profiling by high throughput ",
+"Function and Mechanism of NAT10-mediated N4-acetylcytidine modification in osteosarcoma [mRNA-s"
+],
+[
+"GSE249701",
+8,
+"Genome binding/occupancy profiling by hi",
+"NAB2-STAT6 drives an EGR1-dependent neuroendocrine program in Solitary Fibrous Tumors (ChIP-Seq"
+],
+[
+"GSE225311",
+8,
+"Other",
+"Direct transposition of native DNA for sensitive multimodal single-molecule sequencing III"
+],
+[
+"GSE220948",
+8,
+"Expression profiling by high throughput ",
+"Vitamin D inhibition of metastasis and oxidative stress in osteosarcoma"
+],
+[
+"GSE164322",
+8,
+"Genome binding/occupancy profiling by hi",
+"Sensing of miRNA/ssDNA hybrid by AGO2 for Enhancing Gene Transcription"
+],
+[
+"GSE182703",
+8,
+"Expression profiling by high throughput ",
+"NELL-1 regulates the matrisome to alter osteosarcoma disease progression"
+],
+[
+"GSE163332",
+8,
+"Genome binding/occupancy profiling by hi",
+"Oncofusion driven de novo enhancer assembly promotes malignancy in Ewing sarcoma via aberrant e"
+],
+[
+"GSE57203",
+8,
+"Expression profiling by array",
+"Syngergistic Effect of JQ1 and Rapamycin for Treatment of Human Osteosarcoma"
+],
+[
+"GSE270231",
+7,
+"Expression profiling by high throughput ",
+"Aberrant activation of wound healing programs within the metastatic niche facilitates lung colo"
+],
+[
+"GSE261067",
+7,
+"Expression profiling by high throughput ",
+"Tumor mitochondrial oxidative phosphorylation stimulated by the nuclear receptor ROR\u03b3 represent"
+],
+[
+"GSE144417",
+7,
+"Genome binding/occupancy profiling by hi",
+"Chromatin accessibility analysis of UHRF1 KO osteosarcoma cell lines"
+],
+[
+"GSE144416",
+7,
+"Expression profiling by high throughput ",
+"Transcriptome analysis of UHRF1 KO osteosarcoma cell lines"
+],
+[
+"GSE292805",
+6,
+"Expression profiling by high throughput ",
+"Trophinin(TRO) promotes osteosarcoma cellproliferation and modulates cisplatin resistance thoug"
+],
+[
+"GSE324043",
+6,
+"Expression profiling by high throughput ",
+"Celastrol induces autophagy and apoptosis of human osteosarcoma cells via downregulation PI3K/A"
+],
+[
+"GSE308128",
+6,
+"Expression profiling by high throughput ",
+"Tumor Extracellular Vesicles lncOSLMT Drives Lung Inflammatory Premetastatic Niche Formation in"
+],
+[
+"GSE255957",
+6,
+"Expression profiling by high throughput ",
+"BRD4 Regulates Gemcitabine Efficacy by Modulating Autophagy Activity in Osteosarcoma Cells [Pat"
+],
+[
+"GSE267134",
+6,
+"Expression profiling by high throughput ",
+"SURF2 is a MDM2 antagonist in triggering the nucleolar stress response"
+],
+[
+"GSE211393",
+6,
+"Expression profiling by high throughput ",
+"Intratibial Osteosarcoma Growth and Pulmonary Metastasis Inhibition by HIPPO Signaling Pathway-"
+],
+[
+"GSE206342",
+6,
+"Expression profiling by high throughput ",
+"Identification of KPNA2 targets by RNA-Seq in osteosarcoma"
+],
+[
+"GSE210740",
+6,
+"Expression profiling by high throughput ",
+"Far upstream element-binding protein 1 confers lobaplatin resistance via facilitating the arach"
+],
+[
+"GSE223857",
+6,
+"Expression profiling by RT-PCR",
+"miR-197-3p promotes osteosarcoma stemness and chemo-resistance by inhibiting SPOPL"
+],
+[
+"GSE210373",
+6,
+"Expression profiling by high throughput ",
+"CNTNAP4 signaling regulates osteosarcoma disease progression"
+],
+[
+"GSE180321",
+6,
+"Expression profiling by high throughput ",
+"Imperatorin induces autophagy and G0/G1 phase arrest via PTEN-PI3K-AKT-mTOR/p21 signaling pathw"
+],
+[
+"GSE118129",
+6,
+"Expression profiling by array",
+"Gene expression profile of U2-OS control and NSD3 knockdown cells"
+],
+[
+"GSE159920",
+6,
+"Expression profiling by high throughput ",
+"The AMBRA1 E3 ligase adaptor regulates Cyclin D protein stability [U2OS cells]"
+],
+[
+"GSE142230",
+6,
+"Expression profiling by RT-PCR",
+"RT-PCR analysis of long non-coding RNAs expression in adriamycin-resistant osteosarcoma cells"
+],
+[
+"GSE140256",
+6,
+"Non-coding RNA profiling by array",
+"Microarray profiling analysis ofcircular RNAs expression in osteosarcoma"
+],
+[
+"GSE85537",
+6,
+"Expression profiling by array",
+"Expression data from human osteosarcoma bone primaries or lung metastases"
+],
+[
+"GSE55958",
+6,
+"Expression profiling by array",
+"Expression profiling of 143B-shCtrl and 143B-shIRX1 stable osteosarcoma cell lines"
+],
+[
+"GSE58209",
+6,
+"Expression profiling by array",
+"SSEA-4 labels a subset of poor prognosis-associated osteosarcoma-initiating cells that respond "
+],
+[
+"GSE24401",
+6,
+"Expression profiling by array",
+"Atorvastatin effect on SaOS2 osteosarcoma cells"
+],
+[
+"GSE18947",
+6,
+"Expression profiling by array",
+"Expression data from two pair of osteosarcoma sublines with difeerental pulmonary "
+],
+[
+"GSE11414",
+6,
+"Expression profiling by array",
+"Gene expression of osteosarcoma cell (U2OS, MG63) lines relative to normal human osteoblasts (H"
+],
+[
+"GSE234614",
+5,
+"Expression profiling by high throughput ",
+"Osteosarcoma uses host-derived growth factors to drive ERK phosphorylation and MCL1 expression "
+],
+[
+"GSE140763",
+5,
+"Expression profiling by high throughput ",
+"CBX4 role in U2OS/MTX300"
+],
+[
+"GSE86053",
+5,
+"Expression profiling by high throughput ",
+"Human Osteosarcoma Transcriptome"
+],
+[
+"GSE64293",
+5,
+"Genome variation profiling by SNP array",
+"Affymetrix OncoScan FFPE Array array data from Li-Fraumeni Syndrome tumors"
+],
+[
+"GSE325221",
+4,
+"Expression profiling by high throughput ",
+"Impaired redox adaptation through SLC38A5-dependent glutamine metabolism contributes to melaton"
+],
+[
+"GSE308154",
+4,
+"Non-coding RNA profiling by high through",
+"Tumor Extracellular Vesicles lncOSLMT Drives Lung Inflammatory Premetastatic Niche Formation in"
+],
+[
+"GSE293148",
+4,
+"Expression profiling by high throughput ",
+"Metastasis-initiating osteosarcoma subpopulations establish paracrine interactions with both lu"
+],
+[
+"GSE296636",
+4,
+"Genome binding/occupancy profiling by hi",
+"Derepressing nuclear pyruvate dehydrogenase induces therapeutic cancer cell reprogramming [ATAC"
+],
+[
+"GSE240353",
+4,
+"Other; Genome binding/occupancy profilin",
+"Derepressing nuclear pyruvate dehydrogenase induces therapeutic cancer cell reprogramming  (H3K"
+],
+[
+"GSE189878",
+4,
+"Expression profiling by high throughput ",
+"M6A Demethylase FTO-mediated downregulation of DACT1 mRNA stability promotes Wnt signaling to f"
+],
+[
+"GSE189877",
+4,
+"Other",
+"M6A Demethylase FTO-mediated downregulation of DACT1 mRNA stability promotes Wnt signaling to f"
+],
+[
+"GSE249700",
+4,
+"Genome binding/occupancy profiling by hi",
+"NAB2-STAT6 drives an EGR1-dependent neuroendocrine program in Solitary Fibrous Tumors (ATAC-Seq"
+],
+[
+"GSE176373",
+4,
+"Expression profiling by array",
+"the role of hsa_circ_0000073 in Osteosarcoma"
+],
+[
+"GSE147413",
+4,
+"Expression profiling by high throughput ",
+"Targeted suppression of ZNF217-induced AKT signaling inhibits tumor growth and metastasis in os"
+],
+[
+"GSE90555",
+4,
+"Genome binding/occupancy profiling by hi",
+"p38-MK2 regulate RNA metabolism after UV light-induced DNA damage"
+],
+[
+"GSE19913",
+4,
+"Expression profiling by array",
+"Syndecan-2 and apoptosis in osteosarcoma"
+],
+[
+"GSE48281",
+4,
+"Expression profiling by array",
+"Changes in gene expression in HOS and U2-OS cell lines after exposure to 600 \u03bcg/mL OGE"
+],
+[
+"GSE37552",
+4,
+"Expression profiling by array",
+"A Systems Biology Approach Reveals Common Metastatic Pathways in Osteosarcoma"
+],
+[
+"GSE7077",
+4,
+"Genome variation profiling by genome til",
+"Osteosarcoma microaberrations"
+],
+[
+"GSE188984",
+3,
+"Expression profiling by array",
+"Expression data of osteosarcoma 143B and metastatic variants"
+],
+[
+"GSE143556",
+3,
+"Expression profiling by array",
+"Acquisition of Cancer Stem Cell Properties in Osteosarcoma Cells by Defined Factors"
+],
+[
+"GSE104277",
+3,
+"Non-coding RNA profiling by array",
+"Control of microRNA expression by mitochondrial function"
+],
+[
+"GSE188304",
+2,
+"Expression profiling by high throughput ",
+"AMTB, a TRPM8 Antagonist, Suppresses Growth and Metastasis of Osteosarcoma through Repressing t"
+],
+[
+"GSE250015",
+2,
+"Expression profiling by high throughput ",
+"Exploring the impact of PDGFD in osteosarcoma metastasis through single-cell sequencing analysi"
+],
+[
+"GSE169322",
+2,
+"Expression profiling by high throughput ",
+"Serine-Threonine Kinase Receptor-Associated Protein (STRAP) Knockout Decreases the Malignant Ph"
+],
+[
+"GSE55961",
+2,
+"Methylation profiling by genome tiling a",
+"MeDIP chip from ZOS and ZOSM osteosarcoma cell lines"
+],
+[
+"GSE55957",
+2,
+"Expression profiling by array",
+"Expression profile of ZOS and ZOSM osteosarcoma cell lines"
+],
+[
+"GSE42903",
+2,
+"Expression profiling by array",
+"Ribosomal protein S3 regulates GLI2-mediated osteosarcoma invasion"
+],
+[
+"GSE308605",
+1,
+"Other",
+"Extraskeletal Osteosarcoma Harboring ETV6:NTRK3 Fusion Treated Successfully with Larotrectinib:"
+],
+[
+"GSE308604",
+1,
+"Other",
+"Extraskeletal Osteosarcoma Harboring ETV6:NTRK3 Fusion Treated Successfully with Larotrectinib:"
+],
+[
+"GSE215758",
+1,
+"Genome binding/occupancy profiling by hi",
+"Temporal chromatin accessibility changes define transcriptional states essential for osteosarco"
+]
+]
