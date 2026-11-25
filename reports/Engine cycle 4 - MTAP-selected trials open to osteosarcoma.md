@@ -52,7 +52,7 @@ The other 13 trials in group A have sites only outside the United States, mostly
 **Age.**
 
 - The one trial in group A that takes patients under 18 is NCT06796699 (GH56, a company study in China), from age 12.
-- Three trials outside group A show that younger patients are not excluded on principle: a navlimetostat trial for malignant peripheral nerve sheath tumour, another sarcoma, takes patients from age 12 in the United States (NCT07549022); a mesothelioma trial in the United Kingdom takes patients from 16 (NCT07602946); and a lymphoma trial of AZD3470 takes patients from 12 in one part (NCT06137144).
+- Two trials outside group A show that younger patients are not excluded on principle: an investigator-led, single-centre navlimetostat trial for malignant peripheral nerve sheath tumour, another sarcoma, takes patients from age 12 in the United States (NCT07549022); and AstraZeneca's AZD3470 lymphoma trial takes patients from 12 (at least 40 kg) in one Hodgkin lymphoma part (NCT06137144).
 
 **Someone is already measuring MTAP loss in osteosarcoma.** The search also turned up an observational study at a hospital in Beijing that is staining stored tumour samples from about 100 patients with advanced, relapsed osteosarcoma for MTAP protein (NCT07593573; listed as active, with no results posted as of its last update in May 2026). That is the measurement cycle 3 said was missing. Its result, when published, should replace this project's estimate of one in seven.
 
@@ -79,3 +79,4 @@ The other 13 trials in group A have sites only outside the United States, mostly
 ## Change log
 
 - 2026-11-24: search run, records read and classified, report written.
+- 2026-11-25: corrected after an independent check. A UK mesothelioma trial (NCT07602946) had been described as taking patients from 16; its screening platform does, but its drug arm starts at 18, so it was removed as an example.

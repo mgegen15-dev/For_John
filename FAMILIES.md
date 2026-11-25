@@ -16,9 +16,9 @@ I'm Michael. Osteosarcoma took my little brother, John, in 2025, when he was 18.
 
 ## Finding trials
 
-- **ClinicalTrials.gov** is the official US registry of clinical trials. Search for "osteosarcoma", then filter by recruitment status and age. Each listing gives a contact.
+- **ClinicalTrials.gov** is the official US registry of clinical trials. Search for "osteosarcoma", then filter by recruitment status and age. Most listings give a contact. Trials in Europe may also be listed in the EU Clinical Trials register.
 - **Your care team** can tell you which trials are realistic for your situation and can contact trial sites for you.
-- **The trial lists in this project** are research documents, not recommendations. They were correct on the day they were made and trials change, so check any trial on ClinicalTrials.gov and with your team:
+- **The trial lists in this project** are research documents, not recommendations. They reflect the registry records on the day they were made, and trials change, so check any trial on ClinicalTrials.gov and with your team:
   - [trials for tumours missing the MTAP gene](reports/engine-cycle-4-mtap-selected-trials-open-to-osteosarcoma.html)
   - [trials for tumours with extra copies of CCNE1](reports/engine-cycle-7-ccne1-amplification-at-relapse-and-the-trials-open-to-it.html)
 - **Osteosarcoma nonprofits** such as [MIB Agents](https://www.mibagents.org/) work with families and researchers.
@@ -27,8 +27,8 @@ I'm Michael. Osteosarcoma took my little brother, John, in 2025, when he was 18.
 
 - **Relapse or recurrence:** the cancer has come back after treatment.
 - **Metastasis:** the cancer has spread to another part of the body. In osteosarcoma this is most often the lungs.
-- **Gene panel or sequencing:** a laboratory test of the tumour's DNA that lists genes that are changed.
-- **Deletion:** a gene, or part of one, is missing from the tumour's DNA. **Amplification:** the tumour has extra copies of a gene.
+- **Gene panel or sequencing:** a laboratory test of the tumour's DNA that lists changes in a set of genes. A separate test of blood or saliva looks for changes a person was born with.
+- **Deletion:** a gene, or part of one, is missing from the tumour's DNA. Trials often need both copies missing, which reports may call a "homozygous" or "deep" deletion. **Amplification:** the tumour has many extra copies of a gene; a small gain may not count for a trial.
 - **Phase 1 trial:** an early study of a new drug in people, mainly to find a safe dose. **Phase 2:** a study of whether the drug works in a particular cancer. **Phase 3:** a comparison with the current standard treatment.
 - **Progression-free:** the cancer has not grown or spread, as measured by the study.
 

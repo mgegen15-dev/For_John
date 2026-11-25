@@ -6,7 +6,7 @@
 
 ## Summary
 
-Some osteosarcomas carry extra copies of the gene CCNE1, and drugs are being tested in patients chosen for exactly that. We asked two things. First, is the change more common once the disease has spread or returned? Not clearly: the odds ratio was 1.14, with a range of uncertainty from 0.52 to 2.48, so the pre-registered verdict is **inconclusive**. On hospital gene-panel tests about one in ten relapsed osteosarcomas has it (17 of 179), and it rarely changes between a patient's primary tumour and later sample. Second, would the trials take these patients? Nine trials, recruiting or about to, would take an osteosarcoma patient with CCNE1 amplification on paper, six with a United States site. The best news is about age: a trial of lunresertib, which blocks the enzyme PKMYT1, accepts patients from age 12 with any advanced solid tumour that has CCNE1 amplification, at sites in the United States, Canada, Denmark, Spain and the United Kingdom. One unplanned observation, that MCL1 amplification looked more common at relapse, is reported with its caveats and is not a finding.
+Some osteosarcomas carry extra copies of the gene CCNE1, and drugs are being tested in patients chosen for exactly that. We asked two things. First, is the change more common once the disease has spread or returned? Not clearly: the odds ratio was 1.14, with a range of uncertainty from 0.52 to 2.48, so the pre-registered verdict is **inconclusive**. On hospital gene-panel tests about one in ten relapsed osteosarcomas has it (17 of 179). In the few patients tested twice it usually matched, but only three of them ever had it, so that tells us little. Second, would the trials take these patients? Nine trials, recruiting or about to, would take an osteosarcoma patient with CCNE1 amplification on paper, six with a United States site. The best news is about age: a trial of lunresertib, which blocks the enzyme PKMYT1, accepts patients from age 12 with any advanced solid tumour that has CCNE1 amplification, at sites in the United States, Canada, Denmark, Spain and the United Kingdom. One unplanned observation, that MCL1 amplification looked more common at relapse, is reported with its caveats and is not a finding.
 
 **How to read the labels.** Numbers are **(our calculation)** from open data and registry records unless marked otherwise.
 
@@ -25,7 +25,7 @@ The method is cycle 3's, on the same two hospital cohorts from cBioPortal, each 
 
 - **Verdict: Inconclusive.** "Supported" needed an odds ratio of at least 1.5 with a lower bound above 1. "Refuted" needed the upper bound below 1.5; it is 2.48. The two cohorts agree with each other (I² = 0%), and both show about the same rate in each group.
 - **Frequency at relapse:** 17 of 179 metastatic or relapsed patients (9.5%, 95% CI 6.0–14.7%) across the two cohorts and the European relapse trial MAPPYACTS (2 of 49).
-- **Stable within a patient.** Of 30 patients with both a primary and a later sample tested, 27 had no amplification in either, one had it in both, one gained it and one lost it.
+- **Within a patient.** Of 30 patients with both a primary and a later sample tested, 27 had no amplification in either, one had it in both, one gained it and one lost it. With only three patients ever amplified, this cannot show whether the change is stable.
 - **Why this is lower than the diagnosis figure.** Research cohorts that sequence whole genomes call CCNE1 amplified in about one in five primary tumours: 16 of 81 in TARGET-OS and 8 of 42 in PCAWG by cBioPortal's calls, and 15 of 81 by this project's own. Hospital panels use a stricter threshold. Trials enrol on hospital test results, so one in ten is the number that matters for eligibility.
 
 **An unplanned observation: MCL1.** The plan included a check on every gene amplified in more than 3% of patients, to see whether CCNE1 stood out. It did not, but one of the 38 genes did.
@@ -70,7 +70,7 @@ The search used 24 terms fixed in advance (PKMYT1, CCNE1, cyclin E1 and 21 drug 
 ## What this means
 
 - **A teenager with relapsed osteosarcoma and CCNE1 amplification has a trial to ask about,** which was not true for MTAP loss in cycle 4. The lunresertib trial takes patients from 12.
-- **About one in ten relapsed osteosarcomas would qualify on a hospital gene-panel test,** and because the change is stable, the test done at diagnosis is a fair guide.
+- **About one in ten relapsed osteosarcomas would qualify on a clinical gene test.** Whether a test done at diagnosis is a reliable guide for CCNE1 is not known from these data; a trial may ask for a new one.
 - **Not evidence that the drugs work in osteosarcoma.** Cycle 6 found that osteosarcoma cell lines with more CCNE1 lean towards depending on PKMYT1 without confirming it, and no osteosarcoma result has been reported from these trials that this project has found.
 - **Predictions.** P22 (more common at relapse) is unresolved by its own rule. P23 (at least one such trial accepts under-18s), which this project gave a 10% chance, is right.
 
@@ -93,3 +93,4 @@ The search used 24 terms fixed in advance (PKMYT1, CCNE1, cyclin E1 and 21 drug 
 
 - 2026-11-24: cycle run and reported. Part A inconclusive under the pre-registered rules; Part B counted.
 - 2026-11-25: per-patient table no longer published (counts only); data sources credited.
+- 2026-11-25: corrected after an independent check. The claim that CCNE1 amplification is stable between primary and later samples was withdrawn: only three paired patients were ever amplified, and two of the three disagreed.

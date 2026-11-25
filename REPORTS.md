@@ -5,7 +5,7 @@
 ## Start here
 
 - [One-Page Summary](summary.html): the whole project in one page.
-- [For Families](families.html): what the findings mean in plain words.
+- [For Families](families.html): questions to ask your care team, where to look for trials, and words you will hear.
 - [Ranked Leads and Research Partners](reports/ranked-leads-and-research-partners.html): the fourteen leads, scored, with who could test each.
 - [Research Queue](research-queue.html): every question the research engine has taken on, and where each stands.
 - [Evidence Explorer](explorer.html): search any gene, drug or target and see the papers, flags, trials and drugs behind it.
@@ -17,8 +17,8 @@
 
 ## Treatments and trials
 
-- [Clinical trials landscape](reports/osteosarcoma-clinical-trials-landscape.html): every registered osteosarcoma trial, and why so many stop early.
-- [Why kinase-inhibitor pills work](reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html): the one drug class that clearly beats older single drugs in relapse.
+- [Clinical trials landscape](reports/osteosarcoma-clinical-trials-landscape.html): every osteosarcoma trial on ClinicalTrials.gov, and why so many stop early.
+- [Why kinase-inhibitor pills work](reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html): the most consistently active drug class in relapse; the benefit is brief and no trial has shown longer survival.
 - [Copy-number changes and the kinase-pill biomarker](reports/copy-number-changes-and-the-kinase-pill-biomarker.html): whether tumour gene copies could predict who benefits.
 - [Pooled control dataset](reports/osteosarcoma-pooled-control-dataset.html): outcomes from past relapse trials, pooled so new trials can compare against them.
 - [Approved drugs worth testing](reports/approved-drugs-worth-testing-in-osteosarcoma.html): a screen of 2,400 approved and late-stage drugs, including the dead ends.
@@ -36,9 +36,9 @@
 Each was written down with its rules before the data were opened.
 
 - [Cycle 1: Does RAMP1 predict relapse?](reports/engine-cycle-1-does-ramp1-predict-relapse.html) Inconclusive; the large effect ruled out.
-- [Cycle 2: Do lung metastases carry more CXCR4?](reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html) Inconclusive; explained by immune cells.
+- [Cycle 2: Do lung metastases carry more CXCR4?](reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html) Inconclusive; likely explained by immune cells.
 - [Cycle 3: Is 9p21 deletion more common at relapse?](reports/engine-cycle-3-is-9p21-deletion-more-common-at-relapse.html) Inconclusive; about 1 in 5 relapsed tumours have it.
-- [Cycle 4: MTAP-selected trials open to osteosarcoma](reports/engine-cycle-4-mtap-selected-trials-open-to-osteosarcoma.html): 25 for adults, almost none for under-18s.
+- [Cycle 4: MTAP-selected trials open to osteosarcoma](reports/engine-cycle-4-mtap-selected-trials-open-to-osteosarcoma.html): 25 open on paper to adults, one to under-18s.
 - [Cycle 5: Do cells without MTAP depend on PRMT5?](reports/engine-cycle-5-do-osteosarcoma-cells-without-mtap-depend-on-prmt5.html) Too few cell lines to tell.
 - [Cycle 6: Do cells with more CCNE1 depend on PKMYT1?](reports/engine-cycle-6-do-osteosarcoma-cells-with-more-ccne1-depend-on-pkmyt1.html) Leans yes, not confirmed.
 - [Cycle 7: CCNE1 at relapse and the trials open to it](reports/engine-cycle-7-ccne1-amplification-at-relapse-and-the-trials-open-to-it.html): about 1 in 10; one trial from age 12.
