@@ -319,6 +319,22 @@
     <td class="num">10%</td>
     <td>Unresolved (see Outcomes)</td>
     </tr>
+    <tr>
+    <td>P33</td>
+    <td>LRRC15 RNA is maintained in lung metastases compared with primary tumours (lower bound of the adjusted pooled difference above −0.5 standard deviations)</td>
+    <td>The verdict is anything other than &quot;Maintained&quot;</td>
+    <td>Public lung-metastasis datasets from NCBI GEO; engine cycle 11, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md"><code>research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">45%</td>
+    <td><strong>Right</strong> (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P34</td>
+    <td>CD276 (B7-H3) RNA is maintained in lung metastases by the same rule</td>
+    <td>The verdict is anything other than &quot;Maintained&quot;</td>
+    <td>Same as P33</td>
+    <td class="num">60%</td>
+    <td><strong>Wrong</strong> (see Outcomes)</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="outcomes">Outcomes</h2>
@@ -342,6 +358,8 @@
     <li><strong>P30, 2026-11-25: right.</strong> RB1-lost lines were more resistant to all three CDK4/6 inhibitors (+0.78 to +0.97, every interval excluding zero). Given a 50% chance in advance, because a five-day screen can miss drugs that slow cells rather than kill them. Same source.</li>
     <li><strong>P31, 2026-11-25: unresolved by its own rule.</strong> CCNE1-amplified lines against the rest, adavosertib: −0.21 standard deviations (95% CI −0.73 to +0.30), 16 amplified lines. Same source.</li>
     <li><strong>P32, 2026-11-25: unresolved by its own rule.</strong> MTAP-lost lines against the rest, EPZ015666 (one dose): −0.05 (−0.29 to +0.19), 87 MTAP-lost lines. Close to no effect, but the interval reaches past −0.2. Same source.</li>
+    <li><strong>P33, 2026-11-25: right by its own rule, with a caveat.</strong> LRRC15 in lung metastases against primary tumours, adjusted for lung and immune tissue: +1.44 standard deviations (95% CI +0.76 to +2.13), 29 against 51 samples, so &quot;Maintained&quot;. The adjusted measure proved unstable, because lung content almost separates the groups, and the result leans on one six-sample dataset. Unadjusted −0.22 (−0.70 to +0.27). Source: <a href="reports/engine-cycle-11-do-lung-metastases-keep-the-surface-targets.html"><code>reports/Engine cycle 11 - do lung metastases keep the surface targets.md</code></a> (our calculation).</li>
+    <li><strong>P34, 2026-11-25: wrong by its own rule.</strong> CD276 (B7-H3), same measure: +0.38 (−0.61 to +1.38), 25 against 46 samples, so &quot;Inconclusive&quot;, not &quot;Maintained&quot;. The same caveat about the adjusted measure applies. Same source.</li>
     </ul>
     <h2 id="scorecard">Scorecard</h2>
     <div class="tablewrap"><table>
@@ -355,14 +373,14 @@
     </thead>
     <tbody>
     <tr>
-    <td class="num">7</td>
-    <td class="num">7</td>
-    <td class="num">0</td>
+    <td class="num">9</td>
+    <td class="num">8</td>
+    <td class="num">1</td>
     <td class="num">25</td>
     </tr>
     </tbody>
     </table></div>
-    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day. 2026-11-25: P29 to P32 added for engine cycle 10, before its drug-response data were opened; outcomes recorded the same day.</p>
+    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day. 2026-11-25: P29 to P32 added for engine cycle 10, before its drug-response data were opened; outcomes recorded the same day. 2026-11-25: P33 and P34 added for engine cycle 11, before its target genes were read; outcomes recorded the same day.</p>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
   </main>

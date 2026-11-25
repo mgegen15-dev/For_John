@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 11: Do Lung Metastases Keep the Surface Targets That New Drugs Aim At? · For John</title>
+<meta name="description" content="Run November 25, 2026. The eleventh cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md, committed at commit eb48e69…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-11-do-lung-metastases-keep-the-surface-targets.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 11: Do Lung Metastases Keep the Surface Targets That New Drugs Aim At? · For John">
+<meta property="og:description" content="Run November 25, 2026. The eleventh cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md, committed at commit eb48e69…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-11-do-lung-metastases-keep-the-surface-targets.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../families.html">For Families</a>
+      <a href="../index.html#findings">Findings</a>
+      <a href="../research-queue.html">Research Engine</a>
+      <a href="../reports.html">All Reports</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#why-the-adjusted-measure-is-unstable-not-in-the-plan-found-while-checking">Why the Adjusted Measure Is Unstable (Not in the Plan; Found While Checking)</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 25, 2026 · 5 min read</p>
+    <h1>Engine Cycle 11: Do Lung Metastases Keep the Surface Targets That New Drugs Aim At?</h1>
+    <p><em>Run November 25, 2026. The eleventh cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md"><code>research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md</code></a>, committed at commit <code>eb48e69</code> before any of these genes was read from the data. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle11_targets.py"><code>tools/engine_cycle11_targets.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle11/results.csv"><code>data/engine/cycle11/results.csv</code></a>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>New osteosarcoma drugs aimed at the surface proteins LRRC15 and B7-H3 (gene CD276) are tested mostly in patients whose disease has spread to the lungs. The evidence for those targets, however, comes mostly from primary tumours. We compared target RNA in 29 lung metastases with 51 primary tumours across six public datasets.</p>
+    <ul>
+    <li><strong>LRRC15: &quot;Maintained&quot; by the pre-registered rule, but less firmly than that label suggests.</strong>
+    <ul>
+    <li>No version of the analysis shows LRRC15 dropping in lung metastases.</li>
+    <li>The measure the rule used, though, turned out to be unstable, for the reason explained below.</li>
+    </ul>
+    </li>
+    <li><strong>B7-H3: inconclusive.</strong>
+    <ul>
+    <li>Whole-tissue samples of lung metastases had less B7-H3 RNA than primary tumours.</li>
+    <li>Once lung tissue was accounted for, and in tumour cells alone, there was no clear drop.</li>
+    <li>So the lower whole-tissue value may come from normal lung diluting the sample, but this cannot be settled with four tumour-cell samples.</li>
+    </ul>
+    </li>
+    <li><strong>Predictions:</strong> P33 (LRRC15 maintained) is right and P34 (B7-H3 maintained) is wrong, both by their own rules. P34 is the engine's first wrong prediction.</li>
+    <li><strong>The lesson for the method:</strong> adjusting for lung tissue does not work well when lung tissue almost perfectly separates the two groups. The next test of this kind should rely on tumour cells measured directly.</li>
+    </ul>
+    <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from open data unless marked otherwise.</p>
+    <h2 id="what-was-tested">What Was Tested</h2>
+    <ul>
+    <li><strong>Data:</strong> the six datasets of engine cycle 2, which compare lung metastases with primary tumours. They contain 29 lung-metastasis samples and 51 primary-tumour samples, measured by microarray, bulk RNA sequencing, spatial sequencing and single-cell sequencing.</li>
+    <li><strong>Measure:</strong> the difference in standard deviations (Hedges' g), lung metastasis minus primary, pooled across datasets. Negative means lower in metastases.</li>
+    <li><strong>The pre-registered primary measure</strong> was adjusted for a lung score (three normal-lung genes) and an immune score. This was meant to remove the dilution caused by normal lung and immune cells in a metastasis sample.</li>
+    <li><strong>Verdict rules, fixed in advance:</strong>
+    <ul>
+    <li>&quot;Maintained&quot;: the lower end of the 95% interval is above −0.5.</li>
+    <li>&quot;Lower in metastases&quot;: −0.5 or lower with the whole interval below zero, unless tumour cells alone show no drop.</li>
+    <li>&quot;Inconclusive&quot;: anything else.</li>
+    </ul>
+    </li>
+    </ul>
+    <h2 id="results">Results</h2>
+    <p><img src="../figures/engine11_targets.svg" alt="Target RNA in lung metastases against primary tumours, adjusted for lung and immune tissue" /></p>
+    <p><em>The figure shows the pre-registered adjusted measure, which proved unstable (see below). The table gives the unadjusted and tumour-cell values alongside.</em></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Gene</th>
+    <th>Pre-registered measure: adjusted for lung and immune tissue</th>
+    <th>Unadjusted</th>
+    <th>Tumour cells only (4 v 11 samples)</th>
+    <th>Matched pairs (4 patients)</th>
+    <th>Verdict</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>LRRC15</strong></td>
+    <td>+1.44 (+0.76 to +2.13)</td>
+    <td>−0.22 (−0.70 to +0.27)</td>
+    <td>−0.25 (−1.41 to +0.91)</td>
+    <td>−0.01 (−0.77 to +0.74)</td>
+    <td><strong>Maintained</strong></td>
+    </tr>
+    <tr>
+    <td><strong>CD276 (B7-H3)</strong></td>
+    <td>+0.38 (−0.61 to +1.38)</td>
+    <td>−0.79 (−1.31 to −0.26)</td>
+    <td>−0.12 (−1.28 to +1.05)</td>
+    <td>−0.75 (−1.15 to −0.35)</td>
+    <td><strong>Inconclusive</strong></td>
+    </tr>
+    <tr>
+    <td>ERBB2 (HER2)</td>
+    <td>+0.12 (−0.57 to +0.82)</td>
+    <td>+0.54 (+0.06 to +1.03)</td>
+    <td>+0.26 (−0.91 to +1.43)</td>
+    <td>+0.77 (+0.01 to +1.53)</td>
+    <td>Inconclusive</td>
+    </tr>
+    <tr>
+    <td>GPNMB</td>
+    <td>+1.29 (+0.59 to +1.98)</td>
+    <td>−0.34 (−0.83 to +0.15)</td>
+    <td>−0.56 (−1.96 to +0.85)</td>
+    <td>−0.35 (−0.97 to +0.27)</td>
+    <td>Maintained</td>
+    </tr>
+    <tr>
+    <td>B4GALNT1 (GD2 synthase)</td>
+    <td>−0.47 (−1.41 to +0.46)</td>
+    <td>−0.33 (−0.81 to +0.15)</td>
+    <td>−0.47 (−1.65 to +0.72)</td>
+    <td>+0.42 (−0.19 to +1.03)</td>
+    <td>Inconclusive</td>
+    </tr>
+    <tr>
+    <td>PTK7</td>
+    <td>+0.40 (−0.56 to +1.35)</td>
+    <td>+0.22 (−0.26 to +0.69)</td>
+    <td>+0.65 (−0.53 to +1.82)</td>
+    <td>−0.20 (−0.41 to +0.01)</td>
+    <td>Inconclusive</td>
+    </tr>
+    <tr>
+    <td>ADAM12</td>
+    <td>+0.13 (−0.87 to +1.13)</td>
+    <td>−0.57 (−1.05 to −0.08)</td>
+    <td>−0.85 (−2.05 to +0.34)</td>
+    <td>−0.58 (−1.19 to +0.04)</td>
+    <td>Inconclusive</td>
+    </tr>
+    <tr>
+    <td>IFITM5</td>
+    <td>−0.53 (−1.55 to +0.49)</td>
+    <td>−0.64 (−1.16 to −0.12)</td>
+    <td>−1.58 (−2.91 to −0.26)</td>
+    <td>−0.03 (−1.26 to +1.21)</td>
+    <td>Inconclusive</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>The first two rows are the main tests. The other six were pre-registered as a secondary set. CD276 and IFITM5 are missing from the oldest microarray, so those rows use 25 metastases against 46 primaries.</p>
+    <ul>
+    <li><strong>The built-in check passed.</strong> The lung score was far higher in lung metastases (g +3.23, +2.47 to +3.98), as in cycle 2, which shows the samples loaded correctly.</li>
+    </ul>
+    <h2 id="why-the-adjusted-measure-is-unstable-not-in-the-plan-found-while-checking">Why the Adjusted Measure Is Unstable (Not in the Plan; Found While Checking)</h2>
+    <p>The adjustment was carried over from cycle 2. It removes, within each dataset, the part of a gene's signal that tracks the lung and immune scores. That works when the two groups overlap in lung content. Here they barely overlap: in every dataset metastasis samples carry far more normal lung (lung score differences of 1.2 to 19.9 standard deviations). The adjustment therefore has to extrapolate, and small datasets can swing hard.</p>
+    <ul>
+    <li><strong>For LRRC15:</strong>
+    <ul>
+    <li>The adjusted result leans on one single-cell dataset with six samples (GSE318840: +1.95, standard error 0.43). Without it, the adjusted estimate is +0.49 (−0.66 to +1.65), which is no longer &quot;Maintained&quot; by the rule.</li>
+    <li>Adjusting for the immune score alone gives +0.07 (−0.43 to +0.57), which would be.</li>
+    </ul>
+    </li>
+    <li><strong>For CD276:</strong>
+    <ul>
+    <li>The immune-only adjustment gives −0.71 (−1.26 to −0.15).</li>
+    <li>The lung-only adjustment gives +0.09 (−0.86 to +1.04).</li>
+    </ul>
+    </li>
+    </ul>
+    <p>These checks were not in the plan. They are reported so that the verdicts are not read as stronger than they are.</p>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>LRRC15:</strong>
+    <ul>
+    <li>No analysis showed LRRC15 dropping in lung metastases: the unadjusted, immune-adjusted, tumour-cell and matched-pair versions are all near zero.</li>
+    <li>In the single-cell data, the median share of tumour cells with any LRRC15 reads was 12% in four metastases and 7% in eleven primaries.</li>
+    <li>So there is no sign that this target is lost where relapsed osteosarcoma grows. This is RNA, not protein, and the strict test is less certain than its label.</li>
+    </ul>
+    </li>
+    <li><strong>B7-H3:</strong>
+    <ul>
+    <li>Whole-tissue metastasis samples had less B7-H3 RNA, including within the same patients (four pairs).</li>
+    <li>In tumour cells alone, there was no clear drop: the median share of tumour cells with reads was 28% in metastases and 20% in primaries.</li>
+    <li>If B7-H3 is lower in lung metastases, the difference may lie in the tissue around the tumour rather than in the tumour cells. A protein stain of matched primary tumours and metastases would settle it. This is the same kind of partner study as queue row 8.</li>
+    </ul>
+    </li>
+    <li><strong>Secondary set (exploratory weight):</strong>
+    <ul>
+    <li>No gene met &quot;Lower in metastases&quot;.</li>
+    <li>GPNMB's &quot;Maintained&quot; rests on the same unstable adjustment as LRRC15's.</li>
+    <li>IFITM5, one of this project's own surface leads, was lower in tumour cells of the four metastases (−1.58, −2.91 to −0.26). With four samples this is a flag to check, not a finding.</li>
+    <li>It adds to the doubts about IFITM5 already listed in <a href="../reports/new-surface-targets-for-osteosarcoma.html"><code>reports/New surface targets for osteosarcoma.md</code></a>.</li>
+    </ul>
+    </li>
+    <li><strong>For the method:</strong> a future cycle comparing metastases with primaries should make tumour cells measured directly (single-cell or stained tissue) the primary measure, and use whole-tissue adjustment only as support.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>RNA is not protein, and the drugs bind protein.</li>
+    <li>Only four lung metastases have single-cell data.</li>
+    <li>The datasets differ in technology, and some primary and metastasis samples come from different patients.</li>
+    <li>The adjusted measure is unstable, as described above.</li>
+    <li>&quot;Maintained&quot; means that a drop of half a standard deviation was ruled out on that measure. It does not mean the two are the same.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li><code>bash tools/engine_cycle02_fetch.sh</code> downloads the datasets (as for cycle 2).</li>
+    <li><code>python3 tools/engine_cycle11_targets.py</code> runs the analysis.</li>
+    <li>Outputs:
+    <ul>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle11/results.csv"><code>data/engine/cycle11/results.csv</code></a>, <code>summary.json</code> and <code>tumour_cells.csv</code> (per-sample tumour-cell values and the share of cells with reads);</li>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine11_targets.svg"><code>docs/figures/engine11_targets.svg</code></a>.</li>
+    </ul>
+    </li>
+    </ul>
+    <p><strong>Data sources and credit.</strong> NCBI GEO series GSE14359, GSE220538, GSE140131, GSE293065, GSE152048, GSE318840, GSE32981, GSE237033 and GSE87624. These are the same sources and credits as engine cycle 2.</p>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-25: cycle run and reported. Verdicts under the pre-registered rules: LRRC15 and GPNMB maintained; CD276 and the other five inconclusive. No deviation from the plan. The instability of the adjusted measure was found afterwards and is reported as a check outside the plan.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%2011%20-%20do%20lung%20metastases%20keep%20the%20surface%20targets.md">reports/Engine cycle 11 - do lung metastases keep the surface targets.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

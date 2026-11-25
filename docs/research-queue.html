@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#how-a-question-moves-through-the-queue">How a Question Moves Through the Queue</a></li><li class="l1"><a href="#tested">Tested</a></li><li class="l1"><a href="#next">Next</a></li><li class="l1"><a href="#needs-a-partner">Needs a Partner</a></li><li class="l1"><a href="#rules-the-engine-follows">Rules the Engine Follows</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 24, 2026 · 7 min read</p>
+    <p class="crumb">Project document · Updated November 25, 2026 · 7 min read</p>
     <h1>Research Queue</h1>
     <p><em>The For John research engine, in public. Each question is something public data or a partner laboratory can answer. Each is written down with its success and failure rules before the data are examined, then tested on patients it was not built from. Results are posted whatever they show. Last updated November 24, 2026.</em></p>
     <h2 id="how-a-question-moves-through-the-queue">How a Question Moves Through the Queue</h2>
@@ -155,6 +155,12 @@
     <td><strong>Checks passed; both tests inconclusive.</strong> In a public drug screen of hundreds of cell lines, TP53-altered lines resisted all four MDM2 inhibitors and RB1-lost lines all three CDK4/6 inhibitors, so the method works. CCNE1-amplified lines were not clearly more sensitive to the WEE1 inhibitor adavosertib (−0.21 SD, −0.73 to +0.30, 16 lines), and MTAP-lost lines showed little or no response to an early PRMT5 drug not built for them (−0.05, −0.29 to +0.19). <a href="reports/engine-cycle-10-do-the-gene-change-weaknesses-hold-up-with-real-drugs.html">Full result</a></td>
     <td>Nov 25, 2026</td>
     </tr>
+    <tr>
+    <td class="num">22</td>
+    <td>Do lung metastases keep the surface targets that new drugs aim at (LRRC15, B7-H3 and six others)?</td>
+    <td><strong>LRRC15 maintained by the rule, with a caveat; B7-H3 inconclusive.</strong> No analysis showed LRRC15 dropping in 29 lung metastases against 51 primaries. B7-H3 was lower in whole-tissue samples but not clearly in tumour cells. The pre-registered adjustment for lung tissue proved unstable, so the next such test should measure tumour cells directly. <a href="reports/engine-cycle-11-do-lung-metastases-keep-the-surface-targets.html">Full result</a></td>
+    <td>Nov 25, 2026</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="next">Next</h2>
@@ -181,7 +187,7 @@
     <td>Is MCL1 amplification more common in relapsed osteosarcoma than in primary tumours?</td>
     <td>Cycle 7 saw this as an unplanned observation (15 of 130 against 6 of 211), with some evidence against it. It needs a planned test on patients not used there.</td>
     <td>A hospital cohort with primary and relapse samples that was not part of cycle 7</td>
-    <td>Proposed; needs an independent cohort</td>
+    <td>Proposed; needs an independent cohort. Checked Nov 25: every public MSK osteosarcoma cohort on cBioPortal shares its patients with the one already used, and the others have too few relapse samples</td>
     </tr>
     <tr>
     <td class="num">18</td>
@@ -261,6 +267,7 @@
     <li>2026-11-24: cycles 7 (CCNE1 at relapse and its trials) and 8 (systematic dependency scan) run. Questions 16 to 19 added from their results.</li>
     <li>2026-11-24: cycle 9 (tumour-suppressor scan) run. Question 20 added from its result.</li>
     <li>2026-11-25: cycle 10 (the knockout links tested with real drugs in the PRISM screen) run.</li>
+    <li>2026-11-25: question 17 checked for a public independent cohort; none found. Cycle 11 (surface targets in lung metastases) run.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/RESEARCH_QUEUE.md">RESEARCH_QUEUE.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>

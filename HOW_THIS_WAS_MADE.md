@@ -102,6 +102,7 @@ pip install pandas
 | `tools/engine_cycle08_scan.py` | engine cycle 8: `data/engine/cycle08/alterations.csv`, `hits.csv`, `summary.json` and one figure | none new; needs the downloads of cycles 3, 5 and 7 | about two minutes |
 | `tools/engine_cycle09_suppressor_scan.py` (`fetch`, then no argument) | engine cycle 9: `data/engine/cycle09/` loss calls, checks, hits, patient frequencies and one figure | DepMap Figshare (three files, about 150 MB) and cBioPortal; needs the downloads of cycles 3, 5 and 8 | about a minute |
 | `tools/engine_cycle10_prism.py` (`fetch`, then no argument) | engine cycle 10: `data/engine/cycle10/` results, osteosarcoma line table and one figure | PRISM Repurposing 20Q2 on Figshare (six files, about 340 MB); needs the DepMap downloads of cycles 5 and 9 | a few minutes to download, about a minute to run |
+| `tools/engine_cycle11_targets.py` | engine cycle 11: `data/engine/cycle11/` results, tumour-cell table and one figure | none new; needs cycle 2's downloads | a few minutes |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:

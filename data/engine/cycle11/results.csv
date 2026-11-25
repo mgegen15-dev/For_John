@@ -1,0 +1,104 @@
+analysis,dataset,gene,n_lung_metastases,n_primaries,hedges_g,ci_low,ci_high,mean_difference_log2
+"check: lung score, pooled",six,lung_score,29,51,3.225,2.469,3.981,
+per dataset,GSE14359,LRRC15,4,5,0.028,-1.287,1.343,0.048
+per dataset,GSE220538,LRRC15,9,19,-0.329,-1.127,0.469,-0.512
+per dataset,GSE140131,LRRC15,2,7,1.779,0.006,3.552,1.969
+per dataset,GSE293065,LRRC15,10,9,-0.943,-1.893,0.006,-1.075
+per dataset,GSE152048,LRRC15,2,7,0.093,-1.479,1.665,0.149
+per dataset,GSE318840,LRRC15,2,4,0.037,-1.661,1.734,0.100
+"pooled, unadjusted",six,LRRC15,29,51,-0.215,-0.696,0.265,
+"pooled, adjusted for lung and immune (verdict)",six,LRRC15,29,51,1.445,0.763,2.127,
+tumour cells only,GSE152048,LRRC15,2,7,-0.322,-1.901,1.256,-0.645
+tumour cells only,GSE318840,LRRC15,2,4,-0.170,-1.870,1.530,-0.521
+"tumour cells only, pooled",single-cell,LRRC15,4,11,-0.252,-1.408,0.905,
+matched pairs,GSE220538 (4 matched pairs),LRRC15,4,4,-0.011,-0.767,0.745,-0.022
+"sensitivity, site-unknown datasets pooled",three,LRRC15,26,42,-0.417,-0.877,0.043,
+per dataset,GSE220538,CD276,9,19,-1.304,-2.168,-0.441,-0.888
+per dataset,GSE140131,CD276,2,7,-0.242,-1.817,1.334,-0.227
+per dataset,GSE293065,CD276,10,9,-0.838,-1.777,0.101,-0.625
+per dataset,GSE152048,CD276,2,7,-0.445,-2.030,1.140,-0.338
+per dataset,GSE318840,CD276,2,4,0.365,-1.345,2.075,0.473
+"pooled, unadjusted",six,CD276,25,46,-0.787,-1.313,-0.262,
+"pooled, adjusted for lung and immune (verdict)",six,CD276,25,46,0.382,-0.615,1.379,
+tumour cells only,GSE152048,CD276,2,7,-0.535,-2.126,1.056,-0.462
+tumour cells only,GSE318840,CD276,2,4,0.360,-1.349,2.070,0.397
+"tumour cells only, pooled",single-cell,CD276,4,11,-0.119,-1.284,1.045,
+matched pairs,GSE220538 (4 matched pairs),CD276,4,4,-0.751,-1.152,-0.350,-1.128
+"sensitivity, site-unknown datasets pooled",three,CD276,15,30,-0.135,-0.643,0.374,
+per dataset,GSE14359,ERBB2,4,5,0.671,-0.679,2.022,0.252
+per dataset,GSE220538,ERBB2,9,19,0.830,0.007,1.652,0.976
+per dataset,GSE140131,ERBB2,2,7,0.286,-1.291,1.863,0.233
+per dataset,GSE293065,ERBB2,10,9,-0.009,-0.910,0.891,-0.014
+per dataset,GSE152048,ERBB2,2,7,2.234,0.354,4.114,1.294
+per dataset,GSE318840,ERBB2,2,4,0.013,-1.684,1.711,0.019
+"pooled, unadjusted",six,ERBB2,29,51,0.544,0.061,1.027,
+"pooled, adjusted for lung and immune (verdict)",six,ERBB2,29,51,0.122,-0.573,0.816,
+tumour cells only,GSE152048,ERBB2,2,7,0.756,-0.854,2.365,0.738
+tumour cells only,GSE318840,ERBB2,2,4,-0.302,-2.007,1.404,-0.327
+"tumour cells only, pooled",single-cell,ERBB2,4,11,0.258,-0.913,1.429,
+matched pairs,GSE220538 (4 matched pairs),ERBB2,4,4,0.771,0.010,1.531,1.418
+"sensitivity, site-unknown datasets pooled",three,ERBB2,26,42,0.219,-0.230,0.668,
+per dataset,GSE14359,GPNMB,4,5,0.804,-0.562,2.170,0.717
+per dataset,GSE220538,GPNMB,9,19,-0.914,-1.742,-0.086,-1.240
+per dataset,GSE140131,GPNMB,2,7,0.198,-1.377,1.772,0.238
+per dataset,GSE293065,GPNMB,10,9,-0.184,-1.086,0.719,-0.249
+per dataset,GSE152048,GPNMB,2,7,-3.549,-5.820,-1.278,-1.987
+per dataset,GSE318840,GPNMB,2,4,1.067,-0.734,2.869,1.380
+"pooled, unadjusted",six,GPNMB,29,51,-0.341,-0.833,0.151,
+"pooled, adjusted for lung and immune (verdict)",six,GPNMB,29,51,1.286,0.589,1.983,
+tumour cells only,GSE152048,GPNMB,2,7,-3.080,-5.200,-0.960,-1.926
+tumour cells only,GSE318840,GPNMB,2,4,1.417,-0.460,3.294,1.662
+"tumour cells only, pooled",single-cell,GPNMB,4,11,-0.559,-1.965,0.846,
+matched pairs,GSE220538 (4 matched pairs),GPNMB,4,4,-0.351,-0.968,0.265,-0.684
+"sensitivity, site-unknown datasets pooled",three,GPNMB,26,42,-0.209,-0.529,0.111,
+per dataset,GSE14359,B4GALNT1,4,5,-0.721,-2.078,0.635,-0.313
+per dataset,GSE220538,B4GALNT1,9,19,-0.673,-1.486,0.139,-0.786
+per dataset,GSE140131,B4GALNT1,2,7,-0.746,-2.355,0.863,-0.885
+per dataset,GSE293065,B4GALNT1,10,9,0.278,-0.626,1.183,0.575
+per dataset,GSE152048,B4GALNT1,2,7,0.794,-0.820,2.407,0.498
+per dataset,GSE318840,B4GALNT1,2,4,-1.236,-3.072,0.600,-1.871
+"pooled, unadjusted",six,B4GALNT1,29,51,-0.327,-0.807,0.152,
+"pooled, adjusted for lung and immune (verdict)",six,B4GALNT1,29,51,-0.475,-1.407,0.458,
+tumour cells only,GSE152048,B4GALNT1,2,7,-0.048,-1.619,1.524,-0.021
+tumour cells only,GSE318840,B4GALNT1,2,4,-1.009,-2.800,0.782,-1.438
+"tumour cells only, pooled",single-cell,B4GALNT1,4,11,-0.466,-1.647,0.715,
+matched pairs,GSE220538 (4 matched pairs),B4GALNT1,4,4,0.422,-0.186,1.030,0.830
+"sensitivity, site-unknown datasets pooled",three,B4GALNT1,15,30,0.027,-0.444,0.498,
+per dataset,GSE14359,PTK7,4,5,0.294,-1.028,1.616,0.330
+per dataset,GSE220538,PTK7,9,19,-0.195,-0.990,0.600,-0.201
+per dataset,GSE140131,PTK7,2,7,0.035,-1.537,1.607,0.063
+per dataset,GSE293065,PTK7,10,9,0.320,-0.587,1.226,0.321
+per dataset,GSE152048,PTK7,2,7,1.459,-0.251,3.169,1.438
+per dataset,GSE318840,PTK7,2,4,0.635,-1.100,2.370,0.656
+"pooled, unadjusted",six,PTK7,29,51,0.218,-0.255,0.692,
+"pooled, adjusted for lung and immune (verdict)",six,PTK7,29,51,0.396,-0.559,1.352,
+tumour cells only,GSE152048,PTK7,2,7,0.661,-0.940,2.262,0.719
+tumour cells only,GSE318840,PTK7,2,4,0.629,-1.106,2.363,0.590
+"tumour cells only, pooled",single-cell,PTK7,4,11,0.646,-0.530,1.822,
+matched pairs,GSE220538 (4 matched pairs),PTK7,4,4,-0.198,-0.405,0.009,-0.533
+"sensitivity, site-unknown datasets pooled",three,PTK7,26,42,0.220,-0.186,0.625,
+per dataset,GSE14359,ADAM12,4,5,-1.243,-2.678,0.192,-1.978
+per dataset,GSE220538,ADAM12,9,19,-0.986,-1.820,-0.152,-1.575
+per dataset,GSE140131,ADAM12,2,7,-0.414,-1.997,1.169,-0.554
+per dataset,GSE293065,ADAM12,10,9,0.146,-0.756,1.048,0.184
+per dataset,GSE152048,ADAM12,2,7,-0.682,-2.284,0.921,-0.892
+per dataset,GSE318840,ADAM12,2,4,-0.469,-2.187,1.249,-0.695
+"pooled, unadjusted",six,ADAM12,29,51,-0.568,-1.051,-0.085,
+"pooled, adjusted for lung and immune (verdict)",six,ADAM12,29,51,0.131,-0.866,1.128,
+tumour cells only,GSE152048,ADAM12,2,7,-1.208,-2.876,0.459,-1.508
+tumour cells only,GSE318840,ADAM12,2,4,-0.476,-2.195,1.243,-0.635
+"tumour cells only, pooled",single-cell,ADAM12,4,11,-0.853,-2.050,0.344,
+matched pairs,GSE220538 (4 matched pairs),ADAM12,4,4,-0.576,-1.194,0.043,-1.451
+"sensitivity, site-unknown datasets pooled",three,ADAM12,26,42,-0.145,-0.556,0.266,
+per dataset,GSE220538,IFITM5,9,19,-0.456,-1.258,0.346,-1.200
+per dataset,GSE140131,IFITM5,2,7,-0.331,-1.910,1.248,-0.762
+per dataset,GSE293065,IFITM5,10,9,-0.702,-1.630,0.226,-1.776
+per dataset,GSE152048,IFITM5,2,7,-0.525,-2.116,1.065,-1.642
+per dataset,GSE318840,IFITM5,2,4,-2.402,-4.576,-0.227,-5.667
+"pooled, unadjusted",six,IFITM5,25,46,-0.637,-1.155,-0.119,
+"pooled, adjusted for lung and immune (verdict)",six,IFITM5,25,46,-0.529,-1.547,0.490,
+tumour cells only,GSE152048,IFITM5,2,7,-1.050,-2.695,0.594,-2.898
+tumour cells only,GSE318840,IFITM5,2,4,-2.571,-4.807,-0.336,-5.527
+"tumour cells only, pooled",single-cell,IFITM5,4,11,-1.585,-2.909,-0.260,
+matched pairs,GSE220538 (4 matched pairs),IFITM5,4,4,-0.027,-1.263,1.208,-0.082
+"sensitivity, site-unknown datasets pooled",three,IFITM5,15,30,0.167,-0.444,0.778,

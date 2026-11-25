@@ -70,11 +70,11 @@ Claims labelled abstract-only, preprint or press-release-only are the weakest, a
 
 ## The research engine (added in version 1.1)
 
-Ten cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a report in `reports/Engine cycle N - ....md`. The engine's central promise is that each plan was committed before its data were opened. That is checkable:
+Eleven cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a report in `reports/Engine cycle N - ....md`. The engine's central promise is that each plan was committed before its data were opened. That is checkable:
 
 - **Order of events.** For each cycle, compare the commit time of its `PREREGISTRATION.md` (`git log --format="%h %cI" -- research_notes/Engine/cycle-NN-*/PREREGISTRATION.md`) with the first commit of its data and script (`git log --diff-filter=A --format="%h %cI" -- tools/engine_cycleNN*`). The plan should come first. Changes made after the plan are listed under "Deviations" in each file. Commit times are set by the committer's clock, so they show order within this repository, not proof against a determined forger.
 - **Re-running.** Each report's last section gives the commands. Most need the raw downloads listed in `DATA_MANIFEST.md`, which are not in git.
-- **Predictions.** P15 to P32 in `PREDICTIONS.md` were written before each cycle's data; outcomes are recorded there with the rule each was judged by.
+- **Predictions.** P15 to P34 in `PREDICTIONS.md` were written before each cycle's data; outcomes are recorded there with the rule each was judged by.
 
 | # | Claim | Where | How to check |
 |---|---|---|---|
@@ -84,6 +84,7 @@ Ten cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a
 | E4 | 9 such trials for CCNE1 amplification; 6 with a US site; 1 (NCT04855656) from age 12 | Cycle 7 report, brief | As E3, with `tools/engine_cycle07_ccne1.py` and `data/engine/cycle07/classification.csv` |
 | E5 | The dependency scans recovered the known pairs (9p21 loss with PRMT5 and WDR77; CCNE1 gain with CDK2; RB1 loss with SKP2, E2F3 and CDK2) and no unknown druggable pair | Cycle 8 and 9 reports | `python3 tools/engine_cycle08_scan.py` and `tools/engine_cycle09_suppressor_scan.py` after the DepMap downloads |
 | E6 | In the PRISM drug screen, TP53-altered lines resisted all four MDM2 inhibitors and RB1-lost lines all three CDK4/6 inhibitors; CCNE1 amplification with adavosertib was inconclusive (−0.21 SD, −0.73 to +0.30) | Cycle 10 report | `python3 tools/engine_cycle10_prism.py fetch`, then without `fetch`; needs the DepMap downloads |
+| E7 | No analysis showed LRRC15 RNA dropping in 29 lung metastases against 51 primaries; the pre-registered lung-tissue adjustment proved unstable | Cycle 11 report | `python3 tools/engine_cycle11_targets.py` after cycle 2's downloads; compare the adjusted and unadjusted rows |
 
 ## Known weak points
 

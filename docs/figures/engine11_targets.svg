@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 366" width="900" height="366" font-family="system-ui, sans-serif" font-size="13" role="img" aria-label="Surface-target RNA in lung metastases against primary tumours, adjusted for lung and immune tissue">
+<rect width="900" height="366" fill="#ffffff"/>
+<text x="16" y="26" font-weight="600" fill="#1d2430">Target RNA, lung metastases against primary tumours (adjusted for lung and immune tissue)</text>
+<text x="16" y="46" fill="#525b6b" font-size="12">Hedges' g with 95% CI. Left of the dashed line at −0.5 would mean a meaningful drop in metastases.</text>
+<line x1="300.0" y1="64" x2="300.0" y2="320" stroke="#e2e5ea"/>
+<text x="300.0" y="336" text-anchor="middle" fill="#525b6b" font-size="12">-3</text>
+<line x1="375.0" y1="64" x2="375.0" y2="320" stroke="#e2e5ea"/>
+<text x="375.0" y="336" text-anchor="middle" fill="#525b6b" font-size="12">-2</text>
+<line x1="450.0" y1="64" x2="450.0" y2="320" stroke="#e2e5ea"/>
+<text x="450.0" y="336" text-anchor="middle" fill="#525b6b" font-size="12">-1</text>
+<line x1="525.0" y1="64" x2="525.0" y2="320" stroke="#525b6b"/>
+<text x="525.0" y="336" text-anchor="middle" fill="#525b6b" font-size="12">0</text>
+<line x1="600.0" y1="64" x2="600.0" y2="320" stroke="#e2e5ea"/>
+<text x="600.0" y="336" text-anchor="middle" fill="#525b6b" font-size="12">1</text>
+<line x1="675.0" y1="64" x2="675.0" y2="320" stroke="#e2e5ea"/>
+<text x="675.0" y="336" text-anchor="middle" fill="#525b6b" font-size="12">2</text>
+<line x1="750.0" y1="64" x2="750.0" y2="320" stroke="#e2e5ea"/>
+<text x="750.0" y="336" text-anchor="middle" fill="#525b6b" font-size="12">3</text>
+<line x1="487.5" y1="64" x2="487.5" y2="320" stroke="#a3401a" stroke-dasharray="4 4"/>
+<text x="16" y="89.0" fill="#1d2430" font-weight="600">LRRC15 (main)</text>
+<line x1="582.2" y1="85.0" x2="684.5" y2="85.0" stroke="#1c5cab" stroke-width="2"/>
+<circle cx="633.4" cy="85.0" r="5" fill="#1c5cab"/>
+<text x="890" y="89.0" text-anchor="end" fill="#525b6b" font-size="12">+1.44 (+0.76 to +2.13)</text>
+<text x="16" y="119.0" fill="#1d2430" font-weight="600">CD276 (B7-H3) (main)</text>
+<line x1="478.9" y1="115.0" x2="628.4" y2="115.0" stroke="#1c5cab" stroke-width="2"/>
+<circle cx="553.7" cy="115.0" r="5" fill="#1c5cab"/>
+<text x="890" y="119.0" text-anchor="end" fill="#525b6b" font-size="12">+0.38 (-0.61 to +1.38)</text>
+<text x="16" y="149.0" fill="#1d2430" font-weight="400">ERBB2 (HER2)</text>
+<line x1="482.0" y1="145.0" x2="586.2" y2="145.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="534.1" cy="145.0" r="5" fill="#6a7384"/>
+<text x="890" y="149.0" text-anchor="end" fill="#525b6b" font-size="12">+0.12 (-0.57 to +0.82)</text>
+<text x="16" y="179.0" fill="#1d2430" font-weight="400">GPNMB</text>
+<line x1="569.2" y1="175.0" x2="673.8" y2="175.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="621.5" cy="175.0" r="5" fill="#6a7384"/>
+<text x="890" y="179.0" text-anchor="end" fill="#525b6b" font-size="12">+1.29 (+0.59 to +1.98)</text>
+<text x="16" y="209.0" fill="#1d2430" font-weight="400">B4GALNT1 (GD2 synthase)</text>
+<line x1="419.4" y1="205.0" x2="559.3" y2="205.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="489.4" cy="205.0" r="5" fill="#6a7384"/>
+<text x="890" y="209.0" text-anchor="end" fill="#525b6b" font-size="12">-0.47 (-1.41 to +0.46)</text>
+<text x="16" y="239.0" fill="#1d2430" font-weight="400">PTK7</text>
+<line x1="483.1" y1="235.0" x2="626.4" y2="235.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="554.7" cy="235.0" r="5" fill="#6a7384"/>
+<text x="890" y="239.0" text-anchor="end" fill="#525b6b" font-size="12">+0.40 (-0.56 to +1.35)</text>
+<text x="16" y="269.0" fill="#1d2430" font-weight="400">ADAM12</text>
+<line x1="460.1" y1="265.0" x2="609.6" y2="265.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="534.8" cy="265.0" r="5" fill="#6a7384"/>
+<text x="890" y="269.0" text-anchor="end" fill="#525b6b" font-size="12">+0.13 (-0.87 to +1.13)</text>
+<text x="16" y="299.0" fill="#1d2430" font-weight="400">IFITM5</text>
+<line x1="409.0" y1="295.0" x2="561.7" y2="295.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="485.4" cy="295.0" r="5" fill="#6a7384"/>
+<text x="890" y="299.0" text-anchor="end" fill="#525b6b" font-size="12">-0.53 (-1.55 to +0.49)</text>
+<text x="525" y="356" text-anchor="middle" fill="#525b6b" font-size="12">Right of zero: higher in lung metastases</text>
+</svg>
