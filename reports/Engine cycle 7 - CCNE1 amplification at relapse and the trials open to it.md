@@ -85,8 +85,11 @@ The search used 24 terms fixed in advance (PKMYT1, CCNE1, cyclin E1 and 21 drug 
 ## Files and reproduction
 
 - `python3 tools/engine_cycle07_ccne1.py fetch` (needs cycle 3's fetch first), then `python3 tools/engine_cycle07_ccne1.py`.
-- Outputs: `data/engine/cycle07/results.csv`, `patients.csv`, `summary.json`, `trials.csv` (all 81), `trials_classified.csv` (the 21 read), `classification.csv` (the hand classification); `docs/figures/engine07_ccne1.svg`.
+- Outputs: `data/engine/cycle07/results.csv`, `summary.json`, `trials.csv` (all 81), `trials_classified.csv` (the 21 read), `classification.csv` (the hand classification); `docs/figures/engine07_ccne1.svg`.
+
+**Data sources and credit.** Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Gao et al., Science Signaling 2013) and come from the original studies: MSK-IMPACT 50K Clinical Sequencing Cohort (Memorial Sloan Kettering), China Pan-cancer (OrigiMed, Nature 2022), MAPPYACTS (Gustave Roussy, Cancer Discovery 2022), TARGET-OS (NCI TARGET, via the GDC) and the Pan-Cancer Analysis of Whole Genomes (Nature 2020). Only counts and summary statistics are published here; the per-patient table stays with the local download.
 
 ## Change log
 
 - 2026-11-24: cycle run and reported. Part A inconclusive under the pre-registered rules; Part B counted.
+- 2026-11-25: per-patient table no longer published (counts only); data sources credited.

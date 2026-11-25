@@ -69,6 +69,9 @@ Four of the 27 osteosarcoma lines (15%) are amplified, close to the 18.5% this p
 - As for cycle 5: `python3 tools/engine_cycle05_06_depmap.py fetch`, then `python3 tools/engine_cycle05_06_depmap.py`.
 - Outputs: `data/engine/cycle06/results.csv`, `summary.json`, `lines.csv`; `docs/figures/engine06_ccne1_pkmyt1.svg`.
 
+**Data sources and credit.** Cell-line data are from the Cancer Dependency Map (DepMap, Broad Institute): DepMap 24Q4 Public release (Figshare, 2024), and the DEMETER2 combined knockdown scores (McFarland et al., Nature Communications 2018).
+
 ## Change log
 
 - 2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules.
+- 2026-11-25: data sources credited.

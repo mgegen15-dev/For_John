@@ -84,9 +84,12 @@ A patient with any metastasis or relapse sample was placed in that group; patien
 ## Files and reproduction
 
 - `python3 tools/engine_cycle03_9p21.py fetch` downloads the data from the public cBioPortal API into `data/engine/cycle03/raw/` (a few megabytes, not stored in git). `python3 tools/engine_cycle03_9p21.py` runs the analysis in seconds.
-- Outputs: `data/engine/cycle03/results.csv`, `data/engine/cycle03/summary.json`, `data/engine/cycle03/patients.csv` (one row per patient, with the sample used), `docs/figures/engine03_9p21.svg`.
+- Outputs: `data/engine/cycle03/results.csv`, `data/engine/cycle03/summary.json`, `docs/figures/engine03_9p21.svg`.
 - Studies: `msk_impact_50k_2026`, `pan_origimed_2020`, `pancan_mappyacts_2022`, `os_target_gdc`, `pancan_pcawg_2020`, as on cBioPortal on November 24, 2026.
+
+**Data sources and credit.** Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Gao et al., Science Signaling 2013) and come from the original studies: MSK-IMPACT 50K Clinical Sequencing Cohort (Memorial Sloan Kettering), China Pan-cancer (OrigiMed, Nature 2022), MAPPYACTS (Gustave Roussy, Cancer Discovery 2022), TARGET-OS (NCI TARGET, via the GDC) and the Pan-Cancer Analysis of Whole Genomes (Nature 2020). Only counts and summary statistics are published here; the per-patient table stays with the local download.
 
 ## Change log
 
 - 2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules. After the first run, the script was corrected to treat MTAP as unmeasured in the two studies that do not report it (it had counted them as "not deleted"); this changed the MTAP figures only, not the verdict.
+- 2026-11-25: per-patient table no longer published (counts only); data sources credited.

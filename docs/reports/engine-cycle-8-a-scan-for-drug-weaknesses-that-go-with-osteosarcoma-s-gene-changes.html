@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-done">What Was Done</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#the-three-worth-following">The Three Worth Following</a></li><li class="l1"><a href="#what-could-not-be-scanned">What Could Not Be Scanned</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 24, 2026 · 7 min read</p>
+    <p class="crumb">Report · Updated November 24, 2026 · 8 min read</p>
     <h1>Engine Cycle 8: A Scan for Drug Weaknesses That Go with Osteosarcoma&#x27;s Gene Changes</h1>
     <p><em>Run November 24, 2026. The eighth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md"><code>research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md</code></a>, committed at 21:09 UTC (commit <code>940146d</code>) before the scan was run. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle08_scan.py"><code>tools/engine_cycle08_scan.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle08/hits.csv"><code>data/engine/cycle08/hits.csv</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
@@ -239,9 +239,12 @@
     <li>Needs the downloads of cycles 3, 5 and 7. Then <code>python3 tools/engine_cycle08_scan.py</code> (about two minutes).</li>
     <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle08/alterations.csv"><code>data/engine/cycle08/alterations.csv</code></a> (the 94 gene changes), <code>hits.csv</code> (all 54 hits with replication, osteosarcoma and sarcoma figures, drugs), <code>exploratory_lookups.csv</code>, <code>summary.json</code>; <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine08_scan.svg"><code>docs/figures/engine08_scan.svg</code></a>.</li>
     </ul>
+    <p><strong>Data sources and credit.</strong> Cell-line data are from the Cancer Dependency Map (DepMap, Broad Institute): DepMap 24Q4 Public release (Figshare, 2024), and the DEMETER2 combined knockdown scores (McFarland et al., Nature Communications 2018).
+    Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Gao et al., Science Signaling 2013) and come from the original studies: MSK-IMPACT 50K Clinical Sequencing Cohort (Memorial Sloan Kettering), China Pan-cancer (OrigiMed, Nature 2022), MAPPYACTS (Gustave Roussy, Cancer Discovery 2022), TARGET-OS (NCI TARGET, via the GDC) and the Pan-Cancer Analysis of Whole Genomes (Nature 2020). Only counts and summary statistics are published here; the per-patient table stays with the local download.</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
     <li>2026-11-24: scan run and reported. After the first run, six named pairs were looked up (<code>exploratory_lookups.csv</code>) and FOCAD's frequency in patients was checked; both are marked exploratory.</li>
+    <li>2026-11-25: data sources credited.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%208%20-%20a%20scan%20for%20drug%20weaknesses%20that%20go%20with%20osteosarcoma%27s%20gene%20changes.md">reports/Engine cycle 8 - a scan for drug weaknesses that go with osteosarcoma&#x27;s gene changes.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>

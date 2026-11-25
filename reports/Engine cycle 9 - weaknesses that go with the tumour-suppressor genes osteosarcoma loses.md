@@ -88,8 +88,12 @@ For laboratories: in the knockout screen, the osteosarcoma lines that depend mos
 ## Files and reproduction
 
 - `python3 tools/engine_cycle09_suppressor_scan.py fetch` (three DepMap files and patient mutations from cBioPortal; needs the downloads of cycles 3, 5 and 8), then `python3 tools/engine_cycle09_suppressor_scan.py` (about a minute).
-- Outputs: `data/engine/cycle09/loss_calls.csv` (every line's call and the route), `controls.csv`, `hits.csv`, `patients.csv`, `summary.json` (includes the exploratory ATRX check); `docs/figures/engine09_scan.svg`.
+- Outputs: `data/engine/cycle09/loss_calls.csv` (every line's call and the route), `controls.csv`, `hits.csv`, `patients.csv` (counts per gene only), `summary.json` (includes the exploratory ATRX check); `docs/figures/engine09_scan.svg`.
+
+**Data sources and credit.** Cell-line data are from the Cancer Dependency Map (DepMap, Broad Institute): DepMap 24Q4 Public release (Figshare, 2024), and the DEMETER2 combined knockdown scores (McFarland et al., Nature Communications 2018).
+Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Gao et al., Science Signaling 2013) and come from the original studies: MSK-IMPACT 50K Clinical Sequencing Cohort (Memorial Sloan Kettering), China Pan-cancer (OrigiMed, Nature 2022), MAPPYACTS (Gustave Roussy, Cancer Discovery 2022), TARGET-OS (NCI TARGET, via the GDC) and the Pan-Cancer Analysis of Whole Genomes (Nature 2020). Only counts and summary statistics are published here; the per-patient table stays with the local download.
 
 ## Change log
 
 - 2026-11-24: scan run and reported. The microsatellite check on the ATRX pairs was added after the scan and is marked exploratory.
+- 2026-11-25: data sources credited.

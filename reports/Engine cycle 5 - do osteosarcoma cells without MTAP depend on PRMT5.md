@@ -79,6 +79,9 @@ Osteosarcoma lines in DepMap by 9p21 status (full table with scores: `data/engin
 - `python3 tools/engine_cycle05_06_depmap.py fetch` downloads six files (about 2.5 GB) from DepMap's official Figshare releases into `data/engine/depmap/raw/` (not stored in git); `python3 tools/engine_cycle05_06_depmap.py` runs cycles 5 and 6 in under a minute.
 - Outputs: `data/engine/cycle05/results.csv`, `summary.json`, `lines.csv`; `docs/figures/engine05_mtap_primary.svg`.
 
+**Data sources and credit.** Cell-line data are from the Cancer Dependency Map (DepMap, Broad Institute): DepMap 24Q4 Public release (Figshare, 2024), and the DEMETER2 combined knockdown scores (McFarland et al., Nature Communications 2018).
+
 ## Change log
 
 - 2026-11-24: cycle run and reported. Verdict inconclusive and underpowered under the pre-registered rules.
+- 2026-11-25: data sources credited.

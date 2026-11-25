@@ -7,7 +7,7 @@ cohorts and method of cycle 3 (tools/engine_cycle03_9p21.py); Part B reuses the 
   python3 tools/engine_cycle07_ccne1.py fetch    amplification calls from cBioPortal, trial records from ClinicalTrials.gov
   python3 tools/engine_cycle07_ccne1.py          analyse
 
-Outputs: data/engine/cycle07/ (results.csv, summary.json, patients.csv, trials.csv, trials_classified.csv), docs/figures/engine07_ccne1.svg
+Outputs: data/engine/cycle07/ (results.csv, summary.json (patient-level table written to raw/, not published), trials.csv, trials_classified.csv), docs/figures/engine07_ccne1.svg
 """
 import collections
 import csv
@@ -173,7 +173,8 @@ def part_a():
                 by.setdefault(s["patient"], s)
         k, n = sum(GENE in u["amps"] for u in by.values()), len(by)
         S["reference"][sid] = dict(zip(("p", "lo", "hi"), c3.wilson(k, n)), k=k, n=n)
-    with open(os.path.join(OUT, "patients.csv"), "w", newline="") as f:
+    os.makedirs(os.path.join(OUT, "raw"), exist_ok=True)
+    with open(os.path.join(OUT, "raw", "patients.csv"), "w", newline="") as f:   # patient-level: kept local, not published
         w = csv.writer(f)
         w.writerow(["study", "patient", "sample_used", "sample_type", "group", "gene_panel", "tumour_purity", "CCNE1_amplified", "genes_amplified"])
         for sid in c3.TEST_STUDIES:

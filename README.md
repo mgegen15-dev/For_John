@@ -104,4 +104,4 @@ If you use this work, please credit it as:
 - Data drawn from PubMed, ClinicalTrials.gov, NIH RePORTER and other public sources remains subject to their own terms.
 - [For Families](FAMILIES.md): plain-language page for parents and patients, with questions to bring to a care team.
 - [All Reports](REPORTS.md): every report and brief, grouped by what you are looking for.
-- [Research brief: new targeted-drug trials that teenagers with osteosarcoma cannot join](briefs/Brief%20-%20trial%20access%20for%20teenagers%20with%20osteosarcoma.md): one page for advocacy groups, from engine cycles 3, 4 and 7.
+- [Research brief: new targeted-drug trials mostly leave out teenagers with osteosarcoma](briefs/Brief%20-%20trial%20access%20for%20teenagers%20with%20osteosarcoma.md): one page for advocacy groups, from engine cycles 3, 4 and 7.

@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#checks">Checks</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 24, 2026 · 6 min read</p>
+    <p class="crumb">Report · Updated November 24, 2026 · 7 min read</p>
     <h1>Engine Cycle 3: Is 9p21 Deletion More Common at Relapse?</h1>
     <p><em>Run November 24, 2026. The third cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-03-9p21/PREREGISTRATION.md"><code>research_notes/Engine/cycle-03-9p21/PREREGISTRATION.md</code></a>, committed at 20:00 UTC (commit <code>35e2b8e</code>) before any study was listed, with the study choices and a prediction committed at 20:03 UTC (<code>e0348e4</code>) before any copy-number call was read. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle03_9p21.py"><code>tools/engine_cycle03_9p21.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/results.csv"><code>data/engine/cycle03/results.csv</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
@@ -192,12 +192,14 @@
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
     <li><code>python3 tools/engine_cycle03_9p21.py fetch</code> downloads the data from the public cBioPortal API into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/cycle03/raw"><code>data/engine/cycle03/raw/</code></a> (a few megabytes, not stored in git). <code>python3 tools/engine_cycle03_9p21.py</code> runs the analysis in seconds.</li>
-    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/results.csv"><code>data/engine/cycle03/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/summary.json"><code>data/engine/cycle03/summary.json</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/patients.csv"><code>data/engine/cycle03/patients.csv</code></a> (one row per patient, with the sample used), <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine03_9p21.svg"><code>docs/figures/engine03_9p21.svg</code></a>.</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/results.csv"><code>data/engine/cycle03/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle03/summary.json"><code>data/engine/cycle03/summary.json</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine03_9p21.svg"><code>docs/figures/engine03_9p21.svg</code></a>.</li>
     <li>Studies: <code>msk_impact_50k_2026</code>, <code>pan_origimed_2020</code>, <code>pancan_mappyacts_2022</code>, <code>os_target_gdc</code>, <code>pancan_pcawg_2020</code>, as on cBioPortal on November 24, 2026.</li>
     </ul>
+    <p><strong>Data sources and credit.</strong> Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Gao et al., Science Signaling 2013) and come from the original studies: MSK-IMPACT 50K Clinical Sequencing Cohort (Memorial Sloan Kettering), China Pan-cancer (OrigiMed, Nature 2022), MAPPYACTS (Gustave Roussy, Cancer Discovery 2022), TARGET-OS (NCI TARGET, via the GDC) and the Pan-Cancer Analysis of Whole Genomes (Nature 2020). Only counts and summary statistics are published here; the per-patient table stays with the local download.</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
     <li>2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules. After the first run, the script was corrected to treat MTAP as unmeasured in the two studies that do not report it (it had counted them as &quot;not deleted&quot;); this changed the MTAP figures only, not the verdict.</li>
+    <li>2026-11-25: per-patient table no longer published (counts only); data sources credited.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%203%20-%20is%209p21%20deletion%20more%20common%20at%20relapse.md">reports/Engine cycle 3 - is 9p21 deletion more common at relapse.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>

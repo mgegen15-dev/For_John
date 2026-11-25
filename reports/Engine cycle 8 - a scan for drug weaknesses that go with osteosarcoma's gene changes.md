@@ -88,6 +88,10 @@ Cycles 5 and 6 each tested one hand-picked pair: a gene an osteosarcoma has lost
 - Needs the downloads of cycles 3, 5 and 7. Then `python3 tools/engine_cycle08_scan.py` (about two minutes).
 - Outputs: `data/engine/cycle08/alterations.csv` (the 94 gene changes), `hits.csv` (all 54 hits with replication, osteosarcoma and sarcoma figures, drugs), `exploratory_lookups.csv`, `summary.json`; `docs/figures/engine08_scan.svg`.
 
+**Data sources and credit.** Cell-line data are from the Cancer Dependency Map (DepMap, Broad Institute): DepMap 24Q4 Public release (Figshare, 2024), and the DEMETER2 combined knockdown scores (McFarland et al., Nature Communications 2018).
+Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Gao et al., Science Signaling 2013) and come from the original studies: MSK-IMPACT 50K Clinical Sequencing Cohort (Memorial Sloan Kettering), China Pan-cancer (OrigiMed, Nature 2022), MAPPYACTS (Gustave Roussy, Cancer Discovery 2022), TARGET-OS (NCI TARGET, via the GDC) and the Pan-Cancer Analysis of Whole Genomes (Nature 2020). Only counts and summary statistics are published here; the per-patient table stays with the local download.
+
 ## Change log
 
 - 2026-11-24: scan run and reported. After the first run, six named pairs were looked up (`exploratory_lookups.csv`) and FOCAD's frequency in patients was checked; both are marked exploratory.
+- 2026-11-25: data sources credited.

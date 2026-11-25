@@ -8,7 +8,7 @@ copy-number call was read).
   python3 tools/engine_cycle03_9p21.py fetch    download from the public cBioPortal API into data/engine/cycle03/raw/
   python3 tools/engine_cycle03_9p21.py          analyse (default)
 
-Outputs: data/engine/cycle03/results.csv, summary.json, patients.csv, docs/figures/engine03_9p21.svg
+Outputs: data/engine/cycle03/results.csv, summary.json (patient-level table written to raw/, not published), docs/figures/engine03_9p21.svg
 """
 import collections
 import csv
@@ -417,7 +417,8 @@ def analyse():
         w = csv.writer(f)
         w.writerow(["analysis", "study", "gene", "relapse_deleted", "relapse_n", "primary_deleted", "primary_n", "odds_ratio", "ci_low", "ci_high"])
         w.writerows(rows_out)
-    with open(os.path.join(OUT, "patients.csv"), "w", newline="") as f:
+    os.makedirs(os.path.join(OUT, "raw"), exist_ok=True)
+    with open(os.path.join(OUT, "raw", "patients.csv"), "w", newline="") as f:   # patient-level: kept local, not published
         w = csv.writer(f)
         w.writerow(["study", "patient", "sample_used", "sample_type", "group", "gene_panel", "tumour_purity", "CDKN2A_deep_deletion",
                     "CDKN2B_deep_deletion", "MTAP_deep_deletion", "genes_deep_deleted"])

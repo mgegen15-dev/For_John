@@ -12,7 +12,7 @@
 
 ## Briefs
 
-- [Targeted-drug trials teenagers cannot join](briefs/brief-trial-access-for-teenagers-with-osteosarcoma.html): one page for advocates; also as a [printable PDF](briefs/For-John-brief-trial-access-for-teenagers.pdf).
+- [Targeted-drug trials that mostly leave out teenagers](briefs/brief-trial-access-for-teenagers-with-osteosarcoma.html): one page for advocates; also as a [printable PDF](briefs/For-John-brief-trial-access-for-teenagers.pdf).
 - [FAK or DKK1 blockade in pet dogs](briefs/brief-pet-dog-trial-of-fak-or-dkk1-blockade.html): a study design for comparative oncology groups.
 
 ## Treatments and trials
