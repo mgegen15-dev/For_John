@@ -42,6 +42,8 @@
 | P30 | In the same screen, RB1-lost lines are more resistant to CDK4/6 inhibitors (at least two of three with the interval excluding zero) | Fewer than two do | Same as P29 | 50% | **Right** (see Outcomes) |
 | P31 | CCNE1-amplified lines are more sensitive to the WEE1 inhibitor adavosertib, by at least 0.2 standard deviations with the interval below zero | The interval lies wholly above −0.2 standard deviations | Same as P29 | 35% | Unresolved (see Outcomes) |
 | P32 | MTAP-lost lines are more sensitive to the early PRMT5 inhibitor EPZ015666, by the same rule | The interval lies wholly above −0.2 standard deviations | Same as P29 | 10% | Unresolved (see Outcomes) |
+| P33 | LRRC15 RNA is maintained in lung metastases compared with primary tumours (lower bound of the adjusted pooled difference above −0.5 standard deviations) | The verdict is anything other than "Maintained" | Public lung-metastasis datasets from NCBI GEO; engine cycle 11, pre-registered in `research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md`; result due within days | 45% | Open |
+| P34 | CD276 (B7-H3) RNA is maintained in lung metastases by the same rule | The verdict is anything other than "Maintained" | Same as P33 | 60% | Open |
 
 ## Outcomes
 
@@ -70,6 +72,6 @@
 
 | Resolved | Right | Wrong | Unresolved |
 |---|---|---|---|
-| 7 | 7 | 0 | 25 |
+| 7 | 7 | 0 | 27 |
 
-*Change log:* 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day. 2026-11-25: P29 to P32 added for engine cycle 10, before its drug-response data were opened; outcomes recorded the same day.
+*Change log:* 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day. 2026-11-25: P29 to P32 added for engine cycle 10, before its drug-response data were opened; outcomes recorded the same day. 2026-11-25: P33 and P34 added for engine cycle 11, before its target genes were read.
