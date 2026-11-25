@@ -1,8 +1,8 @@
 # Auditor's guide
 
-*For a third-party reviewer. Version 1.0, frozen on November 23, 2026 (git tag `v1.0`). Check against that tag, not the live `main` branch, so that your findings line up with what you are reading.*
+*For a third-party reviewer. Version 1.1, frozen on November 25, 2026 (git tag `v1.1`). Check against that tag, not the live `main` branch, so that your findings line up with what you are reading. Version 1.0 (tag `v1.0`, November 23) is the original review without the research engine.*
 
-This project makes many claims across 16 reports. This page lists the 18 that matter most: the ones the one-page summary, the website and the ranked leads depend on. For each one it gives where the claim is made, its primary source, and the fastest way to check it. If these hold, the project's main conclusions hold. If any fail, please tell us.
+This project makes many claims across 25 reports and 2 briefs. This page lists the 18 from the original review that matter most, then how to check the research engine added in version 1.1. The 18 are the ones the ones the one-page summary, the website and the ranked leads depend on. For each one it gives where the claim is made, its primary source, and the fastest way to check it. If these hold, the project's main conclusions hold. If any fail, please tell us.
 
 ## Before you start
 
@@ -11,10 +11,10 @@ This project makes many claims across 16 reports. This page lists the 18 that ma
   git clone https://github.com/mgegen15-dev/For_John
   ```
   ```bash
-  cd For_John && git checkout v1.0
+  cd For_John && git checkout v1.1
   ```
-- **Set up:** Python 3.10 or newer, plus `pip install -r requirements.txt` (only pandas).
-- **Check the data is unchanged:** run `python3 tools/build_manifest.py` and compare its output with the checksums in `DATA_MANIFEST.md` as committed at `v1.0`. Raw downloads are not in git, so they must be re-downloaded. Live databases change, so expect small differences from the retrieval dates listed there.
+- **Set up:** Python 3.10 or newer, plus `pip install -r requirements.txt` (pandas, numpy, scipy, matplotlib, h5py and the Markdown tools that build the website; versions pinned).
+- **Check the data is unchanged:** run `python3 tools/build_manifest.py` and compare its output with the checksums in `DATA_MANIFEST.md` as committed at `v1.1`. Raw downloads are not in git, so they must be re-downloaded. Live databases change, so expect small differences from the retrieval dates listed there.
 - **Read first:** `HOW_THIS_WAS_MADE.md` (methods, limits, how AI was used) and `SUMMARY.md` (the claims in plain language).
 - **Earlier internal checks:** `research_notes/Audit/` holds the AI-run audits and their findings. They are a record, not a substitute for your review.
 
@@ -68,6 +68,22 @@ Claims labelled abstract-only, preprint or press-release-only are the weakest, a
 | 17 | NIH spent about $18.0 million on osteosarcoma-focused grants in FY2025 and $108 million over 2015–2025, against $212–227 million for neuroblastoma | Funding report, summary, website | NIH RePORTER | `python3 tools/nih_funding_tracker.py`. Judge the "focused" rule (disease named in the grant title) and the de-duplication of multi-project grants |
 | 18 | MDM2 inhibitors are a weak lead for high-grade osteosarcoma: MDM2 amplification is common in low-grade tumours but rare in high-grade ones (2.5% of 81 in TARGET-OS) | Ranked leads (dropped leads), copy-number report | TARGET-OS copy number; literature close reading | As claim 7, plus the close reading in `research_notes/Osteosarcoma literature map/orphan_targets_close_read.md` |
 
+## The research engine (added in version 1.1)
+
+Nine cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a report in `reports/Engine cycle N - ....md`. The engine's central promise is that each plan was committed before its data were opened. That is checkable:
+
+- **Order of events.** For each cycle, compare the commit time of its `PREREGISTRATION.md` (`git log --format="%h %cI" -- research_notes/Engine/cycle-NN-*/PREREGISTRATION.md`) with the first commit of its data and script (`git log --diff-filter=A --format="%h %cI" -- tools/engine_cycleNN*`). The plan should come first. Changes made after the plan are listed under "Deviations" in each file. Commit times are set by the committer's clock, so they show order within this repository, not proof against a determined forger.
+- **Re-running.** Each report's last section gives the commands. Most need the raw downloads listed in `DATA_MANIFEST.md`, which are not in git.
+- **Predictions.** P15 to P28 in `PREDICTIONS.md` were written before each cycle's data; outcomes are recorded there with the rule each was judged by.
+
+| # | Claim | Where | How to check |
+|---|---|---|---|
+| E1 | RAMP1 did not replicate: pooled hazard ratio 0.99 (0.74–1.32) across three independent cohorts, against 2.30 in discovery | Cycle 1 report | `python3 tools/engine_cycle01_ramp1.py` after downloading the GEO files listed |
+| E2 | CDKN2A deep deletion in 35 of 179 metastatic or relapsed patients (19.6%); odds ratio relapse against primary 1.10 (0.59–2.06) | Cycle 3 report, front page | `python3 tools/engine_cycle03_9p21.py fetch`, then without `fetch` |
+| E3 | 25 recruiting or soon-to-recruit trials open on paper to an osteosarcoma patient with MTAP loss; 12 with a US site; 1 accepting under-18s | Cycle 4 report, brief, front page | `tools/engine_cycle04_mtap_trials.py`; check each row of `data/engine/cycle04/classification.csv` against its ClinicalTrials.gov record. A single reader classified these |
+| E4 | 9 such trials for CCNE1 amplification; 6 with a US site; 1 (NCT04855656) from age 12 | Cycle 7 report, brief | As E3, with `tools/engine_cycle07_ccne1.py` and `data/engine/cycle07/classification.csv` |
+| E5 | The dependency scans recovered the known pairs (9p21 loss with PRMT5 and WDR77; CCNE1 gain with CDK2; RB1 loss with SKP2, E2F3 and CDK2) and no unknown druggable pair | Cycle 8 and 9 reports | `python3 tools/engine_cycle08_scan.py` and `tools/engine_cycle09_suppressor_scan.py` after the DepMap downloads |
+
 ## Known weak points
 
 These are the places we already know the work is weakest:
@@ -76,6 +92,8 @@ These are the places we already know the work is weakest:
 - **Gene mislabelling.** Automated text mining mislabels some genes. A correction table is in `tools/literature_map.py`, but more errors likely remain.
 - **Narrow registry coverage.** ClinicalTrials.gov only; European-only and China-only registries were not searched systematically.
 - **Unverified sources.** Several leads rest on press releases or web listings: the Colorado State dog studies, and the OST-HER2 vaccine results.
+- **Trial classification by one reader.** The trial counts in engine cycles 4 and 7 rest on one reading of each registry record. One error was found and corrected on November 25, 2026 (see the cycle 4 change log).
+- **Unplanned observations.** Some engine reports describe things that were not in the plan (MCL1 in cycle 7, the microsatellite check in cycle 9). They are labelled as such and should not be read as results.
 - **Not independent people.** All internal checks were run by AI models, not by independent people. Your review is the first independent check.
 
 ## How to report findings

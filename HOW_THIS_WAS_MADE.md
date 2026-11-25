@@ -64,7 +64,7 @@ The lesson built into this project is that every AI-generated claim needs checki
 
 ## Re-running the analyses
 
-A frozen version of everything described here is tagged `v1.0` in git. [DATA_MANIFEST.md](DATA_MANIFEST.md) lists every data file with its checksum and retrieval date, and `requirements.txt` pins the software versions.
+A frozen version of everything described here is tagged `v1.1` in git (November 25, 2026); `v1.0` (November 23) is the original review without the research engine. [DATA_MANIFEST.md](DATA_MANIFEST.md) lists every data file with its checksum and retrieval date, and `requirements.txt` pins the software versions.
 
 Most analyses can be rebuilt from public data with the scripts in `tools/`. A few counts (registry spot checks, some PubMed searches, and the new-evidence scan) were made with one-off database queries described in the report concerned.
 

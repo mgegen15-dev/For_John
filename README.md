@@ -15,7 +15,7 @@ Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.
 - **Evidence explorer:** https://mgegen15-dev.github.io/For_John/explorer.html: type a gene, drug or target to see its papers, paper-mill risk flag, trials, tumour expression, copy-number changes, approved drugs and the reports that discuss it (built by `tools/build_explorer_data.py`).
 - **Start here:** [One-page summary](SUMMARY.md) · [How this was made](HOW_THIS_WAS_MADE.md)
 - **Predictions:** [Dated, testable predictions](PREDICTIONS.md), so anyone can check our hit rate as results come in
-- **For auditors:** [Auditor's guide](AUDIT_GUIDE.md) · [Data manifest](DATA_MANIFEST.md) · frozen version: git tag `v1.0`
+- **For auditors:** [Auditor's guide](AUDIT_GUIDE.md) · [Data manifest](DATA_MANIFEST.md) · frozen version: git tag `v1.1`
 - [The best leads, and who could test them](reports/Ranked%20leads%20and%20research%20partners.md): fourteen leads, scored, each matched to the institutions best placed to test it.
 
 - [Osteosarcoma research landscape and gaps](reports/Osteosarcoma%20research%20landscape%20and%20gaps.md): the state of the field, lessons from neuroblastoma, and twelve candidate gaps with where each stands now.
