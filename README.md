@@ -102,3 +102,4 @@ If you use this work, please credit it as:
 - **Reports, briefs, research notes and data:** [CC BY 4.0](LICENSE-CONTENT). Reuse freely with credit.
 - **Code in `tools/`:** [MIT](LICENSE).
 - Data drawn from PubMed, ClinicalTrials.gov, NIH RePORTER and other public sources remains subject to their own terms.
+- [Research brief: new targeted-drug trials that teenagers with osteosarcoma cannot join](briefs/Brief%20-%20trial%20access%20for%20teenagers%20with%20osteosarcoma.md): one page for advocacy groups, from engine cycles 3, 4 and 7.
