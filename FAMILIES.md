@@ -2,10 +2,6 @@
 
 *For parents, patients and anyone supporting someone with osteosarcoma. This page was written by a family member working with AI tools, not by a doctor, and has not yet been reviewed by one. It does not give medical advice. Every decision about care belongs with your care team. November 2026.*
 
-## What this project is
-
-I'm Michael. Osteosarcoma took my little brother, John, in 2025, when he was 18. This project reads the published research and public trial records and tests new ideas in the open, for researchers to check. It is not a clinic and it does not recommend treatments. This page only suggests questions you may want to ask, and where to look for trials.
-
 ## Questions you may want to ask your care team
 
 - Has the tumour had a gene test (sometimes called a gene panel, sequencing or molecular profiling)? Can we have a copy of the report, and can you walk us through it?
