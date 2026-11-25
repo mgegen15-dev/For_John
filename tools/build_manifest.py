@@ -41,6 +41,7 @@ RAW = {
     "data/engine/cycle04/raw": "ClinicalTrials.gov records (engine cycle 4), via tools/engine_cycle04_mtap_trials.py fetch; retrieved 2026-11-24; not in git because records include trial staff contact details",
     "data/engine/cycle07/raw": "cBioPortal amplification calls and ClinicalTrials.gov records (engine cycle 7), via tools/engine_cycle07_ccne1.py fetch; retrieved 2026-11-24",
     "data/engine/cycle09/raw": "cBioPortal mutation calls (engine cycle 9), via tools/engine_cycle09_suppressor_scan.py fetch; retrieved 2026-11-24",
+    "data/engine/prism/raw": "PRISM Repurposing 20Q2, from Figshare article 20564034 (engine cycle 10), via tools/engine_cycle10_prism.py fetch; retrieved 2026-11-25",
     "data/engine/depmap/raw": "DepMap 24Q4 Public and DEMETER2, from Figshare (engine cycles 5, 6, 8, 9), via tools/engine_cycle05_06_depmap.py fetch; retrieved 2026-11-24",
 }
 

@@ -1,0 +1,14 @@
+kind,drug,gene_change,expected,batch,lineage_adjusted,n,n_altered,d,lo,hi,p,raw_difference,verdict,underpowered
+check A,idasanutlin,TP53,resistant,MTS010,True,497,301.0,1.499,1.3468,1.6512,0.0,0.2272,,
+check A,amg-232,TP53,resistant,HTS002,True,438,306.0,1.1867,0.9886,1.3848,0.0,0.2652,,
+check A,nutlin-3,TP53,resistant,HTS002,True,440,306.0,1.1171,0.9178,1.3164,0.0,0.2615,,
+check A,cgm097,TP53,resistant,HTS002,True,425,292.0,1.0796,0.873,1.2862,0.0,0.3467,,
+check B,palbociclib,RB1,resistant,MTS010,True,652,50.0,0.9741,0.686,1.2622,0.0,0.0986,,
+check B,ribociclib,RB1,resistant,MTS010,True,576,32.0,0.7764,0.406,1.1468,0.0,0.0636,,
+check B,abemaciclib,RB1,resistant,MTS010,True,661,52.0,0.8094,0.5216,1.0971,0.0,0.0841,,
+T1,adavosertib,CCNE1,sensitive,MTS010,True,631,16.0,-0.2136,-0.7261,0.2989,0.4134,-0.0171,Inconclusive,False
+T2,epz015666,MTAP,sensitive,primary BRD-K70446295-001-01-7::2.50002088962::MTS007,True,473,87.0,-0.0504,-0.2944,0.1937,0.6852,-0.0175,Inconclusive,False
+T1 consistency,adavosertib,CCNE1,sensitive,HTS002,True,461,10.0,-0.3941,-1.043,0.2547,0.2331,-0.0339,,
+T1 consistency,adavosertib,CCNE1,sensitive,primary BRD-K54256913-001-08-7::2.5::HTS,True,554,16.0,0.0203,-0.4915,0.5321,0.938,0.0262,,
+T1 consistency,adavosertib,CCNE1_rna,sensitive (per log2 unit of RNA),MTS010,True,627,,0.03,-0.0559,0.116,0.493,0.0024,,
+T1 consistency,adavosertib,CCNE1,sensitive,MTS010,False,631,16.0,-0.2309,-0.7282,0.2665,0.3624,-0.0185,,

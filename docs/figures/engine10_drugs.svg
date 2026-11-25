@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 376" width="860" height="376" font-family="system-ui, sans-serif" font-size="13" role="img" aria-label="Lineage-adjusted difference in drug response, lines with the gene change against lines without">
+<rect width="860" height="376" fill="#ffffff"/>
+<text x="16" y="24" font-weight="600" fill="#1d2430">Drug response, lines with the gene change minus lines without (standard deviations)</text>
+<line x1="330.0" y1="38" x2="330.0" y2="326" stroke="#e2e5ea"/>
+<text x="330.0" y="342" text-anchor="middle" fill="#525b6b" font-size="12">-1</text>
+<line x1="411.7" y1="38" x2="411.7" y2="326" stroke="#e2e5ea"/>
+<text x="411.7" y="342" text-anchor="middle" fill="#525b6b" font-size="12">-0.5</text>
+<line x1="493.3" y1="38" x2="493.3" y2="326" stroke="#525b6b"/>
+<text x="493.3" y="342" text-anchor="middle" fill="#525b6b" font-size="12">0</text>
+<line x1="575.0" y1="38" x2="575.0" y2="326" stroke="#e2e5ea"/>
+<text x="575.0" y="342" text-anchor="middle" fill="#525b6b" font-size="12">0.5</text>
+<line x1="656.7" y1="38" x2="656.7" y2="326" stroke="#e2e5ea"/>
+<text x="656.7" y="342" text-anchor="middle" fill="#525b6b" font-size="12">1</text>
+<line x1="738.3" y1="38" x2="738.3" y2="326" stroke="#e2e5ea"/>
+<text x="738.3" y="342" text-anchor="middle" fill="#525b6b" font-size="12">1.5</text>
+<line x1="820.0" y1="38" x2="820.0" y2="326" stroke="#e2e5ea"/>
+<text x="820.0" y="342" text-anchor="middle" fill="#525b6b" font-size="12">2</text>
+<text x="16" y="65.0" fill="#1d2430">Check A: Idasanutlin, TP53 altered</text>
+<line x1="713.3" y1="61.0" x2="763.0" y2="61.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="738.2" cy="61.0" r="5" fill="#6a7384"/>
+<text x="16" y="95.0" fill="#1d2430">Check A: AMG-232, TP53 altered</text>
+<line x1="654.8" y1="91.0" x2="719.5" y2="91.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="687.2" cy="91.0" r="5" fill="#6a7384"/>
+<text x="16" y="125.0" fill="#1d2430">Check A: Nutlin-3, TP53 altered</text>
+<line x1="643.2" y1="121.0" x2="708.4" y2="121.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="675.8" cy="121.0" r="5" fill="#6a7384"/>
+<text x="16" y="155.0" fill="#1d2430">Check A: CGM097, TP53 altered</text>
+<line x1="635.9" y1="151.0" x2="703.4" y2="151.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="669.7" cy="151.0" r="5" fill="#6a7384"/>
+<text x="16" y="185.0" fill="#1d2430">Check B: Palbociclib, RB1 lost</text>
+<line x1="605.4" y1="181.0" x2="699.5" y2="181.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="652.4" cy="181.0" r="5" fill="#6a7384"/>
+<text x="16" y="215.0" fill="#1d2430">Check B: Ribociclib, RB1 lost</text>
+<line x1="559.6" y1="211.0" x2="680.6" y2="211.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="620.1" cy="211.0" r="5" fill="#6a7384"/>
+<text x="16" y="245.0" fill="#1d2430">Check B: Abemaciclib, RB1 lost</text>
+<line x1="578.5" y1="241.0" x2="672.5" y2="241.0" stroke="#6a7384" stroke-width="2"/>
+<circle cx="625.5" cy="241.0" r="5" fill="#6a7384"/>
+<text x="16" y="275.0" fill="#1d2430">T1: Adavosertib, CCNE1 amplified</text>
+<line x1="374.7" y1="271.0" x2="542.2" y2="271.0" stroke="#1c5cab" stroke-width="2"/>
+<circle cx="458.4" cy="271.0" r="5" fill="#1c5cab"/>
+<text x="16" y="305.0" fill="#1d2430">T2: EPZ015666, MTAP lost</text>
+<line x1="445.2" y1="301.0" x2="525.0" y2="301.0" stroke="#9a6b00" stroke-width="2"/>
+<circle cx="485.1" cy="301.0" r="5" fill="#9a6b00"/>
+<text x="575" y="364" text-anchor="middle" fill="#525b6b" font-size="12">Left of zero: more sensitive. Right of zero: more resistant.</text>
+</svg>

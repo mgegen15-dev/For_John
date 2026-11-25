@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#predictions">Predictions</a></li><li class="l1"><a href="#outcomes">Outcomes</a></li><li class="l1"><a href="#scorecard">Scorecard</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 24, 2026 · 10 min read</p>
+    <p class="crumb">Project document · Updated November 25, 2026 · 12 min read</p>
     <h1>Predictions Log</h1>
     <p><em>Started November 22, 2026. This is a public, dated record of what For John predicts, written before the answers are known. When trials, studies or reviewers report, each prediction will be marked right, wrong or unresolved. Entries are never edited after the fact; corrections and outcomes are added below each one with a date.</em></p>
     <p><strong>Why keep this.</strong> Anyone can explain results after they arrive. Committing to predictions in advance is the honest test of whether connecting the published evidence, as this project does, finds real signals. If our hit rate is poor, that is worth knowing too.</p>
@@ -287,6 +287,38 @@
     <td class="num">20%</td>
     <td>Ambiguous, not scored (see Outcomes)</td>
     </tr>
+    <tr>
+    <td>P29</td>
+    <td>In the PRISM drug screen, cell lines with altered TP53 are more resistant to MDM2 inhibitors (at least three of four with the interval excluding zero)</td>
+    <td>Fewer than three do</td>
+    <td>DepMap and PRISM public screens; engine cycle 10, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-10-drug-screen/PREREGISTRATION.md"><code>research_notes/Engine/cycle-10-drug-screen/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">90%</td>
+    <td><strong>Right</strong> (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P30</td>
+    <td>In the same screen, RB1-lost lines are more resistant to CDK4/6 inhibitors (at least two of three with the interval excluding zero)</td>
+    <td>Fewer than two do</td>
+    <td>Same as P29</td>
+    <td class="num">50%</td>
+    <td><strong>Right</strong> (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P31</td>
+    <td>CCNE1-amplified lines are more sensitive to the WEE1 inhibitor adavosertib, by at least 0.2 standard deviations with the interval below zero</td>
+    <td>The interval lies wholly above −0.2 standard deviations</td>
+    <td>Same as P29</td>
+    <td class="num">35%</td>
+    <td>Unresolved (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P32</td>
+    <td>MTAP-lost lines are more sensitive to the early PRMT5 inhibitor EPZ015666, by the same rule</td>
+    <td>The interval lies wholly above −0.2 standard deviations</td>
+    <td>Same as P29</td>
+    <td class="num">10%</td>
+    <td>Unresolved (see Outcomes)</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="outcomes">Outcomes</h2>
@@ -306,6 +338,10 @@
     <li><strong>P26, 2026-11-24: right.</strong> TP53-altered lines needed MDM2 less (+0.65, 95% CI +0.61 to +0.70); RB1-lost lines needed CDK4, CDK6 and CCND1 less (+0.45, +0.36, +0.81, all intervals excluding zero). Source: <a href="reports/engine-cycle-9-weaknesses-that-go-with-the-tumour-suppressor-genes-osteosarcoma-loses.html"><code>reports/Engine cycle 9 - weaknesses that go with the tumour-suppressor genes osteosarcoma loses.md</code></a> (our calculation).</li>
     <li><strong>P27, 2026-11-24: right.</strong> RB1 loss with SKP2, E2F3 and CDK2 all replicated in the knockdown screen. Same source.</li>
     <li><strong>P28, 2026-11-24: ambiguous, not scored.</strong> The only unlisted replicated pair with a drug in the project's table is RB1 loss with TP53, which is an artefact of how the screen scores TP53 (knocking out working TP53 speeds growth), with an MDM2 inhibitor listed against TP53. Same source.</li>
+    <li><strong>P29, 2026-11-25: right.</strong> In the PRISM drug screen, lines with altered TP53 were more resistant to all four MDM2 inhibitors (lineage-adjusted differences +1.08 to +1.50 standard deviations, every interval excluding zero). Source: <a href="reports/engine-cycle-10-do-the-gene-change-weaknesses-hold-up-with-real-drugs.html"><code>reports/Engine cycle 10 - do the gene-change weaknesses hold up with real drugs.md</code></a> (our calculation).</li>
+    <li><strong>P30, 2026-11-25: right.</strong> RB1-lost lines were more resistant to all three CDK4/6 inhibitors (+0.78 to +0.97, every interval excluding zero). Given a 50% chance in advance, because a five-day screen can miss drugs that slow cells rather than kill them. Same source.</li>
+    <li><strong>P31, 2026-11-25: unresolved by its own rule.</strong> CCNE1-amplified lines against the rest, adavosertib: −0.21 standard deviations (95% CI −0.73 to +0.30), 16 amplified lines. Same source.</li>
+    <li><strong>P32, 2026-11-25: unresolved by its own rule.</strong> MTAP-lost lines against the rest, EPZ015666 (one dose): −0.05 (−0.29 to +0.19), 87 MTAP-lost lines. Close to no effect, but the interval reaches past −0.2. Same source.</li>
     </ul>
     <h2 id="scorecard">Scorecard</h2>
     <div class="tablewrap"><table>
@@ -319,14 +355,14 @@
     </thead>
     <tbody>
     <tr>
-    <td class="num">5</td>
-    <td class="num">5</td>
+    <td class="num">7</td>
+    <td class="num">7</td>
     <td class="num">0</td>
-    <td class="num">23</td>
+    <td class="num">25</td>
     </tr>
     </tbody>
     </table></div>
-    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day.</p>
+    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day. 2026-11-25: P29 to P32 added for engine cycle 10, before its drug-response data were opened; outcomes recorded the same day.</p>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
   </main>

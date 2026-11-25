@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#who">Who</a></li><li class="l1"><a href="#from-what">From What</a></li><li class="l1"><a href="#how-claims-were-checked">How Claims Were Checked</a></li><li class="l1"><a href="#what-the-ai-did-well-and-where-it-went-wrong">What the AI Did Well, and Where It Went Wrong</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#re-running-the-analyses">Re-Running the Analyses</a></li><li class="l1"><a href="#contact-and-corrections">Contact and Corrections</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 24, 2026 · 6 min read</p>
+    <p class="crumb">Project document · Updated November 25, 2026 · 7 min read</p>
     <h1>How This Was Made</h1>
     <p><em>For John is an open, independent project. This page explains who built it, how, from what, how claims were checked, and what its limits are, so that anyone can judge how much to trust it.</em></p>
     <h2 id="who">Who</h2>
@@ -319,6 +319,12 @@
     <td>engine cycle 9: <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/cycle09"><code>data/engine/cycle09/</code></a> loss calls, checks, hits, patient frequencies and one figure</td>
     <td>DepMap Figshare (three files, about 150 MB) and cBioPortal; needs the downloads of cycles 3, 5 and 8</td>
     <td>about a minute</td>
+    </tr>
+    <tr>
+    <td><a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle10_prism.py"><code>tools/engine_cycle10_prism.py</code></a> (<code>fetch</code>, then no argument)</td>
+    <td>engine cycle 10: <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/cycle10"><code>data/engine/cycle10/</code></a> results, osteosarcoma line table and one figure</td>
+    <td>PRISM Repurposing 20Q2 on Figshare (six files, about 340 MB); needs the DepMap downloads of cycles 5 and 9</td>
+    <td>a few minutes to download, about a minute to run</td>
     </tr>
     <tr>
     <td><a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_site.py"><code>tools/build_site.py</code></a></td>

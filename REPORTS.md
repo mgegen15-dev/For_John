@@ -44,6 +44,7 @@ Each was written down with its rules before the data were opened.
 - [Cycle 7: CCNE1 at relapse and the trials open to it](reports/engine-cycle-7-ccne1-amplification-at-relapse-and-the-trials-open-to-it.html): about 1 in 10; one trial from age 12.
 - [Cycle 8: A scan for drug weaknesses that go with osteosarcoma's gene changes](reports/engine-cycle-8-a-scan-for-drug-weaknesses-that-go-with-osteosarcoma-s-gene-changes.html): the known pairs, no hidden one.
 - [Cycle 9: Weaknesses that go with the tumour-suppressor genes osteosarcoma loses](reports/engine-cycle-9-weaknesses-that-go-with-the-tumour-suppressor-genes-osteosarcoma-loses.html): known RB1 pairs; public data miss osteosarcoma's main routes.
+- [Cycle 10: Do the gene-change weaknesses hold up with real drugs?](reports/engine-cycle-10-do-the-gene-change-weaknesses-hold-up-with-real-drugs.html) The known drug links show up; the CCNE1 and MTAP tests are inconclusive.
 
 ## The literature and its funding
 
