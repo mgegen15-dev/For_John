@@ -208,6 +208,6 @@ These are waiting on a decision or on something only the family can supply. The 
 | The headline sentence | Settled November 24, 2026: "Turning decades of osteosarcoma research into new ideas, tested and published." | — |
 | A short web address (for example forjohn.org) | Not bought | The site stays at mgegen15-dev.github.io/For_John. |
 | An outside review of the design | Not run | An AI usability test (TheySaid) is connected and can be run on the live site once approved. |
-| Dark-mode check of every report page | Home, one report and the explorer checked | The rest share the same stylesheet. |
+| Dark-mode check of every report page | Done November 25, 2026: all 37 pages at three widths, light and dark, no overflow or errors | — |
 | A contact email on the site | Waiting for a decision on which address | Contact is a GitHub issue only. An address at the new domain would avoid publishing a personal one. |
 | Tighter homepage introduction | Done November 24, 2026 | — |

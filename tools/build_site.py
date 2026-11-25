@@ -48,7 +48,9 @@ SOURCES = (
      ("AUDIT_GUIDE.md", "audit-guide.html"),
      ("PREDICTIONS.md", "predictions.html"),
      ("RESEARCH_QUEUE.md", "research-queue.html"),
-     ("DATA_MANIFEST.md", "data-manifest.html")]
+     ("DATA_MANIFEST.md", "data-manifest.html"),
+     ("FAMILIES.md", "families.html"),
+     ("REPORTS.md", "reports.html")]
 )
 
 
@@ -129,10 +131,10 @@ TEMPLATE = """<!doctype html>
   <div class="bar-in">
     <a class="wordmark" href="{up}index.html">For John</a>
     <nav aria-label="Site">
+      <a href="{up}families.html">For Families</a>
       <a href="{up}index.html#findings">Findings</a>
-      <a href="{up}index.html#reports">Reports</a>
-      <a href="{up}research-queue.html">Research Queue</a>
-      <a href="{up}explorer.html">Evidence Explorer</a>
+      <a href="{up}research-queue.html">Research Engine</a>
+      <a href="{up}reports.html">All Reports</a>
       <a href="{up}how-this-was-made.html">Methods</a>
     </nav>
     <a class="btn btn-gold" href="{up}audit-guide.html">Review This Work</a>

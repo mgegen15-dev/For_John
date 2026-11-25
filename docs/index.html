@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="For John">
 <meta property="og:title" content="For John · Open osteosarcoma research">
-<meta property="og:description" content="An open, independent effort to tie together osteosarcoma research and find what has been overlooked. 33,242 papers, 758 trials, 14 ranked leads. In memory of John.">
+<meta property="og:description" content="An open, independent effort to tie together osteosarcoma research and find what has been overlooked. 33,242 papers, 758 trials, 14 ranked leads and nine pre-registered tests. In memory of John.">
 <meta property="og:url" content="https://mgegen15-dev.github.io/For_John/">
 <meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
 <meta property="og:image:width" content="1200">
@@ -28,22 +28,16 @@
 <link rel="stylesheet" href="site.css">
 <style>
 /* Home page only. Shared tokens, top bar, buttons and footer are in site.css. */
-section { padding: 96px 0; }
+section { padding: 80px 0; }
 section.paper { background: var(--paper); }
 section.pale { background: var(--band); }
-h2 { font-size: 36px; line-height: 44px; }
-.sec-intro { max-width: 580px; margin: 16px 0 0; color: var(--ink-2); }
-.more { margin: 32px 0 0; font-size: 16px; }
-.more a { margin-right: 24px; font-weight: 500; }
+h2 { font-size: 34px; line-height: 42px; }
+.sec-intro { max-width: 600px; margin: 12px 0 0; color: var(--ink-2); }
+.more { margin: 28px 0 0; font-size: 16px; font-weight: 500; }
 
 /* ---- first screen ---- */
 .navyband { background: var(--navy); color: var(--on-navy); }
-.hero { padding: 96px 0; }
-.about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: center; }
-.about-grid figure { margin: 0; max-width: 440px; }
-.about-grid img { display: block; width: 100%; height: auto; border-radius: 4px; }
-.about-grid figcaption { font-size: 14.5px; line-height: 22px; color: var(--ink-2); margin-top: 12px; }
-.about-grid .sec-intro { font-size: 20px; line-height: 32px; color: var(--ink); }
+.hero { padding: 88px 0; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; align-items: center; }
 .hero h1 { font-size: 52px; line-height: 60px; }
 .dedication { font-family: var(--serif); font-weight: 300; font-size: 22px; line-height: 30px; color: var(--gold); margin: 20px 0 0; }
@@ -54,91 +48,43 @@ h2 { font-size: 36px; line-height: 44px; }
 .hero-figure { margin: 0; }
 .hero-figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
 .hero-figure figcaption { font-size: 14.5px; line-height: 22px; color: var(--on-navy-2); margin-top: 12px; }
-.panel { background: var(--paper); color: var(--ink); border-radius: 4px; padding: 24px; }
 
-/* ---- plain figures ---- */
-.figures { padding: 64px 0; }
-.figs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin: 0; }
-.figs div { border-top: 1px solid var(--line); padding-top: 16px; }
-.figs dd { margin: 0; font-family: var(--serif); font-weight: 300; font-size: 56px; line-height: 60px; letter-spacing: -0.02em; font-variant-numeric: lining-nums; }
-.figs dt { margin-top: 8px; color: var(--ink-2); font-size: 16px; line-height: 24px; }
+/* ---- three ways in ---- */
+.paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 48px; margin-top: 36px; }
+.path { border-top: 2px solid var(--navy); padding-top: 16px; }
+.path h3 { font: 500 21px/28px var(--sans); margin: 0; }
+.path p { margin: 8px 0 12px; color: var(--ink-2); }
+.path ul { list-style: none; margin: 0; padding: 0; }
+.path li { padding: 6px 0; border-top: 1px solid var(--line); font-size: 16px; }
+.path li a { font-weight: 500; }
 
-/* ---- lists: a metadata column beside the content ---- */
-.rows { margin-top: 48px; border-top: 1px solid var(--line); }
-.finding { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 10fr); gap: 8px 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
-.tag { margin: 6px 0 0; font-family: var(--mono); font-size: 13px; line-height: 18px; color: var(--ink-2); }
-.confirmed .tag { color: var(--ink-confirmed); } .lead .tag { color: var(--ink-lead); } .hypothesis .tag { color: var(--ink-hypothesis); }
-h3 { font: 500 22px/30px var(--sans); margin: 0; letter-spacing: -0.005em; }
-.finding p { margin: 8px 0 0; max-width: 560px; }
-.finding .src { font-size: 15px; line-height: 22px; }
-.key { display: flex; flex-wrap: wrap; gap: 8px 32px; list-style: none; margin: 24px 0 0; padding: 0; font-size: 15px; line-height: 22px; color: var(--ink-2); }
-.key b { font-family: var(--mono); font-weight: 500; font-size: 13px; }
-.t-confirmed { color: var(--ink-confirmed); } .t-lead { color: var(--ink-lead); } .t-hypothesis { color: var(--ink-hypothesis); }
+/* ---- compact lists ---- */
+.list { list-style: none; margin: 32px 0 0; padding: 0; border-top: 1px solid var(--line); max-width: 920px; }
+.list li { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 4px 24px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.list .tag { font-family: var(--mono); font-size: 12.5px; line-height: 24px; color: var(--ink-2); }
+.list .t-confirmed { color: var(--ink-confirmed); } .list .t-lead { color: var(--ink-lead); } .list .t-hypothesis { color: var(--ink-hypothesis); }
+.list b { font-weight: 600; }
+.list p { margin: 0; }
+.list a { white-space: nowrap; }
 
-/* ---- chart ---- */
-.chart-wrap { position: relative; }
-.chart-title { font-weight: 500; font-size: 17px; line-height: 24px; margin: 0 0 4px; }
-.chart-sub { color: var(--ink-2); font-size: 14.5px; line-height: 22px; margin: 0 0 12px; }
-svg text { font-family: var(--sans); }
-.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13.5px; line-height: 20px; color: var(--ink-2); margin: 0 0 8px; }
-.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
-.legend i.bench { width: 2px; height: 14px; border-radius: 0; background: var(--bench); margin-right: 8px; }
-.tip { position: absolute; pointer-events: none; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; font-size: 14px; line-height: 20px; opacity: 0; transition: opacity .1s; max-width: 260px; }
-.tip strong { display: block; font-size: 16px; }
-details { margin-top: 12px; font-size: 15px; }
-summary { cursor: pointer; color: var(--link); }
-table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 22px; margin-top: 8px; }
-th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
-th { color: var(--ink-2); font-weight: 500; }
-td.num { text-align: right; font-variant-numeric: tabular-nums; }
-.pills-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: start; }
-#chartCaption { color: var(--ink-2); margin: 16px 0 0; }
-.hero .panel #chartCaption { display: none; }
-
-/* ---- asks ---- */
-ol.asks { list-style: none; counter-reset: ask; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 64px; border-top: 1px solid var(--line); }
-ol.asks li { counter-increment: ask; position: relative; margin: 0; padding: 24px 0 24px 64px; border-bottom: 1px solid var(--line); }
-ol.asks li::before { content: counter(ask); position: absolute; left: 0; top: 16px; font-family: var(--serif); font-weight: 300; font-size: 36px; line-height: 44px; color: var(--ink-2); }
-ol.asks strong { font-weight: 500; }
-
-/* ---- methods and report index ---- */
-.linkrow { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 0; margin: 24px 0 0; font-weight: 500; }
-#reportList { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 64px; margin-top: 48px; }
-.rep-group > h3 { font: 400 13px/18px var(--mono); color: var(--ink-2); padding-bottom: 12px; border-bottom: 1px solid var(--line); }
-.rep-group ul { list-style: none; margin: 0; padding: 0; }
-.rep-group li { padding: 12px 0; border-bottom: 1px solid var(--line); }
-.rep-group li a { font-weight: 500; text-decoration: none; }
-.rep-group li a:hover { text-decoration: underline; }
-.rep-group li span { display: block; color: var(--ink-2); font-size: 14.5px; line-height: 22px; margin-top: 4px; }
-
-/* ---- left-margin rail on very wide screens ---- */
-.rail { display: none; }
-@media (min-width: 1680px) {
-  .rail { display: block; position: fixed; left: 32px; top: 50%; transform: translateY(-50%); width: 160px; z-index: 5; opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
-  .rail.show { opacity: 1; visibility: visible; }
-  .rail ol { list-style: none; margin: 0; padding: 0; }
-  .rail a { display: block; padding: 8px 0 8px 12px; border-left: 2px solid var(--line); font-size: 14px; line-height: 20px; color: var(--muted); text-decoration: none; }
-  .rail a:hover { color: var(--ink); }
-  .rail a.active { color: var(--ink); font-weight: 500; border-left-color: var(--gold); }
-}
+/* ---- about ---- */
+.about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: center; }
+.about-grid figure { margin: 0; max-width: 420px; }
+.about-grid img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.about-grid figcaption { font-size: 14.5px; line-height: 22px; color: var(--ink-2); margin-top: 12px; }
+.about-grid .sec-intro { font-size: 20px; line-height: 32px; color: var(--ink); }
 
 @media (max-width: 960px) {
-  .hero-grid, .pills-grid, .about-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
-  .figs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  ol.asks, #reportList { grid-template-columns: 1fr; }
+  .hero-grid, .about-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .paths { grid-template-columns: minmax(0, 1fr); gap: 32px; }
 }
 @media (max-width: 760px) {
   section, .hero { padding: 56px 0; }
-  .figures { padding: 48px 0; }
   .hero h1 { font-size: 34px; line-height: 40px; }
   h2 { font-size: 27px; line-height: 34px; }
   .dedication { font-size: 19px; line-height: 27px; }
   .lede { font-size: 18px; line-height: 28px; }
-  .figs dd { font-size: 40px; line-height: 44px; }
-  .finding { grid-template-columns: 1fr; }
-  .tag { margin: 0; }
-  ol.asks li { padding-left: 48px; }
-  .panel { padding: 16px; }
+  .list li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
 </style>
 </head>
@@ -149,27 +95,15 @@ ol.asks strong { font-weight: 500; }
   <div class="bar-in">
     <a class="wordmark" href="./">For John</a>
     <nav aria-label="Site">
+      <a href="families.html">For Families</a>
       <a href="#findings">Findings</a>
-      <a href="#reports">Reports</a>
-      <a href="research-queue.html">Research Queue</a>
-      <a href="explorer.html">Evidence Explorer</a>
+      <a href="research-queue.html">Research Engine</a>
+      <a href="reports.html">All Reports</a>
       <a href="how-this-was-made.html">Methods</a>
     </nav>
     <a class="btn btn-gold" href="audit-guide.html">Review This Work</a>
   </div>
 </header>
-
-<nav class="rail" id="rail" aria-label="On This Page">
-  <ol>
-    <li><a href="#findings">What We Found</a></li>
-    <li><a href="#pills">Kinase-Inhibitor Pills</a></li>
-    <li><a href="#ask">What We're Asking</a></li>
-    <li><a href="#engine">Research Engine</a></li>
-    <li><a href="#how">How This Was Made</a></li>
-    <li><a href="#john">About John</a></li>
-    <li><a href="#reports">The Reports</a></li>
-  </ol>
-</nav>
 
 <div class="navyband hero">
  <div class="wrap hero-grid">
@@ -179,123 +113,85 @@ ol.asks strong { font-weight: 500; }
     <p class="dedication">In memory of my little brother and best friend, John.</p>
     <div class="hero-actions">
       <a class="btn btn-gold" href="summary.html">Read the Summary</a>
-      <a class="btn btn-line" href="reports/ranked-leads-and-research-partners.html">See the Ranked Leads</a>
+      <a class="btn btn-line" href="families.html">For Families</a>
     </div>
-    <p class="status mono"><span class="nw">Version 1.0</span> · <span class="nw">Updated November 24, 2026</span> · <span class="nw">Open data and code</span> · <span class="nw">Not yet peer-reviewed</span> · <span class="nw">Not medical advice</span></p>
+    <p class="status mono"><span class="nw">Updated November 25, 2026</span> · <span class="nw">Open data and code</span> · <span class="nw">Not yet peer-reviewed</span> · <span class="nw">Not medical advice</span></p>
   </div>
-  <!-- First-screen image, set by HERO_PHOTO in the script below. -->
-  <figure class="hero-figure" id="heroFigure"></figure>
+  <figure class="hero-figure">
+    <img src="john-and-michael.jpg" alt="John on Michael's shoulders, both with fists raised, outside a cabin in the woods" width="680" height="850">
+    <figcaption>John and me.</figcaption>
+  </figure>
  </div>
 </div>
 
 <main id="main">
 
-<section class="figures" aria-label="The project in numbers">
+<section id="start" class="paper">
  <div class="wrap">
-  <dl class="figs">
-    <div><dd>33,242</dd><dt>papers read</dt></div>
-    <div><dd>758</dd><dt>clinical trials</dt></div>
-    <div><dd>14</dd><dt>ranked leads</dt></div>
-    <div><dd>25</dd><dt>reports, every claim sourced</dt></div>
-  </dl>
- </div>
-</section>
-
-<section id="findings" class="paper">
- <div class="wrap">
-  <h2>What We Found</h2>
-  <p class="sec-intro">Seven findings, each labelled for how solid it is. Not medical advice: these are leads for researchers to check, not conclusions.</p>
-  <ul class="key">
-    <li><b class="t-confirmed">Confirmed</b> checked against the original source</li>
-    <li><b class="t-lead">Lead</b> supported, but needs a scientist to test it</li>
-    <li><b class="t-hypothesis">Hypothesis</b> a reasoned idea, not yet tested</li>
-  </ul>
-  <div class="rows" id="findingsList"><!-- filled from findings data below --></div>
-  <p class="more"><a href="summary.html">Read the One-Page Summary</a><a href="reports/ranked-leads-and-research-partners.html">See All Fourteen Ranked Leads</a></p>
- </div>
-</section>
-
-<section id="engine">
- <div class="wrap">
-  <h2>The Research Engine</h2>
-  <p class="sec-intro">Beyond gathering what is known, the project now tests new ideas. Each one is written down with the result that would count against it, committed before the data are opened, then tested on data it was not built from. Every result is published, including the ones that fail. Nine cycles so far; three of the most useful are below.</p>
-  <div class="rows">
-    <article class="finding">
-      <p class="tag mono">Cycle 7 · Nov 24, 2026 · Trials counted</p>
-      <div>
-        <h3>CCNE1 Amplification: How Common, and Which Trials?</h3>
-        <p>About one in ten relapsed osteosarcomas carries extra copies of the gene CCNE1. Nine recruiting trials would take such a patient on paper, and one, of a drug called lunresertib, accepts patients from age 12 in five countries. Not medical advice.</p>
-        <p class="src"><a href="reports/engine-cycle-7-ccne1-amplification-at-relapse-and-the-trials-open-to-it.html">Read the Result</a></p>
-      </div>
-    </article>
-    <article class="finding">
-      <p class="tag mono">Cycle 4 · Nov 24, 2026 · Trials counted</p>
-      <div>
-        <h3>Which MTAP-Selected Trials Could an Osteosarcoma Patient Join?</h3>
-        <p>Twenty-five recruiting trials would take an adult whose osteosarcoma has lost the gene MTAP, and one names bone sarcoma. Only one accepts patients under 18, and it is in China. Not medical advice.</p>
-        <p class="src"><a href="reports/engine-cycle-4-mtap-selected-trials-open-to-osteosarcoma.html">Read the Result</a></p>
-      </div>
-    </article>
-    <article class="finding">
-      <p class="tag mono">Cycle 8 · Nov 24, 2026 · Discovery scan</p>
-      <div>
-        <h3>A Scan for Drug Weaknesses That Go With Osteosarcoma’s Gene Changes</h3>
-        <p>About 1.2 million comparisons across 1,178 cancer cell lines. The scan rediscovered seven established pairs, which shows it works, and found no hidden one. It points to one recently published weakness with a drug in development, relevant to about 4% of osteosarcomas.</p>
-        <p class="src"><a href="reports/engine-cycle-8-a-scan-for-drug-weaknesses-that-go-with-osteosarcoma-s-gene-changes.html">Read the Result</a></p>
-      </div>
-    </article>
-  </div>
-  <p class="more"><a href="research-queue.html">See All Nine Results and the Research Queue</a></p>
- </div>
-</section>
-
-<section id="pills">
- <div class="wrap pills-grid">
-  <div>
-    <h2>Kinase-Inhibitor Pills: Active, but Briefly</h2>
-    <p class="sec-intro">The one drug class that clearly beats older single drugs in relapse, and the open question of who it works for.</p>
-    <p id="chartCaption"></p>
-    <p class="more"><a href="reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html">Read the Full Analysis</a></p>
-  </div>
-  <div id="chartHome">
-    <div class="chart-wrap" id="chartCard">
-      <p class="chart-title">Patients free of progression about four months into treatment, relapsed osteosarcoma</p>
-      <p class="chart-sub">Pooled from published trials and registry results, weighted by patients. The red line is the historical benchmark of about 12%.</p>
-      <div class="legend" aria-hidden="true"><span><i style="background:var(--series-1)"></i>Includes a kinase-inhibitor pill</span><span><i style="background:var(--series-2)"></i>No kinase-inhibitor pill</span><span><i class="bench"></i>Historical benchmark</span></div>
-      <div id="chart" role="img" aria-label="Bar chart of four-month progression-free rates by drug class"></div>
-      <div class="tip" id="tip" role="status" aria-live="polite"></div>
-      <details>
-        <summary>Show as a Table</summary>
-        <table id="chartTable"><thead><tr><th>Treatment</th><th class="num">Patients</th><th class="num">4-month rate</th></tr></thead><tbody></tbody></table>
-      </details>
+  <h2>Where to Start</h2>
+  <div class="paths">
+    <div class="path">
+      <h3>Families and patients</h3>
+      <p>What the findings mean in plain words, and questions to bring to your care team.</p>
+      <ul>
+        <li><a href="families.html">For Families</a></li>
+        <li><a href="briefs/brief-trial-access-for-teenagers-with-osteosarcoma.html">Trials teenagers can and cannot join</a></li>
+      </ul>
+    </div>
+    <div class="path">
+      <h3>Researchers and clinicians</h3>
+      <p>Every claim is sourced and every test was written down before the data were opened. Tell us what is wrong.</p>
+      <ul>
+        <li><a href="reports/ranked-leads-and-research-partners.html">The 14 ranked leads</a></li>
+        <li><a href="research-queue.html">Experiments that need a lab partner</a></li>
+        <li><a href="audit-guide.html">How to review this work</a></li>
+      </ul>
+    </div>
+    <div class="path">
+      <h3>Advocates and funders</h3>
+      <p>Where a protocol change, a dataset or a small grant would move things fastest.</p>
+      <ul>
+        <li><a href="briefs/brief-trial-access-for-teenagers-with-osteosarcoma.html">One-page brief on trial access</a></li>
+        <li><a href="reports/nih-funding-for-osteosarcoma.html">Where the funding goes</a></li>
+        <li><a href="reports/osteosarcoma-pooled-control-dataset.html">A shared dataset for relapse trials</a></li>
+      </ul>
     </div>
   </div>
  </div>
 </section>
 
-<section id="ask" class="pale">
+<section id="findings">
  <div class="wrap">
-  <h2>What We're Asking</h2>
-  <p class="sec-intro">Six requests, in order of priority. Something here wrong or useful? <a href="https://github.com/mgegen15-dev/For_John/issues">Open an issue on GitHub</a>. Corrections are as valuable as confirmations.</p>
-  <ol class="asks" id="askList"></ol>
-  <p class="more"><a href="summary.html">Details of Each Ask</a></p>
- </div>
-</section>
-
-<section id="how">
- <div class="wrap">
-  <h2>How This Was Made</h2>
-  <p class="sec-intro">Built by John Gegen’s brother, leveraging frontier AI models, from 33,242 papers, 758 registered trials, NIH grant records and open tumour data. Every headline claim was audited against its original source in review passes run by AI models, and each report ends with a change log of what was corrected. No independent person has checked the work yet. That is the next step, and we are asking for it.</p>
-  <ul class="linkrow">
-    <li><a href="how-this-was-made.html">Methods and Limits</a></li>
-    <li><a href="audit-guide.html">Auditor's Guide</a></li>
-    <li><a href="predictions.html">Predictions Log</a></li>
-    <li><a href="data-manifest.html">Data Manifest</a></li>
+  <h2>What We Found</h2>
+  <p class="sec-intro">The short version. Each line links to the full report and its sources.</p>
+  <ul class="list">
+    <li><span class="tag t-confirmed">Confirmed</span><p><b>New trials leave teenagers out.</b> Of 34 targeted-drug trials an osteosarcoma patient could join on paper, two accept anyone under 18. <a href="briefs/brief-trial-access-for-teenagers-with-osteosarcoma.html">Brief</a></p></li>
+    <li><span class="tag t-confirmed">Confirmed</span><p><b>Trials fail for lack of patients.</b> Of 99 that stopped early, 44 could not recruit enough; about 7 to 9 stopped because the drug failed. <a href="reports/osteosarcoma-clinical-trials-landscape.html">Report</a></p></li>
+    <li><span class="tag t-confirmed">Confirmed</span><p><b>Kinase-inhibitor pills work, briefly.</b> In relapse they keep 40 to 50% of patients free of progression at four months, against about 14% for other single drugs. Who benefits is unknown. <a href="reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html">Report</a></p></li>
+    <li><span class="tag t-hypothesis">Hypothesis</span><p><b>Block inflammation after surgery.</b> In mice, blocking IL-1 or IL-6 reduced lung spread. Approved blockers exist, with no registered efficacy trial in osteosarcoma. <a href="reports/stopping-lung-metastasis-in-osteosarcoma.html">Report</a></p></li>
+    <li><span class="tag t-lead">Lead</span><p><b>New surface targets.</b> A B7-H3 drug conjugate beat chemotherapy in a relapse trial; LRRC15, top of our screen, now has its own trial. <a href="reports/new-surface-targets-for-osteosarcoma.html">Report</a></p></li>
+    <li><span class="tag t-confirmed">Confirmed</span><p><b>Some of the literature is unreliable.</b> Since 2010, 8.7% of microRNA-type osteosarcoma papers have been retracted, against 1.0% of other papers. <a href="reports/evidence-risk-flags-for-osteosarcoma-genes.html">Report</a></p></li>
   </ul>
+  <p class="more"><a href="summary.html">Read the One-Page Summary</a></p>
  </div>
 </section>
 
-<section id="john" class="pale">
+<section id="engine" class="pale">
+ <div class="wrap">
+  <h2>The Research Engine</h2>
+  <p class="sec-intro">New ideas, each written down with the result that would count against it before the data were opened, then tested and published whatever they showed.</p>
+  <ul class="list">
+    <li><span class="tag">Cycle 7</span><p><b>About 1 in 10 relapsed tumours carry extra CCNE1,</b> and one trial for it takes patients from age 12. <a href="reports/engine-cycle-7-ccne1-amplification-at-relapse-and-the-trials-open-to-it.html">Result</a></p></li>
+    <li><span class="tag">Cycle 4</span><p><b>25 trials target tumours missing the MTAP gene.</b> One names bone sarcoma; one takes under-18s, in China. <a href="reports/engine-cycle-4-mtap-selected-trials-open-to-osteosarcoma.html">Result</a></p></li>
+    <li><span class="tag">Cycle 3</span><p><b>About 1 in 5 relapsed tumours have lost 9p21,</b> and a biopsy from diagnosis shows it. <a href="reports/engine-cycle-3-is-9p21-deletion-more-common-at-relapse.html">Result</a></p></li>
+    <li><span class="tag">Cycles 8–9</span><p><b>Two scans of 1.3 million gene comparisons</b> found the known drug weaknesses and no hidden one. <a href="reports/engine-cycle-8-a-scan-for-drug-weaknesses-that-go-with-osteosarcoma-s-gene-changes.html">Result</a></p></li>
+    <li><span class="tag">Cycles 1, 2, 5, 6</span><p><b>Four ideas tested and not confirmed,</b> including a strong-looking relapse marker that failed in new patients. <a href="research-queue.html">All results</a></p></li>
+  </ul>
+  <p class="more"><a href="research-queue.html">See the Research Queue</a></p>
+ </div>
+</section>
+
+<section id="john">
  <div class="wrap about-grid">
   <figure>
     <img src="john.jpg" alt="John smiling in a green hooded sweatshirt and cap, on a lake at sunset" width="900" height="1125" loading="lazy">
@@ -308,248 +204,16 @@ ol.asks strong { font-weight: 500; }
  </div>
 </section>
 
-<section id="reports" class="paper">
- <div class="wrap">
-  <h2>The Reports</h2>
-  <p class="sec-intro">Every claim traces to a source, and each report ends with a log of what we got wrong and fixed.</p>
-  <div id="reportList"></div>
- </div>
-</section>
-
 </main>
 
 <footer class="site">
  <div class="wrap">
-  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>For John (2026). Open research on osteosarcoma. <a href="reports.html">All reports</a> · <a href="explorer.html">Evidence Explorer</a> · <a href="https://github.com/mgegen15-dev/For_John">Source and data</a></p>
   <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
  </div>
 </footer>
 
 <script>
-// ---------- Content (edit here) ----------
-const FINDINGS = [
-  { title: "Trials Struggle to Finish", label: "Confirmed",
-    body: "Of 99 osteosarcoma trials that stopped early, 44 stopped mainly because they couldn’t recruit enough patients. Only about 7 to 9 stopped because the treatment didn’t work.",
-    report: "reports/Osteosarcoma clinical trials landscape.md", reportName: "Trials Report" },
-  { title: "Kinase-Inhibitor Pills: Active, but Briefly", label: "Confirmed · who benefits is a Lead",
-    body: "In relapse, these pills keep roughly 40 to 50% of patients free of progression at four months, against about 14% for other single drugs, but the effect fades. Nobody has checked which patients benefit.",
-    report: "reports/Copy-number changes and the kinase-pill biomarker.md", reportName: "Copy-Number Report" },
-  { title: "Block Inflammation After Surgery?", label: "Hypothesis",
-    body: "In mice, blocking the inflammatory signals that lung tissue sends (IL-1, IL-6 and IL-8) reduced spread. Approved blockers exist, with no registered efficacy trial in osteosarcoma.",
-    report: "reports/Stopping lung metastasis in osteosarcoma.md", reportName: "Lung Metastasis Report" },
-  { title: "FAK and DKK1: Strong Targets Not Yet Tried in People", label: "Lead",
-    body: "Blocking either protein reduced lung spread in small mouse studies. Dog studies are listed or planned, but their results are not yet public.",
-    report: "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md", reportName: "Research Brief" },
-  { title: "Antibody-Drug Conjugates, and a Confirmed New Target", label: "Lead",
-    body: "A B7-H3 drug conjugate beat chemotherapy in a randomized relapse trial. Our tumour screen ranked LRRC15 top, and it now has a trial in relapsed osteosarcoma.",
-    report: "reports/New surface targets for osteosarcoma.md", reportName: "Surface Targets Report" },
-  { title: "Some Research Is Unreliable", label: "Confirmed",
-    body: "Since 2010, 8.7% of microRNA-type osteosarcoma papers have been retracted, against 1.0% of other papers. We flag the genes whose evidence leans on them.",
-    report: "reports/Evidence risk flags for osteosarcoma genes.md", reportName: "Risk Flags Report" },
-  { title: "Research Gaps Get Little Funding", label: "Confirmed",
-    body: "Over 2015 to 2025, NIH spent about half as much on osteosarcoma ($108 million) as on neuroblastoma ($212 to 227 million).",
-    report: "reports/NIH funding for osteosarcoma.md", reportName: "Funding Report" }
-];
-const ASKS = [
-  { title: "A sarcoma scientist to review this work.", text: "Tell us what is wrong and what is useful." },
-  { title: "Stored samples from kinase-inhibitor trials,", text: "to test whether tumour gene copies predict who benefits." },
-  { title: "Comparative oncology groups,", text: "to discuss a pet-dog study of IL-1 or IL-6 blockade after amputation." },
-  { title: "Osteosarcoma tissue arrays,", text: "to stain tumours for LRRC15 and PTK7." },
-  { title: "Sponsors of unreported trials,", text: "to make their results public." },
-  { title: "Consortia such as FOSTER and the Children's Oncology Group,", text: "to use and correct the pooled control dataset." }
-];
-const REPORTS = [
-  { title: "Evidence Explorer", href: "explorer.html", local: true, text: "search any gene, drug or target and see the papers, risk flags, trials, tumour expression and drugs behind it." , group: "Start Here" },
-  { title: "One-Page Summary", href: "summary.html", local: true , group: "Start Here" },
-  { title: "Ranked Leads and Research Partners", href: "reports/ranked-leads-and-research-partners.html", local: true, text: "the fourteen leads, scored." , group: "Start Here" },
-  { title: "Osteosarcoma Research Landscape and Gaps", href: "reports/osteosarcoma-research-landscape-and-gaps.html", local: true , group: "Literature and Funding" },
-  { title: "Clinical Trials Landscape", href: "reports/osteosarcoma-clinical-trials-landscape.html", local: true , group: "Trials and Evidence" },
-  { title: "Pooled Control Dataset", href: "reports/osteosarcoma-pooled-control-dataset.html", local: true , group: "Trials and Evidence" },
-  { title: "Why Kinase-Inhibitor Pills Work", href: "reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html", local: true , group: "Trials and Evidence" },
-  { title: "Do the Leads Predict Survival?", href: "reports/do-the-leads-predict-survival.html", local: true , group: "Trials and Evidence" },
-  { title: "Research Queue", href: "research-queue.html", local: true, text: "every question the research engine has taken on, and where each stands.", group: "Start Here" },
-  { title: "Engine Cycle 1: Does RAMP1 Predict Relapse?", href: "reports/engine-cycle-1-does-ramp1-predict-relapse.html", local: true, group: "Trials and Evidence" },
-  { title: "Engine Cycle 2: Do Lung Metastases Carry More CXCR4?", href: "reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html", local: true, group: "Trials and Evidence" },
-  { title: "Engine Cycle 3: Is 9p21 Deletion More Common at Relapse?", href: "reports/engine-cycle-3-is-9p21-deletion-more-common-at-relapse.html", local: true, group: "Trials and Evidence" },
-  { title: "Engine Cycle 4: MTAP-Selected Trials Open to Osteosarcoma", href: "reports/engine-cycle-4-mtap-selected-trials-open-to-osteosarcoma.html", local: true, group: "Trials and Evidence" },
-  { title: "Engine Cycle 5: Do Osteosarcoma Cells Without MTAP Depend on PRMT5?", href: "reports/engine-cycle-5-do-osteosarcoma-cells-without-mtap-depend-on-prmt5.html", local: true, group: "Trials and Evidence" },
-  { title: "Engine Cycle 6: Do Osteosarcoma Cells With More CCNE1 Depend on PKMYT1?", href: "reports/engine-cycle-6-do-osteosarcoma-cells-with-more-ccne1-depend-on-pkmyt1.html", local: true, group: "Trials and Evidence" },
-  { title: "Engine Cycle 7: CCNE1 Amplification at Relapse and the Trials Open to It", href: "reports/engine-cycle-7-ccne1-amplification-at-relapse-and-the-trials-open-to-it.html", local: true, group: "Trials and Evidence" },
-  { title: "Engine Cycle 8: A Scan for Drug Weaknesses That Go With Osteosarcoma's Gene Changes", href: "reports/engine-cycle-8-a-scan-for-drug-weaknesses-that-go-with-osteosarcoma-s-gene-changes.html", local: true, group: "Trials and Evidence" },
-  { title: "Engine Cycle 9: Weaknesses That Go With the Tumour-Suppressor Genes Osteosarcoma Loses", href: "reports/engine-cycle-9-weaknesses-that-go-with-the-tumour-suppressor-genes-osteosarcoma-loses.html", local: true, group: "Trials and Evidence" },
-  { title: "Contradictions and Hidden Links", href: "reports/contradictions-and-hidden-links-in-the-osteosarcoma-literature.html", local: true, text: "where papers disagree, and untested drug-to-outcome chains." , group: "Trials and Evidence" },
-  { title: "Copy-Number Changes and the Kinase-Pill Biomarker", href: "reports/copy-number-changes-and-the-kinase-pill-biomarker.html", local: true, text: "how often tumours carry extra copies of the pills’ target genes, and how many trial patients a test would need." , group: "Leads and Targets" },
-  { title: "Stopping Lung Metastasis", href: "reports/stopping-lung-metastasis-in-osteosarcoma.html", local: true , group: "Leads and Targets" },
-  { title: "New Surface Targets", href: "reports/new-surface-targets-for-osteosarcoma.html", local: true , group: "Leads and Targets" },
-  { title: "Approved Drugs Worth Testing", href: "reports/approved-drugs-worth-testing-in-osteosarcoma.html", local: true, text: "a screen of 2,400 approved and late-stage drugs, including the dead ends." , group: "Leads and Targets" },
-  { title: "What's New in Osteosarcoma Research", href: "reports/whats-new-in-osteosarcoma-research.html", local: true, text: "June 2025 to November 2026, checked against the leads." , group: "Trials and Evidence" },
-  { title: "Literature Map", href: "reports/osteosarcoma-literature-map.html", local: true , group: "Literature and Funding" },
-  { title: "Evidence Risk Flags", href: "reports/evidence-risk-flags-for-osteosarcoma-genes.html", local: true , group: "Literature and Funding" },
-  { title: "NIH Funding", href: "reports/nih-funding-for-osteosarcoma.html", local: true , group: "Literature and Funding" },
-  { title: "Dog Genome Re-Analysis Scope", href: "reports/dog-genome-re-analysis-scope.html", local: true , group: "Literature and Funding" },
-  { title: "Research Brief: FAK or DKK1 in Pet Dogs", href: "briefs/brief-pet-dog-trial-of-fak-or-dkk1-blockade.html", local: true , group: "Leads and Targets" },
-  { title: "Research Brief: Targeted-Drug Trials Teenagers Cannot Join", href: "briefs/brief-trial-access-for-teenagers-with-osteosarcoma.html", local: true, group: "Trials and Evidence" },
-  { title: "How This Was Made", href: "how-this-was-made.html", local: true, text: "methods, limits and how to re-run the analyses." , group: "Start Here" }
-];
-const CHART = {
-  benchmark: 12,
-  rows: [
-    { label: "Other drugs (8 trial arms)", n: 271, value: 14.2, pill: false, note: "Older chemotherapy, antibodies, drug conjugates and DNA-repair drugs" },
-    { label: "Chemotherapy (IE) alone", n: 69, value: 56.1, pill: false, note: "Control arms of two randomized trials" },
-    { label: "Pill alone", n: 145, value: 52.5, pill: true, note: "41.4% if one trial's primary endpoint is used instead" },
-    { label: "Pill + chemotherapy (IE)", n: 128, value: 65.0, pill: true, note: "Three trials" },
-    { label: "Pill + PD-1 antibody", n: 43, value: 66.3, pill: true, note: "One trial (apatinib + camrelizumab)" }
-  ],
-  caption: "Taken alone, the pills beat other single drugs at four months, but standard relapse chemotherapy does about as well, and in both randomized pill-plus-chemotherapy trials survival was not improved. Rates are pooled across trials that measured progression slightly differently, so treat them as approximate."
-};
-
-// First-screen image. Leave empty to show the chart there. To use a photograph, save it in docs/
-// (for example docs/john.jpg) and set: { src: "john.jpg", alt: "…", caption: "…" }.
-const HERO_PHOTO = { src: "john-and-michael.jpg", alt: "John on Michael's shoulders, both with fists raised, outside a cabin in the woods", caption: "John and me." };
-
-// ---------- Rendering ----------
-const repo = "https://github.com/mgegen15-dev/For_John/blob/main/";
-const PAGES = { "SUMMARY.md": "summary.html", "HOW_THIS_WAS_MADE.md": "how-this-was-made.html", "AUDIT_GUIDE.md": "audit-guide.html", "PREDICTIONS.md": "predictions.html", "DATA_MANIFEST.md": "data-manifest.html", "reports/Approved drugs worth testing in osteosarcoma.md": "reports/approved-drugs-worth-testing-in-osteosarcoma.html", "reports/Contradictions and hidden links in the osteosarcoma literature.md": "reports/contradictions-and-hidden-links-in-the-osteosarcoma-literature.html", "reports/Copy-number changes and the kinase-pill biomarker.md": "reports/copy-number-changes-and-the-kinase-pill-biomarker.html", "reports/Do the leads predict survival.md": "reports/do-the-leads-predict-survival.html", "reports/Dog genome re-analysis scope.md": "reports/dog-genome-re-analysis-scope.html", "reports/Evidence risk flags for osteosarcoma genes.md": "reports/evidence-risk-flags-for-osteosarcoma-genes.html", "reports/NIH funding for osteosarcoma.md": "reports/nih-funding-for-osteosarcoma.html", "reports/New surface targets for osteosarcoma.md": "reports/new-surface-targets-for-osteosarcoma.html", "reports/Osteosarcoma clinical trials landscape.md": "reports/osteosarcoma-clinical-trials-landscape.html", "reports/Osteosarcoma literature map.md": "reports/osteosarcoma-literature-map.html", "reports/Osteosarcoma pooled control dataset.md": "reports/osteosarcoma-pooled-control-dataset.html", "reports/Osteosarcoma research landscape and gaps.md": "reports/osteosarcoma-research-landscape-and-gaps.html", "reports/Ranked leads and research partners.md": "reports/ranked-leads-and-research-partners.html", "reports/Stopping lung metastasis in osteosarcoma.md": "reports/stopping-lung-metastasis-in-osteosarcoma.html", "reports/Whats new in osteosarcoma research.md": "reports/whats-new-in-osteosarcoma-research.html", "reports/Why kinase-inhibitor pills work in osteosarcoma.md": "reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html", "briefs/Brief - pet dog trial of FAK or DKK1 blockade.md": "briefs/brief-pet-dog-trial-of-fak-or-dkk1-blockade.html", "briefs/Brief - trial access for teenagers with osteosarcoma.md": "briefs/brief-trial-access-for-teenagers-with-osteosarcoma.html" };
-function el(tag, attrs, text) {
-  const e = document.createElement(tag);
-  if (attrs) for (const k in attrs) e.setAttribute(k, attrs[k]);
-  if (text != null) e.textContent = text;
-  return e;
-}
-function renderFindings() {
-  const box = document.getElementById("findingsList");
-  for (const f of FINDINGS) {
-    const kind = (f.label || "").toLowerCase().split(/[^a-z]/)[0];
-    const c = el("article", { class: "finding " + kind });
-    c.appendChild(el("p", { class: "tag" }, f.label));
-    const d = el("div");
-    d.appendChild(el("h3", null, f.title));
-    d.appendChild(el("p", null, f.body));
-    const p = el("p", { class: "src" });
-    const a = el("a", { href: PAGES[f.report] || repo + encodeURI(f.report) }, f.reportName);
-    p.appendChild(a);
-    d.appendChild(p);
-    c.appendChild(d);
-    box.appendChild(c);
-  }
-}
-function renderReports(items) {
-  const box = document.getElementById("reportList");
-  const order = ["Start Here", "Leads and Targets", "Trials and Evidence", "Literature and Funding"];
-  for (const g of order) {
-    const inGroup = items.filter(it => it.group === g);
-    if (!inGroup.length) continue;
-    const sec = el("div", { class: "rep-group" });
-    sec.appendChild(el("h3", null, g));
-    const ul = el("ul");
-    for (const it of inGroup) {
-      const li = el("li");
-      const href = it.local || it.href.startsWith("http") ? it.href : repo + encodeURI(it.href);
-      li.appendChild(el("a", { href: href }, it.title));
-      if (it.text && g === "Start Here") li.appendChild(el("span", null, it.text));
-      ul.appendChild(li);
-    }
-    sec.appendChild(ul);
-    box.appendChild(sec);
-  }
-}
-function renderList(id, items) {
-  const ul = document.getElementById(id);
-  for (const it of items) {
-    const li = el("li");
-    if (it.href) { const a = el("a", { href: it.local || it.href.startsWith("http") ? it.href : repo + encodeURI(it.href) }, it.title); li.appendChild(a); }
-    else li.appendChild(el("strong", null, it.title));
-    if (it.text) li.appendChild(document.createTextNode(" " + it.text));
-    ul.appendChild(li);
-  }
-}
-function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
-function renderChart() {
-  const host = document.getElementById("chart");
-  host.textContent = "";
-  const rows = CHART.rows;
-  if (!rows.length) return;
-  const W = Math.max(240, host.clientWidth), narrow = W < 520;
-  const labelW = narrow ? 0 : Math.min(190, W * 0.42), barH = 22, gap = narrow ? 34 : 18, labelUp = narrow ? 20 : 0;
-  const top = 8, H = top + rows.length * (barH + gap) + 28, plotW = W - labelW - 56;
-  const ns = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(ns, "svg");
-  svg.setAttribute("width", W); svg.setAttribute("height", H); svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  const x = v => labelW + (v / 100) * plotW;
-  // gridlines
-  for (const t of (narrow ? [0, 50, 100] : [0, 25, 50, 75, 100])) {
-    const l = document.createElementNS(ns, "line");
-    l.setAttribute("x1", x(t)); l.setAttribute("x2", x(t)); l.setAttribute("y1", top); l.setAttribute("y2", H - 24);
-    l.setAttribute("stroke", t === 0 ? css("--axis") : css("--grid")); l.setAttribute("stroke-width", 1);
-    svg.appendChild(l);
-    const tx = document.createElementNS(ns, "text");
-    tx.setAttribute("x", x(t)); tx.setAttribute("y", H - 6); tx.setAttribute("text-anchor", t === 0 && narrow ? "start" : "middle");
-    tx.setAttribute("font-size", 12); tx.setAttribute("fill", css("--muted")); tx.textContent = t + "%";
-    svg.appendChild(tx);
-  }
-  const tip = document.getElementById("tip"), card = document.getElementById("chartCard");
-  rows.forEach((r, i) => {
-    const y = top + i * (barH + gap) + gap / 2 + labelUp / 2;
-    const lab = document.createElementNS(ns, "text");
-    if (narrow) { lab.setAttribute("x", 0); lab.setAttribute("y", y - 7); lab.setAttribute("text-anchor", "start"); }
-    else { lab.setAttribute("x", labelW - 10); lab.setAttribute("y", y + barH / 2 + 5); lab.setAttribute("text-anchor", "end"); }
-    lab.setAttribute("font-size", 14); lab.setAttribute("fill", css("--ink")); lab.textContent = r.label;
-    svg.appendChild(lab);
-    const w = Math.max(2, x(r.value) - labelW), rad = Math.min(4, w / 2);
-    const path = document.createElementNS(ns, "path");
-    const x0 = labelW, x1 = labelW + w;
-    path.setAttribute("d", `M${x0},${y} H${x1 - rad} Q${x1},${y} ${x1},${y + rad} V${y + barH - rad} Q${x1},${y + barH} ${x1 - rad},${y + barH} H${x0} Z`);
-    path.setAttribute("fill", r.pill ? css("--series-1") : css("--series-2"));
-    svg.appendChild(path);
-    const val = document.createElementNS(ns, "text");
-    val.setAttribute("x", x1 + 6); val.setAttribute("y", y + barH / 2 + 5);
-    val.setAttribute("font-size", 14); val.setAttribute("font-weight", 600); val.setAttribute("fill", css("--ink"));
-    val.textContent = r.value.toFixed(0) + "%";
-    svg.appendChild(val);
-    const hit = document.createElementNS(ns, "rect");
-    hit.setAttribute("x", 0); hit.setAttribute("y", y - gap / 2); hit.setAttribute("width", W); hit.setAttribute("height", barH + gap);
-    hit.setAttribute("fill", "transparent"); hit.setAttribute("tabindex", "0");
-    hit.setAttribute("aria-label", `${r.label}: ${r.value.toFixed(1)}% of ${r.n} patients`);
-    const show = (ev) => {
-      tip.textContent = "";
-      tip.appendChild(el("strong", null, r.value.toFixed(1) + "% progression-free"));
-      tip.appendChild(el("div", null, r.label + " · " + r.n + " patients"));
-      if (r.note) tip.appendChild(el("div", null, r.note));
-      const cr = card.getBoundingClientRect();
-      const px = ev && ev.clientX ? ev.clientX - cr.left : x1;
-      tip.style.left = Math.min(Math.max(8, px + 12), cr.width - 270) + "px";
-      tip.style.top = (y + 40) + "px"; tip.style.opacity = 1;
-      path.setAttribute("opacity", 0.8);
-    };
-    const hide = () => { tip.style.opacity = 0; path.setAttribute("opacity", 1); };
-    hit.addEventListener("pointermove", show); hit.addEventListener("focus", show);
-    hit.addEventListener("pointerleave", hide); hit.addEventListener("blur", hide);
-    svg.appendChild(hit);
-  });
-  // benchmark: a short segment across each bar band only, so it never crosses a label
-  rows.forEach((r, i) => {
-    const y = top + i * (barH + gap) + gap / 2 + labelUp / 2;
-    const b = document.createElementNS(ns, "line");
-    b.setAttribute("x1", x(CHART.benchmark)); b.setAttribute("x2", x(CHART.benchmark));
-    b.setAttribute("y1", y - 4); b.setAttribute("y2", y + barH + 4);
-    b.setAttribute("stroke", css("--bench")); b.setAttribute("stroke-width", 2);
-    b.setAttribute("pointer-events", "none");
-    svg.appendChild(b);
-  });
-  host.appendChild(svg);
-}
-function renderTable() {
-  const tb = document.querySelector("#chartTable tbody");
-  for (const r of CHART.rows) {
-    const tr = el("tr");
-    tr.appendChild(el("td", null, r.label));
-    tr.appendChild(el("td", { class: "num" }, String(r.n)));
-    tr.appendChild(el("td", { class: "num" }, r.value.toFixed(1) + "%"));
-    tb.appendChild(tr);
-  }
-  document.getElementById("chartCaption").textContent = CHART.caption;
-}
-// theme toggle (per-viewer convenience only)
 (function () {
   const btn = document.getElementById("themeToggle");
   let saved = null;
@@ -568,61 +232,7 @@ function renderTable() {
     document.documentElement.setAttribute("data-theme", next);
     try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
     setLabel();
-    renderChart();
   });
-})();
-renderFindings();
-renderList("askList", ASKS);
-renderReports(REPORTS);
-renderTable();
-(function heroImage() {
-  const fig = document.getElementById("heroFigure");
-  if (HERO_PHOTO && HERO_PHOTO.src) {
-    fig.appendChild(el("img", { src: HERO_PHOTO.src, alt: HERO_PHOTO.alt || "" }));
-    if (HERO_PHOTO.caption) fig.appendChild(el("figcaption", null, HERO_PHOTO.caption));
-    return;
-  }
-  // No photograph yet: the chart moves up to the first screen and its own section is hidden.
-  const panel = el("div", { class: "panel" });
-  panel.appendChild(document.getElementById("chartCard"));
-  fig.appendChild(panel);
-  const cap = el("figcaption");
-  cap.appendChild(document.createTextNode("In relapse, these pills keep roughly 40 to 50% of patients free of progression at four months, against about 14% for other single drugs, but the effect fades. "));
-  cap.appendChild(el("a", { href: "reports/why-kinase-inhibitor-pills-work-in-osteosarcoma.html", style: "color:inherit" }, "Read the full analysis"));
-  fig.appendChild(cap);
-  document.getElementById("pills").hidden = true;
-  const r = document.querySelector('#rail a[href="#pills"]'); if (r) r.parentNode.hidden = true;
-})();
-renderChart();
-addEventListener("resize", () => renderChart());
-
-// Left rail: appear once the hero is out of view, highlight the section in view.
-(function railNav() {
-  const rail = document.getElementById("rail");
-  if (!rail || !("IntersectionObserver" in window)) return;
-  const links = Array.from(rail.querySelectorAll("ol a"));
-  const sections = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
-
-  const hero = document.querySelector(".hero");
-  if (hero) {
-    new IntersectionObserver(
-      es => es.forEach(e => rail.classList.toggle("show", !e.isIntersecting)),
-      { rootMargin: "-80px 0px 0px 0px" }
-    ).observe(hero);
-  }
-
-  let current = null;
-  const setActive = id => {
-    if (id === current) return;
-    current = id;
-    links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
-  };
-  const io = new IntersectionObserver(entries => {
-    const visible = entries.filter(e => e.isIntersecting)
-      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-    if (visible.length) setActive(visible[0].target.id);
-  }, { rootMargin: "-25% 0px -60% 0px", threshold: 0 });
-  sections.forEach(s => io.observe(s));
 })();
 </script>
 </body>
