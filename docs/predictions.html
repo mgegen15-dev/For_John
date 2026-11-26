@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#predictions">Predictions</a></li><li class="l1"><a href="#outcomes">Outcomes</a></li><li class="l1"><a href="#scorecard">Scorecard</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 26, 2026 · 15 min read</p>
+    <p class="crumb">Project document · Updated November 26, 2026 · 16 min read</p>
     <h1>Predictions Log</h1>
     <p><em>Started November 22, 2026. This is a public, dated record of what For John predicts, written before the answers are known. When trials, studies or reviewers report, each prediction will be marked right, wrong or unresolved. Entries are never edited after the fact; corrections and outcomes are added below each one with a date.</em></p>
     <p><strong>Why keep this.</strong> Anyone can explain results after they arrive. Committing to predictions in advance is the honest test of whether connecting the published evidence, as this project does, finds real signals. If our hit rate is poor, that is worth knowing too.</p>
@@ -399,6 +399,22 @@
     <td class="num">30%</td>
     <td><strong>Wrong</strong> (see Outcomes)</td>
     </tr>
+    <tr>
+    <td>P43</td>
+    <td>Tumours with more MYC RNA respond worse to chemotherapy before surgery (pooled odds ratio for poor response per SD above 1, interval excluding 1)</td>
+    <td>The verdict is anything other than &quot;Supported&quot;</td>
+    <td>GEO GSE21257 and GSE14827 and TARGET-OS; engine cycle 15, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md"><code>research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">20%</td>
+    <td><strong>Right</strong> (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P44</td>
+    <td>None of MYC, CCNE1 or 9p21-loss RNA is supported as going with poor chemotherapy response by the same rule</td>
+    <td>At least one is supported</td>
+    <td>Same as P43</td>
+    <td class="num">65%</td>
+    <td><strong>Wrong</strong> (see Outcomes)</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="outcomes">Outcomes</h2>
@@ -432,6 +448,8 @@
     <li><strong>P40, 2026-11-26: wrong.</strong> Tumour DKK1 RNA: 0.92 (0.67–1.26), refuted by the pre-registered rule. Same source.</li>
     <li><strong>P41, 2026-11-26: right.</strong> Macrophage gene score in GSE21257, metastasis-free survival: hazard ratio per SD 0.63 (95% CI 0.44–0.91), 39 patients, 20 events. Source: <a href="reports/engine-cycle-14-does-tumour-macrophage-signal-predict-a-better-outcome-in-new-patients.html"><code>reports/Engine cycle 14 - does tumour macrophage signal predict a better outcome in new patients.md</code></a> (our calculation).</li>
     <li><strong>P42, 2026-11-26: wrong.</strong> Pooled across GSE16091, GSE39055 and TARGET-OS (155 patients, 74 events): 0.85 (0.67–1.08), inconclusive. Same source.</li>
+    <li><strong>P43, 2026-11-26: right.</strong> MYC RNA and poor response to chemotherapy before surgery, pooled across three cohorts (109 patients, 64 poor responders): odds ratio per SD 1.58 (95% CI 1.05–2.40). Modest; with three tests and no correction in the plan, it needs replication. Source: <a href="reports/engine-cycle-15-do-tumours-with-myc-gain-respond-worse-to-chemotherapy.html"><code>reports/Engine cycle 15 - do tumours with MYC gain respond worse to chemotherapy.md</code></a> (our calculation).</li>
+    <li><strong>P44, 2026-11-26: wrong.</strong> One of the three (MYC) was supported. Same source.</li>
     </ul>
     <h2 id="scorecard">Scorecard</h2>
     <div class="tablewrap"><table>
@@ -445,14 +463,14 @@
     </thead>
     <tbody>
     <tr>
-    <td class="num">17</td>
-    <td class="num">12</td>
-    <td class="num">5</td>
+    <td class="num">19</td>
+    <td class="num">13</td>
+    <td class="num">6</td>
     <td class="num">25</td>
     </tr>
     </tbody>
     </table></div>
-    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day. 2026-11-25: P29 to P32 added for engine cycle 10, before its drug-response data were opened; outcomes recorded the same day. 2026-11-25: P33 and P34 added for engine cycle 11, before its target genes were read; outcomes recorded the same day. 2026-11-26: P35 to P37 added for engine cycle 12, before the registry was searched; outcomes recorded the same day. 2026-11-26: P38 to P40 added for engine cycle 13, before its expression data were opened; outcomes recorded the same day. 2026-11-26: P41 and P42 added for engine cycle 14, before its genes were read; outcomes recorded the same day.</p>
+    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day. 2026-11-25: P29 to P32 added for engine cycle 10, before its drug-response data were opened; outcomes recorded the same day. 2026-11-25: P33 and P34 added for engine cycle 11, before its target genes were read; outcomes recorded the same day. 2026-11-26: P35 to P37 added for engine cycle 12, before the registry was searched; outcomes recorded the same day. 2026-11-26: P38 to P40 added for engine cycle 13, before its expression data were opened; outcomes recorded the same day. 2026-11-26: P41 and P42 added for engine cycle 14, before its genes were read; outcomes recorded the same day. 2026-11-26: P43 and P44 added for engine cycle 15, before its expression data were read; outcomes recorded the same day.</p>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
   </main>

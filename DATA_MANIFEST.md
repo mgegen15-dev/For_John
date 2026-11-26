@@ -33,7 +33,7 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/osteosarcoma_trials.csv` | 758 | 489 | 2026-11-14 | `9211e126d7639ce788846226754b1efe2083dd68a28f155b5358297c2b2790ff` |
 | `data/osteosarcoma_trials_flags.csv` | 168 | 34 | 2026-11-14 | `d3c5fb8cf09d19e7b4a2061a74dd0522e41563cc0eff3ce59cef4c2b4bebf90b` |
 | `data/osteosarcoma_trials_publications.csv` | 387 | 88 | 2026-11-14 | `12890fc385cb3b8f682a81df1d465bc70a45450bbb4776c8b682625a3a539205` |
-| `data/raw_checksums.txt` | 516 | 66 | 2026-11-20 | `2d958d14f148d58353dee25b6d76c22e2df5d44c8ccbe9a292cb715ebd8b60d8` |
+| `data/raw_checksums.txt` | 518 | 66 | 2026-11-20 | `28143022f43374690193801cb4bf7404360120bc22d0a1ff5690d267fc1b55e3` |
 | `data/literature/osteosarcoma_retracted_pmids.txt` | 418 | 3 | 2026-11-14 | `62bddf36921d30de8c1be3c69fd14ef10352a2819a17cc4026ef057c260ee2ec` |
 | `data/literature/osteosarcoma_reviews_pmids.txt` | 3533 | 30 | 2026-11-14 | `155b2b30719c789a8718476cccc456c6cf94b4a382feaa6511c54a149595adaf` |
 | `data/engine/cycle03/results.csv` | 21 | 1 | 2026-11-24 | `3c677c34fc4c4e7a2be4306d9b6a44c0fa696ce0e0746148ae05c97da3c02e55` |
@@ -44,6 +44,8 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/engine/cycle01/gds_summ.json` |  | 1178 | 2026-11-24 | `cd8ef8684e772848994afa4539a5b09d10260a4f1e38aa0a74c9519a2d74ba5a` |
 | `data/engine/cycle01/results.csv` | 18 | 2 | 2026-11-24 | `49bc6517083eeb9b410bc021c46c181e8d804813e1aaa76be74883fe359ba969` |
 | `data/engine/cycle01/summary.json` |  | 11 | 2026-11-24 | `6d06a0bb81247e419a59f93d27464089613ad90cf8692bc1b5a6a8c0ae8efcd2` |
+| `data/engine/cycle14/results.csv` | 43 | 3 | 2026-11-26 | `e73fec78ac99b1c96c2ebbffbfddb836c55bad4ac99c28ce84c3a6fd68580996` |
+| `data/engine/cycle14/summary.json` |  | 13 | 2026-11-26 | `9a8204c579dc57c42830c30510832f6eda0c4ffa10a8df15c91d29c729035296` |
 | `data/engine/cycle11/results.csv` | 103 | 6 | 2026-11-25 | `735873b470b7976bb6499375ae524af19dd5ffc15b0f2be82895668e60ce1b74` |
 | `data/engine/cycle11/summary.json` |  | 13 | 2026-11-25 | `3ff60bd4c11bf859393de6c47a28dc33da8ed352f4c42a6d74b9e03b21a8892c` |
 | `data/engine/cycle11/tumour_cells.csv` | 15 | 2 | 2026-11-25 | `4cea9fa6e89f0f5b8fbc1c0b2c292a5ab2659b1c7a3954829cb6f6ec9287635d` |
@@ -55,6 +57,8 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/engine/cycle09/loss_calls.csv` | 1178 | 53 | 2026-11-24 | `1011abbcf6abbbe65d76c2e0e51e033b7a8cb413936f38ddf6d8a5d6f397f33e` |
 | `data/engine/cycle09/patients.csv` | 5 | 0 | 2026-11-24 | `d21b5619c33e80cc6cf6cfe600646c6e89ca5134d286489a7943ff399df87005` |
 | `data/engine/cycle09/summary.json` |  | 4 | 2026-11-24 | `0aee50eb1d457b37ffddb4c258887298d5bc262d791a3ebe80fc5c730dc4e4ab` |
+| `data/engine/cycle13/results.csv` | 13 | 1 | 2026-11-26 | `ff5388157555b95c5bba42cc300a30b000b7e751638e2bd0caaf015b214674c3` |
+| `data/engine/cycle13/summary.json` |  | 6 | 2026-11-26 | `c704b6406ccf00fbb97f392efafabf227dd919ded003d57417326265afe2528b` |
 | `data/engine/cycle10/osteosarcoma_lines.csv` | 95 | 6 | 2026-11-25 | `5f6748fa717ff9c0a2f444d105a91a4cce8a9d3afaa57514c169f1f5ba4ee57e` |
 | `data/engine/cycle10/results.csv` | 13 | 1 | 2026-11-25 | `985d22d22c380cf5628613cd6a74be1179b72fe9aa237401ad975d221e09d6d5` |
 | `data/engine/cycle10/summary.json` |  | 4 | 2026-11-25 | `3fc3233d3a9ac31b278c1c3c79aacfcc3b679617583fdfab05083d2e4a364734` |
@@ -97,7 +101,7 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/copy_number_raw` | NCI GDC, TARGET-OS open copy-number files, via tools/copy_number_map.py; retrieved 2026-11-19 | 197 | 287 | `6aede47fd6a452cb23ce361a4c656dd2b97e045edd013a1430ad4ae5164d09f7` |
 | `data/surface_targets_raw` | NCI GDC TARGET-OS RNA-seq, GTEx v8, Human Protein Atlas, via tools/surface_targets.py; retrieved 2026-11-14 | 100 | 389 | `65b740105d96fa3adf8fcdb6cd227fe3234b131aaf10d61c49020ca16ec51981` |
 | `data/repurposing_raw` | ChEMBL, ClinicalTrials.gov and PubMed caches, via tools/repurposing_screen.py; retrieved 2026-11-19 | 27 | 22 | `eb0e4b8011ee179877fabb0697564a3d04a638ae046aa0ce1178e8bcee542101` |
-| `data/engine/cycle01/raw` | NCBI GEO series matrices and platform tables (engine cycle 1), via tools/engine_cycle01_ramp1.py; retrieved 2026-11-24 | 29 | 220 | `1ce9f2a4bc355a8f043e6db7077074533d56128605f2fd95863ae0bdee348b49` |
+| `data/engine/cycle01/raw` | NCBI GEO series matrices and platform tables (engine cycles 1, 14 and 15), via tools/engine_cycle01_ramp1.py; retrieved 2026-11-24 | 30 | 228 | `e3ddca78597b553b98f2601a702c8f6c6c35c88a991ac14556bac799a9d38721` |
 | `data/engine/cycle02/raw` | NCBI GEO bulk, single-cell and spatial files (engine cycle 2), via tools/engine_cycle02_fetch.sh; retrieved 2026-11-24 | 99 | 2710 | `f42fc4de1e7d0edde6b9c7a505f739ca973b690041c3db80c9d3d1022f535965` |
 | `data/engine/cycle03/raw` | cBioPortal public API (engine cycles 3, 7, 8, 9), via tools/engine_cycle03_9p21.py fetch; retrieved 2026-11-24 | 31 | 173 | `d0b62b7404bd5e02718794d2afdbedaac9ddebef75d4aa44fef678a42009409a` |
 | `data/engine/cycle04/raw` | ClinicalTrials.gov records (engine cycle 4), via tools/engine_cycle04_mtap_trials.py fetch; retrieved 2026-11-24; not in git because records include trial staff contact details | 1 | 4 | `920b21c0e49d4fdfa3bcd48da90299f2fe51bb68796c888ab868f3b4a89b1d33` |

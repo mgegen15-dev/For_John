@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 15: Do Tumours with MYC Gain, CCNE1 Gain or 9p21 Loss Respond Worse to Chemotherapy Before Surgery? · For John</title>
+<meta name="description" content="Run November 26, 2026. The fifteenth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md, committed at commit 3fa7583 before…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-15-do-tumours-with-myc-gain-respond-worse-to-chemotherapy.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 15: Do Tumours with MYC Gain, CCNE1 Gain or 9p21 Loss Respond Worse to Chemotherapy Before Surgery? · For John">
+<meta property="og:description" content="Run November 26, 2026. The fifteenth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md, committed at commit 3fa7583 before…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-15-do-tumours-with-myc-gain-respond-worse-to-chemotherapy.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../families.html">For Families</a>
+      <a href="../index.html#findings">Findings</a>
+      <a href="../research-queue.html">Research Engine</a>
+      <a href="../reports.html">All Reports</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 26, 2026 · 4 min read</p>
+    <h1>Engine Cycle 15: Do Tumours with MYC Gain, CCNE1 Gain or 9p21 Loss Respond Worse to Chemotherapy Before Surgery?</h1>
+    <p><em>Run November 26, 2026. The fifteenth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md"><code>research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md</code></a>, committed at commit <code>3fa7583</code> before any of these genes was read from these cohorts. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle15_chemo_response.py"><code>tools/engine_cycle15_chemo_response.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle15/results.csv"><code>data/engine/cycle15/results.csv</code></a>. Research only; not about any patient's treatment.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>How much of the tumour chemotherapy kills before surgery is one of the strongest known signs of outcome in osteosarcoma (general knowledge). We asked whether three gene changes from earlier cycles go with a poor response. We used tumour RNA in three cohorts, 109 patients, 64 of whom had a poor response (less than 90% of the tumour killed).</p>
+    <ul>
+    <li><strong>MYC: supported by the pre-registered rule, modestly.</strong>
+    <ul>
+    <li>Tumours with more MYC RNA were more likely to respond poorly: odds ratio 1.58 per standard deviation (95% CI 1.05–2.40, p = 0.03).</li>
+    <li>All three cohorts pointed the same way (1.32, 1.87 and 1.86), with no sign of disagreement between them (I² = 0%).</li>
+    <li>This is the engine's first &quot;Supported&quot; verdict in fifteen cycles.</li>
+    </ul>
+    </li>
+    <li><strong>CCNE1: refuted.</strong> 0.88 (0.59–1.30); an odds ratio of 1.5 or more is ruled out.</li>
+    <li><strong>9p21 loss: inconclusive.</strong> 1.32 (0.83–2.10).</li>
+    <li><strong>Predictions:</strong> P43 (MYC supported, given 20%) was right. P44 (none supported) was wrong.</li>
+    </ul>
+    <p><strong>Why this needs replication before anyone relies on it.</strong></p>
+    <ul>
+    <li>Three genes were tested and the plan fixed no correction for that. With a simple correction for three tests (p below 0.017), the MYC result would not pass.</li>
+    <li>The interval's lower end sits just above 1.</li>
+    <li>MYC RNA stands in for MYC gain. In the one cohort with copy-number calls (TARGET-OS), amplified tumours leaned the same way but too few to judge.</li>
+    <li>A poor response is a sign of risk; it does not mean a different treatment would help.</li>
+    </ul>
+    <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from open data unless marked otherwise.</p>
+    <h2 id="what-was-tested">What Was Tested</h2>
+    <ul>
+    <li><strong>Cohorts:</strong>
+    <ul>
+    <li>GSE21257 (Leiden; Huvos grade, 47 patients with a known grade);</li>
+    <li>GSE14827 (&quot;good&quot; or &quot;poor&quot; response, 27 patients);</li>
+    <li>TARGET-OS (Huvos stage from the open clinical spreadsheet, 35 patients).</li>
+    </ul>
+    </li>
+    <li><strong>Outcome:</strong> poor response, meaning Huvos grade 1 or 2, or labelled &quot;poor&quot;.</li>
+    <li><strong>Measures:</strong> RNA per standard deviation, within each cohort.
+    <ul>
+    <li>MYC (H1) and CCNE1 (H2).</li>
+    <li>A 9p21 loss score, the negative mean z-score of CDKN2A and MTAP (H3).</li>
+    </ul>
+    </li>
+    <li><strong>Effect:</strong> odds ratio from a logistic model in each cohort, pooled by inverse-variance weighting.</li>
+    <li><strong>Verdict rules, fixed in advance:</strong>
+    <ul>
+    <li>Supported: the whole 95% interval is above 1.</li>
+    <li>Refuted: the upper end is below 1.5.</li>
+    <li>Inconclusive: anything else.</li>
+    </ul>
+    </li>
+    </ul>
+    <h2 id="results">Results</h2>
+    <p><img src="../figures/engine15_response.svg" alt="Poor response to chemotherapy before surgery: odds ratio per standard deviation" /></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Measure</th>
+    <th>GSE21257 (47; 29 poor)</th>
+    <th>GSE14827 (27; 16 poor)</th>
+    <th>TARGET-OS (35; 19 poor)</th>
+    <th><strong>Pooled (109; 64 poor)</strong></th>
+    <th>Verdict</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>H1: MYC RNA</strong></td>
+    <td>1.32 (0.72–2.42)</td>
+    <td>1.87 (0.79–4.42)</td>
+    <td>1.86 (0.87–3.96)</td>
+    <td><strong>1.58 (1.05–2.40)</strong></td>
+    <td><strong>Supported</strong></td>
+    </tr>
+    <tr>
+    <td><strong>H2: CCNE1 RNA</strong></td>
+    <td>1.03 (0.56–1.87)</td>
+    <td>0.76 (0.34–1.67)</td>
+    <td>0.81 (0.41–1.60)</td>
+    <td><strong>0.88 (0.59–1.30)</strong></td>
+    <td><strong>Refuted</strong></td>
+    </tr>
+    <tr>
+    <td><strong>H3: 9p21 loss score</strong></td>
+    <td>1.74 (0.84–3.60)</td>
+    <td>2.10 (0.76–5.83)</td>
+    <td>0.78 (0.37–1.64)</td>
+    <td><strong>1.32 (0.83–2.10)</strong></td>
+    <td><strong>Inconclusive</strong></td>
+    </tr>
+    </tbody>
+    </table></div>
+    <ul>
+    <li><strong>Random effects</strong> give the same MYC result (1.58, 1.05–2.40). For the 9p21 score they give 1.35 (0.74–2.47).</li>
+    <li><strong>Huvos grade 1 to 4 as an ordered outcome in GSE21257</strong> (Spearman correlation, where a negative value means poorer response with more of the measure):
+    <ul>
+    <li>MYC −0.06;</li>
+    <li>CCNE1 −0.01;</li>
+    <li>9p21 loss score −0.18.</li>
+    <li>All are weak, so the MYC result rests mainly on the two smaller cohorts.</li>
+    </ul>
+    </li>
+    <li><strong>TARGET-OS copy-number calls</strong> (descriptive):
+    <ul>
+    <li>MYC-amplified tumours responded poorly in 7 of 10, against 10 of 22 without amplification (Fisher's p = 0.27).</li>
+    <li>CCNE1 amplification: 2 of 4 against 15 of 28.</li>
+    <li>CDKN2A deep deletion: 2 of 5 against 15 of 27.</li>
+    </ul>
+    </li>
+    </ul>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>MYC is worth a proper replication.</strong> The direction held in every cohort, and MYC gain is one of the more common changes in osteosarcoma. This project's copy-number report and cycle 7 found it in a meaningful minority of tumours, and prediction P2 already asks whether MYC gain marks poorer outcomes on kinase pills.</li>
+    <li><strong>The right next test:</strong>
+    <ul>
+    <li>MYC copy number, not RNA, against histologic response in a larger cohort with both measured. Hospital sequencing cohorts record copy number but, on cBioPortal, not response.</li>
+    <li>So it needs a centre's own records, or a public cohort not yet found.</li>
+    <li>It is added to the Research Queue.</li>
+    </ul>
+    </li>
+    <li><strong>CCNE1 gain does not look like a marker of poor chemotherapy response.</strong> That separates the CCNE1-drug question (cycles 6, 7 and 10) from the question of who responds to standard treatment.</li>
+    <li><strong>For families:</strong> nothing here changes care. Histologic response is already measured after surgery and used by care teams. A gene test is not a substitute for it.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>109 patients in three small cohorts, with different platforms and response records.</li>
+    <li>RNA stands in for copy-number change.</li>
+    <li>Three tests, uncorrected by the plan.</li>
+    <li>No built-in check was possible, because no RNA marker of response is established well enough.</li>
+    <li>Response was recorded after different chemotherapy protocols.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li>Run the downloads of engine cycle 1, including the GPL570 annotation now saved there, and the TARGET-OS stage of <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/survival_analysis.py"><code>tools/survival_analysis.py</code></a>.</li>
+    <li>Then <code>python3 tools/engine_cycle15_chemo_response.py</code>.</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle15/results.csv"><code>data/engine/cycle15/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle15/summary.json"><code>data/engine/cycle15/summary.json</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine15_response.svg"><code>docs/figures/engine15_response.svg</code></a>.</li>
+    </ul>
+    <p><strong>Data sources and credit.</strong></p>
+    <ul>
+    <li>NCBI GEO: GSE21257 (Leiden University Medical Center) and GSE14827 (PubMed 20159990).</li>
+    <li>TARGET-OS: NCI TARGET, via the Genomic Data Commons.</li>
+    </ul>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-26: cycle run and reported. H1 supported, H2 refuted and H3 inconclusive under the pre-registered rules. P43 right, P44 wrong. No deviations.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%2015%20-%20do%20tumours%20with%20MYC%20gain%20respond%20worse%20to%20chemotherapy.md">reports/Engine cycle 15 - do tumours with MYC gain respond worse to chemotherapy.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

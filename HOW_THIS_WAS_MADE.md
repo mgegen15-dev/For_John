@@ -106,6 +106,7 @@ pip install pandas
 | `tools/engine_cycle12_teen_access.py` (`fetch`, then no argument) | engine cycle 12: `data/engine/cycle12/` trial tables, counts and one figure; the hand classification is in `hand_classification.csv` | ClinicalTrials.gov API (about 2,300 records; raw records not in git) | a minute |
 | `tools/engine_cycle13_dog_inflammation.py` (`fetch`, then no argument) | engine cycle 13: `data/engine/cycle13/` results and one figure | NCBI GEO GSE180303 and the GPL3738 annotation (about 23 MB) | seconds |
 | `tools/engine_cycle14_macrophages.py` | engine cycle 14: `data/engine/cycle14/` results and one figure | none new; needs cycle 1's downloads and the TARGET-OS files of `tools/survival_analysis.py` | under a minute |
+| `tools/engine_cycle15_chemo_response.py` | engine cycle 15: `data/engine/cycle15/` results and one figure | the GPL570 annotation from GEO (about 8 MB); needs cycle 1's downloads and the TARGET-OS files | under a minute |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:

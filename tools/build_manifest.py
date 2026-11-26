@@ -35,7 +35,7 @@ RAW = {
     "data/copy_number_raw": "NCI GDC, TARGET-OS open copy-number files, via tools/copy_number_map.py; retrieved 2026-11-19",
     "data/surface_targets_raw": "NCI GDC TARGET-OS RNA-seq, GTEx v8, Human Protein Atlas, via tools/surface_targets.py; retrieved 2026-11-14",
     "data/repurposing_raw": "ChEMBL, ClinicalTrials.gov and PubMed caches, via tools/repurposing_screen.py; retrieved 2026-11-19",
-    "data/engine/cycle01/raw": "NCBI GEO series matrices and platform tables (engine cycle 1), via tools/engine_cycle01_ramp1.py; retrieved 2026-11-24",
+    "data/engine/cycle01/raw": "NCBI GEO series matrices and platform tables (engine cycles 1, 14 and 15), via tools/engine_cycle01_ramp1.py; retrieved 2026-11-24",
     "data/engine/cycle02/raw": "NCBI GEO bulk, single-cell and spatial files (engine cycle 2), via tools/engine_cycle02_fetch.sh; retrieved 2026-11-24",
     "data/engine/cycle03/raw": "cBioPortal public API (engine cycles 3, 7, 8, 9), via tools/engine_cycle03_9p21.py fetch; retrieved 2026-11-24",
     "data/engine/cycle04/raw": "ClinicalTrials.gov records (engine cycle 4), via tools/engine_cycle04_mtap_trials.py fetch; retrieved 2026-11-24; not in git because records include trial staff contact details",
