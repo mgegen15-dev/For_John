@@ -70,11 +70,11 @@ Claims labelled abstract-only, preprint or press-release-only are the weakest, a
 
 ## The research engine (added in version 1.1)
 
-Fifteen cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a report in `reports/Engine cycle N - ....md`. The engine's central promise is that each plan was committed before its data were opened. That is checkable:
+Sixteen cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a report in `reports/Engine cycle N - ....md`. The engine's central promise is that each plan was committed before its data were opened. That is checkable:
 
 - **Order of events.** For each cycle, compare the commit time of its `PREREGISTRATION.md` (`git log --format="%h %cI" -- research_notes/Engine/cycle-NN-*/PREREGISTRATION.md`) with the first commit of its data and script (`git log --diff-filter=A --format="%h %cI" -- tools/engine_cycleNN*`). The plan should come first. Changes made after the plan are listed under "Deviations" in each file. Commit times are set by the committer's clock, so they show order within this repository, not proof against a determined forger.
 - **Re-running.** Each report's last section gives the commands. Most need the raw downloads listed in `DATA_MANIFEST.md`, which are not in git.
-- **Predictions.** P15 to P44 in `PREDICTIONS.md` were written before each cycle's data; outcomes are recorded there with the rule each was judged by.
+- **Predictions.** P15 to P46 in `PREDICTIONS.md` were written before each cycle's data; outcomes are recorded there with the rule each was judged by.
 
 | # | Claim | Where | How to check |
 |---|---|---|---|
