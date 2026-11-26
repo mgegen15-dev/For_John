@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 13: In Pet Dogs with Osteosarcoma, Does Tumour Inflammation Go with Faster Relapse? · For John</title>
+<meta name="description" content="Run November 26, 2026. The thirteenth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md, committed at commit 4e10b3b…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-13-in-pet-dogs-does-tumour-inflammation-go-with-faster-relapse.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 13: In Pet Dogs with Osteosarcoma, Does Tumour Inflammation Go with Faster Relapse? · For John">
+<meta property="og:description" content="Run November 26, 2026. The thirteenth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md, committed at commit 4e10b3b…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-13-in-pet-dogs-does-tumour-inflammation-go-with-faster-relapse.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../families.html">For Families</a>
+      <a href="../index.html#findings">Findings</a>
+      <a href="../research-queue.html">Research Engine</a>
+      <a href="../reports.html">All Reports</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 26, 2026 · 4 min read</p>
+    <h1>Engine Cycle 13: In Pet Dogs with Osteosarcoma, Does Tumour Inflammation Go with Faster Relapse?</h1>
+    <p><em>Run November 26, 2026. The thirteenth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md"><code>research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md</code></a>, committed at commit <code>4e10b3b</code> before any expression value was read. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle13_dog_inflammation.py"><code>tools/engine_cycle13_dog_inflammation.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle13/results.csv"><code>data/engine/cycle13/results.csv</code></a>.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>Two of this project's leads propose drug trials in pet dogs with osteosarcoma:</p>
+    <ul>
+    <li><strong>Lead 1:</strong> blocking IL-1 or IL-6 after amputation;</li>
+    <li><strong>Lead 4:</strong> blocking FAK or DKK1.</li>
+    </ul>
+    <p>We asked whether dogs whose tumours carried more of these signals before treatment relapsed sooner. The data come from a public trial of 59 dogs treated with amputation and chemotherapy, 47 of whom progressed or died during follow-up.</p>
+    <ul>
+    <li><strong>Inflammation score (IL6, IL1B, CXCL8): inconclusive.</strong> Hazard ratio 1.24 per standard deviation (95% CI 0.93–1.66). It leans towards faster relapse but could be chance.</li>
+    <li><strong>DKK1: refuted</strong> by the pre-registered rule: 0.92 (0.67–1.26). Dogs with more tumour DKK1 RNA did not relapse faster; an effect of 1.3 or more is ruled out.</li>
+    <li><strong>PTK2 (FAK): inconclusive:</strong> 1.08 (0.80–1.46).</li>
+    <li><strong>The built-in check was weak.</strong> Serum alkaline phosphatase, a long-known bad sign in dogs, leaned the expected way (1.22, 0.89–1.68) without reaching clarity. These 59 dogs are a small sample.</li>
+    <li><strong>An exploratory flag, not a result:</strong> IL1B on its own leaned towards faster relapse (1.34, 1.04–1.72). It is one of four single genes looked at as a secondary analysis, with no correction for multiple tests.</li>
+    <li><strong>Predictions:</strong> P38, P39 and P40 were all wrong. The scorecard records them.</li>
+    </ul>
+    <p><strong>What it does and does not say about the leads.</strong></p>
+    <ul>
+    <li>Tumour RNA before treatment is not the same as inflammation in the body after surgery, which is what lead 1 is about. So this neither supports nor undermines the idea of blocking IL-1 or IL-6 after amputation.</li>
+    <li>For lead 4, tumour DKK1 RNA does not mark the dogs that do worse. That removes one possible way of choosing dogs for a DKK1 trial. It does not test whether blocking DKK1 works.</li>
+    </ul>
+    <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from open data unless marked otherwise.</p>
+    <h2 id="what-was-tested">What Was Tested</h2>
+    <ul>
+    <li><strong>Data:</strong> GEO GSE180303, a prospective trial in pet dogs with limb osteosarcoma.
+    <ul>
+    <li>Treatment: amputation, then carboplatin and/or doxorubicin.</li>
+    <li>Samples: pre-treatment tumour biopsies on Affymetrix Canine 2.0 arrays, two per dog (109 arrays, 59 dogs), averaged per dog.</li>
+    </ul>
+    </li>
+    <li><strong>Outcome:</strong> time to progression.
+    <ul>
+    <li>The dataset gives no censoring flag, so a rule was fixed in advance. Dogs whose progression time equals their survival time and is a year or more were treated as alive and progression-free at last follow-up. All others were counted as events.</li>
+    <li>That gave 47 events. 40 dogs progressed or died within a year.</li>
+    </ul>
+    </li>
+    <li><strong>Measures:</strong> RNA of the lead genes, as a hazard ratio per standard deviation from a Cox model.</li>
+    <li><strong>Verdict rules, fixed in advance:</strong>
+    <ul>
+    <li>Supported: the whole 95% interval is above 1.</li>
+    <li>Refuted: the upper end is below 1.3.</li>
+    <li>Inconclusive: anything else.</li>
+    </ul>
+    </li>
+    </ul>
+    <h2 id="results">Results</h2>
+    <p><img src="../figures/engine13_dogs.svg" alt="Hazard ratios for faster progression in 59 pet dogs" /></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Measure</th>
+    <th>Hazard ratio per SD (95% CI)</th>
+    <th>One-year odds ratio per SD (95% CI)</th>
+    <th>Verdict</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Check: alkaline phosphatase (log)</td>
+    <td>1.22 (0.89–1.68)</td>
+    <td>1.35 (0.74–2.46)</td>
+    <td>weak</td>
+    </tr>
+    <tr>
+    <td>Check: monocyte count</td>
+    <td>1.28 (0.97–1.68)</td>
+    <td>1.82 (0.87–3.77)</td>
+    <td>weak</td>
+    </tr>
+    <tr>
+    <td><strong>H1: inflammation score (IL6, IL1B, CXCL8)</strong></td>
+    <td><strong>1.24 (0.93–1.66)</strong></td>
+    <td>1.39 (0.77–2.51)</td>
+    <td><strong>Inconclusive</strong></td>
+    </tr>
+    <tr>
+    <td><strong>H2: DKK1</strong></td>
+    <td><strong>0.92 (0.67–1.26)</strong></td>
+    <td>0.71 (0.40–1.24)</td>
+    <td><strong>Refuted</strong></td>
+    </tr>
+    <tr>
+    <td><strong>H3: PTK2 (FAK)</strong></td>
+    <td><strong>1.08 (0.80–1.46)</strong></td>
+    <td>1.11 (0.64–1.93)</td>
+    <td><strong>Inconclusive</strong></td>
+    </tr>
+    <tr>
+    <td>IL6 alone</td>
+    <td>0.99 (0.74–1.33)</td>
+    <td>1.02 (0.59–1.77)</td>
+    <td>secondary</td>
+    </tr>
+    <tr>
+    <td>IL1B alone</td>
+    <td>1.34 (1.04–1.72)</td>
+    <td>2.16 (0.98–4.79)</td>
+    <td>secondary</td>
+    </tr>
+    <tr>
+    <td>CXCL8 alone</td>
+    <td>1.16 (0.88–1.52)</td>
+    <td>1.14 (0.65–1.98)</td>
+    <td>secondary</td>
+    </tr>
+    <tr>
+    <td>IL1A alone</td>
+    <td>0.93 (0.66–1.31)</td>
+    <td>0.85 (0.49–1.45)</td>
+    <td>secondary</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <ul>
+    <li><strong>Sensitivity check:</strong> leaving out the nine dogs whose event is least certain (progression time under a year, equal to survival time), the inflammation score gives 1.24 (0.89–1.74).</li>
+    <li><strong>Adjusted for alkaline phosphatase:</strong> 1.19 (0.87–1.61).</li>
+    <li><strong>DKK1 and PTK2</strong> were unchanged by either.</li>
+    </ul>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>For lead 1 (IL-1 or IL-6 after amputation in dogs):</strong>
+    <ul>
+    <li>The tumour signal leans the expected way without being clear. The one gene that stood out on its own is IL1B, the gene for IL-1β.</li>
+    <li>That is a weak, unplanned pointer. It fits the IL-1 half of the lead and is worth testing in a second dog dataset with outcomes.</li>
+    <li>It is not evidence that blocking IL-1 would help.</li>
+    </ul>
+    </li>
+    <li><strong>For lead 4 (FAK or DKK1 in dogs):</strong>
+    <ul>
+    <li>Neither gene's tumour RNA marked the dogs that did worse. In people, this project found only a weak, non-significant trend for DKK1 (<a href="../reports/do-the-leads-predict-survival.html"><code>reports/Do the leads predict survival.md</code></a>).</li>
+    <li>Tumour DKK1 RNA should not be used to pick dogs or patients for a DKK1 trial.</li>
+    </ul>
+    </li>
+    <li><strong>The weak check matters.</strong> Alkaline phosphatase is one of the best-known prognostic signs in dogs with osteosarcoma (general knowledge), and here it was only a lean. With 59 dogs, moderate real effects can be missed. &quot;Inconclusive&quot; here means just that.</li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>59 dogs from one trial, treated with two chemotherapy schedules.</li>
+    <li>The censoring rule is an assumption; the dataset does not say which dogs were still alive.</li>
+    <li>Tumour RNA from one biopsy, on an older array design.</li>
+    <li>Several measures were tested. Only H1 was the main test, and the single-gene results are uncorrected.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li><code>python3 tools/engine_cycle13_dog_inflammation.py fetch</code> downloads the series matrix and platform annotation from GEO (about 23 megabytes, not in git).</li>
+    <li><code>python3 tools/engine_cycle13_dog_inflammation.py</code> runs the analysis in seconds.</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle13/results.csv"><code>data/engine/cycle13/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle13/summary.json"><code>data/engine/cycle13/summary.json</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine13_dogs.svg"><code>docs/figures/engine13_dogs.svg</code></a>.</li>
+    </ul>
+    <p><strong>Data source and credit.</strong> NCBI GEO series GSE180303, a prospective clinical trial of gene-expression models of drug response in dogs with osteosarcoma (submitted by Colorado State University; PubMed 34263337 and 34635775).</p>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-26: cycle run and reported. Under the pre-registered rules: H1 inconclusive, H2 refuted, H3 inconclusive. The alkaline-phosphatase check leaned the expected way without reaching clarity. P38 to P40 wrong. No deviations.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%2013%20-%20in%20pet%20dogs%20does%20tumour%20inflammation%20go%20with%20faster%20relapse.md">reports/Engine cycle 13 - in pet dogs does tumour inflammation go with faster relapse.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

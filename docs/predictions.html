@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#predictions">Predictions</a></li><li class="l1"><a href="#outcomes">Outcomes</a></li><li class="l1"><a href="#scorecard">Scorecard</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 26, 2026 · 13 min read</p>
+    <p class="crumb">Project document · Updated November 26, 2026 · 14 min read</p>
     <h1>Predictions Log</h1>
     <p><em>Started November 22, 2026. This is a public, dated record of what For John predicts, written before the answers are known. When trials, studies or reviewers report, each prediction will be marked right, wrong or unresolved. Entries are never edited after the fact; corrections and outcomes are added below each one with a date.</em></p>
     <p><strong>Why keep this.</strong> Anyone can explain results after they arrive. Committing to predictions in advance is the honest test of whether connecting the published evidence, as this project does, finds real signals. If our hit rate is poor, that is worth knowing too.</p>
@@ -359,6 +359,30 @@
     <td class="num">80%</td>
     <td><strong>Right</strong> (see Outcomes)</td>
     </tr>
+    <tr>
+    <td>P38</td>
+    <td>In 59 pet dogs treated with amputation and chemotherapy, higher serum alkaline phosphatase goes with faster progression (hazard ratio per SD above 1, interval excluding 1)</td>
+    <td>The interval includes 1 or the ratio is below 1</td>
+    <td>Pet-dog trial data, GEO GSE180303; engine cycle 13, pre-registered in <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md"><code>research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md</code></a>; result due within days</td>
+    <td class="num">50%</td>
+    <td><strong>Wrong</strong> (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P39</td>
+    <td>In the same dogs, a tumour inflammation score (IL6, IL1B, CXCL8 RNA) goes with faster progression by the same rule</td>
+    <td>The verdict is anything other than &quot;Supported&quot;</td>
+    <td>Same as P38</td>
+    <td class="num">15%</td>
+    <td><strong>Wrong</strong> (see Outcomes)</td>
+    </tr>
+    <tr>
+    <td>P40</td>
+    <td>In the same dogs, tumour DKK1 RNA goes with faster progression by the same rule</td>
+    <td>The verdict is anything other than &quot;Supported&quot;</td>
+    <td>Same as P38</td>
+    <td class="num">15%</td>
+    <td><strong>Wrong</strong> (see Outcomes)</td>
+    </tr>
     </tbody>
     </table></div>
     <h2 id="outcomes">Outcomes</h2>
@@ -387,6 +411,9 @@
     <li><strong>P35, 2026-11-26: right.</strong> Of 1,434 recruiting early-phase drug trials for solid tumours, 78 (5.4%, 95% CI 4.4–6.7%) accept anyone aged 12 to 17. Source: <a href="reports/engine-cycle-12-how-often-can-a-teenager-with-osteosarcoma-get-into-a-drug-trial.html"><code>reports/Engine cycle 12 - how often can a teenager with osteosarcoma get into a drug trial.md</code></a> (our calculation from registry records read 2026-11-26).</li>
     <li><strong>P36, 2026-11-26: right.</strong> Of 69 trials naming osteosarcoma that the pre-registered text rule flagged as taking relapsed disease, 53 (77%) accept 12- to 17-year-olds. A full hand reading found 57 such treatment trials, 43 (75%) accepting teenagers. Same source.</li>
     <li><strong>P37, 2026-11-26: right.</strong> Companies lead 77% of the 1,434 solid-tumour trials but 37% (29 of 78) of those accepting teenagers. Same source.</li>
+    <li><strong>P38, 2026-11-26: wrong.</strong> Log serum alkaline phosphatase in 59 dogs: hazard ratio per SD 1.22 (95% CI 0.89–1.68), leaning the expected way but with the interval including 1. Source: <a href="reports/engine-cycle-13-in-pet-dogs-does-tumour-inflammation-go-with-faster-relapse.html"><code>reports/Engine cycle 13 - in pet dogs does tumour inflammation go with faster relapse.md</code></a> (our calculation).</li>
+    <li><strong>P39, 2026-11-26: wrong.</strong> Tumour inflammation score (IL6, IL1B, CXCL8): 1.24 (0.93–1.66), inconclusive. Same source.</li>
+    <li><strong>P40, 2026-11-26: wrong.</strong> Tumour DKK1 RNA: 0.92 (0.67–1.26), refuted by the pre-registered rule. Same source.</li>
     </ul>
     <h2 id="scorecard">Scorecard</h2>
     <div class="tablewrap"><table>
@@ -400,14 +427,14 @@
     </thead>
     <tbody>
     <tr>
-    <td class="num">12</td>
+    <td class="num">15</td>
     <td class="num">11</td>
-    <td class="num">1</td>
+    <td class="num">4</td>
     <td class="num">25</td>
     </tr>
     </tbody>
     </table></div>
-    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day. 2026-11-25: P29 to P32 added for engine cycle 10, before its drug-response data were opened; outcomes recorded the same day. 2026-11-25: P33 and P34 added for engine cycle 11, before its target genes were read; outcomes recorded the same day. 2026-11-26: P35 to P37 added for engine cycle 12, before the registry was searched; outcomes recorded the same day.</p>
+    <p><em>Change log:</em> 2026-11-22: log started with 14 predictions drawn from the ranked leads and reports as of version 1.0. 2026-11-24: P15 added, the first prediction from the research engine, pre-registered before its data were examined; outcome recorded the same day. 2026-11-24: P16 and P17 added for engine cycle 2, before its expression data were opened; outcomes recorded the same day. 2026-11-24: P18 added for engine cycle 3, before its copy-number data were opened; outcome recorded the same day. 2026-11-24: P19, P20 and P21 added for engine cycles 4, 5 and 6, before their data were opened; outcomes recorded the same day. P19 is the first prediction to resolve. 2026-11-24: P22 to P25 added for engine cycles 7 and 8, before their data were opened; outcomes recorded the same day. 2026-11-24: P26 to P28 added for engine cycle 9, before its data were opened; outcomes recorded the same day. 2026-11-25: P29 to P32 added for engine cycle 10, before its drug-response data were opened; outcomes recorded the same day. 2026-11-25: P33 and P34 added for engine cycle 11, before its target genes were read; outcomes recorded the same day. 2026-11-26: P35 to P37 added for engine cycle 12, before the registry was searched; outcomes recorded the same day. 2026-11-26: P38 to P40 added for engine cycle 13, before its expression data were opened; outcomes recorded the same day.</p>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
   </main>

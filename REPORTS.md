@@ -47,6 +47,7 @@ Each was written down with its rules before the data were opened.
 - [Cycle 10: Do the gene-change weaknesses hold up with real drugs?](reports/engine-cycle-10-do-the-gene-change-weaknesses-hold-up-with-real-drugs.html) The known drug links show up; the CCNE1 and MTAP tests are inconclusive.
 - [Cycle 11: Do lung metastases keep the surface targets?](reports/engine-cycle-11-do-lung-metastases-keep-the-surface-targets.html) No sign that LRRC15 is lost; B7-H3 unclear.
 - [Cycle 12: How often can a teenager with osteosarcoma get into a drug trial?](reports/engine-cycle-12-how-often-can-a-teenager-with-osteosarcoma-get-into-a-drug-trial.html) Trials built for osteosarcoma usually take teenagers; early trials of new drugs almost never do.
+- [Cycle 13: In pet dogs, does tumour inflammation go with faster relapse?](reports/engine-cycle-13-in-pet-dogs-does-tumour-inflammation-go-with-faster-relapse.html) Inconclusive for inflammation; DKK1 RNA does not mark dogs that do worse.
 
 ## The literature and its funding
 
