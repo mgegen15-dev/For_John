@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#why-the-adjusted-measure-is-unstable-not-in-the-plan-found-while-checking">Why the Adjusted Measure Is Unstable (Not in the Plan; Found While Checking)</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 25, 2026 · 5 min read</p>
+    <p class="crumb">Report · Updated November 25, 2026 · 6 min read</p>
     <h1>Engine Cycle 11: Do Lung Metastases Keep the Surface Targets That New Drugs Aim At?</h1>
     <p><em>Run November 25, 2026. The eleventh cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md"><code>research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md</code></a>, committed at commit <code>eb48e69</code> before any of these genes was read from the data. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle11_targets.py"><code>tools/engine_cycle11_targets.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle11/results.csv"><code>data/engine/cycle11/results.csv</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
@@ -53,7 +53,7 @@
     <ul>
     <li><strong>LRRC15: &quot;Maintained&quot; by the pre-registered rule, but less firmly than that label suggests.</strong>
     <ul>
-    <li>No version of the analysis shows LRRC15 dropping in lung metastases.</li>
+    <li>No version of the analysis shows a clear drop of LRRC15 in lung metastases, though the three supporting datasets leaned lower (−0.42, −0.88 to +0.04).</li>
     <li>The measure the rule used, though, turned out to be unstable, for the reason explained below.</li>
     </ul>
     </li>
@@ -187,9 +187,10 @@
     <ul>
     <li><strong>LRRC15:</strong>
     <ul>
-    <li>No analysis showed LRRC15 dropping in lung metastases: the unadjusted, immune-adjusted, tumour-cell and matched-pair versions are all near zero.</li>
+    <li>No analysis showed a clear drop of LRRC15 in lung metastases. The unadjusted, immune-adjusted, tumour-cell and matched-pair versions are all near zero.</li>
+    <li>The pre-registered sensitivity analysis of the three datasets whose metastasis site is not recorded leaned lower (−0.42, −0.88 to +0.04), and one main dataset, GSE293065, gave −0.94 (−1.89 to +0.01).</li>
     <li>In the single-cell data, the median share of tumour cells with any LRRC15 reads was 12% in four metastases and 7% in eleven primaries.</li>
-    <li>So there is no sign that this target is lost where relapsed osteosarcoma grows. This is RNA, not protein, and the strict test is less certain than its label.</li>
+    <li>So there is no clear sign that this target is lost where relapsed osteosarcoma grows, but a modest drop is not ruled out. This is RNA, not protein, and the strict test is less certain than its label.</li>
     </ul>
     </li>
     <li><strong>B7-H3:</strong>
@@ -202,7 +203,7 @@
     <li><strong>Secondary set (exploratory weight):</strong>
     <ul>
     <li>No gene met &quot;Lower in metastases&quot;.</li>
-    <li>GPNMB's &quot;Maintained&quot; rests on the same unstable adjustment as LRRC15's.</li>
+    <li>GPNMB's &quot;Maintained&quot; rests on the same unstable adjustment as LRRC15's. Under the immune-only adjustment, GPNMB (−0.58, −1.03 to −0.12) and CD276 (−0.71, −1.26 to −0.15) would read lower in metastases. All these checks are saved in <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle11/posthoc_checks.json"><code>data/engine/cycle11/posthoc_checks.json</code></a>.</li>
     <li>IFITM5, one of this project's own surface leads, was lower in tumour cells of the four metastases (−1.58, −2.91 to −0.26). With four samples this is a flag to check, not a finding.</li>
     <li>It adds to the doubts about IFITM5 already listed in <a href="../reports/new-surface-targets-for-osteosarcoma.html"><code>reports/New surface targets for osteosarcoma.md</code></a>.</li>
     </ul>
@@ -231,6 +232,7 @@
     <p><strong>Data sources and credit.</strong> NCBI GEO series GSE14359, GSE220538, GSE140131, GSE293065, GSE152048, GSE318840, GSE32981, GSE237033 and GSE87624. These are the same sources and credits as engine cycle 2.</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-26: after an independent check, LRRC15 wording softened to &quot;no clear drop&quot;; the pre-registered sensitivity result (−0.42) and the immune-only readings for GPNMB and CD276 added; the checks outside the plan saved to <code>posthoc_checks.json</code>.</li>
     <li>2026-11-25: cycle run and reported. Verdicts under the pre-registered rules: LRRC15 and GPNMB maintained; CD276 and the other five inconclusive. No deviation from the plan. The instability of the adjusted measure was found afterwards and is reported as a check outside the plan.</li>
     </ul>
     <hr>

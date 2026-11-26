@@ -60,4 +60,7 @@ The counts go into the trial-access brief as a wider frame, if they hold up. If 
 
 ## Deviations
 
-*None yet.*
+Recorded November 26, 2026, after the run.
+
+1. **Phase filter.** The code kept any trial with an early phase among its phases, so 16 phase 2/3 trials entered Set B. Without them: 72 of 1,418 accept teenagers. Reported in the cycle report.
+2. **Full reading of Set A.** All 72 trials were classified by reading each record, beyond the planned sample of 30. One error found by an independent check was corrected (NCT07477457).

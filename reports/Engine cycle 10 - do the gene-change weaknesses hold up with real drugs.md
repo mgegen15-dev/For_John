@@ -65,7 +65,7 @@ The full per-line table is in `data/engine/cycle10/osteosarcoma_lines.csv`. Each
   - SJSA-1 is a well-known osteosarcoma line with MDM2 amplification and working TP53 (general knowledge). So this is the expected result, and a check that the line behaves as described.
   - Saos-2, which has lost TP53, was tested with only one MDM2 inhibitor (idasanutlin), where it ranked at 0.47.
 - **The kinase pills tested in osteosarcoma trials:**
-  - MG-63 was among the most sensitive lines to several of them: cabozantinib 0.00, apatinib 0.01, anlotinib 0.05, pazopanib 0.07 and sunitinib 0.11.
+  - MG-63 was among the most sensitive lines to several of them (cabozantinib 0.00, apatinib 0.01, anlotinib 0.05, pazopanib 0.07, sunitinib 0.11) but among the least sensitive to sorafenib (0.99) and mid-ranked for regorafenib (0.62).
   - The other osteosarcoma lines were spread across the range.
   - These drugs share targets, so this is one observation about one line, not five.
   - As stated before the data were opened, these drugs are thought to act largely on a tumour's blood vessels, which cells in a dish lack. Neither strong nor weak activity here says how they work in patients.
@@ -73,7 +73,7 @@ The full per-line table is in `data/engine/cycle10/osteosarcoma_lines.csv`. Each
 ## What this means
 
 - **The drug screen can see real drug–gene links.** Both checks were large and clear, so the inconclusive tests are not a failure of the method.
-- **CCNE1 and WEE1: no support from drug data at this size.** The knockout screen in cycle 6 also found no link between CCNE1 and WEE1, though it did between CCNE1 and PKMYT1 or CDK2. Neither result counts against the CCNE1 trials, whose drugs were chosen on other evidence, but this project cannot add support. The direct test is still a laboratory one: queue row 15, with the four CCNE1-amplified osteosarcoma lines found in cycle 6, none of which is in this screen.
+- **CCNE1 and WEE1: no support from drug data at this size.** The knockout screen in cycle 6 also found no link between CCNE1 and WEE1, though across all cancers it did find one between CCNE1 and PKMYT1 or CDK2. Neither result counts against the CCNE1 trials, whose drugs were chosen on other evidence, but this project cannot add support. The direct test is still a laboratory one: queue row 15, with the four CCNE1-amplified osteosarcoma lines found in cycle 6, none of which is in this screen.
 - **The early PRMT5 drug shows little or no MTAP effect,** which fits why the trials in cycle 4 use newer drugs designed for MTAP-lost tumours. This screen does not contain those newer drugs, so it cannot test them.
 - **Predictions:** P29 and P30 are right. P31 and P32 are unresolved by their own rules.
 
@@ -97,4 +97,5 @@ The full per-line table is in `data/engine/cycle10/osteosarcoma_lines.csv`. Each
 
 ## Change log
 
+- 2026-11-26: after an independent check, MG-63's results for sorafenib and regorafenib added, and the cycle 6 comparison qualified as "across all cancers".
 - 2026-11-25: cycle run and reported. Verdicts under the pre-registered rules: both checks passed; T1 and T2 inconclusive. No deviations from the pre-registration.

@@ -47,7 +47,7 @@
   <main id="main" class="doc">
     <p class="crumb">Report · Updated November 26, 2026 · 4 min read</p>
     <h1>Engine Cycle 13: In Pet Dogs with Osteosarcoma, Does Tumour Inflammation Go with Faster Relapse?</h1>
-    <p><em>Run November 26, 2026. The thirteenth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md"><code>research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md</code></a>, committed at commit <code>4e10b3b</code> before any expression value was read. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle13_dog_inflammation.py"><code>tools/engine_cycle13_dog_inflammation.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle13/results.csv"><code>data/engine/cycle13/results.csv</code></a>.</em></p>
+    <p><em>Run November 26, 2026. The thirteenth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md"><code>research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md</code></a>, committed at commit <code>4e10b3b</code> before any expression value was read. The file containing the values had already been downloaded to read the clinical columns, so the order of reading rests on our account; the commit order shows only that the plan came before the results. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle13_dog_inflammation.py"><code>tools/engine_cycle13_dog_inflammation.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle13/results.csv"><code>data/engine/cycle13/results.csv</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
     <p>Two of this project's leads propose drug trials in pet dogs with osteosarcoma:</p>
     <ul>
@@ -66,7 +66,7 @@
     <p><strong>What it does and does not say about the leads.</strong></p>
     <ul>
     <li>Tumour RNA before treatment is not the same as inflammation in the body after surgery, which is what lead 1 is about. So this neither supports nor undermines the idea of blocking IL-1 or IL-6 after amputation.</li>
-    <li>For lead 4, tumour DKK1 RNA does not mark the dogs that do worse. That removes one possible way of choosing dogs for a DKK1 trial. It does not test whether blocking DKK1 works.</li>
+    <li>For lead 4, in these 59 dogs tumour DKK1 RNA did not mark worse outcome under standard treatment, so these data give no support for using it to choose dogs for a DKK1 trial. Whether it predicts response to DKK1 blockade was not tested.</li>
     </ul>
     <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from open data unless marked otherwise.</p>
     <h2 id="what-was-tested">What Was Tested</h2>
@@ -74,7 +74,7 @@
     <li><strong>Data:</strong> GEO GSE180303, a prospective trial in pet dogs with limb osteosarcoma.
     <ul>
     <li>Treatment: amputation, then carboplatin and/or doxorubicin.</li>
-    <li>Samples: pre-treatment tumour biopsies on Affymetrix Canine 2.0 arrays, two per dog (109 arrays, 59 dogs), averaged per dog.</li>
+    <li>Samples: pre-treatment tumour biopsies on Affymetrix Canine 2.0 arrays, one or two per dog (109 arrays, 59 dogs: 50 with two, 9 with one), averaged per dog.</li>
     </ul>
     </li>
     <li><strong>Outcome:</strong> time to progression.
@@ -163,7 +163,7 @@
     <ul>
     <li><strong>Sensitivity check:</strong> leaving out the nine dogs whose event is least certain (progression time under a year, equal to survival time), the inflammation score gives 1.24 (0.89–1.74).</li>
     <li><strong>Adjusted for alkaline phosphatase:</strong> 1.19 (0.87–1.61).</li>
-    <li><strong>DKK1 and PTK2</strong> were unchanged by either.</li>
+    <li><strong>DKK1 and PTK2</strong> were unchanged after adjusting for alkaline phosphatase (0.94, 0.68–1.29; 1.07, 0.80–1.45). The sensitivity check was run for the inflammation score only.</li>
     </ul>
     <h2 id="what-this-means">What This Means</h2>
     <ul>
@@ -177,7 +177,7 @@
     <li><strong>For lead 4 (FAK or DKK1 in dogs):</strong>
     <ul>
     <li>Neither gene's tumour RNA marked the dogs that did worse. In people, this project found only a weak, non-significant trend for DKK1 (<a href="../reports/do-the-leads-predict-survival.html"><code>reports/Do the leads predict survival.md</code></a>).</li>
-    <li>Tumour DKK1 RNA should not be used to pick dogs or patients for a DKK1 trial.</li>
+    <li>These data give no support for using tumour DKK1 RNA to choose dogs for a DKK1 trial. Whether it predicts response to DKK1 blockade is a separate question, not tested here.</li>
     </ul>
     </li>
     <li><strong>The weak check matters.</strong> Alkaline phosphatase is one of the best-known prognostic signs in dogs with osteosarcoma (general knowledge), and here it was only a lean. With 59 dogs, moderate real effects can be missed. &quot;Inconclusive&quot; here means just that.</li>
@@ -198,6 +198,7 @@
     <p><strong>Data source and credit.</strong> NCBI GEO series GSE180303, a prospective clinical trial of gene-expression models of drug response in dogs with osteosarcoma (submitted by Colorado State University; PubMed 34263337 and 34635775).</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-26: after an independent check, the DKK1 conclusion narrowed to these dogs and to outcome under standard treatment; arrays per dog and the scope of the sensitivity check stated correctly.</li>
     <li>2026-11-26: cycle run and reported. Under the pre-registered rules: H1 inconclusive, H2 refuted, H3 inconclusive. The alkaline-phosphatase check leaned the expected way without reaching clarity. P38 to P40 wrong. No deviations.</li>
     </ul>
     <hr>

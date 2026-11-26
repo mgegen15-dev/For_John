@@ -28,7 +28,7 @@ Frequencies (our calculation) from 341 patients in two clinical sequencing cohor
 
 - **The reasons are real.** The first trials of a new drug look for a safe dose and its side effects, and there is no dosing information for children yet. Thirty-two of the 34 trials counted here are at that early stage (phase 1 or 1/2), so starting in adults is a normal, cautious choice (our calculation).
 - **Regulators have addressed it.** In 2019 the US Food and Drug Administration issued guidance, *Considerations for the Inclusion of Adolescent Patients in Adult Oncology Clinical Trials*, recommending that patients aged 12 to 17 be eligible for adult cancer trials relevant to their disease or the drug's target. For first-in-human and dose-finding trials it suggests including adolescents once some adult dosing and side-effect data exist; for trials that measure whether a drug works, at the same time as adults. It is guidance, not a requirement (FDA guidance).
-- **The pattern is wider, and not improving.** Of 1,434 early-phase "solid tumour" drug trials recruiting on November 26, 2026, 78 (5%) took anyone under 18; of 57 relapse trials designed for osteosarcoma, 43 do. Of all such trials started in 2014–2018, 11% accepted teenagers; of those started in 2020–2024, after the guidance, 5% ([engine cycles 12](../reports/engine-cycle-12-how-often-can-a-teenager-with-osteosarcoma-get-into-a-drug-trial.html) and [17](../reports/engine-cycle-17-before-and-after-the-fda-guidance-across-all-trials.html); our calculation).
+- **The pattern is wider, and not improving.** Of 1,434 early-phase "solid tumour" drug trials recruiting or about to on November 26, 2026, 78 (5%) accepted 12- to 17-year-olds; of 58 relapse trials that list osteosarcoma (many are wider sarcoma or childhood-cancer trials), 44 do. Of all such trials started in 2014–2018, 11% accepted teenagers; of those started in 2020–2024, after the guidance, 5% ([engine cycles 12](../reports/engine-cycle-12-how-often-can-a-teenager-with-osteosarcoma-get-into-a-drug-trial.html) and [17](../reports/engine-cycle-17-before-and-after-the-fda-guidance-across-all-trials.html); our calculation).
 
 ## Some trials of these drugs already include adolescents
 
@@ -52,5 +52,6 @@ These are registry records on one day; trials open and close, and "any solid tum
 
 ## Change log
 
+- 2026-11-26: corrected the osteosarcoma count (58 and 44) and the wording of the solid-tumour count after an independent check.
 - 2026-11-26: added the registry-wide count from engine cycle 12 and the before-and-after trend from engine cycle 17.
 - 2026-11-25: corrected after an independent line-by-line check. Removed a wrong example (a UK mesothelioma trial's drug arm starts at 18, not 16); corrected the patient count (341 plus 49), the age floor (one trial starts at 19) and what the one-in-seven estimate rests on; made the stability claim more cautious; described the adolescent examples more precisely; added the measurable-disease caveat; added the age-limit reasons and the FDA guidance.

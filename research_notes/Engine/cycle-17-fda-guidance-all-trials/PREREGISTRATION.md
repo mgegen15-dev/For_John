@@ -52,4 +52,6 @@ In `PREDICTIONS.md`:
 
 ## Deviations
 
-*None yet.*
+Recorded November 26, 2026, after the run.
+
+1. **Phase filter.** The code kept any trial with an early phase among its phases, so 15 phase 2/3 trials entered. Without them the odds ratio is 0.41. Reported in the cycle report.

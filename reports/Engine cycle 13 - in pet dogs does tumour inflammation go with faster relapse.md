@@ -1,6 +1,6 @@
 # Engine cycle 13: in pet dogs with osteosarcoma, does tumour inflammation go with faster relapse?
 
-*Run November 26, 2026. The thirteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md`, committed at commit `4e10b3b` before any expression value was read. Script: `tools/engine_cycle13_dog_inflammation.py`. Results: `data/engine/cycle13/results.csv`.*
+*Run November 26, 2026. The thirteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md`, committed at commit `4e10b3b` before any expression value was read. The file containing the values had already been downloaded to read the clinical columns, so the order of reading rests on our account; the commit order shows only that the plan came before the results. Script: `tools/engine_cycle13_dog_inflammation.py`. Results: `data/engine/cycle13/results.csv`.*
 
 ## Summary
 
@@ -19,7 +19,7 @@ We asked whether dogs whose tumours carried more of these signals before treatme
 
 **What it does and does not say about the leads.**
 - Tumour RNA before treatment is not the same as inflammation in the body after surgery, which is what lead 1 is about. So this neither supports nor undermines the idea of blocking IL-1 or IL-6 after amputation.
-- For lead 4, tumour DKK1 RNA does not mark the dogs that do worse. That removes one possible way of choosing dogs for a DKK1 trial. It does not test whether blocking DKK1 works.
+- For lead 4, in these 59 dogs tumour DKK1 RNA did not mark worse outcome under standard treatment, so these data give no support for using it to choose dogs for a DKK1 trial. Whether it predicts response to DKK1 blockade was not tested.
 
 **How to read the labels.** Every number here is **(our calculation)** from open data unless marked otherwise.
 
@@ -27,7 +27,7 @@ We asked whether dogs whose tumours carried more of these signals before treatme
 
 - **Data:** GEO GSE180303, a prospective trial in pet dogs with limb osteosarcoma.
   - Treatment: amputation, then carboplatin and/or doxorubicin.
-  - Samples: pre-treatment tumour biopsies on Affymetrix Canine 2.0 arrays, two per dog (109 arrays, 59 dogs), averaged per dog.
+  - Samples: pre-treatment tumour biopsies on Affymetrix Canine 2.0 arrays, one or two per dog (109 arrays, 59 dogs: 50 with two, 9 with one), averaged per dog.
 - **Outcome:** time to progression.
   - The dataset gives no censoring flag, so a rule was fixed in advance. Dogs whose progression time equals their survival time and is a year or more were treated as alive and progression-free at last follow-up. All others were counted as events.
   - That gave 47 events. 40 dogs progressed or died within a year.
@@ -55,7 +55,7 @@ We asked whether dogs whose tumours carried more of these signals before treatme
 
 - **Sensitivity check:** leaving out the nine dogs whose event is least certain (progression time under a year, equal to survival time), the inflammation score gives 1.24 (0.89–1.74).
 - **Adjusted for alkaline phosphatase:** 1.19 (0.87–1.61).
-- **DKK1 and PTK2** were unchanged by either.
+- **DKK1 and PTK2** were unchanged after adjusting for alkaline phosphatase (0.94, 0.68–1.29; 1.07, 0.80–1.45). The sensitivity check was run for the inflammation score only.
 
 ## What this means
 
@@ -65,7 +65,7 @@ We asked whether dogs whose tumours carried more of these signals before treatme
   - It is not evidence that blocking IL-1 would help.
 - **For lead 4 (FAK or DKK1 in dogs):**
   - Neither gene's tumour RNA marked the dogs that did worse. In people, this project found only a weak, non-significant trend for DKK1 (`reports/Do the leads predict survival.md`).
-  - Tumour DKK1 RNA should not be used to pick dogs or patients for a DKK1 trial.
+  - These data give no support for using tumour DKK1 RNA to choose dogs for a DKK1 trial. Whether it predicts response to DKK1 blockade is a separate question, not tested here.
 - **The weak check matters.** Alkaline phosphatase is one of the best-known prognostic signs in dogs with osteosarcoma (general knowledge), and here it was only a lean. With 59 dogs, moderate real effects can be missed. "Inconclusive" here means just that.
 
 ## Limits
@@ -85,4 +85,5 @@ We asked whether dogs whose tumours carried more of these signals before treatme
 
 ## Change log
 
+- 2026-11-26: after an independent check, the DKK1 conclusion narrowed to these dogs and to outcome under standard treatment; arrays per dog and the scope of the sensitivity check stated correctly.
 - 2026-11-26: cycle run and reported. Under the pre-registered rules: H1 inconclusive, H2 refuted, H3 inconclusive. The alkaline-phosphatase check leaned the expected way without reaching clarity. P38 to P40 wrong. No deviations.

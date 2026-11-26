@@ -7,7 +7,7 @@
 New osteosarcoma drugs aimed at the surface proteins LRRC15 and B7-H3 (gene CD276) are tested mostly in patients whose disease has spread to the lungs. The evidence for those targets, however, comes mostly from primary tumours. We compared target RNA in 29 lung metastases with 51 primary tumours across six public datasets.
 
 - **LRRC15: "Maintained" by the pre-registered rule, but less firmly than that label suggests.**
-  - No version of the analysis shows LRRC15 dropping in lung metastases.
+  - No version of the analysis shows a clear drop of LRRC15 in lung metastases, though the three supporting datasets leaned lower (−0.42, −0.88 to +0.04).
   - The measure the rule used, though, turned out to be unstable, for the reason explained below.
 - **B7-H3: inconclusive.**
   - Whole-tissue samples of lung metastases had less B7-H3 RNA than primary tumours.
@@ -65,16 +65,17 @@ These checks were not in the plan. They are reported so that the verdicts are no
 ## What this means
 
 - **LRRC15:**
-  - No analysis showed LRRC15 dropping in lung metastases: the unadjusted, immune-adjusted, tumour-cell and matched-pair versions are all near zero.
+  - No analysis showed a clear drop of LRRC15 in lung metastases. The unadjusted, immune-adjusted, tumour-cell and matched-pair versions are all near zero.
+  - The pre-registered sensitivity analysis of the three datasets whose metastasis site is not recorded leaned lower (−0.42, −0.88 to +0.04), and one main dataset, GSE293065, gave −0.94 (−1.89 to +0.01).
   - In the single-cell data, the median share of tumour cells with any LRRC15 reads was 12% in four metastases and 7% in eleven primaries.
-  - So there is no sign that this target is lost where relapsed osteosarcoma grows. This is RNA, not protein, and the strict test is less certain than its label.
+  - So there is no clear sign that this target is lost where relapsed osteosarcoma grows, but a modest drop is not ruled out. This is RNA, not protein, and the strict test is less certain than its label.
 - **B7-H3:**
   - Whole-tissue metastasis samples had less B7-H3 RNA, including within the same patients (four pairs).
   - In tumour cells alone, there was no clear drop: the median share of tumour cells with reads was 28% in metastases and 20% in primaries.
   - If B7-H3 is lower in lung metastases, the difference may lie in the tissue around the tumour rather than in the tumour cells. A protein stain of matched primary tumours and metastases would settle it. This is the same kind of partner study as queue row 8.
 - **Secondary set (exploratory weight):**
   - No gene met "Lower in metastases".
-  - GPNMB's "Maintained" rests on the same unstable adjustment as LRRC15's.
+  - GPNMB's "Maintained" rests on the same unstable adjustment as LRRC15's. Under the immune-only adjustment, GPNMB (−0.58, −1.03 to −0.12) and CD276 (−0.71, −1.26 to −0.15) would read lower in metastases. All these checks are saved in `data/engine/cycle11/posthoc_checks.json`.
   - IFITM5, one of this project's own surface leads, was lower in tumour cells of the four metastases (−1.58, −2.91 to −0.26). With four samples this is a flag to check, not a finding.
   - It adds to the doubts about IFITM5 already listed in `reports/New surface targets for osteosarcoma.md`.
 - **For the method:** a future cycle comparing metastases with primaries should make tumour cells measured directly (single-cell or stained tissue) the primary measure, and use whole-tissue adjustment only as support.
@@ -99,4 +100,5 @@ These checks were not in the plan. They are reported so that the verdicts are no
 
 ## Change log
 
+- 2026-11-26: after an independent check, LRRC15 wording softened to "no clear drop"; the pre-registered sensitivity result (−0.42) and the immune-only readings for GPNMB and CD276 added; the checks outside the plan saved to `posthoc_checks.json`.
 - 2026-11-25: cycle run and reported. Verdicts under the pre-registered rules: LRRC15 and GPNMB maintained; CD276 and the other five inconclusive. No deviation from the plan. The instability of the adjusted measure was found afterwards and is reported as a check outside the plan.

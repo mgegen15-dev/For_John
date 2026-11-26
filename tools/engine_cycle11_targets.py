@@ -140,6 +140,20 @@ def main():
         w.writerows(rows)
     json.dump(S, open(os.path.join(OUT, "summary.json"), "w"), indent=1, default=float)
 
+
+    # checks outside the plan (reported as such in the cycle 11 report): stability of the lung-tissue adjustment
+    post = {"lung_score_g_per_dataset": {d["name"]: c2.effect(d["units"], "lung_score")["g"] for d in primary}, "genes": {}}
+    for g in TARGETS:
+        row = {}
+        for lab, cov in (("immune_only", ["immune_score"]), ("lung_only", ["lung_score"])):
+            m = c2.meta([c2.adjusted_effect(d["units"], g, cov) for d in primary])
+            row[lab] = {k: m[k] for k in ("g", "lo", "hi")} if m else None
+        loo = c2.meta([c2.adjusted_effect(d["units"], g, ["lung_score", "immune_score"]) for d in primary if d["name"] != "GSE318840"])
+        row["lung_and_immune_without_GSE318840"] = {k: loo[k] for k in ("g", "lo", "hi")} if loo else None
+        row["per_dataset_lung_and_immune"] = {d["name"]: (lambda e: {"g": e["g"], "se": e["se"]} if e else None)(c2.adjusted_effect(d["units"], g, ["lung_score", "immune_score"])) for d in primary}
+        post["genes"][g] = row
+    json.dump(post, open(os.path.join(OUT, "posthoc_checks.json"), "w"), indent=1, default=float)
+
     fr = []
     for g in TARGETS:
         a = S["genes"][g]["adjusted"]

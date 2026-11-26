@@ -51,7 +51,7 @@ This repeats the lesson of cycle 1: a clear result in one cohort often shrinks i
 
 ## What this means
 
-- **Not confirmed, not ruled out.** Independent patients show at most a weaker version of the Leiden result. Two of the three cohorts show no sign of it.
+- **Not confirmed, not ruled out.** Independent patients show at most a weaker version of the Leiden result. Two of the three cohorts show little or none of it.
 - **CD163 and TARGET-OS are the threads to follow.** CD163 marks one kind of macrophage, and the original study reported it alongside CD14 (paper, abstract). A test of CD163 staining in a new set of tumours would be the clean next step.
 - **What this does not say:**
   - It says nothing about whether mifamurtide or any other treatment works. That question belongs to trials, and a randomized trial of mifamurtide is under way (`reports/Osteosarcoma research landscape and gaps.md`).

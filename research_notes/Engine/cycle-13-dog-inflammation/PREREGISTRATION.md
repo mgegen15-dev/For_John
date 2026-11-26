@@ -71,4 +71,6 @@ In `PREDICTIONS.md`:
 
 ## Deviations
 
-*None yet.*
+Recorded November 26, 2026, after the run.
+
+1. **Description corrected, not the method.** The data section says two arrays per tumour; in fact 50 dogs have two and 9 have one. The plan's averaging per dog handles both.

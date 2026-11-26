@@ -4,16 +4,16 @@
 
 ## Summary
 
-In 2019 the US Food and Drug Administration recommended including 12- to 17-year-olds in adult cancer trials once early dosing data allow. We asked whether recruiting early-phase "solid tumour" drug trials that started in 2020 or later accept teenagers more often than those that started earlier.
+In 2019 the US Food and Drug Administration recommended including 12- to 17-year-olds in adult cancer trials relevant to them: in first-in-human and dose-finding trials once some adult dosing data exist, and in trials that measure whether a drug works at the same time as adults. We asked whether recruiting or soon-to-recruit early-phase "solid tumour" drug trials that started in 2020 or later accept teenagers more often than those that started earlier.
 
 - **No sign of an increase.**
   - Trials started in 2020 or later: 72 of 1,406 accept teenagers (5.1%).
   - Trials started earlier: 6 of 28 (21%).
   - Odds ratio 0.20 (95% CI 0.08–0.50). By the pre-registered rule, the increase is **refuted**.
 - **But this comparison is weak, as the plan warned.**
-  - Every trial here was still recruiting in November 2026, so the "before" group is the 28 unusual trials that have run for six years or more. Many are academic or children's studies that add groups over time.
+  - Every trial here was recruiting or about to recruit in November 2026 (all 28 older ones were recruiting), so the "before" group is the 28 unusual trials that have run for six years or more. Many are academic or children's studies that add groups over time.
   - The comparison shows the guidance has not made today's new trials more open. It cannot show what trials were like before 2019.
-- **The clearest number.** Of 1,083 company-led early-phase solid-tumour trials that started in 2020 or later and are recruiting now, 26 (2.4%) accept anyone under 18. Prediction P46 (under 5%) was right.
+- **The clearest number.** Of 1,083 company-led early-phase solid-tumour trials that started in 2020 or later and are recruiting or about to, 26 (2.4%) accept 12- to 17-year-olds. Prediction P46 (under 5%) was right.
 - **Predictions:** P45 (an increase) was wrong; P46 was right.
 
 **How to read the labels.** Every number here is **(our calculation)** from **(registry)** records.

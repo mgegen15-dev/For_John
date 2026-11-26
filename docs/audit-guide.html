@@ -287,7 +287,7 @@
     <td>E3</td>
     <td>25 recruiting or soon-to-recruit trials open on paper to an osteosarcoma patient with MTAP loss; 12 with a US site; 1 accepting under-18s</td>
     <td>Cycle 4 report, brief, front page</td>
-    <td><a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle04_mtap_trials.py"><code>tools/engine_cycle04_mtap_trials.py</code></a>; check each row of <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle04/classification.csv"><code>data/engine/cycle04/classification.csv</code></a> against its ClinicalTrials.gov record. A single reader classified these</td>
+    <td><a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle04_mtap_trials.py"><code>tools/engine_cycle04_mtap_trials.py</code></a>; check each row of <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle04/classification.csv"><code>data/engine/cycle04/classification.csv</code></a> against its ClinicalTrials.gov record. A single reader (the AI assistant) classified these; an independent check corrected one row</td>
     </tr>
     <tr>
     <td>E4</td>
@@ -309,13 +309,13 @@
     </tr>
     <tr>
     <td>E7</td>
-    <td>No analysis showed LRRC15 RNA dropping in 29 lung metastases against 51 primaries; the pre-registered lung-tissue adjustment proved unstable</td>
+    <td>No analysis showed a clear drop of LRRC15 RNA in 29 lung metastases against 51 primaries (supporting datasets leaned lower); the pre-registered lung-tissue adjustment proved unstable</td>
     <td>Cycle 11 report</td>
     <td><code>python3 tools/engine_cycle11_targets.py</code> after cycle 2's downloads; compare the adjusted and unadjusted rows</td>
     </tr>
     <tr>
     <td>E8</td>
-    <td>43 of 57 recruiting relapse trials naming osteosarcoma accept 12- to 17-year-olds; 78 of 1,434 early-phase solid-tumour drug trials do</td>
+    <td>44 of 58 recruiting relapse trials listing osteosarcoma accept 12- to 17-year-olds; 78 of 1,434 early-phase solid-tumour drug trials do</td>
     <td>Cycle 12 report, brief</td>
     <td><code>python3 tools/engine_cycle12_teen_access.py fetch</code> gives the registry on the day it is run; check the hand classification in <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle12/hand_classification.csv"><code>data/engine/cycle12/hand_classification.csv</code></a> against each record. A single reader classified these</td>
     </tr>
