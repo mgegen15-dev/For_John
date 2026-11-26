@@ -1,0 +1,44 @@
+set,cohort,endpoint,measure,n,events,hr_per_sd,lo,hi,p
+discovery (reproduction check),GSE21257,metastasis-free survival (no metastasis at diagnosis),macrophage score,39,20,0.632,0.437,0.913,0.0145
+discovery (reproduction check),GSE21257,metastasis-free survival (no metastasis at diagnosis),T-cell score,39,20,0.577,0.327,1.018,0.0579
+discovery (reproduction check),GSE21257,metastasis-free survival (no metastasis at diagnosis),CD163,39,20,0.593,0.417,0.844,0.0037
+discovery (reproduction check),GSE21257,metastasis-free survival (no metastasis at diagnosis),CD14,39,20,0.543,0.371,0.795,0.0017
+discovery (reproduction check),GSE21257,metastasis-free survival (no metastasis at diagnosis),CD68,39,20,1.038,0.667,1.616,0.8685
+discovery (reproduction check),GSE21257,metastasis-free survival (no metastasis at diagnosis),CD3E,39,20,0.653,0.380,1.124,0.1241
+discovery (reproduction check),GSE21257,metastasis-free survival (no metastasis at diagnosis),CD8A,39,20,0.540,0.305,0.954,0.0339
+independent,GSE16091,overall survival,macrophage score,34,15,0.920,0.539,1.572,0.7603
+independent,GSE16091,overall survival,T-cell score,34,15,1.065,0.655,1.734,0.7988
+independent,GSE16091,overall survival,CD163,34,15,0.844,0.491,1.450,0.5384
+independent,GSE16091,overall survival,CD14,34,15,1.154,0.677,1.966,0.5988
+independent,GSE16091,overall survival,CD68,34,15,0.798,0.432,1.477,0.4730
+independent,GSE16091,overall survival,CD3E,34,15,1.013,0.616,1.669,0.9580
+independent,GSE16091,overall survival,CD8A,34,15,1.111,0.690,1.789,0.6647
+independent,GSE39055,recurrence-free survival,macrophage score,37,18,1.290,0.723,2.300,0.3891
+independent,GSE39055,recurrence-free survival,T-cell score,37,18,0.972,0.614,1.539,0.9031
+independent,GSE39055,recurrence-free survival,CD163,37,18,0.924,0.556,1.536,0.7613
+independent,GSE39055,recurrence-free survival,CD14,37,18,2.722,0.824,8.985,0.1004
+independent,GSE39055,recurrence-free survival,CD68,37,18,1.199,0.690,2.084,0.5198
+independent,GSE39055,recurrence-free survival,CD3E,37,18,1.323,0.854,2.048,0.2099
+independent,GSE39055,recurrence-free survival,CD8A,37,18,0.769,0.461,1.281,0.3123
+independent,TARGET-OS,"event-free survival, adjusted for metastasis at diagnosis",macrophage score,84,41,0.742,0.550,1.001,0.0509
+independent,TARGET-OS,"event-free survival, adjusted for metastasis at diagnosis",T-cell score,84,41,0.598,0.400,0.894,0.0122
+independent,TARGET-OS,"event-free survival, adjusted for metastasis at diagnosis",CD163,84,41,0.691,0.503,0.950,0.0230
+independent,TARGET-OS,"event-free survival, adjusted for metastasis at diagnosis",CD14,84,41,0.746,0.556,1.002,0.0516
+independent,TARGET-OS,"event-free survival, adjusted for metastasis at diagnosis",CD68,84,41,0.974,0.703,1.348,0.8718
+independent,TARGET-OS,"event-free survival, adjusted for metastasis at diagnosis",CD3E,84,41,0.644,0.449,0.926,0.0174
+independent,TARGET-OS,"event-free survival, adjusted for metastasis at diagnosis",CD8A,84,41,0.595,0.388,0.912,0.0172
+discovery (secondary),GSE21257,"overall survival, adjusted for metastasis at diagnosis",macrophage score,53,23,0.961,0.654,1.412,0.8411
+pooled all three,,,macrophage score,,74,0.850,0.670,1.079,0.1824
+pooled geo only,,,macrophage score,,,1.075,0.726,1.593,0.7180
+pooled all three,,,T-cell score,,74,0.818,0.632,1.057,0.1245
+pooled geo only,,,T-cell score,,,1.015,0.727,1.418,0.9311
+pooled all three,,,CD163,,74,0.768,0.603,0.978,0.0321
+pooled geo only,,,CD163,,,0.886,0.611,1.283,0.5206
+pooled all three,,,CD14,,74,0.871,0.677,1.121,0.2849
+pooled geo only,,,CD14,,,1.331,0.818,2.165,0.2501
+pooled all three,,,CD68,,74,0.984,0.762,1.269,0.8987
+pooled geo only,,,CD68,,,1.000,0.663,1.508,0.9991
+pooled all three,,,CD3E,,74,0.897,0.703,1.144,0.3822
+pooled geo only,,,CD3E,,,1.178,0.848,1.637,0.3284
+pooled all three,,,CD8A,,74,0.781,0.596,1.023,0.0727
+pooled geo only,,,CD8A,,,0.936,0.661,1.326,0.7097

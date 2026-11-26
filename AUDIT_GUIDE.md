@@ -70,11 +70,11 @@ Claims labelled abstract-only, preprint or press-release-only are the weakest, a
 
 ## The research engine (added in version 1.1)
 
-Thirteen cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a report in `reports/Engine cycle N - ....md`. The engine's central promise is that each plan was committed before its data were opened. That is checkable:
+Fourteen cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a report in `reports/Engine cycle N - ....md`. The engine's central promise is that each plan was committed before its data were opened. That is checkable:
 
 - **Order of events.** For each cycle, compare the commit time of its `PREREGISTRATION.md` (`git log --format="%h %cI" -- research_notes/Engine/cycle-NN-*/PREREGISTRATION.md`) with the first commit of its data and script (`git log --diff-filter=A --format="%h %cI" -- tools/engine_cycleNN*`). The plan should come first. Changes made after the plan are listed under "Deviations" in each file. Commit times are set by the committer's clock, so they show order within this repository, not proof against a determined forger.
 - **Re-running.** Each report's last section gives the commands. Most need the raw downloads listed in `DATA_MANIFEST.md`, which are not in git.
-- **Predictions.** P15 to P40 in `PREDICTIONS.md` were written before each cycle's data; outcomes are recorded there with the rule each was judged by.
+- **Predictions.** P15 to P42 in `PREDICTIONS.md` were written before each cycle's data; outcomes are recorded there with the rule each was judged by.
 
 | # | Claim | Where | How to check |
 |---|---|---|---|
@@ -87,6 +87,7 @@ Thirteen cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` w
 | E7 | No analysis showed LRRC15 RNA dropping in 29 lung metastases against 51 primaries; the pre-registered lung-tissue adjustment proved unstable | Cycle 11 report | `python3 tools/engine_cycle11_targets.py` after cycle 2's downloads; compare the adjusted and unadjusted rows |
 | E8 | 43 of 57 recruiting relapse trials naming osteosarcoma accept 12- to 17-year-olds; 78 of 1,434 early-phase solid-tumour drug trials do | Cycle 12 report, brief | `python3 tools/engine_cycle12_teen_access.py fetch` gives the registry on the day it is run; check the hand classification in `data/engine/cycle12/hand_classification.csv` against each record. A single reader classified these |
 | E9 | In 59 pet dogs, tumour DKK1 RNA did not go with faster relapse (hazard ratio 0.92, 0.67–1.26); the inflammation score was inconclusive (1.24, 0.93–1.66) | Cycle 13 report | `python3 tools/engine_cycle13_dog_inflammation.py fetch`, then without `fetch`. Judge the censoring rule, which the dataset forces |
+| E10 | The tumour macrophage gene score reproduced in the Leiden cohort (0.63, 0.44–0.91) but pooled to 0.85 (0.67–1.08) in three independent cohorts | Cycle 14 report | `python3 tools/engine_cycle14_macrophages.py` after cycle 1's downloads |
 
 ## Known weak points
 

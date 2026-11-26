@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engine Cycle 14: Does More Macrophage Signal in the Tumour Go with a Better Outcome, in Patients Outside the Study That Found It? · For John</title>
+<meta name="description" content="Run November 26, 2026. The fourteenth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-14-macrophages/PREREGISTRATION.md, committed at commit 8a8a7c6 before…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-14-does-tumour-macrophage-signal-predict-a-better-outcome-in-new-patients.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="Engine Cycle 14: Does More Macrophage Signal in the Tumour Go with a Better Outcome, in Patients Outside the Study That Found It? · For John">
+<meta property="og:description" content="Run November 26, 2026. The fourteenth cycle of the For John research engine. Pre-registration: research_notes/Engine/cycle-14-macrophages/PREREGISTRATION.md, committed at commit 8a8a7c6 before…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/reports/engine-cycle-14-does-tumour-macrophage-signal-predict-a-better-outcome-in-new-patients.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="../index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="../families.html">For Families</a>
+      <a href="../index.html#findings">Findings</a>
+      <a href="../research-queue.html">Research Engine</a>
+      <a href="../reports.html">All Reports</a>
+      <a href="../how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="../audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Report · Updated November 26, 2026 · 3 min read</p>
+    <h1>Engine Cycle 14: Does More Macrophage Signal in the Tumour Go with a Better Outcome, in Patients Outside the Study That Found It?</h1>
+    <p><em>Run November 26, 2026. The fourteenth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-14-macrophages/PREREGISTRATION.md"><code>research_notes/Engine/cycle-14-macrophages/PREREGISTRATION.md</code></a>, committed at commit <code>8a8a7c6</code> before any of these genes was read from these cohorts. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle14_macrophages.py"><code>tools/engine_cycle14_macrophages.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle14/results.csv"><code>data/engine/cycle14/results.csv</code></a>. Nothing here is about any patient's treatment.</em></p>
+    <h2 id="summary">Summary</h2>
+    <p>A 2011 Leiden study reported that osteosarcomas with more macrophages, a type of immune cell, had fewer metastases (paper, abstract; Buddingh et al., Clinical Cancer Research 2011). That is part of the rationale for immune-stimulating treatment such as mifamurtide. We tested a macrophage gene score (CD163, CD14, CD68) in three cohorts that played no part in that finding: 155 patients and 74 events.</p>
+    <ul>
+    <li><strong>The original result reproduces in its own data.</strong> In the Leiden cohort (GSE21257), more macrophage signal went with longer metastasis-free survival: hazard ratio 0.63 per standard deviation (0.44–0.91). This shows the gene score captures what the study saw.</li>
+    <li><strong>In new patients it is weaker and not clear.</strong> Pooled across the three independent cohorts, the hazard ratio was 0.85 (0.67–1.08). The pre-registered verdict is <strong>inconclusive</strong>.
+    <ul>
+    <li>TARGET-OS leaned the same way (0.74, 0.55–1.00).</li>
+    <li>GSE16091 was near no effect (0.92), and GSE39055 leaned the other way (1.29).</li>
+    </ul>
+    </li>
+    <li><strong>T-cell score (secondary): also inconclusive,</strong> 0.82 (0.63–1.06).</li>
+    <li><strong>Predictions:</strong> P41 (the reproduction) was right; P42 (independent support) was wrong.</li>
+    </ul>
+    <p>This repeats the lesson of cycle 1: a clear result in one cohort often shrinks in new patients. The macrophage link is not ruled out; a protective effect of about 0.77 per standard deviation is still possible. But it is not confirmed in independent RNA data.</p>
+    <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from open data unless marked otherwise.</p>
+    <h2 id="what-was-tested">What Was Tested</h2>
+    <ul>
+    <li><strong>Score:</strong> the mean of the within-cohort z-scores of CD163, CD14 and CD68 RNA, from whole tumour pieces.</li>
+    <li><strong>Cohorts, end points and probe rules:</strong> those of engine cycle 1.
+    <ul>
+    <li>GSE21257: metastasis-free survival in patients without metastasis at diagnosis.</li>
+    <li>GSE16091: overall survival.</li>
+    <li>GSE39055: recurrence-free survival.</li>
+    <li>TARGET-OS: event-free survival, adjusted for metastasis at diagnosis.</li>
+    </ul>
+    </li>
+    <li><strong>Effect:</strong> hazard ratio per standard deviation, pooled across the three independent cohorts (fixed effect). Below 1 means a better outcome with more macrophage signal.</li>
+    <li><strong>Verdict rules, fixed in advance:</strong>
+    <ul>
+    <li>Supported: the whole 95% interval is below 1.</li>
+    <li>Refuted: the lower end is above 0.77.</li>
+    <li>Inconclusive: anything else.</li>
+    </ul>
+    </li>
+    </ul>
+    <h2 id="results">Results</h2>
+    <p><img src="../figures/engine14_macrophages.svg" alt="Tumour macrophage gene score and outcome, discovery and independent cohorts" /></p>
+    <div class="tablewrap"><table>
+    <thead>
+    <tr>
+    <th>Cohort</th>
+    <th>Patients (events)</th>
+    <th>Macrophage score</th>
+    <th>T-cell score (CD3E, CD8A)</th>
+    <th>CD163 alone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>GSE21257, Leiden (where the finding came from)</td>
+    <td>39 (20)</td>
+    <td>0.63 (0.44–0.91)</td>
+    <td>0.58 (0.33–1.02)</td>
+    <td>0.59 (0.42–0.84)</td>
+    </tr>
+    <tr>
+    <td>GSE16091</td>
+    <td>34 (15)</td>
+    <td>0.92 (0.54–1.57)</td>
+    <td>1.07 (0.65–1.73)</td>
+    <td>0.84 (0.49–1.45)</td>
+    </tr>
+    <tr>
+    <td>GSE39055</td>
+    <td>37 (18)</td>
+    <td>1.29 (0.72–2.30)</td>
+    <td>0.97 (0.61–1.54)</td>
+    <td>0.92 (0.56–1.54)</td>
+    </tr>
+    <tr>
+    <td>TARGET-OS</td>
+    <td>84 (41)</td>
+    <td>0.74 (0.55–1.00)</td>
+    <td>0.60 (0.40–0.89)</td>
+    <td>0.69 (0.50–0.95)</td>
+    </tr>
+    <tr>
+    <td><strong>Pooled, three independent cohorts</strong></td>
+    <td><strong>155 (74)</strong></td>
+    <td><strong>0.85 (0.67–1.08)</strong></td>
+    <td><strong>0.82 (0.63–1.06)</strong></td>
+    <td><strong>0.77 (0.60–0.98)</strong></td>
+    </tr>
+    </tbody>
+    </table></div>
+    <ul>
+    <li><strong>Heterogeneity:</strong> I² = 30% for the macrophage score. Random effects: 0.89 (0.65–1.21).</li>
+    <li><strong>Without TARGET-OS</strong> (the two GEO cohorts only): 1.08 (0.73–1.59).</li>
+    <li><strong>In the Leiden cohort, overall survival adjusted for metastasis at diagnosis</strong> (all 53 patients): 0.96 (0.65–1.41). The reproduction holds for metastasis, the end point the original study used, but not clearly for death.</li>
+    <li><strong>CD163 alone</strong> pooled to 0.77 (0.60–0.98). This is a secondary analysis, one of five single genes, with no correction for multiple tests.</li>
+    <li><strong>TARGET-OS</strong> showed the clearest signals, for both macrophage and T-cell genes. It is also the largest cohort and the only one measured by RNA sequencing.</li>
+    </ul>
+    <h2 id="what-this-means">What This Means</h2>
+    <ul>
+    <li><strong>Not confirmed, not ruled out.</strong> Independent patients show at most a weaker version of the Leiden result. Two of the three cohorts show no sign of it.</li>
+    <li><strong>CD163 and TARGET-OS are the threads to follow.</strong> CD163 marks one kind of macrophage, and the original study reported it alongside CD14 (paper, abstract). A test of CD163 staining in a new set of tumours would be the clean next step.</li>
+    <li><strong>What this does not say:</strong>
+    <ul>
+    <li>It says nothing about whether mifamurtide or any other treatment works. That question belongs to trials, and a randomized trial of mifamurtide is under way (<a href="../reports/osteosarcoma-research-landscape-and-gaps.html"><code>reports/Osteosarcoma research landscape and gaps.md</code></a>).</li>
+    <li>RNA from whole tumour pieces is a rough stand-in for counting cells on a stained section.</li>
+    </ul>
+    </li>
+    </ul>
+    <h2 id="limits">Limits</h2>
+    <ul>
+    <li>74 events across three small or mid-sized cohorts, with different platforms and end points.</li>
+    <li>Bulk RNA only; immune genes are also expressed by other cell types.</li>
+    <li>Several genes and two scores were examined. Only the macrophage score was the main test.</li>
+    </ul>
+    <h2 id="files-and-reproduction">Files and Reproduction</h2>
+    <ul>
+    <li>Run the downloads of engine cycle 1 and the TARGET-OS stage of <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/survival_analysis.py"><code>tools/survival_analysis.py</code></a> first.</li>
+    <li>Then <code>python3 tools/engine_cycle14_macrophages.py</code> runs the analysis.</li>
+    <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle14/results.csv"><code>data/engine/cycle14/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle14/summary.json"><code>data/engine/cycle14/summary.json</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine14_macrophages.svg"><code>docs/figures/engine14_macrophages.svg</code></a>.</li>
+    </ul>
+    <p><strong>Data sources and credit.</strong></p>
+    <ul>
+    <li>NCBI GEO: GSE21257 (Leiden University Medical Center), GSE16091 and GSE39055.</li>
+    <li>TARGET-OS: NCI TARGET, via the Genomic Data Commons.</li>
+    </ul>
+    <h2 id="change-log">Change Log</h2>
+    <ul>
+    <li>2026-11-26: cycle run and reported. Verdict: inconclusive (H1 and H2). P41 right, P42 wrong. No deviations.</li>
+    </ul>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%2014%20-%20does%20tumour%20macrophage%20signal%20predict%20a%20better%20outcome%20in%20new%20patients.md">reports/Engine cycle 14 - does tumour macrophage signal predict a better outcome in new patients.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -48,6 +48,7 @@ Each was written down with its rules before the data were opened.
 - [Cycle 11: Do lung metastases keep the surface targets?](reports/engine-cycle-11-do-lung-metastases-keep-the-surface-targets.html) No sign that LRRC15 is lost; B7-H3 unclear.
 - [Cycle 12: How often can a teenager with osteosarcoma get into a drug trial?](reports/engine-cycle-12-how-often-can-a-teenager-with-osteosarcoma-get-into-a-drug-trial.html) Trials built for osteosarcoma usually take teenagers; early trials of new drugs almost never do.
 - [Cycle 13: In pet dogs, does tumour inflammation go with faster relapse?](reports/engine-cycle-13-in-pet-dogs-does-tumour-inflammation-go-with-faster-relapse.html) Inconclusive for inflammation; DKK1 RNA does not mark dogs that do worse.
+- [Cycle 14: Does tumour macrophage signal predict a better outcome in new patients?](reports/engine-cycle-14-does-tumour-macrophage-signal-predict-a-better-outcome-in-new-patients.html) Reproduces in the original cohort; weaker and not clear in three new ones.
 
 ## The literature and its funding
 
