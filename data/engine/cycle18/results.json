@@ -1,0 +1,93 @@
+{
+ "preregistration_commit": "40c5e9e",
+ "sets": {
+  "ewing": {
+   "n": 51,
+   "teen": 45,
+   "share": 0.8823529411764706,
+   "lo": 0.766188977022052,
+   "hi": 0.9449500123582724,
+   "teen_with_us_site": 29,
+   "industry_share": 0.13725490196078433,
+   "odds_industry_vs_other": {
+    "industry": {
+     "teen": 6,
+     "n": 7
+    },
+    "other": {
+     "teen": 39,
+     "n": 44
+    },
+    "odds_ratio": 0.7692307692307693,
+    "lo": 0.07614715194920092,
+    "hi": 7.77069084246388,
+    "fisher_p": 1.0
+   }
+  },
+  "rhabdo": {
+   "n": 41,
+   "teen": 36,
+   "share": 0.8780487804878049,
+   "lo": 0.7445549235115514,
+   "hi": 0.9467674200265919,
+   "teen_with_us_site": 23,
+   "industry_share": 0.04878048780487805,
+   "odds_industry_vs_other": {
+    "industry": {
+     "teen": 1,
+     "n": 2
+    },
+    "other": {
+     "teen": 35,
+     "n": 39
+    },
+    "odds_ratio": 0.11428571428571428,
+    "lo": 0.00593041265285033,
+    "hi": 2.2024141074767054,
+    "fisher_p": 0.23170731707317074
+   }
+  },
+  "sarcoma": {
+   "n": 155,
+   "teen": 32,
+   "share": 0.2064516129032258,
+   "lo": 0.15020577115483125,
+   "hi": 0.2768964489184996,
+   "teen_with_us_site": 15,
+   "industry_share": 0.2709677419354839,
+   "odds_industry_vs_other": {
+    "industry": {
+     "teen": 4,
+     "n": 42
+    },
+    "other": {
+     "teen": 28,
+     "n": 113
+    },
+    "odds_ratio": 0.31954887218045114,
+    "lo": 0.10475371739183034,
+    "hi": 0.9747766881613492,
+    "fisher_p": 0.04431630935719663
+   }
+  }
+ },
+ "combined_n": 230,
+ "H1": {
+  "industry": {
+   "teen": 11,
+   "n": 51
+  },
+  "other": {
+   "teen": 86,
+   "n": 179
+  },
+  "odds_ratio": 0.2973837209302326,
+  "lo": 0.14347370792459324,
+  "hi": 0.6163991908593531,
+  "fisher_p": 0.000696665266696819
+ },
+ "verdict_H1": "Supported",
+ "P49": "right",
+ "P50": "right",
+ "P51": "right"
+}

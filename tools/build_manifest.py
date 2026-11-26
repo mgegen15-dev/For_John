@@ -45,6 +45,7 @@ RAW = {
     "data/engine/cycle12/raw": "ClinicalTrials.gov records (engine cycles 12 and 16), via tools/engine_cycle12_teen_access.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details",
     "data/engine/cycle13/raw": "NCBI GEO GSE180303 series matrix and GPL3738 annotation (engine cycle 13), via tools/engine_cycle13_dog_inflammation.py fetch; retrieved 2026-11-26",
     "data/engine/cycle17/raw": "ClinicalTrials.gov records (engine cycle 17), via tools/engine_cycle17_fda_all_trials.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details",
+    "data/engine/cycle18/raw": "ClinicalTrials.gov records (engine cycle 18), via tools/engine_cycle18_sarcoma_teen_access.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details",
     "data/engine/depmap/raw": "DepMap 24Q4 Public and DEMETER2, from Figshare (engine cycles 5, 6, 8, 9), via tools/engine_cycle05_06_depmap.py fetch; retrieved 2026-11-24",
 }
 

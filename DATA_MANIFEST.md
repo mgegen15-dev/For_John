@@ -33,7 +33,7 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/osteosarcoma_trials.csv` | 758 | 489 | 2026-11-14 | `9211e126d7639ce788846226754b1efe2083dd68a28f155b5358297c2b2790ff` |
 | `data/osteosarcoma_trials_flags.csv` | 168 | 34 | 2026-11-14 | `d3c5fb8cf09d19e7b4a2061a74dd0522e41563cc0eff3ce59cef4c2b4bebf90b` |
 | `data/osteosarcoma_trials_publications.csv` | 387 | 88 | 2026-11-14 | `12890fc385cb3b8f682a81df1d465bc70a45450bbb4776c8b682625a3a539205` |
-| `data/raw_checksums.txt` | 519 | 66 | 2026-11-20 | `ba4b7a67dbf3cb8e3ff038aec9d8e61aa87705a45044a4c0a297e6642dc5457f` |
+| `data/raw_checksums.txt` | 521 | 66 | 2026-11-20 | `ef2726b57912bd2444fe1b6cd4bca4b1a77b1d2dbfa4f280947f1a64c0afed9e` |
 | `data/literature/osteosarcoma_retracted_pmids.txt` | 418 | 3 | 2026-11-14 | `62bddf36921d30de8c1be3c69fd14ef10352a2819a17cc4026ef057c260ee2ec` |
 | `data/literature/osteosarcoma_reviews_pmids.txt` | 3533 | 30 | 2026-11-14 | `155b2b30719c789a8718476cccc456c6cf94b4a382feaa6511c54a149595adaf` |
 | `data/engine/cycle03/results.csv` | 21 | 1 | 2026-11-24 | `3c677c34fc4c4e7a2be4306d9b6a44c0fa696ce0e0746148ae05c97da3c02e55` |
@@ -69,6 +69,9 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/engine/cycle07/summary.json` |  | 14 | 2026-11-24 | `02329047809ca47f0b3697e2b244f1e4af535278ca7d1ef0317ba32cdc91d58c` |
 | `data/engine/cycle07/trials.csv` | 81 | 33 | 2026-11-24 | `fef360c3932e23a60b1f52c4483743f808ba8bfc263b50df5c589f2b91640049` |
 | `data/engine/cycle07/trials_classified.csv` | 21 | 9 | 2026-11-24 | `a8d7b8a6a3398d6d44ec4be1629999df88127d133e83a641e8978f3f56df8e31` |
+| `data/engine/cycle17/by_year.csv` | 10 | 0 | 2026-11-26 | `da5cad7f3227bda1ea1295dbe1f4bca04d3152ca773565cac26e18f5e590eee9` |
+| `data/engine/cycle17/results.json` |  | 2 | 2026-11-26 | `e9d1774090c85423568a8c1307fff00d5e1db2ac743b59480174ff38d80f9856` |
+| `data/engine/cycle17/trials.csv` | 2933 | 517 | 2026-11-26 | `0d9727a41cad81f7f066e5c34e04ad8c69093132de9f4b76e560dddca8b49294` |
 | `data/engine/cycle08/alterations.csv` | 94 | 6 | 2026-11-24 | `b7ce13cf51eec27ce60bb39293ab7aa77839233d434893d3a6ca5e656a3bcb74` |
 | `data/engine/cycle08/exploratory_lookups.csv` | 6 | 0 | 2026-11-24 | `b7cb367ae93bfe1720f7404eedb286679233ef7087d0e319becfe9b682cac413` |
 | `data/engine/cycle08/hits.csv` | 54 | 9 | 2026-11-24 | `e0140da8575ea9bf4bac104325e87a39b0b20e6f55c4cc185415d3bf8e8c40c5` |
@@ -115,6 +118,7 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/engine/cycle12/raw` | ClinicalTrials.gov records (engine cycles 12 and 16), via tools/engine_cycle12_teen_access.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details | 2 | 38 | `ac844ee21712118a7e69d3053653f059c7aa0ecf61897da941597ed3530883f3` |
 | `data/engine/cycle13/raw` | NCBI GEO GSE180303 series matrix and GPL3738 annotation (engine cycle 13), via tools/engine_cycle13_dog_inflammation.py fetch; retrieved 2026-11-26 | 2 | 23 | `716edfab4e749a6a01fe7b5e82216c6d037cc007d39d1cbc0d82ab8d88655256` |
 | `data/engine/cycle17/raw` | ClinicalTrials.gov records (engine cycle 17), via tools/engine_cycle17_fda_all_trials.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details | 2 | 204 | `7b1e3ec53917d53ab7de90118065f71474a20ea8c1549b7ff3b84edfe4f6c94b` |
+| `data/engine/cycle18/raw` | ClinicalTrials.gov records (engine cycle 18), via tools/engine_cycle18_sarcoma_teen_access.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details | 3 | 12 | `23f6afac18e52087ace264ff8f51b3abde8dae8c8d2e2250a8251562e7090879` |
 | `data/engine/depmap/raw` | DepMap 24Q4 Public and DEMETER2, from Figshare (engine cycles 5, 6, 8, 9), via tools/engine_cycle05_06_depmap.py fetch; retrieved 2026-11-24 | 13 | 2643 | `0e4c001879378c706bd87f6ec346cfddb456dc419a9138994a226847d5e22c7f` |
 
 **Other retrieval dates:** ClinicalTrials.gov trial list 2026-11-14 (individual records re-checked through 2026-11-20); NIH RePORTER 2026-11-14; NCBI SRA dog genome metadata 2026-11-14; Europe PMC publication checks 2026-11-14.
