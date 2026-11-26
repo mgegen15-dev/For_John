@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300" font-family="system-ui, sans-serif" font-size="12" role="img" aria-label="Share of recruiting early-phase solid-tumour drug trials accepting teenagers, by start year">
+<rect width="820" height="300" fill="#ffffff"/>
+<text x="16" y="24" font-size="13" font-weight="600" fill="#1d2430">Share accepting anyone aged 12–17, by the year the trial started</text>
+<text x="16" y="40" fill="#525b6b">Early-phase &quot;solid tumour&quot; drug trials of every status, by start year (2019 left out). Dashed line: FDA guidance, March 2019.</text>
+<rect x="63.0" y="154.2" width="68.0" height="95.8" fill="#6a7384"/>
+<text x="97.0" y="266" text-anchor="middle" fill="#525b6b">2014</text>
+<text x="97.0" y="150.2" text-anchor="middle" fill="#1d2430">11/140</text>
+<rect x="137.0" y="70.0" width="68.0" height="180.0" fill="#6a7384"/>
+<text x="171.0" y="266" text-anchor="middle" fill="#525b6b">2015</text>
+<text x="171.0" y="66.0" text-anchor="middle" fill="#1d2430">22/149</text>
+<rect x="211.0" y="123.4" width="68.0" height="126.6" fill="#6a7384"/>
+<text x="245.0" y="266" text-anchor="middle" fill="#525b6b">2016</text>
+<text x="245.0" y="119.4" text-anchor="middle" fill="#1d2430">19/183</text>
+<rect x="285.0" y="141.4" width="68.0" height="108.6" fill="#6a7384"/>
+<text x="319.0" y="266" text-anchor="middle" fill="#525b6b">2017</text>
+<text x="319.0" y="137.4" text-anchor="middle" fill="#1d2430">18/202</text>
+<rect x="359.0" y="97.0" width="68.0" height="153.0" fill="#6a7384"/>
+<text x="393.0" y="266" text-anchor="middle" fill="#525b6b">2018</text>
+<text x="393.0" y="93.0" text-anchor="middle" fill="#1d2430">29/231</text>
+<rect x="433.0" y="163.5" width="68.0" height="86.5" fill="#1c5cab"/>
+<text x="467.0" y="266" text-anchor="middle" fill="#525b6b">2020</text>
+<text x="467.0" y="159.5" text-anchor="middle" fill="#1d2430">22/310</text>
+<rect x="507.0" y="175.7" width="68.0" height="74.3" fill="#1c5cab"/>
+<text x="541.0" y="266" text-anchor="middle" fill="#525b6b">2021</text>
+<text x="541.0" y="171.7" text-anchor="middle" fill="#1d2430">25/410</text>
+<rect x="581.0" y="178.0" width="68.0" height="72.0" fill="#1c5cab"/>
+<text x="615.0" y="266" text-anchor="middle" fill="#525b6b">2022</text>
+<text x="615.0" y="174.0" text-anchor="middle" fill="#1d2430">26/440</text>
+<rect x="655.0" y="192.9" width="68.0" height="57.1" fill="#1c5cab"/>
+<text x="689.0" y="266" text-anchor="middle" fill="#525b6b">2023</text>
+<text x="689.0" y="188.9" text-anchor="middle" fill="#1d2430">21/448</text>
+<rect x="729.0" y="226.8" width="68.0" height="23.2" fill="#1c5cab"/>
+<text x="763.0" y="266" text-anchor="middle" fill="#525b6b">2024</text>
+<text x="763.0" y="222.8" text-anchor="middle" fill="#1d2430">8/420</text>
+<line x1="430.0" y1="46" x2="430.0" y2="250" stroke="#a3401a" stroke-dasharray="4 4"/>
+</svg>

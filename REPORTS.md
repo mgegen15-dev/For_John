@@ -51,6 +51,7 @@ Each was written down with its rules before the data were opened.
 - [Cycle 14: Does tumour macrophage signal predict a better outcome in new patients?](reports/engine-cycle-14-does-tumour-macrophage-signal-predict-a-better-outcome-in-new-patients.html) Reproduces in the original cohort; weaker and not clear in three new ones.
 - [Cycle 15: Do tumours with MYC gain respond worse to chemotherapy?](reports/engine-cycle-15-do-tumours-with-myc-gain-respond-worse-to-chemotherapy.html) More MYC went with poorer response in three cohorts; modest, needs replication.
 - [Cycle 16: Since the FDA guidance, are new trials more open to teenagers?](reports/engine-cycle-16-since-the-fda-guidance-are-new-trials-more-open-to-teenagers.html) No sign of it; 2.4% of new company-led early trials take teenagers.
+- [Cycle 17: Before and after the FDA guidance, across all trials](reports/engine-cycle-17-before-and-after-the-fda-guidance-across-all-trials.html) The share of early trials taking teenagers fell from 11% to 5%.
 
 ## The literature and its funding
 

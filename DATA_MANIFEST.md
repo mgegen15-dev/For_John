@@ -33,7 +33,7 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/osteosarcoma_trials.csv` | 758 | 489 | 2026-11-14 | `9211e126d7639ce788846226754b1efe2083dd68a28f155b5358297c2b2790ff` |
 | `data/osteosarcoma_trials_flags.csv` | 168 | 34 | 2026-11-14 | `d3c5fb8cf09d19e7b4a2061a74dd0522e41563cc0eff3ce59cef4c2b4bebf90b` |
 | `data/osteosarcoma_trials_publications.csv` | 387 | 88 | 2026-11-14 | `12890fc385cb3b8f682a81df1d465bc70a45450bbb4776c8b682625a3a539205` |
-| `data/raw_checksums.txt` | 518 | 66 | 2026-11-20 | `28143022f43374690193801cb4bf7404360120bc22d0a1ff5690d267fc1b55e3` |
+| `data/raw_checksums.txt` | 519 | 66 | 2026-11-20 | `ba4b7a67dbf3cb8e3ff038aec9d8e61aa87705a45044a4c0a297e6642dc5457f` |
 | `data/literature/osteosarcoma_retracted_pmids.txt` | 418 | 3 | 2026-11-14 | `62bddf36921d30de8c1be3c69fd14ef10352a2819a17cc4026ef057c260ee2ec` |
 | `data/literature/osteosarcoma_reviews_pmids.txt` | 3533 | 30 | 2026-11-14 | `155b2b30719c789a8718476cccc456c6cf94b4a382feaa6511c54a149595adaf` |
 | `data/engine/cycle03/results.csv` | 21 | 1 | 2026-11-24 | `3c677c34fc4c4e7a2be4306d9b6a44c0fa696ce0e0746148ae05c97da3c02e55` |
@@ -52,6 +52,8 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/engine/cycle06/lines.csv` | 28 | 2 | 2026-11-24 | `fc93fb89dbd145519d965c96ae89b101ce3d9cd4ca6f1e1401742aa0ac48f669` |
 | `data/engine/cycle06/results.csv` | 4 | 0 | 2026-11-24 | `13a8b1aa93c9c5a09230989ade0c95f2923babc5040618ea4ad52633c9325ad9` |
 | `data/engine/cycle06/summary.json` |  | 3 | 2026-11-24 | `be25324e3a9bdb43fd53a705dbe71f89d7e3bfd035d506efac1ad3dedef22e9d` |
+| `data/engine/cycle15/results.csv` | 28 | 1 | 2026-11-26 | `d9032e8f0bfe5995217aaec0b2aa43f651b6113e411c86ee0d8b077b71c52a30` |
+| `data/engine/cycle15/summary.json` |  | 3 | 2026-11-26 | `5f145641f5e6ca12e6316c79dcce087f07f6476128031e3144c382699487e707` |
 | `data/engine/cycle09/controls.csv` | 4 | 0 | 2026-11-24 | `ecf9396f4f8847320ce2a86727a8e6b7983d7011cdf4321ffb062ada5b8cbdd3` |
 | `data/engine/cycle09/hits.csv` | 10 | 1 | 2026-11-24 | `4404a94c072129afc9bb8432ddfd8407e2c6b1b89d72edc9b4144937e5163e92` |
 | `data/engine/cycle09/loss_calls.csv` | 1178 | 53 | 2026-11-24 | `1011abbcf6abbbe65d76c2e0e51e033b7a8cb413936f38ddf6d8a5d6f397f33e` |
@@ -75,6 +77,8 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/engine/cycle04/summary.json` |  | 1 | 2026-11-24 | `1ed9e13278b919d69c5558f12a014cd51f628af54c37cd2b38e935bb0413650e` |
 | `data/engine/cycle04/trials.csv` | 97 | 38 | 2026-11-24 | `97a635c893c5c370c6d808e6995a5c8881be9c31844fb3ee82309efe9546b78f` |
 | `data/engine/cycle04/trials_classified.csv` | 60 | 19 | 2026-11-24 | `838e4018293ccea95358ac76066762bc0f691eaaf5ff3b16c8c5f6b647339c10` |
+| `data/engine/cycle16/by_year.csv` | 9 | 0 | 2026-11-26 | `c10c1aeefcb2ad8817ce733774ba0001abb3a0f7740ac4dd8c71e13aa34c1c33` |
+| `data/engine/cycle16/results.json` |  | 1 | 2026-11-26 | `bafd2e2c6be38adb65eff284c5b4000b1d672b2761c7e9da5f4a9e8c2a243592` |
 | `data/engine/cycle05/lines.csv` | 28 | 2 | 2026-11-24 | `eebcdcbfa58c699a4fc5dcbdc84482e44464fc24186707ff8af42ce1b126002d` |
 | `data/engine/cycle05/results.csv` | 12 | 1 | 2026-11-24 | `091c221689630105fcceac0d2f22b01c976c3f22319641ef6490eb304b70f4a7` |
 | `data/engine/cycle05/summary.json` |  | 5 | 2026-11-24 | `75a274bd51e6cf21cc77b59e17067478611a1efc982117a74dd5ecd5c4ceec20` |
@@ -108,8 +112,9 @@ Files in git are the analysed outputs. The large raw downloads are not stored in
 | `data/engine/cycle07/raw` | cBioPortal amplification calls and ClinicalTrials.gov records (engine cycle 7), via tools/engine_cycle07_ccne1.py fetch; retrieved 2026-11-24 | 7 | 10 | `ffb5c51ef5ab0e735dce23392b8e7e77354f60b2e4387fbe7b73693d717ddf16` |
 | `data/engine/cycle09/raw` | cBioPortal mutation calls (engine cycle 9), via tools/engine_cycle09_suppressor_scan.py fetch; retrieved 2026-11-24 | 1 | 0 | `b805354553051e054a88b951c3ad9da3608db943ccecf2fee8c436ea685a730b` |
 | `data/engine/prism/raw` | PRISM Repurposing 20Q2, from Figshare article 20564034 (engine cycle 10), via tools/engine_cycle10_prism.py fetch; retrieved 2026-11-25 | 8 | 343 | `bb907f8d2c08aea6e2c9ebd5563224bf333d2192b885dbe3a9d4542f028ab522` |
-| `data/engine/cycle12/raw` | ClinicalTrials.gov records (engine cycle 12), via tools/engine_cycle12_teen_access.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details | 2 | 38 | `ac844ee21712118a7e69d3053653f059c7aa0ecf61897da941597ed3530883f3` |
+| `data/engine/cycle12/raw` | ClinicalTrials.gov records (engine cycles 12 and 16), via tools/engine_cycle12_teen_access.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details | 2 | 38 | `ac844ee21712118a7e69d3053653f059c7aa0ecf61897da941597ed3530883f3` |
 | `data/engine/cycle13/raw` | NCBI GEO GSE180303 series matrix and GPL3738 annotation (engine cycle 13), via tools/engine_cycle13_dog_inflammation.py fetch; retrieved 2026-11-26 | 2 | 23 | `716edfab4e749a6a01fe7b5e82216c6d037cc007d39d1cbc0d82ab8d88655256` |
+| `data/engine/cycle17/raw` | ClinicalTrials.gov records (engine cycle 17), via tools/engine_cycle17_fda_all_trials.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details | 2 | 204 | `7b1e3ec53917d53ab7de90118065f71474a20ea8c1549b7ff3b84edfe4f6c94b` |
 | `data/engine/depmap/raw` | DepMap 24Q4 Public and DEMETER2, from Figshare (engine cycles 5, 6, 8, 9), via tools/engine_cycle05_06_depmap.py fetch; retrieved 2026-11-24 | 13 | 2643 | `0e4c001879378c706bd87f6ec346cfddb456dc419a9138994a226847d5e22c7f` |
 
 **Other retrieval dates:** ClinicalTrials.gov trial list 2026-11-14 (individual records re-checked through 2026-11-20); NIH RePORTER 2026-11-14; NCBI SRA dog genome metadata 2026-11-14; Europe PMC publication checks 2026-11-14.

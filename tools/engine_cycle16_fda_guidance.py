@@ -51,7 +51,7 @@ def verdict(m):
     return "Inconclusive"
 
 
-def bars(by_year, path):
+def bars(by_year, path, subtitle=None, guidance_after_year=2019):
     W, H, left, bottom, top = 820, 300, 60, 50, 50
     years = sorted(by_year)
     bw = (W - left - 20) / len(years)
@@ -59,7 +59,7 @@ def bars(by_year, path):
     s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" font-family="system-ui, sans-serif" font-size="12" role="img" '
          f'aria-label="Share of recruiting early-phase solid-tumour drug trials accepting teenagers, by start year">', f'<rect width="{W}" height="{H}" fill="#ffffff"/>',
          '<text x="16" y="24" font-size="13" font-weight="600" fill="#1d2430">Share accepting anyone aged 12–17, by the year the trial started</text>',
-         '<text x="16" y="40" fill="#525b6b">Recruiting early-phase "solid tumour" drug trials on November 26, 2026. Dashed line: FDA guidance, March 2019.</text>']
+         f'<text x="16" y="40" fill="#525b6b">{subtitle or "Recruiting early-phase &quot;solid tumour&quot; drug trials on November 26, 2026. Dashed line: FDA guidance, March 2019."}</text>']
     ph = H - top - bottom
     for i, y in enumerate(years):
         v = by_year[y]
@@ -69,7 +69,7 @@ def bars(by_year, path):
         s.append(f'<rect x="{x + 3:.1f}" y="{top + ph - h:.1f}" width="{bw - 6:.1f}" height="{h:.1f}" fill="{col}"/>')
         s.append(f'<text x="{x + bw / 2:.1f}" y="{H - bottom + 16}" text-anchor="middle" fill="#525b6b">{"before 2020" if y == 2019 else "2027+" if y == 2027 else y}</text>')
         s.append(f'<text x="{x + bw / 2:.1f}" y="{top + ph - h - 4:.1f}" text-anchor="middle" fill="#1d2430">{v["teen"]}/{v["n"]}</text>')
-    xg = left + bw
+    xg = left + bw * sum(1 for y in years if y <= guidance_after_year)
     s.append(f'<line x1="{xg:.1f}" y1="{top - 4}" x2="{xg:.1f}" y2="{H - bottom}" stroke="#a3401a" stroke-dasharray="4 4"/>')
     s.append("</svg>")
     open(path, "w").write("\n".join(s))

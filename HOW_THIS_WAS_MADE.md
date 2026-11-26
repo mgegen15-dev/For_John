@@ -108,6 +108,7 @@ pip install pandas
 | `tools/engine_cycle14_macrophages.py` | engine cycle 14: `data/engine/cycle14/` results and one figure | none new; needs cycle 1's downloads and the TARGET-OS files of `tools/survival_analysis.py` | under a minute |
 | `tools/engine_cycle15_chemo_response.py` | engine cycle 15: `data/engine/cycle15/` results and one figure | the GPL570 annotation from GEO (about 8 MB); needs cycle 1's downloads and the TARGET-OS files | under a minute |
 | `tools/engine_cycle16_fda_guidance.py` | engine cycle 16: `data/engine/cycle16/` counts and one figure | none new; needs cycle 12's registry download | seconds |
+| `tools/engine_cycle17_fda_all_trials.py` (`fetch`, then no argument) | engine cycle 17: `data/engine/cycle17/` trial table, counts and one figure | ClinicalTrials.gov API (about 4,600 records; raw records not in git) | a minute |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:
