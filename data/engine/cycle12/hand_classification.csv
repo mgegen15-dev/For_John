@@ -1,0 +1,73 @@
+nct,hand_relapse_eligible,treatment_trial,note,rule_relapse_eligible
+NCT01804634,yes,yes,,True
+NCT02013336,yes,yes,,True
+NCT02508038,yes,yes,,True
+NCT03093909,yes,yes,,False
+NCT03721068,yes,yes,,True
+NCT03900793,yes,yes,,True
+NCT04040205,yes,yes,,True
+NCT04055220,no,yes,maintenance after first-line treatment,True
+NCT04616560,yes,yes,,True
+NCT04698785,yes,yes,,True
+NCT04758000,yes,yes,,True
+NCT04851119,yes,yes,,True
+NCT04897321,yes,yes,,True
+NCT04901702,yes,yes,,True
+NCT04995003,yes,yes,,True
+NCT05019703,yes,yes,,True
+NCT05135975,yes,yes,,True
+NCT05182164,yes,yes,,True
+NCT05210374,yes,yes,,True
+NCT05227326,yes,yes,,True
+NCT05328258,no,no,"fertility protection, not a cancer treatment",True
+NCT05492682,yes,yes,,True
+NCT05588648,yes,yes,,True
+NCT05590572,yes,yes,,True
+NCT05642455,yes,yes,,True
+NCT05691478,no,yes,newly diagnosed,True
+NCT05726383,yes,yes,,True
+NCT05830123,yes,yes,,True
+NCT06041490,no,no,liver cancer trial; osteosarcoma listed in error,True
+NCT06156410,yes,yes,,True
+NCT06235125,yes,no,imaging agent during lung surgery,True
+NCT06239272,no,no,soft-tissue sarcoma trial; osteosarcoma not eligible,True
+NCT06465199,yes,yes,,True
+NCT06492954,yes,yes,,True
+NCT06500819,yes,yes,,True
+NCT06531486,yes,yes,,True
+NCT06541262,yes,yes,,True
+NCT06571734,yes,yes,,True
+NCT06607692,yes,yes,,True
+NCT06625190,yes,yes,,True
+NCT06645808,yes,no,"imaging agent, phase 0",False
+NCT06699576,yes,yes,,True
+NCT06709495,yes,yes,,True
+NCT06714383,no,yes,"neoadjuvant, newly diagnosed",False
+NCT06778603,no,no,imaging agent during first surgery,True
+NCT06892678,yes,yes,,True
+NCT07066982,yes,yes,,True
+NCT07142863,no,yes,"neoadjuvant, non-metastatic",True
+NCT07144254,yes,yes,,True
+NCT07193550,yes,yes,,True
+NCT07211737,yes,yes,,True
+NCT07222735,yes,yes,,True
+NCT07227571,yes,yes,,True
+NCT07321912,yes,yes,,True
+NCT07357519,yes,yes,,True
+NCT07428993,no,yes,newly diagnosed,True
+NCT07444918,yes,yes,,True
+NCT07477457,no,yes,newly diagnosed metastatic,True
+NCT07479732,yes,yes,,True
+NCT07560410,yes,yes,,True
+NCT07560826,no,yes,newly diagnosed,True
+NCT07596693,yes,yes,,True
+NCT07602049,yes,yes,,True
+NCT07619950,yes,yes,,True
+NCT07648069,yes,yes,,True
+NCT07725380,yes,yes,,True
+NCT07773454,yes,yes,,True
+NCT07787429,no,yes,first-line maintenance in remission,True
+NCT07801222,yes,yes,,True
+NCT07853105,yes,yes,,True
+NCT07871864,no,yes,registration requires a new diagnosis,True
+NCT07897968,yes,yes,,True

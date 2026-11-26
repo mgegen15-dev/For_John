@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 398" width="820" height="398" font-family="system-ui, sans-serif" font-size="13" role="img" aria-label="Minimum age to enter recruiting drug trials">
+<rect width="820" height="398" fill="#ffffff"/>
+<text x="16" y="26" font-weight="600" fill="#1d2430">Youngest age a recruiting drug trial accepts</text>
+<text x="16" y="44" fill="#525b6b" font-size="12">Share of trials in each age band. Blue: bands that let in a 12- to 17-year-old.</text>
+<text x="16" y="76" font-weight="600" fill="#1d2430">Early-phase solid-tumour trials (1434 trials)</text>
+<text x="28" y="103" fill="#1d2430">under 12</text>
+<rect x="230" y="92" width="13.7" height="15" fill="#1c5cab"/>
+<text x="249.7" y="104" fill="#525b6b" font-size="12">41 (3%)</text>
+<text x="28" y="129" fill="#1d2430">12 to 17</text>
+<rect x="230" y="118" width="8.4" height="15" fill="#1c5cab"/>
+<text x="244.4" y="130" fill="#525b6b" font-size="12">25 (2%)</text>
+<text x="28" y="155" fill="#1d2430">no minimum stated</text>
+<rect x="230" y="144" width="4.4" height="15" fill="#1c5cab"/>
+<text x="240.4" y="156" fill="#525b6b" font-size="12">13 (1%)</text>
+<text x="28" y="181" fill="#1d2430">18</text>
+<rect x="230" y="170" width="444.2" height="15" fill="#6a7384"/>
+<text x="680.2" y="182" fill="#525b6b" font-size="12">1327 (93%)</text>
+<text x="28" y="207" fill="#1d2430">over 18</text>
+<rect x="230" y="196" width="9.4" height="15" fill="#6a7384"/>
+<text x="245.4" y="208" fill="#525b6b" font-size="12">28 (2%)</text>
+<text x="16" y="240" font-weight="600" fill="#1d2430">Trials naming osteosarcoma, relapse-eligible (69 trials)</text>
+<text x="28" y="267" fill="#1d2430">under 12</text>
+<rect x="230" y="256" width="201.7" height="15" fill="#1c5cab"/>
+<text x="437.7" y="268" fill="#525b6b" font-size="12">29 (42%)</text>
+<text x="28" y="293" fill="#1d2430">12 to 17</text>
+<rect x="230" y="282" width="104.3" height="15" fill="#1c5cab"/>
+<text x="340.3" y="294" fill="#525b6b" font-size="12">15 (22%)</text>
+<text x="28" y="319" fill="#1d2430">no minimum stated</text>
+<rect x="230" y="308" width="62.6" height="15" fill="#1c5cab"/>
+<text x="298.6" y="320" fill="#525b6b" font-size="12">9 (13%)</text>
+<text x="28" y="345" fill="#1d2430">18</text>
+<rect x="230" y="334" width="97.4" height="15" fill="#6a7384"/>
+<text x="333.4" y="346" fill="#525b6b" font-size="12">14 (20%)</text>
+<text x="28" y="371" fill="#1d2430">over 18</text>
+<rect x="230" y="360" width="13.9" height="15" fill="#6a7384"/>
+<text x="249.9" y="372" fill="#525b6b" font-size="12">2 (3%)</text>
+</svg>

@@ -46,6 +46,7 @@ Each was written down with its rules before the data were opened.
 - [Cycle 9: Weaknesses that go with the tumour-suppressor genes osteosarcoma loses](reports/engine-cycle-9-weaknesses-that-go-with-the-tumour-suppressor-genes-osteosarcoma-loses.html): known RB1 pairs; public data miss osteosarcoma's main routes.
 - [Cycle 10: Do the gene-change weaknesses hold up with real drugs?](reports/engine-cycle-10-do-the-gene-change-weaknesses-hold-up-with-real-drugs.html) The known drug links show up; the CCNE1 and MTAP tests are inconclusive.
 - [Cycle 11: Do lung metastases keep the surface targets?](reports/engine-cycle-11-do-lung-metastases-keep-the-surface-targets.html) No sign that LRRC15 is lost; B7-H3 unclear.
+- [Cycle 12: How often can a teenager with osteosarcoma get into a drug trial?](reports/engine-cycle-12-how-often-can-a-teenager-with-osteosarcoma-get-into-a-drug-trial.html) Trials built for osteosarcoma usually take teenagers; early trials of new drugs almost never do.
 
 ## The literature and its funding
 
