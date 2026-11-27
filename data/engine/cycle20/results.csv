@@ -1,0 +1,36 @@
+level,cohort,measure,patients,poor_response,odds_ratio_per_sd,lo,hi,p
+cohort,GSE289059,macrophage score,62,30,0.594,0.275,1.283,0.1849
+cohort,GSE21257,macrophage score,47,29,0.443,0.179,1.093,0.0772
+cohort,GSE14827,macrophage score,27,16,1.499,0.614,3.657,0.3738
+cohort,TARGET-OS,macrophage score,35,19,0.507,0.189,1.359,0.1767
+pooled,4 cohorts,macrophage score,171,94,0.672,0.433,1.042,0.0757
+cohort,GSE289059,T-cell score,62,30,0.855,0.498,1.467,0.5695
+cohort,GSE21257,T-cell score,47,29,1.029,0.553,1.912,0.9292
+cohort,GSE14827,T-cell score,27,16,0.652,0.261,1.627,0.3594
+cohort,TARGET-OS,T-cell score,35,19,0.411,0.167,1.009,0.0524
+pooled,4 cohorts,T-cell score,171,94,0.782,0.555,1.103,0.1618
+cohort,GSE289059,CD163 alone,62,30,0.760,0.453,1.274,0.2978
+cohort,GSE21257,CD163 alone,47,29,0.777,0.418,1.444,0.4248
+cohort,GSE14827,CD163 alone,27,16,1.552,0.687,3.507,0.2910
+cohort,TARGET-OS,CD163 alone,35,19,0.774,0.390,1.536,0.4642
+pooled,4 cohorts,CD163 alone,171,94,0.855,0.623,1.173,0.3304
+cohort,GSE289059,CD14 alone,62,30,1.131,0.682,1.876,0.6329
+cohort,GSE21257,CD14 alone,47,29,0.704,0.374,1.326,0.2771
+cohort,GSE14827,CD14 alone,27,16,1.381,0.615,3.104,0.4345
+cohort,TARGET-OS,CD14 alone,35,19,0.790,0.399,1.567,0.5005
+pooled,4 cohorts,CD14 alone,171,94,0.961,0.701,1.317,0.8030
+cohort,GSE289059,CD68 alone,62,30,0.542,0.303,0.970,0.0393
+cohort,GSE21257,CD68 alone,47,29,0.461,0.232,0.916,0.0270
+cohort,GSE14827,CD68 alone,27,16,1.255,0.571,2.756,0.5718
+cohort,TARGET-OS,CD68 alone,35,19,0.526,0.227,1.219,0.1340
+pooled,4 cohorts,CD68 alone,171,94,0.611,0.430,0.868,0.0060
+cohort,GSE289059,CD3E alone,62,30,0.873,0.526,1.450,0.6001
+cohort,GSE21257,CD3E alone,47,29,0.916,0.509,1.650,0.7713
+cohort,GSE14827,CD3E alone,27,16,0.682,0.286,1.625,0.3873
+cohort,TARGET-OS,CD3E alone,35,19,0.484,0.220,1.065,0.0712
+pooled,4 cohorts,CD3E alone,171,94,0.777,0.563,1.071,0.1227
+cohort,GSE289059,CD8A alone,62,30,0.866,0.520,1.443,0.5813
+cohort,GSE21257,CD8A alone,47,29,1.155,0.627,2.127,0.6447
+cohort,GSE14827,CD8A alone,27,16,0.643,0.259,1.600,0.3426
+cohort,TARGET-OS,CD8A alone,35,19,0.406,0.165,0.996,0.0491
+pooled,4 cohorts,CD8A alone,171,94,0.817,0.585,1.141,0.2348

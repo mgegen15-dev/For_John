@@ -38,6 +38,7 @@ The checks get stronger in this order: a prediction written down before looking,
 | 30 | Across trials of every status, did early-phase solid-tumour trials open to teenagers more often after the FDA's 2019 guidance? | **No; the share fell.** 10.9% of 905 trials started in 2014–2018 accepted teenagers, against 5.0% of 2,028 started in 2020–2024 (odds ratio 0.43, 0.32–0.58). The fall holds for company-led trials, for others, and for trials built for adults. [Full result](reports/Engine%20cycle%2017%20-%20before%20and%20after%20the%20FDA%20guidance%20across%20all%20trials.md) | Nov 26, 2026 |
 | 31 | Do trials for Ewing sarcoma, rhabdomyosarcoma and other sarcomas take teenagers, and who leaves them out? | **Same split as osteosarcoma.** 88% of Ewing and 88% of rhabdomyosarcoma trials accept teenagers, against 21% for other sarcomas. Company-led trials accept them less often (22% against 48%; odds ratio 0.30, 0.14–0.62), including within other sarcomas. [Full result](reports/Engine%20cycle%2018%20-%20do%20sarcoma%20trials%20take%20teenagers%20and%20who%20leaves%20them%20out.md) | Nov 26, 2026 |
 | 32 | Where in the United States can a teenager with relapsed osteosarcoma reach a trial? | **Answered (a count).** The 32 relapse trials that list osteosarcoma, accept 12- to 17-year-olds and have a US site reach 34 of the 50 states plus DC (66 cities). 17 states have none. 20 of the 32 trials are in only one or two states. [Full result](reports/Engine%20cycle%2019%20-%20where%20in%20the%20US%20can%20a%20teenager%20with%20relapsed%20osteosarcoma%20reach%20a%20trial.md) | Nov 27, 2026 |
+| 33 | Do tumours with more macrophage or T-cell signal respond better to chemotherapy before surgery? | **Inconclusive, both.** Four cohorts, 171 patients: macrophage score 0.67 (0.43–1.04), leaning towards better response in three of four cohorts; T-cell score 0.78 (0.56–1.10). The new ISG/OS2 cohort lacks MYC, so cycle 15's MYC result is still unreplicated. [Full result](reports/Engine%20cycle%2020%20-%20does%20tumour%20immune%20signal%20go%20with%20better%20chemotherapy%20response.md) | Nov 27, 2026 |
 
 ## Next
 
@@ -88,3 +89,4 @@ The checks get stronger in this order: a prediction written down before looking,
 - 2026-11-26: cycle 17 (before and after the FDA guidance, all statuses) run.
 - 2026-11-26: cycle 18 (teen access across sarcoma trials) run.
 - 2026-11-27: cycle 19 (US geography of teen-accessible relapse trials) run.
+- 2026-11-27: cycle 20 (immune signal and chemotherapy response) run.

@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#checks">Checks</a></li><li class="l1"><a href="#a-resource-for-laboratories">A Resource for Laboratories</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 25, 2026 · 4 min read</p>
+    <p class="crumb">Report · Updated November 27, 2026 · 4 min read</p>
     <h1>Engine Cycle 5: Do Osteosarcoma Cells Without MTAP Depend More on PRMT5?</h1>
     <p><em>Run November 24, 2026. The fifth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md"><code>research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md</code></a>, committed at 20:11 UTC (commit <code>8ba7130</code>) before any DepMap file was downloaded. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle05_06_depmap.py"><code>tools/engine_cycle05_06_depmap.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle05/results.csv"><code>data/engine/cycle05/results.csv</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
@@ -188,7 +188,7 @@
     </ul>
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
-    <li><code>python3 tools/engine_cycle05_06_depmap.py fetch</code> downloads six files (about 2.5 GB) from DepMap's official Figshare releases into <code>data/engine/depmap/raw/</code> (not stored in git); <code>python3 tools/engine_cycle05_06_depmap.py</code> runs cycles 5 and 6 in under a minute.</li>
+    <li><code>python3 tools/engine_cycle05_06_depmap.py fetch</code> downloads six files (about 2.5 GB) from DepMap's official Figshare releases into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/depmap/raw"><code>data/engine/depmap/raw/</code></a> (not stored in git); <code>python3 tools/engine_cycle05_06_depmap.py</code> runs cycles 5 and 6 in under a minute.</li>
     <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle05/results.csv"><code>data/engine/cycle05/results.csv</code></a>, <code>summary.json</code>, <code>lines.csv</code>; <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine05_mtap_primary.svg"><code>docs/figures/engine05_mtap_primary.svg</code></a>.</li>
     </ul>
     <p><strong>Data sources and credit.</strong> Cell-line data are from the Cancer Dependency Map (DepMap, Broad Institute): DepMap 24Q4 Public release (Figshare, 2024), and the DEMETER2 combined knockdown scores (McFarland et al., Nature Communications 2018).</p>

@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#osteosarcoma-lines-exploratory-not-a-test">Osteosarcoma Lines (Exploratory, Not a Test)</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 26, 2026 · 6 min read</p>
+    <p class="crumb">Report · Updated November 27, 2026 · 6 min read</p>
     <h1>Engine Cycle 10: Do the Gene-Change Weaknesses Hold Up with Real Drugs?</h1>
     <p><em>Run November 25, 2026. The tenth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-10-drug-screen/PREREGISTRATION.md"><code>research_notes/Engine/cycle-10-drug-screen/PREREGISTRATION.md</code></a>, committed at 17:43 UTC (commit <code>e601249</code>) before any drug-response file was downloaded. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle10_prism.py"><code>tools/engine_cycle10_prism.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle10/results.csv"><code>data/engine/cycle10/results.csv</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
@@ -228,7 +228,7 @@
     </ul>
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
-    <li><code>python3 tools/engine_cycle10_prism.py fetch</code> downloads the PRISM files (about 340 megabytes, not stored in git) into <code>data/engine/prism/raw/</code>.</li>
+    <li><code>python3 tools/engine_cycle10_prism.py fetch</code> downloads the PRISM files (about 340 megabytes, not stored in git) into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/prism/raw"><code>data/engine/prism/raw/</code></a>.</li>
     <li><code>python3 tools/engine_cycle10_prism.py</code> runs the analysis. It also needs the DepMap 24Q4 files fetched by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle05_06_depmap.py"><code>tools/engine_cycle05_06_depmap.py</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle09_suppressor_scan.py"><code>tools/engine_cycle09_suppressor_scan.py</code></a>.</li>
     <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle10/results.csv"><code>data/engine/cycle10/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle10/osteosarcoma_lines.csv"><code>data/engine/cycle10/osteosarcoma_lines.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle10/summary.json"><code>data/engine/cycle10/summary.json</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine10_drugs.svg"><code>docs/figures/engine10_drugs.svg</code></a>.</li>
     </ul>
