@@ -29,7 +29,7 @@ Nothing here uses private patient data.
 ## How claims were checked
 
 1. **Primary sources first.** Numbers were taken from the original paper, registry record or database wherever possible, not from reviews or press coverage.
-2. **Separate audit passes.** Before release, every headline claim in every report was re-checked by a separate review pass that did not see the original reasoning. The eleven earlier reports were audited on November 14, 2026; the three newest (approved drugs, copy number, what's new) on November 20, 2026, when a repo-wide consistency check was also run and both sets of findings were applied (`research_notes/Audit/`). The reviewers checked trial registries, PubMed and NIH records directly, and recomputed statistics from the data files. Of about 690 claims checked across both rounds, most were confirmed as written. The rest were wrong, overstated, out of date or unverifiable, and were corrected or labelled.
+2. **Separate audit passes.** Before release, every headline claim in every report was re-checked by a separate review pass that did not see the original reasoning. These passes were run by AI models, not by independent people. The eleven earlier reports were audited on November 14, 2026; the three newest (approved drugs, copy number, what's new) on November 20, 2026, when a repo-wide consistency check was also run and both sets of findings were applied (`research_notes/Audit/`). The research-engine reports (cycles 1 to 20), the briefs and the public pages were re-checked by separate AI review passes on November 25, 26 and 27, and their findings were applied (see each report's change log). The reviewers checked trial registries, PubMed and NIH records directly, and recomputed statistics from the data files. Of about 690 claims checked across both rounds, most were confirmed as written. The rest were wrong, overstated, out of date or unverifiable, and were corrected or labelled.
 
    **These audits were run by AI models working as independent reviewers, not by people.** They were rigorous and caught real errors, but they are not a substitute for review by independent scientists. No person outside the project has yet checked this work. A third-party audit is welcome: start with [AUDIT_GUIDE.md](AUDIT_GUIDE.md).
 3. **Corrections are shown, not hidden.** Each report ends with a change log listing what changed and why. Several early conclusions were overturned by later checking, and the reports say so.
@@ -64,14 +64,14 @@ The lesson built into this project is that every AI-generated claim needs checki
 
 ## Re-running the analyses
 
-A frozen version of everything described here is tagged `v1.1` in git (November 25, 2026); `v1.0` (November 23) is the original review without the research engine. [DATA_MANIFEST.md](DATA_MANIFEST.md) lists every data file with its checksum and retrieval date, and `requirements.txt` pins the software versions.
+A frozen version of everything described here is tagged `v1.1` in git (November 27, 2026, after the history rewrite described in the auditor's guide); `v1.0` (November 23) is the original review without the research engine. [DATA_MANIFEST.md](DATA_MANIFEST.md) lists every data file with its checksum and retrieval date, and `requirements.txt` pins the software versions.
 
 Most analyses can be rebuilt from public data with the scripts in `tools/`. A few counts (registry spot checks, some PubMed searches, and the new-evidence scan) were made with one-off database queries described in the report concerned.
 
-**Requirements:** Python 3.10 or newer, internet access, and `pandas` (only for `tools/pool_relapse_benchmarks.py`). Everything else uses the Python standard library. Run every script from the repository root.
+**Requirements:** Python 3.10 or newer, internet access, and the pinned packages in `requirements.txt`. Run every script from the repository root.
 
 ```bash
-pip install pandas
+pip install -r requirements.txt
 ```
 
 | Script | What it builds | Network | Time |
@@ -95,10 +95,10 @@ pip install pandas
 | `tools/build_explorer_data.py` | `docs/data/explorer.json` (the evidence explorer) | none | seconds |
 | `tools/engine_cycle01_ramp1.py` | engine cycle 1: `data/engine/cycle01/results.csv`, `summary.json` and the forest plot | NCBI GEO (three series matrices and platform tables, about 200 MB); reuses the TARGET-OS files | a few minutes |
 | `tools/engine_cycle02_fetch.sh`, then `tools/engine_cycle02_cxcr4.py` | engine cycle 2: `data/engine/cycle02/results.csv`, `summary.json`, `sample_values.csv` and two forest plots | NCBI GEO (nine datasets, about 1.5 GB) | about ten minutes to download, one minute to run |
-| `tools/engine_cycle03_9p21.py` (`fetch`, then no argument) | engine cycle 3: `data/engine/cycle03/results.csv`, `summary.json`, `patients.csv` and one figure | cBioPortal public API (five studies, a few megabytes) | a minute |
+| `tools/engine_cycle03_9p21.py` (`fetch`, then no argument) | engine cycle 3: `data/engine/cycle03/results.csv`, `summary.json` and one figure (a per-patient table is written to `raw/` and kept out of git) | cBioPortal public API (five studies, a few megabytes) | a minute |
 | `tools/engine_cycle04_mtap_trials.py` (`fetch`, then no argument) | engine cycle 4: `data/engine/cycle04/trials.csv`, `trials_classified.csv`, `summary.json`; the hand classification is `classification.csv` | ClinicalTrials.gov (results change as the registry changes) | a minute |
 | `tools/engine_cycle05_06_depmap.py` (`fetch`, then no argument) | engine cycles 5 and 6: `data/engine/cycle05/` and `cycle06/` results, line tables and two figures | DepMap public releases on Figshare (six files, about 2.5 GB) | several minutes to download, under a minute to run |
-| `tools/engine_cycle07_ccne1.py` (`fetch`, then no argument) | engine cycle 7: `data/engine/cycle07/` results, patient table, trial tables and one figure | cBioPortal and ClinicalTrials.gov; needs cycle 3's fetch | a minute |
+| `tools/engine_cycle07_ccne1.py` (`fetch`, then no argument) | engine cycle 7: `data/engine/cycle07/` results, trial tables and one figure (a per-patient table is written to `raw/` and kept out of git) | cBioPortal and ClinicalTrials.gov; needs cycle 3's fetch | a minute |
 | `tools/engine_cycle08_scan.py` | engine cycle 8: `data/engine/cycle08/alterations.csv`, `hits.csv`, `summary.json` and one figure | none new; needs the downloads of cycles 3, 5 and 7 | about two minutes |
 | `tools/engine_cycle09_suppressor_scan.py` (`fetch`, then no argument) | engine cycle 9: `data/engine/cycle09/` loss calls, checks, hits, patient frequencies and one figure | DepMap Figshare (three files, about 150 MB) and cBioPortal; needs the downloads of cycles 3, 5 and 8 | about a minute |
 | `tools/engine_cycle10_prism.py` (`fetch`, then no argument) | engine cycle 10: `data/engine/cycle10/` results, osteosarcoma line table and one figure | PRISM Repurposing 20Q2 on Figshare (six files, about 340 MB); needs the DepMap downloads of cycles 5 and 9 | a few minutes to download, about a minute to run |
@@ -112,6 +112,7 @@ pip install pandas
 | `tools/engine_cycle18_sarcoma_teen_access.py` (`fetch`, then no argument) | engine cycle 18: `data/engine/cycle18/` trial table and counts | ClinicalTrials.gov API (about 640 records; raw records not in git) | a minute |
 | `tools/engine_cycle19_trial_geography.py` | engine cycle 19: `data/engine/cycle19/` states and trials tables | none new; needs cycle 12's registry download | seconds |
 | `tools/engine_cycle20_immune_response.py` (`fetch`, then no argument) | engine cycle 20: `data/engine/cycle20/` results and one figure | NCBI GEO GSE289059 (under 1 MB); needs cycle 1's downloads and the TARGET-OS files | seconds |
+| `tools/build_manifest.py` | `DATA_MANIFEST.md` and `data/raw_checksums.txt` (checksums of every data file and raw download; rewrites both) | none | a few minutes, for the checksums of large raw files |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:

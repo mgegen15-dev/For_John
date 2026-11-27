@@ -1,9 +1,9 @@
 # For John: software used to build the analyses (verified November 2026).
 # Python 3.13.18 was used; any Python 3.10 or newer should work.
-# All scripts in tools/ use only the Python standard library except
-# tools/pool_relapse_benchmarks.py, which needs pandas, and
-# tools/survival_analysis.py (added 22 November 2026), which needs numpy,
-# scipy and matplotlib. Its survival statistics are implemented with
+# Most scripts in tools/ (including survival_analysis.py and the research-engine
+# scripts engine_cycle*.py) need some of the pinned packages below: numpy, scipy,
+# pandas, h5py, matplotlib. Install them all with: pip install -r requirements.txt
+# The survival statistics are implemented with
 # numpy/scipy because lifelines 0.30.3 requires pandas < 3; lifelines was
 # used only to cross-check the numbers, in a separate virtual environment.
 pandas==3.0.5

@@ -42,7 +42,7 @@ RAW = {
     "data/engine/cycle07/raw": "cBioPortal amplification calls and ClinicalTrials.gov records (engine cycle 7), via tools/engine_cycle07_ccne1.py fetch; retrieved 2026-11-24",
     "data/engine/cycle09/raw": "cBioPortal mutation calls (engine cycle 9), via tools/engine_cycle09_suppressor_scan.py fetch; retrieved 2026-11-24",
     "data/engine/prism/raw": "PRISM Repurposing 20Q2, from Figshare article 20564034 (engine cycle 10), via tools/engine_cycle10_prism.py fetch; retrieved 2026-11-25",
-    "data/engine/cycle12/raw": "ClinicalTrials.gov records (engine cycles 12 and 16), via tools/engine_cycle12_teen_access.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details",
+    "data/engine/cycle12/raw": "ClinicalTrials.gov records (engine cycles 12, 16 and 19), via tools/engine_cycle12_teen_access.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details",
     "data/engine/cycle13/raw": "NCBI GEO GSE180303 series matrix and GPL3738 annotation (engine cycle 13), via tools/engine_cycle13_dog_inflammation.py fetch; retrieved 2026-11-26",
     "data/engine/cycle17/raw": "ClinicalTrials.gov records (engine cycle 17), via tools/engine_cycle17_fda_all_trials.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details",
     "data/engine/cycle18/raw": "ClinicalTrials.gov records (engine cycle 18), via tools/engine_cycle18_sarcoma_teen_access.py fetch; retrieved 2026-11-26; not in git because records include trial staff contact details",
@@ -58,7 +58,7 @@ lines = ["# Data manifest", "",
 for root, _, files in os.walk("data"):
     for fn in sorted(files):
         p = os.path.join(root, fn)
-        if not tracked(p):
+        if not tracked(p) or p == os.path.join("data", "raw_checksums.txt"):   # written below; its own checksum would always be stale
             continue
         lines.append(f"| `{p}` | {rows(p)} | {os.path.getsize(p)//1024} | {first_added(p)} | `{sha256(p)}` |")
 lines += ["", "## Raw downloads kept out of git", "",

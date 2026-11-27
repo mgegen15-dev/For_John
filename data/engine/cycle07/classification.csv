@@ -13,7 +13,7 @@ NCT06667141,yes,unclear,no,WEE1 and PKMYT1 inhibitor,"ACR-2316, a WEE1 and PKMYT
 NCT06726148,yes,"yes, by tumour-agnostic entry",yes,type not stated in the record,ECI830; any advanced cancer with CCNE1 amplification
 NCT06953323,yes,"yes, by tumour-agnostic entry",yes,WEE1 inhibitor,"WJB001, a WEE1 inhibitor, with other drugs; advanced solid tumours with CCNE1 overexpression by tissue stain; China"
 NCT07023627,yes,no,yes,CDK2 inhibitor,ovarian cancer only
-NCT07029399,yes,"yes, by tumour-agnostic entry",no,CDK2 and CDK4 degrader,"NKT5097, a CDK2 and CDK4 degrader; dose-finding part takes any advanced solid tumour, with an emphasis on CCNE1-amplified ones"
+NCT07029399,no,"yes, by tumour-agnostic entry",no,CDK2 and CDK4 degrader,"NKT5097, a CDK2 and CDK4 degrader; dose-finding part takes any advanced solid tumour, with an emphasis on CCNE1-amplified ones; corrected 2026-11-27 after independent check: does not require CCNE1 amplification and is not a PKMYT1 inhibitor, so does not meet the pre-registered rule"
 NCT07214779,yes,no,yes,CDK2 inhibitor,ovarian cancer only; closed to new patients
 NCT07288359,yes,"yes, by tumour-agnostic entry",yes,type not stated in the record,GVV858; any advanced cancer with CCNE1 amplification
 NCT07524140,yes,"yes, by tumour-agnostic entry",yes,CDK2 inhibitor,"ZE94-0605, a CDK2 inhibitor; any advanced solid tumour, with CCNE1 amplification required in the second part; Australia and Uzbekistan"

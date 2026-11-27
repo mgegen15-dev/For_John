@@ -65,7 +65,7 @@ The full per-line table is in `data/engine/cycle10/osteosarcoma_lines.csv`. Each
   - SJSA-1 is a well-known osteosarcoma line with MDM2 amplification and working TP53 (general knowledge). So this is the expected result, and a check that the line behaves as described.
   - Saos-2, which has lost TP53, was tested with only one MDM2 inhibitor (idasanutlin), where it ranked at 0.47.
 - **The kinase pills tested in osteosarcoma trials:**
-  - MG-63 was among the most sensitive lines to several of them (cabozantinib 0.00, apatinib 0.01, anlotinib 0.05, pazopanib 0.07, sunitinib 0.11) but among the least sensitive to sorafenib (0.99) and mid-ranked for regorafenib (0.62).
+  - MG-63 was among the most sensitive lines to several of them (cabozantinib 0.00, apatinib 0.01, anlotinib 0.05, pazopanib 0.07, sunitinib 0.11) but showed no measurable response to sorafenib or regorafenib (AUC 1.0, the maximum).
   - The other osteosarcoma lines were spread across the range.
   - These drugs share targets, so this is one observation about one line, not five.
   - As stated before the data were opened, these drugs are thought to act largely on a tumour's blood vessels, which cells in a dish lack. Neither strong nor weak activity here says how they work in patients.

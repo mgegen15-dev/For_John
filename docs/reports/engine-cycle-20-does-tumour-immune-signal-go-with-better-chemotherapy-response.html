@@ -53,17 +53,19 @@
     <ul>
     <li><strong>Macrophage score (CD163, CD14, CD68): inconclusive, leaning towards better response.</strong>
     <ul>
-    <li>Odds ratio for poor response 0.67 per standard deviation (95% CI 0.43–1.04).</li>
+    <li>Odds ratio for poor response 0.67 per unit of the score (the average of the genes' z-scores; 95% CI 0.43–1.04). Random effects: 0.67 (0.40–1.14), I² 31%.</li>
     <li>Three of the four cohorts leaned the same way, including the new one (0.59, 0.28–1.28; 0.54 after adjusting for P-glycoprotein status).</li>
     </ul>
     </li>
-    <li><strong>T-cell score (CD3E, CD8A): inconclusive,</strong> 0.78 (0.56–1.10).</li>
+    <li><strong>T-cell score (CD3E, CD8A): inconclusive,</strong> 0.78 (0.55–1.10).</li>
+    <li><strong>Exploratory flag, not a result:</strong> CD68 alone pooled to 0.61 (0.43–0.87), one of five single genes, uncorrected.</li>
     <li><strong>Predictions:</strong> P54 and P55 were wrong.</li>
     <li><strong>What it means:</strong> the macrophage lean is consistent with cycle 14's weak survival signal but does not establish it. Neither score is a usable marker of response.</li>
     <li><strong>Why the MYC result from cycle 15 could not be checked here:</strong> the new cohort's gene panel does not include MYC.</li>
     </ul>
     <p><strong>How to read the labels.</strong> Every number here is <strong>(our calculation)</strong> from open data.</p>
     <h2 id="results">Results</h2>
+    <p><img src="../figures/engine20_immune_response.svg" alt="Odds of a poor response to chemotherapy before surgery, by immune score" /></p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -102,7 +104,7 @@
     <td><strong>Pooled</strong></td>
     <td><strong>171 (94)</strong></td>
     <td><strong>0.67 (0.43–1.04)</strong></td>
-    <td><strong>0.78 (0.56–1.10)</strong></td>
+    <td><strong>0.78 (0.55–1.10)</strong></td>
     </tr>
     </tbody>
     </table></div>
@@ -117,7 +119,8 @@
     <ul>
     <li>Bulk RNA as a stand-in for immune cells.</li>
     <li>Four small cohorts on four platforms.</li>
-    <li>The cycle 15 cohorts' immune genes were read before, for survival (cycle 14), though never against response.</li>
+    <li>Two of the four cohorts (GSE21257, TARGET-OS) had these genes read for cycle 14, against survival; GSE289059 and GSE14827 had not. None had been compared with response.</li>
+    <li>The GSE289059 file was downloaded to read its sample descriptions before the plan was committed; the order of reading rests on our account.</li>
     </ul>
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
@@ -126,6 +129,7 @@
     </ul>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-27: after an independent check, T-cell interval corrected (0.55, not 0.56), random effects, the CD68 flag and the figure added, the scale of the score stated, and which cohorts were read before made exact.</li>
     <li>2026-11-27: cycle run and reported. H1 and H2 inconclusive; P54 and P55 wrong. No deviations.</li>
     </ul>
     <hr>

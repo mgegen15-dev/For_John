@@ -7,7 +7,7 @@
 New osteosarcoma drugs aimed at the surface proteins LRRC15 and B7-H3 (gene CD276) are tested mostly in patients whose disease has spread to the lungs. The evidence for those targets, however, comes mostly from primary tumours. We compared target RNA in 29 lung metastases with 51 primary tumours across six public datasets.
 
 - **LRRC15: "Maintained" by the pre-registered rule, but less firmly than that label suggests.**
-  - No version of the analysis shows a clear drop of LRRC15 in lung metastases, though the three supporting datasets leaned lower (−0.42, −0.88 to +0.04).
+  - No version of the analysis shows a clear drop of LRRC15 in lung metastases, though the three sensitivity datasets (metastasis site not recorded) leaned lower (−0.42, −0.88 to +0.04).
   - The measure the rule used, though, turned out to be unstable, for the reason explained below.
 - **B7-H3: inconclusive.**
   - Whole-tissue samples of lung metastases had less B7-H3 RNA than primary tumours.
@@ -75,7 +75,7 @@ These checks were not in the plan. They are reported so that the verdicts are no
   - If B7-H3 is lower in lung metastases, the difference may lie in the tissue around the tumour rather than in the tumour cells. A protein stain of matched primary tumours and metastases would settle it. This is the same kind of partner study as queue row 8.
 - **Secondary set (exploratory weight):**
   - No gene met "Lower in metastases".
-  - GPNMB's "Maintained" rests on the same unstable adjustment as LRRC15's. Under the immune-only adjustment, GPNMB (−0.58, −1.03 to −0.12) and CD276 (−0.71, −1.26 to −0.15) would read lower in metastases. All these checks are saved in `data/engine/cycle11/posthoc_checks.json`.
+  - GPNMB's "Maintained" rests on the same unstable adjustment as LRRC15's. Under the immune-only adjustment, GPNMB (−0.58, −1.03 to −0.12), CD276 (−0.71, −1.26 to −0.15), B4GALNT1 (−0.57, −1.04 to −0.10) and ADAM12 (−0.86, −1.37 to −0.36) would read lower in metastases. All these checks are saved in `data/engine/cycle11/posthoc_checks.json`.
   - IFITM5, one of this project's own surface leads, was lower in tumour cells of the four metastases (−1.58, −2.91 to −0.26). With four samples this is a flag to check, not a finding.
   - It adds to the doubts about IFITM5 already listed in `reports/New surface targets for osteosarcoma.md`.
 - **For the method:** a future cycle comparing metastases with primaries should make tumour cells measured directly (single-cell or stained tissue) the primary measure, and use whole-tissue adjustment only as support.

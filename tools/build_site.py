@@ -89,6 +89,8 @@ def rewrite_links(body_html, src_rel, pagemap, depth):
         resolved = os.path.normpath(os.path.join(base, target)).replace(os.sep, "/")
         if resolved in pagemap:
             return f'{attr}="{up}{pagemap[resolved]}{frag}"'
+        if resolved in set(pagemap.values()) or os.path.isfile(os.path.join(ROOT, "docs", resolved)):
+            return f'{attr}="{up}{resolved}{frag}"'      # already a site page address (e.g. reports/<slug>.html)
         if resolved.startswith("docs/"):            # figures and other site assets
             return f'{attr}="{up}{resolved[len("docs/"):]}{frag}"'
         from urllib.parse import quote
@@ -229,6 +231,21 @@ def new_parser():
     return md
 
 
+
+_GIT_FILES = None
+
+
+def in_git(path):
+    """True if a file, or a folder containing files, is tracked by git (raw downloads are not)."""
+    global _GIT_FILES
+    if _GIT_FILES is None:
+        import subprocess
+        out = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, text=True).stdout
+        _GIT_FILES = set(f for f in out.split("\0") if f)
+    path = path.rstrip("/")
+    return path in _GIT_FILES or any(f.startswith(path + "/") for f in _GIT_FILES)
+
+
 def link_code_paths(body, src, pagemap, depth):
     """Turn file paths written as code (`reports/X.md`, `data/y.csv`) into links."""
     up = "../" * depth
@@ -247,7 +264,7 @@ def link_code_paths(body, src, pagemap, depth):
             if cand in pagemap:
                 return f'<a href="{up}{pagemap[cand]}"><code>{raw}</code></a>'
         for cand in (path, os.path.normpath(os.path.join(base, path)).replace(os.sep, "/")):
-            if os.path.exists(os.path.join(ROOT, cand)) and not cand.startswith(".."):
+            if in_git(cand) and not cand.startswith(".."):      # only link what is published in git
                 kind = "tree" if os.path.isdir(os.path.join(ROOT, cand)) else "blob"
                 url = REPO.replace("/blob/", f"/{kind}/") + quote(cand)
                 return f'<a href="{url}"><code>{raw}</code></a>'

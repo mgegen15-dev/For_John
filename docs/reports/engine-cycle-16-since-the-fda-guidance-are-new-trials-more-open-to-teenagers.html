@@ -43,7 +43,7 @@
 </header>
 
 <div class="doclayout">
-  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#deviations">Deviations</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
     <p class="crumb">Report · Updated November 27, 2026 · 3 min read</p>
     <h1>Engine Cycle 16: Since the FDA&#x27;s 2019 Guidance, Are New Early-Phase Cancer Trials More Likely to Take Teenagers?</h1>
@@ -124,6 +124,10 @@
     <li>&quot;Accepts teenagers&quot; reads only the age fields.</li>
     <li>Set B mixes adult and children's trials. The last row of the table removes trials starting under 12 and finds the same pattern.</li>
     </ul>
+    <h2 id="deviations">Deviations</h2>
+    <ul>
+    <li><strong>Phase filter.</strong> This cycle reuses cycle 12's Set B, which includes 16 phase 2/3 trials (see cycle 12). Without them: 66 of 1,390 (4.7%) against 6 of 28, odds ratio 0.18 (0.07–0.47); company-led 26 of 1,081 (2.4%). No conclusion changes.</li>
+    </ul>
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
     <li>Run <code>python3 tools/engine_cycle12_teen_access.py fetch</code> (cycle 12) first.</li>
@@ -134,7 +138,7 @@
     <p><strong>Data source.</strong> ClinicalTrials.gov API v2 (US National Library of Medicine). FDA, <em>Considerations for the Inclusion of Adolescent Patients in Adult Oncology Clinical Trials</em>, guidance for industry, March 2019.</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
-    <li>2026-11-26: cycle run and reported. H1 refuted by the pre-registered rule, with the survivorship bias stated in the plan. P45 wrong, P46 right. No deviations.</li>
+    <li>2026-11-26: cycle run and reported. H1 refuted by the pre-registered rule, with the survivorship bias stated in the plan. P45 wrong, P46 right. The phase 2/3 inclusion inherited from cycle 12 was declared on 2026-11-27 after an independent check.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%2016%20-%20since%20the%20FDA%20guidance%20are%20new%20trials%20more%20open%20to%20teenagers.md">reports/Engine cycle 16 - since the FDA guidance are new trials more open to teenagers.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>

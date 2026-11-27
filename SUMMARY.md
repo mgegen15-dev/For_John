@@ -1,6 +1,6 @@
 # For John: one-page summary
 
-*November 2026. An open, independent analysis of osteosarcoma research, built from public data by a family member working with AI research assistants, then audited claim by claim. Not peer-reviewed yet, and not medical advice. Methods and limits: [HOW_THIS_WAS_MADE.md](HOW_THIS_WAS_MADE.md).*
+*November 2026. An open, independent analysis of osteosarcoma research, built from public data by a family member working with frontier AI models, then audited claim by claim. Not peer-reviewed yet, and not medical advice. Methods and limits: [HOW_THIS_WAS_MADE.md](HOW_THIS_WAS_MADE.md).*
 
 ## Why this exists
 

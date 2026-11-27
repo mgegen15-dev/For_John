@@ -8,7 +8,7 @@ Cycles 4 and 7 found that the targeted-drug trials for two gene changes in osteo
 
 - **Trials that list osteosarcoma usually take teenagers.**
   - 58 recruiting or soon-to-recruit drug trials list osteosarcoma and take patients whose disease has come back or not responded. 44 of them (76%) accept 12- to 17-year-olds, and 32 of those have a US site.
-  - Many of the 58 are wider sarcoma or childhood-cancer trials; 18 have osteosarcoma in the title.
+  - Many of the 58 are wider sarcoma or childhood-cancer trials; 19 have osteosarcoma in the title.
 - **The broad "solid tumour" trials, where most new drugs first enter people, almost never do.**
   - Of 1,434 early-phase drug trials for solid tumours (recruiting or not yet recruiting), 78 (5.4%) accept 12- to 17-year-olds, and 38 (2.6%) do so with a US site.
   - 1,327 (93%) start at exactly 18.
@@ -28,7 +28,7 @@ Both sets were limited to trials that were interventional, recruiting or not yet
   - Found by the registry's condition search for "osteosarcoma" and kept only if the word appears in the record: 72 trials.
   - The pre-registered text rule flagged 69 as open to relapsed disease.
   - Every one of the 72 was then classified by reading its record. The plan called for a sample of 30; the full read is a step beyond the plan, taken because the sample showed the rule over-counting.
-  - The reading was done by the AI assistant working on this project, as a single reader. An independent check afterwards found one error (the OstEvo trial, NCT07477457, has a cohort for relapsed disease), now corrected.
+  - The reading was done by a frontier AI model working on this project, as a single reader. An independent check afterwards found one error (the OstEvo trial, NCT07477457, has a cohort for relapsed disease), now corrected.
   - After that correction, 58 are treatment trials open to relapsed or refractory osteosarcoma.
 - **Set B, early-phase solid-tumour trials.**
   - Phase 1, 1/2 or 2 trials (including 16 phase 2/3 trials; see Deviations) with a condition reading "solid tumor", "solid tumour" or "solid neoplasm", excluding Set A: 1,434 trials.
@@ -38,6 +38,8 @@ Both sets were limited to trials that were interventional, recruiting or not yet
 ## Results
 
 ![Youngest age a recruiting drug trial accepts](../docs/figures/engine12_ages.svg)
+
+*The osteosarcoma bars use the pre-registered text rule (53 of 69 trials accept teenagers); reading each record gives 44 of 58. One trial in the "under 12" bar of the solid-tumour set is the registry age error noted below.*
 
 | Measure | Count | Share (95% CI) |
 |---|---|---|
@@ -100,5 +102,6 @@ Both sets were limited to trials that were interventional, recruiting or not yet
 
 ## Change log
 
+- 2026-11-27: after a second independent check, the title count corrected (19, not 18) and the figure's basis stated.
 - 2026-11-26: corrected after an independent check. One trial (NCT07477457) reclassified as relapse-eligible: 58 trials, 44 accepting teenagers, 32 with a US site (was 57, 43, 31). Wording changed from "anyone under 18" to "12- to 17-year-olds" to match the definition; the inclusion of phase 2/3 trials declared as a deviation; the 40 children's trials and one registry age error described.
 - 2026-11-26: cycle run and reported. All three predictions right. The full hand classification of Set A goes beyond the pre-registered 30-trial sample. It is reported alongside the rule's result, which was kept as planned.

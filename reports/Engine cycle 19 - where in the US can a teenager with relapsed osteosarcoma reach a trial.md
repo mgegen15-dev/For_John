@@ -6,15 +6,15 @@
 
 Cycle 12 found 32 recruiting or soon-to-recruit drug trials that list osteosarcoma, take relapsed disease, accept 12- to 17-year-olds and have a US site. This cycle counted where those sites are, using only the state and city of each site that is not marked closed.
 
-- **34 of the 50 states plus DC have at least one site** (66 cities).
-- **17 have none:** Alaska, Delaware, Idaho, Iowa, Louisiana, Maine, Mississippi, Montana, Nebraska, Nevada, New Hampshire, New Mexico, North Dakota, South Dakota, Vermont, West Virginia and Wyoming. Teenagers in those states would have to travel to another state for any of these trials.
-- **Most trials are in few places.** 20 of the 32 have sites in only one or two states. 7 have sites in five or more. One, a US National Cancer Institute–sponsored trial of the antibody–drug conjugate DS-8201a (trastuzumab deruxtecan) for recurrent osteosarcoma and other tumours in young people (NCT04616560), lists sites in 22 states.
+- **33 states and DC (34 of 51) have at least one site** (66 cities). The count includes sites the registry marks as suspended or not recruiting; only withdrawn, completed and terminated sites were left out, as planned.
+- **17 states have none:** Alaska, Delaware, Idaho, Iowa, Louisiana, Maine, Mississippi, Montana, Nebraska, Nevada, New Hampshire, New Mexico, North Dakota, South Dakota, Vermont, West Virginia and Wyoming. Teenagers in those states would have to travel to another state for any of these trials.
+- **Most trials are in few places.** 20 of the 32 have sites in only one or two states. 7 have sites in five or more. One, a US National Cancer Institute–sponsored trial of the antibody–drug conjugate DS-8201a (trastuzumab deruxtecan) for recurrent osteosarcoma and other tumours in young people (NCT04616560), lists sites in 22 states, though in 5 of them (Alabama, Colorado, Indiana, Minnesota, Utah) the registry marks every site as suspended or not recruiting; its recruiting sites are in 17 states.
 - **The states with the most of these trials:**
   - Texas: 13 of the 32;
   - California: 9;
   - New York and Tennessee: 8 each;
   - Ohio and Pennsylvania: 7 each.
-- **Predictions:** P52 (25 or fewer states) was wrong, since 34 states have a site. P53 (at least one trial in 20 or more states) was right.
+- **Predictions:** P52 (25 or fewer states) was wrong, since 33 states and DC (34 of 51) have a site. P53 (at least one trial in 20 or more states) was right by its rule; counting only sites marked recruiting or not yet recruiting, no trial reaches 20 states.
 
 **How to read the labels.** Every number here is **(our calculation)** from **(registry)** records.
 
@@ -43,4 +43,5 @@ Cycle 12 found 32 recruiting or soon-to-recruit drug trials that list osteosarco
 
 ## Change log
 
+- 2026-11-27: after an independent check, suspended and not-recruiting sites made explicit; the 22-state trial recruits in 17.
 - 2026-11-27: cycle run and reported. P52 wrong, P53 right. No deviations.

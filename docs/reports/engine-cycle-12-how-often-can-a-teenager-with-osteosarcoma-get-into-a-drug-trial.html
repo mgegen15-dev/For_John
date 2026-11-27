@@ -54,7 +54,7 @@
     <li><strong>Trials that list osteosarcoma usually take teenagers.</strong>
     <ul>
     <li>58 recruiting or soon-to-recruit drug trials list osteosarcoma and take patients whose disease has come back or not responded. 44 of them (76%) accept 12- to 17-year-olds, and 32 of those have a US site.</li>
-    <li>Many of the 58 are wider sarcoma or childhood-cancer trials; 18 have osteosarcoma in the title.</li>
+    <li>Many of the 58 are wider sarcoma or childhood-cancer trials; 19 have osteosarcoma in the title.</li>
     </ul>
     </li>
     <li><strong>The broad &quot;solid tumour&quot; trials, where most new drugs first enter people, almost never do.</strong>
@@ -81,7 +81,7 @@
     <li>Found by the registry's condition search for &quot;osteosarcoma&quot; and kept only if the word appears in the record: 72 trials.</li>
     <li>The pre-registered text rule flagged 69 as open to relapsed disease.</li>
     <li>Every one of the 72 was then classified by reading its record. The plan called for a sample of 30; the full read is a step beyond the plan, taken because the sample showed the rule over-counting.</li>
-    <li>The reading was done by the AI assistant working on this project, as a single reader. An independent check afterwards found one error (the OstEvo trial, NCT07477457, has a cohort for relapsed disease), now corrected.</li>
+    <li>The reading was done by a frontier AI model working on this project, as a single reader. An independent check afterwards found one error (the OstEvo trial, NCT07477457, has a cohort for relapsed disease), now corrected.</li>
     <li>After that correction, 58 are treatment trials open to relapsed or refractory osteosarcoma.</li>
     </ul>
     </li>
@@ -95,6 +95,7 @@
     </ul>
     <h2 id="results">Results</h2>
     <p><img src="../figures/engine12_ages.svg" alt="Youngest age a recruiting drug trial accepts" /></p>
+    <p><em>The osteosarcoma bars use the pre-registered text rule (53 of 69 trials accept teenagers); reading each record gives 44 of 58. One trial in the &quot;under 12&quot; bar of the solid-tumour set is the registry age error noted below.</em></p>
     <div class="tablewrap"><table>
     <thead>
     <tr>
@@ -210,7 +211,7 @@
     </ul>
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
-    <li><code>python3 tools/engine_cycle12_teen_access.py fetch</code> searches ClinicalTrials.gov. Raw records go to <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/cycle12/raw"><code>data/engine/cycle12/raw/</code></a>, which is not in git because the records include trial staff contact details.</li>
+    <li><code>python3 tools/engine_cycle12_teen_access.py fetch</code> searches ClinicalTrials.gov. Raw records go to <code>data/engine/cycle12/raw/</code>, which is not in git because the records include trial staff contact details.</li>
     <li><code>python3 tools/engine_cycle12_teen_access.py</code> builds the outputs:
     <ul>
     <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle12/set_a.csv"><code>data/engine/cycle12/set_a.csv</code></a>, <code>set_b.csv</code>, <code>hand_check_sample.csv</code> and <code>summary.json</code>;</li>
@@ -222,6 +223,7 @@
     <p><strong>Data source.</strong> ClinicalTrials.gov API v2 (US National Library of Medicine).</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-27: after a second independent check, the title count corrected (19, not 18) and the figure's basis stated.</li>
     <li>2026-11-26: corrected after an independent check. One trial (NCT07477457) reclassified as relapse-eligible: 58 trials, 44 accepting teenagers, 32 with a US site (was 57, 43, 31). Wording changed from &quot;anyone under 18&quot; to &quot;12- to 17-year-olds&quot; to match the definition; the inclusion of phase 2/3 trials declared as a deviation; the 40 children's trials and one registry age error described.</li>
     <li>2026-11-26: cycle run and reported. All three predictions right. The full hand classification of Set A goes beyond the pre-registered 30-trial sample. It is reported alongside the rule's result, which was kept as planned.</li>
     </ul>

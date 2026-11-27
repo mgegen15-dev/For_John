@@ -45,11 +45,11 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#how-often-osteosarcoma-loses-these-genes">How Often Osteosarcoma Loses These Genes</a></li><li class="l1"><a href="#what-was-done">What Was Done</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#the-limit-that-matters-for-osteosarcoma">The Limit That Matters for Osteosarcoma</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 27, 2026 · 6 min read</p>
+    <p class="crumb">Report · Updated November 27, 2026 · 7 min read</p>
     <h1>Engine Cycle 9: Weaknesses That Go with the Tumour-Suppressor Genes Osteosarcoma Loses</h1>
     <p><em>Run November 24, 2026. The ninth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-09-suppressor-scan/PREREGISTRATION.md"><code>research_notes/Engine/cycle-09-suppressor-scan/PREREGISTRATION.md</code></a>, committed at 22:54 UTC (commit <code>c8e7e02</code>) before the mutation files were downloaded or any comparison run. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle09_suppressor_scan.py"><code>tools/engine_cycle09_suppressor_scan.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle09/hits.csv"><code>data/engine/cycle09/hits.csv</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
-    <p>Cycle 8 scanned osteosarcoma's gene gains and losses but could not include RB1, TP53 and ATRX, the brakes on cell growth that this cancer most often breaks, because cell lines usually lose them through mutations rather than whole-gene deletions. This scan used mutation data as well, for five such genes. Both built-in checks passed, so the method for calling a gene lost works. It found ten pairs and seven replicated in a second kind of screen. The three strongest are known biology: cells without RB1 depend on SKP2, E2F3 and CDK2. The others are explained by how the screen scores TP53, or, for ATRX with WRN, by a confounder: half the ATRX-lost cell lines are a type of cancer that already depends on WRN. With those lines removed, an exploratory check showed what ATRX-lost cells are known to need: FANCM, SMARCAL1 and ATR, the machinery of the back-up way of maintaining chromosome ends that ATRX-lost tumours use. Nothing new and druggable turned up. The most useful lesson is about osteosarcoma itself: it breaks TP53 and ATRX mostly by large rearrangements that public cell-line data do not capture, so these genes are under-counted in the very cancer that loses them most.</p>
+    <p>Cycle 8 scanned osteosarcoma's gene gains and losses but could not include RB1, TP53 and ATRX, the brakes on cell growth that this cancer most often breaks, because cell lines usually lose them through mutations rather than whole-gene deletions. This scan used mutation data as well, for five such genes. Both built-in checks passed, so the method for calling a gene lost works. It found ten pairs and seven replicated in a second kind of screen. The three RB1 hits are known biology: cells without RB1 depend on SKP2, E2F3 and CDK2. The others are explained by how the screen scores TP53, or, for ATRX with WRN, by a confounder: half the ATRX-lost cell lines are a type of cancer that already depends on WRN. With those lines removed, an exploratory check showed what ATRX-lost cells are known to need: FANCM, SMARCAL1 and ATR, the machinery of the back-up way of maintaining chromosome ends that ATRX-lost tumours use. Nothing new and druggable turned up. The most useful lesson is about osteosarcoma itself: it breaks TP53 and ATRX mostly by large rearrangements that public cell-line data do not capture, so these genes are under-counted in the very cancer that loses them most.</p>
     <p><strong>How to read the labels.</strong> Numbers are <strong>(our calculation)</strong> from DepMap public data (24Q4 release, DEMETER2 knockdown scores) and cBioPortal, unless marked otherwise. A scan hit is a candidate, not a finding.</p>
     <h2 id="how-often-osteosarcoma-loses-these-genes">How Often Osteosarcoma Loses These Genes</h2>
     <p>From 197 osteosarcoma patients tested at Memorial Sloan Kettering, one sample each, counting a deep deletion or a truncating mutation (for TP53, also a missense mutation):</p>
@@ -162,7 +162,7 @@
     <td>TP53</td>
     <td>TP53BP1</td>
     <td class="num">−0.21</td>
-    <td>−0.19 (−0.22 to −0.16)</td>
+    <td>−0.19 (−0.22 to −0.15)</td>
     <td>yes</td>
     <td>Artefact of scoring</td>
     </tr>
@@ -170,14 +170,14 @@
     <td>ATRX</td>
     <td>FANCM</td>
     <td class="num">−0.24</td>
-    <td>−0.02 (−0.14 to +0.09)</td>
+    <td>−0.02 (−0.13 to +0.09)</td>
     <td>no</td>
     <td><strong>Known</strong></td>
     </tr>
     <tr>
     <td>ATRX</td>
     <td>SMARCAL1</td>
-    <td class="num">−0.22</td>
+    <td class="num">−0.21</td>
     <td>+0.01 (−0.07 to +0.10)</td>
     <td>no</td>
     <td><strong>Known</strong></td>
@@ -225,11 +225,11 @@
     </tr>
     </tbody>
     </table></div>
-    <p>FANCM, SMARCAL1 and ATR are what cells without ATRX are known to need when they keep their chromosome ends long by the back-up route called ALT (general knowledge). Most osteosarcomas use ALT. ATR inhibitors exist and are in late-stage trials in other cancers (general knowledge); whether ALT osteosarcoma responds to them has been argued over in published laboratory work and is not settled. This is a check on known biology, not a new lead.</p>
+    <p>FANCM, SMARCAL1 and ATR are what cells without ATRX are known to need when they keep their chromosome ends long by the back-up route called ALT (general knowledge). Many osteosarcomas, about half or more in published series, use ALT (general knowledge). ATR inhibitors exist and are in late-stage trials in other cancers (general knowledge); whether ALT osteosarcoma responds to them has been argued over in published laboratory work and is not settled. This is a check on known biology, not a new lead.</p>
     <h2 id="the-limit-that-matters-for-osteosarcoma">The Limit That Matters for Osteosarcoma</h2>
     <p>The rule for calling a gene lost works across cancers, as the checks show, but it misses osteosarcoma's usual route.</p>
     <ul>
-    <li><strong>TP53.</strong> Osteosarcoma often breaks TP53 by a rearrangement inside the gene. Three osteosarcoma lines with almost no TP53 RNA (OS384, CAL72, OS252) were called intact for TP53 by the mutation-based rule, and only 5 of 17 osteosarcoma lines were called altered.</li>
+    <li><strong>TP53.</strong> Osteosarcoma often breaks TP53 by a rearrangement inside the gene. Two osteosarcoma lines with almost no TP53 RNA (CAL72, OS252) were called intact for TP53 by the mutation-based rule (a third, OS384, was caught by its deep deletion), and only 5 of 17 osteosarcoma lines were called altered.</li>
     <li><strong>ATRX.</strong> U2OS, a widely used osteosarcoma line known to have lost ATRX through a large deletion (general knowledge), still shows ATRX RNA, presumably from the remaining fragment, and was called intact. Only 2 of 17 osteosarcoma lines were called ATRX-lost.</li>
     <li><strong>What fixes it:</strong> structural-variant calls from whole-genome sequencing of the cell lines, or ATRX protein staining. Neither is in the public DepMap release used here.</li>
     </ul>
@@ -257,6 +257,8 @@
     Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Gao et al., Science Signaling 2013) and come from the original studies: MSK-IMPACT 50K Clinical Sequencing Cohort (Memorial Sloan Kettering), China Pan-cancer (OrigiMed, Nature 2022), MAPPYACTS (Gustave Roussy, Cancer Discovery 2022), TARGET-OS (NCI TARGET, via the GDC) and the Pan-Cancer Analysis of Whole Genomes (Nature 2020). Only counts and summary statistics are published here; the per-patient table stays with the local download.</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-27: rounding corrected to match the output files.</li>
+    <li>2026-11-27: after an independent check, corrected the TP53 line count (two, not three, called intact), the description of the RB1 hits, and the ALT share.</li>
     <li>2026-11-24: scan run and reported. The microsatellite check on the ATRX pairs was added after the scan and is marked exploratory.</li>
     <li>2026-11-25: data sources credited.</li>
     </ul>

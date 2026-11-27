@@ -156,8 +156,8 @@
     </ul>
     <h2 id="checks">Checks</h2>
     <ul>
-    <li><strong>Is RAMP1 measured?</strong> Yes. On each array its chosen probe sits in the upper half of all probes by mean signal (57th to 78th percentile), with a spread of 0.65–1.06 log₂ units between patients. In TARGET-OS RNA sequencing its median is about 20 transcripts per million. The null result is not a probe failure.</li>
-    <li><strong>Overall survival in GSE21257</strong> (secondary), all 53 patients adjusted for metastasis at diagnosis: 1.25 (0.78–2.01), p = 0.36.</li>
+    <li><strong>Is RAMP1 measured?</strong> Yes. On each array its chosen probe sits in the upper half of all probes by mean signal (53rd to 78th percentile), with a spread of 0.66–1.07 log₂ units between patients. In TARGET-OS RNA sequencing its median is about 20 transcripts per million. The null result is not a probe failure.</li>
+    <li><strong>Overall survival in GSE21257</strong> (secondary), all 53 patients adjusted for metastasis at diagnosis: 1.25 (0.78–2.01), p = 0.35.</li>
     <li><strong>Receptor partner.</strong> CALCRL, which RAMP1 needs to form the CGRP receptor, showed no association in the discovery cohort (1.06, p = 0.75) or the pooled independent cohorts (0.89, 0.68–1.18). A CGRP-signalling explanation was already weak before the replication test.</li>
     <li><strong>Differentiation genes.</strong> In TARGET-OS, SP7, a marker of bone-forming differentiation, also predicted events (2.25, p = 0.006). This supports the idea, raised by the tournament's reviewers, that RAMP1 was riding on a differentiation pattern in that cohort rather than acting on its own. Pooled across the independent cohorts, SP7 was 1.26 (0.88–1.79) and SOST 0.95 (0.65–1.39); neither reached significance.</li>
     </ul>
@@ -178,11 +178,12 @@
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
     <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle01_ramp1.py"><code>tools/engine_cycle01_ramp1.py</code></a> (uses the Cox and survival code in <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/survival_analysis.py"><code>tools/survival_analysis.py</code></a>).</li>
-    <li>Inputs: TARGET-OS files as for <a href="../reports/do-the-leads-predict-survival.html"><code>reports/Do the leads predict survival.md</code></a>; GEO series matrices and platform tables for GSE21257, GSE16091 and GSE39055 in <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/cycle01/raw"><code>data/engine/cycle01/raw/</code></a> (downloaded November 24, 2026; large, not stored in git).</li>
+    <li>Inputs: TARGET-OS files as for <a href="../reports/do-the-leads-predict-survival.html"><code>reports/Do the leads predict survival.md</code></a>; GEO series matrices and platform tables for GSE21257, GSE16091 and GSE39055 in <code>data/engine/cycle01/raw/</code> (downloaded November 24, 2026; large, not stored in git).</li>
     <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle01/results.csv"><code>data/engine/cycle01/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle01/summary.json"><code>data/engine/cycle01/summary.json</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine01_ramp1_forest.svg"><code>docs/figures/engine01_ramp1_forest.svg</code></a>.</li>
     </ul>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-27: probe percentiles and one p-value corrected to match a recomputation.</li>
     <li>2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules; discovery-size effect excluded.</li>
     </ul>
     <hr>

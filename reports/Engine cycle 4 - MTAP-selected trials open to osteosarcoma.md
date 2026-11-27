@@ -6,13 +6,13 @@
 
 ## Summary
 
-Cycle 3 estimated that about one in seven relapsed osteosarcomas has lost the gene MTAP. Drugs aimed at exactly that weakness are in trials, so we asked whether those trials would take an osteosarcoma patient. The registry lists 25 trials, recruiting now or about to, that such a patient could join on paper. One of them names bone sarcoma: a study of vopimetostat (TNG462) has a group for MTAP-deleted sarcoma, soft tissue or bone, with sites in the United States, France and Spain. The other 24 take any advanced solid tumour that has lost MTAP. Twelve of the 25 have a site in the United States. The gap is age. Twenty-four of the 25 start at age 18. Only one accepts patients from age 12, and its sites are all in China. Osteosarcoma is most often diagnosed in the teenage years (general knowledge), so the patients this disease takes youngest are the ones these trials leave out.
+Cycle 3 estimated that about one in seven relapsed osteosarcomas has lost the gene MTAP. Drugs aimed at exactly that weakness are in trials, so we asked whether those trials would take an osteosarcoma patient. The registry lists 25 trials, recruiting now or about to, that such a patient could join on paper. One of them names bone sarcoma: a study of vopimetostat (TNG462) has a group for MTAP-deleted sarcoma, soft tissue or bone, with sites in the United States, France and Spain. The other 24 take any advanced solid tumour, 23 of them only if it has lost MTAP. Twelve of the 25 have a site in the United States. The gap is age. Twenty-four of the 25 start at age 18. Only one accepts patients from age 12, and its sites are all in China. Osteosarcoma is most often diagnosed in the teenage years (general knowledge), so the patients this disease takes youngest are the ones these trials leave out.
 
 **How to read the labels.** Counts are **(our calculation)** from registry records (registry). Trial details are quoted from the records.
 
 ## What was counted
 
-- **Search:** 23 terms on ClinicalTrials.gov (MTAP, PRMT5, MAT2A, and 20 drug names), fixed in advance. It returned 97 trials.
+- **Search:** 23 terms on ClinicalTrials.gov (MTAP, methylthioadenosine phosphorylase, PRMT5, MAT2A and 19 drug names), fixed in advance. It returned 97 trials.
 - **Counted:** 60 trials that were open in some form (recruiting, about to, by invitation, or running but closed to new patients) and that either require MTAP or 9p21 loss or test a PRMT5 or MAT2A inhibitor. One of the 60 was a false match, a dental study in which "MTAP" means an antibiotic paste.
 - **Classified by reading each record's entry rules:** open to osteosarcoma "yes, named", "yes, by tumour-agnostic entry", "no" or "unclear". The classification of every trial, with a note on why, is in `data/engine/cycle04/classification.csv`.
 
@@ -47,7 +47,7 @@ Cycle 3 estimated that about one in seven relapsed osteosarcomas has lost the ge
 | NCT07601243 | GS-2426 | Gilead Sciences | 1 | MTAP-deficient solid tumours |
 | NCT06630416 | Pemetrexed (an older chemotherapy, not a PRMT5 drug) | Northwestern University | 2 | Second group takes any solid tumour with MTAP loss |
 
-The other 13 trials in group A have sites only outside the United States, mostly in China, with others in Japan, Australia, Taiwan, Hungary and Spain.
+The other 13 trials in group A have sites only outside the United States (one lists no sites yet), mostly in China, with others in Japan, Australia, Taiwan, Hungary and Spain.
 
 **Age.**
 
@@ -58,9 +58,9 @@ The other 13 trials in group A have sites only outside the United States, mostly
 
 ## What this means
 
-- **For an adult with relapsed osteosarcoma whose tumour report shows MTAP or CDKN2A deletion, there are trials to ask about now,** including one that has made room for bone sarcoma by name. Most hospital gene-panel reports show CDKN2A; MTAP has to be looked for specifically, by a newer panel or a tissue stain.
+- **For an adult with relapsed osteosarcoma whose tumour report shows MTAP loss, there are trials to ask about now,** and a CDKN2A deletion is a reason to ask for MTAP to be tested, since a quarter to a half of CDKN2A-deleted tumours keep MTAP; including one that has made room for bone sarcoma by name. Most hospital gene-panel reports show CDKN2A; MTAP has to be looked for specifically, by a newer panel or a tissue stain.
 - **For patients under 18 there is almost nothing,** and nothing in the United States or Europe that this search found. The nerve-sheath-tumour trial shows an adolescent trial of one of these drugs can be opened.
-- **The practical ask,** for an advocacy group or a sarcoma network: ask the sponsors of the tumour-agnostic trials to lower the entry age to 12 for sarcoma, and ask the sarcoma group in the vopimetostat trial to report osteosarcoma separately. Both are small protocol decisions, and the frequency numbers from cycle 3 are the argument.
+- **The practical ask,** for an advocacy group or a sarcoma network: ask the sponsors of the tumour-agnostic trials to lower the entry age to 12 for sarcoma, and ask the sarcoma group in the vopimetostat trial to report osteosarcoma separately. Opening adult trials to 12-year-olds needs adult dosing and safety data first, and the frequency numbers from cycle 3 are the argument.
 - **This is not evidence that these drugs work in osteosarcoma.** No osteosarcoma result has been reported for any of them that this project has found, and cycle 5 could not confirm the underlying dependency in osteosarcoma cell lines because too few lines have lost MTAP.
 - **Prediction P19** (at least one such trial accepts under-18s) is resolved as right, on the single trial in China.
 
@@ -78,5 +78,6 @@ The other 13 trials in group A have sites only outside the United States, mostly
 
 ## Change log
 
+- 2026-11-27: after an independent check, search terms counted correctly, the CDKN2A wording narrowed to MTAP loss, one trial with no sites and one not requiring MTAP loss noted, and the phrase calling age changes small decisions removed.
 - 2026-11-24: search run, records read and classified, report written.
 - 2026-11-25: corrected after an independent check. A UK mesothelioma trial (NCT07602946) had been described as taking patients from 16; its screening platform does, but its drug arm starts at 18, so it was removed as an example.

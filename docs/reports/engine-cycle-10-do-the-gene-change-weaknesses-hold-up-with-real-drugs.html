@@ -204,7 +204,7 @@
     </li>
     <li><strong>The kinase pills tested in osteosarcoma trials:</strong>
     <ul>
-    <li>MG-63 was among the most sensitive lines to several of them (cabozantinib 0.00, apatinib 0.01, anlotinib 0.05, pazopanib 0.07, sunitinib 0.11) but among the least sensitive to sorafenib (0.99) and mid-ranked for regorafenib (0.62).</li>
+    <li>MG-63 was among the most sensitive lines to several of them (cabozantinib 0.00, apatinib 0.01, anlotinib 0.05, pazopanib 0.07, sunitinib 0.11) but showed no measurable response to sorafenib or regorafenib (AUC 1.0, the maximum).</li>
     <li>The other osteosarcoma lines were spread across the range.</li>
     <li>These drugs share targets, so this is one observation about one line, not five.</li>
     <li>As stated before the data were opened, these drugs are thought to act largely on a tumour's blood vessels, which cells in a dish lack. Neither strong nor weak activity here says how they work in patients.</li>
@@ -228,7 +228,7 @@
     </ul>
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
-    <li><code>python3 tools/engine_cycle10_prism.py fetch</code> downloads the PRISM files (about 340 megabytes, not stored in git) into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/prism/raw"><code>data/engine/prism/raw/</code></a>.</li>
+    <li><code>python3 tools/engine_cycle10_prism.py fetch</code> downloads the PRISM files (about 340 megabytes, not stored in git) into <code>data/engine/prism/raw/</code>.</li>
     <li><code>python3 tools/engine_cycle10_prism.py</code> runs the analysis. It also needs the DepMap 24Q4 files fetched by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle05_06_depmap.py"><code>tools/engine_cycle05_06_depmap.py</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle09_suppressor_scan.py"><code>tools/engine_cycle09_suppressor_scan.py</code></a>.</li>
     <li>Outputs: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle10/results.csv"><code>data/engine/cycle10/results.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle10/osteosarcoma_lines.csv"><code>data/engine/cycle10/osteosarcoma_lines.csv</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle10/summary.json"><code>data/engine/cycle10/summary.json</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/engine10_drugs.svg"><code>docs/figures/engine10_drugs.svg</code></a>.</li>
     </ul>

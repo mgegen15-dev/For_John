@@ -65,3 +65,5 @@ Recorded November 24, 2026, after the cohort search and after reading only the c
 2. **GSE21257 end point.** For metastasis-free survival, the 14 patients already metastatic at diagnosis are excluded rather than adjusted for, because metastasis at diagnosis cannot be a covariate for an outcome defined as time to metastasis. Overall survival in all 53, adjusted for metastasis at diagnosis, is reported as a secondary analysis.
 3. **GSE39055 in the primary analysis.** The inclusion rule excludes only TARGET-OS patients, so GSE39055 is part of the primary pooled analysis. The result without it is reported alongside, as planned.
 4. **Expected events.** 20 (GSE21257) + 15 (GSE16091) + 18 (GSE39055) = 53, above the 48 set for adequate power. Without GSE39055: 35, below it.
+
+- **Added November 27, 2026, after an independent check:** this plan names GSE39058 as one of the 2023 paper's cohorts. GSE39058 is that study's combined series (microRNA and mRNA, 164 samples); GSE39055, its mRNA series of 37 biopsies, is the one analysed. The deviations and report use GSE39055 throughout.

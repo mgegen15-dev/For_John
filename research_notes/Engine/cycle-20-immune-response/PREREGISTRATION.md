@@ -53,4 +53,6 @@ In `PREDICTIONS.md`:
 
 ## Deviations
 
-*None yet.*
+Recorded November 27, 2026, after the run.
+
+1. **Description corrected.** The header says the macrophage and T-cell genes of the three cycle 15 cohorts were read for cycle 14. In fact only GSE21257 and TARGET-OS were in cycle 14; GSE14827 was not. The method is unchanged.

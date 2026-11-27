@@ -12,7 +12,7 @@ Cycle 12 found that trials naming osteosarcoma usually take teenagers, while ear
 - **Trials for other sarcomas mostly do not:** 32 of 155 (21%; 15–28%).
 - **Company-led trials leave teenagers out more often.**
   - Across all three sets, 11 of 51 company-led trials accept teenagers (22%), against 86 of 179 others (48%). Odds ratio 0.30 (0.14–0.62); **supported** by the pre-registered rule.
-  - The gap holds within the "other sarcoma" set alone: 4 of 42 against 28 of 113 (odds ratio 0.32, 0.10–0.97).
+  - Within the "other sarcoma" set alone the gap leans the same way (4 of 42 against 28 of 113; odds ratio 0.32, 0.10–0.97), but this is borderline: without 8 trials whose "sarcoma" is not a bone or soft-tissue sarcoma (myeloid sarcoma, carcinosarcoma, histiocytic sarcoma) it is 0.36 (0.12–1.12).
 - **Predictions:** P49, P50 and P51 were all right.
 
 **How to read the labels.** Every number here is **(our calculation)** from **(registry)** records.
@@ -40,10 +40,11 @@ Cycle 12 found that trials naming osteosarcoma usually take teenagers, while ear
 |---|---|---|---|
 | **All three sets (H1)** | **11 of 51 (22%)** | **86 of 179 (48%)** | **0.30 (0.14–0.62)** |
 | Other sarcoma only | 4 of 42 (10%) | 28 of 113 (25%) | 0.32 (0.10–0.97) |
+| Other sarcoma, without 8 myeloid-sarcoma, carcinosarcoma and histiocytic-sarcoma trials | 4 of 40 (10%) | 25 of 107 (23%) | 0.36 (0.12–1.12) |
 
 ## What this means
 
-- **The pattern is the same across the sarcomas of the young.** Trials that list osteosarcoma, Ewing sarcoma or rhabdomyosarcoma usually take teenagers. Few of them are company-led (5% to 14% in these sets).
+- **The pattern is the same across the sarcomas of the young.** Trials that list osteosarcoma, Ewing sarcoma or rhabdomyosarcoma usually take teenagers. Few of them are company-led (5% of rhabdomyosarcoma, 14% of Ewing and 17% of the cycle 12 osteosarcoma relapse trials).
 - **Where companies lead, teenagers are left out more often.** That matches cycles 12 and 17 and is the gap the brief addresses.
 - **A fair caveat:** "other sarcoma" includes many adult sarcomas, such as leiomyosarcoma and liposarcoma, which are rare in teenagers. So a low share there is partly expected. The company-against-others gap within that set is the more telling number.
 - **The brief's request** (open tumour-agnostic and sarcoma trials to 12- to 17-year-olds once adult dosing allows) applies across sarcoma, not only to osteosarcoma.
@@ -64,4 +65,5 @@ Cycle 12 found that trials naming osteosarcoma usually take teenagers, while ear
 
 ## Change log
 
+- 2026-11-27: after an independent check, the within-set result marked borderline (8 non-bone, non-soft-tissue "sarcoma" trials noted) and the company-led shares stated exactly.
 - 2026-11-26: cycle run and reported. H1 supported; P49 to P51 right. No deviations.

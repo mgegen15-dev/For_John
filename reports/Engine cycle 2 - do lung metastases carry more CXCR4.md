@@ -4,7 +4,7 @@
 
 ## Summary
 
-Lead 14 proposes blocking CXCR4, a receptor that mouse studies say guides osteosarcoma cells to the lung, where its signal CXCL12 is plentiful. If that happens in patients, tumour that has reached the lung should carry more CXCR4 than tumour in the bone. We compared 29 lung metastases with 51 primary tumours across six public datasets. CXCR4 RNA leaned higher in the lung metastases, by 0.43 standard deviations, but the range of uncertainty runs from just below zero to 0.91, so by the rules written down in advance the verdict is **inconclusive**. The lean also looks like it comes from immune cells, not tumour cells: lung metastases held more immune cells, immune cells make a lot of CXCR4, and once immune content was accounted for the difference was 0.06. In four patients with both a primary tumour and a lung metastasis, there was no difference. CXCL12 was not lower in lung metastases (−0.08), also **inconclusive** by the rules. Lead 14 gains no support from this test and is not promoted.
+Lead 14 proposes blocking CXCR4, a receptor that mouse studies say guides osteosarcoma cells to the lung, where its signal CXCL12 is plentiful. If that happens in patients, tumour that has reached the lung should carry more CXCR4 than tumour in the bone. We compared 29 lung metastases with 51 primary tumours across six public datasets. CXCR4 RNA leaned higher in the lung metastases, by 0.43 standard deviations, but the range of uncertainty runs from just below zero to 0.91, so by the rules written down in advance the verdict is **inconclusive**. The lean also looks like it comes from immune cells, not tumour cells: lung metastases held more immune cells, immune cells make a lot of CXCR4, and once immune content was accounted for the difference was 0.06. In four patients with both a primary tumour and a lung metastasis, there was no clear difference. CXCL12 was not lower in lung metastases (−0.08), also **inconclusive** by the rules. Lead 14 gains no support from this test and is not promoted.
 
 **How to read the labels.** Every number here is **(our calculation)** from open data unless marked otherwise.
 
@@ -103,4 +103,5 @@ Three more datasets label samples "metastasis" without saying where in the body.
 
 ## Change log
 
+- 2026-11-27: after an independent check, "no difference" in four paired patients changed to "no clear difference".
 - 2026-11-24: cycle run and reported. Both verdicts inconclusive under the pre-registered rules. The gene-name lookup was widened to older names for ACKR3 (CXCR7, CMKOR1) after the first run so that two sensitivity datasets were not dropped for that gene; no verdict depends on it.

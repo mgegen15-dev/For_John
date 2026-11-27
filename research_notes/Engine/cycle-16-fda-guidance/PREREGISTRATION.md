@@ -44,4 +44,6 @@ In `PREDICTIONS.md`:
 
 ## Deviations
 
-*None yet.*
+Recorded November 27, 2026, after the run.
+
+1. **Phase filter.** Set B from cycle 12 includes 16 phase 2/3 trials. Without them the odds ratio is 0.18 (0.07–0.47). Reported in the cycle report.

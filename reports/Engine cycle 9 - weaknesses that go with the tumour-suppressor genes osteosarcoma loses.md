@@ -4,7 +4,7 @@
 
 ## Summary
 
-Cycle 8 scanned osteosarcoma's gene gains and losses but could not include RB1, TP53 and ATRX, the brakes on cell growth that this cancer most often breaks, because cell lines usually lose them through mutations rather than whole-gene deletions. This scan used mutation data as well, for five such genes. Both built-in checks passed, so the method for calling a gene lost works. It found ten pairs and seven replicated in a second kind of screen. The three strongest are known biology: cells without RB1 depend on SKP2, E2F3 and CDK2. The others are explained by how the screen scores TP53, or, for ATRX with WRN, by a confounder: half the ATRX-lost cell lines are a type of cancer that already depends on WRN. With those lines removed, an exploratory check showed what ATRX-lost cells are known to need: FANCM, SMARCAL1 and ATR, the machinery of the back-up way of maintaining chromosome ends that ATRX-lost tumours use. Nothing new and druggable turned up. The most useful lesson is about osteosarcoma itself: it breaks TP53 and ATRX mostly by large rearrangements that public cell-line data do not capture, so these genes are under-counted in the very cancer that loses them most.
+Cycle 8 scanned osteosarcoma's gene gains and losses but could not include RB1, TP53 and ATRX, the brakes on cell growth that this cancer most often breaks, because cell lines usually lose them through mutations rather than whole-gene deletions. This scan used mutation data as well, for five such genes. Both built-in checks passed, so the method for calling a gene lost works. It found ten pairs and seven replicated in a second kind of screen. The three RB1 hits are known biology: cells without RB1 depend on SKP2, E2F3 and CDK2. The others are explained by how the screen scores TP53, or, for ATRX with WRN, by a confounder: half the ATRX-lost cell lines are a type of cancer that already depends on WRN. With those lines removed, an exploratory check showed what ATRX-lost cells are known to need: FANCM, SMARCAL1 and ATR, the machinery of the back-up way of maintaining chromosome ends that ATRX-lost tumours use. Nothing new and druggable turned up. The most useful lesson is about osteosarcoma itself: it breaks TP53 and ATRX mostly by large rearrangements that public cell-line data do not capture, so these genes are under-counted in the very cancer that loses them most.
 
 **How to read the labels.** Numbers are **(our calculation)** from DepMap public data (24Q4 release, DEMETER2 knockdown scores) and cBioPortal, unless marked otherwise. A scan hit is a candidate, not a finding.
 
@@ -40,9 +40,9 @@ Gene-panel tests miss large rearrangements, which is how osteosarcoma often brea
 | ATRX | WRN | −0.38 | −0.26 (−0.44 to −0.07) | yes | Confounded (see below) |
 | RB1 | TP53 | −0.22 | −0.14 (−0.26 to −0.01) | yes | Artefact of scoring (see below) |
 | TP53 | CDKN1A | −0.21 | −0.14 (−0.18 to −0.11) | yes | Artefact of scoring |
-| TP53 | TP53BP1 | −0.21 | −0.19 (−0.22 to −0.16) | yes | Artefact of scoring |
-| ATRX | FANCM | −0.24 | −0.02 (−0.14 to +0.09) | no | **Known** |
-| ATRX | SMARCAL1 | −0.22 | +0.01 (−0.07 to +0.10) | no | **Known** |
+| TP53 | TP53BP1 | −0.21 | −0.19 (−0.22 to −0.15) | yes | Artefact of scoring |
+| ATRX | FANCM | −0.24 | −0.02 (−0.13 to +0.09) | no | **Known** |
+| ATRX | SMARCAL1 | −0.21 | +0.01 (−0.07 to +0.10) | no | **Known** |
 | ATRX | PELO | −0.32 | +0.07 (−0.03 to +0.17) | no | |
 
 **The three TP53 artefacts.** Knocking out TP53, or the genes that help it work (CDKN1A, TP53BP1), makes cells with working TP53 grow faster, which the screen records as a positive score. In cells where TP53 is already broken that advantage disappears, so the difference comes out negative. That is the mirror image of the MDM2 check, not a weakness. RB1-lost lines show the same effect because they often have broken TP53 as well.
@@ -59,13 +59,13 @@ Gene-panel tests miss large rearrangements, which is how osteosarcoma often brea
 | WRN | −0.17 (−0.26 to −0.08) |
 | PELO | −0.13 (−0.36 to +0.11) |
 
-FANCM, SMARCAL1 and ATR are what cells without ATRX are known to need when they keep their chromosome ends long by the back-up route called ALT (general knowledge). Most osteosarcomas use ALT. ATR inhibitors exist and are in late-stage trials in other cancers (general knowledge); whether ALT osteosarcoma responds to them has been argued over in published laboratory work and is not settled. This is a check on known biology, not a new lead.
+FANCM, SMARCAL1 and ATR are what cells without ATRX are known to need when they keep their chromosome ends long by the back-up route called ALT (general knowledge). Many osteosarcomas, about half or more in published series, use ALT (general knowledge). ATR inhibitors exist and are in late-stage trials in other cancers (general knowledge); whether ALT osteosarcoma responds to them has been argued over in published laboratory work and is not settled. This is a check on known biology, not a new lead.
 
 ## The limit that matters for osteosarcoma
 
 The rule for calling a gene lost works across cancers, as the checks show, but it misses osteosarcoma's usual route.
 
-- **TP53.** Osteosarcoma often breaks TP53 by a rearrangement inside the gene. Three osteosarcoma lines with almost no TP53 RNA (OS384, CAL72, OS252) were called intact for TP53 by the mutation-based rule, and only 5 of 17 osteosarcoma lines were called altered.
+- **TP53.** Osteosarcoma often breaks TP53 by a rearrangement inside the gene. Two osteosarcoma lines with almost no TP53 RNA (CAL72, OS252) were called intact for TP53 by the mutation-based rule (a third, OS384, was caught by its deep deletion), and only 5 of 17 osteosarcoma lines were called altered.
 - **ATRX.** U2OS, a widely used osteosarcoma line known to have lost ATRX through a large deletion (general knowledge), still shows ATRX RNA, presumably from the remaining fragment, and was called intact. Only 2 of 17 osteosarcoma lines were called ATRX-lost.
 - **What fixes it:** structural-variant calls from whole-genome sequencing of the cell lines, or ATRX protein staining. Neither is in the public DepMap release used here.
 
@@ -95,5 +95,7 @@ Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Ga
 
 ## Change log
 
+- 2026-11-27: rounding corrected to match the output files.
+- 2026-11-27: after an independent check, corrected the TP53 line count (two, not three, called intact), the description of the RB1 hits, and the ALT share.
 - 2026-11-24: scan run and reported. The microsatellite check on the ATRX pairs was added after the scan and is marked exploratory.
 - 2026-11-25: data sources credited.

@@ -46,6 +46,10 @@ In 2019 the US Food and Drug Administration recommended including 12- to 17-year
 - "Accepts teenagers" reads only the age fields.
 - Set B mixes adult and children's trials. The last row of the table removes trials starting under 12 and finds the same pattern.
 
+## Deviations
+
+- **Phase filter.** This cycle reuses cycle 12's Set B, which includes 16 phase 2/3 trials (see cycle 12). Without them: 66 of 1,390 (4.7%) against 6 of 28, odds ratio 0.18 (0.07–0.47); company-led 26 of 1,081 (2.4%). No conclusion changes.
+
 ## Files and reproduction
 
 - Run `python3 tools/engine_cycle12_teen_access.py fetch` (cycle 12) first.
@@ -57,4 +61,4 @@ In 2019 the US Food and Drug Administration recommended including 12- to 17-year
 
 ## Change log
 
-- 2026-11-26: cycle run and reported. H1 refuted by the pre-registered rule, with the survivorship bias stated in the plan. P45 wrong, P46 right. No deviations.
+- 2026-11-26: cycle run and reported. H1 refuted by the pre-registered rule, with the survivorship bias stated in the plan. P45 wrong, P46 right. The phase 2/3 inclusion inherited from cycle 12 was declared on 2026-11-27 after an independent check.

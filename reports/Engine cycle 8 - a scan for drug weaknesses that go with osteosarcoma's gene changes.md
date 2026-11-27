@@ -4,7 +4,7 @@
 
 ## Summary
 
-Cycles 5 and 6 each tested one hand-picked pair: a gene an osteosarcoma has lost or gained, and a second gene the cell then cannot do without. This cycle looked for such pairs systematically. It took the gene losses and gains seen in osteosarcoma patients and, for each, compared every one of 17,205 genes across 1,178 cancer cell lines: about 1.2 million comparisons. It is a discovery scan, so the method and thresholds were fixed in advance and every hit had to show up again in a second, different kind of screen. Fifty-four pairs passed the first screen and fourteen of those replicated. Seven of the fourteen are pairs already known to science, including the two this project tested by hand, which shows the scan works. The other seven held no hidden drug target: four are a tumour depending on its own amplified gene or a likely artefact, two turned out on checking to be recently published, and one (cells without PTEN depending on FERMT2) has no paper we could find and rests on few cell lines. The most useful output is a pointer to work that already has a drug behind it: tumours whose 9p21 deletion reaches a gene called FOCAD depend on HBS1L, a company has a drug for that in development, and about 4% of osteosarcomas carry the deletion.
+Cycles 5 and 6 each tested one hand-picked pair: a gene an osteosarcoma has lost or gained, and a second gene the cell then cannot do without. This cycle looked for such pairs systematically. It took the gene losses and gains seen in osteosarcoma patients and, for each, compared every one of 17,205 genes across 1,178 cancer cell lines: about 1.2 million comparisons. It is a discovery scan, so the method and thresholds were fixed in advance and every hit had to show up again in a second, different kind of screen. Fifty-four pairs passed the first screen and fourteen of those replicated. Seven of the fourteen are pairs already known to science, including cycle 5's 9p21 loss with PRMT5 and CCNE1 gain with CDK2 (not cycle 6's PKMYT1, which did not reach the bar), which shows the scan works. The other seven held no hidden drug target: four are a tumour depending on its own amplified gene or a likely artefact, two turned out on checking to be recently published, and one (cells without PTEN depending on FERMT2) has no paper we could find and rests on few cell lines. The most useful output is a pointer to work that already has a drug behind it: tumours whose 9p21 deletion reaches a gene called FOCAD depend on HBS1L, a company has a drug for that in development, and about 4% of osteosarcomas carry the deletion.
 
 **How to read the labels.** Numbers are **(our calculation)** from DepMap public data (24Q4 knockout scores, DEMETER2 knockdown scores) and the patient cohorts of cycles 3 and 7, unless marked otherwise. A scan hit is a candidate, not a finding.
 
@@ -37,14 +37,14 @@ Cycles 5 and 6 each tested one hand-picked pair: a gene an osteosarcoma has lost
 | CCNE1 gain (11%) | CDK2 | −0.38 | −0.49 (−0.62 to −0.36) | **Known.** The basis of the CDK2 trials in cycle 7 |
 | CCNE1 gain | CCNE1 itself | −0.46 | −0.44 (−0.55 to −0.33) | **Known.** Self-dependence |
 | CCNE1 gain | PAX8 | −0.24 | −0.12 (−0.21 to −0.04) | Likely an artefact: CCNE1-amplified lines are mostly ovarian, and ovarian cells need PAX8 |
-| CDK4 gain (11%) | CDK4 itself | −0.67 | −0.68 (−0.86 to −0.51) | **Known.** Self-dependence; approved CDK4/6 inhibitors exist |
+| CDK4 gain (11%) | CDK4 itself | −0.67 | −0.68 (−0.85 to −0.51) | **Known.** Self-dependence; approved CDK4/6 inhibitors exist |
 | CDK4 gain | CCND1 | −0.47 | −0.21 (−0.41 to 0.00) | **Known.** CDK4's partner |
 | MDM2 gain (9%) | MDM2 itself | −0.45 | −0.22 (−0.36 to −0.08) | **Known.** Self-dependence; MDM2 inhibitors are in trials |
 | GLI1 gain (6%) | GLI1 itself | −0.32 | −0.20 (−0.32 to −0.07) | Self-dependence; GLI1 sits beside CDK4 and is amplified with it |
 | CCND3 gain (14%) | CCND3 itself | −0.43 | −0.14 (−0.28 to −0.01) | Self-dependence |
 | MCL1 gain (7%) | MCL1 itself | −0.32 | −0.20 (−0.34 to −0.06) | Self-dependence; **published for osteosarcoma in 2025** (see below) |
-| MCL1 gain | PDE4DIP | −0.24 | −0.07 (−0.13 to −0.01) | Probably an artefact: PDE4DIP sits near MCL1 and the knockdown effect is tiny |
-| PTEN loss (5%) | FERMT2 | −0.41 | −0.34 (−0.52 to −0.15) | **No paper found.** Rests on 18 lines in one screen and 8 in the other |
+| MCL1 gain | PDE4DIP | −0.24 | −0.07 (−0.12 to −0.01) | Probably an artefact: PDE4DIP sits near MCL1 and the knockdown effect is tiny |
+| PTEN loss (5%) | FERMT2 | −0.40 | −0.34 (−0.52 to −0.15) | **No paper found.** Rests on 18 lines in one screen and 8 in the other |
 
 **The scan recovered most of what it should.** Of the six pre-listed groups that could be scanned, four appear: 9p21 with PRMT5 and WDR77, CCNE1 with CDK2, CDK4 with CCND1, and MDM2 with itself. Two did not: MYC gain with MYC passed the knockout screen but not the knockdown screen, and PTEN loss did not show its expected partners. RB1 could not be scanned (see below). Cycles 5 and 6 could not confirm the 9p21 and CCNE1 pairs in osteosarcoma lines alone; across all cancers they are plain.
 
@@ -52,7 +52,7 @@ Cycles 5 and 6 each tested one hand-picked pair: a gene an osteosarcoma has lost
 
 **1. FOCAD loss and HBS1L (or PELO).** FOCAD lies at the far edge of the 9p21 region. Tumours whose deletion reaches it lose a piece of the cell's machinery for clearing stalled protein synthesis, and then depend on a back-up system made of HBS1L and PELO.
 
-- The scan found this through a neighbouring passenger gene (HACD4), without being told about FOCAD. PELO was the single strongest hit in the knockout screen (−0.89) but had too few altered lines in the knockdown screen to replicate there; HBS1L replicated.
+- The scan found this through a neighbouring passenger gene (HACD4), without being told about FOCAD. PELO was the single strongest hit in the knockout screen (−0.89) but did not replicate in the knockdown screen (8 lines, +0.02); HBS1L replicated.
 - It was not on this project's list of known pairs, but it is published: two papers in 2025 reported that cancers with this deletion depend on PELO (paper, title only; PMIDs 39910293, 39910291), and a 2026 paper describes an oral drug that destroys HBS1L, built for FOCAD-deleted cancers (paper, title only; PMID 42001523).
 - In osteosarcoma patients, FOCAD was deep-deleted in 3 of 81 TARGET-OS tumours (3.7%) and 1 of 42 in PCAWG, in each case alongside CDKN2A. That is roughly one in three of the tumours with a 9p21 deletion.
 - One osteosarcoma cell line in DepMap, HSOS1, has lost FOCAD and could be used to test the idea.
@@ -93,5 +93,7 @@ Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Ga
 
 ## Change log
 
+- 2026-11-27: rounding corrected to match the output files.
+- 2026-11-27: after an independent check, corrected two statements: the scan recovered CCNE1 with CDK2 but not cycle 6's PKMYT1 pair, and PELO was tested in the knockdown screen and did not replicate.
 - 2026-11-24: scan run and reported. After the first run, six named pairs were looked up (`exploratory_lookups.csv`) and FOCAD's frequency in patients was checked; both are marked exploratory.
 - 2026-11-25: data sources credited.

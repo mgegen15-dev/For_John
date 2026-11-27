@@ -4,7 +4,7 @@
 
 ## Summary
 
-Some tumours delete both copies of a stretch of chromosome 9 called 9p21, which holds the genes CDKN2A and MTAP. Tumours that have lost MTAP are the target of a new class of drugs (PRMT5 inhibitors) now in adult trials. We asked whether this deletion is more common in osteosarcoma that has spread or come back than in primary tumours, using two hospital sequencing cohorts with 341 patients. It was not clearly more common: the pooled odds ratio was 1.10, with a range of uncertainty from 0.59 to 2.06, so the pre-registered verdict is **inconclusive**. Two things came out that are useful anyway. First, about one in five relapsed or metastatic osteosarcomas carries the CDKN2A deletion (35 of 179, 20%). Second, in 30 patients tested twice, the primary tumour and the later sample agreed in 28: the deletion is set early and stays, so a stored sample of the primary tumour can show who has it. The gap is MTAP itself. Only 24 of the 341 patients had a test that looks at MTAP, so how many relapsed patients could enter an MTAP-selected trial is still an estimate, about one in seven.
+Some tumours delete both copies of a stretch of chromosome 9 called 9p21, which holds the genes CDKN2A and MTAP. Tumours that have lost MTAP are the target of a new class of drugs (PRMT5 inhibitors) now in adult trials. We asked whether this deletion is more common in osteosarcoma that has spread or come back than in primary tumours, using two hospital sequencing cohorts with 341 patients. It was not clearly more common: the pooled odds ratio was 1.10, with a range of uncertainty from 0.59 to 2.06, so the pre-registered verdict is **inconclusive**. Two things came out that are useful anyway. First, about one in five relapsed or metastatic osteosarcomas carries the CDKN2A deletion (35 of 179, 20%). Second, in 30 patients tested twice, the primary tumour and the later sample agreed in 28: the result usually matched, but few of these patients had the deletion (7), and 2 of those 7 differed between samples, so a test of the primary tumour is a guide, not a guarantee. The gap is MTAP itself. Only 24 of the 341 patients had a test that looks at MTAP, so how many relapsed patients could enter an MTAP-selected trial is still an estimate, about one in seven.
 
 **How to read the labels.** Every number here is **(our calculation)** from open data unless marked otherwise.
 
@@ -65,7 +65,7 @@ A patient with any metastasis or relapse sample was placed in that group; patien
 
 - **The idea that relapse enriches for 9p21 deletion is not supported, and not ruled out.** The best single comparison, within one hospital, shows the same rate in both groups.
 - **About one in five relapsed osteosarcomas has lost CDKN2A,** in three cohorts from three continents. That is a real group of patients.
-- **The deletion is an early, lasting event.** Because primary and later samples agree, a patient's status can be read from the biopsy taken at diagnosis. A trial would not need a fresh biopsy at relapse to screen for it.
+- **The deletion often stays, but not always.** Primary and later samples usually agreed, mostly because neither had the deletion; of 7 patients who ever had it, 2 differed. A test at diagnosis is a guide, and whether a trial accepts an earlier report is up to the trial.
 - **The number a trial needs is missing.** Whether about one in seven relapsed patients truly lack MTAP has been measured in 15 people. Closing that gap needs either the newer gene panel on stored samples or a simple MTAP stain on tissue, which is a routine pathology test (general knowledge).
 - **Not a lead yet.** No one has shown that osteosarcoma cells without MTAP respond to PRMT5 inhibitors. That is a laboratory question and the next step is to look for it, not to assume it.
 - **Prediction P18** is unresolved by its own rule and recorded as such.
@@ -91,5 +91,6 @@ A patient with any metastasis or relapse sample was placed in that group; patien
 
 ## Change log
 
+- 2026-11-27: after an independent check, the claim that the deletion is stable was made more cautious, as was done for CCNE1 in cycle 7.
 - 2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules. After the first run, the script was corrected to treat MTAP as unmeasured in the two studies that do not report it (it had counted them as "not deleted"); this changed the MTAP figures only, not the verdict.
 - 2026-11-25: per-patient table no longer published (counts only); data sources credited.

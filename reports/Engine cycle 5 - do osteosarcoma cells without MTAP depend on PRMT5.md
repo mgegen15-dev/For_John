@@ -4,7 +4,7 @@
 
 ## Summary
 
-The drug trials in cycle 4 rest on a finding from cancer cell lines: cells that have lost the gene MTAP are hurt more when PRMT5 is turned down. We checked whether that holds in osteosarcoma lines, using the public DepMap screens. Across all cancers the finding reproduced clearly. In osteosarcoma it could not be tested properly, because only 3 of the 27 osteosarcoma lines have lost MTAP, and only one or two of those were in each screen. By the rules set in advance the verdict is **inconclusive and underpowered**. What little there is points the expected way: the one MTAP-lost osteosarcoma line in the knockdown screen was the most PRMT5-dependent of five, and across 30 bone and soft-tissue sarcoma lines the difference was as large as in other cancers. The useful output is the list of which osteosarcoma lines a laboratory would need for a direct drug test.
+The drug trials in cycle 4 rest on a finding from cancer cell lines: cells that have lost the gene MTAP are hurt more when PRMT5 is turned down. We checked whether that holds in osteosarcoma lines, using the public DepMap screens. Across all cancers the finding reproduced clearly. In osteosarcoma it could not be tested properly, because only 3 of the 27 osteosarcoma lines have lost MTAP, and only one or two of those were in each screen. By the rules set in advance the verdict is **inconclusive and underpowered**. What little there is is mixed: the pre-registered primary measure (MAT2A knockout) leaned the opposite way, while the one MTAP-lost osteosarcoma line in the knockdown screen was the most PRMT5-dependent of five, and across sarcoma lines the PRMT5 knockdown difference was as large as in other cancers. The useful output is the list of which osteosarcoma lines a laboratory would need for a direct drug test.
 
 **How to read the labels.** Every number here is **(our calculation)** from DepMap public data (24Q4 release and the DEMETER2 knockdown scores) unless marked otherwise. Scores are dependency scores: more negative means the cells suffer more when the gene is turned down or knocked out.
 
@@ -20,7 +20,7 @@ The drug trials in cycle 4 rest on a finding from cancer cell lines: cells that 
 
 | Measure | MTAP-lost lines | MTAP-intact lines | Difference (95% CI) |
 |---|---|---|---|
-| PRMT5 knockdown (RNAi) | 113 | 553 | −0.46 (−0.53 to −0.40) |
+| PRMT5 knockdown (RNAi) | 113 | 553 | −0.46 (−0.52 to −0.40) |
 | MAT2A knockdown (RNAi) | 114 | 552 | −0.20 (−0.26 to −0.13) |
 | PRMT5 knockout (CRISPR) | 213 | 965 | −0.21 (−0.26 to −0.15) |
 | MAT2A knockout (CRISPR) | 213 | 965 | −0.11 (−0.18 to −0.04) |
@@ -44,7 +44,7 @@ All four show the known relationship, so the data can test the question.
 
 ## Checks
 
-- **Bone and soft-tissue sarcoma lines together** (5 MTAP-lost, 25 intact in the knockdown screen): PRMT5 knockdown −0.59 (−0.76 to −0.43). The relationship holds in sarcomas as a group, at least as strongly as across all cancers. In the knockout screen (14 lost, 77 intact): −0.13 (−0.42 to +0.16).
+- **Bone and soft-tissue sarcoma lines together** (5 MTAP-lost, 25 intact in the knockdown screen): PRMT5 knockdown −0.59 (−0.76 to −0.43). The relationship holds in sarcomas as a group, at least as strongly as across all cancers. In the knockout screen (14 lost, 77 intact): −0.13 (−0.42 to +0.15).
 - **PRMT5's partner WDR77,** knockout: −0.37 across all cancers (−0.43 to −0.30); in osteosarcoma −0.52 (−2.13 to +1.09), two lines.
 - **Defining MTAP loss by copy number** instead of RNA picks the same three lines and gives the same figures.
 
@@ -83,5 +83,7 @@ Osteosarcoma lines in DepMap by 9p21 status (full table with scores: `data/engin
 
 ## Change log
 
+- 2026-11-27: rounding corrected to match the output files.
+- 2026-11-27: after an independent check, the summary now states that the primary measure leaned the opposite way.
 - 2026-11-24: cycle run and reported. Verdict inconclusive and underpowered under the pre-registered rules.
 - 2026-11-25: data sources credited.

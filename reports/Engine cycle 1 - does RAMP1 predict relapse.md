@@ -41,8 +41,8 @@ GSE39055 is one of the cohorts used by a 2023 paper reporting RAMP1 as a poor-pr
 
 ## Checks
 
-- **Is RAMP1 measured?** Yes. On each array its chosen probe sits in the upper half of all probes by mean signal (57th to 78th percentile), with a spread of 0.65–1.06 log₂ units between patients. In TARGET-OS RNA sequencing its median is about 20 transcripts per million. The null result is not a probe failure.
-- **Overall survival in GSE21257** (secondary), all 53 patients adjusted for metastasis at diagnosis: 1.25 (0.78–2.01), p = 0.36.
+- **Is RAMP1 measured?** Yes. On each array its chosen probe sits in the upper half of all probes by mean signal (53rd to 78th percentile), with a spread of 0.66–1.07 log₂ units between patients. In TARGET-OS RNA sequencing its median is about 20 transcripts per million. The null result is not a probe failure.
+- **Overall survival in GSE21257** (secondary), all 53 patients adjusted for metastasis at diagnosis: 1.25 (0.78–2.01), p = 0.35.
 - **Receptor partner.** CALCRL, which RAMP1 needs to form the CGRP receptor, showed no association in the discovery cohort (1.06, p = 0.75) or the pooled independent cohorts (0.89, 0.68–1.18). A CGRP-signalling explanation was already weak before the replication test.
 - **Differentiation genes.** In TARGET-OS, SP7, a marker of bone-forming differentiation, also predicted events (2.25, p = 0.006). This supports the idea, raised by the tournament's reviewers, that RAMP1 was riding on a differentiation pattern in that cohort rather than acting on its own. Pooled across the independent cohorts, SP7 was 1.26 (0.88–1.79) and SOST 0.95 (0.65–1.39); neither reached significance.
 
@@ -68,4 +68,5 @@ GSE39055 is one of the cohorts used by a 2023 paper reporting RAMP1 as a poor-pr
 
 ## Change log
 
+- 2026-11-27: probe percentiles and one p-value corrected to match a recomputation.
 - 2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules; discovery-size effect excluded.

@@ -49,7 +49,7 @@
     <h1>Engine Cycle 8: A Scan for Drug Weaknesses That Go with Osteosarcoma&#x27;s Gene Changes</h1>
     <p><em>Run November 24, 2026. The eighth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md"><code>research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md</code></a>, committed at 21:09 UTC (commit <code>5d5b032</code>) before the scan was run. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle08_scan.py"><code>tools/engine_cycle08_scan.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle08/hits.csv"><code>data/engine/cycle08/hits.csv</code></a>.</em></p>
     <h2 id="summary">Summary</h2>
-    <p>Cycles 5 and 6 each tested one hand-picked pair: a gene an osteosarcoma has lost or gained, and a second gene the cell then cannot do without. This cycle looked for such pairs systematically. It took the gene losses and gains seen in osteosarcoma patients and, for each, compared every one of 17,205 genes across 1,178 cancer cell lines: about 1.2 million comparisons. It is a discovery scan, so the method and thresholds were fixed in advance and every hit had to show up again in a second, different kind of screen. Fifty-four pairs passed the first screen and fourteen of those replicated. Seven of the fourteen are pairs already known to science, including the two this project tested by hand, which shows the scan works. The other seven held no hidden drug target: four are a tumour depending on its own amplified gene or a likely artefact, two turned out on checking to be recently published, and one (cells without PTEN depending on FERMT2) has no paper we could find and rests on few cell lines. The most useful output is a pointer to work that already has a drug behind it: tumours whose 9p21 deletion reaches a gene called FOCAD depend on HBS1L, a company has a drug for that in development, and about 4% of osteosarcomas carry the deletion.</p>
+    <p>Cycles 5 and 6 each tested one hand-picked pair: a gene an osteosarcoma has lost or gained, and a second gene the cell then cannot do without. This cycle looked for such pairs systematically. It took the gene losses and gains seen in osteosarcoma patients and, for each, compared every one of 17,205 genes across 1,178 cancer cell lines: about 1.2 million comparisons. It is a discovery scan, so the method and thresholds were fixed in advance and every hit had to show up again in a second, different kind of screen. Fifty-four pairs passed the first screen and fourteen of those replicated. Seven of the fourteen are pairs already known to science, including cycle 5's 9p21 loss with PRMT5 and CCNE1 gain with CDK2 (not cycle 6's PKMYT1, which did not reach the bar), which shows the scan works. The other seven held no hidden drug target: four are a tumour depending on its own amplified gene or a likely artefact, two turned out on checking to be recently published, and one (cells without PTEN depending on FERMT2) has no paper we could find and rests on few cell lines. The most useful output is a pointer to work that already has a drug behind it: tumours whose 9p21 deletion reaches a gene called FOCAD depend on HBS1L, a company has a drug for that in development, and about 4% of osteosarcomas carry the deletion.</p>
     <p><strong>How to read the labels.</strong> Numbers are <strong>(our calculation)</strong> from DepMap public data (24Q4 knockout scores, DEMETER2 knockdown scores) and the patient cohorts of cycles 3 and 7, unless marked otherwise. A scan hit is a candidate, not a finding.</p>
     <h2 id="what-was-done">What Was Done</h2>
     <ol>
@@ -148,7 +148,7 @@
     <td>CDK4 gain (11%)</td>
     <td>CDK4 itself</td>
     <td class="num">−0.67</td>
-    <td>−0.68 (−0.86 to −0.51)</td>
+    <td>−0.68 (−0.85 to −0.51)</td>
     <td><strong>Known.</strong> Self-dependence; approved CDK4/6 inhibitors exist</td>
     </tr>
     <tr>
@@ -190,13 +190,13 @@
     <td>MCL1 gain</td>
     <td>PDE4DIP</td>
     <td class="num">−0.24</td>
-    <td>−0.07 (−0.13 to −0.01)</td>
+    <td>−0.07 (−0.12 to −0.01)</td>
     <td>Probably an artefact: PDE4DIP sits near MCL1 and the knockdown effect is tiny</td>
     </tr>
     <tr>
     <td>PTEN loss (5%)</td>
     <td>FERMT2</td>
-    <td class="num">−0.41</td>
+    <td class="num">−0.40</td>
     <td>−0.34 (−0.52 to −0.15)</td>
     <td><strong>No paper found.</strong> Rests on 18 lines in one screen and 8 in the other</td>
     </tr>
@@ -206,7 +206,7 @@
     <h2 id="the-three-worth-following">The Three Worth Following</h2>
     <p><strong>1. FOCAD loss and HBS1L (or PELO).</strong> FOCAD lies at the far edge of the 9p21 region. Tumours whose deletion reaches it lose a piece of the cell's machinery for clearing stalled protein synthesis, and then depend on a back-up system made of HBS1L and PELO.</p>
     <ul>
-    <li>The scan found this through a neighbouring passenger gene (HACD4), without being told about FOCAD. PELO was the single strongest hit in the knockout screen (−0.89) but had too few altered lines in the knockdown screen to replicate there; HBS1L replicated.</li>
+    <li>The scan found this through a neighbouring passenger gene (HACD4), without being told about FOCAD. PELO was the single strongest hit in the knockout screen (−0.89) but did not replicate in the knockdown screen (8 lines, +0.02); HBS1L replicated.</li>
     <li>It was not on this project's list of known pairs, but it is published: two papers in 2025 reported that cancers with this deletion depend on PELO (paper, title only; PMIDs 39910293, 39910291), and a 2026 paper describes an oral drug that destroys HBS1L, built for FOCAD-deleted cancers (paper, title only; PMID 42001523).</li>
     <li>In osteosarcoma patients, FOCAD was deep-deleted in 3 of 81 TARGET-OS tumours (3.7%) and 1 of 42 in PCAWG, in each case alongside CDKN2A. That is roughly one in three of the tumours with a 9p21 deletion.</li>
     <li>One osteosarcoma cell line in DepMap, HSOS1, has lost FOCAD and could be used to test the idea.</li>
@@ -243,6 +243,8 @@
     Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Gao et al., Science Signaling 2013) and come from the original studies: MSK-IMPACT 50K Clinical Sequencing Cohort (Memorial Sloan Kettering), China Pan-cancer (OrigiMed, Nature 2022), MAPPYACTS (Gustave Roussy, Cancer Discovery 2022), TARGET-OS (NCI TARGET, via the GDC) and the Pan-Cancer Analysis of Whole Genomes (Nature 2020). Only counts and summary statistics are published here; the per-patient table stays with the local download.</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-27: rounding corrected to match the output files.</li>
+    <li>2026-11-27: after an independent check, corrected two statements: the scan recovered CCNE1 with CDK2 but not cycle 6's PKMYT1 pair, and PELO was tested in the knockdown screen and did not replicate.</li>
     <li>2026-11-24: scan run and reported. After the first run, six named pairs were looked up (<code>exploratory_lookups.csv</code>) and FOCAD's frequency in patients was checked; both are marked exploratory.</li>
     <li>2026-11-25: data sources credited.</li>
     </ul>

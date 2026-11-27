@@ -55,7 +55,7 @@ The full table is in `data/engine/cycle17/by_year.csv`.
   - Trials built for adults, the kind the guidance addressed, take them less often too.
   - Company-led adult trials stayed at about 2%.
 - **Part of the fall reflects a changing mix:** more company-led trials and relatively fewer academic and children's trials, both of which admit teenagers more often. But the fall holds within each group, so the mix does not explain it away.
-- **For the brief:** this supports its request with a registry-wide trend, not only the 34 trials it counted.
+- **For the brief:** this supports its request with a registry-wide trend, not only the 33 trials it counted.
 
 ## Limits and checks
 

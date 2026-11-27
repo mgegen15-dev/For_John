@@ -937,7 +937,7 @@
     <pre><code>python3 tools/surface_targets.py all          # or: gdc hpa gtex rank hpadetail context sensitivity
     python3 tools/surface_targets.py sensitivity  # re-rank the published CSV under other choices
     </code></pre>
-    <p>Stages cache into <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/surface_targets_raw"><code>data/surface_targets_raw/</code></a> (git-ignored, about 350 MB of GDC files), so re-runs
+    <p>Stages cache into <code>data/surface_targets_raw/</code> (git-ignored, about 350 MB of GDC files), so re-runs
     are cheap. GTEx's bulk median-TPM files returned 403/404 here, so normals come through the API gene
     by gene. The GTEx API defaults to v10, but its gene-lookup endpoint returns only GENCODE v26
     identifiers, so everything is pinned to <strong>GTEx v8</strong>.</p>

@@ -72,7 +72,7 @@ We asked whether dogs whose tumours carried more of these signals before treatme
 
 - 59 dogs from one trial, treated with two chemotherapy schedules.
 - The censoring rule is an assumption; the dataset does not say which dogs were still alive.
-- Tumour RNA from one biopsy, on an older array design.
+- Tumour RNA from pre-treatment biopsy samples (one or two per dog) taken at one time point, on an older array design.
 - Several measures were tested. Only H1 was the main test, and the single-gene results are uncorrected.
 
 ## Files and reproduction
