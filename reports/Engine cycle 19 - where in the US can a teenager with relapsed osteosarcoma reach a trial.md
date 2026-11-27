@@ -1,6 +1,6 @@
 # Engine cycle 19: where in the United States can a teenager with relapsed osteosarcoma reach a trial?
 
-*Run November 27, 2026. The nineteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-19-trial-geography/PREREGISTRATION.md`, committed at commit `58c5001` before any site location was read. Script: `tools/engine_cycle19_trial_geography.py`. Results: `data/engine/cycle19/`. Uses the ClinicalTrials.gov records saved by engine cycle 12 on November 26, 2026. A description for families and advocates to discuss with care teams; not a guide to any trial, and not medical advice.*
+*Run November 27, 2026. The nineteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-19-trial-geography/PREREGISTRATION.md`, committed at commit `1b53b9a` before any site location was read. Script: `tools/engine_cycle19_trial_geography.py`. Results: `data/engine/cycle19/`. Uses the ClinicalTrials.gov records saved by engine cycle 12 on November 26, 2026. A description for families and advocates to discuss with care teams; not a guide to any trial, and not medical advice.*
 
 ## Summary
 

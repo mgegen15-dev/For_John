@@ -1,6 +1,6 @@
 # Engine cycle 4: which MTAP-selected drug trials could an osteosarcoma patient join?
 
-*Run November 24, 2026. The fourth cycle of the For John research engine, and a descriptive one: a registry count with the search terms and counting rules fixed in advance. Pre-registration: `research_notes/Engine/cycle-04-mtap-trials/PREREGISTRATION.md`, committed at 20:11 UTC (commit `2676040`) before the search. Script: `tools/engine_cycle04_mtap_trials.py`. Table of every trial: `data/engine/cycle04/trials_classified.csv`.*
+*Run November 24, 2026. The fourth cycle of the For John research engine, and a descriptive one: a registry count with the search terms and counting rules fixed in advance. Pre-registration: `research_notes/Engine/cycle-04-mtap-trials/PREREGISTRATION.md`, committed at 20:11 UTC (commit `8ba7130`) before the search. Script: `tools/engine_cycle04_mtap_trials.py`. Table of every trial: `data/engine/cycle04/trials_classified.csv`.*
 
 **Not medical advice.** This is what the ClinicalTrials.gov records said on November 24, 2026. Records can lag behind what a trial actually does, and a trial that takes "any solid tumour" can still turn away a rare one. Whether a trial suits a particular patient is a question for that patient's oncologist and the trial team.
 

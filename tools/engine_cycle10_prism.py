@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 10: do the gene-change weaknesses hold up when real drugs are used?
 
-Pre-registered in research_notes/Engine/cycle-10-drug-screen/PREREGISTRATION.md (commit ea42023),
+Pre-registered in research_notes/Engine/cycle-10-drug-screen/PREREGISTRATION.md (commit e601249),
 before any drug-response file was downloaded.
 
   python3 tools/engine_cycle10_prism.py fetch   # PRISM Repurposing 20Q2 files into data/engine/prism/raw/
@@ -158,7 +158,7 @@ def main():
     osteo = text.str.contains("osteosarcoma")
     calls = gene_calls(model)
     auc = secondary_auc()
-    results, S = [], {"preregistration_commit": "ea42023", "batches": {}}
+    results, S = [], {"preregistration_commit": "e601249", "batches": {}}
 
     def run(kind, drug, gene, expect, y, batch, adjust=True, binary=True, x=None):
         x = calls[gene] if x is None else x

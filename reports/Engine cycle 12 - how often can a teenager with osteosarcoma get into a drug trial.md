@@ -1,6 +1,6 @@
 # Engine cycle 12: across the whole trial registry, how often can a teenager with osteosarcoma get into a drug trial?
 
-*Run November 26, 2026. The twelfth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-12-teen-access/PREREGISTRATION.md`, committed at commit `56522b3` before the registry was searched. Script: `tools/engine_cycle12_teen_access.py`. Results: `data/engine/cycle12/`. Based on ClinicalTrials.gov records read on November 26, 2026. Not medical advice; whether a trial suits a patient is a question for that patient's care team.*
+*Run November 26, 2026. The twelfth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-12-teen-access/PREREGISTRATION.md`, committed at commit `b9ce5c9` before the registry was searched. Script: `tools/engine_cycle12_teen_access.py`. Results: `data/engine/cycle12/`. Based on ClinicalTrials.gov records read on November 26, 2026. Not medical advice; whether a trial suits a patient is a question for that patient's care team.*
 
 ## Summary
 

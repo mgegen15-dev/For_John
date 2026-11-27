@@ -1,6 +1,6 @@
 # Engine cycle 6: do osteosarcoma cells with more CCNE1 depend more on PKMYT1?
 
-*Run November 24, 2026. The sixth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-06-ccne1-pkmyt1/PREREGISTRATION.md`, committed at 20:11 UTC (commit `2676040`) before any DepMap file was downloaded. Script: `tools/engine_cycle05_06_depmap.py`. Results: `data/engine/cycle06/results.csv`.*
+*Run November 24, 2026. The sixth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-06-ccne1-pkmyt1/PREREGISTRATION.md`, committed at 20:11 UTC (commit `8ba7130`) before any DepMap file was downloaded. Script: `tools/engine_cycle05_06_depmap.py`. Results: `data/engine/cycle06/results.csv`.*
 
 ## Summary
 

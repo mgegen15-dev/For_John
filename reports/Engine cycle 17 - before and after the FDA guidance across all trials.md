@@ -1,6 +1,6 @@
 # Engine cycle 17: before and after the FDA's 2019 guidance, across all trials
 
-*Run November 26, 2026. The seventeenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-17-fda-guidance-all-trials/PREREGISTRATION.md`, committed at commit `0b4b977` before the registry was searched. Script: `tools/engine_cycle17_fda_all_trials.py`. Results: `data/engine/cycle17/`. Based on ClinicalTrials.gov records read on November 26, 2026.*
+*Run November 26, 2026. The seventeenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-17-fda-guidance-all-trials/PREREGISTRATION.md`, committed at commit `c2841de` before the registry was searched. Script: `tools/engine_cycle17_fda_all_trials.py`. Results: `data/engine/cycle17/`. Based on ClinicalTrials.gov records read on November 26, 2026.*
 
 ## Summary
 

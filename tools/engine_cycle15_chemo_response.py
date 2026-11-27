@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 15: do tumours with MYC gain, CCNE1 gain or 9p21 loss respond worse to chemotherapy before surgery?
 
-Pre-registered in research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md (commit 3fa7583).
+Pre-registered in research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md (commit da4b216).
 Needs engine cycle 1's GEO downloads (GSE21257, GSE14827 and the GPL570 annotation in data/engine/cycle01/raw/)
 and the TARGET-OS files of tools/survival_analysis.py.
 
@@ -168,7 +168,7 @@ def main():
     cohorts = [geo_cohort("GSE21257", os.path.join(RAW, "GSE21257_series_matrix.txt.gz"), "GPL10295", gse21257_outcome),
                geo_cohort("GSE14827", os.path.join(RAW, "GSE14827_series_matrix.txt.gz"), "GPL570", gse14827_outcome),
                target_cohort()]
-    S = {"preregistration_commit": "3fa7583", "cohorts": {}, "pooled": {}, "verdicts": {}}
+    S = {"preregistration_commit": "da4b216", "cohorts": {}, "pooled": {}, "verdicts": {}}
     out = []
     labels = list(TESTS.values()) + [f"{g} alone" for g in GENES]
     per = {lab: [] for lab in labels}

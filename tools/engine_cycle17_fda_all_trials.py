@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 17: before and after the FDA's 2019 adolescent guidance, across trials of every status.
 
-Pre-registered in research_notes/Engine/cycle-17-fda-guidance-all-trials/PREREGISTRATION.md (commit 0b4b977).
+Pre-registered in research_notes/Engine/cycle-17-fda-guidance-all-trials/PREREGISTRATION.md (commit c2841de).
 
   python3 tools/engine_cycle17_fda_all_trials.py fetch   # ClinicalTrials.gov; raw to data/engine/cycle17/raw/ (not in git)
   python3 tools/engine_cycle17_fda_all_trials.py         # counts
@@ -64,7 +64,7 @@ def main():
             r["year"] = int(sd[:4])
             r["period"] = key
             rows.append(r)
-    S = {"preregistration_commit": "0b4b977", "raw_records": raw_n, "withdrawn_excluded": withdrawn, "trials": len(rows)}
+    S = {"preregistration_commit": "c2841de", "raw_records": raw_n, "withdrawn_excluded": withdrawn, "trials": len(rows)}
     S["H1"] = c16.compare(rows)
     S["verdict_H1"] = c16.verdict(S["H1"])
     S["industry"] = c16.compare([r for r in rows if r["sponsor_class"] == "Industry"])

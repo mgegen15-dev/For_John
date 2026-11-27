@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 16: since the FDA's 2019 adolescent guidance, are new early-phase trials more likely to take teenagers?
 
-Pre-registered in research_notes/Engine/cycle-16-fda-guidance/PREREGISTRATION.md (commit 7c4a48e).
+Pre-registered in research_notes/Engine/cycle-16-fda-guidance/PREREGISTRATION.md (commit 3a71706).
 Reuses engine cycle 12's saved registry records (run tools/engine_cycle12_teen_access.py fetch first).
 
 Outputs: data/engine/cycle16/results.json, by_year.csv, docs/figures/engine16_years.svg
@@ -91,7 +91,7 @@ def main():
             continue
         r["year"] = int(sd[:4])
         rows.append(r)
-    S = {"preregistration_commit": "7c4a48e", "trials": len(rows), "missing_start_date": missing}
+    S = {"preregistration_commit": "3a71706", "trials": len(rows), "missing_start_date": missing}
     S["H1"] = compare(rows)
     S["verdict_H1"] = verdict(S["H1"])
     ind = [r for r in rows if r["sponsor_class"] == "Industry"]

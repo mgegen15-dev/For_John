@@ -1,6 +1,6 @@
 # Engine cycle 8: a scan for drug weaknesses that go with osteosarcoma's gene changes
 
-*Run November 24, 2026. The eighth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md`, committed at 21:09 UTC (commit `940146d`) before the scan was run. Script: `tools/engine_cycle08_scan.py`. Results: `data/engine/cycle08/hits.csv`.*
+*Run November 24, 2026. The eighth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-08-dependency-scan/PREREGISTRATION.md`, committed at 21:09 UTC (commit `5d5b032`) before the scan was run. Script: `tools/engine_cycle08_scan.py`. Results: `data/engine/cycle08/hits.csv`.*
 
 ## Summary
 

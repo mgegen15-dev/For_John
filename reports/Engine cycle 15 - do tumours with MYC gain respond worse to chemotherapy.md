@@ -1,6 +1,6 @@
 # Engine cycle 15: do tumours with MYC gain, CCNE1 gain or 9p21 loss respond worse to chemotherapy before surgery?
 
-*Run November 26, 2026. The fifteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md`, committed at commit `3fa7583` before any of these genes was read from these cohorts. Script: `tools/engine_cycle15_chemo_response.py`. Results: `data/engine/cycle15/results.csv`. Research only; not about any patient's treatment.*
+*Run November 26, 2026. The fifteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md`, committed at commit `da4b216` before any of these genes was read from these cohorts. Script: `tools/engine_cycle15_chemo_response.py`. Results: `data/engine/cycle15/results.csv`. Research only; not about any patient's treatment.*
 
 ## Summary
 

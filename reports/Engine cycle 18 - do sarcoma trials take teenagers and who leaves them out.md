@@ -1,6 +1,6 @@
 # Engine cycle 18: do trials for Ewing sarcoma, rhabdomyosarcoma and other sarcomas take teenagers, and who leaves them out?
 
-*Run November 26, 2026. The eighteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-18-sarcoma-teen-access/PREREGISTRATION.md`, committed at commit `40c5e9e` before the registry was searched. Script: `tools/engine_cycle18_sarcoma_teen_access.py`. Results: `data/engine/cycle18/`. Based on ClinicalTrials.gov records read on November 26, 2026. Not medical advice.*
+*Run November 26, 2026. The eighteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-18-sarcoma-teen-access/PREREGISTRATION.md`, committed at commit `ec7d1b6` before the registry was searched. Script: `tools/engine_cycle18_sarcoma_teen_access.py`. Results: `data/engine/cycle18/`. Based on ClinicalTrials.gov records read on November 26, 2026. Not medical advice.*
 
 ## Summary
 

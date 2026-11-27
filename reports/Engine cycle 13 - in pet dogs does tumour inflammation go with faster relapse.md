@@ -1,6 +1,6 @@
 # Engine cycle 13: in pet dogs with osteosarcoma, does tumour inflammation go with faster relapse?
 
-*Run November 26, 2026. The thirteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md`, committed at commit `4e10b3b` before any expression value was read. The file containing the values had already been downloaded to read the clinical columns, so the order of reading rests on our account; the commit order shows only that the plan came before the results. Script: `tools/engine_cycle13_dog_inflammation.py`. Results: `data/engine/cycle13/results.csv`.*
+*Run November 26, 2026. The thirteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md`, committed at commit `4794e2e` before any expression value was read. The file containing the values had already been downloaded to read the clinical columns, so the order of reading rests on our account; the commit order shows only that the plan came before the results. Script: `tools/engine_cycle13_dog_inflammation.py`. Results: `data/engine/cycle13/results.csv`.*
 
 ## Summary
 

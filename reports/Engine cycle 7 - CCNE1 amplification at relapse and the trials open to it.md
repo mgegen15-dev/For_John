@@ -1,6 +1,6 @@
 # Engine cycle 7: how common is CCNE1 amplification in relapsed osteosarcoma, and which trials could those patients join?
 
-*Run November 24, 2026. The seventh cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-07-ccne1-relapse-trials/PREREGISTRATION.md`, committed at 21:09 UTC (commit `940146d`) before any amplification call was read or any trial search run. Script: `tools/engine_cycle07_ccne1.py`. Results: `data/engine/cycle07/results.csv` and `data/engine/cycle07/trials_classified.csv`.*
+*Run November 24, 2026. The seventh cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-07-ccne1-relapse-trials/PREREGISTRATION.md`, committed at 21:09 UTC (commit `5d5b032`) before any amplification call was read or any trial search run. Script: `tools/engine_cycle07_ccne1.py`. Results: `data/engine/cycle07/results.csv` and `data/engine/cycle07/trials_classified.csv`.*
 
 **Not medical advice.** The trial section reports what ClinicalTrials.gov records said on November 24, 2026. Whether a trial suits a particular patient is a question for that patient's oncologist and the trial team.
 

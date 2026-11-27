@@ -1,6 +1,6 @@
 # Engine cycle 5: do osteosarcoma cells without MTAP depend more on PRMT5?
 
-*Run November 24, 2026. The fifth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md`, committed at 20:11 UTC (commit `2676040`) before any DepMap file was downloaded. Script: `tools/engine_cycle05_06_depmap.py`. Results: `data/engine/cycle05/results.csv`.*
+*Run November 24, 2026. The fifth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-05-mtap-prmt5/PREREGISTRATION.md`, committed at 20:11 UTC (commit `8ba7130`) before any DepMap file was downloaded. Script: `tools/engine_cycle05_06_depmap.py`. Results: `data/engine/cycle05/results.csv`.*
 
 ## Summary
 

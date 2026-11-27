@@ -1,6 +1,6 @@
 # Engine cycle 14: does more macrophage signal in the tumour go with a better outcome, in patients outside the study that found it?
 
-*Run November 26, 2026. The fourteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-14-macrophages/PREREGISTRATION.md`, committed at commit `8a8a7c6` before any of these genes was read from these cohorts. Script: `tools/engine_cycle14_macrophages.py`. Results: `data/engine/cycle14/results.csv`. Nothing here is about any patient's treatment.*
+*Run November 26, 2026. The fourteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-14-macrophages/PREREGISTRATION.md`, committed at commit `d79cc23` before any of these genes was read from these cohorts. Script: `tools/engine_cycle14_macrophages.py`. Results: `data/engine/cycle14/results.csv`. Nothing here is about any patient's treatment.*
 
 ## Summary
 

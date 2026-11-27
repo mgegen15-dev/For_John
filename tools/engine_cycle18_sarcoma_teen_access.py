@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 18: do trials for Ewing sarcoma, rhabdomyosarcoma and other sarcomas take teenagers, and who leaves them out?
 
-Pre-registered in research_notes/Engine/cycle-18-sarcoma-teen-access/PREREGISTRATION.md (commit 40c5e9e).
+Pre-registered in research_notes/Engine/cycle-18-sarcoma-teen-access/PREREGISTRATION.md (commit ec7d1b6).
 
   python3 tools/engine_cycle18_sarcoma_teen_access.py fetch   # ClinicalTrials.gov; raw to data/engine/cycle18/raw/ (not in git)
   python3 tools/engine_cycle18_sarcoma_teen_access.py         # counts
@@ -97,7 +97,7 @@ def main():
                     continue
             keep.append(r)
         sets[key] = keep
-    S = {"preregistration_commit": "40c5e9e", "sets": {}}
+    S = {"preregistration_commit": "ec7d1b6", "sets": {}}
     for key, rows in sets.items():
         k = sum(r["accepts_teenagers"] for r in rows)
         p, lo, hi = c12.wilson(k, len(rows))

@@ -1,6 +1,6 @@
 # Engine cycle 11: do lung metastases keep the surface targets that new drugs aim at?
 
-*Run November 25, 2026. The eleventh cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md`, committed at commit `eb48e69` before any of these genes was read from the data. Script: `tools/engine_cycle11_targets.py`. Results: `data/engine/cycle11/results.csv`.*
+*Run November 25, 2026. The eleventh cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md`, committed at commit `bc9e66a` before any of these genes was read from the data. Script: `tools/engine_cycle11_targets.py`. Results: `data/engine/cycle11/results.csv`.*
 
 ## Summary
 

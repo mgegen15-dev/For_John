@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 14: does tumour macrophage signal go with a better outcome outside the study that found it?
 
-Pre-registered in research_notes/Engine/cycle-14-macrophages/PREREGISTRATION.md (commit 8a8a7c6).
+Pre-registered in research_notes/Engine/cycle-14-macrophages/PREREGISTRATION.md (commit d79cc23).
 Reuses the cohorts, end points and probe rules of engine cycle 1 (tools/engine_cycle01_ramp1.py; run its downloads first)
 and the TARGET-OS files of tools/survival_analysis.py.
 
@@ -139,7 +139,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     disc = geo(c1.cohort_gse21257)
     ind = [geo(c1.cohort_gse16091), geo(c1.cohort_gse39055), target()]
-    S = {"preregistration_commit": "8a8a7c6", "discovery": disc, "independent": ind, "pooled": {}}
+    S = {"preregistration_commit": "d79cc23", "discovery": disc, "independent": ind, "pooled": {}}
     rows = []
     for lab in ("macrophage score", "T-cell score") + tuple(GENES):
         effs = [c["results"][lab] for c in ind if lab in c["results"]]

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 12: across the registry, how often can a teenager with osteosarcoma get into a drug trial?
 
-Pre-registered in research_notes/Engine/cycle-12-teen-access/PREREGISTRATION.md (commit 56522b3).
+Pre-registered in research_notes/Engine/cycle-12-teen-access/PREREGISTRATION.md (commit b9ce5c9).
 
   python3 tools/engine_cycle12_teen_access.py fetch   # search ClinicalTrials.gov; raw records to data/engine/cycle12/raw/ (not in git)
   python3 tools/engine_cycle12_teen_access.py         # classify and count
@@ -144,7 +144,7 @@ def main():
     B = [r for r in map(record, data["B"]["studies"])
          if r["solid_condition"] and DRUG_TYPES & set(r["intervention_types"]) and r["phases"] & EARLY and r["nct"] not in a_ids]
     Ar = [r for r in A if r["relapse_eligible"]]
-    S = {"preregistration_commit": "56522b3", "searched": {k: data[k]["searched"] for k in data},
+    S = {"preregistration_commit": "b9ce5c9", "searched": {k: data[k]["searched"] for k in data},
          "raw_records": {k: len(data[k]["studies"]) for k in data}, "set_A_all": len(A), "set_A_relapse_eligible": len(Ar), "set_B": len(B)}
     S["m1_A_relapse_teen"] = share(Ar, lambda r: r["accepts_teenagers"])
     S["m1_A_relapse_teen_US"] = share(Ar, lambda r: r["accepts_teenagers"] and r["us_site"])

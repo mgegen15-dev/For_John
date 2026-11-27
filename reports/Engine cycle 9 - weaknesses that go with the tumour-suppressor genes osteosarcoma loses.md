@@ -1,6 +1,6 @@
 # Engine cycle 9: weaknesses that go with the tumour-suppressor genes osteosarcoma loses
 
-*Run November 24, 2026. The ninth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-09-suppressor-scan/PREREGISTRATION.md`, committed at 22:54 UTC (commit `18b31b0`) before the mutation files were downloaded or any comparison run. Script: `tools/engine_cycle09_suppressor_scan.py`. Results: `data/engine/cycle09/hits.csv`.*
+*Run November 24, 2026. The ninth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-09-suppressor-scan/PREREGISTRATION.md`, committed at 22:54 UTC (commit `c8e7e02`) before the mutation files were downloaded or any comparison run. Script: `tools/engine_cycle09_suppressor_scan.py`. Results: `data/engine/cycle09/hits.csv`.*
 
 ## Summary
 

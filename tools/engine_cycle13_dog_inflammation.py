@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 13: in pet dogs with osteosarcoma, does tumour inflammation go with faster relapse?
 
-Pre-registered in research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md (commit 4e10b3b).
+Pre-registered in research_notes/Engine/cycle-13-dog-inflammation/PREREGISTRATION.md (commit 4794e2e).
 
   python3 tools/engine_cycle13_dog_inflammation.py fetch   # GEO GSE180303 series matrix and GPL3738 annotation
   python3 tools/engine_cycle13_dog_inflammation.py         # analysis
@@ -160,7 +160,7 @@ def main():
     gsm = meta["!Sample_geo_accession"]
     allv = np.vstack([v for v in rows.values()])
     log = np.nanmax(allv) > 100
-    S = {"preregistration_commit": "4e10b3b", "arrays": len(ids), "dogs": len(dogs), "log2_applied": bool(log), "probes": {}}
+    S = {"preregistration_commit": "4794e2e", "arrays": len(ids), "dogs": len(dogs), "log2_applied": bool(log), "probes": {}}
 
     def gene_by_dog(g):
         cand = [p for p in pr[g] if p in rows]

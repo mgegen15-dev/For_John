@@ -1,6 +1,6 @@
 # Engine cycle 10: do the gene-change weaknesses hold up with real drugs?
 
-*Run November 25, 2026. The tenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-10-drug-screen/PREREGISTRATION.md`, committed at 17:43 UTC (commit `ea42023`) before any drug-response file was downloaded. Script: `tools/engine_cycle10_prism.py`. Results: `data/engine/cycle10/results.csv`.*
+*Run November 25, 2026. The tenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-10-drug-screen/PREREGISTRATION.md`, committed at 17:43 UTC (commit `e601249`) before any drug-response file was downloaded. Script: `tools/engine_cycle10_prism.py`. Results: `data/engine/cycle10/results.csv`.*
 
 ## Summary
 

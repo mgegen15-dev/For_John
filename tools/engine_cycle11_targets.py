@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 11: do lung metastases keep the surface targets that new drugs aim at?
 
-Pre-registered in research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md (commit eb48e69).
+Pre-registered in research_notes/Engine/cycle-11-targets-in-metastases/PREREGISTRATION.md (commit bc9e66a).
 Reuses the datasets and loaders of engine cycle 2 (tools/engine_cycle02_cxcr4.py; run tools/engine_cycle02_fetch.sh first).
 
 Outputs: data/engine/cycle11/results.csv, summary.json, tumour_cells.csv, docs/figures/engine11_targets.svg
@@ -90,7 +90,7 @@ def main():
     for d in primary + sens + [pairs]:
         c2.add_scores(d["units"])
 
-    rows, S = [], {"preregistration_commit": "eb48e69", "genes": {}}
+    rows, S = [], {"preregistration_commit": "bc9e66a", "genes": {}}
 
     def rec(analysis, dataset, gene, e):
         c = ci(e)

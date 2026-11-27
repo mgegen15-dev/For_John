@@ -1,6 +1,6 @@
 # Engine cycle 16: since the FDA's 2019 guidance, are new early-phase cancer trials more likely to take teenagers?
 
-*Run November 26, 2026. The sixteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-16-fda-guidance/PREREGISTRATION.md`, committed at commit `7c4a48e` before any trial start date was read. Script: `tools/engine_cycle16_fda_guidance.py`. Results: `data/engine/cycle16/`. Uses the ClinicalTrials.gov records saved by engine cycle 12 on November 26, 2026.*
+*Run November 26, 2026. The sixteenth cycle of the For John research engine. Pre-registration: `research_notes/Engine/cycle-16-fda-guidance/PREREGISTRATION.md`, committed at commit `3a71706` before any trial start date was read. Script: `tools/engine_cycle16_fda_guidance.py`. Results: `data/engine/cycle16/`. Uses the ClinicalTrials.gov records saved by engine cycle 12 on November 26, 2026.*
 
 ## Summary
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Engine cycle 19: where in the United States can a teenager with relapsed osteosarcoma reach a trial?
 
-Pre-registered in research_notes/Engine/cycle-19-trial-geography/PREREGISTRATION.md (commit 58c5001).
+Pre-registered in research_notes/Engine/cycle-19-trial-geography/PREREGISTRATION.md (commit 1b53b9a).
 Reuses engine cycle 12's saved records and corrected classification. Reads country, state, city and site status only.
 
 Outputs: data/engine/cycle19/states.csv, trials.csv, results.json
@@ -44,7 +44,7 @@ def main():
                 unknown_state += 1
         per_trial[n] = sorted(sts)
     covered = [st for st in STATES if per_state[st]]
-    S = {"preregistration_commit": "58c5001", "trials": len(chosen), "trials_with_open_us_site": sum(1 for v in per_trial.values() if v),
+    S = {"preregistration_commit": "1b53b9a", "trials": len(chosen), "trials_with_open_us_site": sum(1 for v in per_trial.values() if v),
          "states_with_site": len(covered), "of": len(STATES), "cities": len(cities), "us_sites_without_recognised_state": unknown_state,
          "states_without_site": [st for st in STATES if not per_state[st]],
          "trials_5_plus_states": sum(1 for v in per_trial.values() if len(v) >= 5),
