@@ -53,6 +53,7 @@ Each was written down with its rules before the data were opened.
 - [Cycle 16: Since the FDA guidance, are new trials more open to teenagers?](reports/engine-cycle-16-since-the-fda-guidance-are-new-trials-more-open-to-teenagers.html) No sign of it; 2.4% of new company-led early trials take teenagers.
 - [Cycle 17: Before and after the FDA guidance, across all trials](reports/engine-cycle-17-before-and-after-the-fda-guidance-across-all-trials.html) The share of early trials taking teenagers fell from 11% to 5%.
 - [Cycle 18: Do sarcoma trials take teenagers, and who leaves them out?](reports/engine-cycle-18-do-sarcoma-trials-take-teenagers-and-who-leaves-them-out.html) Ewing and rhabdomyosarcoma trials usually do; company-led trials less often.
+- [Cycle 19: Where in the US can a teenager with relapsed osteosarcoma reach a trial?](reports/engine-cycle-19-where-in-the-us-can-a-teenager-with-relapsed-osteosarcoma-reach-a-trial.html) Sites in 34 states; 17 have none, and most trials are at one or two centres.
 
 ## The literature and its funding
 

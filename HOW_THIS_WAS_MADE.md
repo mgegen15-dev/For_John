@@ -110,6 +110,7 @@ pip install pandas
 | `tools/engine_cycle16_fda_guidance.py` | engine cycle 16: `data/engine/cycle16/` counts and one figure | none new; needs cycle 12's registry download | seconds |
 | `tools/engine_cycle17_fda_all_trials.py` (`fetch`, then no argument) | engine cycle 17: `data/engine/cycle17/` trial table, counts and one figure | ClinicalTrials.gov API (about 4,600 records; raw records not in git) | a minute |
 | `tools/engine_cycle18_sarcoma_teen_access.py` (`fetch`, then no argument) | engine cycle 18: `data/engine/cycle18/` trial table and counts | ClinicalTrials.gov API (about 640 records; raw records not in git) | a minute |
+| `tools/engine_cycle19_trial_geography.py` | engine cycle 19: `data/engine/cycle19/` states and trials tables | none new; needs cycle 12's registry download | seconds |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 
 Three hand-curated files are not produced by a script:
