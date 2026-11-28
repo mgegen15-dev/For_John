@@ -64,7 +64,7 @@
     <p>The full review is saved in <a href="https://github.com/mgegen15-dev/For_John/tree/main/research_notes/Audit"><code>research_notes/Audit/</code></a>. Its findings are fixed or answered, and the fixes themselves are checked. Only then is the file stamped as checked: <code>python3 tools/check_site.py --record &quot;&lt;check&gt;&quot; &lt;audit record&gt; &lt;file&gt;...</code> stores a fingerprint of the exact content reviewed in <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/review_log.csv"><code>data/review_log.csv</code></a>. Any later change to the file, however small, makes it due again.</p>
     </li>
     <li>
-    <p><strong>The gate must pass.</strong> <code>python3 tools/check_site.py</code> is run by hand before every push, and runs automatically on GitHub after every push and once a week. It fails if:</p>
+    <p><strong>The gate must pass.</strong> <code>python3 tools/check_site.py</code> is run by hand before every push, and runs automatically on GitHub after every push to the published branch (<code>main</code>), on every pull request into it, and once a week. It fails if:</p>
     <ul>
     <li>a public file's content differs from the content last stamped as independently checked. Files whose last check is dated before November 27, 2026, before fingerprints were recorded, count as &quot;legacy&quot; if they were not committed after the day of that check. Edits made on the check day itself cannot be detected, so the weekly audit re-checks legacy files, oldest first;</li>
     <li>an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;</li>

@@ -2,7 +2,9 @@ name: Quality gate
 
 on:
   push:
+    branches: [main]   # work branches are checked by hand; only the published branch must always pass
   pull_request:
+    branches: [main]
   schedule:
     - cron: "17 13 * * 1"   # every Monday: catches anything that went stale without a push
 

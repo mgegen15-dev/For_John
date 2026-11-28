@@ -1,6 +1,6 @@
 # Audit I: verification of the audit H fixes, and of those fixes
 
-*Three independent frontier-AI review passes, November 28, 2026, on branch `process-gate`. Both were read-only and recomputed numbers from the data, re-running the analysis functions in a scratch clone.*
+*Four independent frontier-AI review passes, November 28, 2026, on branch `process-gate`. Both were read-only and recomputed numbers from the data, re-running the analysis functions in a scratch clone.*
 
 ## Pass I1: verification of the audit H fixes (`e6d1274..ae560d5`)
 
@@ -78,3 +78,11 @@
 4. The review log labelled cycles 4, 6, 7, 14 and 19 as found clean in passes I1 and I2; it was I1. Relabelled.
 
 The fixes for findings 2 and 3 touch only change-log lines, not results, so they were checked against this list and the diff, not by another pass.
+
+## Pass I4: the GitHub check limited to the published branch
+
+The automatic check ran on every branch, so work in progress, with files not yet re-reviewed, sent failure emails (7, all from `process-gate`; `main` never failed). It now runs on pushes to `main`, pull requests into `main`, and weekly. Work branches are checked by hand before merging.
+
+**Confirmed:** the workflow file is valid and triggers as stated; no other public page describes when the check runs.
+
+**1 finding:** PROCESS.md left out pull requests. Fixed with the reviewer's wording, checked against the workflow file.
