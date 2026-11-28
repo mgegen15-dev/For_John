@@ -43,9 +43,9 @@
 </header>
 
 <div class="doclayout">
-  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#deviations">Deviations</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 27, 2026 · 2 min read</p>
+    <p class="crumb">Report · Updated November 28, 2026 · 2 min read</p>
     <h1>Engine Cycle 20: Do Tumours with More Macrophage or T-Cell Signal Respond Better to Chemotherapy Before Surgery?</h1>
     <p><em>Run November 27, 2026. The twentieth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-20-immune-response/PREREGISTRATION.md"><code>research_notes/Engine/cycle-20-immune-response/PREREGISTRATION.md</code></a>, committed at commit <code>822196e</code> before these genes were compared with response. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle20_immune_response.py"><code>tools/engine_cycle20_immune_response.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/tree/main/data/engine/cycle20"><code>data/engine/cycle20/</code></a>. Research only; not about any patient's treatment.</em></p>
     <h2 id="summary">Summary</h2>
@@ -54,7 +54,7 @@
     <li><strong>Macrophage score (CD163, CD14, CD68): inconclusive, leaning towards better response.</strong>
     <ul>
     <li>Odds ratio for poor response 0.67 per unit of the score (the average of the genes' z-scores; 95% CI 0.43–1.04). Random effects: 0.67 (0.40–1.14), I² 31%.</li>
-    <li>Three of the four cohorts leaned the same way, including the new one (0.59, 0.28–1.28; 0.54 after adjusting for P-glycoprotein status).</li>
+    <li>Three of the four cohorts leaned the same way, including the new one (0.59, 0.27–1.28; 0.54 after adjusting for P-glycoprotein status).</li>
     </ul>
     </li>
     <li><strong>T-cell score (CD3E, CD8A): inconclusive,</strong> 0.78 (0.55–1.10).</li>
@@ -79,8 +79,8 @@
     <tr>
     <td>GSE289059 (ISG/OS2; new)</td>
     <td>62 (30)</td>
-    <td>0.59 (0.28–1.28)</td>
-    <td>0.86 (0.50–1.47)</td>
+    <td>0.59 (0.27–1.28)</td>
+    <td>0.85 (0.50–1.47)</td>
     </tr>
     <tr>
     <td>GSE21257 (Leiden)</td>
@@ -122,6 +122,10 @@
     <li>Two of the four cohorts (GSE21257, TARGET-OS) had these genes read for cycle 14, against survival; GSE289059 and GSE14827 had not. None had been compared with response.</li>
     <li>The GSE289059 file was downloaded to read its sample descriptions before the plan was committed; the order of reading rests on our account.</li>
     </ul>
+    <h2 id="deviations">Deviations</h2>
+    <ul>
+    <li><strong>Scale of the effect.</strong> The plan defined the effect per standard deviation, but the script used the average of the genes' z-scores without rescaling it. On a true per-SD scale the pooled odds ratios are 0.72 (0.52–1.01) for the macrophage score and 0.79 (0.57–1.10) for the T-cell score. Both verdicts are unchanged (inconclusive).</li>
+    </ul>
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
     <li><code>python3 tools/engine_cycle20_immune_response.py fetch</code>, then without <code>fetch</code>. This needs engine cycle 1's downloads and the TARGET-OS files.</li>
@@ -129,8 +133,10 @@
     </ul>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-28: GSE289059 values rounded from the output file (0.27 in the table and the summary; 0.85 in the table); the figure relabelled per unit of the score.</li>
+    <li>2026-11-28: after an independent check, the per-standard-deviation results added and the scale difference declared as a deviation.</li>
     <li>2026-11-27: after an independent check, T-cell interval corrected (0.55, not 0.56), random effects, the CD68 flag and the figure added, the scale of the score stated, and which cohorts were read before made exact.</li>
-    <li>2026-11-27: cycle run and reported. H1 and H2 inconclusive; P54 and P55 wrong. No deviations.</li>
+    <li>2026-11-27: cycle run and reported. H1 and H2 inconclusive; P54 and P55 wrong.</li>
     </ul>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/reports/Engine%20cycle%2020%20-%20does%20tumour%20immune%20signal%20go%20with%20better%20chemotherapy%20response.md">reports/Engine cycle 20 - does tumour immune signal go with better chemotherapy response.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>

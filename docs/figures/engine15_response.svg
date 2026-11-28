@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" width="860" height="330" font-family="system-ui, sans-serif" font-size="13" role="img" aria-label="Odds of a poor response to chemotherapy before surgery, per standard deviation">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" width="860" height="330" font-family="system-ui, sans-serif" font-size="13" role="img" aria-label="Poor response to chemotherapy before surgery: odds ratio per standard deviation of each gene&#x27;s RNA (9p21 score: per unit of the averaged z-score)">
 <rect width="860" height="330" fill="#ffffff"/>
-<text x="16" y="26" font-weight="600" fill="#1d2430">Poor response to chemotherapy before surgery: odds ratio per standard deviation</text>
+<text x="16" y="26" font-weight="600" fill="#1d2430" font-size="12">Poor response to chemotherapy before surgery: odds ratio per standard deviation of each gene's RNA (9p21 score: per unit of the averaged z-score)</text>
 <text x="16" y="44" fill="#525b6b" font-size="12">Pooled across three cohorts, 95% CI, log scale. Right of 1: poorer response.</text>
 <line x1="330.0" y1="58" x2="330.0" y2="284" stroke="#e2e5ea"/>
 <text x="330.0" y="300" text-anchor="middle" fill="#525b6b" font-size="12">0.25</text>

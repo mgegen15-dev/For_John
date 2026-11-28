@@ -56,3 +56,4 @@ In `PREDICTIONS.md`:
 Recorded November 27, 2026, after the run.
 
 1. **Description corrected.** The header says the macrophage and T-cell genes of the three cycle 15 cohorts were read for cycle 14. In fact only GSE21257 and TARGET-OS were in cycle 14; GSE14827 was not. The method is unchanged.
+2. **Scale of the effect** (recorded November 28, 2026, after an independent check). The script used the average of the genes' z-scores without rescaling it to one standard deviation. Per standard deviation: macrophage 0.72 (0.52–1.01), T-cell 0.79 (0.57–1.10); verdicts unchanged.

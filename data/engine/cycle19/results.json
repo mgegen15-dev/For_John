@@ -2,7 +2,7 @@
  "preregistration_commit": "1b53b9a",
  "trials": 32,
  "trials_with_open_us_site": 32,
- "states_with_site": 34,
+ "states_and_dc_with_site": 34,
  "of": 51,
  "cities": 66,
  "us_sites_without_recognised_state": 0,
@@ -27,8 +27,8 @@
  ],
  "trials_5_plus_states": 7,
  "trials_1_or_2_states": 20,
- "max_states_one_trial": 22,
- "trials_20_plus_states": 1,
+ "max_states_and_dc_one_trial": 22,
+ "trials_20_plus_states_and_dc": 1,
  "P52": "wrong",
  "P53": "right"
 }

@@ -4,7 +4,7 @@
 
 An open, independent effort focused on osteosarcoma: to tie together the research on it and find what has been overlooked. That means untested ideas, contradictions, lost trial results, and places where funding, trials and the literature don't line up. Osteosarcoma is the target; ideas are borrowed from anywhere: other sarcomas, neuroblastoma, adult cancers, other diseases, and dogs.
 
-Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.gov, NIH RePORTER, Europe PMC, the NCI Genomic Data Commons, GTEx, the Human Protein Atlas, ChEMBL, NCBI Sequence Read Archive, and preprint servers). Most analyses have scripts in `tools/` that anyone can re-run; a few counts were made with one-off database queries described in the report concerned. Findings are leads for researchers to check, not conclusions. The reports were checked against primary sources by separate AI-run audits in November 2026, the newest three reports on November 20 together with a repo-wide consistency check (`research_notes/Audit/`).
+Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.gov, NIH RePORTER, Europe PMC, the NCI Genomic Data Commons, GTEx, the Human Protein Atlas, ChEMBL, NCBI Sequence Read Archive, and preprint servers). Most analyses have scripts in `tools/` that anyone can re-run; a few counts were made with one-off database queries described in the report concerned. Findings are leads for researchers to check, not conclusions. The reports were checked against primary sources by separate AI-run audits in November 2026: the earlier reports on November 14 and 20, and the research-engine reports, the teen-access brief and the public pages on November 25–28 (`research_notes/Audit/`; see [PROCESS.md](PROCESS.md)).
 
 > **Not medical advice.** Nothing in this repository is a recommendation about any patient's care. Families should discuss treatment and trial options with their child's oncology team.
 
@@ -15,10 +15,10 @@ Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.
 - **Evidence explorer:** https://mgegen15-dev.github.io/For_John/explorer.html: type a gene, drug or target to see its papers, paper-mill risk flag, trials, tumour expression, copy-number changes, approved drugs and the reports that discuss it (built by `tools/build_explorer_data.py`).
 - **Start here:** [One-page summary](SUMMARY.md) · [How this was made](HOW_THIS_WAS_MADE.md)
 - **Predictions:** [Dated, testable predictions](PREDICTIONS.md), so anyone can check our hit rate as results come in
-- **For auditors:** [Auditor's guide](AUDIT_GUIDE.md) · [Data manifest](DATA_MANIFEST.md) · frozen version: git tag `v1.1` (November 27, 2026)
+- **For auditors:** [Auditor's guide](AUDIT_GUIDE.md) · [How work is checked](PROCESS.md) · [Data manifest](DATA_MANIFEST.md) · frozen version: git tag `v1.1` (November 27, 2026)
 - [For Families](FAMILIES.md): plain-language page for parents and patients, with questions to bring to a care team.
 - [All Reports](REPORTS.md): every report and brief, grouped by what you are looking for.
-- [Research brief: new targeted-drug trials mostly leave out teenagers with osteosarcoma](briefs/Brief%20-%20trial%20access%20for%20teenagers%20with%20osteosarcoma.md): one page for advocacy groups, from engine cycles 3, 4 and 7.
+- [Research brief: new targeted-drug trials mostly leave out teenagers with osteosarcoma](briefs/Brief%20-%20trial%20access%20for%20teenagers%20with%20osteosarcoma.md): one page for advocacy groups, from engine cycles 3, 4, 7, 12 and 17.
 - [The best leads, and who could test them](reports/Ranked%20leads%20and%20research%20partners.md): fourteen leads, scored, each matched to the institutions best placed to test it.
 
 - [Osteosarcoma research landscape and gaps](reports/Osteosarcoma%20research%20landscape%20and%20gaps.md): the state of the field, lessons from neuroblastoma, and twelve candidate gaps with where each stands now.
@@ -32,7 +32,7 @@ Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.
 - [Stopping lung metastasis in osteosarcoma](reports/Stopping%20lung%20metastasis%20in%20osteosarcoma.md): what is known about how osteosarcoma spreads to the lung, every trial aimed at it, and eight untested ideas, led by IL-1/IL-6 blockade after surgery.
 - [Approved drugs worth testing in osteosarcoma](reports/Approved%20drugs%20worth%20testing%20in%20osteosarcoma.md): a screen of 2,400 approved and late-stage drugs for ones with an osteosarcoma rationale but no trial, including the dead ends.
 - [Do the leads predict survival?](reports/Do%20the%20leads%20predict%20survival.md): a pre-registered test of 20 lead-related markers against outcome in 89 patients; none survives correction for multiple testing.
-- [Research Queue](RESEARCH_QUEUE.md): the research engine's questions, each pre-registered and tested on independent patients, with every result published.
+- [Research Queue](RESEARCH_QUEUE.md): the research engine's questions, each pre-registered, with every result published.
 - [Engine cycle 1: does RAMP1 predict relapse?](reports/Engine%20cycle%201%20-%20does%20RAMP1%20predict%20relapse.md): first engine result; the discovery signal did not replicate in three independent cohorts.
 - [Engine cycle 2: do lung metastases carry more CXCR4?](reports/Engine%20cycle%202%20-%20do%20lung%20metastases%20carry%20more%20CXCR4.md): second engine result; a lean in whole tissue that immune cells explain, so lead 14 gains no support.
 - [Engine cycle 3: is 9p21 deletion more common at relapse?](reports/Engine%20cycle%203%20-%20is%209p21%20deletion%20more%20common%20at%20relapse.md): third engine result; not clearly more common, but present in about one in five relapsed or metastatic tumours, and usually the same in a first and later sample, though few tested twice had it (7 of 30).

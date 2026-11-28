@@ -33,7 +33,7 @@
 
 ## Research engine results
 
-Each was written down with its rules before the data were opened.
+Each was planned in writing, with its rules, and committed before its analysis was run.
 
 - [Cycle 1: Does RAMP1 predict relapse?](reports/engine-cycle-1-does-ramp1-predict-relapse.html) Inconclusive; the large effect ruled out.
 - [Cycle 2: Do lung metastases carry more CXCR4?](reports/engine-cycle-2-do-lung-metastases-carry-more-cxcr4.html) Inconclusive; likely explained by immune cells.
@@ -46,14 +46,14 @@ Each was written down with its rules before the data were opened.
 - [Cycle 9: Weaknesses that go with the tumour-suppressor genes osteosarcoma loses](reports/engine-cycle-9-weaknesses-that-go-with-the-tumour-suppressor-genes-osteosarcoma-loses.html): known RB1 pairs; public data miss osteosarcoma's main routes.
 - [Cycle 10: Do the gene-change weaknesses hold up with real drugs?](reports/engine-cycle-10-do-the-gene-change-weaknesses-hold-up-with-real-drugs.html) The known drug links show up; the CCNE1 and MTAP tests are inconclusive.
 - [Cycle 11: Do lung metastases keep the surface targets?](reports/engine-cycle-11-do-lung-metastases-keep-the-surface-targets.html) No clear sign that LRRC15 is lost; B7-H3 unclear.
-- [Cycle 12: How often can a teenager with osteosarcoma get into a drug trial?](reports/engine-cycle-12-how-often-can-a-teenager-with-osteosarcoma-get-into-a-drug-trial.html) Trials that list osteosarcoma usually take teenagers; early trials of new drugs almost never do.
+- [Cycle 12: How often can a teenager with osteosarcoma get into a drug trial?](reports/engine-cycle-12-how-often-can-a-teenager-with-osteosarcoma-get-into-a-drug-trial.html) Trials that list osteosarcoma usually take teenagers; early trials of new drugs rarely do (about 1 in 18).
 - [Cycle 13: In pet dogs, does tumour inflammation go with faster relapse?](reports/engine-cycle-13-in-pet-dogs-does-tumour-inflammation-go-with-faster-relapse.html) Inconclusive for inflammation; DKK1 RNA does not mark dogs that do worse.
 - [Cycle 14: Does tumour macrophage signal predict a better outcome in new patients?](reports/engine-cycle-14-does-tumour-macrophage-signal-predict-a-better-outcome-in-new-patients.html) Reproduces in the original cohort; weaker and not clear in three new ones.
 - [Cycle 15: Do tumours with MYC gain respond worse to chemotherapy?](reports/engine-cycle-15-do-tumours-with-myc-gain-respond-worse-to-chemotherapy.html) More MYC went with poorer response in three cohorts; modest, needs replication.
 - [Cycle 16: Since the FDA guidance, are new trials more open to teenagers?](reports/engine-cycle-16-since-the-fda-guidance-are-new-trials-more-open-to-teenagers.html) No sign of it; 2.4% of new company-led early trials take teenagers.
 - [Cycle 17: Before and after the FDA guidance, across all trials](reports/engine-cycle-17-before-and-after-the-fda-guidance-across-all-trials.html) The share of early trials taking teenagers fell from 11% to 5%.
 - [Cycle 18: Do sarcoma trials take teenagers, and who leaves them out?](reports/engine-cycle-18-do-sarcoma-trials-take-teenagers-and-who-leaves-them-out.html) Ewing and rhabdomyosarcoma trials usually do; company-led trials less often.
-- [Cycle 19: Where in the US can a teenager with relapsed osteosarcoma reach a trial?](reports/engine-cycle-19-where-in-the-us-can-a-teenager-with-relapsed-osteosarcoma-reach-a-trial.html) Sites in 33 states and DC (34 of 51); 17 have none, and most trials are at one or two centres.
+- [Cycle 19: Where in the US can a teenager with relapsed osteosarcoma reach a trial?](reports/engine-cycle-19-where-in-the-us-can-a-teenager-with-relapsed-osteosarcoma-reach-a-trial.html) Sites in 33 states and DC (34 of 51); 17 states have none; 20 of the 32 trials are in only one or two states.
 - [Cycle 20: Does tumour immune signal go with better chemotherapy response?](reports/engine-cycle-20-does-tumour-immune-signal-go-with-better-chemotherapy-response.html) Inconclusive; macrophage signal leans towards better response.
 
 ## The literature and its funding

@@ -8,7 +8,7 @@ We pooled four cohorts with tumour RNA taken before treatment and a recorded res
 
 - **Macrophage score (CD163, CD14, CD68): inconclusive, leaning towards better response.**
   - Odds ratio for poor response 0.67 per unit of the score (the average of the genes' z-scores; 95% CI 0.43–1.04). Random effects: 0.67 (0.40–1.14), I² 31%.
-  - Three of the four cohorts leaned the same way, including the new one (0.59, 0.28–1.28; 0.54 after adjusting for P-glycoprotein status).
+  - Three of the four cohorts leaned the same way, including the new one (0.59, 0.27–1.28; 0.54 after adjusting for P-glycoprotein status).
 - **T-cell score (CD3E, CD8A): inconclusive,** 0.78 (0.55–1.10).
 - **Exploratory flag, not a result:** CD68 alone pooled to 0.61 (0.43–0.87), one of five single genes, uncorrected.
 - **Predictions:** P54 and P55 were wrong.
@@ -23,7 +23,7 @@ We pooled four cohorts with tumour RNA taken before treatment and a recorded res
 
 | Cohort | Patients (poor response) | Macrophage score | T-cell score |
 |---|---|---|---|
-| GSE289059 (ISG/OS2; new) | 62 (30) | 0.59 (0.28–1.28) | 0.86 (0.50–1.47) |
+| GSE289059 (ISG/OS2; new) | 62 (30) | 0.59 (0.27–1.28) | 0.85 (0.50–1.47) |
 | GSE21257 (Leiden) | 47 (29) | 0.44 (0.18–1.09) | 1.03 (0.55–1.91) |
 | GSE14827 | 27 (16) | 1.50 (0.61–3.66) | 0.65 (0.26–1.63) |
 | TARGET-OS | 35 (19) | 0.51 (0.19–1.36) | 0.41 (0.17–1.01) |
@@ -43,6 +43,10 @@ Single-gene results are in `data/engine/cycle20/results.csv`.
 - Two of the four cohorts (GSE21257, TARGET-OS) had these genes read for cycle 14, against survival; GSE289059 and GSE14827 had not. None had been compared with response.
 - The GSE289059 file was downloaded to read its sample descriptions before the plan was committed; the order of reading rests on our account.
 
+## Deviations
+
+- **Scale of the effect.** The plan defined the effect per standard deviation, but the script used the average of the genes' z-scores without rescaling it. On a true per-SD scale the pooled odds ratios are 0.72 (0.52–1.01) for the macrophage score and 0.79 (0.57–1.10) for the T-cell score. Both verdicts are unchanged (inconclusive).
+
 ## Files and reproduction
 
 - `python3 tools/engine_cycle20_immune_response.py fetch`, then without `fetch`. This needs engine cycle 1's downloads and the TARGET-OS files.
@@ -50,5 +54,7 @@ Single-gene results are in `data/engine/cycle20/results.csv`.
 
 ## Change log
 
+- 2026-11-28: GSE289059 values rounded from the output file (0.27 in the table and the summary; 0.85 in the table); the figure relabelled per unit of the score.
+- 2026-11-28: after an independent check, the per-standard-deviation results added and the scale difference declared as a deviation.
 - 2026-11-27: after an independent check, T-cell interval corrected (0.55, not 0.56), random effects, the CD68 flag and the figure added, the scale of the score stated, and which cohorts were read before made exact.
-- 2026-11-27: cycle run and reported. H1 and H2 inconclusive; P54 and P55 wrong. No deviations.
+- 2026-11-27: cycle run and reported. H1 and H2 inconclusive; P54 and P55 wrong.

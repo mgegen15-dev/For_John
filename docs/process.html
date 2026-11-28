@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Work Is Checked Before It Is Published · For John</title>
+<meta name="description" content="The rules every change to For John follows. Adopted November 28, 2026, after independent checks in one week each found errors in published work. The aim: nothing reaches a family, researcher or…">
+<link rel="canonical" href="https://mgegen15-dev.github.io/For_John/process.html">
+<meta name="theme-color" content="#14264a">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="For John">
+<meta property="og:title" content="How Work Is Checked Before It Is Published · For John">
+<meta property="og:description" content="The rules every change to For John follows. Adopted November 28, 2026, after independent checks in one week each found errors in published work. The aim: nothing reaches a family, researcher or…">
+<meta property="og:url" content="https://mgegen15-dev.github.io/For_John/process.html">
+<meta property="og:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mgegen15-dev.github.io/For_John/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="index.html">For John</a>
+    <nav aria-label="Site">
+      <a href="families.html">For Families</a>
+      <a href="index.html#findings">Findings</a>
+      <a href="research-queue.html">Research Engine</a>
+      <a href="reports.html">All Reports</a>
+      <a href="how-this-was-made.html">Methods</a>
+    </nav>
+    <a class="btn btn-gold" href="audit-guide.html">Review This Work</a>
+  </div>
+</header>
+
+<div class="doclayout">
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#the-rules">The Rules</a></li><li class="l1"><a href="#what-a-public-file-is">What a Public File Is</a></li><li class="l1"><a href="#running-the-gate">Running the Gate</a></li></ol></nav>
+  <main id="main" class="doc">
+    <p class="crumb">Project document · Updated November 28, 2026 · 4 min read</p>
+    <h1>How Work Is Checked Before It Is Published</h1>
+    <p><em>The rules every change to For John follows. Adopted November 28, 2026, after independent checks in one week each found errors in published work. The aim: nothing reaches a family, researcher or funder until a reviewer other than its author has checked it.</em></p>
+    <p><strong>Who does the checking.</strong> The reviews described here are run by separate frontier-AI review sessions, not by people. No human expert has yet reviewed this work; clinician and researcher review is being sought.</p>
+    <h2 id="the-rules">The Rules</h2>
+    <ol>
+    <li>
+    <p><strong>Plan before data.</strong> Every new test is written down, with the result that would count against it, and committed to git before its analysis is run (<code>research_notes/Engine/cycle-NN-*/PREREGISTRATION.md</code>). Any data downloaded or read before the plan is disclosed in the report. Changes after that are listed under &quot;Deviations&quot;.</p>
+    </li>
+    <li>
+    <p><strong>Independent check before publishing.</strong> Every new or changed public file is checked by a separate frontier-AI review session that did not write it. The reviewer reads the file, its data and its sources fresh. It may read the project's working notes, but it does not share the author's session. It checks:</p>
+    <ul>
+    <li>every number against the data;</li>
+    <li>every claim against its source;</li>
+    <li>every sentence for overstatement.</li>
+    </ul>
+    <p>The full review is saved in <a href="https://github.com/mgegen15-dev/For_John/tree/main/research_notes/Audit"><code>research_notes/Audit/</code></a>. Its findings are fixed or answered, and the fixes themselves are checked. Only then is the file stamped as checked: <code>python3 tools/check_site.py --record &quot;&lt;check&gt;&quot; &lt;audit record&gt; &lt;file&gt;...</code> stores a fingerprint of the exact content reviewed in <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/review_log.csv"><code>data/review_log.csv</code></a>. Any later change to the file, however small, makes it due again.</p>
+    </li>
+    <li>
+    <p><strong>The gate must pass.</strong> <code>python3 tools/check_site.py</code> is run by hand before every push, and runs automatically on GitHub after every push and once a week. It fails if:</p>
+    <ul>
+    <li>a public file's content differs from the content last stamped as independently checked. Files whose last check is dated before November 27, 2026, before fingerprints were recorded, count as &quot;legacy&quot; if they were not committed after the day of that check. Edits made on the check day itself cannot be detected, so the weekly audit re-checks legacy files, oldest first;</li>
+    <li>an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;</li>
+    <li>a page built by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_site.py"><code>tools/build_site.py</code></a> is out of date with its Markdown source, or the build fails. The gate re-runs the build, so it can rewrite pages under <code>docs/</code>;</li>
+    <li>the predictions scorecard does not add up;</li>
+    <li>a commit cited in a report, pre-registration or public Markdown file (written as the word &quot;commit&quot; followed by a commit ID in code formatting, or as a 7–40 character commit ID in code formatting containing at least one letter and one digit) does not exist;</li>
+    <li>an engine plan was committed after its analysis script. Data opened before the plan cannot be detected this way;</li>
+    <li>public text uses a banned term (the list is <code>BANNED</code> in <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/check_site.py"><code>tools/check_site.py</code></a>; for example, naming the AI model or its maker).</li>
+    </ul>
+    <p>The gate cannot judge whether a sentence is true or reads as medical advice. Only the reviews do that.</p>
+    </li>
+    <li>
+    <p><strong>Fix, log, re-check.</strong> A correction is made in the source file and noted in that file's change log with the date and reason. If the correction changes a number or a claim, the file is checked again.</p>
+    </li>
+    <li>
+    <p><strong>Periodic audits.</strong></p>
+    <ul>
+    <li><strong>Weekly:</strong> a scheduled frontier-AI review session runs on Mondays. It is set up in the owner's account, not in this repository. It reviews every public file the gate reports as due, the three oldest &quot;legacy&quot; files, and five older claims chosen at random and checked from scratch. It saves its record on a separate branch and never edits public files.</li>
+    <li><strong>Before every frozen release:</strong> a full independent audit of every public file, split among separate reviewers, with all findings fixed before the release is tagged.</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>Family-facing text gets the most care.</strong></p>
+    <ul>
+    <li>The For Families page and the briefs give no medical advice.</li>
+    <li>They carry no statistics a family could misread as a personal prognosis.</li>
+    <li>They say where each fact comes from.</li>
+    <li>Clinician review is sought before wider outreach.</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>When in doubt, say less.</strong> If a claim cannot be checked, it is labelled &quot;unverified&quot; or removed.</p>
+    </li>
+    </ol>
+    <h2 id="what-a-public-file-is">What a Public File Is</h2>
+    <p><strong>The list:</strong></p>
+    <ul>
+    <li>every file under <code>reports/</code> and <code>briefs/</code>;</li>
+    <li><a href="families.html"><code>FAMILIES.md</code></a>, <a href="summary.html"><code>SUMMARY.md</code></a>, <a href="reports.html"><code>REPORTS.md</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/README.md"><code>README.md</code></a>, <a href="how-this-was-made.html"><code>HOW_THIS_WAS_MADE.md</code></a>, <a href="audit-guide.html"><code>AUDIT_GUIDE.md</code></a>, <a href="predictions.html"><code>PREDICTIONS.md</code></a>, <a href="research-queue.html"><code>RESEARCH_QUEUE.md</code></a> and this file;</li>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/index.html"><code>docs/index.html</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/explorer.html"><code>docs/explorer.html</code></a>.</li>
+    <li>The one-page PDF of the teen-access brief (<a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/briefs/For-John-brief-trial-access-for-teenagers.pdf"><code>docs/briefs/For-John-brief-trial-access-for-teenagers.pdf</code></a>) is re-exported and compared with the brief's Markdown whenever the brief changes; the gate does not check it.</li>
+    </ul>
+    <p><strong>How the website is made from them:</strong></p>
+    <ul>
+    <li>Most pages under <code>docs/</code> are built from the Markdown files by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_site.py"><code>tools/build_site.py</code></a>.</li>
+    <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/index.html"><code>docs/index.html</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/explorer.html"><code>docs/explorer.html</code></a> are maintained by hand.</li>
+    <li>The explorer's data, <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/data/explorer.json"><code>docs/data/explorer.json</code></a>, is built by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_explorer_data.py"><code>tools/build_explorer_data.py</code></a>. It was built on November 22, 2026, with its survival field names corrected by hand on November 28; the page says it covers what the project had gathered by November 22.</li>
+    </ul>
+    <h2 id="running-the-gate">Running the Gate</h2>
+    <pre><code class="language-bash">python3 tools/check_site.py
+    </code></pre>
+    <pre><code class="language-bash">python3 tools/check_site.py --list
+    </code></pre>
+    <p>The first runs every check. The second lists each public file as ok, legacy or due, with the date it was last independently checked.</p>
+    <hr>
+    <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PROCESS.md">PROCESS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
+  </main>
+</div>
+
+<footer class="site">
+ <div class="wrap">
+  <p>For John (2026). Open research on osteosarcoma. <a href="https://github.com/mgegen15-dev/For_John">Source and data on GitHub</a></p>
+  <p>Reports and data: CC BY 4.0. Code: MIT. Not medical advice. <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch light or dark theme">Dark mode</button></p>
+ </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById("themeToggle"), root = document.documentElement;
+  try { var s = localStorage.getItem("forjohn-theme"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("forjohn-theme", next); } catch (e) {}
+    label();
+  });
+  function label() {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    btn.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  label();
+  var toc = document.getElementById("toc");
+  if (toc && "IntersectionObserver" in window) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
+    var cur = null;
+    var io = new IntersectionObserver(function (es) {
+      var vis = es.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (!vis.length) return;
+      var id = vis[0].target.id;
+      if (id === cur) return;
+      cur = id;
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    secs.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

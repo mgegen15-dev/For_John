@@ -1,0 +1,22 @@
+name: Quality gate
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 13 * * 1"   # every Monday: catches anything that went stale without a push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0     # full history, so plan-before-data order and review dates can be checked
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the site-building packages
+        run: pip install markdown-it-py==4.3.0 mdit-py-plugins==0.7.0
+      - name: Run the quality gate (see PROCESS.md)
+        run: python3 tools/check_site.py

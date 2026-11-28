@@ -11,7 +11,7 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
   - All three cohorts pointed the same way (1.32, 1.87 and 1.86), with no sign of disagreement between them (I² = 0%).
   - This is the engine's first "Supported" verdict in fifteen cycles.
 - **CCNE1: refuted.** 0.88 (0.59–1.30); an odds ratio of 1.5 or more is ruled out.
-- **9p21 loss: inconclusive.** 1.32 (0.83–2.10).
+- **9p21 loss: inconclusive.** 1.32 per unit of the score (0.83–2.10); per standard deviation 1.29 (0.85–1.97).
 - **Predictions:** P43 (MYC supported, given 20%) was right. P44 (none supported) was wrong.
 
 **Why this needs replication before anyone relies on it.**
@@ -29,7 +29,7 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
   - GSE14827 ("good" or "poor" response, 27 patients);
   - TARGET-OS (Huvos stage from the open clinical spreadsheet, 35 patients).
 - **Outcome:** poor response, meaning Huvos grade 1 or 2, or labelled "poor".
-- **Measures:** RNA per standard deviation, within each cohort.
+- **Measures:** RNA per standard deviation, within each cohort (the 9p21 score: see Deviations).
   - MYC (H1) and CCNE1 (H2).
   - A 9p21 loss score, the negative mean z-score of CDKN2A and MTAP (H3).
 - **Effect:** odds ratio from a logistic model in each cohort, pooled by inverse-variance weighting.
@@ -40,13 +40,13 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
 
 ## Results
 
-![Poor response to chemotherapy before surgery: odds ratio per standard deviation](../docs/figures/engine15_response.svg)
+![Poor response to chemotherapy before surgery: odds ratio per standard deviation of each gene's RNA (9p21 score: per unit of the averaged z-score)](../docs/figures/engine15_response.svg)
 
 | Measure | GSE21257 (47; 29 poor) | GSE14827 (27; 16 poor) | TARGET-OS (35; 19 poor) | **Pooled (109; 64 poor)** | Verdict |
 |---|---|---|---|---|---|
 | **H1: MYC RNA** | 1.32 (0.72–2.42) | 1.87 (0.79–4.42) | 1.86 (0.87–3.96) | **1.58 (1.05–2.40)** | **Supported** |
 | **H2: CCNE1 RNA** | 1.03 (0.56–1.87) | 0.76 (0.34–1.67) | 0.81 (0.41–1.60) | **0.88 (0.59–1.30)** | **Refuted** |
-| **H3: 9p21 loss score** | 1.74 (0.84–3.60) | 2.10 (0.76–5.83) | 0.78 (0.37–1.64) | **1.32 (0.83–2.10)** | **Inconclusive** |
+| **H3: 9p21 loss score** (per unit of the score; per SD 1.29, 0.85–1.97) | 1.74 (0.84–3.60) | 2.10 (0.76–5.83) | 0.78 (0.37–1.64) | **1.32 (0.83–2.10)** | **Inconclusive** |
 
 - **Random effects** give the same MYC result (1.58, 1.05–2.40). For the 9p21 score they give 1.35 (0.74–2.47).
 - **Huvos grade 1 to 4 as an ordered outcome in GSE21257** (Spearman correlation, where a negative value means poorer response with more of the measure):
@@ -77,6 +77,10 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
 - No built-in check was possible, because no RNA marker of response is established well enough.
 - Response was recorded after different chemotherapy protocols.
 
+## Deviations
+
+- **Scale of the 9p21 score** (recorded November 28, 2026, after an independent check). The plan defined effects per standard deviation. MYC and CCNE1 are single genes, so their results are per SD. The 9p21 score is the average of two genes' z-scores and was not rescaled, so its result is per unit of the score. Per SD: 1.29 (0.85–1.97); random effects 1.32 (0.76–2.28). The verdict is unchanged (inconclusive).
+
 ## Files and reproduction
 
 - Run the downloads of engine cycle 1, including the GPL570 annotation now saved there, and the TARGET-OS stage of `tools/survival_analysis.py`.
@@ -89,4 +93,7 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
 
 ## Change log
 
+- 2026-11-28: the figure's alt text and the Measures line state the 9p21 score's scale.
+- 2026-11-28: the 9p21 score's scale declared as a deviation, with the per-SD result in the summary.
+- 2026-11-28: after an independent check, the 9p21 score's result noted per standard deviation (1.29, 0.85–1.97); it had been reported per unit of the averaged score. Verdict unchanged.
 - 2026-11-26: cycle run and reported. H1 supported, H2 refuted and H3 inconclusive under the pre-registered rules. P43 right, P44 wrong. No deviations.
