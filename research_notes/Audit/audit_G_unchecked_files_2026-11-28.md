@@ -1,11 +1,11 @@
 # Audit G: five never-checked or stale public files, the written process and the gate
 
-*Independent frontier-AI review, November 28, 2026. Read-only; numbers recomputed from the repository's data files; PMIDs checked against PubMed abstracts. Scope: the five public files that the new review log showed had never been independently checked or had changed since their last check, plus `PROCESS.md`, `tools/check_site.py`, and the November 28 additions to `README.md`, `HOW_THIS_WAS_MADE.md` and `AUDIT_GUIDE.md`. Result: 41 findings. The fixes were made the same day and sent to a separate verification review before publishing (rule 4 of `PROCESS.md`).*
+*Independent frontier-AI review, November 28, 2026. Read-only; numbers recomputed from the repository's data files; PMIDs checked against PubMed abstracts. Scope: the five public files that the new review log showed had never been independently checked or had changed since their last check, plus `PROCESS.md`, `tools/check_site.py`, and the November 28 additions to `README.md`, `HOW_THIS_WAS_MADE.md` and `AUDIT_GUIDE.md`. Result: 41 findings as numbered by the reviewer (some are grouped below). The fixes were made the same day and sent to a separate verification review before publishing (rule 4 of `PROCESS.md`).*
 
 ## Contradictions and hidden links (never checked before)
 
 - **ERROR:** "151 genes, 21 drugs" counted pairs. The correct counts are 99 genes and 10 drugs. Fixed.
-- **OVERSTATEMENT:** a cell-experiment result (33101888) was twice described as a mouse result. Fixed.
+- **OVERSTATEMENT:** a cell-experiment result (33101888) was described as a mouse result in two places. Fixed.
 - **OVERSTATEMENT:** ICG-001 "slowed growth" in mice. It slowed growth in cells but not the tumour in mice. Fixed.
 - **INCONSISTENCY:** stale follow-ups; the 223-patient study was already on lead 14. Fixed.
 - **OVERSTATEMENT:** "a different route" from the repurposing screen. The route is partly shared. Fixed.
@@ -24,7 +24,7 @@
 - **INCONSISTENCY:** the 223-tumour CXCR4 study was omitted. Fixed.
 - **POLICY (owner):** the TARGET-OS per-patient table is still published, although cBioPortal per-patient tables were withdrawn. This is open-tier data. Left for the owner to decide.
 
-## Ranked leads (changed since its November 14 check)
+## Ranked leads (changed since its November 20 check)
 
 - **MINOR:** "genuine" against "model difference" wording. Fixed.
 - **MINOR:** the header and the change-log order. Fixed.
@@ -51,7 +51,7 @@
 - **OVERSTATEMENTS:** the scope of the link, build, commit, order and wording checks was described more broadly than the script implements. Each is now stated exactly.
 - **INCONSISTENCY:** the gate can rewrite `docs/`, which was not stated. Fixed.
 - **Gate fixes in code:**
-  - the build check now detects build failures and pages that were already modified;
+  - the build check now detects build failures, and compares file contents so a rebuild that changes an already-modified page is caught;
   - review times are compared to the minute, not the day, for new entries;
   - cited commits are also checked in public Markdown;
   - "not a scientist" is matched in any case.
@@ -60,3 +60,7 @@
 - **MINOR:** `docs/index.html` and `docs/explorer.html` are hand-maintained. Stated.
 - **MINOR:** the HOW_THIS_WAS_MADE row wording. Fixed.
 - **MINOR:** review-log wording for never-checked files. Fixed.
+
+## Verification of these fixes
+
+A separate verification review on November 28 confirmed the fixes and found 14 further problems: wording on the AKT2 result and the platelet drugs, the summary's description of the research engine, two errors in the review log, the explorer's meta description, and weaknesses in the gate (date-only review entries covered later same-day edits; the timestamp and commit-hash checks could be fooled). All were fixed, and the review log now records a fingerprint of the exact content reviewed instead of a date.

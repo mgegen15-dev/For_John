@@ -12,9 +12,9 @@
    - every claim against its source;
    - every sentence for overstatement.
 
-   The full review is saved in `research_notes/Audit/`. Its findings are fixed or answered. The fixes themselves are checked, and the time of the check is recorded in `data/review_log.csv`.
+   The full review is saved in `research_notes/Audit/`. Its findings are fixed or answered, and the fixes themselves are checked. Only then is the file stamped as checked: `python3 tools/check_site.py --record "<check>" <audit record> <file>...` stores a fingerprint of the exact content reviewed in `data/review_log.csv`. Any later change to the file, however small, makes it due again.
 3. **The gate must pass.** `python3 tools/check_site.py` is run by hand before every push, and runs automatically on GitHub after every push and once a week. It fails if:
-   - a public file changed after its last recorded independent check;
+   - a public file's content differs from the content last stamped as independently checked. Files checked before fingerprints were recorded (November 27 or earlier) count as "legacy" while unchanged; the weekly audit re-checks them, oldest first;
    - an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;
    - a page built by `tools/build_site.py` is out of date with its Markdown source, or the build fails. The gate re-runs the build, so it can rewrite pages under `docs/`;
    - the predictions scorecard does not add up;
@@ -25,7 +25,7 @@
    The gate cannot judge whether a sentence is true or reads as medical advice. Only the reviews do that.
 4. **Fix, log, re-check.** A correction is made in the source file and noted in that file's change log with the date and reason. If the correction changes a number or a claim, the file is checked again.
 5. **Periodic audits.**
-   - **Weekly:** a scheduled frontier-AI review session runs on Mondays. It is set up in the owner's account, not in this repository. It reviews every public file the gate reports as due, plus five older claims chosen at random and checked from scratch. It saves its record on a separate branch and never edits public files.
+   - **Weekly:** a scheduled frontier-AI review session runs on Mondays. It is set up in the owner's account, not in this repository. It reviews every public file the gate reports as due, the three oldest "legacy" files, and five older claims chosen at random and checked from scratch. It saves its record on a separate branch and never edits public files.
    - **Before every frozen release:** a full independent audit of every public file, split among separate reviewers, with all findings fixed before the release is tagged.
 6. **Family-facing text gets the most care.**
    - The For Families page and the briefs give no medical advice.
@@ -44,7 +44,7 @@
 **How the website is made from them:**
 - Most pages under `docs/` are built from the Markdown files by `tools/build_site.py`.
 - `docs/index.html` and `docs/explorer.html` are maintained by hand.
-- The explorer's data, `docs/data/explorer.json`, is built by `tools/build_explorer_data.py`. It was last built on November 22, 2026, and the page says so.
+- The explorer's data, `docs/data/explorer.json`, is built by `tools/build_explorer_data.py`. It was built on November 22, 2026, with its survival field names corrected by hand on November 28; the page says it covers what the project had gathered by November 22.
 
 ## Running the gate
 
@@ -56,4 +56,4 @@ python3 tools/check_site.py
 python3 tools/check_site.py --list
 ```
 
-The first runs every check. The second lists each public file with when it last changed and when it was last independently checked.
+The first runs every check. The second lists each public file as ok, legacy or due, with the date it was last independently checked.

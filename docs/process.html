@@ -61,12 +61,12 @@
     <li>every claim against its source;</li>
     <li>every sentence for overstatement.</li>
     </ul>
-    <p>The full review is saved in <a href="https://github.com/mgegen15-dev/For_John/tree/main/research_notes/Audit"><code>research_notes/Audit/</code></a>. Its findings are fixed or answered. The fixes themselves are checked, and the time of the check is recorded in <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/review_log.csv"><code>data/review_log.csv</code></a>.</p>
+    <p>The full review is saved in <a href="https://github.com/mgegen15-dev/For_John/tree/main/research_notes/Audit"><code>research_notes/Audit/</code></a>. Its findings are fixed or answered, and the fixes themselves are checked. Only then is the file stamped as checked: <code>python3 tools/check_site.py --record &quot;&lt;check&gt;&quot; &lt;audit record&gt; &lt;file&gt;...</code> stores a fingerprint of the exact content reviewed in <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/review_log.csv"><code>data/review_log.csv</code></a>. Any later change to the file, however small, makes it due again.</p>
     </li>
     <li>
     <p><strong>The gate must pass.</strong> <code>python3 tools/check_site.py</code> is run by hand before every push, and runs automatically on GitHub after every push and once a week. It fails if:</p>
     <ul>
-    <li>a public file changed after its last recorded independent check;</li>
+    <li>a public file's content differs from the content last stamped as independently checked. Files checked before fingerprints were recorded (November 27 or earlier) count as &quot;legacy&quot; while unchanged; the weekly audit re-checks them, oldest first;</li>
     <li>an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;</li>
     <li>a page built by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_site.py"><code>tools/build_site.py</code></a> is out of date with its Markdown source, or the build fails. The gate re-runs the build, so it can rewrite pages under <code>docs/</code>;</li>
     <li>the predictions scorecard does not add up;</li>
@@ -82,7 +82,7 @@
     <li>
     <p><strong>Periodic audits.</strong></p>
     <ul>
-    <li><strong>Weekly:</strong> a scheduled frontier-AI review session runs on Mondays. It is set up in the owner's account, not in this repository. It reviews every public file the gate reports as due, plus five older claims chosen at random and checked from scratch. It saves its record on a separate branch and never edits public files.</li>
+    <li><strong>Weekly:</strong> a scheduled frontier-AI review session runs on Mondays. It is set up in the owner's account, not in this repository. It reviews every public file the gate reports as due, the three oldest &quot;legacy&quot; files, and five older claims chosen at random and checked from scratch. It saves its record on a separate branch and never edits public files.</li>
     <li><strong>Before every frozen release:</strong> a full independent audit of every public file, split among separate reviewers, with all findings fixed before the release is tagged.</li>
     </ul>
     </li>
@@ -110,14 +110,14 @@
     <ul>
     <li>Most pages under <code>docs/</code> are built from the Markdown files by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_site.py"><code>tools/build_site.py</code></a>.</li>
     <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/index.html"><code>docs/index.html</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/explorer.html"><code>docs/explorer.html</code></a> are maintained by hand.</li>
-    <li>The explorer's data, <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/data/explorer.json"><code>docs/data/explorer.json</code></a>, is built by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_explorer_data.py"><code>tools/build_explorer_data.py</code></a>. It was last built on November 22, 2026, and the page says so.</li>
+    <li>The explorer's data, <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/data/explorer.json"><code>docs/data/explorer.json</code></a>, is built by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_explorer_data.py"><code>tools/build_explorer_data.py</code></a>. It was built on November 22, 2026, with its survival field names corrected by hand on November 28; the page says it covers what the project had gathered by November 22.</li>
     </ul>
     <h2 id="running-the-gate">Running the Gate</h2>
     <pre><code class="language-bash">python3 tools/check_site.py
     </code></pre>
     <pre><code class="language-bash">python3 tools/check_site.py --list
     </code></pre>
-    <p>The first runs every check. The second lists each public file with when it last changed and when it was last independently checked.</p>
+    <p>The first runs every check. The second lists each public file as ok, legacy or due, with the date it was last independently checked.</p>
     <hr>
     <p class="srcnote">Source file: <a href="https://github.com/mgegen15-dev/For_John/blob/main/PROCESS.md">PROCESS.md</a>. Corrections welcome as a <a href="https://github.com/mgegen15-dev/For_John/issues">GitHub issue</a>. Not medical advice.</p>
   </main>

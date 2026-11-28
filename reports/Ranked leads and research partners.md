@@ -1,6 +1,6 @@
 # For John: the best leads, and who could test them
 
-*Last revised November 14, 2026, after an independent audit of its claims against primary sources; updated November 19, 2026 from the new-evidence scan (`reports/Whats new in osteosarcoma research.md`), and re-ranked November 20, 2026 after a repo-wide consistency check and an audit of the three newest reports (`research_notes/Audit/`; see the change log). This ranks the open leads from the project's reports and matches each to the institutions and programmes best placed to act on it. Partners come from public NIH grant records (`data/nih_osteosarcoma_projects.csv`, checked against NIH RePORTER), ClinicalTrials.gov sponsors and the published literature. No one at these institutions has been contacted, and none has endorsed anything in this document. Updated November 22 and 24, 2026 with the survival test, the literature knowledge graph and engine cycle 2, and on November 28, 2026 with later research-engine results after an independent check.*
+*Last revised November 14, 2026, after an independent audit of its claims against primary sources; updated November 19, 2026 from the new-evidence scan (`reports/Whats new in osteosarcoma research.md`), and re-ranked November 20, 2026 after a repo-wide consistency check and an audit of the three newest reports (`research_notes/Audit/`; see the change log). This ranks the open leads from the project's reports and matches each to the institutions and programmes best placed to act on it. Partners come from public NIH grant records (`data/nih_osteosarcoma_projects.csv`, checked against NIH RePORTER), ClinicalTrials.gov sponsors and the published literature. No one at these institutions has been contacted, and none has endorsed anything in this document. Updated November 22 and 24, 2026 with the survival test, the literature knowledge graph and engine cycle 2, and on November 28, 2026 with later research-engine and survival-test results after an independent check.*
 
 ## Summary
 
@@ -72,7 +72,7 @@ Leads with equal totals keep their previous order; new leads go below existing l
 - The NIH-funded metastatic-colonization programme at Nationwide Children's Hospital (R01 CA260178; registry).
 - The UC Davis veterinary and surgical oncology team that ran the canine inhaled IL-15 work.
 
-**Later results (no score changed):** in 59 pet dogs treated with amputation and chemotherapy, a tumour inflammation score (IL6, IL1B, CXCL8) leaned towards faster relapse but was inconclusive (`reports/Engine cycle 13 - in pet dogs does tumour inflammation go with faster relapse.md`). Tumour RNA does not measure inflammation after surgery, so this neither supports nor weakens the lead.
+**Later result (no score changed):** in 59 pet dogs treated with amputation and chemotherapy, a tumour inflammation score (IL6, IL1B, CXCL8) leaned towards faster relapse but was inconclusive (`reports/Engine cycle 13 - in pet dogs does tumour inflammation go with faster relapse.md`). Tumour RNA does not measure inflammation after surgery, so this neither supports nor weakens the lead.
 
 **Details:** `reports/Stopping lung metastasis in osteosarcoma.md`.
 
@@ -95,7 +95,7 @@ Leads with equal totals keep their previous order; new leads go below existing l
 - COG (ADVL1622).
 - MD Anderson Cancer Center's NIH-funded programme for genomically selected drug testing in osteosarcoma patient-derived models (U01 CA199221; registry).
 
-**Later result (no score changed):** in three small cohorts (109 patients), more tumour MYC RNA went with a poor response to chemotherapy before surgery, a modest result that needs replication with MYC copy number (`reports/Engine cycle 15 - do tumours with MYC gain respond worse to chemotherapy.md`).
+**Later result (no score changed):** in three small cohorts (109 patients), more tumour MYC RNA went with a poor response to chemotherapy before surgery, a modest result that would not pass a correction for the three tests run, and needs replication with MYC copy number (`reports/Engine cycle 15 - do tumours with MYC gain respond worse to chemotherapy.md`).
 
 **Details:** `reports/Why kinase-inhibitor pills work in osteosarcoma.md`.
 
@@ -134,7 +134,7 @@ Leads with equal totals keep their previous order; new leads go below existing l
 - Albert Einstein College of Medicine's DKK-1 metastasis programme (NIH R01 CA262802, funded through June 2026; registry).
 - The NCI Comparative Oncology Program.
 
-**Later result (no score changed):** in 59 pet dogs, tumour DKK1 RNA did not go with faster relapse (refuted as a marker) and FAK RNA was inconclusive (`reports/Engine cycle 13 - in pet dogs does tumour inflammation go with faster relapse.md`). This does not test whether blocking either works.
+**Later result (no score changed):** in 59 pet dogs, tumour DKK1 RNA did not go with faster relapse under standard treatment (refuted as a marker of relapse; the cohort's built-in check was weak) and FAK RNA was inconclusive (`reports/Engine cycle 13 - in pet dogs does tumour inflammation go with faster relapse.md`). This does not test whether blocking either works.
 
 **Details:** `briefs/Brief - pet dog trial of FAK or DKK1 blockade.md`.
 
@@ -208,7 +208,7 @@ Leads with equal totals keep their previous order; new leads go below existing l
 - An oral LPAR1 blocker, admilparant, is in phase 3 for lung fibrosis (registry; NCT06003426, NCT06025578).
 - Separately, a Massachusetts General Hospital trial is randomizing about 2,868 orthopaedic oncology patients, with a primary bone tumour stratum, to aspirin or enoxaparin to prevent blood clots (NCT03244020, enrolling by invitation, completion July 2028; registry). It enrols adults only, after pelvic or lower-limb surgery, so few osteosarcoma patients will be in it, which is why its impact score is 1. Recording metastasis-free survival in its bone-sarcoma patients would still cost little.
 
-**From the literature knowledge graph:** two platelet-axis drugs act on this step. Caplacizumab blocks von Willebrand factor, whose binding to platelets' GPIb drove osteosarcoma cell migration and invasion in cell experiments (PMID 33101888, abstract only); abciximab blocks integrin alpha-v/beta-3 and platelet GPIIb/IIIa. Neither has been tested in osteosarcoma (`reports/Contradictions and hidden links in the osteosarcoma literature.md`).
+**From the literature knowledge graph:** two drugs act on platelets' role in metastasis. Caplacizumab blocks the von Willebrand factor–GPIb step that drove osteosarcoma cell migration and invasion in cell experiments (PMID 33101888, abstract only); abciximab acts elsewhere on platelets (GPIIb/IIIa) and on integrin alpha-v/beta-3. Neither has been tested in osteosarcoma (`reports/Contradictions and hidden links in the osteosarcoma literature.md`).
 
 **Partners:** the NCT03244020 study team at Massachusetts General Hospital.
 
@@ -249,7 +249,7 @@ The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is 
 
 **Partners:** NCI's paediatric preclinical testing programme, which ran the original AKT xenograft panels; groups holding osteosarcoma patient-derived panels, such as the MD Anderson programme named under lead 2.
 
-**Later result (no score changed):** in TARGET-OS, more AKT2 RNA went with longer, not shorter, survival (`reports/Do the leads predict survival.md`: weakens slightly).
+**Later result (no score changed):** in TARGET-OS, more AKT2 RNA leaned towards longer, not shorter, survival, a lean that did not survive correction for multiple tests (q = 0.20) (`reports/Do the leads predict survival.md`: weakens slightly).
 
 **Details:** `reports/Approved drugs worth testing in osteosarcoma.md`.
 

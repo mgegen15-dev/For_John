@@ -3,9 +3,11 @@
 
   python3 tools/check_site.py            # all checks; exits 1 if any check fails
   python3 tools/check_site.py --list     # list public files and their review status
+  python3 tools/check_site.py --record "<check>" <audit record> <file>...   # stamp files as checked, after a passed review
 
 Checks (see PROCESS.md):
-  1. review   every public file has been independently checked since it last changed (data/review_log.csv)
+  1. review   every public file's current content is exactly what was last independently checked (content fingerprints in
+              data/review_log.csv; files checked before fingerprints were kept count as 'legacy' while unchanged)
   2. links    internal website links resolve to existing files, and links to repository files point to tracked files
               (external links, links inside Markdown files and links built by JavaScript are not checked)
   3. built    pages built by tools/build_site.py match their Markdown sources (re-runs it, so it can rewrite docs/)
@@ -43,39 +45,66 @@ def public_files():
     return out
 
 
-def last_changed(path):
-    """When the file last changed: its last commit time (UTC, ISO), or now if it has uncommitted changes."""
+def blob(path):
+    """Fingerprint of the file's current content (git blob hash of the working-tree file)."""
+    return git("hash-object", "--", path).strip()
+
+
+def last_changed_day(path):
+    """Day (UTC) the file last changed: its last commit, or today if it has uncommitted changes."""
     import datetime
     if git("status", "--porcelain", "--", path).strip():
-        return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M")
+        return datetime.datetime.now(datetime.timezone.utc).date().isoformat()
     iso = git("log", "-1", "--format=%cI", "--", path).strip()
-    if not iso:
-        return ""
-    t = datetime.datetime.fromisoformat(iso).astimezone(datetime.timezone.utc)
-    return t.strftime("%Y-%m-%dT%H:%M")
+    return datetime.datetime.fromisoformat(iso).astimezone(datetime.timezone.utc).date().isoformat() if iso else ""
 
 
-def reviewed_since(checked, changed):
-    """A check recorded with a time (YYYY-MM-DDTHH:MM, UTC) must be at or after the change; a check recorded
-    as a date only (older entries) covers changes made up to the end of that day."""
-    if not checked:
-        return False
-    if "T" in checked:
-        return checked >= changed
-    return checked >= changed[:10]
+def status(path, row):
+    """ok      : the reviewed content fingerprint equals the file's current content
+       legacy  : checked before fingerprints were recorded (date only) and unchanged since that day;
+                 such fixes were not separately verified, so the weekly audit re-checks legacy files over time
+       DUE     : anything else"""
+    if row and row.get("reviewed_blob"):
+        return "ok" if row["reviewed_blob"] == blob(path) else "DUE"
+    checked = (row or {}).get("last_checked", "")
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", checked or "") and checked >= last_changed_day(path):
+        return "legacy"
+    return "DUE"
+
+
+def read_log():
+    return {r["path"]: r for r in csv.DictReader(open(REVIEW_LOG))} if os.path.exists(REVIEW_LOG) else {}
 
 
 def check_review(fail, listing=False):
-    log = {r["path"]: r for r in csv.DictReader(open(REVIEW_LOG))} if os.path.exists(REVIEW_LOG) else {}
+    log = read_log()
     for p in public_files():
-        changed = last_changed(p)
-        r = log.get(p)
-        checked = r["last_checked"] if r else ""
-        ok = reviewed_since(checked, changed)
+        st = status(p, log.get(p))
         if listing:
-            print(f"{'ok ' if ok else 'DUE'}  changed {changed}  checked {checked or 'never':16s}  {p}")
-        elif not ok:
-            fail("review", f"{p}: changed {changed}, last independent check {checked or 'never'}")
+            r = log.get(p) or {}
+            print(f"{st:6s}  checked {r.get('last_checked') or 'never':10s}  {p}")
+        elif st == "DUE":
+            r = log.get(p) or {}
+            fail("review", f"{p}: content differs from what was last independently checked ({r.get('last_checked') or 'never'})")
+
+
+def record(paths, check, record_file):
+    """Stamp files as independently checked in their current form. Use only after a review has passed and its fixes are verified."""
+    import datetime
+    log = read_log()
+    today = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    for p in paths:
+        p = os.path.relpath(os.path.join(ROOT, p), ROOT)
+        if p not in public_files():
+            sys.exit(f"not a public file: {p}")
+        log[p] = {"path": p, "reviewed_blob": blob(p), "last_checked": today, "check": check, "record": record_file}
+    with open(REVIEW_LOG, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=["path", "reviewed_blob", "last_checked", "check", "record"])
+        w.writeheader()
+        for k in sorted(log):
+            r = log[k]
+            w.writerow({c: r.get(c, "") for c in w.fieldnames})
+    print(f"recorded {len(paths)} file(s)")
 
 
 def check_links(fail):
@@ -152,7 +181,7 @@ def check_commits(fail):
         body = open(f).read()
         hashes = set(re.findall(r"commit `([0-9a-f]{7,40})`", body)) | set(re.findall(r"`([0-9a-f]{7}|[0-9a-f]{40})`", body))
         for h in hashes:
-            if not re.search(r"[a-f]", h) or h.isdigit():
+            if not re.search(r"[0-9]", h):      # a word made only of the letters a-f is not a commit
                 continue
             if git("cat-file", "-t", h).strip() != "commit":
                 fail("commits", f"{os.path.relpath(f, ROOT)} cites commit {h}, which does not exist")
@@ -182,6 +211,11 @@ def check_wording(fail):
 def main():
     if "--list" in sys.argv:
         check_review(lambda *a: None, listing=True)
+        return
+    if "--record" in sys.argv:
+        # python3 tools/check_site.py --record "<check description>" <audit record path> <file> [<file> ...]
+        i = sys.argv.index("--record")
+        record(sys.argv[i + 3:], sys.argv[i + 1], sys.argv[i + 2])
         return
     problems = []
     fail = lambda kind, msg: problems.append((kind, msg))
