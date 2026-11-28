@@ -18,7 +18,7 @@
    - an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;
    - a page built by `tools/build_site.py` is out of date with its Markdown source, or the build fails. The gate re-runs the build, so it can rewrite pages under `docs/`;
    - the predictions scorecard does not add up;
-   - a commit cited in a report, pre-registration or public Markdown file (as "commit `abc1234`", or a backticked 7–40 character hash) does not exist;
+   - a commit cited in a report, pre-registration or public Markdown file (written as the word "commit" followed by a commit ID in code formatting, or as a 7–40 character commit ID in code formatting) does not exist;
    - an engine plan was committed after its analysis script. Data opened before the plan cannot be detected this way;
    - public text uses a banned term (the list is `BANNED` in `tools/check_site.py`; for example, naming the AI model or its maker).
 

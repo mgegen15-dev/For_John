@@ -70,7 +70,7 @@
     <li>an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;</li>
     <li>a page built by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_site.py"><code>tools/build_site.py</code></a> is out of date with its Markdown source, or the build fails. The gate re-runs the build, so it can rewrite pages under <code>docs/</code>;</li>
     <li>the predictions scorecard does not add up;</li>
-    <li>a commit cited in a report, pre-registration or public Markdown file (as &quot;commit <code>abc1234</code>&quot;, or a backticked 7–40 character hash) does not exist;</li>
+    <li>a commit cited in a report, pre-registration or public Markdown file (written as the word &quot;commit&quot; followed by a commit ID in code formatting, or as a 7–40 character commit ID in code formatting) does not exist;</li>
     <li>an engine plan was committed after its analysis script. Data opened before the plan cannot be detected this way;</li>
     <li>public text uses a banned term (the list is <code>BANNED</code> in <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/check_site.py"><code>tools/check_site.py</code></a>; for example, naming the AI model or its maker).</li>
     </ul>
