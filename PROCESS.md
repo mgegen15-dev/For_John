@@ -6,7 +6,7 @@
 
 ## The rules
 
-1. **Plan before data.** Every new test is written down, with the result that would count against it, and committed to git before its data are opened (`research_notes/Engine/cycle-NN-*/PREREGISTRATION.md`). Changes after that are listed under "Deviations".
+1. **Plan before data.** Every new test is written down, with the result that would count against it, and committed to git before its analysis is run (`research_notes/Engine/cycle-NN-*/PREREGISTRATION.md`). Any data downloaded or read before the plan is disclosed in the report. Changes after that are listed under "Deviations".
 2. **Independent check before publishing.** Every new or changed public file is checked by a separate frontier-AI review session that did not write it. The reviewer reads the file, its data and its sources fresh. It may read the project's working notes, but it does not share the author's session. It checks:
    - every number against the data;
    - every claim against its source;
@@ -18,7 +18,7 @@
    - an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;
    - a page built by `tools/build_site.py` is out of date with its Markdown source, or the build fails. The gate re-runs the build, so it can rewrite pages under `docs/`;
    - the predictions scorecard does not add up;
-   - a commit cited in a report, pre-registration or public Markdown file (written as the word "commit" followed by a commit ID in code formatting, or as a 7–40 character commit ID in code formatting) does not exist;
+   - a commit cited in a report, pre-registration or public Markdown file (written as the word "commit" followed by a commit ID in code formatting, or as a 7–40 character commit ID in code formatting containing at least one letter and one digit) does not exist;
    - an engine plan was committed after its analysis script. Data opened before the plan cannot be detected this way;
    - public text uses a banned term (the list is `BANNED` in `tools/check_site.py`; for example, naming the AI model or its maker).
 
@@ -40,6 +40,7 @@
 - every file under `reports/` and `briefs/`;
 - `FAMILIES.md`, `SUMMARY.md`, `REPORTS.md`, `README.md`, `HOW_THIS_WAS_MADE.md`, `AUDIT_GUIDE.md`, `PREDICTIONS.md`, `RESEARCH_QUEUE.md` and this file;
 - `docs/index.html` and `docs/explorer.html`.
+- The one-page PDF of the teen-access brief (`docs/briefs/For-John-brief-trial-access-for-teenagers.pdf`) is re-exported and compared with the brief's Markdown whenever the brief changes; the gate does not check it.
 
 **How the website is made from them:**
 - Most pages under `docs/` are built from the Markdown files by `tools/build_site.py`.

@@ -23,7 +23,7 @@ We pooled four cohorts with tumour RNA taken before treatment and a recorded res
 
 | Cohort | Patients (poor response) | Macrophage score | T-cell score |
 |---|---|---|---|
-| GSE289059 (ISG/OS2; new) | 62 (30) | 0.59 (0.28–1.28) | 0.86 (0.50–1.47) |
+| GSE289059 (ISG/OS2; new) | 62 (30) | 0.59 (0.27–1.28) | 0.85 (0.50–1.47) |
 | GSE21257 (Leiden) | 47 (29) | 0.44 (0.18–1.09) | 1.03 (0.55–1.91) |
 | GSE14827 | 27 (16) | 1.50 (0.61–3.66) | 0.65 (0.26–1.63) |
 | TARGET-OS | 35 (19) | 0.51 (0.19–1.36) | 0.41 (0.17–1.01) |
@@ -54,6 +54,7 @@ Single-gene results are in `data/engine/cycle20/results.csv`.
 
 ## Change log
 
+- 2026-11-28: GSE289059 values rounded from the output file (0.27, 0.85); the figure relabelled per unit of the score.
 - 2026-11-28: after an independent check, the per-standard-deviation results added and the scale difference declared as a deviation.
 - 2026-11-27: after an independent check, T-cell interval corrected (0.55, not 0.56), random effects, the CD68 flag and the figure added, the scale of the score stated, and which cohorts were read before made exact.
 - 2026-11-27: cycle run and reported. H1 and H2 inconclusive; P54 and P55 wrong.

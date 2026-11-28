@@ -45,14 +45,14 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#the-rules">The Rules</a></li><li class="l1"><a href="#what-a-public-file-is">What a Public File Is</a></li><li class="l1"><a href="#running-the-gate">Running the Gate</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Project document · Updated November 28, 2026 · 3 min read</p>
+    <p class="crumb">Project document · Updated November 28, 2026 · 4 min read</p>
     <h1>How Work Is Checked Before It Is Published</h1>
     <p><em>The rules every change to For John follows. Adopted November 28, 2026, after independent checks in one week each found errors in published work. The aim: nothing reaches a family, researcher or funder until a reviewer other than its author has checked it.</em></p>
     <p><strong>Who does the checking.</strong> The reviews described here are run by separate frontier-AI review sessions, not by people. No human expert has yet reviewed this work; clinician and researcher review is being sought.</p>
     <h2 id="the-rules">The Rules</h2>
     <ol>
     <li>
-    <p><strong>Plan before data.</strong> Every new test is written down, with the result that would count against it, and committed to git before its data are opened (<code>research_notes/Engine/cycle-NN-*/PREREGISTRATION.md</code>). Changes after that are listed under &quot;Deviations&quot;.</p>
+    <p><strong>Plan before data.</strong> Every new test is written down, with the result that would count against it, and committed to git before its analysis is run (<code>research_notes/Engine/cycle-NN-*/PREREGISTRATION.md</code>). Any data downloaded or read before the plan is disclosed in the report. Changes after that are listed under &quot;Deviations&quot;.</p>
     </li>
     <li>
     <p><strong>Independent check before publishing.</strong> Every new or changed public file is checked by a separate frontier-AI review session that did not write it. The reviewer reads the file, its data and its sources fresh. It may read the project's working notes, but it does not share the author's session. It checks:</p>
@@ -70,7 +70,7 @@
     <li>an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;</li>
     <li>a page built by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_site.py"><code>tools/build_site.py</code></a> is out of date with its Markdown source, or the build fails. The gate re-runs the build, so it can rewrite pages under <code>docs/</code>;</li>
     <li>the predictions scorecard does not add up;</li>
-    <li>a commit cited in a report, pre-registration or public Markdown file (written as the word &quot;commit&quot; followed by a commit ID in code formatting, or as a 7–40 character commit ID in code formatting) does not exist;</li>
+    <li>a commit cited in a report, pre-registration or public Markdown file (written as the word &quot;commit&quot; followed by a commit ID in code formatting, or as a 7–40 character commit ID in code formatting containing at least one letter and one digit) does not exist;</li>
     <li>an engine plan was committed after its analysis script. Data opened before the plan cannot be detected this way;</li>
     <li>public text uses a banned term (the list is <code>BANNED</code> in <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/check_site.py"><code>tools/check_site.py</code></a>; for example, naming the AI model or its maker).</li>
     </ul>
@@ -105,6 +105,7 @@
     <li>every file under <code>reports/</code> and <code>briefs/</code>;</li>
     <li><a href="families.html"><code>FAMILIES.md</code></a>, <a href="summary.html"><code>SUMMARY.md</code></a>, <a href="reports.html"><code>REPORTS.md</code></a>, <a href="https://github.com/mgegen15-dev/For_John/blob/main/README.md"><code>README.md</code></a>, <a href="how-this-was-made.html"><code>HOW_THIS_WAS_MADE.md</code></a>, <a href="audit-guide.html"><code>AUDIT_GUIDE.md</code></a>, <a href="predictions.html"><code>PREDICTIONS.md</code></a>, <a href="research-queue.html"><code>RESEARCH_QUEUE.md</code></a> and this file;</li>
     <li><a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/index.html"><code>docs/index.html</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/explorer.html"><code>docs/explorer.html</code></a>.</li>
+    <li>The one-page PDF of the teen-access brief (<a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/briefs/For-John-brief-trial-access-for-teenagers.pdf"><code>docs/briefs/For-John-brief-trial-access-for-teenagers.pdf</code></a>) is re-exported and compared with the brief's Markdown whenever the brief changes; the gate does not check it.</li>
     </ul>
     <p><strong>How the website is made from them:</strong></p>
     <ul>

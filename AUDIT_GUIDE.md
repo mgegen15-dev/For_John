@@ -1,6 +1,6 @@
 # Auditor's guide
 
-*For a third-party reviewer. Version 1.1, frozen on November 27, 2026 (git tag `v1.1`). Check against that tag, not the live `main` branch, so that your findings line up with what you are reading. Version 1.0 (tag `v1.0`, November 23, commit `aa55a1b`) is the original review without the research engine. A freeze prepared on November 25 was never tagged and is superseded.*
+*For a third-party reviewer. Version 1.1, frozen on November 27, 2026 (git tag `v1.1`). Check against that tag, not the live `main` branch, so that your findings line up with what you are reading. Corrections made after the freeze are listed in each file's change log and in `research_notes/Audit/` (audits G and H, November 28). Version 1.0 (tag `v1.0`, November 23, commit `aa55a1b`) is the original review without the research engine. A freeze prepared on November 25 was never tagged and is superseded.*
 
 This project makes many claims across 36 reports and 2 briefs. This page lists the 18 from the original review that matter most, then how to check the research engine added in version 1.1. The 18 are the ones the one-page summary, the website and the ranked leads depend on. For each one it gives where the claim is made, its primary source, and the fastest way to check it. If these hold, the project's main conclusions hold. If any fail, please tell us.
 
@@ -70,12 +70,12 @@ Claims labelled abstract-only, preprint or press-release-only are the weakest, a
 
 ## The research engine (added in version 1.1)
 
-Twenty cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a report in `reports/Engine cycle N - ....md`. The engine's central promise is that each plan was committed before its analysis was run. Where a data file was downloaded or reused before the plan, the report says so; git cannot show when data were first looked at. That is checkable:
+Twenty cycles, each in `research_notes/Engine/cycle-NN-*/PREREGISTRATION.md` with a report in `reports/Engine cycle N - ....md`. The engine's central promise is that each plan was committed before its analysis was run. Where a data file was downloaded or reused before the plan, the report says so; git cannot show when data were first looked at. The order of plan and analysis is checkable:
 
 - **Order of events.** For each cycle, compare the commit time of its `PREREGISTRATION.md` (`git log --format="%h %cI" -- research_notes/Engine/cycle-NN-*/PREREGISTRATION.md`) with the first commit of its data and script (`git log --diff-filter=A --format="%h %cI" -- tools/engine_cycleNN*`; cycle 6 shares cycle 5's script, `tools/engine_cycle05_06_depmap.py`). The plan should come first. Changes made after the plan are listed under "Deviations" in each file. Commit times are set by the committer's clock, so they show order within this repository, not proof against a determined forger.
 - **History rewrite on November 27, 2026.** Two early files with one row per patient (`data/engine/cycle03/patients.csv` and `data/engine/cycle07/patients.csv`, derived from public cBioPortal data and removed from the live files on November 25) were also removed from the git history, so that the engine's cycle 3 and 7 outputs publish only counts. Open-access TARGET-OS clinical files used by the survival analysis remain in `data/survival_raw/`, as in version 1.0. The rewrite started at the first commit that added one of them (November 24). Everything before it is unchanged, including the `v1.0` tag. Every later commit has a new ID, but its author, date, message and all other content are unchanged. The old and new ID of every rewritten commit are listed in `data/commit_id_map_2026-11-27.csv`, and the commit IDs cited in reports and pre-registrations have been updated to the new ones. The original commits were signed; the rewritten ones are not, because a signature cannot survive a rewrite. Commits made after the rewrite, from `07ef3ed` on, are signed again and are not in the map. Clones made before November 27 still hold the old commits; please re-clone.
 - **Re-running.** Each report's last section gives the commands. Most need the raw downloads listed in `DATA_MANIFEST.md`, which are not in git.
-- **Predictions.** P15 to P55 in `PREDICTIONS.md` were written before each cycle's data; outcomes are recorded there with the rule each was judged by.
+- **Predictions.** P15 to P55 in `PREDICTIONS.md` were written before each cycle's analysis was run; outcomes are recorded there with the rule each was judged by.
 
 | # | Claim | Where | How to check |
 |---|---|---|---|

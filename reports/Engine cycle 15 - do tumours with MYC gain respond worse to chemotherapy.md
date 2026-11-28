@@ -11,7 +11,7 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
   - All three cohorts pointed the same way (1.32, 1.87 and 1.86), with no sign of disagreement between them (I² = 0%).
   - This is the engine's first "Supported" verdict in fifteen cycles.
 - **CCNE1: refuted.** 0.88 (0.59–1.30); an odds ratio of 1.5 or more is ruled out.
-- **9p21 loss: inconclusive.** 1.32 (0.83–2.10).
+- **9p21 loss: inconclusive.** 1.32 per unit of the score (0.83–2.10); per standard deviation 1.29 (0.85–1.97).
 - **Predictions:** P43 (MYC supported, given 20%) was right. P44 (none supported) was wrong.
 
 **Why this needs replication before anyone relies on it.**
@@ -77,6 +77,10 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
 - No built-in check was possible, because no RNA marker of response is established well enough.
 - Response was recorded after different chemotherapy protocols.
 
+## Deviations
+
+- **Scale of the 9p21 score** (recorded November 28, 2026, after an independent check). The plan defined effects per standard deviation. MYC and CCNE1 are single genes, so their results are per SD. The 9p21 score is the average of two genes' z-scores and was not rescaled, so its result is per unit of the score. Per SD: 1.29 (0.85–1.97); random effects 1.32 (0.76–2.28). The verdict is unchanged (inconclusive).
+
 ## Files and reproduction
 
 - Run the downloads of engine cycle 1, including the GPL570 annotation now saved there, and the TARGET-OS stage of `tools/survival_analysis.py`.
@@ -89,5 +93,6 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
 
 ## Change log
 
+- 2026-11-28: the 9p21 score's scale declared as a deviation, with the per-SD result in the summary.
 - 2026-11-28: after an independent check, the 9p21 score's result noted per standard deviation (1.29, 0.85–1.97); it had been reported per unit of the averaged score. Verdict unchanged.
 - 2026-11-26: cycle run and reported. H1 supported, H2 refuted and H3 inconclusive under the pre-registered rules. P43 right, P44 wrong. No deviations.

@@ -134,14 +134,16 @@ def main():
     json.dump(S, open(os.path.join(OUT, "summary.json"), "w"), indent=1, default=float)
     with open(os.path.join(OUT, "results.csv"), "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["level", "cohort", "measure", "patients", "poor_response", "odds_ratio_per_sd", "lo", "hi", "p"])
+        w.writerow(["level", "cohort", "measure", "patients", "poor_response", "odds_ratio_per_unit_of_z_score", "lo", "hi", "p"])
         w.writerows(rows)
     fr = []
     for lab in ("macrophage score", "T-cell score"):
         for cname, r in S["per_cohort"][lab].items():
             fr.append((f"{lab.split()[0].capitalize()}: {cname}", r, "#6a7384"))
         fr.append((f"{lab.split()[0].capitalize()}: pooled", S["pooled"][lab], "#1c5cab"))
-    c15.forest(fr, os.path.join(FIG, "engine20_immune_response.svg"))
+    c15.forest(fr, os.path.join(FIG, "engine20_immune_response.svg"),
+               title="Poor response to chemotherapy before surgery: odds ratio per unit of the score (average of the genes' z-scores)",
+               subtitle="Each cohort and pooled across four cohorts, 95% CI, log scale. Right of 1: poorer response.")
     for r in rows:
         print(r)
     print(json.dumps({k: S[k] for k in ("cohorts", "isg_log2_applied", "verdict_H1", "verdict_H2", "isg_adjusted_for_pgp", "P54", "P55")}, indent=1, default=float))

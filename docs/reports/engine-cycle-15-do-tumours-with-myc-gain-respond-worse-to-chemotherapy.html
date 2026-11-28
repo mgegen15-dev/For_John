@@ -43,7 +43,7 @@
 </header>
 
 <div class="doclayout">
-  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
+  <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#deviations">Deviations</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
     <p class="crumb">Report · Updated November 28, 2026 · 4 min read</p>
     <h1>Engine Cycle 15: Do Tumours with MYC Gain, CCNE1 Gain or 9p21 Loss Respond Worse to Chemotherapy Before Surgery?</h1>
@@ -59,7 +59,7 @@
     </ul>
     </li>
     <li><strong>CCNE1: refuted.</strong> 0.88 (0.59–1.30); an odds ratio of 1.5 or more is ruled out.</li>
-    <li><strong>9p21 loss: inconclusive.</strong> 1.32 (0.83–2.10).</li>
+    <li><strong>9p21 loss: inconclusive.</strong> 1.32 per unit of the score (0.83–2.10); per standard deviation 1.29 (0.85–1.97).</li>
     <li><strong>Predictions:</strong> P43 (MYC supported, given 20%) was right. P44 (none supported) was wrong.</li>
     </ul>
     <p><strong>Why this needs replication before anyone relies on it.</strong></p>
@@ -174,6 +174,10 @@
     <li>No built-in check was possible, because no RNA marker of response is established well enough.</li>
     <li>Response was recorded after different chemotherapy protocols.</li>
     </ul>
+    <h2 id="deviations">Deviations</h2>
+    <ul>
+    <li><strong>Scale of the 9p21 score</strong> (recorded November 28, 2026, after an independent check). The plan defined effects per standard deviation. MYC and CCNE1 are single genes, so their results are per SD. The 9p21 score is the average of two genes' z-scores and was not rescaled, so its result is per unit of the score. Per SD: 1.29 (0.85–1.97); random effects 1.32 (0.76–2.28). The verdict is unchanged (inconclusive).</li>
+    </ul>
     <h2 id="files-and-reproduction">Files and Reproduction</h2>
     <ul>
     <li>Run the downloads of engine cycle 1, including the GPL570 annotation now saved there, and the TARGET-OS stage of <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/survival_analysis.py"><code>tools/survival_analysis.py</code></a>.</li>
@@ -187,6 +191,7 @@
     </ul>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-28: the 9p21 score's scale declared as a deviation, with the per-SD result in the summary.</li>
     <li>2026-11-28: after an independent check, the 9p21 score's result noted per standard deviation (1.29, 0.85–1.97); it had been reported per unit of the averaged score. Verdict unchanged.</li>
     <li>2026-11-26: cycle run and reported. H1 supported, H2 refuted and H3 inconclusive under the pre-registered rules. P43 right, P44 wrong. No deviations.</li>
     </ul>

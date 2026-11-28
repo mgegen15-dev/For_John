@@ -62,4 +62,6 @@ In `PREDICTIONS.md`:
 
 ## Deviations
 
-*None yet.*
+Recorded November 28, 2026, after an independent check.
+
+1. **Scale of the 9p21 score.** The script averaged the two genes' z-scores without rescaling, so the 9p21 result is per unit of the score, not per standard deviation. Per SD: 1.29 (0.85–1.97); verdict unchanged.

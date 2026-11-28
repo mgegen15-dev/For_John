@@ -1,4 +1,4 @@
-level,cohort,measure,patients,poor_response,odds_ratio_per_sd,lo,hi,p
+level,cohort,measure,patients,poor_response,odds_ratio_per_unit_of_z_score,lo,hi,p
 cohort,GSE289059,macrophage score,62,30,0.594,0.275,1.283,0.1849
 cohort,GSE21257,macrophage score,47,29,0.443,0.179,1.093,0.0772
 cohort,GSE14827,macrophage score,27,16,1.499,0.614,3.657,0.3738

@@ -45,14 +45,14 @@ def main():
         per_trial[n] = sorted(sts)
     covered = [st for st in STATES if per_state[st]]
     S = {"preregistration_commit": "1b53b9a", "trials": len(chosen), "trials_with_open_us_site": sum(1 for v in per_trial.values() if v),
-         "states_with_site": len(covered), "of": len(STATES), "cities": len(cities), "us_sites_without_recognised_state": unknown_state,
+         "states_and_dc_with_site": len(covered), "of": len(STATES), "cities": len(cities), "us_sites_without_recognised_state": unknown_state,
          "states_without_site": [st for st in STATES if not per_state[st]],
          "trials_5_plus_states": sum(1 for v in per_trial.values() if len(v) >= 5),
          "trials_1_or_2_states": sum(1 for v in per_trial.values() if 1 <= len(v) <= 2),
-         "max_states_one_trial": max((len(v) for v in per_trial.values()), default=0),
-         "trials_20_plus_states": sum(1 for v in per_trial.values() if len(v) >= 20)}
-    S["P52"] = "right" if S["states_with_site"] <= 25 else "wrong"
-    S["P53"] = "right" if S["trials_20_plus_states"] >= 1 else "wrong"
+         "max_states_and_dc_one_trial": max((len(v) for v in per_trial.values()), default=0),
+         "trials_20_plus_states_and_dc": sum(1 for v in per_trial.values() if len(v) >= 20)}
+    S["P52"] = "right" if S["states_and_dc_with_site"] <= 25 else "wrong"
+    S["P53"] = "right" if S["trials_20_plus_states_and_dc"] >= 1 else "wrong"
     json.dump(S, open(os.path.join(OUT, "results.json"), "w"), indent=1)
     with open(os.path.join(OUT, "states.csv"), "w", newline="") as f:
         w = csv.writer(f)
@@ -61,7 +61,7 @@ def main():
             w.writerow([st, len(per_state[st])])
     with open(os.path.join(OUT, "trials.csv"), "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["nct", "title", "sponsor_class", "states_with_site", "states"])
+        w.writerow(["nct", "title", "sponsor_class", "states_and_dc_with_site", "states"])
         for n in sorted(chosen, key=lambda n: -len(per_trial[n])):
             w.writerow([n, a[n]["title"], a[n]["sponsor_class"], len(per_trial[n]), "; ".join(per_trial[n])])
     print(json.dumps(S, indent=1))

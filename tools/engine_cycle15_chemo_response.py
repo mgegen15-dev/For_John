@@ -141,15 +141,15 @@ def verdict(m):
     return "Inconclusive"
 
 
-def forest(rows, path):
+def forest(rows, path, title="Poor response to chemotherapy before surgery: odds ratio per standard deviation of each gene's RNA (9p21 score: per unit of the averaged z-score)", subtitle="Pooled across three cohorts, 95% CI, log scale. Right of 1: poorer response."):
     W, top, rh, left = 860, 64, 30, 330
     H = top + rh * len(rows) + 56
     lo_ax, hi_ax = 0.25, 4.0
     X = lambda v: left + (np.log(min(max(v, lo_ax), hi_ax)) - np.log(lo_ax)) / (np.log(hi_ax) - np.log(lo_ax)) * (W - left - 170)
     s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" font-family="system-ui, sans-serif" font-size="13" role="img" '
          f'aria-label="Odds of a poor response to chemotherapy before surgery, per standard deviation">', f'<rect width="{W}" height="{H}" fill="#ffffff"/>',
-         '<text x="16" y="26" font-weight="600" fill="#1d2430">Poor response to chemotherapy before surgery: odds ratio per standard deviation</text>',
-         '<text x="16" y="44" fill="#525b6b" font-size="12">Pooled across three cohorts, 95% CI, log scale. Right of 1: poorer response.</text>']
+         f'<text x="16" y="26" font-weight="600" fill="#1d2430" font-size="12">{title}</text>',
+         f'<text x="16" y="44" fill="#525b6b" font-size="12">{subtitle}</text>']
     for v in (0.25, 0.5, 1, 2, 4):
         s.append(f'<line x1="{X(v):.1f}" y1="{top - 6}" x2="{X(v):.1f}" y2="{H - 46}" stroke="{"#525b6b" if v == 1 else "#e2e5ea"}"/>')
         s.append(f'<text x="{X(v):.1f}" y="{H - 30}" text-anchor="middle" fill="#525b6b" font-size="12">{v:g}</text>')
@@ -203,7 +203,7 @@ def main():
     json.dump(S, open(os.path.join(OUT, "summary.json"), "w"), indent=1, default=float)
     with open(os.path.join(OUT, "results.csv"), "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["level", "cohort", "measure", "patients", "poor_response", "odds_ratio_per_sd", "lo", "hi", "p"])
+        w.writerow(["level", "cohort", "measure", "patients", "poor_response", "odds_ratio_per_unit_of_z_score", "lo", "hi", "p"])
         w.writerows(out)
     forest([(f"{h}: {lab}", S["pooled"][lab], "#1c5cab") for h, lab in TESTS.items()]
            + [(f"   {g} alone", S["pooled"][f"{g} alone"], "#9aa3b2") for g in GENES], os.path.join(FIG, "engine15_response.svg"))

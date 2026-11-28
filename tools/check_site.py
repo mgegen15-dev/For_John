@@ -7,7 +7,7 @@
 
 Checks (see PROCESS.md):
   1. review   every public file's current content is exactly what was last independently checked (content fingerprints in
-              data/review_log.csv; files checked before fingerprints were kept count as 'legacy' while unchanged)
+              data/review_log.csv; files with a date-only check dated before LEGACY_BEFORE count as 'legacy' while not committed after that day)
   2. links    internal website links resolve to existing files, and links to repository files point to tracked files
               (external links, links inside Markdown files and links built by JavaScript are not checked)
   3. built    pages built by tools/build_site.py match their Markdown sources (re-runs it, so it can rewrite docs/)
@@ -62,7 +62,7 @@ def last_changed_day(path):
 
 def status(path, row):
     """ok      : the reviewed content fingerprint equals the file's current content
-       legacy  : checked before fingerprints were recorded (date only) and unchanged since that day;
+       legacy  : a date-only check dated before LEGACY_BEFORE, and no commit to the file after that day;
                  such fixes were not separately verified, so the weekly audit re-checks legacy files over time
        DUE     : anything else"""
     if row and row.get("reviewed_blob"):
@@ -94,8 +94,8 @@ def record(paths, check, record_file):
     import datetime
     if not paths:
         sys.exit("usage: check_site.py --record \"<check>\" <audit record> <file> [<file> ...]")
-    if not os.path.isfile(os.path.join(ROOT, record_file)):
-        sys.exit(f"audit record not found: {record_file} (save the review before stamping files)")
+    if not record_file.startswith("research_notes/Audit/") or not os.path.isfile(os.path.join(ROOT, record_file)):
+        sys.exit(f"audit record must be a saved review under research_notes/Audit/: {record_file}")
     log = read_log()
     today = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
     for p in paths:

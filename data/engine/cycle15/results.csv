@@ -1,4 +1,4 @@
-level,cohort,measure,patients,poor_response,odds_ratio_per_sd,lo,hi,p
+level,cohort,measure,patients,poor_response,odds_ratio_per_unit_of_z_score,lo,hi,p
 cohort,GSE21257,MYC RNA,47,29,1.319,0.720,2.418,0.3698
 cohort,GSE21257,CCNE1 RNA,47,29,1.026,0.564,1.868,0.9325
 cohort,GSE21257,"9p21 loss score (CDKN2A, MTAP)",47,29,1.738,0.839,3.599,0.1370
