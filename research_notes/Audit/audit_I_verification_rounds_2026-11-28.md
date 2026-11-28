@@ -1,6 +1,6 @@
 # Audit I: verification of the audit H fixes, and of those fixes
 
-*Two independent frontier-AI review passes, November 28, 2026, on branch `process-gate`. Both were read-only and recomputed numbers from the data, re-running the analysis functions in a scratch clone.*
+*Three independent frontier-AI review passes, November 28, 2026, on branch `process-gate`. Both were read-only and recomputed numbers from the data, re-running the analysis functions in a scratch clone.*
 
 ## Pass I1: verification of the audit H fixes (`e6d1274..ae560d5`)
 
@@ -58,3 +58,23 @@
 5. `--record`: the path is normalised before the folder check.
 
 **Rule followed:** the fixes for findings 1, 2 and 4 change wording or a number, so they were checked again before stamping (pass I3, below).
+
+## Pass I3: verification of the I2 fixes (`b1443f8..c3a73fd`)
+
+**Confirmed:**
+- cycle 20's lower limit 0.27 (0.2749 in the output) and the P-glycoprotein-adjusted 0.54;
+- cycle 12's 78 of 1,434 (5.4%) and the summary's other figures;
+- cycle 15's alt text, Measures line and Deviations section;
+- both figures' screen-reader labels match their captions;
+- the AUDIT_GUIDE header (audit records G, H and I exist; every report has a change log);
+- the gate code parses and runs.
+
+**Files found clean:** engine cycles 12 and 20, and AUDIT_GUIDE.md (its header, the only part changed).
+
+**4 findings, all in the audit trail:**
+1. This record cited pass I3 before it was written. This section added.
+2. Cycle 15's change log lacked an entry for the alt text and Measures line. Added.
+3. Cycle 20's change log said 0.85 was in the summary; it is only in the table. Reworded.
+4. The review log labelled cycles 4, 6, 7, 14 and 19 as found clean in passes I1 and I2; it was I1. Relabelled.
+
+The fixes for findings 2 and 3 touch only change-log lines, not results, so they were checked against this list and the diff, not by another pass.

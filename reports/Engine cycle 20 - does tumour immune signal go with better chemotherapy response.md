@@ -54,7 +54,7 @@ Single-gene results are in `data/engine/cycle20/results.csv`.
 
 ## Change log
 
-- 2026-11-28: GSE289059 values rounded from the output file (0.27, 0.85), in the table and the summary; the figure relabelled per unit of the score.
+- 2026-11-28: GSE289059 values rounded from the output file (0.27 in the table and the summary; 0.85 in the table); the figure relabelled per unit of the score.
 - 2026-11-28: after an independent check, the per-standard-deviation results added and the scale difference declared as a deviation.
 - 2026-11-27: after an independent check, T-cell interval corrected (0.55, not 0.56), random effects, the CD68 flag and the figure added, the scale of the score stated, and which cohorts were read before made exact.
 - 2026-11-27: cycle run and reported. H1 and H2 inconclusive; P54 and P55 wrong.

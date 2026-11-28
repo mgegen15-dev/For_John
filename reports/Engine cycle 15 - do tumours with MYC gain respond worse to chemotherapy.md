@@ -93,6 +93,7 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
 
 ## Change log
 
+- 2026-11-28: the figure's alt text and the Measures line state the 9p21 score's scale.
 - 2026-11-28: the 9p21 score's scale declared as a deviation, with the per-SD result in the summary.
 - 2026-11-28: after an independent check, the 9p21 score's result noted per standard deviation (1.29, 0.85–1.97); it had been reported per unit of the averaged score. Verdict unchanged.
 - 2026-11-26: cycle run and reported. H1 supported, H2 refuted and H3 inconclusive under the pre-registered rules. P43 right, P44 wrong. No deviations.
