@@ -5,13 +5,14 @@
   python3 tools/check_site.py --list     # list public files and their review status
 
 Checks (see PROCESS.md):
-  1. review   every public file has been independently checked on or after the day it last changed (data/review_log.csv)
-  2. links    every link in the website resolves: relative links to existing files, GitHub links to tracked files
-  3. built    the website pages match their Markdown sources (re-runs tools/build_site.py, then looks for changes)
+  1. review   every public file has been independently checked since it last changed (data/review_log.csv)
+  2. links    internal website links resolve to existing files, and links to repository files point to tracked files
+              (external links, links inside Markdown files and links built by JavaScript are not checked)
+  3. built    pages built by tools/build_site.py match their Markdown sources (re-runs it, so it can rewrite docs/)
   4. score    the predictions scorecard adds up and matches the statuses in the table
-  5. commits  every commit cited as `abc1234` in reports and pre-registrations exists
-  6. order    every engine pre-registration was committed before its cycle's script
-  7. wording  public files follow the owner's wording rules
+  5. commits  every commit cited in reports, pre-registrations and public Markdown files exists
+  6. order    every engine pre-registration was committed before its cycle's analysis script (data opened earlier cannot be detected)
+  7. wording  public files use none of the banned terms listed in BANNED
 """
 import csv
 import glob
@@ -43,11 +44,25 @@ def public_files():
 
 
 def last_changed(path):
-    """Day the file's content last changed in a commit, or today if it has uncommitted changes."""
+    """When the file last changed: its last commit time (UTC, ISO), or now if it has uncommitted changes."""
+    import datetime
     if git("status", "--porcelain", "--", path).strip():
-        import datetime
-        return datetime.date.today().isoformat()
-    return git("log", "-1", "--format=%cs", "--", path).strip()
+        return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M")
+    iso = git("log", "-1", "--format=%cI", "--", path).strip()
+    if not iso:
+        return ""
+    t = datetime.datetime.fromisoformat(iso).astimezone(datetime.timezone.utc)
+    return t.strftime("%Y-%m-%dT%H:%M")
+
+
+def reviewed_since(checked, changed):
+    """A check recorded with a time (YYYY-MM-DDTHH:MM, UTC) must be at or after the change; a check recorded
+    as a date only (older entries) covers changes made up to the end of that day."""
+    if not checked:
+        return False
+    if "T" in checked:
+        return checked >= changed
+    return checked >= changed[:10]
 
 
 def check_review(fail, listing=False):
@@ -56,9 +71,9 @@ def check_review(fail, listing=False):
         changed = last_changed(p)
         r = log.get(p)
         checked = r["last_checked"] if r else ""
-        ok = bool(checked) and checked >= changed
+        ok = reviewed_since(checked, changed)
         if listing:
-            print(f"{'ok ' if ok else 'DUE'}  changed {changed}  checked {checked or 'never':10s}  {p}")
+            print(f"{'ok ' if ok else 'DUE'}  changed {changed}  checked {checked or 'never':16s}  {p}")
         elif not ok:
             fail("review", f"{p}: changed {changed}, last independent check {checked or 'never'}")
 
@@ -90,12 +105,27 @@ def check_links(fail):
                     fail("links", f"{os.path.relpath(page, ROOT)} -> missing {h}")
 
 
+def _docs_hashes():
+    import hashlib
+    out = {}
+    for root, _, files in os.walk(os.path.join(ROOT, "docs")):
+        for f in files:
+            p = os.path.join(root, f)
+            out[p] = hashlib.sha256(open(p, "rb").read()).hexdigest()
+    return out
+
+
 def check_built(fail):
-    before = git("status", "--porcelain", "--", "docs")
-    subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build_site.py")], cwd=ROOT, capture_output=True)
-    after = git("status", "--porcelain", "--", "docs")
-    if after != before:
-        changed = sorted(set(after.splitlines()) - set(before.splitlines()))
+    """Re-runs tools/build_site.py (so it can rewrite pages under docs/) and fails if any page changed or the build failed.
+    docs/index.html, docs/explorer.html and docs/data/explorer.json are maintained separately and are not rebuilt here."""
+    before = _docs_hashes()
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "build_site.py")], cwd=ROOT, capture_output=True, text=True)
+    if r.returncode != 0:
+        fail("built", f"tools/build_site.py failed: {r.stderr.strip()[-300:]}")
+        return
+    after = _docs_hashes()
+    changed = sorted(os.path.relpath(p, ROOT) for p in set(before) | set(after) if before.get(p) != after.get(p))
+    if changed:
         fail("built", f"website pages were out of date with their Markdown sources; rebuilt now, commit them: {changed[:5]}")
 
 
@@ -117,8 +147,13 @@ def check_score(fail):
 
 def check_commits(fail):
     files = glob.glob(os.path.join(ROOT, "reports", "*.md")) + glob.glob(os.path.join(ROOT, "research_notes", "Engine", "*", "PREREGISTRATION.md"))
-    for f in files:
-        for h in set(re.findall(r"commit `([0-9a-f]{7,40})`", open(f).read())):
+    files += [os.path.join(ROOT, p) for p in public_files() if p.endswith(".md")]
+    for f in sorted(set(files)):
+        body = open(f).read()
+        hashes = set(re.findall(r"commit `([0-9a-f]{7,40})`", body)) | set(re.findall(r"`([0-9a-f]{7}|[0-9a-f]{40})`", body))
+        for h in hashes:
+            if not re.search(r"[a-f]", h) or h.isdigit():
+                continue
             if git("cat-file", "-t", h).strip() != "commit":
                 fail("commits", f"{os.path.relpath(f, ROOT)} cites commit {h}, which does not exist")
 
@@ -139,7 +174,7 @@ def check_wording(fail):
     for p in public_files():
         body = open(os.path.join(ROOT, p), errors="replace").read()
         for pat, why in BANNED:
-            for m in re.finditer(pat, body):
+            for m in re.finditer(pat, body, re.I if pat == "not a scientist" else 0):
                 line = body.count("\n", 0, m.start()) + 1
                 fail("wording", f"{p}:{line}: '{m.group(0)}' ({why})")
 

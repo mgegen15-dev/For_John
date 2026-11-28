@@ -20,8 +20,8 @@ Survival for osteosarcoma that has spread or come back has barely changed since 
    - [Trials report](reports/Osteosarcoma%20clinical%20trials%20landscape.md)
 2. **Kinase-inhibitor pills: active, but briefly.** *Confirmed; who benefits is a Lead.*
    - In relapsed disease, VEGFR2-blocking pills keep roughly 40–50% of patients free of progression at four months, against about 14% for other single drugs, but the effect fades within months. Standard relapse chemotherapy also reaches 42–66%.
-   - In open data from 81 tumours at diagnosis, about a quarter carry extra copies of the pills' target genes by a strict definition and nearly half by a looser one (published cohorts report about 40%). No study has checked whether those patients are the ones who benefit.
-   - Past trials treated about 309 patients with these pills, enough to test it with stored samples.
+   - In open data from 81 tumours at diagnosis, about a quarter carry extra copies of the pills' target genes by a strict definition and nearly half by a looser one (one US cancer-centre cohort reports at least 40%). No study has checked whether those patients are the ones who benefit.
+   - Past trials treated about 309 patients with these pills, enough to test whether amplified tumours stay controlled longer on the pill; proving the pill is what helps would need more randomized patients than exist.
    - [Kinase-inhibitor report](reports/Why%20kinase-inhibitor%20pills%20work%20in%20osteosarcoma.md) · [Copy-number report](reports/Copy-number%20changes%20and%20the%20kinase-pill%20biomarker.md)
 3. **The weeks after surgery may be the moment to block inflammation, not boost immunity.** *Hypothesis.*
    - In mice, lung tissue triggers IL-1, IL-6 and IL-8 signals that help osteosarcoma colonize the lung, and blocking them reduced metastasis.
@@ -31,11 +31,11 @@ Survival for osteosarcoma that has spread or come back has barely changed since 
 4. **FAK and DKK1 are the best-supported untested drug targets.** *Lead.*
    - Blocking either reduced lung metastasis in small mouse studies.
    - Dog programmes for both are listed or planned; their results are not yet public.
-   - A screen of 2,400 approved drugs adds two weaker ideas, AKT and CXCR4 blockers, both with consistent mouse data and real contradictions.
+   - A screen of 2,400 approved and late-stage drugs adds two weaker ideas, AKT and CXCR4 blockers, both with consistent mouse data and real contradictions.
    - [Brief](briefs/Brief%20-%20pet%20dog%20trial%20of%20FAK%20or%20DKK1%20blockade.md) · [Approved drugs](reports/Approved%20drugs%20worth%20testing%20in%20osteosarcoma.md)
-5. **Antibody-drug conjugates are working, and LRRC15 is now confirmed as protein.** *Lead.*
-   - A B7-H3 conjugate beat chemotherapy in a randomized phase 3 in relapse (5.5 against 1.4 months without progression), with heavier side effects.
-   - Our screen of 88 tumours against 54 normal tissues ranked LRRC15 top; three studies have stained it as protein in patient tumours, and four registered trials target it, one in relapsed osteosarcoma.
+5. **One antibody-drug conjugate slowed relapsed osteosarcoma in a randomized trial, and LRRC15 is now confirmed as protein.** *Lead.*
+   - A B7-H3 conjugate beat chemotherapy in a randomized phase 3 in relapse (5.5 against 1.4 months without progression), with heavier side effects. It was one open-label trial in China; whether it helps people live longer is not yet known.
+   - Our screen of 88 tumours against 54 normal tissues ranked LRRC15 top; three studies have stained it as protein in patient tumours, and three registered treatment trials target it (one only for relapsed osteosarcoma), plus an imaging study.
    - PTK7 ranked high too, but no series of patient tumours has been stained for it.
    - [Surface targets](reports/New%20surface%20targets%20for%20osteosarcoma.md) · [What's new](reports/Whats%20new%20in%20osteosarcoma%20research.md)
 6. **Part of the literature is unreliable.** *Confirmed.*
@@ -46,6 +46,11 @@ Survival for osteosarcoma that has spread or come back has barely changed since 
    - NIH spent about $18 million on osteosarcoma-focused grants in 2025. Over 2015–2025 it spent about half as much on osteosarcoma ($108 million) as on neuroblastoma ($212–227 million).
    - The areas flagged above as gaps get the least.
    - [Funding report](reports/NIH%20funding%20for%20osteosarcoma.md)
+8. **Testing ideas against data.** *Results.*
+   - Since November 24 the project has run 20 tests, each written down before its data were opened. Most ideas did not hold up in new patients.
+   - Early trials of new cancer drugs rarely take teenagers: 78 of 1,434 recruiting early-phase solid-tumour trials accept 12- to 17-year-olds, and trials started in 2020–2024 did so half as often as those started in 2014–2018.
+   - None of the markers behind the leads was convincingly linked to survival in 89 young patients.
+   - [Research Queue](RESEARCH_QUEUE.md) · [Survival test](reports/Do%20the%20leads%20predict%20survival.md)
 
 ## What we're asking for
 

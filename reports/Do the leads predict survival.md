@@ -32,7 +32,7 @@ We asked whether the tumour features behind this project's leads (gene amplifica
 - **Genome damage:** fraction of the genome with changed copy number, and fraction with loss of heterozygosity (LOH, one parental copy lost), the measure a 2025 *Cell* paper found prognostic (paper, abstract only; PMID 39814020). Ours comes from SNP arrays, not whole genomes.
 - **RNA:** PTK2, DKK1, LRRC15, PTK7, IL6, IL1A, IL1B, CXCL8, IL6R, CXCR4, AKT1, AKT2 and AKT3.
 
-For each marker: (A, the main test) a Cox model of OS with the marker as a continuous value, adjusted for metastasis at diagnosis; (B) Kaplan–Meier curves and a log-rank test for OS, splitting at amplified/not or at the median RNA level; (C, D) the same for EFS; (E) whether the marker differs between patients with and without metastasis at diagnosis. Each group of 20 tests was corrected separately; we also corrected across all 100. Sensitivity checks: adding age, using the alternative follow-up times, and a check that the HR is stable over time. The statistics were coded with numpy and scipy and agree with the standard `lifelines` package to four decimal places (our calculation).
+For each marker: (A, the main test) a Cox model of OS with the marker as a continuous value, adjusted for metastasis at diagnosis; (B) Kaplan–Meier curves and a log-rank test for OS, splitting at amplified/not or at the median RNA level; (C, D) the same for EFS; (E) whether the marker differs between patients with and without metastasis at diagnosis. Each group of 20 tests was corrected separately; we also corrected across all 100. Sensitivity checks: adding age, using the alternative follow-up times, and a check that the HR is stable over time. The statistics were coded with numpy and scipy; for the six markers and the controls we cross-checked, they agree with the standard `lifelines` package to four decimal places (our calculation).
 
 ## First check: does the method find what it should?
 
@@ -107,7 +107,7 @@ Lead numbers follow `reports/Ranked leads and research partners.md`. **Strengthe
 | 6. PTK7 surface target | PTK7 RNA | No link (HR 0.87, 0.64–1.18). | **No information**, for the same reason. |
 | 12. Dog genome re-analysis (genome-wide LOH predicts outcome in people) | LOH fraction; fraction of genome altered | No link with survival. If anything, more LOH leaned towards *fewer* relapses (HR 0.55, 0.28–1.05, p = 0.06). Metastatic tumours had less of the genome altered (p = 0.008, q = 0.16). | **Weakens slightly.** The *Cell* 2025 finding did not replicate with our array-based measure, which is cruder than whole-genome LOH. |
 | 13. AKT blockers | AKT1, AKT2, AKT3 RNA | AKT1 and AKT3: nothing. AKT2: more RNA went with *longer* survival (HR 0.42 per doubling, 0.21–0.81, p = 0.010, q = 0.20), the opposite of the lead's logic. | **Weakens slightly.** Not convincing after correction, and RNA is not the same as AKT activity, but it gives no support. |
-| 14. CXCR4 blockers | CXCR4 RNA | Leaned towards worse survival (HR 1.21, 0.79–1.87; split HR 1.48, 0.70–3.14), not convincing. A 2005 study of 47 tumours reported CXCR4 RNA with shorter survival (paper, abstract only; PMID 15814634). | **No information**: same direction, not replicated. |
+| 14. CXCR4 blockers | CXCR4 RNA | Leaned towards worse survival (HR 1.21, 0.79–1.87; split HR 1.48, 0.70–3.14), not convincing. A 2005 study of 47 tumours reported CXCR4 RNA with shorter survival (paper, abstract only; PMID 15814634), but a study of 223 tumours found strong CXCR4 and CXCL12 staining went with a better outcome (paper, abstract only; PMID 22173290). | **No information**: same direction, not replicated. |
 | Dropped: cyclin E1 (CDK2) | CCNE1 amplification | No link (HR 0.65, 0.22–1.86). | No change. |
 | Not a lead: CDKN2A | Deep deletion | No link (HR 1.02, 0.35–2.96). | No information. |
 
@@ -142,4 +142,5 @@ IFITM5, the surface screen's second-ranked gene, came next (HR 1.23, 1.04–1.47
 
 ## Change log
 
+- 2026-11-28: after its first independent check, the scope of the lifelines cross-check stated exactly, and the 223-tumour CXCR4 study added beside the 47-tumour one.
 - **November 22, 2026.** First version. Pre-specified test of 20 lead-related markers against overall survival, event-free survival and metastasis at diagnosis in open TARGET-OS data (89 patients, 30 deaths). The positive control passed (metastasis HR 4.83). No pre-specified marker passed multiple-testing correction. Post hoc MYC check at 8 or more copies added. Exploratory screen of 40 surface and repurposing genes: SOST and ROBO1 flagged for checking elsewhere.

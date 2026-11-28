@@ -275,7 +275,8 @@ def main():
                     if sym in known:
                         out_rs.append({"gene": sym, "test": "%s; %s" % (r.get("marker_label", ""), r.get("method", "")),
                                        "outcome": r.get("outcome", ""), "result": res,
-                                       "corrected_q": r.get("q_all_prespecified") or r.get("q_family", ""),
+                                       "q_as_in_the_report": r.get("q_family", ""),
+                                       "q_across_all_100_pre_specified_tests": r.get("q_all_prespecified", "") or "not applicable (exploratory)",
                                        "pre_specified": "yes" if pre else "no (exploratory)",
                                        "source": "reports/Do the leads predict survival.md (our calculation, TARGET-OS)"})
             rs = out_rs

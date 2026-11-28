@@ -1,6 +1,6 @@
 # For John: the best leads, and who could test them
 
-*Last revised November 14, 2026, after an independent audit of its claims against primary sources; updated November 19, 2026 from the new-evidence scan (`reports/Whats new in osteosarcoma research.md`), and re-ranked November 20, 2026 after a repo-wide consistency check and an audit of the three newest reports (`research_notes/Audit/`; see the change log). This ranks the open leads from the project's reports and matches each to the institutions and programmes best placed to act on it. Partners come from public NIH grant records (`data/nih_osteosarcoma_projects.csv`, checked against NIH RePORTER), ClinicalTrials.gov sponsors and the published literature. No one at these institutions has been contacted, and none has endorsed anything in this document.*
+*Last revised November 14, 2026, after an independent audit of its claims against primary sources; updated November 19, 2026 from the new-evidence scan (`reports/Whats new in osteosarcoma research.md`), and re-ranked November 20, 2026 after a repo-wide consistency check and an audit of the three newest reports (`research_notes/Audit/`; see the change log). This ranks the open leads from the project's reports and matches each to the institutions and programmes best placed to act on it. Partners come from public NIH grant records (`data/nih_osteosarcoma_projects.csv`, checked against NIH RePORTER), ClinicalTrials.gov sponsors and the published literature. No one at these institutions has been contacted, and none has endorsed anything in this document. Updated November 22 and 24, 2026 with the survival test, the literature knowledge graph and engine cycle 2, and on November 28, 2026 with later research-engine results after an independent check.*
 
 ## Summary
 
@@ -72,6 +72,8 @@ Leads with equal totals keep their previous order; new leads go below existing l
 - The NIH-funded metastatic-colonization programme at Nationwide Children's Hospital (R01 CA260178; registry).
 - The UC Davis veterinary and surgical oncology team that ran the canine inhaled IL-15 work.
 
+**Later results (no score changed):** in 59 pet dogs treated with amputation and chemotherapy, a tumour inflammation score (IL6, IL1B, CXCL8) leaned towards faster relapse but was inconclusive (`reports/Engine cycle 13 - in pet dogs does tumour inflammation go with faster relapse.md`). Tumour RNA does not measure inflammation after surgery, so this neither supports nor weakens the lead.
+
 **Details:** `reports/Stopping lung metastasis in osteosarcoma.md`.
 
 ### 2. Do gene amplifications predict who benefits from VEGFR2-blocking pills?
@@ -92,6 +94,8 @@ Leads with equal totals keep their previous order; new leads go below existing l
 - Eisai and the ITCC consortium (OLIE, ITCC-050).
 - COG (ADVL1622).
 - MD Anderson Cancer Center's NIH-funded programme for genomically selected drug testing in osteosarcoma patient-derived models (U01 CA199221; registry).
+
+**Later result (no score changed):** in three small cohorts (109 patients), more tumour MYC RNA went with a poor response to chemotherapy before surgery, a modest result that needs replication with MYC copy number (`reports/Engine cycle 15 - do tumours with MYC gain respond worse to chemotherapy.md`).
 
 **Details:** `reports/Why kinase-inhibitor pills work in osteosarcoma.md`.
 
@@ -130,6 +134,8 @@ Leads with equal totals keep their previous order; new leads go below existing l
 - Albert Einstein College of Medicine's DKK-1 metastasis programme (NIH R01 CA262802, funded through June 2026; registry).
 - The NCI Comparative Oncology Program.
 
+**Later result (no score changed):** in 59 pet dogs, tumour DKK1 RNA did not go with faster relapse (refuted as a marker) and FAK RNA was inconclusive (`reports/Engine cycle 13 - in pet dogs does tumour inflammation go with faster relapse.md`). This does not test whether blocking either works.
+
 **Details:** `briefs/Brief - pet dog trial of FAK or DKK1 blockade.md`.
 
 ### 5. LRRC15 as a surface target: follow and inform the trials already running
@@ -144,6 +150,8 @@ Leads with equal totals keep their previous order; new leads go below existing l
 **Partners:**
 - The LRRC15 trial sponsors (Lantheus for LNTH-2403; the SOT106 and ZL-6201 developers).
 - Any group with an osteosarcoma tissue microarray, such as COG's biobank or FOSTER's sample programme.
+
+**Later result (no score changed):** no analysis showed a clear drop of LRRC15 RNA in lung metastases compared with primary tumours, though a modest drop is not ruled out (`reports/Engine cycle 11 - do lung metastases keep the surface targets.md`).
 
 **Details:** `reports/New surface targets for osteosarcoma.md`; `reports/Whats new in osteosarcoma research.md` (protein check).
 
@@ -200,6 +208,8 @@ Leads with equal totals keep their previous order; new leads go below existing l
 - An oral LPAR1 blocker, admilparant, is in phase 3 for lung fibrosis (registry; NCT06003426, NCT06025578).
 - Separately, a Massachusetts General Hospital trial is randomizing about 2,868 orthopaedic oncology patients, with a primary bone tumour stratum, to aspirin or enoxaparin to prevent blood clots (NCT03244020, enrolling by invitation, completion July 2028; registry). It enrols adults only, after pelvic or lower-limb surgery, so few osteosarcoma patients will be in it, which is why its impact score is 1. Recording metastasis-free survival in its bone-sarcoma patients would still cost little.
 
+**From the literature knowledge graph:** two platelet-axis drugs act on this step. Caplacizumab blocks von Willebrand factor, whose binding to platelets' GPIb drove osteosarcoma cell migration and invasion in cell experiments (PMID 33101888, abstract only); abciximab blocks integrin alpha-v/beta-3 and platelet GPIIb/IIIa. Neither has been tested in osteosarcoma (`reports/Contradictions and hidden links in the osteosarcoma literature.md`).
+
 **Partners:** the NCT03244020 study team at Massachusetts General Hospital.
 
 ### 11. Chase the remaining unreported trials
@@ -224,6 +234,8 @@ The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is 
 
 **Partners:** the NCI Comparative Oncology Program and the NCI Center for Cancer Research's genetics programme.
 
+**Later result (no score changed):** genome-wide loss of heterozygosity did not predict outcome in TARGET-OS with this project's array-based measure (`reports/Do the leads predict survival.md`: weakens slightly).
+
 **Details:** `reports/Dog genome re-analysis scope.md`.
 
 ### 13. AKT blockers (capivasertib) with chemotherapy
@@ -237,6 +249,8 @@ The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is 
 
 **Partners:** NCI's paediatric preclinical testing programme, which ran the original AKT xenograft panels; groups holding osteosarcoma patient-derived panels, such as the MD Anderson programme named under lead 2.
 
+**Later result (no score changed):** in TARGET-OS, more AKT2 RNA went with longer, not shorter, survival (`reports/Do the leads predict survival.md`: weakens slightly).
+
 **Details:** `reports/Approved drugs worth testing in osteosarcoma.md`.
 
 ### 14. CXCR4 blockers (mavorixafor) against lung metastasis
@@ -245,7 +259,7 @@ The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is 
 - Lung tissue is rich in CXCL12, the signal CXCR4 responds to. CXCR4 RNA was found in 63% of 47 high-grade tumours and went with shorter survival (paper, abstract only; PMID 15814634), and CXCR4 protein was positive in 33% of primaries but 67% of matched lung metastases in 30 patients (paper, abstract only; PMID 16528367). Blocking peptides cut lung metastases in mice, by 50% in one study (paper, abstract only; PMIDs 18071913, 15701832).
 - An oral blocker, mavorixafor, was approved in 2024, and plerixafor since 2008 (registry). Neither has an anti-metastasis trial in osteosarcoma on ClinicalTrials.gov; plerixafor appears only in a withdrawn stem-cell-mobilisation study (NCT03612466; registry).
 - **Contradictions:** the 50% reduction held consistently only when cells were treated before injection (PMID 18071913). Blocking the pathway can increase primary growth (PMID 27300512) and can stop killer T cells entering the tumour (PMID 29735547), and a second receptor, CXCR7, can take over (PMID 28468584) (all paper, abstract only). The immune question could make it harmful.
-- **Patient data point the other way.** In 223 patient tumours, strong CXCR4 and CXCL12 staining went with a better outcome and fewer metastases (paper, abstract only; PMID 22173290), the opposite of the mouse results. The literature knowledge graph flagged this as a genuine mice-versus-patients disagreement (`reports/Contradictions and hidden links in the osteosarcoma literature.md`). Any test should first settle which way CXCR4 points in patients.
+- **Patient data point the other way.** In 223 patient tumours, strong CXCR4 and CXCL12 staining went with a better outcome and fewer metastases (paper, abstract only; PMID 22173290), the opposite of the mouse results. The literature knowledge graph flagged this as a real disagreement between mouse and patient data (classed there as a model difference) (`reports/Contradictions and hidden links in the osteosarcoma literature.md`). Any test should first settle which way CXCR4 points in patients.
 - **Our own test found no support.** Engine cycle 2 compared 29 lung metastases with 51 primary tumours in six public datasets. CXCR4 RNA leaned higher in lung metastases (+0.43 standard deviations, 95% CI −0.05 to +0.91), but the lean disappeared once immune cells in the sample were accounted for (+0.06), and four patients with both tumours showed no difference. The pre-registered verdict was inconclusive (our calculation; `reports/Engine cycle 2 - do lung metastases carry more CXCR4.md`). Whole-tissue RNA cannot settle this; staining tumour cells in matched pairs could.
 
 **Cheapest test:** oral mavorixafor after removal of the primary tumour in an immune-competent mouse model, measuring lung metastases and tumour T cells. The model must metastasise after the primary is removed: the lung metastasis report notes that in the intratibial K7M2 model the lungs are seeded almost at once, so removing the injected leg 30 minutes later did not change metastatic burden (paper, abstract only; PMID 29601385).
@@ -272,6 +286,11 @@ The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is 
 
 ## Change log
 
+- **November 28, 2026 (after an independent check).** Later results added to leads 1, 2, 4, 5, 12 and 13, and the knowledge graph's platelet-axis drugs to lead 10. No scores changed. Lead 14's description of the knowledge-graph finding corrected.
+- **November 22–24, 2026 (survival test, knowledge graph, engine cycle 2).**
+  - Lead 2 notes that MYC amplification did not predict survival in TARGET-OS (survival report). No lead scores changed: the survival analysis was underpowered for most leads and strengthened none.
+  - Lead 14 adds the patient study (PMID 22173290) in which high CXCR4 and CXCL12 went with better outcome, found by the knowledge graph. Leads 1, 4, 10 and 13 were cross-checked against the graph: no contrary evidence survived hand reading, and the graph independently surfaced capivasertib and mavorixafor, plus caplacizumab and abciximab as new candidates for lead 10. No scores changed.
+  - Lead 14 adds the result of engine cycle 2 (inconclusive; no support from public RNA data). No scores changed.
 - **November 20, 2026 (consistency check, audit of the newest reports, and re-ranking).**
   - **Lead renumbering (old → new):** 1 → 1; 2 → 2; 3 → 3; 4 → 4; 5 (LRRC15 and PTK7) → 5 (LRRC15) and 6 (PTK7); 6 (randomized post-metastasectomy trial) → 7; 7 (ctDNA) → 8; 8 (CXCR1/2) → 9; 9 (aspirin trial) → 10; 10 (unreported trials) → 11; 11 (dog genomes) → 12; new 13 (AKT blockers); new 14 (CXCR4 blockers). Every "lead N" reference in the reports, brief and front pages was updated.
   - **Lead 5 split.** LRRC15 scored Evidence 3 (protein in patient tumours from independent groups, three read in full), Open 1 (four registered trials, two recruiting), Feasibility 2, Impact 3 = 9. PTK7 scored 2, 2, 2, 3 = 9 (protein partial: two xenografts and two cell lines; no patient series). Equal totals keep the old lead 5's place, LRRC15 first.
@@ -301,6 +320,3 @@ The completed paediatric trial of the CD248 antibody MORAb-004 (NCT01748721) is 
   - Individual researchers are no longer named as partners; partners are named as institutions and programmes.
   - Lead renumbering: old 7 is now 8 and old 8 is now 7. All other numbers are unchanged.
 - **November 13–14, 2026 (second ranking).** Four new research threads (kinase pills, surface targets, lung metastasis, FAK/DKK1 full-text check) added the IL-1/IL-6, gene-amplification, surface-target, CXCR1/2 and aspirin-trial leads and re-ordered the rest.
-  - 2026-11-22: Lead 2 notes that MYC amplification did not predict survival in TARGET-OS (survival report). No lead scores changed: the survival analysis was underpowered for most leads and strengthened none.
-  - 2026-11-22: Lead 14 adds the patient study (PMID 22173290) in which high CXCR4 and CXCL12 went with better outcome, found by the knowledge graph. Leads 1, 4, 10 and 13 were cross-checked against the graph: no contrary evidence survived hand reading, and the graph independently surfaced capivasertib and mavorixafor, plus caplacizumab and abciximab as new candidates for lead 10. No scores changed.
-  - 2026-11-24: Lead 14 adds the result of engine cycle 2 (inconclusive; no support from public RNA data). No scores changed.

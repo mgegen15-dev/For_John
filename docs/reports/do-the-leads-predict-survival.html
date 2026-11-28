@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-we-did">What We Did</a></li><li class="l1"><a href="#first-check-does-the-method-find-what-it-should">First Check: Does the Method Find What It Should?</a></li><li class="l1"><a href="#results-the-20-pre-specified-markers">Results: The 20 Pre-Specified Markers</a></li><li class="l1"><a href="#the-myc-result-in-more-detail">The MYC Result, in More Detail</a></li><li class="l1"><a href="#what-this-means-for-each-lead">What This Means for Each Lead</a></li><li class="l1"><a href="#exploratory-screen-not-pre-specified">Exploratory Screen (Not Pre-Specified)</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 22, 2026 · 13 min read</p>
+    <p class="crumb">Report · Updated November 28, 2026 · 13 min read</p>
     <h1>Do the Leads Predict Survival? A Test in Open Patient Data</h1>
     <p><em>Built November 22, 2026 from open NCI Genomic Data Commons (GDC) data for the TARGET osteosarcoma project: clinical records, tumour RNA and tumour copy number for up to 89 children and young adults. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/survival_analysis.py"><code>tools/survival_analysis.py</code></a>. Results table: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/osteosarcoma_survival_results.csv"><code>data/osteosarcoma_survival_results.csv</code></a> (one row per test). Figures: <code>docs/figures/survival_*.svg</code>. Working notes, including the analysis plan written before any marker was compared with outcome: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Survival/notes.md"><code>research_notes/Survival/notes.md</code></a>. This is new evidence produced by this project, not a literature summary.</em></p>
     <h2 id="summary">Summary</h2>
@@ -73,7 +73,7 @@
     <li><strong>Genome damage:</strong> fraction of the genome with changed copy number, and fraction with loss of heterozygosity (LOH, one parental copy lost), the measure a 2025 <em>Cell</em> paper found prognostic (paper, abstract only; PMID 39814020). Ours comes from SNP arrays, not whole genomes.</li>
     <li><strong>RNA:</strong> PTK2, DKK1, LRRC15, PTK7, IL6, IL1A, IL1B, CXCL8, IL6R, CXCR4, AKT1, AKT2 and AKT3.</li>
     </ul>
-    <p>For each marker: (A, the main test) a Cox model of OS with the marker as a continuous value, adjusted for metastasis at diagnosis; (B) Kaplan–Meier curves and a log-rank test for OS, splitting at amplified/not or at the median RNA level; (C, D) the same for EFS; (E) whether the marker differs between patients with and without metastasis at diagnosis. Each group of 20 tests was corrected separately; we also corrected across all 100. Sensitivity checks: adding age, using the alternative follow-up times, and a check that the HR is stable over time. The statistics were coded with numpy and scipy and agree with the standard <code>lifelines</code> package to four decimal places (our calculation).</p>
+    <p>For each marker: (A, the main test) a Cox model of OS with the marker as a continuous value, adjusted for metastasis at diagnosis; (B) Kaplan–Meier curves and a log-rank test for OS, splitting at amplified/not or at the median RNA level; (C, D) the same for EFS; (E) whether the marker differs between patients with and without metastasis at diagnosis. Each group of 20 tests was corrected separately; we also corrected across all 100. Sensitivity checks: adding age, using the alternative follow-up times, and a check that the HR is stable over time. The statistics were coded with numpy and scipy; for the six markers and the controls we cross-checked, they agree with the standard <code>lifelines</code> package to four decimal places (our calculation).</p>
     <h2 id="first-check-does-the-method-find-what-it-should">First Check: Does the Method Find What It Should?</h2>
     <p>Yes. Patients with metastasis at diagnosis had 4.8 times the risk of death (95% CI 2.3–10.0; p = 0.000003), with 25% alive at five years against 76% (our calculation; <a href="https://github.com/mgegen15-dev/For_John/blob/main/docs/figures/survival_metastasis_os.svg"><code>docs/figures/survival_metastasis_os.svg</code></a>). This matches the long-known gap in osteosarcoma. Good histologic response also went with longer survival, in the expected direction (HR 0.25, 0.05–1.18, p = 0.059; 35 patients) (our calculation).</p>
     <p><strong>How big an effect could we see?</strong> With about 29 deaths and a median split, the study had 80% power to detect an HR of about 2.8 or more; for amplifications present in 11–33% of patients, about 3.1–5.3 (our calculation, Schoenfeld's formula). Smaller effects, such as an HR of 1.5, could easily be missed.</p>
@@ -446,7 +446,7 @@
     <tr>
     <td>14. CXCR4 blockers</td>
     <td>CXCR4 RNA</td>
-    <td>Leaned towards worse survival (HR 1.21, 0.79–1.87; split HR 1.48, 0.70–3.14), not convincing. A 2005 study of 47 tumours reported CXCR4 RNA with shorter survival (paper, abstract only; PMID 15814634).</td>
+    <td>Leaned towards worse survival (HR 1.21, 0.79–1.87; split HR 1.48, 0.70–3.14), not convincing. A 2005 study of 47 tumours reported CXCR4 RNA with shorter survival (paper, abstract only; PMID 15814634), but a study of 223 tumours found strong CXCR4 and CXCL12 staining went with a better outcome (paper, abstract only; PMID 22173290).</td>
     <td><strong>No information</strong>: same direction, not replicated.</td>
     </tr>
     <tr>
@@ -492,6 +492,7 @@
     </ul>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-28: after its first independent check, the scope of the lifelines cross-check stated exactly, and the 223-tumour CXCR4 study added beside the 47-tumour one.</li>
     <li><strong>November 22, 2026.</strong> First version. Pre-specified test of 20 lead-related markers against overall survival, event-free survival and metastasis at diagnosis in open TARGET-OS data (89 patients, 30 deaths). The positive control passed (metastasis HR 4.83). No pre-specified marker passed multiple-testing correction. Post hoc MYC check at 8 or more copies added. Exploratory screen of 40 surface and repurposing genes: SOST and ROBO1 flagged for checking elsewhere.</li>
     </ul>
     <hr>
