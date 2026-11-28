@@ -112,6 +112,7 @@ pip install -r requirements.txt
 | `tools/engine_cycle18_sarcoma_teen_access.py` (`fetch`, then no argument) | engine cycle 18: `data/engine/cycle18/` trial table and counts | ClinicalTrials.gov API (about 640 records; raw records not in git) | a minute |
 | `tools/engine_cycle19_trial_geography.py` | engine cycle 19: `data/engine/cycle19/` states and trials tables | none new; needs cycle 12's registry download | seconds |
 | `tools/engine_cycle20_immune_response.py` (`fetch`, then no argument) | engine cycle 20: `data/engine/cycle20/` results and one figure | NCBI GEO GSE289059 (under 1 MB); needs cycle 1's downloads and the TARGET-OS files | seconds |
+| `tools/check_site.py` | runs the quality gate in [PROCESS.md](PROCESS.md): review dates, links, built pages, scorecard, cited commits, plan-before-data order, wording | none | about a minute |
 | `tools/build_manifest.py` | `DATA_MANIFEST.md` and `data/raw_checksums.txt` (checksums of every data file and raw download; rewrites both) | none | a few minutes, for the checksums of large raw files |
 | `tools/build_site.py` | the website's report pages (`docs/reports/*.html` and the other document pages) from the Markdown sources, with `markdown-it-py` | none | seconds |
 

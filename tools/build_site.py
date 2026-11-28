@@ -50,7 +50,8 @@ SOURCES = (
      ("RESEARCH_QUEUE.md", "research-queue.html"),
      ("DATA_MANIFEST.md", "data-manifest.html"),
      ("FAMILIES.md", "families.html"),
-     ("REPORTS.md", "reports.html")]
+     ("REPORTS.md", "reports.html"),
+     ("PROCESS.md", "process.html")]
 )
 
 
@@ -211,7 +212,9 @@ def last_updated(src):
     try:
         iso = subprocess.run(["git", "log", "-1", "--format=%cs", "--", src], cwd=ROOT,
                              capture_output=True, text=True, timeout=20).stdout.strip()
-        if not iso:                          # not committed yet: it is being updated now
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", src], cwd=ROOT,
+                               capture_output=True, text=True, timeout=20).stdout.strip()
+        if not iso or dirty:                 # not committed yet, or changed since: it is being updated now
             import datetime
             iso = datetime.date.today().isoformat()
         y, m, d = iso.split("-")

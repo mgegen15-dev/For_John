@@ -15,7 +15,7 @@ Everything here is built from public sources (PubMed, PubTator3, ClinicalTrials.
 - **Evidence explorer:** https://mgegen15-dev.github.io/For_John/explorer.html: type a gene, drug or target to see its papers, paper-mill risk flag, trials, tumour expression, copy-number changes, approved drugs and the reports that discuss it (built by `tools/build_explorer_data.py`).
 - **Start here:** [One-page summary](SUMMARY.md) · [How this was made](HOW_THIS_WAS_MADE.md)
 - **Predictions:** [Dated, testable predictions](PREDICTIONS.md), so anyone can check our hit rate as results come in
-- **For auditors:** [Auditor's guide](AUDIT_GUIDE.md) · [Data manifest](DATA_MANIFEST.md) · frozen version: git tag `v1.1` (November 27, 2026)
+- **For auditors:** [Auditor's guide](AUDIT_GUIDE.md) · [How work is checked](PROCESS.md) · [Data manifest](DATA_MANIFEST.md) · frozen version: git tag `v1.1` (November 27, 2026)
 - [For Families](FAMILIES.md): plain-language page for parents and patients, with questions to bring to a care team.
 - [All Reports](REPORTS.md): every report and brief, grouped by what you are looking for.
 - [Research brief: new targeted-drug trials mostly leave out teenagers with osteosarcoma](briefs/Brief%20-%20trial%20access%20for%20teenagers%20with%20osteosarcoma.md): one page for advocacy groups, from engine cycles 3, 4 and 7.

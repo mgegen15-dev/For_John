@@ -16,7 +16,7 @@ This project makes many claims across 36 reports and 2 briefs. This page lists t
 - **Set up:** Python 3.10 or newer, plus `pip install -r requirements.txt` (pandas, numpy, scipy, matplotlib, h5py and the Markdown tools that build the website; versions pinned).
 - **Check the data is unchanged:** run `python3 tools/build_manifest.py` (it rewrites `DATA_MANIFEST.md` and `data/raw_checksums.txt`), then `git diff DATA_MANIFEST.md` to compare with the checksums committed at `v1.1`. Raw downloads are not in git, so they must be re-downloaded. Live databases change, so expect small differences from the retrieval dates listed there.
 - **Read first:** `HOW_THIS_WAS_MADE.md` (methods, limits, how AI was used) and `SUMMARY.md` (the claims in plain language).
-- **Earlier internal checks:** `research_notes/Audit/` holds the AI-run audits and their findings. They are a record, not a substitute for your review.
+- **Earlier internal checks:** `research_notes/Audit/` holds the AI-run audits and their findings. They are a record, not a substitute for your review. `PROCESS.md` sets out how every change is checked, and `data/review_log.csv` records when each public file was last independently checked; `python3 tools/check_site.py --list` shows which are due.
 
 **Labels used in the reports:**
 - **(registry):** an official database record.
