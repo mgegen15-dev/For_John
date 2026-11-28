@@ -94,6 +94,7 @@ def record(paths, check, record_file):
     import datetime
     if not paths:
         sys.exit("usage: check_site.py --record \"<check>\" <audit record> <file> [<file> ...]")
+    record_file = os.path.normpath(record_file).replace(os.sep, "/")
     if not record_file.startswith("research_notes/Audit/") or not os.path.isfile(os.path.join(ROOT, record_file)):
         sys.exit(f"audit record must be a saved review under research_notes/Audit/: {record_file}")
     log = read_log()

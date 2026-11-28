@@ -1,6 +1,6 @@
 # Auditor's guide
 
-*For a third-party reviewer. Version 1.1, frozen on November 27, 2026 (git tag `v1.1`). Check against that tag, not the live `main` branch, so that your findings line up with what you are reading. Corrections made after the freeze are listed in each file's change log and in `research_notes/Audit/` (audits G and H, November 28). Version 1.0 (tag `v1.0`, November 23, commit `aa55a1b`) is the original review without the research engine. A freeze prepared on November 25 was never tagged and is superseded.*
+*For a third-party reviewer. Version 1.1, frozen on November 27, 2026 (git tag `v1.1`). Check against that tag, not the live `main` branch, so that your findings line up with what you are reading. Corrections made after the freeze are listed in each report's change log and in the audit records in `research_notes/Audit/` (audits G, H and I, November 28). Version 1.0 (tag `v1.0`, November 23, commit `aa55a1b`) is the original review without the research engine. A freeze prepared on November 25 was never tagged and is superseded.*
 
 This project makes many claims across 36 reports and 2 briefs. This page lists the 18 from the original review that matter most, then how to check the research engine added in version 1.1. The 18 are the ones the one-page summary, the website and the ranked leads depend on. For each one it gives where the claim is made, its primary source, and the fastest way to check it. If these hold, the project's main conclusions hold. If any fail, please tell us.
 

@@ -29,7 +29,7 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
   - GSE14827 ("good" or "poor" response, 27 patients);
   - TARGET-OS (Huvos stage from the open clinical spreadsheet, 35 patients).
 - **Outcome:** poor response, meaning Huvos grade 1 or 2, or labelled "poor".
-- **Measures:** RNA per standard deviation, within each cohort.
+- **Measures:** RNA per standard deviation, within each cohort (the 9p21 score: see Deviations).
   - MYC (H1) and CCNE1 (H2).
   - A 9p21 loss score, the negative mean z-score of CDKN2A and MTAP (H3).
 - **Effect:** odds ratio from a logistic model in each cohort, pooled by inverse-variance weighting.
@@ -40,7 +40,7 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
 
 ## Results
 
-![Poor response to chemotherapy before surgery: odds ratio per standard deviation](../docs/figures/engine15_response.svg)
+![Poor response to chemotherapy before surgery: odds ratio per standard deviation of each gene's RNA (9p21 score: per unit of the averaged z-score)](../docs/figures/engine15_response.svg)
 
 | Measure | GSE21257 (47; 29 poor) | GSE14827 (27; 16 poor) | TARGET-OS (35; 19 poor) | **Pooled (109; 64 poor)** | Verdict |
 |---|---|---|---|---|---|

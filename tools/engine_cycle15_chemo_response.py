@@ -9,6 +9,7 @@ Outputs: data/engine/cycle15/results.csv, summary.json, docs/figures/engine15_re
 """
 import csv
 import gzip
+import html
 import json
 import math
 import os
@@ -147,7 +148,7 @@ def forest(rows, path, title="Poor response to chemotherapy before surgery: odds
     lo_ax, hi_ax = 0.25, 4.0
     X = lambda v: left + (np.log(min(max(v, lo_ax), hi_ax)) - np.log(lo_ax)) / (np.log(hi_ax) - np.log(lo_ax)) * (W - left - 170)
     s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" font-family="system-ui, sans-serif" font-size="13" role="img" '
-         f'aria-label="Odds of a poor response to chemotherapy before surgery, per standard deviation">', f'<rect width="{W}" height="{H}" fill="#ffffff"/>',
+         f'aria-label="{html.escape(title)}">', f'<rect width="{W}" height="{H}" fill="#ffffff"/>',
          f'<text x="16" y="26" font-weight="600" fill="#1d2430" font-size="12">{title}</text>',
          f'<text x="16" y="44" fill="#525b6b" font-size="12">{subtitle}</text>']
     for v in (0.25, 0.5, 1, 2, 4):

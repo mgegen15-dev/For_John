@@ -8,7 +8,7 @@ We pooled four cohorts with tumour RNA taken before treatment and a recorded res
 
 - **Macrophage score (CD163, CD14, CD68): inconclusive, leaning towards better response.**
   - Odds ratio for poor response 0.67 per unit of the score (the average of the genes' z-scores; 95% CI 0.43–1.04). Random effects: 0.67 (0.40–1.14), I² 31%.
-  - Three of the four cohorts leaned the same way, including the new one (0.59, 0.28–1.28; 0.54 after adjusting for P-glycoprotein status).
+  - Three of the four cohorts leaned the same way, including the new one (0.59, 0.27–1.28; 0.54 after adjusting for P-glycoprotein status).
 - **T-cell score (CD3E, CD8A): inconclusive,** 0.78 (0.55–1.10).
 - **Exploratory flag, not a result:** CD68 alone pooled to 0.61 (0.43–0.87), one of five single genes, uncorrected.
 - **Predictions:** P54 and P55 were wrong.
@@ -54,7 +54,7 @@ Single-gene results are in `data/engine/cycle20/results.csv`.
 
 ## Change log
 
-- 2026-11-28: GSE289059 values rounded from the output file (0.27, 0.85); the figure relabelled per unit of the score.
+- 2026-11-28: GSE289059 values rounded from the output file (0.27, 0.85), in the table and the summary; the figure relabelled per unit of the score.
 - 2026-11-28: after an independent check, the per-standard-deviation results added and the scale difference declared as a deviation.
 - 2026-11-27: after an independent check, T-cell interval corrected (0.55, not 0.56), random effects, the CD68 flag and the figure added, the scale of the score stated, and which cohorts were read before made exact.
 - 2026-11-27: cycle run and reported. H1 and H2 inconclusive; P54 and P55 wrong.
