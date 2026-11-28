@@ -47,7 +47,7 @@ Survival for osteosarcoma that has spread or come back has barely changed since 
    - The areas flagged above as gaps get the least.
    - [Funding report](reports/NIH%20funding%20for%20osteosarcoma.md)
 8. **Testing ideas against data.** *Results.*
-   - Since November 24 the project has run 20 research-engine cycles, each planned in writing and committed before its analysis was run. Most were inconclusive or refuted; one (MYC and chemotherapy response) was modestly supported and needs replication.
+   - Since November 24 the project has run 20 research-engine cycles, each planned in writing and committed before its analysis was run. Most were inconclusive or refuted. Of the biological questions, one (MYC and chemotherapy response) was modestly supported and needs replication; the trial-access counts (cycles 12 and 16–19) are listed in the Research Queue.
    - Early trials of new cancer drugs rarely take teenagers: 78 of 1,434 early-phase solid-tumour trials recruiting or about to recruit accept 12- to 17-year-olds, and trials started in 2020–2024 did so half as often as those started in 2014–2018.
    - None of the markers behind the leads was convincingly linked to survival in 89 young patients, in a small study that could miss modest links.
    - [Research Queue](RESEARCH_QUEUE.md) · [Survival test](reports/Do%20the%20leads%20predict%20survival.md)

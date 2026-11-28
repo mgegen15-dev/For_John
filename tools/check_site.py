@@ -27,6 +27,7 @@ import urllib.parse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = "https://github.com/mgegen15-dev/For_John/"
 REVIEW_LOG = os.path.join(ROOT, "data", "review_log.csv")
+LEGACY_BEFORE = "2026-11-27"   # date-only review entries count as legacy only if dated before this day
 PUBLIC = (["reports/*.md", "briefs/*.md", "FAMILIES.md", "SUMMARY.md", "REPORTS.md", "README.md", "HOW_THIS_WAS_MADE.md",
            "AUDIT_GUIDE.md", "PREDICTIONS.md", "RESEARCH_QUEUE.md", "PROCESS.md", "docs/index.html", "docs/explorer.html"])
 BANNED = [(r"\bClaude\b", "names the AI model; say \"frontier AI models\""), (r"\bAnthropic\b", "names the AI company"),
@@ -67,7 +68,7 @@ def status(path, row):
     if row and row.get("reviewed_blob"):
         return "ok" if row["reviewed_blob"] == blob(path) else "DUE"
     checked = (row or {}).get("last_checked", "")
-    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", checked or "") and checked >= last_changed_day(path):
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", checked or "") and checked < LEGACY_BEFORE and checked >= last_changed_day(path):
         return "legacy"
     return "DUE"
 
@@ -91,6 +92,10 @@ def check_review(fail, listing=False):
 def record(paths, check, record_file):
     """Stamp files as independently checked in their current form. Use only after a review has passed and its fixes are verified."""
     import datetime
+    if not paths:
+        sys.exit("usage: check_site.py --record \"<check>\" <audit record> <file> [<file> ...]")
+    if not os.path.isfile(os.path.join(ROOT, record_file)):
+        sys.exit(f"audit record not found: {record_file} (save the review before stamping files)")
     log = read_log()
     today = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
     for p in paths:
@@ -179,10 +184,10 @@ def check_commits(fail):
     files += [os.path.join(ROOT, p) for p in public_files() if p.endswith(".md")]
     for f in sorted(set(files)):
         body = open(f).read()
-        hashes = set(re.findall(r"commit `([0-9a-f]{7,40})`", body)) | set(re.findall(r"`([0-9a-f]{7}|[0-9a-f]{40})`", body))
+        cited = set(re.findall(r"commit `([0-9a-f]{7,40})`", body))
+        bare = {h for h in re.findall(r"`([0-9a-f]{7,40})`", body) if re.search(r"[a-f]", h) and re.search(r"[0-9]", h)}
+        hashes = cited | bare
         for h in hashes:
-            if not re.search(r"[0-9]", h):      # a word made only of the letters a-f is not a commit
-                continue
             if git("cat-file", "-t", h).strip() != "commit":
                 fail("commits", f"{os.path.relpath(f, ROOT)} cites commit {h}, which does not exist")
 
@@ -215,6 +220,8 @@ def main():
     if "--record" in sys.argv:
         # python3 tools/check_site.py --record "<check description>" <audit record path> <file> [<file> ...]
         i = sys.argv.index("--record")
+        if len(sys.argv) < i + 4:
+            sys.exit("usage: check_site.py --record \"<check>\" <audit record> <file> [<file> ...]")
         record(sys.argv[i + 3:], sys.argv[i + 1], sys.argv[i + 2])
         return
     problems = []

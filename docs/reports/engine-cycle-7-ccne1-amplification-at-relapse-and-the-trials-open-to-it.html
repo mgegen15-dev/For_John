@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#part-a-how-common-is-it">Part A: How Common Is It?</a></li><li class="l1"><a href="#part-b-which-trials">Part B: Which Trials?</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 27, 2026 · 7 min read</p>
+    <p class="crumb">Report · Updated November 28, 2026 · 7 min read</p>
     <h1>Engine Cycle 7: How Common Is CCNE1 Amplification in Relapsed Osteosarcoma, and Which Trials Could Those Patients Join?</h1>
     <p><em>Run November 24, 2026. The seventh cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-07-ccne1-relapse-trials/PREREGISTRATION.md"><code>research_notes/Engine/cycle-07-ccne1-relapse-trials/PREREGISTRATION.md</code></a>, committed at 21:09 UTC (commit <code>5d5b032</code>) before any amplification call was read or any trial search run. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle07_ccne1.py"><code>tools/engine_cycle07_ccne1.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle07/results.csv"><code>data/engine/cycle07/results.csv</code></a> and <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle07/trials_classified.csv"><code>data/engine/cycle07/trials_classified.csv</code></a>.</em></p>
     <p><strong>Not medical advice.</strong> The trial section reports what ClinicalTrials.gov records said on November 24, 2026. Whether a trial suits a particular patient is a question for that patient's oncologist and the trial team.</p>
@@ -234,7 +234,7 @@
     <h2 id="what-this-means">What This Means</h2>
     <ul>
     <li><strong>A teenager with relapsed osteosarcoma and CCNE1 amplification has a trial to ask about,</strong> which for MTAP loss (cycle 4) was true only in China. The lunresertib trial takes patients from 12.</li>
-    <li><strong>About one in ten relapsed osteosarcomas would qualify on a clinical gene test.</strong> Whether a test done at diagnosis is a reliable guide for CCNE1 is not known from these data; a trial may ask for a new one.</li>
+    <li><strong>About one in ten relapsed or metastatic osteosarcomas carried CCNE1 amplification on tumour gene tests, the change these trials select for.</strong> Whether a test done at diagnosis is a reliable guide for CCNE1 is not known from these data; a trial may ask for a new one.</li>
     <li><strong>Not evidence that the drugs work in osteosarcoma.</strong> Cycle 6 found that osteosarcoma cell lines with more CCNE1 lean towards depending on PKMYT1 without confirming it, and no osteosarcoma result has been reported from these trials that this project has found.</li>
     <li><strong>Predictions.</strong> P22 (more common at relapse) is unresolved by its own rule. P23 (at least one such trial accepts under-18s), which this project gave a 10% chance, is right.</li>
     </ul>
@@ -254,6 +254,7 @@
     <p><strong>Data sources and credit.</strong> Patient data were read from cBioPortal (Cerami et al., Cancer Discovery 2012; Gao et al., Science Signaling 2013) and come from the original studies: MSK-IMPACT 50K Clinical Sequencing Cohort (Memorial Sloan Kettering), China Pan-cancer (OrigiMed, Nature 2022), MAPPYACTS (Gustave Roussy, Cancer Discovery 2022), TARGET-OS (NCI TARGET, via the GDC) and the Pan-Cancer Analysis of Whole Genomes (Nature 2020). Only counts and summary statistics are published here; the per-patient table stays with the local download.</p>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-28: after a second independent check, &quot;would qualify&quot; replaced with what was measured.</li>
     <li>2026-11-27: corrected after an independent check: one trial (NKT5097, NCT07029399) was counted although it neither requires CCNE1 amplification nor tests a PKMYT1 inhibitor, so it does not meet the pre-registered rule. Trials: 8, not 9; with a US site: 5, not 6; the under-18 count is unchanged. Search-term breakdown corrected.</li>
     <li>2026-11-24: cycle run and reported. Part A inconclusive under the pre-registered rules; Part B counted.</li>
     <li>2026-11-25: per-patient table no longer published (counts only); data sources credited.</li>

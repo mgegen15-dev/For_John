@@ -108,8 +108,8 @@
 - **P50, 2026-11-26: right.** 32 of 155 trials for other sarcomas (21%) do. Same source.
 - **P51, 2026-11-26: right.** Company-led trials accept teenagers less often: 11 of 51 against 86 of 179, odds ratio 0.30 (95% CI 0.14–0.62). Same source.
 - **P52, 2026-11-27: wrong.** 33 states and DC (34 of 51) have a site of at least one of the 32 trials. Source: `reports/Engine cycle 19 - where in the US can a teenager with relapsed osteosarcoma reach a trial.md` (our calculation from registry records read 2026-11-26).
-- **P53, 2026-11-27: right by its rule.** One trial (NCT04616560) lists sites in 22 states; counting only sites marked recruiting or not yet recruiting, no trial reaches 20 states. Same source.
-- **P54, 2026-11-27: wrong.** Macrophage score and poor response, four cohorts, 171 patients: odds ratio per SD 0.67 (95% CI 0.43–1.04), inconclusive. Source: `reports/Engine cycle 20 - does tumour immune signal go with better chemotherapy response.md` (our calculation).
+- **P53, 2026-11-27: right by its rule.** One trial (NCT04616560) lists sites in 21 states and DC (22 of 51); counting only sites marked recruiting or not yet recruiting, no trial reaches 20 states. Same source.
+- **P54, 2026-11-27: wrong.** Macrophage score and poor response, four cohorts, 171 patients: odds ratio per unit of the score 0.67 (95% CI 0.43–1.04; per standard deviation 0.72, 0.52–1.01), inconclusive. Source: `reports/Engine cycle 20 - does tumour immune signal go with better chemotherapy response.md` (our calculation).
 - **P55, 2026-11-27: wrong.** T-cell score: 0.78 (0.55–1.10), inconclusive. Same source.
 
 ## Scorecard

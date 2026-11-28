@@ -46,7 +46,7 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
 |---|---|---|---|---|---|
 | **H1: MYC RNA** | 1.32 (0.72–2.42) | 1.87 (0.79–4.42) | 1.86 (0.87–3.96) | **1.58 (1.05–2.40)** | **Supported** |
 | **H2: CCNE1 RNA** | 1.03 (0.56–1.87) | 0.76 (0.34–1.67) | 0.81 (0.41–1.60) | **0.88 (0.59–1.30)** | **Refuted** |
-| **H3: 9p21 loss score** | 1.74 (0.84–3.60) | 2.10 (0.76–5.83) | 0.78 (0.37–1.64) | **1.32 (0.83–2.10)** | **Inconclusive** |
+| **H3: 9p21 loss score** (per unit of the score; per SD 1.29, 0.85–1.97) | 1.74 (0.84–3.60) | 2.10 (0.76–5.83) | 0.78 (0.37–1.64) | **1.32 (0.83–2.10)** | **Inconclusive** |
 
 - **Random effects** give the same MYC result (1.58, 1.05–2.40). For the 9p21 score they give 1.35 (0.74–2.47).
 - **Huvos grade 1 to 4 as an ordered outcome in GSE21257** (Spearman correlation, where a negative value means poorer response with more of the measure):
@@ -89,4 +89,5 @@ How much of the tumour chemotherapy kills before surgery is one of the strongest
 
 ## Change log
 
+- 2026-11-28: after an independent check, the 9p21 score's result noted per standard deviation (1.29, 0.85–1.97); it had been reported per unit of the averaged score. Verdict unchanged.
 - 2026-11-26: cycle run and reported. H1 supported, H2 refuted and H3 inconclusive under the pre-registered rules. P43 right, P44 wrong. No deviations.

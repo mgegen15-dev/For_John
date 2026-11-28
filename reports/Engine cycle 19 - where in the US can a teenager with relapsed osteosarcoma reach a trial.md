@@ -8,7 +8,7 @@ Cycle 12 found 32 recruiting or soon-to-recruit drug trials that list osteosarco
 
 - **33 states and DC (34 of 51) have at least one site** (66 cities). The count includes sites the registry marks as suspended or not recruiting; only withdrawn, completed and terminated sites were left out, as planned.
 - **17 states have none:** Alaska, Delaware, Idaho, Iowa, Louisiana, Maine, Mississippi, Montana, Nebraska, Nevada, New Hampshire, New Mexico, North Dakota, South Dakota, Vermont, West Virginia and Wyoming. Teenagers in those states would have to travel to another state for any of these trials.
-- **Most trials are in few places.** 20 of the 32 have sites in only one or two states. 7 have sites in five or more. One, a US National Cancer Institute–sponsored trial of the antibody–drug conjugate DS-8201a (trastuzumab deruxtecan) for recurrent osteosarcoma and other tumours in young people (NCT04616560), lists sites in 22 states, though in 5 of them (Alabama, Colorado, Indiana, Minnesota, Utah) the registry marks every site as suspended or not recruiting; its recruiting sites are in 17 states.
+- **Most trials are in few places.** 20 of the 32 have sites in only one or two states. 7 have sites in five or more. One, a US National Cancer Institute–sponsored trial of the antibody–drug conjugate DS-8201a (trastuzumab deruxtecan) for recurrent osteosarcoma and other tumours in young people (NCT04616560), lists sites in 21 states and DC (22 of 51), though in 5 of them (Alabama, Colorado, Indiana, Minnesota, Utah) the registry marks every site as suspended or not recruiting; its recruiting sites are in 16 states and DC.
 - **The states with the most of these trials:**
   - Texas: 13 of the 32;
   - California: 9;
@@ -43,5 +43,6 @@ Cycle 12 found 32 recruiting or soon-to-recruit drug trials that list osteosarco
 
 ## Change log
 
+- 2026-11-28: after a second independent check, the 22-state count corrected to 21 states and DC, and the recruiting count to 16 states and DC.
 - 2026-11-27: after an independent check, suspended and not-recruiting sites made explicit; the 22-state trial recruits in 17.
 - 2026-11-27: cycle run and reported. P52 wrong, P53 right. No deviations.

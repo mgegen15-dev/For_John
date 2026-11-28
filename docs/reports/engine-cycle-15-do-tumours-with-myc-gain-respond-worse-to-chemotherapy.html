@@ -45,7 +45,7 @@
 <div class="doclayout">
   <nav class="toc" id="toc" aria-label="On this page"><p class="toc-h">On This Page</p><ol><li class="l1"><a href="#summary">Summary</a></li><li class="l1"><a href="#what-was-tested">What Was Tested</a></li><li class="l1"><a href="#results">Results</a></li><li class="l1"><a href="#what-this-means">What This Means</a></li><li class="l1"><a href="#limits">Limits</a></li><li class="l1"><a href="#files-and-reproduction">Files and Reproduction</a></li><li class="l1"><a href="#change-log">Change Log</a></li></ol></nav>
   <main id="main" class="doc">
-    <p class="crumb">Report · Updated November 27, 2026 · 4 min read</p>
+    <p class="crumb">Report · Updated November 28, 2026 · 4 min read</p>
     <h1>Engine Cycle 15: Do Tumours with MYC Gain, CCNE1 Gain or 9p21 Loss Respond Worse to Chemotherapy Before Surgery?</h1>
     <p><em>Run November 26, 2026. The fifteenth cycle of the For John research engine. Pre-registration: <a href="https://github.com/mgegen15-dev/For_John/blob/main/research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md"><code>research_notes/Engine/cycle-15-chemo-response/PREREGISTRATION.md</code></a>, committed at commit <code>da4b216</code> before any of these genes was read from these cohorts. Script: <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/engine_cycle15_chemo_response.py"><code>tools/engine_cycle15_chemo_response.py</code></a>. Results: <a href="https://github.com/mgegen15-dev/For_John/blob/main/data/engine/cycle15/results.csv"><code>data/engine/cycle15/results.csv</code></a>. Research only; not about any patient's treatment.</em></p>
     <h2 id="summary">Summary</h2>
@@ -126,7 +126,7 @@
     <td><strong>Refuted</strong></td>
     </tr>
     <tr>
-    <td><strong>H3: 9p21 loss score</strong></td>
+    <td><strong>H3: 9p21 loss score</strong> (per unit of the score; per SD 1.29, 0.85–1.97)</td>
     <td>1.74 (0.84–3.60)</td>
     <td>2.10 (0.76–5.83)</td>
     <td>0.78 (0.37–1.64)</td>
@@ -187,6 +187,7 @@
     </ul>
     <h2 id="change-log">Change Log</h2>
     <ul>
+    <li>2026-11-28: after an independent check, the 9p21 score's result noted per standard deviation (1.29, 0.85–1.97); it had been reported per unit of the averaged score. Verdict unchanged.</li>
     <li>2026-11-26: cycle run and reported. H1 supported, H2 refuted and H3 inconclusive under the pre-registered rules. P43 right, P44 wrong. No deviations.</li>
     </ul>
     <hr>

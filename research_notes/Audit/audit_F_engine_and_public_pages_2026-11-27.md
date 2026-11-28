@@ -1,6 +1,6 @@
 # Audit F: research engine (cycles 1–20), the teen-access brief and the public pages
 
-*Independent AI review passes on November 26 and 27, 2026. Each reviewer worked read-only, did not write the files it checked, and recomputed numbers from the repository's data files and raw downloads. This record summarises each pass: its scope, every finding in one line, and how the finding was resolved. The fixes are in commits `21d13c9` (pass F1) and `b9a8710` (passes F2–F4), and in each affected file's change log.*
+*Independent AI review passes on November 26 and 27, 2026. Each reviewer worked read-only, did not write the files it checked, and recomputed numbers from the repository's data files and raw downloads. This record summarises each pass: its scope, every finding in one line, and how the finding was resolved. The fixes are in commits `762cbbb` (pass F1; `21d13c9` before the November 27 history rewrite) and `b9a8710` (passes F2–F4), and in each affected file's change log.*
 
 ## Pass F1, November 26: engine cycles 10–17, the brief's new line, front page, queue, predictions, audit guide
 
@@ -37,7 +37,7 @@
 
 **Scope:** cycles 1–9 reports, pre-registrations, scripts and outputs; P15–P28; queue rows 1–20; audit rows E1–E5. All 60 cycle 4 trials and all 21 cycle 7 trials read were checked against raw registry records. **Result:** 19 findings, all resolved.
 
-- INCONSISTENCY (fed the brief): cycle 7 counted NKT5097 (NCT07029399), which neither requires CCNE1 amplification nor tests a PKMYT1 inhibitor. Corrected: 8 trials (not 9), 5 with a US site (not 6). The brief now gives 33 trials in total (not 34), 30 starting at 18 or older (not 31), and 31 of 33 at phase 1 or 1/2.
+- INCONSISTENCY (fed the brief): cycle 7 counted NKT5097 (NCT07029399), which neither requires CCNE1 amplification nor tests a PKMYT1 inhibitor. Corrected: 8 trials (not 9), 5 with a US site (not 6). The brief now gives 33 trials in total (not 34), 30 others starting at 18 or older besides the three trials named in the brief (not 31), and 31 of 33 at phase 1 or 1/2.
 - ERROR: cycle 8, PELO was tested in the knockdown screen (8 lines) and did not replicate. It did not "have too few lines".
 - ERROR: cycle 8 recovered CCNE1 with CDK2, not cycle 6's PKMYT1 pair.
 - ERROR: cycle 9, two lines (not three) were called intact for TP53; OS384 was caught by deletion.

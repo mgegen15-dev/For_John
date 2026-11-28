@@ -69,7 +69,7 @@ The search used 24 terms fixed in advance (PKMYT1, MYT1, CCNE1, cyclin E1 and 20
 ## What this means
 
 - **A teenager with relapsed osteosarcoma and CCNE1 amplification has a trial to ask about,** which for MTAP loss (cycle 4) was true only in China. The lunresertib trial takes patients from 12.
-- **About one in ten relapsed osteosarcomas would qualify on a clinical gene test.** Whether a test done at diagnosis is a reliable guide for CCNE1 is not known from these data; a trial may ask for a new one.
+- **About one in ten relapsed or metastatic osteosarcomas carried CCNE1 amplification on tumour gene tests, the change these trials select for.** Whether a test done at diagnosis is a reliable guide for CCNE1 is not known from these data; a trial may ask for a new one.
 - **Not evidence that the drugs work in osteosarcoma.** Cycle 6 found that osteosarcoma cell lines with more CCNE1 lean towards depending on PKMYT1 without confirming it, and no osteosarcoma result has been reported from these trials that this project has found.
 - **Predictions.** P22 (more common at relapse) is unresolved by its own rule. P23 (at least one such trial accepts under-18s), which this project gave a 10% chance, is right.
 
@@ -90,6 +90,7 @@ The search used 24 terms fixed in advance (PKMYT1, MYT1, CCNE1, cyclin E1 and 20
 
 ## Change log
 
+- 2026-11-28: after a second independent check, "would qualify" replaced with what was measured.
 - 2026-11-27: corrected after an independent check: one trial (NKT5097, NCT07029399) was counted although it neither requires CCNE1 amplification nor tests a PKMYT1 inhibitor, so it does not meet the pre-registered rule. Trials: 8, not 9; with a US site: 5, not 6; the under-18 count is unchanged. Search-term breakdown corrected.
 - 2026-11-24: cycle run and reported. Part A inconclusive under the pre-registered rules; Part B counted.
 - 2026-11-25: per-patient table no longer published (counts only); data sources credited.

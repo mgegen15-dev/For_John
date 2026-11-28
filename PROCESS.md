@@ -14,11 +14,11 @@
 
    The full review is saved in `research_notes/Audit/`. Its findings are fixed or answered, and the fixes themselves are checked. Only then is the file stamped as checked: `python3 tools/check_site.py --record "<check>" <audit record> <file>...` stores a fingerprint of the exact content reviewed in `data/review_log.csv`. Any later change to the file, however small, makes it due again.
 3. **The gate must pass.** `python3 tools/check_site.py` is run by hand before every push, and runs automatically on GitHub after every push and once a week. It fails if:
-   - a public file's content differs from the content last stamped as independently checked. Files checked before fingerprints were recorded (November 27 or earlier) count as "legacy" while unchanged; the weekly audit re-checks them, oldest first;
+   - a public file's content differs from the content last stamped as independently checked. Files whose last check is dated before November 27, 2026, before fingerprints were recorded, count as "legacy" if they were not committed after the day of that check. Edits made on the check day itself cannot be detected, so the weekly audit re-checks legacy files, oldest first;
    - an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;
    - a page built by `tools/build_site.py` is out of date with its Markdown source, or the build fails. The gate re-runs the build, so it can rewrite pages under `docs/`;
    - the predictions scorecard does not add up;
-   - a commit cited in a report, pre-registration or public Markdown file does not exist;
+   - a commit cited in a report, pre-registration or public Markdown file (as "commit `abc1234`", or a backticked 7–40 character hash) does not exist;
    - an engine plan was committed after its analysis script. Data opened before the plan cannot be detected this way;
    - public text uses a banned term (the list is `BANNED` in `tools/check_site.py`; for example, naming the AI model or its maker).
 

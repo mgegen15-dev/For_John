@@ -66,11 +66,11 @@
     <li>
     <p><strong>The gate must pass.</strong> <code>python3 tools/check_site.py</code> is run by hand before every push, and runs automatically on GitHub after every push and once a week. It fails if:</p>
     <ul>
-    <li>a public file's content differs from the content last stamped as independently checked. Files checked before fingerprints were recorded (November 27 or earlier) count as &quot;legacy&quot; while unchanged; the weekly audit re-checks them, oldest first;</li>
+    <li>a public file's content differs from the content last stamped as independently checked. Files whose last check is dated before November 27, 2026, before fingerprints were recorded, count as &quot;legacy&quot; if they were not committed after the day of that check. Edits made on the check day itself cannot be detected, so the weekly audit re-checks legacy files, oldest first;</li>
     <li>an internal website link or a link to a repository file is broken. External links, links inside the Markdown files and links built by the explorer's JavaScript are not checked;</li>
     <li>a page built by <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/build_site.py"><code>tools/build_site.py</code></a> is out of date with its Markdown source, or the build fails. The gate re-runs the build, so it can rewrite pages under <code>docs/</code>;</li>
     <li>the predictions scorecard does not add up;</li>
-    <li>a commit cited in a report, pre-registration or public Markdown file does not exist;</li>
+    <li>a commit cited in a report, pre-registration or public Markdown file (as &quot;commit <code>abc1234</code>&quot;, or a backticked 7–40 character hash) does not exist;</li>
     <li>an engine plan was committed after its analysis script. Data opened before the plan cannot be detected this way;</li>
     <li>public text uses a banned term (the list is <code>BANNED</code> in <a href="https://github.com/mgegen15-dev/For_John/blob/main/tools/check_site.py"><code>tools/check_site.py</code></a>; for example, naming the AI model or its maker).</li>
     </ul>

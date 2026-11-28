@@ -48,7 +48,7 @@ Osteosarcoma lines with CCNE1 amplification in DepMap (relative copy number of 2
 | OS186 | 6.4 | 6.4 | −1.45 |
 | NOS1 | 3.8 | 9.8 | −1.06 |
 
-Four of the 27 osteosarcoma lines (15%) are amplified, close to the 18.5% this project found in patients' tumours. U2OS has high CCNE1 RNA without amplification. Lines without CCNE1 amplification and with weak PKMYT1 dependence, for comparison: SJSA1, G292, OS384 (G292 has fairly high CCNE1 RNA; lines with the lowest CCNE1 RNA are HSOS1, CAL72, MG63 and OSA1777).
+Four of the 27 osteosarcoma lines (15%) are amplified, close to the 18.5% this project found in patients' tumours. U2OS has high CCNE1 RNA without amplification. Lines without CCNE1 amplification and with weak PKMYT1 dependence, for comparison: SJSA1, G292, OS384 (G292 has fairly high CCNE1 RNA; among lines in the knockout screen, those with the lowest CCNE1 RNA are HSOS1, CAL72, MG63 and OSA1777).
 
 ## What this means
 
@@ -73,6 +73,7 @@ Four of the 27 osteosarcoma lines (15%) are amplified, close to the 18.5% this p
 
 ## Change log
 
+- 2026-11-28: after a second independent check, the low-CCNE1 comparison lines qualified as lowest among lines in the knockout screen.
 - 2026-11-27: after an independent check, the comparison lines described correctly (not amplified, rather than low CCNE1).
 - 2026-11-24: cycle run and reported. Verdict inconclusive under the pre-registered rules.
 - 2026-11-25: data sources credited.

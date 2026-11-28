@@ -58,7 +58,7 @@ The other 13 trials in group A have sites only outside the United States (one li
 
 ## What this means
 
-- **For an adult with relapsed osteosarcoma whose tumour report shows MTAP loss, there are trials to ask about now,** and a CDKN2A deletion is a reason to ask for MTAP to be tested, since a quarter to a half of CDKN2A-deleted tumours keep MTAP; including one that has made room for bone sarcoma by name. Most hospital gene-panel reports show CDKN2A; MTAP has to be looked for specifically, by a newer panel or a tissue stain.
+- **For an adult with relapsed osteosarcoma whose tumour report shows MTAP loss, there are trials to ask about now,** including one that has made room for bone sarcoma by name. In this project's data, about a quarter of CDKN2A-deleted tumours kept MTAP (5 of 19; cycle 3), so a CDKN2A result does not settle MTAP status. Most hospital gene-panel reports show CDKN2A; MTAP has to be looked for specifically, by a newer panel or a tissue stain.
 - **For patients under 18 there is almost nothing,** and nothing in the United States or Europe that this search found. The nerve-sheath-tumour trial shows an adolescent trial of one of these drugs can be opened.
 - **The practical ask,** for an advocacy group or a sarcoma network: ask the sponsors of the tumour-agnostic trials to lower the entry age to 12 for sarcoma, and ask the sarcoma group in the vopimetostat trial to report osteosarcoma separately. Opening adult trials to 12-year-olds needs adult dosing and safety data first, and the frequency numbers from cycle 3 are the argument.
 - **This is not evidence that these drugs work in osteosarcoma.** No osteosarcoma result has been reported for any of them that this project has found, and cycle 5 could not confirm the underlying dependency in osteosarcoma cell lines because too few lines have lost MTAP.
@@ -78,6 +78,7 @@ The other 13 trials in group A have sites only outside the United States (one li
 
 ## Change log
 
+- 2026-11-28: after a second independent check, an unsourced range replaced by the project's own figure (5 of 19) and advice-like wording removed.
 - 2026-11-27: after an independent check, search terms counted correctly, the CDKN2A wording narrowed to MTAP loss, one trial with no sites and one not requiring MTAP loss noted, and the phrase calling age changes small decisions removed.
 - 2026-11-24: search run, records read and classified, report written.
 - 2026-11-25: corrected after an independent check. A UK mesothelioma trial (NCT07602946) had been described as taking patients from 16; its screening platform does, but its drug arm starts at 18, so it was removed as an example.
